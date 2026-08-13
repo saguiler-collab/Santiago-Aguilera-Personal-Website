@@ -1,6 +1,6 @@
 # santiaguilera - Personal Website:
 
-**I am building a personal website for universities to check out and understand my entire life**
+**I am building a personal website for universities, employers, and individuals to understand my profile**
 
 **App should**:
   Allow playing videos for other people
