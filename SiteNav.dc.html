@@ -21,11 +21,10 @@
       </svg>
       <span style="font-family:var(--sa-font-display);font-size:var(--sa-text-md);letter-spacing:var(--sa-tracking-tight)">Santiago Aguilera</span>
     </a>
-    <div style="display:flex;align-items:center;gap:var(--sa-space-1);margin-left:auto;flex-wrap:wrap">
+    <div style="display:flex;align-items:center;gap:2px;margin-left:auto;padding:6px;background:var(--sa-surface-tint);border-radius:var(--sa-radius-pill);flex-wrap:wrap">
       <sc-for list="{{ links }}" as="l" hint-placeholder-count="4">
-        <a href="{{ l.href }}" style="position:relative;padding:8px 12px;font:var(--sa-type-ui);text-decoration:none;color:{{ l.color }};border-radius:var(--sa-radius-pill);transition:var(--sa-transition-control)" style-hover="color:var(--sa-text-primary)">
+        <a href="{{ l.href }}" style="padding:8px 16px;font:var(--sa-type-ui);text-decoration:none;color:{{ l.color }};background:{{ l.bg }};box-shadow:{{ l.shadow }};border-radius:var(--sa-radius-pill);transition:var(--sa-transition-control)" style-hover="color:var(--sa-text-primary)">
           {{ l.label }}
-          <span style="position:absolute;left:12px;right:12px;bottom:2px;height:1.5px;background:var(--sa-accent);border-radius:1px;opacity:{{ l.underline }};transition:opacity var(--sa-dur-2) var(--sa-ease-out)"></span>
         </a>
       </sc-for>
     </div>
@@ -44,11 +43,15 @@ class Component extends DCLogic {
   renderVals() {
     const active = this.props.active || "home";
     return {
-      links: ITEMS.map(it => ({
-        ...it,
-        color: it.id === active ? "var(--sa-text-primary)" : "var(--sa-text-muted)",
-        underline: it.id === active ? 1 : 0
-      }))
+      links: ITEMS.map(it => {
+        const isActive = it.id === active;
+        return {
+          ...it,
+          color: isActive ? "var(--sa-text-primary)" : "var(--sa-text-muted)",
+          bg: isActive ? "var(--sa-surface-card)" : "transparent",
+          shadow: isActive ? "var(--sa-shadow-1)" : "none"
+        };
+      })
     };
   }
 }

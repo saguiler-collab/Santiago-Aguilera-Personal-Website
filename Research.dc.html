@@ -15,6 +15,7 @@
 body{margin:0;background:var(--sa-paper-000)}
 a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+.sa-glow{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;z-index:0;opacity:.5}
 </style>
 </helmet>
 <div style="background:var(--sa-surface-page);color:var(--sa-text-primary);font:var(--sa-type-body);min-height:100vh;overflow-x:clip">
@@ -31,7 +32,7 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
   <div data-rail-target="1">
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="Now" title="What I am working on" hint-size="100%,110px"></x-import>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:var(--sa-space-5);margin-top:var(--sa-space-10)">
+  <div data-stagger="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:var(--sa-space-5);margin-top:var(--sa-space-10)">
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="Research" title="Current project" meta="{{ soon }}" hint-size="100%,190px">Send me the topic, the question and where it stands, and this becomes a real entry: method, what you found, what surprised you.</x-import>
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="Clinical" title="Hospital project" meta="{{ soon }}" hint-size="100%,190px">The hospital work from the plan. What you did, who you worked with, and what you took from it.</x-import>
   </div>
@@ -53,15 +54,17 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
   <div data-rail-target="1">
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="Next" title="What I want to work on" lede="Written as intent, not as a claim." hint-size="100%,150px"></x-import>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--sa-space-5);margin-top:var(--sa-space-10)">
+  <div data-stagger="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--sa-space-5);margin-top:var(--sa-space-10)">
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="Direction" title="Medicine" hint-size="100%,150px">The health science track, taken further than a school course goes.</x-import>
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="Direction" title="Public health across borders" hint-size="100%,150px">Five countries gave me five different versions of what a clinic is.</x-import>
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="Direction" title="Science writing" hint-size="100%,150px">Explaining the work, in the paper and outside it.</x-import>
   </div>
 </section>
 
-<section class="sa-on-ink" style="position:relative;z-index:10;background:var(--sa-surface-ink)">
-  <div style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-band-y) clamp(24px,5vw,64px) var(--sa-band-y) clamp(24px,11vw,168px);box-sizing:border-box;display:flex;flex-wrap:wrap;gap:var(--sa-space-10);align-items:flex-end;justify-content:space-between">
+<section class="sa-on-ink" style="position:relative;z-index:10;background:var(--sa-surface-ink);overflow:hidden">
+  <div class="sa-glow" style="width:420px;height:420px;left:-90px;top:-150px;background:var(--sa-verdigris-500)"></div>
+  <div class="sa-glow" style="width:380px;height:380px;right:-80px;bottom:-140px;background:var(--sa-ochre-500)"></div>
+  <div style="position:relative;z-index:1;width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-band-y) clamp(24px,5vw,64px) var(--sa-band-y) clamp(24px,11vw,168px);box-sizing:border-box;display:flex;flex-wrap:wrap;gap:var(--sa-space-10);align-items:flex-end;justify-content:space-between">
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="Start over" title="The story is on the about page" lede="Five countries, in order, and the symbol behind the rail." hint-size="100%,150px"></x-import>
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Button" size="lg" href="About.dc.html" hint-size="200px,52px">Walk the timeline</x-import>
   </div>
@@ -99,9 +102,23 @@ class Component extends DCLogic {
       el.style.opacity = "0"; el.style.transform = "translateY(12px)"; io.observe(el);
     });
     this._io = io;
+
+    const sio = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      [...e.target.children].forEach((child, i) => {
+        child.style.transition = `opacity 480ms cubic-bezier(.22,.61,.36,1) ${i * 70}ms, transform 480ms cubic-bezier(.22,.61,.36,1) ${i * 70}ms`;
+        child.style.opacity = "1"; child.style.transform = "none";
+      });
+      sio.unobserve(e.target);
+    }), { threshold: 0.1 });
+    document.querySelectorAll("[data-stagger]").forEach(el => {
+      [...el.children].forEach(child => { child.style.opacity = "0"; child.style.transform = "translateY(14px)"; });
+      sio.observe(el);
+    });
+    this._sio = sio;
   }
 
-  componentWillUnmount() { if (this._io) this._io.disconnect(); }
+  componentWillUnmount() { if (this._io) this._io.disconnect(); if (this._sio) this._sio.disconnect(); }
 }
 </script>
 </body>

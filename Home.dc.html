@@ -18,6 +18,7 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
 @keyframes sa-drift{0%{transform:translateY(-6px)}100%{transform:translateY(6px)}}
 @keyframes sa-draw{from{stroke-dashoffset:1400}to{stroke-dashoffset:0}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+.sa-glow{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;z-index:0;opacity:.5}
 </style>
 </helmet>
 <div style="background:var(--sa-surface-page);color:var(--sa-text-primary);font:var(--sa-type-body);min-height:100vh;overflow-x:clip">
@@ -84,7 +85,7 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
   <div data-rail-target="1">
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="Who am I" title="Five places, in order" lede="Every place added something — a language, an instrument, a way of reading a room." hint-size="100%,150px"></x-import>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(196px,1fr));gap:var(--sa-space-4);margin-top:var(--sa-space-10)">
+  <div data-stagger="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(196px,1fr));gap:var(--sa-space-4);margin-top:var(--sa-space-10)">
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.PlaceCard" place="mexico" city="Monterrey" country="Mexico" years="Born" hint-size="100%,150px">Where it starts — family, Spanish, Nuevo León.</x-import>
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.PlaceCard" place="colombia" city="Bogotá" country="Colombia" years="Early school" hint-size="100%,150px">Altitude, a new school, a second accent.</x-import>
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.PlaceCard" place="panama" city="Ciudad de Panamá" country="Panama" years="SonoArte" hint-size="100%,150px">Where I started playing drums, at SonoArte.</x-import>
@@ -97,7 +98,7 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
   <div data-rail-target="1">
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="The site" title="Six ways in" lede="Two sections are still being written. They say so." hint-size="100%,150px"></x-import>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--sa-space-5);margin-top:var(--sa-space-10)">
+  <div data-stagger="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--sa-space-5);margin-top:var(--sa-space-10)">
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" interactive="{{ true }}" href="About.dc.html" eyebrow="About me" title="My story, place by place" hint-size="100%,180px">The timeline, the five countries, and the symbol I drew for all of it.</x-import>
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" interactive="{{ true }}" href="Academics.dc.html" eyebrow="Academics" title="Two schools, one line" hint-size="100%,180px">ISPS and Perkiomen: StuCo, Stronger Together, HOSA, Investment Club, the Perkiomenite, MUN and GVMUN.</x-import>
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" interactive="{{ true }}" href="Research.dc.html" eyebrow="Research &amp; projects" title="Health science in practice" hint-size="100%,180px">Current research, the hospital project, and what I want to work on next.</x-import>
@@ -107,8 +108,10 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
   </div>
 </section>
 
-<section class="sa-on-ink" style="position:relative;z-index:10;background:var(--sa-surface-ink)">
-  <div style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-band-y) clamp(24px,5vw,64px) var(--sa-band-y) clamp(24px,11vw,168px);box-sizing:border-box;display:flex;flex-wrap:wrap;gap:var(--sa-space-10);align-items:flex-end;justify-content:space-between">
+<section class="sa-on-ink" style="position:relative;z-index:10;background:var(--sa-surface-ink);overflow:hidden">
+  <div class="sa-glow" style="width:440px;height:440px;left:-100px;top:-160px;background:var(--sa-coral-500)"></div>
+  <div class="sa-glow" style="width:360px;height:360px;right:-80px;bottom:-160px;background:var(--sa-verdigris-500)"></div>
+  <div style="position:relative;z-index:1;width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-band-y) clamp(24px,5vw,64px) var(--sa-band-y) clamp(24px,11vw,168px);box-sizing:border-box;display:flex;flex-wrap:wrap;gap:var(--sa-space-10);align-items:flex-end;justify-content:space-between">
     <div data-rail-target="1">
       <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="Next" title="The whole thing reads as one line" lede="Five countries told in order, from Monterrey to Pennsburg." hint-size="100%,150px"></x-import>
     </div>
@@ -159,6 +162,20 @@ class Component extends DCLogic {
         el.style.opacity = "0"; el.style.transform = "translateY(12px)"; io.observe(el);
       });
       this._io = io;
+
+      const sio = new IntersectionObserver(es => es.forEach(e => {
+        if (!e.isIntersecting) return;
+        [...e.target.children].forEach((child, i) => {
+          child.style.transition = `opacity 480ms cubic-bezier(.22,.61,.36,1) ${i * 70}ms, transform 480ms cubic-bezier(.22,.61,.36,1) ${i * 70}ms`;
+          child.style.opacity = "1"; child.style.transform = "none";
+        });
+        sio.unobserve(e.target);
+      }), { threshold: 0.1 });
+      document.querySelectorAll("[data-stagger]").forEach(el => {
+        [...el.children].forEach(child => { child.style.opacity = "0"; child.style.transform = "translateY(14px)"; });
+        sio.observe(el);
+      });
+      this._sio = sio;
     }
     if (this.props.parallax === false || this.reduce) return;
     this.depths = [0.030, -0.024, 0.020, -0.032, 0.040, -0.018];
@@ -182,6 +199,7 @@ class Component extends DCLogic {
     removeEventListener("pointermove", this.onMove);
     cancelAnimationFrame(this._raf);
     if (this._io) this._io.disconnect();
+    if (this._sio) this._sio.disconnect();
   }
 }
 </script>

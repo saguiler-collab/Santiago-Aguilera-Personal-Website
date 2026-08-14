@@ -15,6 +15,7 @@
 body{margin:0;background:var(--sa-paper-000)}
 a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+.sa-glow{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;z-index:0;opacity:.5}
 </style>
 </helmet>
 <div style="background:var(--sa-surface-page);color:var(--sa-text-primary);font:var(--sa-type-body);min-height:100vh;overflow-x:clip">
@@ -81,7 +82,7 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
   <div data-rail-target="1">
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="Languages" title="Two fluent, two in progress" hint-size="100%,110px"></x-import>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--sa-space-5);margin-top:var(--sa-space-10)">
+  <div data-stagger="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--sa-space-5);margin-top:var(--sa-space-10)">
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="Fluent" title="Spanish" hint-size="100%,130px">First language. Monterrey, Bogotá, Ciudad de Panamá.</x-import>
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="Fluent" title="English" hint-size="100%,130px">School language since Port of Spain.</x-import>
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="Learning" title="French" hint-size="100%,130px">In progress at Perkiomen.</x-import>
@@ -89,8 +90,10 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
   </div>
 </section>
 
-<section class="sa-on-ink" style="position:relative;z-index:10;background:var(--sa-surface-ink)">
-  <div style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-band-y) clamp(24px,5vw,64px) var(--sa-band-y) clamp(24px,11vw,168px);box-sizing:border-box;display:flex;flex-wrap:wrap;gap:var(--sa-space-10);align-items:flex-end;justify-content:space-between">
+<section class="sa-on-ink" style="position:relative;z-index:10;background:var(--sa-surface-ink);overflow:hidden">
+  <div class="sa-glow" style="width:420px;height:420px;left:-90px;top:-140px;background:var(--sa-ochre-500)"></div>
+  <div class="sa-glow" style="width:380px;height:380px;right:-80px;bottom:-150px;background:var(--sa-coral-500)"></div>
+  <div style="position:relative;z-index:1;width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-band-y) clamp(24px,5vw,64px) var(--sa-band-y) clamp(24px,11vw,168px);box-sizing:border-box;display:flex;flex-wrap:wrap;gap:var(--sa-space-10);align-items:flex-end;justify-content:space-between">
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="Next" title="What I do with all of it" lede="Two schools, and the work that came out of them." hint-size="100%,150px"></x-import>
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Button" size="lg" href="Academics.dc.html" hint-size="200px,52px">See the academics</x-import>
   </div>
@@ -139,6 +142,20 @@ class Component extends DCLogic {
     });
     this._io = io;
 
+    const sio = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      [...e.target.children].forEach((child, i) => {
+        child.style.transition = `opacity 480ms cubic-bezier(.22,.61,.36,1) ${i * 70}ms, transform 480ms cubic-bezier(.22,.61,.36,1) ${i * 70}ms`;
+        child.style.opacity = "1"; child.style.transform = "none";
+      });
+      sio.unobserve(e.target);
+    }), { threshold: 0.1 });
+    if (!reduce) document.querySelectorAll("[data-stagger]").forEach(el => {
+      [...el.children].forEach(child => { child.style.opacity = "0"; child.style.transform = "translateY(14px)"; });
+      sio.observe(el);
+    });
+    this._sio = sio;
+
     // the big symbol draws itself once, in stroke order
     const paths = [this._p0, this._p1, this._p2].map(r => r.current).filter(Boolean);
     if (!reduce && paths.length) {
@@ -159,6 +176,7 @@ class Component extends DCLogic {
 
   componentWillUnmount() {
     if (this._io) this._io.disconnect();
+    if (this._sio) this._sio.disconnect();
     if (this._dio) this._dio.disconnect();
   }
 }

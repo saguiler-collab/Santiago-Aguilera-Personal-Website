@@ -31,7 +31,7 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
   <div data-rail-target="1">
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="Port of Spain" title="International School of Port of Spain" lede="Trinidad &amp; Tobago." hint-size="100%,150px"></x-import>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:var(--sa-space-5);margin-top:var(--sa-space-10)">
+  <div data-stagger="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:var(--sa-space-5);margin-top:var(--sa-space-10)">
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="Student government" title="Student Council" hint-size="100%,180px">Representing my class and running school-wide events with the rest of the council.</x-import>
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="Initiative" title="Stronger Together" hint-size="100%,180px">A student-led initiative supporting classmates through the return to in-person school.</x-import>
   </div>
@@ -42,7 +42,7 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
     <div data-rail-target="1">
       <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="Pennsburg" title="Perkiomen School" lede="Pennsylvania, United States. Health science track, and most of what I do outside class." hint-size="100%,170px"></x-import>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--sa-space-5);margin-top:var(--sa-space-10)">
+    <div data-stagger="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--sa-space-5);margin-top:var(--sa-space-10)">
       <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="Health science" title="HOSA" hint-size="100%,170px">Future Health Professionals. Competition events and the health science coursework behind them.</x-import>
       <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="Debate" title="Model UN" hint-size="100%,170px">Committee work, position papers, and learning to argue a country's case rather than my own.</x-import>
       <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="Conference" title="GVMUN" hint-size="100%,170px">The conference our delegation attends. Photos of the committee room to come.</x-import>
@@ -98,9 +98,23 @@ class Component extends DCLogic {
       el.style.opacity = "0"; el.style.transform = "translateY(12px)"; io.observe(el);
     });
     this._io = io;
+
+    const sio = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      [...e.target.children].forEach((child, i) => {
+        child.style.transition = `opacity 480ms cubic-bezier(.22,.61,.36,1) ${i * 70}ms, transform 480ms cubic-bezier(.22,.61,.36,1) ${i * 70}ms`;
+        child.style.opacity = "1"; child.style.transform = "none";
+      });
+      sio.unobserve(e.target);
+    }), { threshold: 0.1 });
+    document.querySelectorAll("[data-stagger]").forEach(el => {
+      [...el.children].forEach(child => { child.style.opacity = "0"; child.style.transform = "translateY(14px)"; });
+      sio.observe(el);
+    });
+    this._sio = sio;
   }
 
-  componentWillUnmount() { if (this._io) this._io.disconnect(); }
+  componentWillUnmount() { if (this._io) this._io.disconnect(); if (this._sio) this._sio.disconnect(); }
 }
 </script>
 </body>
