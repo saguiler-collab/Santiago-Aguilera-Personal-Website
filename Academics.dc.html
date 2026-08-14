@@ -10,6 +10,7 @@
 <helmet>
 <link rel="stylesheet" href="_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/styles.css">
 <script src="_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/_ds_bundle.js"></script>
+<script src="assets/photo-slots.js" defer></script>
 <style>
 body{margin:0;background:var(--sa-paper-000)}
 a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
@@ -62,10 +63,10 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
       <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Button" href="Research.dc.html" hint-size="200px,44px">See the research</x-import>
     </div>
   </div>
-  <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.MediaFrame" ratio="4 / 3" placeholder="HOSA or MUN — a photo from a competition" hint-size="100%,220px"></x-import>
+  <sa-image-slot key="academics-hosa-mun" ratio="4 / 3" placeholder="HOSA or MUN — a photo from a competition"></sa-image-slot>
 </section>
 
-<x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Footer" icon-base="assets/icons/brand" columns="{{ footerColumns }}" socials="{{ footerSocials }}" hint-size="100%,300px"></x-import>
+<x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Footer" icon-base="assets/icons/brand" columns="{{ footerColumns }}" socials="{{ footerSocials }}" style="position:relative;z-index:10" hint-size="100%,300px"></x-import>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">

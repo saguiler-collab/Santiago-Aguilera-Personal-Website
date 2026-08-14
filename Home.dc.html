@@ -10,6 +10,7 @@
 <helmet>
 <link rel="stylesheet" href="_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/styles.css">
 <script src="_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/_ds_bundle.js"></script>
+<script src="assets/photo-slots.js" defer></script>
 <style>
 body{margin:0;background:var(--sa-paper-000)}
 a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
@@ -39,32 +40,32 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
     <div style="position:relative;min-height:440px">
       <div ref="{{ f1 }}" style="position:absolute;left:2%;top:0;width:38%;will-change:transform">
         <div style="animation:sa-drift 7s ease-in-out infinite alternate;transform-origin:center;rotate:-2.5deg;box-shadow:var(--sa-shadow-1)">
-          <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.MediaFrame" ratio="3 / 4" placeholder="Monterrey, early years" hint-size="100%,200px"></x-import>
+          <sa-image-slot key="home-monterrey" ratio="3 / 4" placeholder="Monterrey, early years"></sa-image-slot>
         </div>
       </div>
       <div ref="{{ f2 }}" style="position:absolute;right:0;top:6%;width:44%;will-change:transform">
         <div style="animation:sa-drift 9s ease-in-out infinite alternate-reverse;rotate:1.8deg;box-shadow:var(--sa-shadow-1)">
-          <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.MediaFrame" ratio="4 / 3" placeholder="Swim meet, Perkiomen" hint-size="100%,150px"></x-import>
+          <sa-image-slot key="home-swim-perkiomen" ratio="4 / 3" placeholder="Swim meet, Perkiomen"></sa-image-slot>
         </div>
       </div>
       <div ref="{{ f3 }}" style="position:absolute;left:14%;bottom:4%;width:34%;will-change:transform">
         <div style="animation:sa-drift 8s ease-in-out infinite alternate;rotate:2.6deg;box-shadow:var(--sa-shadow-1)">
-          <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.MediaFrame" ratio="1 / 1" placeholder="Drum kit, SonoArte" hint-size="100%,160px"></x-import>
+          <sa-image-slot key="home-drums-sonoarte" ratio="1 / 1" placeholder="Drum kit, SonoArte"></sa-image-slot>
         </div>
       </div>
       <div ref="{{ f4 }}" style="position:absolute;right:6%;bottom:0;width:40%;will-change:transform">
         <div style="animation:sa-drift 11s ease-in-out infinite alternate-reverse;rotate:-1.6deg;box-shadow:var(--sa-shadow-1)">
-          <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.MediaFrame" ratio="4 / 3" placeholder="GVMUN committee room" hint-size="100%,150px"></x-import>
+          <sa-image-slot key="home-gvmun" ratio="4 / 3" placeholder="GVMUN committee room"></sa-image-slot>
         </div>
       </div>
       <div ref="{{ f5 }}" style="position:absolute;left:0;top:44%;width:26%;will-change:transform">
         <div style="animation:sa-drift 10s ease-in-out infinite alternate-reverse;rotate:3.4deg;box-shadow:var(--sa-shadow-1)">
-          <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.MediaFrame" ratio="3 / 4" placeholder="Bogotá" hint-size="100%,140px"></x-import>
+          <sa-image-slot key="home-bogota" ratio="3 / 4" placeholder="Bogotá"></sa-image-slot>
         </div>
       </div>
       <div ref="{{ f6 }}" style="position:absolute;right:34%;top:40%;width:24%;will-change:transform">
         <div style="animation:sa-drift 6.5s ease-in-out infinite alternate;rotate:-3deg;box-shadow:var(--sa-shadow-1)">
-          <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.MediaFrame" ratio="1 / 1" placeholder="Port of Spain" hint-size="100%,120px"></x-import>
+          <sa-image-slot key="home-port-of-spain" ratio="1 / 1" placeholder="Port of Spain"></sa-image-slot>
         </div>
       </div>
     </div>
@@ -106,7 +107,7 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
   </div>
 </section>
 
-<section class="sa-on-ink" style="background:var(--sa-surface-ink)">
+<section class="sa-on-ink" style="position:relative;z-index:10;background:var(--sa-surface-ink)">
   <div style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-band-y) clamp(24px,5vw,64px) var(--sa-band-y) clamp(24px,11vw,168px);box-sizing:border-box;display:flex;flex-wrap:wrap;gap:var(--sa-space-10);align-items:flex-end;justify-content:space-between">
     <div data-rail-target="1">
       <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="Next" title="The whole thing reads as one line" lede="Five countries told in order, from Monterrey to Pennsburg." hint-size="100%,150px"></x-import>
@@ -115,7 +116,7 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
   </div>
 </section>
 
-<x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Footer" icon-base="assets/icons/brand" columns="{{ footerColumns }}" socials="{{ footerSocials }}" hint-size="100%,300px"></x-import>
+<x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Footer" icon-base="assets/icons/brand" columns="{{ footerColumns }}" socials="{{ footerSocials }}" style="position:relative;z-index:10" hint-size="100%,300px"></x-import>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;rail&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;parallax&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">

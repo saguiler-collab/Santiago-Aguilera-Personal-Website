@@ -10,6 +10,7 @@
 <helmet>
 <link rel="stylesheet" href="_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/styles.css">
 <script src="_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/_ds_bundle.js"></script>
+<script src="assets/photo-slots.js" defer></script>
 <style>
 body{margin:0;background:var(--sa-paper-000)}
 a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
@@ -44,7 +45,7 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
       </div>
       <p style="font:var(--sa-type-body);color:var(--sa-text-secondary);max-width:56ch;margin-top:var(--sa-space-6);text-wrap:pretty">Read enough to find the actual gap, write the question down in one sentence, then decide what evidence would change my mind. HOSA taught me the vocabulary; Model UN taught me to state a position I can defend.</p>
     </div>
-    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.MediaFrame" ratio="4 / 3" placeholder="Lab, hospital or poster session photo" hint-size="100%,230px"></x-import>
+    <sa-image-slot key="research-lab" ratio="4 / 3" placeholder="Lab, hospital or poster session photo"></sa-image-slot>
   </div>
 </section>
 
@@ -59,14 +60,14 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
   </div>
 </section>
 
-<section class="sa-on-ink" style="background:var(--sa-surface-ink)">
+<section class="sa-on-ink" style="position:relative;z-index:10;background:var(--sa-surface-ink)">
   <div style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-band-y) clamp(24px,5vw,64px) var(--sa-band-y) clamp(24px,11vw,168px);box-sizing:border-box;display:flex;flex-wrap:wrap;gap:var(--sa-space-10);align-items:flex-end;justify-content:space-between">
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="Start over" title="The story is on the about page" lede="Five countries, in order, and the symbol behind the rail." hint-size="100%,150px"></x-import>
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Button" size="lg" href="About.dc.html" hint-size="200px,52px">Walk the timeline</x-import>
   </div>
 </section>
 
-<x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Footer" icon-base="assets/icons/brand" columns="{{ footerColumns }}" socials="{{ footerSocials }}" hint-size="100%,300px"></x-import>
+<x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Footer" icon-base="assets/icons/brand" columns="{{ footerColumns }}" socials="{{ footerSocials }}" style="position:relative;z-index:10" hint-size="100%,300px"></x-import>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">

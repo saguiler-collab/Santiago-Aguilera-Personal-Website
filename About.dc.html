@@ -10,6 +10,7 @@
 <helmet>
 <link rel="stylesheet" href="_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/styles.css">
 <script src="_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/_ds_bundle.js"></script>
+<script src="assets/photo-slots.js" defer></script>
 <style>
 body{margin:0;background:var(--sa-paper-000)}
 a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
@@ -38,7 +39,7 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.TimelineItem" year="05" place="usa" title="Pennsburg" where="Perkiomen School, Pennsylvania" meta="{{ tagPerk }}" last="{{ true }}" hint-size="100%,150px">Health science, HOSA, Model UN and GVMUN, Investment Club, the Perkiomenite, varsity swimming and the rock band.</x-import>
   </div>
   <aside style="display:flex;flex-direction:column;gap:var(--sa-space-5);position:sticky;top:96px">
-    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.MediaFrame" ratio="4 / 5" placeholder="A photo of me — your pick" hint-size="100%,240px"></x-import>
+    <sa-image-slot key="about-portrait" ratio="4 / 5" placeholder="A photo of me — your pick"></sa-image-slot>
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="Still to add" title="Dates" meta="{{ soon }}" hint-size="100%,140px">The years for each move. Send them and the rail fills in.</x-import>
   </aside>
 </section>
@@ -88,14 +89,14 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
   </div>
 </section>
 
-<section class="sa-on-ink" style="background:var(--sa-surface-ink)">
+<section class="sa-on-ink" style="position:relative;z-index:10;background:var(--sa-surface-ink)">
   <div style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-band-y) clamp(24px,5vw,64px) var(--sa-band-y) clamp(24px,11vw,168px);box-sizing:border-box;display:flex;flex-wrap:wrap;gap:var(--sa-space-10);align-items:flex-end;justify-content:space-between">
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="Next" title="What I do with all of it" lede="Two schools, and the work that came out of them." hint-size="100%,150px"></x-import>
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Button" size="lg" href="Academics.dc.html" hint-size="200px,52px">See the academics</x-import>
   </div>
 </section>
 
-<x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Footer" icon-base="assets/icons/brand" columns="{{ footerColumns }}" socials="{{ footerSocials }}" hint-size="100%,300px"></x-import>
+<x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Footer" icon-base="assets/icons/brand" columns="{{ footerColumns }}" socials="{{ footerSocials }}" style="position:relative;z-index:10" hint-size="100%,300px"></x-import>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
