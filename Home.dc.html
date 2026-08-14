@@ -1,8 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Santiago Aguilera</title>
+<meta name="description" content="A boarding student who has lived in six countries — Houston, Madrid, Monterrey, Bogotá, Ciudad de Panamá, Port of Spain, and Pennsburg. Health science, Model UN, a drum kit, and a swim lane.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<meta property="og:title" content="Santiago Aguilera">
+<meta property="og:description" content="A boarding student who has lived in six countries. Health science, Model UN, a drum kit, and a swim lane — this is the whole picture, in order.">
+<meta property="og:type" content="website">
 <script>(function(){try{var t=localStorage.getItem("sa:theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script>
 <script src="./support.js"></script>
 </head>
@@ -20,6 +26,9 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
 @keyframes sa-draw{from{stroke-dashoffset:1400}to{stroke-dashoffset:0}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 .sa-glow{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;z-index:0;opacity:.5}
+/* the six scattered hero photos are decorative — at narrow widths their min clamp()
+   sizes collide with the centered text, so they step aside rather than crowd it */
+@media (max-width:720px){.sa-hero-photo{display:none}}
 </style>
 </helmet>
 <div style="background:var(--sa-surface-page);color:var(--sa-text-primary);font:var(--sa-type-body);min-height:100vh;overflow-x:clip">
@@ -31,32 +40,32 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
 <section style="position:relative;padding:clamp(64px,11vh,140px) clamp(24px,5vw,64px) clamp(72px,10vh,120px);min-height:640px;overflow:hidden">
   <div class="sa-glow" style="width:640px;height:640px;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--sa-coral-300);opacity:.22;filter:blur(110px)"></div>
 
-  <div ref="{{ f1 }}" style="position:absolute;left:1%;top:1%;width:clamp(110px,13vw,190px);z-index:0;will-change:transform">
+  <div ref="{{ f1 }}" class="sa-hero-photo" style="position:absolute;left:1%;top:1%;width:clamp(110px,13vw,190px);z-index:0;will-change:transform">
     <div style="animation:sa-drift 7s ease-in-out infinite alternate;transform-origin:center;rotate:-2.5deg;box-shadow:var(--sa-shadow-1)">
       <sa-image-slot slot-key="home-monterrey" ratio="3 / 4" placeholder="Monterrey, early years"></sa-image-slot>
     </div>
   </div>
-  <div ref="{{ f2 }}" style="position:absolute;right:1%;top:5%;width:clamp(120px,14vw,210px);z-index:0;will-change:transform">
+  <div ref="{{ f2 }}" class="sa-hero-photo" style="position:absolute;right:1%;top:5%;width:clamp(120px,14vw,210px);z-index:0;will-change:transform">
     <div style="animation:sa-drift 9s ease-in-out infinite alternate-reverse;rotate:1.8deg;box-shadow:var(--sa-shadow-1)">
       <sa-image-slot slot-key="home-swim-perkiomen" ratio="4 / 3" placeholder="Swim meet, Perkiomen"></sa-image-slot>
     </div>
   </div>
-  <div ref="{{ f3 }}" style="position:absolute;left:6%;bottom:5%;width:clamp(100px,11vw,160px);z-index:0;will-change:transform">
+  <div ref="{{ f3 }}" class="sa-hero-photo" style="position:absolute;left:6%;bottom:5%;width:clamp(100px,11vw,160px);z-index:0;will-change:transform">
     <div style="animation:sa-drift 8s ease-in-out infinite alternate;rotate:2.6deg;box-shadow:var(--sa-shadow-1)">
       <sa-image-slot slot-key="home-drums-sonoarte" ratio="1 / 1" placeholder="Drum kit, SonoArte"></sa-image-slot>
     </div>
   </div>
-  <div ref="{{ f4 }}" style="position:absolute;right:7%;bottom:2%;width:clamp(120px,13vw,190px);z-index:0;will-change:transform">
+  <div ref="{{ f4 }}" class="sa-hero-photo" style="position:absolute;right:7%;bottom:2%;width:clamp(120px,13vw,190px);z-index:0;will-change:transform">
     <div style="animation:sa-drift 11s ease-in-out infinite alternate-reverse;rotate:-1.6deg;box-shadow:var(--sa-shadow-1)">
       <sa-image-slot slot-key="home-gvmun" ratio="4 / 3" placeholder="GVMUN committee room"></sa-image-slot>
     </div>
   </div>
-  <div ref="{{ f5 }}" style="position:absolute;left:18%;top:44%;width:clamp(90px,10vw,140px);z-index:0;will-change:transform">
+  <div ref="{{ f5 }}" class="sa-hero-photo" style="position:absolute;left:18%;top:44%;width:clamp(90px,10vw,140px);z-index:0;will-change:transform">
     <div style="animation:sa-drift 10s ease-in-out infinite alternate-reverse;rotate:3.4deg;box-shadow:var(--sa-shadow-1)">
       <sa-image-slot slot-key="home-bogota" ratio="3 / 4" placeholder="Bogotá"></sa-image-slot>
     </div>
   </div>
-  <div ref="{{ f6 }}" style="position:absolute;right:19%;top:42%;width:clamp(85px,9vw,130px);z-index:0;will-change:transform">
+  <div ref="{{ f6 }}" class="sa-hero-photo" style="position:absolute;right:19%;top:42%;width:clamp(85px,9vw,130px);z-index:0;will-change:transform">
     <div style="animation:sa-drift 6.5s ease-in-out infinite alternate;rotate:-3deg;box-shadow:var(--sa-shadow-1)">
       <sa-image-slot slot-key="home-port-of-spain" ratio="1 / 1" placeholder="Port of Spain"></sa-image-slot>
     </div>
