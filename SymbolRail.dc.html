@@ -183,22 +183,48 @@ class Component extends DCLogic {
     }
     if (this.ticks) {
       const o = cl((p - 0.6) / 0.3, 0, 1);
+      const tip = this.tip();
       this.ticks.forEach((t, i) => {
         const y = this.targets[i] ? this.targets[i].top - Y + 12 : -50;
         const on = y > this.yTop - 4 && y < this.yBot + 4;
-        t.setAttribute("x1", this.cx - 5); t.setAttribute("x2", this.cx + 5);
+        // a tick lights up at the exact frame the coral tip reaches it
+        const passed = y <= tip;
+        const half = passed ? 7 : 5;
+        t.setAttribute("x1", this.cx - half); t.setAttribute("x2", this.cx + half);
         t.setAttribute("y1", y.toFixed(1)); t.setAttribute("y2", y.toFixed(1));
+        t.setAttribute("stroke", passed ? "var(--sa-text-accent)" : "currentColor");
+        t.setAttribute("stroke-opacity", passed ? 0.95 : 0.22);
+        t.setAttribute("stroke-width", passed ? 2.2 : 1.4);
         t.style.opacity = on ? (o * 0.9).toFixed(2) : "0";
       });
     }
     this.arrows(Y);
   }
 
+  /**
+   * Y of the coral progress line's leading tip, in viewport coordinates.
+   *
+   * This is the one number the rail's "have we reached this section yet?" state must key
+   * off. It is deliberately recomputed from live scroll rather than cached, because
+   * arrows() also runs on the settled/early-return path where step() has not redrawn.
+   *
+   * Note the tip is driven by document scroll fraction mapped onto the yTop..yBot band,
+   * so it travels DOWN the viewport while section markers travel UP — they cross exactly
+   * once per section, which is what makes `markerY <= tip` a stable, flicker-free test.
+   */
+  tip() {
+    const doc = Math.max(1, document.documentElement.scrollHeight - this.H);
+    return this.yTop + (this.yBot - this.yTop) * cl(sy() / doc, 0, 1);
+  }
+
   arrows(Y) {
     if (this.hidden || !this.targets.length || !this._arA.current) return;
-    const mid = this.H * 0.42;
+    // active section = the last one the coral tip has actually reached, so the arrow
+    // switches at the same instant the line touches it (previously this used a fixed
+    // 42%-of-viewport threshold, which drifted out of sync with the line by a long way)
+    const tip = this.tip();
     let act = -1;
-    this.targets.forEach((t, i) => { if (t.top - Y < mid) act = i; });
+    this.targets.forEach((t, i) => { if (t.top - Y + 14 <= tip) act = i; });
     const pick = [act, act + 1];
     [this._arA, this._arB].forEach((ref, k) => {
       const t = this.targets[pick[k]];

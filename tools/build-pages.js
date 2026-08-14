@@ -73,7 +73,9 @@ const GROUPS = {
     { label: "Drums & Music", href: "Activities-Music.dc.html" }
   ]},
   curiosities: { title: "Curiosities", items: [
-    { label: "Literature", href: "Curiosities-Literature.dc.html" }
+    { label: "Literature", href: "Curiosities-Literature.dc.html" },
+    { label: "Music", href: "Curiosities-Music.dc.html" },
+    { label: "Video Games", href: "Curiosities-Videogames.dc.html" }
   ]}
 };
 
@@ -461,6 +463,34 @@ const PAGES = [
     slots: [
       { key: "lit-1", ratio: "4 / 3", label: "The shelf" },
       { key: "lit-2", ratio: "1 / 1", label: "Currently reading" }
+    ],
+    next: { title: "Next: Music", lede: "What I listen to, as opposed to what I play.", href: "Curiosities-Music.dc.html", label: "Go to music" }
+  },
+  {
+    file: "Curiosities-Music.dc.html", section: "curiosities", parent: { label: "Curiosities", href: "Curiosities.dc.html" },
+    eyebrow: "Curiosities · Listening", title: "Music", lede: "What I listen to, as opposed to what I play.",
+    desc: "Listening — the music six countries left behind, separate from the drumming.",
+    intro: "This is the listening half. The playing half — SonoArte, the ISPS musical, the Perkiomen rock band — lives under Activities; this page is about what is actually in my ears the rest of the time.",
+    body: ["Moving every few years does something specific to a music taste: you end up with a library that is a map. Reggaeton and banda from Monterrey, vallenato from Bogotá, soca and calypso from Port of Spain, and whatever the rock band was covering that term.", "It is the least deliberate thing on this site. Nothing here was chosen to be interesting — it is just what stuck from each place."],
+    tbd: "Your current rotation, the artists that matter most, and a Spotify link if you want one embedded — send these and this page gets a real shelf.",
+    facts: [["From", "Mexico · Colombia · Trinidad · US"], ["Also plays", "Drums — see Activities"], ["On repeat", TBD]],
+    slots: [
+      { key: "music-listen-1", ratio: "4 / 3", label: "Listening — a photo" },
+      { key: "music-listen-2", ratio: "1 / 1", label: "Records, headphones, a playlist" }
+    ],
+    next: { title: "Next: Video games", lede: "Co-op, strategy, and whatever the group is playing.", href: "Curiosities-Videogames.dc.html", label: "Go to video games" }
+  },
+  {
+    file: "Curiosities-Videogames.dc.html", section: "curiosities", parent: { label: "Curiosities", href: "Curiosities.dc.html" },
+    eyebrow: "Curiosities · Games", title: "Video games", lede: "Co-op, strategy, and whatever the group is playing.",
+    desc: "Video games — co-op, strategy, and staying in touch with people across time zones.",
+    intro: "Mostly co-op and strategy, and mostly whatever the group has decided we are playing this month.",
+    body: ["Games have done something for me that is easy to undersell: when you leave a country, a shared server is often the last thing you still have in common with the people you left. Several friendships from Panama and Trinidad are still alive largely because of a standing lobby and a bad time-zone overlap."],
+    tbd: "The games you actually play, who you play them with, and anything you have built or modded — send these and this page fills in.",
+    facts: [["Mostly", "Co-op · strategy"], ["Why it matters", "Friends across six countries"], ["Currently playing", TBD]],
+    slots: [
+      { key: "games-1", ratio: "16 / 9", label: "A game, or the setup" },
+      { key: "games-2", ratio: "1 / 1", label: "Playing with friends" }
     ],
     next: { title: "Media", lede: "Photos and video from six countries.", href: "Media.dc.html", label: "See the media" }
   }
