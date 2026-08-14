@@ -1,0 +1,5 @@
+/* Webfonts. Newsreader (display/editorial) + Karla (UI/body), both variable, OFL. */
+@font-face{font-family:"Newsreader";src:url("../assets/fonts/Newsreader-Variable.ttf") format("truetype-variations");font-weight:200 800;font-style:normal;font-display:swap}
+@font-face{font-family:"Newsreader";src:url("../assets/fonts/Newsreader-Italic-Variable.ttf") format("truetype-variations");font-weight:200 800;font-style:italic;font-display:swap}
+@font-face{font-family:"Karla";src:url("../assets/fonts/Karla-Variable.ttf") format("truetype-variations");font-weight:200 800;font-style:normal;font-display:swap}
+@font-face{font-family:"Karla";src:url("../assets/fonts/Karla-Italic-Variable.ttf") format("truetype-variations");font-weight:200 800;font-style:italic;font-display:swap}

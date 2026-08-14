@@ -1,0 +1,10 @@
+/* 4px base grid. Section rhythm is generous — the site is mostly whitespace and one idea per band. */
+:root{
+--sa-space-0:0;--sa-space-1:4px;--sa-space-2:8px;--sa-space-3:12px;--sa-space-4:16px;--sa-space-5:20px;
+--sa-space-6:24px;--sa-space-8:32px;--sa-space-10:40px;--sa-space-12:48px;--sa-space-16:64px;
+--sa-space-20:80px;--sa-space-24:96px;--sa-space-32:128px;
+--sa-page-max:1120px;--sa-page-narrow:760px;--sa-gutter:24px;--sa-gutter-lg:48px;
+--sa-band-y:var(--sa-space-24);--sa-band-y-tight:var(--sa-space-16);
+--sa-stack-tight:var(--sa-space-2);--sa-stack:var(--sa-space-4);--sa-stack-loose:var(--sa-space-8);
+--sa-control-h-sm:32px;--sa-control-h:44px;--sa-control-h-lg:52px;
+}

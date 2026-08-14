@@ -1,0 +1,22 @@
+/* Minimal element defaults so any page linking styles.css inherits the brand voice. */
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--sa-surface-page);color:var(--sa-text-primary);font:var(--sa-type-body);
+-webkit-font-smoothing:antialiased;text-wrap:pretty}
+h1,h2,h3,h4{font-family:var(--sa-font-display);font-weight:var(--sa-weight-regular);
+letter-spacing:var(--sa-tracking-display);line-height:var(--sa-leading-snug);margin:0;font-optical-sizing:auto}
+h1{font-size:var(--sa-text-4xl);line-height:var(--sa-leading-tight)}
+h2{font-size:var(--sa-text-3xl)}h3{font-size:var(--sa-text-xl)}h4{font-size:var(--sa-text-md)}
+p{margin:0;max-width:var(--sa-measure)}
+a{color:var(--sa-link);text-decoration-line:underline;text-decoration-thickness:1px;text-underline-offset:3px;
+text-decoration-color:color-mix(in oklab,currentColor 34%,transparent);
+transition:color var(--sa-dur-2) var(--sa-ease-out),text-decoration-color var(--sa-dur-2) var(--sa-ease-out)}
+a:hover{color:var(--sa-link-hover);text-decoration-color:currentColor}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--sa-focus-ring);outline-offset:2px;border-radius:var(--sa-radius-xs)}
+strong{font-weight:var(--sa-weight-semibold)}
+em{font-style:italic}
+img{max-width:100%;display:block}
+::selection{background:var(--sa-coral-100);color:var(--sa-ink-900)}
+/* Icon utility: brand + Lucide glyphs are masked so they inherit currentColor. */
+.sa-icon{display:inline-block;width:1em;height:1em;background:currentColor;
+-webkit-mask-position:center;mask-position:center;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+-webkit-mask-size:contain;mask-size:contain;flex:none}

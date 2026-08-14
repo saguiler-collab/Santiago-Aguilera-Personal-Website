@@ -1,0 +1,37 @@
+/* Palette: warm paper + deep-teal ink + coral accent. Base values first, semantic aliases below. */
+:root{
+--sa-paper-000:#FDFBF7;--sa-paper-100:#F6F0E6;--sa-paper-200:#EDE4D5;--sa-paper-300:#DFD2BD;
+--sa-ink-900:#08282A;--sa-ink-800:#0F3D3E;--sa-ink-700:#1B5658;--sa-ink-500:#467476;--sa-ink-300:#86A3A3;--sa-ink-100:#C3D2D1;
+--sa-coral-600:#B2412A;--sa-coral-500:#E0654A;--sa-coral-300:#F0A891;--sa-coral-100:#FAE0D7;
+--sa-ochre-500:#D98324;--sa-ochre-100:#F8E6C8;
+--sa-verdigris-500:#2A9D8F;--sa-verdigris-100:#D3ECE7;
+--sa-sienna-500:#8C4A2F;
+--sa-white:#FFFFFF;
+
+/* Semantic text */
+--sa-text-primary:var(--sa-ink-900);--sa-text-secondary:var(--sa-ink-700);--sa-text-muted:var(--sa-ink-500);
+--sa-text-faint:var(--sa-ink-300);--sa-text-inverse:var(--sa-paper-000);--sa-text-accent:var(--sa-coral-600);
+/* Semantic surfaces */
+--sa-surface-page:var(--sa-paper-000);--sa-surface-card:var(--sa-white);--sa-surface-sunken:var(--sa-paper-100);
+--sa-surface-tint:var(--sa-paper-200);--sa-surface-ink:var(--sa-ink-800);--sa-surface-ink-deep:var(--sa-ink-900);
+--sa-surface-accent:var(--sa-coral-500);--sa-surface-accent-soft:var(--sa-coral-100);
+/* Lines */
+--sa-border-hairline:color-mix(in oklab,var(--sa-ink-900) 12%,transparent);
+--sa-border-default:color-mix(in oklab,var(--sa-ink-900) 20%,transparent);
+--sa-border-strong:var(--sa-ink-800);
+--sa-border-on-ink:color-mix(in oklab,var(--sa-paper-000) 22%,transparent);
+/* Interactive */
+--sa-accent:var(--sa-coral-500);--sa-accent-hover:var(--sa-coral-600);--sa-accent-quiet:var(--sa-coral-100);
+--sa-link:var(--sa-ink-800);--sa-link-hover:var(--sa-coral-600);--sa-focus-ring:var(--sa-coral-500);
+--sa-highlight:var(--sa-ochre-500);--sa-highlight-soft:var(--sa-ochre-100);
+--sa-positive:var(--sa-verdigris-500);--sa-positive-soft:var(--sa-verdigris-100);
+/* Place accents — one per country on the life map */
+--sa-place-mexico:var(--sa-coral-500);--sa-place-colombia:var(--sa-ochre-500);--sa-place-panama:var(--sa-verdigris-500);
+--sa-place-trinidad:var(--sa-sienna-500);--sa-place-usa:var(--sa-ink-700);
+}
+/* Ink section: drop this class on any full-bleed dark band. */
+.sa-on-ink{--sa-text-primary:var(--sa-paper-000);--sa-text-secondary:color-mix(in oklab,var(--sa-paper-000) 78%,transparent);
+--sa-text-muted:color-mix(in oklab,var(--sa-paper-000) 58%,transparent);--sa-surface-page:var(--sa-ink-800);
+--sa-surface-card:color-mix(in oklab,var(--sa-paper-000) 7%,transparent);--sa-surface-sunken:var(--sa-ink-900);
+--sa-border-hairline:var(--sa-border-on-ink);--sa-border-default:color-mix(in oklab,var(--sa-paper-000) 34%,transparent);
+--sa-link:var(--sa-paper-000);--sa-link-hover:var(--sa-coral-300);color:var(--sa-text-primary);background:var(--sa-surface-page)}

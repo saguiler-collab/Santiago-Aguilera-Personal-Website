@@ -1,0 +1,24 @@
+/* Two families: Newsreader for anything editorial, Karla for anything functional. */
+:root{
+--sa-font-display:"Newsreader","Iowan Old Style",Georgia,"Times New Roman",serif;
+--sa-font-body:"Karla",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+--sa-font-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+
+--sa-text-2xs:0.75rem;--sa-text-xs:0.8125rem;--sa-text-sm:0.875rem;--sa-text-base:1rem;--sa-text-md:1.125rem;
+--sa-text-lg:1.25rem;--sa-text-xl:1.5rem;--sa-text-2xl:1.875rem;--sa-text-3xl:2.375rem;--sa-text-4xl:3rem;
+--sa-text-5xl:4rem;--sa-text-6xl:5.25rem;
+
+--sa-leading-tight:1.04;--sa-leading-snug:1.18;--sa-leading-normal:1.5;--sa-leading-relaxed:1.65;
+--sa-weight-light:300;--sa-weight-regular:400;--sa-weight-medium:500;--sa-weight-semibold:600;--sa-weight-bold:700;
+--sa-tracking-display:-0.022em;--sa-tracking-tight:-0.01em;--sa-tracking-normal:0;--sa-tracking-wide:0.04em;--sa-tracking-eyebrow:0.14em;
+
+/* Composed roles */
+--sa-type-display:var(--sa-weight-regular) var(--sa-text-5xl)/var(--sa-leading-tight) var(--sa-font-display);
+--sa-type-title:var(--sa-weight-regular) var(--sa-text-3xl)/var(--sa-leading-snug) var(--sa-font-display);
+--sa-type-heading:var(--sa-weight-medium) var(--sa-text-xl)/var(--sa-leading-snug) var(--sa-font-display);
+--sa-type-lede:var(--sa-weight-regular) var(--sa-text-md)/var(--sa-leading-relaxed) var(--sa-font-body);
+--sa-type-body:var(--sa-weight-regular) var(--sa-text-base)/var(--sa-leading-relaxed) var(--sa-font-body);
+--sa-type-ui:var(--sa-weight-medium) var(--sa-text-sm)/1.3 var(--sa-font-body);
+--sa-type-eyebrow:var(--sa-weight-semibold) var(--sa-text-2xs)/1.2 var(--sa-font-body);
+--sa-measure:66ch;--sa-measure-narrow:46ch;
+}

@@ -1,0 +1,24 @@
+/* Motion is short and settled. Nothing bounces except the counters and the spiral. */
+:root{
+--sa-dur-1:120ms; /* @kind other */
+--sa-dur-2:200ms; /* @kind other */
+--sa-dur-3:320ms; /* @kind other */
+--sa-dur-4:560ms; /* @kind other */
+--sa-dur-5:900ms; /* @kind other */
+--sa-ease-out:cubic-bezier(.22,.61,.36,1); /* @kind other */
+--sa-ease-in-out:cubic-bezier(.5,0,.3,1); /* @kind other */
+--sa-ease-spring:cubic-bezier(.34,1.28,.64,1); /* @kind other */
+--sa-transition-control:background-color var(--sa-dur-2) var(--sa-ease-out),color var(--sa-dur-2) var(--sa-ease-out),border-color var(--sa-dur-2) var(--sa-ease-out),transform var(--sa-dur-1) var(--sa-ease-out),box-shadow var(--sa-dur-2) var(--sa-ease-out); /* @kind other */
+--sa-transition-reveal:opacity var(--sa-dur-4) var(--sa-ease-out),transform var(--sa-dur-4) var(--sa-ease-out); /* @kind other */
+--sa-press-scale:0.98; /* @kind other */
+--sa-lift:-2px; /* @kind spacing */
+}
+@media (prefers-reduced-motion:reduce){:root{
+--sa-dur-1:0ms; /* @kind other */
+--sa-dur-2:0ms; /* @kind other */
+--sa-dur-3:0ms; /* @kind other */
+--sa-dur-4:0ms; /* @kind other */
+--sa-dur-5:0ms; /* @kind other */
+--sa-press-scale:1; /* @kind other */
+--sa-lift:0px; /* @kind spacing */
+}}
