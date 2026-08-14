@@ -25,9 +25,9 @@
 --sa-link:var(--sa-ink-800);--sa-link-hover:var(--sa-coral-600);--sa-focus-ring:var(--sa-coral-500);
 --sa-highlight:var(--sa-ochre-500);--sa-highlight-soft:var(--sa-ochre-100);
 --sa-positive:var(--sa-verdigris-500);--sa-positive-soft:var(--sa-verdigris-100);
-/* Place accents — one per country on the life map */
---sa-place-mexico:var(--sa-coral-500);--sa-place-colombia:var(--sa-ochre-500);--sa-place-panama:var(--sa-verdigris-500);
---sa-place-trinidad:var(--sa-sienna-500);--sa-place-usa:var(--sa-ink-700);--sa-place-spain:var(--sa-ink-500);
+/* Place accents — one per stop on the life map (Home: Houston, blue; Pennsburg: purple — kept distinct even though both are the US) */
+--sa-place-mexico:#3E9B4F;--sa-place-colombia:#E6C229;--sa-place-panama:#FFFFFF;
+--sa-place-trinidad:#D4453A;--sa-place-usa:#3B6FD6;--sa-place-spain:#C99A2E;--sa-place-pennsburg:#8B5CC7;
 }
 /* Ink section: drop this class on any full-bleed dark band. */
 .sa-on-ink{--sa-text-primary:var(--sa-paper-000);--sa-text-secondary:color-mix(in oklab,var(--sa-paper-000) 78%,transparent);

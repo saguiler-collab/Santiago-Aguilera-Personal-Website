@@ -146,7 +146,8 @@ const PLACE = {
   panama: "var(--sa-place-panama)",
   trinidad: "var(--sa-place-trinidad)",
   usa: "var(--sa-place-usa)",
-  spain: "var(--sa-place-spain)"
+  spain: "var(--sa-place-spain)",
+  pennsburg: "var(--sa-place-pennsburg)"
 };
 
 /** One entry on the vertical life map: year rail, accent node, content. */
@@ -201,7 +202,7 @@ function TimelineItem({
       marginTop: 5,
       borderRadius: "50%",
       background: accent,
-      boxShadow: lit ? `0 0 0 4px color-mix(in oklab, ${accent} 22%, transparent)` : "none",
+      boxShadow: lit ? `0 0 0 4px color-mix(in oklab, ${accent} 22%, transparent), inset 0 0 0 1px var(--sa-border-default)` : "inset 0 0 0 1px var(--sa-border-default)",
       transition: `all var(--sa-dur-2) var(--sa-ease-out)`,
       flex: "none"
     }
@@ -492,7 +493,8 @@ const PLACE = {
   panama: "var(--sa-place-panama)",
   trinidad: "var(--sa-place-trinidad)",
   usa: "var(--sa-place-usa)",
-  spain: "var(--sa-place-spain)"
+  spain: "var(--sa-place-spain)",
+  pennsburg: "var(--sa-place-pennsburg)"
 };
 
 /** Small pill label. Interactive when `onClick` is passed — that's the filter-chip use. */
@@ -996,7 +998,8 @@ const PLACE = {
   panama: "var(--sa-place-panama)",
   trinidad: "var(--sa-place-trinidad)",
   usa: "var(--sa-place-usa)",
-  spain: "var(--sa-place-spain)"
+  spain: "var(--sa-place-spain)",
+  pennsburg: "var(--sa-place-pennsburg)"
 };
 
 /** A country stop on the life map: accent bar, city, country, years. */
