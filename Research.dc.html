@@ -68,6 +68,17 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
   </div>
 </section>
 
+<section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-16) clamp(24px,5vw,64px) var(--sa-space-8) clamp(24px,11vw,168px);box-sizing:border-box">
+  <div data-rail-target="1">
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="The projects" title="Each project has its own page" lede="Question, method, results — one page each." hint-size="100%,150px"></x-import>
+  </div>
+  <div data-stagger="1" style="display:flex;flex-wrap:wrap;gap:var(--sa-space-3);margin-top:var(--sa-space-8)">
+    <a href="Research-CellAtlas.dc.html" style="display:inline-flex;align-items:center;height:44px;padding:0 20px;border:1px solid var(--sa-border-default);border-radius:var(--sa-radius-pill);font:var(--sa-type-ui);text-decoration:none;color:var(--sa-text-primary);transition:var(--sa-transition-control)">CellAtlas GBM</a>
+    <a href="Research-MedicalApp.dc.html" style="display:inline-flex;align-items:center;height:44px;padding:0 20px;border:1px solid var(--sa-border-default);border-radius:var(--sa-radius-pill);font:var(--sa-type-ui);text-decoration:none;color:var(--sa-text-primary);transition:var(--sa-transition-control)">Medical App</a>
+    <a href="Research-Venezuela.dc.html" style="display:inline-flex;align-items:center;height:44px;padding:0 20px;border:1px solid var(--sa-border-default);border-radius:var(--sa-radius-pill);font:var(--sa-type-ui);text-decoration:none;color:var(--sa-text-primary);transition:var(--sa-transition-control)">Venezuelan Immigration</a>
+  </div>
+</section>
+
 <section class="sa-on-ink" style="position:relative;z-index:10;background:var(--sa-surface-ink);overflow:hidden">
   <div class="sa-glow" style="width:420px;height:420px;left:-90px;top:-150px;background:var(--sa-verdigris-500)"></div>
   <div class="sa-glow" style="width:380px;height:380px;right:-80px;bottom:-140px;background:var(--sa-ochre-500)"></div>
@@ -86,7 +97,7 @@ class Component extends DCLogic {
     return {
       soon: React.createElement(window.SantiagoAguileraDesignSystem_983015.Badge, { tone: "highlight" }, "Waiting on details"),
       footerColumns: [
-        { title: "Sections", links: [{ label: "Home", href: "Home.dc.html" }, { label: "About me", href: "About.dc.html" }, { label: "Academics", href: "Academics.dc.html" }, { label: "Beyond the classroom", href: "Beyond.dc.html" }, { label: "Curiosities", href: "Curiosities.dc.html" }, { label: "Media", href: "Media.dc.html" }] },
+        { title: "Sections", links: [{ label: "Home", href: "Home.dc.html" }, { label: "About", href: "About.dc.html" }, { label: "Academics", href: "Academics.dc.html" }, { label: "Research & projects", href: "Research.dc.html" }, { label: "Leadership & service", href: "Leadership.dc.html" }, { label: "Activities", href: "Activities.dc.html" }, { label: "Curiosities", href: "Curiosities.dc.html" }, { label: "Media", href: "Media.dc.html" }] },
         { title: "Interests", links: [{ label: "Health science" }, { label: "Public health" }, { label: "Science writing" }] }
       ],
       footerSocials: [

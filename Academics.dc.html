@@ -73,6 +73,18 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
   <sa-image-slot slot-key="academics-hosa-mun" ratio="4 / 3" placeholder="HOSA or MUN — a photo from a competition"></sa-image-slot>
 </section>
 
+<section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-16) clamp(24px,5vw,64px) var(--sa-space-8) clamp(24px,11vw,168px);box-sizing:border-box">
+  <div data-rail-target="1">
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="In detail" title="Each school has its own page" lede="Two schools, a summer program, and university-level coursework." hint-size="100%,150px"></x-import>
+  </div>
+  <div data-stagger="1" style="display:flex;flex-wrap:wrap;gap:var(--sa-space-3);margin-top:var(--sa-space-8)">
+    <a href="Academics-ISPS.dc.html" style="display:inline-flex;align-items:center;height:44px;padding:0 20px;border:1px solid var(--sa-border-default);border-radius:var(--sa-radius-pill);font:var(--sa-type-ui);text-decoration:none;color:var(--sa-text-primary);transition:var(--sa-transition-control)">ISPS</a>
+    <a href="Academics-Perkiomen.dc.html" style="display:inline-flex;align-items:center;height:44px;padding:0 20px;border:1px solid var(--sa-border-default);border-radius:var(--sa-radius-pill);font:var(--sa-type-ui);text-decoration:none;color:var(--sa-text-primary);transition:var(--sa-transition-control)">Perkiomen School</a>
+    <a href="Academics-ExeterSummer.dc.html" style="display:inline-flex;align-items:center;height:44px;padding:0 20px;border:1px solid var(--sa-border-default);border-radius:var(--sa-radius-pill);font:var(--sa-type-ui);text-decoration:none;color:var(--sa-text-primary);transition:var(--sa-transition-control)">Exeter Summer</a>
+    <a href="Academics-CompBio.dc.html" style="display:inline-flex;align-items:center;height:44px;padding:0 20px;border:1px solid var(--sa-border-default);border-radius:var(--sa-radius-pill);font:var(--sa-type-ui);text-decoration:none;color:var(--sa-text-primary);transition:var(--sa-transition-control)">Comp Bio at Carnegie Mellon</a>
+  </div>
+</section>
+
 <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Footer" icon-base="assets/icons/brand" columns="{{ footerColumns }}" socials="{{ footerSocials }}" style="position:relative;z-index:10" hint-size="100%,300px"></x-import>
 </div>
 </x-dc>
@@ -82,7 +94,7 @@ class Component extends DCLogic {
     return {
       soon: React.createElement(window.SantiagoAguileraDesignSystem_983015.Badge, { tone: "highlight" }, "Coming soon"),
       footerColumns: [
-        { title: "Sections", links: [{ label: "Home", href: "Home.dc.html" }, { label: "About me", href: "About.dc.html" }, { label: "Research & projects", href: "Research.dc.html" }, { label: "Beyond the classroom", href: "Beyond.dc.html" }, { label: "Curiosities", href: "Curiosities.dc.html" }, { label: "Media", href: "Media.dc.html" }] },
+        { title: "Sections", links: [{ label: "Home", href: "Home.dc.html" }, { label: "About", href: "About.dc.html" }, { label: "Academics", href: "Academics.dc.html" }, { label: "Research & projects", href: "Research.dc.html" }, { label: "Leadership & service", href: "Leadership.dc.html" }, { label: "Activities", href: "Activities.dc.html" }, { label: "Curiosities", href: "Curiosities.dc.html" }, { label: "Media", href: "Media.dc.html" }] },
         { title: "Schools", links: [{ label: "International School of Port of Spain" }, { label: "Perkiomen School" }] }
       ],
       footerSocials: [

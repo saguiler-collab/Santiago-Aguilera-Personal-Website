@@ -99,6 +99,19 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
   </div>
 </section>
 
+<section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-16) clamp(24px,5vw,64px) var(--sa-space-8) clamp(24px,11vw,168px);box-sizing:border-box">
+  <div data-rail-target="1">
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="Places" title="Each place has its own page" lede="The story above, told one country at a time." hint-size="100%,150px"></x-import>
+  </div>
+  <div data-stagger="1" style="display:flex;flex-wrap:wrap;gap:var(--sa-space-3);margin-top:var(--sa-space-8)">
+    <a href="Place-Mexico.dc.html" style="display:inline-flex;align-items:center;height:44px;padding:0 20px;border:1px solid var(--sa-border-default);border-radius:var(--sa-radius-pill);font:var(--sa-type-ui);text-decoration:none;color:var(--sa-text-primary);transition:var(--sa-transition-control)">Mexico</a>
+    <a href="Place-Colombia.dc.html" style="display:inline-flex;align-items:center;height:44px;padding:0 20px;border:1px solid var(--sa-border-default);border-radius:var(--sa-radius-pill);font:var(--sa-type-ui);text-decoration:none;color:var(--sa-text-primary);transition:var(--sa-transition-control)">Colombia</a>
+    <a href="Place-Panama.dc.html" style="display:inline-flex;align-items:center;height:44px;padding:0 20px;border:1px solid var(--sa-border-default);border-radius:var(--sa-radius-pill);font:var(--sa-type-ui);text-decoration:none;color:var(--sa-text-primary);transition:var(--sa-transition-control)">Panama</a>
+    <a href="Place-Trinidad.dc.html" style="display:inline-flex;align-items:center;height:44px;padding:0 20px;border:1px solid var(--sa-border-default);border-radius:var(--sa-radius-pill);font:var(--sa-type-ui);text-decoration:none;color:var(--sa-text-primary);transition:var(--sa-transition-control)">Trinidad &amp; Tobago</a>
+    <a href="Place-UnitedStates.dc.html" style="display:inline-flex;align-items:center;height:44px;padding:0 20px;border:1px solid var(--sa-border-default);border-radius:var(--sa-radius-pill);font:var(--sa-type-ui);text-decoration:none;color:var(--sa-text-primary);transition:var(--sa-transition-control)">United States</a>
+  </div>
+</section>
+
 <section class="sa-on-ink" style="position:relative;z-index:10;background:var(--sa-surface-ink);overflow:hidden">
   <div class="sa-glow" style="width:420px;height:420px;left:-90px;top:-140px;background:var(--sa-ochre-500)"></div>
   <div class="sa-glow" style="width:380px;height:380px;right:-80px;bottom:-150px;background:var(--sa-coral-500)"></div>
@@ -128,7 +141,7 @@ class Component extends DCLogic {
       tagIsps: tag("trinidad", "StuCo · Stronger Together"),
       tagPerk: tag("usa", "HOSA · MUN · Swimming"),
       footerColumns: [
-        { title: "Sections", links: [{ label: "Home", href: "Home.dc.html" }, { label: "Academics", href: "Academics.dc.html" }, { label: "Research & projects", href: "Research.dc.html" }, { label: "Beyond the classroom", href: "Beyond.dc.html" }, { label: "Curiosities", href: "Curiosities.dc.html" }, { label: "Media", href: "Media.dc.html" }] },
+        { title: "Sections", links: [{ label: "Home", href: "Home.dc.html" }, { label: "About", href: "About.dc.html" }, { label: "Academics", href: "Academics.dc.html" }, { label: "Research & projects", href: "Research.dc.html" }, { label: "Leadership & service", href: "Leadership.dc.html" }, { label: "Activities", href: "Activities.dc.html" }, { label: "Curiosities", href: "Curiosities.dc.html" }, { label: "Media", href: "Media.dc.html" }] },
         { title: "Places", links: [{ label: "Houston" }, { label: "Madrid" }, { label: "Monterrey" }, { label: "Bogotá" }, { label: "Ciudad de Panamá" }, { label: "Port of Spain" }, { label: "Pennsburg" }] }
       ],
       footerSocials: [
