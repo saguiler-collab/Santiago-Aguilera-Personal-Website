@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/styles.css">
+<script src="_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/_ds_bundle.js"></script>
+<script src="assets/photo-slots.js" defer></script>
+<style>
+body{margin:0;background:var(--sa-paper-000)}
+a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+.sa-glow{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;z-index:0;opacity:.5}
+.sa-filter-btn{font:var(--sa-type-ui);padding:8px 16px;border-radius:var(--sa-radius-pill);border:1px solid var(--sa-border-default);background:transparent;color:var(--sa-text-secondary);cursor:pointer;transition:var(--sa-transition-control)}
+.sa-media-tile{cursor:pointer}
+.sa-media-tile figcaption{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:8px}
+</style>
+</helmet>
+<div style="background:var(--sa-surface-page);color:var(--sa-text-primary);font:var(--sa-type-body);min-height:100vh;overflow-x:clip">
+<dc-import name="SymbolRail" mode="unwind" hint-size="100%,100%"></dc-import>
+<dc-import name="SiteNav" active="media" hint-size="100%,72px"></dc-import>
+
+<section style="width:100%;max-width:1440px;margin:0 auto;padding:clamp(48px,7vh,88px) clamp(24px,5vw,64px) var(--sa-space-8) clamp(24px,11vw,168px);box-sizing:border-box;display:flex;flex-wrap:wrap;gap:var(--sa-space-6);align-items:flex-end;justify-content:space-between">
+  <div>
+    <span style="font:var(--sa-type-eyebrow);letter-spacing:var(--sa-tracking-eyebrow);text-transform:uppercase;color:var(--sa-text-accent)">Media</span>
+    <h1 style="font:var(--sa-type-display);font-size:clamp(2.5rem,5vw,4rem);letter-spacing:var(--sa-tracking-display);margin:var(--sa-space-5) 0 0;max-width:16ch">Photos and video</h1>
+    <p style="font:var(--sa-type-lede);font-size:var(--sa-text-lg);color:var(--sa-text-secondary);max-width:56ch;margin-top:var(--sa-space-6);text-wrap:pretty">Click any tile to add a photo, or click a filled one to see it larger. Video isn't upload-able here — those stay placeholders.</p>
+  </div>
+</section>
+
+<section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-4) clamp(24px,5vw,64px) var(--sa-space-24) clamp(24px,11vw,168px);box-sizing:border-box">
+  <div style="display:flex;gap:var(--sa-space-2);flex-wrap:wrap">
+    <button type="button" class="sa-filter-btn" data-filter-btn="everything">Everything</button>
+    <button type="button" class="sa-filter-btn" data-filter-btn="photo">Photos</button>
+    <button type="button" class="sa-filter-btn" data-filter-btn="video">Video</button>
+  </div>
+
+  <div data-stagger="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--sa-space-4);margin-top:var(--sa-space-10)">
+
+    <figure class="sa-media-tile" data-media-tile data-kind="video" data-label="Rock band set, Perkiomen" data-tag="Music" style="margin:0">
+      <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.MediaFrame" ratio="16 / 9" kind="video" placeholder="Rock band set, Perkiomen" hint-size="100%,180px"></x-import>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">Rock band set, Perkiomen</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Music</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="media-swim-2025" data-label="Swim meet, 2025" data-tag="Swimming" style="margin:0">
+      <sa-image-slot key="media-swim-2025" ratio="3 / 4" placeholder="Swim meet, 2025"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">Swim meet, 2025</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Swimming</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="media-bogota" data-label="Bogotá" data-tag="Colombia" style="margin:0">
+      <sa-image-slot key="media-bogota" ratio="4 / 3" placeholder="Bogotá"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">Bogotá</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Colombia</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="media-port-of-spain" data-label="Port of Spain" data-tag="Trinidad" style="margin:0">
+      <sa-image-slot key="media-port-of-spain" ratio="4 / 3" placeholder="Port of Spain"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">Port of Spain</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Trinidad</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="video" data-label="MUN committee session" data-tag="MUN" style="margin:0">
+      <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.MediaFrame" ratio="16 / 9" kind="video" placeholder="MUN committee session" hint-size="100%,180px"></x-import>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">MUN committee session</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">MUN</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="media-sonoarte" data-label="SonoArte Panamá" data-tag="Panama" style="margin:0">
+      <sa-image-slot key="media-sonoarte" ratio="1 / 1" placeholder="SonoArte Panamá"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">SonoArte Panamá</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Panama</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="media-lifting" data-label="Lifting session" data-tag="Lifting" style="margin:0">
+      <sa-image-slot key="media-lifting" ratio="4 / 3" placeholder="Lifting session"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">Lifting session</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Lifting</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="media-monterrey" data-label="Monterrey" data-tag="Mexico" style="margin:0">
+      <sa-image-slot key="media-monterrey" ratio="3 / 4" placeholder="Monterrey"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">Monterrey</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Mexico</span>
+      </figcaption>
+    </figure>
+
+  </div>
+</section>
+
+<div id="media-lightbox" style="position:fixed;inset:0;z-index:40;display:none;align-items:center;justify-content:center;padding:var(--sa-space-8);background:rgba(8,40,42,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)">
+  <div style="width:min(880px,100%);max-height:88vh;overflow:auto;background:var(--sa-surface-card);border-radius:var(--sa-radius-lg);padding:var(--sa-space-5);box-shadow:var(--sa-shadow-3)">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--sa-space-4)">
+      <span id="media-lightbox-tag" style="font:var(--sa-type-ui);color:var(--sa-text-muted)"></span>
+      <button id="media-lightbox-close" type="button" aria-label="Close" style="width:36px;height:36px;border-radius:999px;border:none;background:var(--sa-surface-tint);cursor:pointer;font-size:15px;line-height:1;color:var(--sa-text-primary)">&#10005;</button>
+    </div>
+    <div id="media-lightbox-body"></div>
+    <p id="media-lightbox-caption" style="font:var(--sa-type-body);font-size:var(--sa-text-sm);color:var(--sa-text-secondary);margin-top:var(--sa-space-4)"></p>
+  </div>
+</div>
+
+<section class="sa-on-ink" style="position:relative;z-index:10;background:var(--sa-surface-ink);overflow:hidden">
+  <div class="sa-glow" style="width:420px;height:420px;left:-90px;top:-150px;background:var(--sa-coral-500)"></div>
+  <div class="sa-glow" style="width:380px;height:380px;right:-80px;bottom:-140px;background:var(--sa-ochre-500)"></div>
+  <div style="position:relative;z-index:1;width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-band-y) clamp(24px,5vw,64px) var(--sa-band-y) clamp(24px,11vw,168px);box-sizing:border-box;display:flex;flex-wrap:wrap;gap:var(--sa-space-10);align-items:flex-end;justify-content:space-between">
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="Start over" title="Or begin at the beginning" lede="Five countries, in order, from Monterrey to Pennsburg." hint-size="100%,150px"></x-import>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Button" size="lg" href="Home.dc.html" hint-size="200px,52px">Back to home</x-import>
+  </div>
+</section>
+
+<x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Footer" icon-base="assets/icons/brand" columns="{{ footerColumns }}" socials="{{ footerSocials }}" style="position:relative;z-index:10" hint-size="100%,300px"></x-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      footerColumns: [
+        { title: "Sections", links: [{ label: "Home", href: "Home.dc.html" }, { label: "About me", href: "About.dc.html" }, { label: "Academics", href: "Academics.dc.html" }, { label: "Research & projects", href: "Research.dc.html" }, { label: "Beyond the classroom", href: "Beyond.dc.html" }, { label: "Curiosities", href: "Curiosities.dc.html" }] },
+        { title: "Tags", links: [{ label: "Swimming" }, { label: "Lifting" }, { label: "Music" }, { label: "MUN" }] }
+      ],
+      footerSocials: [
+        { id: "instagram", label: "Instagram" },
+        { id: "linkedin", label: "LinkedIn", src: "https://unpkg.com/lucide-static@0.469.0/icons/linkedin.svg" },
+        { id: "discord", label: "Discord" }
+      ]
+    };
+  }
+
+  componentDidMount() {
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.style.transition = "opacity 560ms cubic-bezier(.22,.61,.36,1), transform 560ms cubic-bezier(.22,.61,.36,1)";
+      e.target.style.opacity = "1"; e.target.style.transform = "none";
+      io.unobserve(e.target);
+    }), { threshold: 0.1 });
+    if (!reduce) document.querySelectorAll("[data-reveal]").forEach(el => {
+      el.style.opacity = "0"; el.style.transform = "translateY(12px)"; io.observe(el);
+    });
+    this._io = io;
+
+    const sio = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      [...e.target.children].forEach((child, i) => {
+        child.style.transition = `opacity 420ms cubic-bezier(.22,.61,.36,1) ${i * 55}ms, transform 420ms cubic-bezier(.22,.61,.36,1) ${i * 55}ms`;
+        child.style.opacity = "1"; child.style.transform = "none";
+      });
+      sio.unobserve(e.target);
+    }), { threshold: 0.1 });
+    if (!reduce) document.querySelectorAll("[data-stagger]").forEach(el => {
+      [...el.children].forEach(child => { child.style.opacity = "0"; child.style.transform = "translateY(14px)"; });
+      sio.observe(el);
+    });
+    this._sio = sio;
+
+    // filters — plain data-attribute driven, no framework state
+    const buttons = [...document.querySelectorAll("[data-filter-btn]")];
+    const tiles = [...document.querySelectorAll("[data-media-tile]")];
+    const paint = (name) => {
+      buttons.forEach(b => {
+        const active = b.dataset.filterBtn === name;
+        b.style.background = active ? "var(--sa-ink-800)" : "transparent";
+        b.style.color = active ? "var(--sa-paper-000)" : "var(--sa-text-secondary)";
+        b.style.borderColor = active ? "var(--sa-ink-800)" : "var(--sa-border-default)";
+      });
+      tiles.forEach(t => { t.style.display = (name === "everything" || t.dataset.kind === name) ? "" : "none"; });
+    };
+    this._onFilter = (e) => paint(e.currentTarget.dataset.filterBtn);
+    buttons.forEach(b => b.addEventListener("click", this._onFilter));
+    paint("everything");
+
+    // lightbox — click a filled tile to see it larger; clicks on the upload controls inside
+    // an <sa-image-slot> are ignored so editing and expanding never fight each other.
+    const lb = document.getElementById("media-lightbox");
+    const lbBody = document.getElementById("media-lightbox-body");
+    const lbTag = document.getElementById("media-lightbox-tag");
+    const lbCaption = document.getElementById("media-lightbox-caption");
+    const openLightbox = (tile, dataUrl) => {
+      const kind = tile.dataset.kind, label = tile.dataset.label, tag = tile.dataset.tag;
+      lbTag.textContent = tag;
+      lbBody.innerHTML = "";
+      if (dataUrl) {
+        const img = document.createElement("img");
+        img.src = dataUrl; img.alt = label;
+        Object.assign(img.style, { width: "100%", borderRadius: "var(--sa-radius-md)", display: "block" });
+        lbBody.appendChild(img);
+        lbCaption.textContent = label;
+      } else {
+        const ph = document.createElement("div");
+        ph.textContent = kind === "video" ? "Video to be supplied" : "Photo to be supplied";
+        Object.assign(ph.style, { aspectRatio: "16 / 9", borderRadius: "var(--sa-radius-md)", background: "var(--sa-surface-tint)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--sa-text-faint)", font: "var(--sa-type-ui)", fontSize: "var(--sa-text-xs)" });
+        lbBody.appendChild(ph);
+        lbCaption.textContent = label + " — file to be supplied.";
+      }
+      lb.style.display = "flex";
+    };
+    const closeLightbox = () => { lb.style.display = "none"; };
+    this._onTileClick = (e) => {
+      const tile = e.currentTarget;
+      const path = e.composedPath ? e.composedPath() : [e.target];
+      if (path.some(el => el.tagName === "BUTTON" || el.tagName === "INPUT")) return;
+      if (tile.dataset.kind === "photo") {
+        let data = null;
+        try { data = localStorage.getItem("sa:img:" + tile.dataset.key); } catch (err) {}
+        if (!data) return;
+        openLightbox(tile, data);
+      } else {
+        openLightbox(tile, null);
+      }
+    };
+    tiles.forEach(t => t.addEventListener("click", this._onTileClick));
+    this._onClose = closeLightbox;
+    document.getElementById("media-lightbox-close").addEventListener("click", this._onClose);
+    this._onBackdrop = (e) => { if (e.target === lb) closeLightbox(); };
+    lb.addEventListener("click", this._onBackdrop);
+    this._onKey = (e) => { if (e.key === "Escape") closeLightbox(); };
+    document.addEventListener("keydown", this._onKey);
+  }
+
+  componentWillUnmount() {
+    if (this._io) this._io.disconnect();
+    if (this._sio) this._sio.disconnect();
+    document.removeEventListener("keydown", this._onKey);
+  }
+}
+</script>
+</body>
+</html>

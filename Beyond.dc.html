@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/styles.css">
+<script src="_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/_ds_bundle.js"></script>
+<script src="assets/photo-slots.js" defer></script>
+<style>
+body{margin:0;background:var(--sa-paper-000)}
+a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+.sa-glow{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;z-index:0;opacity:.5}
+</style>
+</helmet>
+<div style="background:var(--sa-surface-page);color:var(--sa-text-primary);font:var(--sa-type-body);min-height:100vh;overflow-x:clip">
+<dc-import name="SymbolRail" mode="unwind" hint-size="100%,100%"></dc-import>
+<dc-import name="SiteNav" active="beyond" hint-size="100%,72px"></dc-import>
+
+<section style="width:100%;max-width:1440px;margin:0 auto;padding:clamp(48px,7vh,88px) clamp(24px,5vw,64px) var(--sa-space-12) clamp(24px,11vw,168px);box-sizing:border-box">
+  <span style="font:var(--sa-type-eyebrow);letter-spacing:var(--sa-tracking-eyebrow);text-transform:uppercase;color:var(--sa-text-accent)">Beyond the classroom</span>
+  <h1 style="font:var(--sa-type-display);font-size:clamp(2.5rem,5vw,4rem);letter-spacing:var(--sa-tracking-display);margin:var(--sa-space-5) 0 0;max-width:18ch">Drums, water, weight</h1>
+  <p style="font:var(--sa-type-lede);font-size:var(--sa-text-lg);color:var(--sa-text-secondary);max-width:56ch;margin-top:var(--sa-space-6);text-wrap:pretty">Three commitments that have followed me across the five countries.</p>
+</section>
+
+<section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-8) clamp(24px,5vw,64px) var(--sa-space-20) clamp(24px,11vw,168px);box-sizing:border-box">
+  <div data-stagger="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--sa-space-6)">
+    <div>
+      <sa-image-slot key="beyond-drums" ratio="4 / 3" placeholder="Drums — photo to be supplied"></sa-image-slot>
+      <div style="margin-top:var(--sa-space-4)">
+        <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" padding="var(--sa-space-5)" title="{{ drumsTitle }}" meta="{{ drumsTags }}" hint-size="100%,160px">SonoArte Panamá, the ISPS musical, and the Perkiomen rock band. Three very different rooms, one kit.</x-import>
+      </div>
+    </div>
+    <div>
+      <sa-image-slot key="beyond-swimming" ratio="4 / 3" placeholder="Varsity swimming — photo to be supplied"></sa-image-slot>
+      <div style="margin-top:var(--sa-space-4)">
+        <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" padding="var(--sa-space-5)" title="{{ swimTitle }}" meta="{{ swimTags }}" hint-size="100%,160px">Perkiomen School. Morning sets, meets, and the part of the day that keeps the rest of it in order.</x-import>
+      </div>
+    </div>
+    <div>
+      <sa-image-slot key="beyond-lifting" ratio="4 / 3" placeholder="Weightlifting — photo to be supplied"></sa-image-slot>
+      <div style="margin-top:var(--sa-space-4)">
+        <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" padding="var(--sa-space-5)" title="{{ liftTitle }}" meta="{{ liftTags }}" hint-size="100%,160px">Olympic lifting — snatch and clean & jerk, programmed year-round.</x-import>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--sa-surface-sunken);border-top:var(--sa-hairline);border-bottom:var(--sa-hairline)">
+  <div data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-12) clamp(24px,5vw,64px) var(--sa-space-12) clamp(24px,11vw,168px);box-sizing:border-box;display:flex;flex-wrap:wrap;gap:var(--sa-space-12)">
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Stat" value="{{ n3 }}" label="Bands played in" note="SonoArte Panamá, the ISPS musical, the Perkiomen rock band" hint-size="100%,120px"></x-import>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Stat" value="{{ n5 }}" label="Countries, same three habits" hint-size="100%,120px"></x-import>
+  </div>
+</section>
+
+<section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-20) clamp(24px,5vw,64px) var(--sa-space-24) clamp(24px,11vw,168px);box-sizing:border-box">
+  <div style="display:grid;grid-template-columns:minmax(280px,1fr) minmax(280px,1fr);gap:clamp(32px,5vw,72px);align-items:center">
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.MediaFrame" ratio="3 / 2" kind="video" placeholder="Rock band set — video to be supplied" caption="Video to be supplied" hint-size="100%,220px"></x-import>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Quote" attribution="On the drum kit" hint-size="100%,120px">Every school I joined had a room with a kit in it. That is how I met people.</x-import>
+  </div>
+  <div style="margin-top:var(--sa-space-16);display:flex;justify-content:center">
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SpiralRule" hint-size="120px,40px"></x-import>
+  </div>
+</section>
+
+<section class="sa-on-ink" style="position:relative;z-index:10;background:var(--sa-surface-ink);overflow:hidden">
+  <div class="sa-glow" style="width:420px;height:420px;left:-90px;top:-150px;background:var(--sa-verdigris-500)"></div>
+  <div class="sa-glow" style="width:380px;height:380px;right:-80px;bottom:-140px;background:var(--sa-ochre-500)"></div>
+  <div style="position:relative;z-index:1;width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-band-y) clamp(24px,5vw,64px) var(--sa-band-y) clamp(24px,11vw,168px);box-sizing:border-box;display:flex;flex-wrap:wrap;gap:var(--sa-space-10);align-items:flex-end;justify-content:space-between">
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="Next" title="What I do with the rest of it" lede="Languages, manga, and whatever the group is playing." hint-size="100%,150px"></x-import>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Button" size="lg" href="Curiosities.dc.html" hint-size="200px,52px">See the curiosities</x-import>
+  </div>
+</section>
+
+<x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Footer" icon-base="assets/icons/brand" columns="{{ footerColumns }}" socials="{{ footerSocials }}" style="position:relative;z-index:10" hint-size="100%,300px"></x-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  renderVals() {
+    const DS = window.SantiagoAguileraDesignSystem_983015;
+    const pursuitTitle = (icon, label) => React.createElement("span", { style: { display: "inline-flex", alignItems: "center", gap: 10 } },
+      React.createElement(DS.Icon, { name: icon, size: 18 }), label);
+    const tags = (...labels) => labels.map(l => React.createElement(DS.Tag, { key: l }, l));
+    return {
+      true: true, n3: 3, n5: 5,
+      drumsTitle: pursuitTitle("music", "Drums"),
+      swimTitle: pursuitTitle("waves", "Varsity swimming"),
+      liftTitle: pursuitTitle("dumbbell", "Weightlifting"),
+      drumsTags: tags("SonoArte Panamá", "ISPS musical", "Rock band"),
+      swimTags: tags("Varsity"),
+      liftTags: tags("Olympic lifting"),
+      footerColumns: [
+        { title: "Sections", links: [{ label: "Home", href: "Home.dc.html" }, { label: "About me", href: "About.dc.html" }, { label: "Academics", href: "Academics.dc.html" }, { label: "Research & projects", href: "Research.dc.html" }, { label: "Curiosities", href: "Curiosities.dc.html" }, { label: "Media", href: "Media.dc.html" }] },
+        { title: "This page", links: [{ label: "Drums" }, { label: "Varsity swimming" }, { label: "Weightlifting" }] }
+      ],
+      footerSocials: [
+        { id: "instagram", label: "Instagram" },
+        { id: "linkedin", label: "LinkedIn", src: "https://unpkg.com/lucide-static@0.469.0/icons/linkedin.svg" },
+        { id: "discord", label: "Discord" }
+      ]
+    };
+  }
+
+  componentDidMount() {
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.style.transition = "opacity 560ms cubic-bezier(.22,.61,.36,1), transform 560ms cubic-bezier(.22,.61,.36,1)";
+      e.target.style.opacity = "1"; e.target.style.transform = "none";
+      io.unobserve(e.target);
+    }), { threshold: 0.1 });
+    document.querySelectorAll("[data-reveal]").forEach(el => {
+      el.style.opacity = "0"; el.style.transform = "translateY(12px)"; io.observe(el);
+    });
+    this._io = io;
+
+    const sio = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      [...e.target.children].forEach((child, i) => {
+        child.style.transition = `opacity 480ms cubic-bezier(.22,.61,.36,1) ${i * 70}ms, transform 480ms cubic-bezier(.22,.61,.36,1) ${i * 70}ms`;
+        child.style.opacity = "1"; child.style.transform = "none";
+      });
+      sio.unobserve(e.target);
+    }), { threshold: 0.1 });
+    document.querySelectorAll("[data-stagger]").forEach(el => {
+      [...el.children].forEach(child => { child.style.opacity = "0"; child.style.transform = "translateY(14px)"; });
+      sio.observe(el);
+    });
+    this._sio = sio;
+  }
+
+  componentWillUnmount() { if (this._io) this._io.disconnect(); if (this._sio) this._sio.disconnect(); }
+}
+</script>
+</body>
+</html>

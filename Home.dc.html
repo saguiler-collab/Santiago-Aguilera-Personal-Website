@@ -96,15 +96,15 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
 
 <section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-16) clamp(24px,5vw,64px) var(--sa-space-24) clamp(24px,11vw,168px);box-sizing:border-box">
   <div data-rail-target="1">
-    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="The site" title="Six ways in" lede="Two sections are still being written. They say so." hint-size="100%,150px"></x-import>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="The site" title="Six ways in" lede="Every section below is built. Pick a place to start." hint-size="100%,150px"></x-import>
   </div>
   <div data-stagger="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--sa-space-5);margin-top:var(--sa-space-10)">
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" interactive="{{ true }}" href="About.dc.html" eyebrow="About me" title="My story, place by place" hint-size="100%,180px">The timeline, the five countries, and the symbol I drew for all of it.</x-import>
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" interactive="{{ true }}" href="Academics.dc.html" eyebrow="Academics" title="Two schools, one line" hint-size="100%,180px">ISPS and Perkiomen: StuCo, Stronger Together, HOSA, Investment Club, the Perkiomenite, MUN and GVMUN.</x-import>
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" interactive="{{ true }}" href="Research.dc.html" eyebrow="Research &amp; projects" title="Health science in practice" hint-size="100%,180px">Current research, the hospital project, and what I want to work on next.</x-import>
-    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="Beyond the classroom" title="Swimming, lifting, drums" meta="{{ soon }}" hint-size="100%,180px">Varsity swimming, Olympic lifting, and three bands' worth of drumming.</x-import>
-    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="Curiosities" title="French, Chinese, manga" meta="{{ soon }}" hint-size="100%,180px">The things I do because I want to, not because they are on a form.</x-import>
-    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="Media" title="Photos and videos" meta="{{ soon }}" hint-size="100%,180px">Cities, meets, the kit, the committee room. Waiting on the files.</x-import>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" interactive="{{ true }}" href="Beyond.dc.html" eyebrow="Beyond the classroom" title="Swimming, lifting, drums" hint-size="100%,180px">Varsity swimming, Olympic lifting, and three bands' worth of drumming.</x-import>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" interactive="{{ true }}" href="Curiosities.dc.html" eyebrow="Curiosities" title="French, Chinese, manga" hint-size="100%,180px">The things I do because I want to, not because they are on a form.</x-import>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" interactive="{{ true }}" href="Media.dc.html" eyebrow="Media" title="Photos and videos" hint-size="100%,180px">Cities, meets, the kit, the committee room.</x-import>
   </div>
 </section>
 
@@ -129,7 +129,6 @@ class Component extends DCLogic {
     return {
       rail: this.props.rail ?? true, n5: 5, n2: 2, n4: 4, true: true,
       f1: r("_f1"), f2: r("_f2"), f3: r("_f3"), f4: r("_f4"), f5: r("_f5"), f6: r("_f6"),
-      soon: React.createElement(window.SantiagoAguileraDesignSystem_983015.Badge, { tone: "soon" }, "Coming soon"),
       navItems: [
         { id: "home", label: "Home", href: "Home.dc.html" },
         { id: "about", label: "About me", href: "About.dc.html" },
@@ -137,7 +136,7 @@ class Component extends DCLogic {
         { id: "research", label: "Research & projects", href: "Research.dc.html" }
       ],
       footerColumns: [
-        { title: "Sections", links: [{ label: "About me", href: "About.dc.html" }, { label: "Academics", href: "Academics.dc.html" }, { label: "Research & projects", href: "Research.dc.html" }] },
+        { title: "Sections", links: [{ label: "About me", href: "About.dc.html" }, { label: "Academics", href: "Academics.dc.html" }, { label: "Research & projects", href: "Research.dc.html" }, { label: "Beyond the classroom", href: "Beyond.dc.html" }, { label: "Curiosities", href: "Curiosities.dc.html" }, { label: "Media", href: "Media.dc.html" }] },
         { title: "Places", links: [{ label: "Monterrey" }, { label: "Bogotá" }, { label: "Ciudad de Panamá" }, { label: "Port of Spain" }, { label: "Pennsburg" }] }
       ],
       footerSocials: [
