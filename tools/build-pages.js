@@ -193,12 +193,40 @@ const PAGES = [
     eyebrow: "Academics · Trinidad & Tobago", title: "International School of Port of Spain", lede: "2021–2025. Student Council, and Stronger Together.",
     desc: "ISPS — Student Council and the Stronger Together initiative.",
     intro: "ISPS is where I first took on something school-wide rather than something assigned. Student Council meant representing my class and actually running events; Stronger Together meant building the support I wished had existed.",
-    body: ["Stronger Together was a student-led initiative supporting classmates through the return to in-person school after remote learning. The problem was not academic — it was that a lot of people had quietly stopped knowing how to be around each other."],
-    facts: [["Years", "2021 – 2025"], ["Roles", "Student Council · Stronger Together"], ["Place", "Port of Spain"]],
+    body: ["Stronger Together was a student-led initiative supporting classmates through the return to in-person school after remote learning. The problem was not academic — it was that a lot of people had quietly stopped knowing how to be around each other.", "Academically the same subjects kept reappearing across all four years — English every single year, with Spanish, music and Individuals & Societies close behind. That is a more honest description of where my attention goes than anything I could claim about myself."],
+    tbd: "What the Mr. Jefferies Memorial Award recognises. Its criteria are not published anywhere I could find, so rather than guess at what it honours, the entry below just states the fact of it — send the description and it goes in.",
+    facts: [["Years", "2021 – 2025"], ["Roles", "Student Council · Stronger Together"], ["Programme", "IB Middle Years Programme"]],
+    awards: {
+      title: "Four years of awards",
+      lede: "Awarded across the IB Middle Years Programme, grades 7 through 10.",
+      groups: [
+        { title: "Grade 7", items: [
+          { label: "Best Historian", detail: "Individuals & Societies" },
+          { label: "Academic Excellence", detail: "English · Spanish" },
+          { label: "Consistent Effort", detail: "Physical Education" }
+        ]},
+        { title: "Grade 8", items: [
+          { label: "Mr. Jefferies Memorial Award", detail: "A named school award, presented at the end of Grade 8." },
+          { label: "Academic Excellence", detail: "English · Music · Spanish · Individuals & Societies · Drama" },
+          { label: "Most Improved", detail: "Visual Arts" },
+          { label: "Consistent Effort", detail: "Integrated Science" }
+        ]},
+        { title: "Grade 9", items: [
+          { label: "Academic Excellence", detail: "English · Music I · Design I · Physical Health and Education" },
+          { label: "Consistent Effort", detail: "Integrated Math (10th grade)" }
+        ]},
+        { title: "Grade 10", items: [
+          { label: "Personal Project Award", detail: "The MYP capstone — a self-directed project carried end to end." },
+          { label: "MYP Bilingual Diploma", detail: "Awarded for completing the Middle Years Programme in two languages." },
+          { label: "Academic Excellence", detail: "English · Individuals & Societies · Pre-Calculus · Physics II · Music II" },
+          { label: "Consistent Effort", detail: "Chemistry" }
+        ]}
+      ]
+    },
     slots: [
       { key: "isps-1", ratio: "4 / 3", label: "ISPS campus" },
       { key: "isps-2", ratio: "4 / 3", label: "Student Council" },
-      { key: "isps-3", ratio: "1 / 1", label: "Stronger Together" }
+      { key: "isps-3", ratio: "1 / 1", label: "Awards ceremony" }
     ],
     next: { title: "Next: Perkiomen", lede: "The health science track, and boarding.", href: "Academics-Perkiomen.dc.html", label: "Go to Perkiomen" }
   },
@@ -209,10 +237,21 @@ const PAGES = [
     intro: "Perkiomen is where the separate threads finally started pointing the same direction. The health science track is the academic spine; almost everything else on this site either feeds it or balances it.",
     body: ["Boarding changed how I work. Nobody schedules your evening for you, which means the difference between a good week and a wasted one is entirely a decision you make on Sunday."],
     facts: [["Arrived", "August 2025"], ["Track", "Health science"], ["Status", "Boarding student"]],
+    awards: {
+      title: "Awards at Perkiomen",
+      lede: "Junior year — one for the medical track, one for maths and science, one from the pool.",
+      groups: [
+        { title: "Grade 11", items: [
+          { label: "Medical Spirit & Promise Award", detail: "For the health science track and the work around it." },
+          { label: "Rochester Institute of Technology Math & Science Award", detail: "2026 — awarded to a junior through RIT's recognition programme." },
+          { label: "Most Improved, Varsity Boys Swimming", detail: "2026 — see the swimming page." }
+        ]}
+      ]
+    },
     slots: [
       { key: "perk-1", ratio: "4 / 3", label: "Perkiomen campus" },
       { key: "perk-2", ratio: "4 / 3", label: "In class or lab" },
-      { key: "perk-3", ratio: "1 / 1", label: "Dorm life" }
+      { key: "perk-3", ratio: "1 / 1", label: "Awards night" }
     ],
     next: { title: "Next: Exeter Summer", lede: "A summer of coursework away from home.", href: "Academics-ExeterSummer.dc.html", label: "Go to Exeter Summer" }
   },
@@ -235,8 +274,17 @@ const PAGES = [
     desc: "Computational biology coursework at Carnegie Mellon — the training behind the CellAtlas GBM project.",
     intro: "Computational biology at Carnegie Mellon. This is the training that makes the glioblastoma work possible: biology asked in a language a computer can actually answer.",
     body: ["It is the clearest example of the direction I am heading — medicine is increasingly a data problem, and I would rather be able to write the analysis than wait for someone else to run it."],
-    tbd: "The specific coursework, the tools and languages covered, and the project it produced — send these and this page fills in.",
-    facts: [["Institution", "Carnegie Mellon University"], ["Field", "Computational biology"], ["Details", TBD]],
+    tbd: "The specific coursework, the tools and languages covered, and what the final project actually investigated — send these and this page fills in.",
+    facts: [["Institution", "Carnegie Mellon University"], ["Field", "Computational biology"], ["Result", "Finalist — final project presentation"]],
+    awards: {
+      title: "Recognition",
+      lede: "",
+      groups: [
+        { title: "Final project", items: [
+          { label: "Finalist", detail: "Selected to present the final project." }
+        ]}
+      ]
+    },
     slots: [
       { key: "cmu-1", ratio: "4 / 3", label: "Carnegie Mellon" },
       { key: "cmu-2", ratio: "4 / 3", label: "Working on the analysis" }
@@ -412,8 +460,8 @@ const PAGES = [
     eyebrow: "Activities · Varsity", title: "Swimming", lede: "Perkiomen School varsity — and a Most Improved award.",
     desc: "Varsity swimming at Perkiomen School, including a Most Improved award.",
     intro: "Varsity swimming at Perkiomen. Morning sets, meets, and the part of the day that keeps the rest of it in order.",
-    body: ["The award I am proudest of is Most Improved, which is a strange thing to say out loud — it means I started behind. But it is the only award that measures the slope rather than the intercept, and the slope is the part I actually control."],
-    facts: [["Level", "Varsity"], ["School", "Perkiomen"], ["Award", "Most Improved"]],
+    body: ["The award I am proudest of is Most Improved, Varsity Boys Swimming (2026), which is a strange thing to say out loud — it means I started behind. But it is the only award that measures the slope rather than the intercept, and the slope is the part I actually control."],
+    facts: [["Level", "Varsity"], ["School", "Perkiomen"], ["Award", "Most Improved, Varsity Boys (2026)"]],
     slots: [
       { key: "swim-1", ratio: "4 / 3", label: "Swim meet" },
       { key: "swim-2", ratio: "4 / 3", label: "In the pool" },
@@ -509,6 +557,37 @@ ${facts.map(([k, v]) => `    <div style="border-top:1px solid var(--sa-border-ha
   </div>`;
 }
 
+function renderAwards(a) {
+  if (!a) return "";
+  const group = (g) => `      <div>
+        <div style="font:var(--sa-type-eyebrow);letter-spacing:var(--sa-tracking-eyebrow);text-transform:uppercase;color:var(--sa-text-accent);padding-bottom:var(--sa-space-3);border-bottom:1px solid var(--sa-border-default)">${esc(g.title)}</div>
+        <ul style="list-style:none;margin:var(--sa-space-5) 0 0;padding:0;display:flex;flex-direction:column;gap:var(--sa-space-5)">
+${g.items.map((it) => {
+    const item = typeof it === "string" ? { label: it } : it;
+    return `          <li style="display:flex;gap:10px;align-items:flex-start">
+            <span style="width:6px;height:6px;border-radius:50%;background:var(--sa-accent);margin-top:9px;flex:none"></span>
+            <span>
+              <span style="display:block;font:var(--sa-type-ui);font-size:var(--sa-text-base);color:var(--sa-text-primary)">${esc(item.label)}</span>${item.detail ? `
+              <span style="display:block;font:var(--sa-type-body);font-size:var(--sa-text-sm);color:var(--sa-text-secondary);margin-top:2px;text-wrap:pretty">${esc(item.detail)}</span>` : ""}${item.note ? `
+              <span style="display:block;font:var(--sa-type-body);font-size:var(--sa-text-sm);color:var(--sa-text-muted);margin-top:6px;text-wrap:pretty">${esc(item.note)}</span>` : ""}
+            </span>
+          </li>`;
+  }).join("\n")}
+        </ul>
+      </div>`;
+  return `
+<section data-reveal="1" style="background:var(--sa-surface-sunken);border-top:var(--sa-hairline);border-bottom:var(--sa-hairline)">
+  <div style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-band-y) clamp(24px,5vw,64px) var(--sa-band-y) clamp(24px,11vw,168px);box-sizing:border-box">
+    <div data-rail-target="1">
+      <x-import component-from-global-scope="${NS}.SectionHeading" eyebrow="Recognition" title="${attr(a.title || "Awards")}" lede="${attr(a.lede || "")}" hint-size="100%,150px"></x-import>
+    </div>
+    <div data-stagger="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(28px,4vw,56px);margin-top:var(--sa-space-12)">
+${a.groups.map(group).join("\n")}
+    </div>
+  </div>
+</section>`;
+}
+
 function renderSteps(steps) {
   if (!steps || !steps.length) return "";
   return `
@@ -563,6 +642,8 @@ function renderPage(p) {
     : "";
 
   // landing pages lead with a card grid of their children instead of a prose block
+  const awards = renderAwards(p.awards);
+
   const cards = p.cards
     ? `
 <section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-8) clamp(24px,5vw,64px) var(--sa-space-20) clamp(24px,11vw,168px);box-sizing:border-box">
@@ -647,7 +728,7 @@ ${renderFacts(p.facts)}
     </div>
 ${heroSlot ? `    <sa-image-slot slot-key="${attr(heroSlot.key)}" ratio="${attr(heroSlot.ratio)}" placeholder="${attr(heroSlot.label)}"></sa-image-slot>` : "    <div></div>"}
 </section>
-${cards}${renderSteps(p.steps)}${quote}${video}${gallery}${more}
+${cards}${awards}${renderSteps(p.steps)}${quote}${video}${gallery}${more}
 
 <section class="sa-on-ink" style="position:relative;z-index:10;background:var(--sa-surface-ink);overflow:hidden">
   <div class="sa-glow" style="width:420px;height:420px;left:-90px;top:-150px;background:var(--sa-coral-500)"></div>
