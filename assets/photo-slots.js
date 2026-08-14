@@ -4,6 +4,15 @@
   var IMG_PREFIX = "sa:img:";
   var MAX_EDGE = 1400;
   var JPEG_QUALITY = 0.82;
+  var PHOTOS_DIR = "assets/photos/";
+
+  // Real, committed image files always win over a browser-local upload preview.
+  // assets/photos/manifest.json maps a slot's key to a filename that's actually been
+  // saved into the repo — that's the only way a static site with no backend gets an
+  // upload to "stick" for every visitor instead of just the browser that uploaded it.
+  var manifestPromise = fetch(PHOTOS_DIR + "manifest.json")
+    .then(function (r) { return r.ok ? r.json() : {}; })
+    .catch(function () { return {}; });
 
   function isLocked() {
     return localStorage.getItem(LOCK_KEY) === "1";
@@ -101,6 +110,11 @@
       // template runtime, so a plain "key" attribute is consumed by React and never reaches
       // the DOM at all (getAttribute("key") is always null).
       this._key = this.getAttribute("slot-key") || ("slot-" + Math.random().toString(36).slice(2));
+      this._committed = null;
+      manifestPromise.then((manifest) => {
+        var file = manifest[this._key];
+        if (file) { this._committed = PHOTOS_DIR + file; this._paint(); }
+      });
 
       var root = this.attachShadow({ mode: "open" });
       var style = document.createElement("style");
@@ -186,7 +200,7 @@
 
     attributeChangedCallback() { if (this._built) this._render(); }
 
-    _editable() { return !isLocked(); }
+    _editable() { return !isLocked() && !this._committed; }
 
     _render() {
       this._cap.textContent = this.getAttribute("placeholder") || "Photo to be supplied";
@@ -197,7 +211,7 @@
 
     _paint() {
       var editable = this._editable();
-      var data = readImage(this._key);
+      var data = this._committed || readImage(this._key);
       this._box.classList.toggle("editable", editable);
       this._box.classList.toggle("has-img", !!data);
       this._box.tabIndex = editable && !data ? 0 : -1;

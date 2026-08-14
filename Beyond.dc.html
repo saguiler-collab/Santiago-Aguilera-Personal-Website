@@ -26,7 +26,7 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
 <section style="width:100%;max-width:1440px;margin:0 auto;padding:clamp(48px,7vh,88px) clamp(24px,5vw,64px) var(--sa-space-12) clamp(24px,11vw,168px);box-sizing:border-box">
   <span style="font:var(--sa-type-eyebrow);letter-spacing:var(--sa-tracking-eyebrow);text-transform:uppercase;color:var(--sa-text-accent)">Beyond the classroom</span>
   <h1 style="font:var(--sa-type-display);font-size:clamp(2.5rem,5vw,4rem);letter-spacing:var(--sa-tracking-display);margin:var(--sa-space-5) 0 0;max-width:18ch">Drums, water, weight</h1>
-  <p style="font:var(--sa-type-lede);font-size:var(--sa-text-lg);color:var(--sa-text-secondary);max-width:56ch;margin-top:var(--sa-space-6);text-wrap:pretty">Three commitments that have followed me across the five countries.</p>
+  <p style="font:var(--sa-type-lede);font-size:var(--sa-text-lg);color:var(--sa-text-secondary);max-width:56ch;margin-top:var(--sa-space-6);text-wrap:pretty">Three commitments that have followed me across the six countries.</p>
 </section>
 
 <section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-8) clamp(24px,5vw,64px) var(--sa-space-20) clamp(24px,11vw,168px);box-sizing:border-box">
@@ -55,7 +55,7 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
 <section style="background:var(--sa-surface-sunken);border-top:var(--sa-hairline);border-bottom:var(--sa-hairline)">
   <div data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-12) clamp(24px,5vw,64px) var(--sa-space-12) clamp(24px,11vw,168px);box-sizing:border-box;display:flex;flex-wrap:wrap;gap:var(--sa-space-12)">
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Stat" value="{{ n3 }}" label="Bands played in" note="SonoArte Panamá, the ISPS musical, the Perkiomen rock band" hint-size="100%,120px"></x-import>
-    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Stat" value="{{ n5 }}" label="Countries, same three habits" hint-size="100%,120px"></x-import>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Stat" value="{{ n6 }}" label="Countries, same three habits" hint-size="100%,120px"></x-import>
   </div>
 </section>
 
@@ -89,7 +89,7 @@ class Component extends DCLogic {
       React.createElement(DS.Icon, { name: icon, size: 18 }), label);
     const tags = (...labels) => labels.map(l => React.createElement(DS.Tag, { key: l }, l));
     return {
-      true: true, n3: 3, n5: 5,
+      true: true, n3: 3, n6: 6,
       drumsTitle: pursuitTitle("music", "Drums"),
       swimTitle: pursuitTitle("waves", "Varsity swimming"),
       liftTitle: pursuitTitle("dumbbell", "Weightlifting"),

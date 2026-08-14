@@ -28,70 +28,71 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
 </sc-if>
 <dc-import name="SiteNav" active="home" hint-size="100%,72px"></dc-import>
 
-<section style="position:relative;padding:clamp(56px,9vh,104px) 0 clamp(72px,10vh,120px)">
-  <div style="width:100%;max-width:1440px;margin:0 auto;padding-left:clamp(24px,11vw,168px);padding-right:clamp(24px,5vw,64px);box-sizing:border-box;display:grid;grid-template-columns:minmax(320px,1fr) minmax(280px,0.95fr);gap:clamp(32px,5vw,72px);align-items:center">
-    <div>
-      <span style="font:var(--sa-type-eyebrow);letter-spacing:var(--sa-tracking-eyebrow);text-transform:uppercase;color:var(--sa-text-accent)">Monterrey → Bogotá → Ciudad de Panamá → Port of Spain → Pennsburg</span>
-      <h1 style="font:var(--sa-type-display);font-size:clamp(3rem,6.4vw,5.25rem);letter-spacing:var(--sa-tracking-display);margin:var(--sa-space-5) 0 0;max-width:14ch">Santiago Aguilera</h1>
-      <p style="font:var(--sa-type-lede);font-size:var(--sa-text-lg);color:var(--sa-text-secondary);max-width:44ch;margin-top:var(--sa-space-6);text-wrap:pretty">I am a student across five countries — health science, Model UN, a drum kit and a swim lane. This is the whole picture, in order.</p>
-      <div style="display:flex;gap:var(--sa-space-3);margin-top:var(--sa-space-10);flex-wrap:wrap">
-        <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Button" size="lg" href="About.dc.html" hint-size="200px,52px">Walk the timeline</x-import>
-        <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Button" size="lg" variant="secondary" href="Academics.dc.html" hint-size="180px,52px">See the academics</x-import>
-      </div>
+<section style="position:relative;padding:clamp(64px,11vh,140px) clamp(24px,5vw,64px) clamp(72px,10vh,120px);min-height:640px;overflow:hidden">
+  <div class="sa-glow" style="width:640px;height:640px;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--sa-coral-300);opacity:.22;filter:blur(110px)"></div>
+
+  <div ref="{{ f1 }}" style="position:absolute;left:1%;top:1%;width:clamp(110px,13vw,190px);z-index:0;will-change:transform">
+    <div style="animation:sa-drift 7s ease-in-out infinite alternate;transform-origin:center;rotate:-2.5deg;box-shadow:var(--sa-shadow-1)">
+      <sa-image-slot slot-key="home-monterrey" ratio="3 / 4" placeholder="Monterrey, early years"></sa-image-slot>
     </div>
-    <div style="position:relative;min-height:440px">
-      <div ref="{{ f1 }}" style="position:absolute;left:2%;top:0;width:38%;will-change:transform">
-        <div style="animation:sa-drift 7s ease-in-out infinite alternate;transform-origin:center;rotate:-2.5deg;box-shadow:var(--sa-shadow-1)">
-          <sa-image-slot slot-key="home-monterrey" ratio="3 / 4" placeholder="Monterrey, early years"></sa-image-slot>
-        </div>
-      </div>
-      <div ref="{{ f2 }}" style="position:absolute;right:0;top:6%;width:44%;will-change:transform">
-        <div style="animation:sa-drift 9s ease-in-out infinite alternate-reverse;rotate:1.8deg;box-shadow:var(--sa-shadow-1)">
-          <sa-image-slot slot-key="home-swim-perkiomen" ratio="4 / 3" placeholder="Swim meet, Perkiomen"></sa-image-slot>
-        </div>
-      </div>
-      <div ref="{{ f3 }}" style="position:absolute;left:14%;bottom:4%;width:34%;will-change:transform">
-        <div style="animation:sa-drift 8s ease-in-out infinite alternate;rotate:2.6deg;box-shadow:var(--sa-shadow-1)">
-          <sa-image-slot slot-key="home-drums-sonoarte" ratio="1 / 1" placeholder="Drum kit, SonoArte"></sa-image-slot>
-        </div>
-      </div>
-      <div ref="{{ f4 }}" style="position:absolute;right:6%;bottom:0;width:40%;will-change:transform">
-        <div style="animation:sa-drift 11s ease-in-out infinite alternate-reverse;rotate:-1.6deg;box-shadow:var(--sa-shadow-1)">
-          <sa-image-slot slot-key="home-gvmun" ratio="4 / 3" placeholder="GVMUN committee room"></sa-image-slot>
-        </div>
-      </div>
-      <div ref="{{ f5 }}" style="position:absolute;left:0;top:44%;width:26%;will-change:transform">
-        <div style="animation:sa-drift 10s ease-in-out infinite alternate-reverse;rotate:3.4deg;box-shadow:var(--sa-shadow-1)">
-          <sa-image-slot slot-key="home-bogota" ratio="3 / 4" placeholder="Bogotá"></sa-image-slot>
-        </div>
-      </div>
-      <div ref="{{ f6 }}" style="position:absolute;right:34%;top:40%;width:24%;will-change:transform">
-        <div style="animation:sa-drift 6.5s ease-in-out infinite alternate;rotate:-3deg;box-shadow:var(--sa-shadow-1)">
-          <sa-image-slot slot-key="home-port-of-spain" ratio="1 / 1" placeholder="Port of Spain"></sa-image-slot>
-        </div>
-      </div>
+  </div>
+  <div ref="{{ f2 }}" style="position:absolute;right:1%;top:5%;width:clamp(120px,14vw,210px);z-index:0;will-change:transform">
+    <div style="animation:sa-drift 9s ease-in-out infinite alternate-reverse;rotate:1.8deg;box-shadow:var(--sa-shadow-1)">
+      <sa-image-slot slot-key="home-swim-perkiomen" ratio="4 / 3" placeholder="Swim meet, Perkiomen"></sa-image-slot>
+    </div>
+  </div>
+  <div ref="{{ f3 }}" style="position:absolute;left:6%;bottom:5%;width:clamp(100px,11vw,160px);z-index:0;will-change:transform">
+    <div style="animation:sa-drift 8s ease-in-out infinite alternate;rotate:2.6deg;box-shadow:var(--sa-shadow-1)">
+      <sa-image-slot slot-key="home-drums-sonoarte" ratio="1 / 1" placeholder="Drum kit, SonoArte"></sa-image-slot>
+    </div>
+  </div>
+  <div ref="{{ f4 }}" style="position:absolute;right:7%;bottom:2%;width:clamp(120px,13vw,190px);z-index:0;will-change:transform">
+    <div style="animation:sa-drift 11s ease-in-out infinite alternate-reverse;rotate:-1.6deg;box-shadow:var(--sa-shadow-1)">
+      <sa-image-slot slot-key="home-gvmun" ratio="4 / 3" placeholder="GVMUN committee room"></sa-image-slot>
+    </div>
+  </div>
+  <div ref="{{ f5 }}" style="position:absolute;left:18%;top:44%;width:clamp(90px,10vw,140px);z-index:0;will-change:transform">
+    <div style="animation:sa-drift 10s ease-in-out infinite alternate-reverse;rotate:3.4deg;box-shadow:var(--sa-shadow-1)">
+      <sa-image-slot slot-key="home-bogota" ratio="3 / 4" placeholder="Bogotá"></sa-image-slot>
+    </div>
+  </div>
+  <div ref="{{ f6 }}" style="position:absolute;right:19%;top:42%;width:clamp(85px,9vw,130px);z-index:0;will-change:transform">
+    <div style="animation:sa-drift 6.5s ease-in-out infinite alternate;rotate:-3deg;box-shadow:var(--sa-shadow-1)">
+      <sa-image-slot slot-key="home-port-of-spain" ratio="1 / 1" placeholder="Port of Spain"></sa-image-slot>
+    </div>
+  </div>
+
+  <div style="position:relative;z-index:1;width:100%;max-width:760px;margin:0 auto;text-align:center">
+    <span style="font:var(--sa-type-eyebrow);letter-spacing:var(--sa-tracking-eyebrow);text-transform:uppercase;color:var(--sa-text-accent)">Houston → Madrid → Monterrey → Bogotá → Ciudad de Panamá → Port of Spain → Pennsburg</span>
+    <h1 style="font:var(--sa-type-display);font-size:clamp(3rem,6.4vw,5.25rem);letter-spacing:var(--sa-tracking-display);margin:var(--sa-space-5) 0 0">Santiago Aguilera</h1>
+    <p style="font:var(--sa-type-lede);font-size:var(--sa-text-lg);color:var(--sa-text-secondary);max-width:46ch;margin:var(--sa-space-6) auto 0;text-wrap:pretty">A boarding student who has lived in six countries — this is the whole picture, in order.</p>
+    <div style="display:flex;gap:var(--sa-space-3);margin-top:var(--sa-space-10);flex-wrap:wrap;justify-content:center">
+      <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Button" size="lg" href="About.dc.html" hint-size="200px,52px">Walk the timeline</x-import>
+      <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Button" size="lg" variant="secondary" href="Academics.dc.html" hint-size="180px,52px">See the academics</x-import>
     </div>
   </div>
 </section>
 
 <section style="background:var(--sa-surface-sunken);border-top:var(--sa-hairline);border-bottom:var(--sa-hairline)">
   <div style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-16) clamp(24px,5vw,64px) var(--sa-space-16) clamp(24px,11vw,168px);box-sizing:border-box;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:var(--sa-space-10)">
-    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Stat" value="{{ n5 }}" label="Countries lived in" note="Mexico, Colombia, Panama, Trinidad & Tobago, United States" hint-size="100%,120px"></x-import>
-    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Stat" value="{{ n2 }}" label="Schools" note="International School of Port of Spain, then Perkiomen" hint-size="100%,120px"></x-import>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Stat" value="{{ n6 }}" label="Countries lived in" note="United States, Spain, Mexico, Colombia, Panama, Trinidad & Tobago" hint-size="100%,120px"></x-import>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Stat" value="{{ n6s }}" label="Schools" note="AIM, LICEO, Tilata, ISP-Panama, ISPS, Perkiomen" hint-size="100%,120px"></x-import>
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Stat" value="{{ n4 }}" label="Languages" note="Spanish and English; French and Chinese in progress" hint-size="100%,120px"></x-import>
   </div>
 </section>
 
 <section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-24) clamp(24px,5vw,64px) var(--sa-space-16) clamp(24px,11vw,168px);box-sizing:border-box">
   <div data-rail-target="1">
-    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="Who am I" title="Five places, in order" lede="Every place added something — a language, an instrument, a way of reading a room." hint-size="100%,150px"></x-import>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="Who am I" title="Six countries, in order" lede="Every place added something — a language, an instrument, a way of reading a room." hint-size="100%,150px"></x-import>
   </div>
   <div data-stagger="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(196px,1fr));gap:var(--sa-space-4);margin-top:var(--sa-space-10)">
-    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.PlaceCard" place="mexico" city="Monterrey" country="Mexico" years="Born" hint-size="100%,150px">Where it starts — family, Spanish, Nuevo León.</x-import>
-    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.PlaceCard" place="colombia" city="Bogotá" country="Colombia" years="Early school" hint-size="100%,150px">Altitude, a new school, a second accent.</x-import>
-    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.PlaceCard" place="panama" city="Ciudad de Panamá" country="Panama" years="SonoArte" hint-size="100%,150px">Where I started playing drums, at SonoArte.</x-import>
-    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.PlaceCard" place="trinidad" city="Port of Spain" country="Trinidad &amp; Tobago" years="ISPS" hint-size="100%,150px">StuCo and Stronger Together at ISPS.</x-import>
-    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.PlaceCard" place="usa" city="Pennsburg" country="United States" years="Perkiomen" hint-size="100%,150px">HOSA, MUN, swimming and the rock band.</x-import>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.PlaceCard" place="usa" city="Houston" country="United States" years="Born" hint-size="100%,150px">Born in a hurricane, September 2008.</x-import>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.PlaceCard" place="spain" city="Madrid" country="Spain" years="Age 2" hint-size="100%,150px">The first move — the one that started the pattern.</x-import>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.PlaceCard" place="mexico" city="Monterrey" country="Mexico" years="Age 3" hint-size="100%,150px">AIM, then LICEO. The city I measure every other place against.</x-import>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.PlaceCard" place="colombia" city="Bogotá" country="Colombia" years="2016" hint-size="100%,150px">Altitude, Colegio Tilata, a second accent.</x-import>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.PlaceCard" place="panama" city="Ciudad de Panamá" country="Panama" years="2019" hint-size="100%,150px">International School of Panama, and where I started playing drums, at SonoArte.</x-import>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.PlaceCard" place="trinidad" city="Port of Spain" country="Trinidad &amp; Tobago" years="2021" hint-size="100%,150px">StuCo and Stronger Together at ISPS.</x-import>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.PlaceCard" place="usa" city="Pennsburg" country="United States" years="2025" hint-size="100%,150px">Boarding at Perkiomen — HOSA, MUN, swimming and the rock band.</x-import>
   </div>
 </section>
 
@@ -100,7 +101,7 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="The site" title="Six ways in" lede="Every section below is built. Pick a place to start." hint-size="100%,150px"></x-import>
   </div>
   <div data-stagger="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--sa-space-5);margin-top:var(--sa-space-10)">
-    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" interactive="{{ true }}" href="About.dc.html" eyebrow="About me" title="My story, place by place" hint-size="100%,180px">The timeline, the five countries, and the symbol I drew for all of it.</x-import>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" interactive="{{ true }}" href="About.dc.html" eyebrow="About me" title="My story, place by place" hint-size="100%,180px">The timeline, the six countries, and the symbol I drew for all of it.</x-import>
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" interactive="{{ true }}" href="Academics.dc.html" eyebrow="Academics" title="Two schools, one line" hint-size="100%,180px">ISPS and Perkiomen: StuCo, Stronger Together, HOSA, Investment Club, the Perkiomenite, MUN and GVMUN.</x-import>
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" interactive="{{ true }}" href="Research.dc.html" eyebrow="Research &amp; projects" title="Health science in practice" hint-size="100%,180px">Current research, the hospital project, and what I want to work on next.</x-import>
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" interactive="{{ true }}" href="Beyond.dc.html" eyebrow="Beyond the classroom" title="Swimming, lifting, drums" hint-size="100%,180px">Varsity swimming, Olympic lifting, and three bands' worth of drumming.</x-import>
@@ -114,7 +115,7 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
   <div class="sa-glow" style="width:360px;height:360px;right:-80px;bottom:-160px;background:var(--sa-verdigris-500)"></div>
   <div style="position:relative;z-index:1;width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-band-y) clamp(24px,5vw,64px) var(--sa-band-y) clamp(24px,11vw,168px);box-sizing:border-box;display:flex;flex-wrap:wrap;gap:var(--sa-space-10);align-items:flex-end;justify-content:space-between">
     <div data-rail-target="1">
-      <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="Next" title="The whole thing reads as one line" lede="Five countries told in order, from Monterrey to Pennsburg." hint-size="100%,150px"></x-import>
+      <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="Next" title="The whole thing reads as one line" lede="Six countries told in order, from Houston to Pennsburg." hint-size="100%,150px"></x-import>
     </div>
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Button" size="lg" href="About.dc.html" hint-size="200px,52px">Walk the timeline</x-import>
   </div>
@@ -128,7 +129,7 @@ class Component extends DCLogic {
   renderVals() {
     const r = k => (this[k] = this[k] || React.createRef());
     return {
-      rail: this.props.rail ?? true, n5: 5, n2: 2, n4: 4, true: true,
+      rail: this.props.rail ?? true, n6: 6, n6s: 6, n4: 4, true: true,
       f1: r("_f1"), f2: r("_f2"), f3: r("_f3"), f4: r("_f4"), f5: r("_f5"), f6: r("_f6"),
       navItems: [
         { id: "home", label: "Home", href: "Home.dc.html" },
@@ -138,7 +139,7 @@ class Component extends DCLogic {
       ],
       footerColumns: [
         { title: "Sections", links: [{ label: "About me", href: "About.dc.html" }, { label: "Academics", href: "Academics.dc.html" }, { label: "Research & projects", href: "Research.dc.html" }, { label: "Beyond the classroom", href: "Beyond.dc.html" }, { label: "Curiosities", href: "Curiosities.dc.html" }, { label: "Media", href: "Media.dc.html" }] },
-        { title: "Places", links: [{ label: "Monterrey" }, { label: "Bogotá" }, { label: "Ciudad de Panamá" }, { label: "Port of Spain" }, { label: "Pennsburg" }] }
+        { title: "Places", links: [{ label: "Houston" }, { label: "Madrid" }, { label: "Monterrey" }, { label: "Bogotá" }, { label: "Ciudad de Panamá" }, { label: "Port of Spain" }, { label: "Pennsburg" }] }
       ],
       footerSocials: [
         { id: "instagram", label: "Instagram" },

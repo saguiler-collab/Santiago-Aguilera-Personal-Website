@@ -25,8 +25,8 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
 
 <section style="width:100%;max-width:1440px;margin:0 auto;padding:clamp(48px,7vh,88px) clamp(24px,5vw,64px) var(--sa-space-12) clamp(24px,11vw,168px);box-sizing:border-box">
   <span style="font:var(--sa-type-eyebrow);letter-spacing:var(--sa-tracking-eyebrow);text-transform:uppercase;color:var(--sa-text-accent)">About me</span>
-  <h1 style="font:var(--sa-type-display);font-size:clamp(2.5rem,5vw,4rem);letter-spacing:var(--sa-tracking-display);margin:var(--sa-space-5) 0 0;max-width:18ch">Five places, in order</h1>
-  <p style="font:var(--sa-type-lede);font-size:var(--sa-text-lg);color:var(--sa-text-secondary);max-width:56ch;margin-top:var(--sa-space-6);text-wrap:pretty">I was born in Monterrey and have lived in five countries since. Every place added something — a language, an instrument, a way of reading a room. This page is that story in order, plus the symbol I drew for it.</p>
+  <h1 style="font:var(--sa-type-display);font-size:clamp(2.5rem,5vw,4rem);letter-spacing:var(--sa-tracking-display);margin:var(--sa-space-5) 0 0;max-width:18ch">Six countries, in order</h1>
+  <p style="font:var(--sa-type-lede);font-size:var(--sa-text-lg);color:var(--sa-text-secondary);max-width:56ch;margin-top:var(--sa-space-6);text-wrap:pretty">I was born in Houston, Texas, in the middle of Hurricane Ike, and have lived across six countries since — Spain, Mexico, Colombia, Panama, and Trinidad &amp; Tobago, before boarding at Perkiomen in Pennsylvania. Every place added something — a language, an instrument, a way of reading a room. This page is that story in order, plus the symbol I drew for it.</p>
 </section>
 
 <section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-8) clamp(24px,5vw,64px) var(--sa-space-24) clamp(24px,11vw,168px);box-sizing:border-box;display:grid;grid-template-columns:minmax(320px,1fr) minmax(240px,340px);gap:clamp(32px,5vw,72px);align-items:start">
@@ -34,15 +34,17 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
     <div data-rail-target="1" style="margin-bottom:var(--sa-space-10)">
       <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="The timeline" title="Where I have lived" hint-size="100%,110px"></x-import>
     </div>
-    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.TimelineItem" year="01" place="mexico" title="Monterrey" where="Nuevo León, Mexico" meta="{{ tagBorn }}" hint-size="100%,150px">Where it starts: family, Spanish, and the city I still measure other places against.</x-import>
-    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.TimelineItem" year="02" place="colombia" title="Bogotá" where="Colombia" hint-size="100%,150px">A new school at altitude, and a second accent in the same language.</x-import>
-    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.TimelineItem" year="03" place="panama" title="Ciudad de Panamá" where="Panama" meta="{{ tagDrums }}" hint-size="100%,150px">Where I started playing drums, at SonoArte. It became the thing I do to think.</x-import>
-    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.TimelineItem" year="04" place="trinidad" title="Port of Spain" where="International School of Port of Spain" meta="{{ tagIsps }}" hint-size="100%,150px">Student Council, and Stronger Together — a student-led initiative supporting classmates through the return to in-person school.</x-import>
-    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.TimelineItem" year="05" place="usa" title="Pennsburg" where="Perkiomen School, Pennsylvania" meta="{{ tagPerk }}" last="{{ true }}" hint-size="100%,150px">Health science, HOSA, Model UN and GVMUN, Investment Club, the Perkiomenite, varsity swimming and the rock band.</x-import>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.TimelineItem" year="2008" place="usa" title="Houston" where="Texas, United States" meta="{{ tagBorn }}" hint-size="100%,150px">Born September 13, 2008, in the middle of Hurricane Ike — which is where the spiral on this site started, in more ways than one.</x-import>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.TimelineItem" year="2010" place="spain" title="Madrid" where="Spain" hint-size="100%,150px">Age two. The first move, though I don't remember it — it's the one that started the pattern.</x-import>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.TimelineItem" year="2011" place="mexico" title="Monterrey" where="Nuevo León, Mexico" meta="{{ tagMty }}" hint-size="100%,150px">Age three. School started here — AIM, then LICEO — and it's still the city I measure every other place against.</x-import>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.TimelineItem" year="2016" place="colombia" title="Bogotá" where="Colombia" meta="{{ tagBogota }}" hint-size="100%,150px">Age eight, December 2016. A new school at altitude, at Colegio Tilata in La Calera, and a second accent in the same language.</x-import>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.TimelineItem" year="2019" place="panama" title="Ciudad de Panamá" where="Panama" meta="{{ tagDrums }}" hint-size="100%,150px">Age ten, July 2019. International School of Panama, and where I started playing drums, at SonoArte. It became the thing I do to think.</x-import>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.TimelineItem" year="2021" place="trinidad" title="Port of Spain" where="International School of Port of Spain" meta="{{ tagIsps }}" hint-size="100%,150px">Age twelve, August 2021. Student Council, and Stronger Together — a student-led initiative supporting classmates through the return to in-person school.</x-import>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.TimelineItem" year="2025" place="usa" title="Pennsburg" where="Perkiomen School, Pennsylvania" meta="{{ tagPerk }}" last="{{ true }}" hint-size="100%,150px">Age sixteen, August 2025 — as a boarding student. Health science, HOSA, Model UN and GVMUN, Investment Club, the Perkiomenite, varsity swimming and the rock band.</x-import>
   </div>
   <aside style="display:flex;flex-direction:column;gap:var(--sa-space-5);position:sticky;top:96px">
     <sa-image-slot slot-key="about-portrait" ratio="4 / 5" placeholder="A photo of me — your pick"></sa-image-slot>
-    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="Still to add" title="Dates" meta="{{ soon }}" hint-size="100%,140px">The years for each move. Send them and the rail fills in.</x-import>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Stat" value="{{ n6 }}" label="Countries before eighteen" note="Born in a hurricane, boarding by sixteen" hint-size="100%,140px"></x-import>
   </aside>
 </section>
 
@@ -84,7 +86,7 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="Languages" title="Two fluent, two in progress" hint-size="100%,110px"></x-import>
   </div>
   <div data-stagger="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--sa-space-5);margin-top:var(--sa-space-10)">
-    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="Fluent" title="Spanish" hint-size="100%,130px">First language. Monterrey, Bogotá, Ciudad de Panamá.</x-import>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="Fluent" title="Spanish" hint-size="100%,130px">First language. Madrid, Monterrey, Bogotá, Ciudad de Panamá.</x-import>
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="Fluent" title="English" hint-size="100%,130px">School language since Port of Spain.</x-import>
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="Learning" title="French" hint-size="100%,130px">In progress at Perkiomen.</x-import>
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="Learning" title="Chinese" hint-size="100%,130px">In progress, on my own.</x-import>
@@ -111,16 +113,17 @@ class Component extends DCLogic {
     const r = k => (this[k] = this[k] || React.createRef());
     const tag = (place, label) => React.createElement(DS().Tag, { place }, label);
     return {
-      true: true,
+      true: true, n6: 6,
       markBox: r("_box"), markSvg: r("_svg"), pSpiral: r("_p0"), pEyeL: r("_p1"), pEyeR: r("_p2"),
-      soon: React.createElement(DS().Badge, { tone: "soon" }, "Waiting on dates"),
-      tagBorn: tag("mexico", "Born"),
+      tagBorn: tag("usa", "Born · Hurricane Ike"),
+      tagMty: tag("mexico", "AIM · LICEO"),
+      tagBogota: tag("colombia", "Colegio Tilata"),
       tagDrums: tag("panama", "SonoArte"),
       tagIsps: tag("trinidad", "StuCo · Stronger Together"),
       tagPerk: tag("usa", "HOSA · MUN · Swimming"),
       footerColumns: [
         { title: "Sections", links: [{ label: "Home", href: "Home.dc.html" }, { label: "Academics", href: "Academics.dc.html" }, { label: "Research & projects", href: "Research.dc.html" }, { label: "Beyond the classroom", href: "Beyond.dc.html" }, { label: "Curiosities", href: "Curiosities.dc.html" }, { label: "Media", href: "Media.dc.html" }] },
-        { title: "Places", links: [{ label: "Monterrey" }, { label: "Bogotá" }, { label: "Ciudad de Panamá" }, { label: "Port of Spain" }, { label: "Pennsburg" }] }
+        { title: "Places", links: [{ label: "Houston" }, { label: "Madrid" }, { label: "Monterrey" }, { label: "Bogotá" }, { label: "Ciudad de Panamá" }, { label: "Port of Spain" }, { label: "Pennsburg" }] }
       ],
       footerSocials: [
         { id: "instagram", label: "Instagram" },
