@@ -145,7 +145,8 @@ const PLACE = {
   colombia: "var(--sa-place-colombia)",
   panama: "var(--sa-place-panama)",
   trinidad: "var(--sa-place-trinidad)",
-  usa: "var(--sa-place-usa)"
+  usa: "var(--sa-place-usa)",
+  spain: "var(--sa-place-spain)"
 };
 
 /** One entry on the vertical life map: year rail, accent node, content. */
@@ -490,7 +491,8 @@ const PLACE = {
   colombia: "var(--sa-place-colombia)",
   panama: "var(--sa-place-panama)",
   trinidad: "var(--sa-place-trinidad)",
-  usa: "var(--sa-place-usa)"
+  usa: "var(--sa-place-usa)",
+  spain: "var(--sa-place-spain)"
 };
 
 /** Small pill label. Interactive when `onClick` is passed — that's the filter-chip use. */
@@ -993,7 +995,8 @@ const PLACE = {
   colombia: "var(--sa-place-colombia)",
   panama: "var(--sa-place-panama)",
   trinidad: "var(--sa-place-trinidad)",
-  usa: "var(--sa-place-usa)"
+  usa: "var(--sa-place-usa)",
+  spain: "var(--sa-place-spain)"
 };
 
 /** A country stop on the life map: accent bar, city, country, years. */

@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){try{var t=localStorage.getItem("sa:theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -12,7 +13,7 @@
 <script src="_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/_ds_bundle.js"></script>
 <script src="assets/photo-slots.js" defer></script>
 <style>
-body{margin:0;background:var(--sa-paper-000)}
+body{margin:0;background:var(--sa-surface-page);transition:background-color .15s ease}
 a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
 @keyframes sa-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 @keyframes sa-drift{0%{transform:translateY(-6px)}100%{transform:translateY(6px)}}

@@ -28,6 +28,7 @@
         </a>
       </sc-for>
     </div>
+    <button ref="{{ themeBtn }}" type="button" aria-label="Toggle dark mode" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;flex:none;border-radius:999px;border:1px solid var(--sa-border-default);background:var(--sa-surface-card);color:var(--sa-text-secondary);cursor:pointer;transition:var(--sa-transition-control)"></button>
   </nav>
 </header>
 </x-dc>
@@ -42,10 +43,22 @@ const ITEMS = [
   { id: "media", label: "Media", href: "Media.dc.html" }
 ];
 
+const SUN_SVG = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.5v2.4M12 19.1v2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.9 19.1l1.7-1.7M17.4 6.6l1.7-1.7"></path></svg>';
+const MOON_SVG = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z"></path></svg>';
+
+function isDarkNow() {
+  const t = document.documentElement.getAttribute("data-theme");
+  if (t === "dark") return true;
+  if (t === "light") return false;
+  return matchMedia("(prefers-color-scheme: dark)").matches;
+}
+
 class Component extends DCLogic {
   renderVals() {
+    const r = k => (this[k] = this[k] || React.createRef());
     const active = this.props.active || "home";
     return {
+      themeBtn: r("_themeBtn"),
       links: ITEMS.map(it => {
         const isActive = it.id === active;
         return {
@@ -56,6 +69,28 @@ class Component extends DCLogic {
         };
       })
     };
+  }
+
+  componentDidMount() {
+    const btn = this._themeBtn.current;
+    if (!btn) return;
+    const paint = () => {
+      const dark = isDarkNow();
+      btn.innerHTML = dark ? SUN_SVG : MOON_SVG;
+      btn.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+    };
+    this._onClick = () => {
+      const next = isDarkNow() ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      try { localStorage.setItem("sa:theme", next); } catch (e) {}
+      paint();
+    };
+    btn.addEventListener("click", this._onClick);
+    paint();
+  }
+
+  componentWillUnmount() {
+    if (this._themeBtn.current) this._themeBtn.current.removeEventListener("click", this._onClick);
   }
 }
 </script>

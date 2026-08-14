@@ -27,11 +27,33 @@
 --sa-positive:var(--sa-verdigris-500);--sa-positive-soft:var(--sa-verdigris-100);
 /* Place accents — one per country on the life map */
 --sa-place-mexico:var(--sa-coral-500);--sa-place-colombia:var(--sa-ochre-500);--sa-place-panama:var(--sa-verdigris-500);
---sa-place-trinidad:var(--sa-sienna-500);--sa-place-usa:var(--sa-ink-700);
+--sa-place-trinidad:var(--sa-sienna-500);--sa-place-usa:var(--sa-ink-700);--sa-place-spain:var(--sa-ink-500);
 }
 /* Ink section: drop this class on any full-bleed dark band. */
 .sa-on-ink{--sa-text-primary:var(--sa-paper-000);--sa-text-secondary:color-mix(in oklab,var(--sa-paper-000) 78%,transparent);
---sa-text-muted:color-mix(in oklab,var(--sa-paper-000) 58%,transparent);--sa-surface-page:var(--sa-ink-800);
+--sa-text-muted:color-mix(in oklab,var(--sa-paper-000) 58%,transparent);--sa-text-accent:var(--sa-coral-300);--sa-surface-page:var(--sa-ink-800);
 --sa-surface-card:color-mix(in oklab,var(--sa-paper-000) 7%,transparent);--sa-surface-sunken:var(--sa-ink-900);
 --sa-border-hairline:var(--sa-border-on-ink);--sa-border-default:color-mix(in oklab,var(--sa-paper-000) 34%,transparent);
 --sa-link:var(--sa-paper-000);--sa-link-hover:var(--sa-coral-300);color:var(--sa-text-primary);background:var(--sa-surface-page)}
+
+/* Site-wide dark mode. "system" (no [data-theme]) follows prefers-color-scheme;
+   an explicit [data-theme] from the toggle always wins over the media query. */
+@media (prefers-color-scheme:dark){
+:root:not([data-theme="light"]){
+--sa-surface-page:var(--sa-ink-900);--sa-surface-card:var(--sa-ink-800);
+--sa-surface-sunken:color-mix(in oklab,var(--sa-ink-900) 90%,black);--sa-surface-tint:var(--sa-ink-700);
+--sa-text-primary:var(--sa-paper-000);--sa-text-secondary:color-mix(in oklab,var(--sa-paper-000) 78%,transparent);
+--sa-text-muted:color-mix(in oklab,var(--sa-paper-000) 58%,transparent);--sa-text-faint:color-mix(in oklab,var(--sa-paper-000) 38%,transparent);
+--sa-text-accent:var(--sa-coral-300);
+--sa-border-hairline:color-mix(in oklab,var(--sa-paper-000) 14%,transparent);--sa-border-default:color-mix(in oklab,var(--sa-paper-000) 24%,transparent);
+--sa-border-strong:var(--sa-paper-000);--sa-link:var(--sa-paper-000);--sa-link-hover:var(--sa-coral-300);
+}}
+:root[data-theme="dark"]{
+--sa-surface-page:var(--sa-ink-900);--sa-surface-card:var(--sa-ink-800);
+--sa-surface-sunken:color-mix(in oklab,var(--sa-ink-900) 90%,black);--sa-surface-tint:var(--sa-ink-700);
+--sa-text-primary:var(--sa-paper-000);--sa-text-secondary:color-mix(in oklab,var(--sa-paper-000) 78%,transparent);
+--sa-text-muted:color-mix(in oklab,var(--sa-paper-000) 58%,transparent);--sa-text-faint:color-mix(in oklab,var(--sa-paper-000) 38%,transparent);
+--sa-text-accent:var(--sa-coral-300);
+--sa-border-hairline:color-mix(in oklab,var(--sa-paper-000) 14%,transparent);--sa-border-default:color-mix(in oklab,var(--sa-paper-000) 24%,transparent);
+--sa-border-strong:var(--sa-paper-000);--sa-link:var(--sa-paper-000);--sa-link-hover:var(--sa-coral-300);
+}
