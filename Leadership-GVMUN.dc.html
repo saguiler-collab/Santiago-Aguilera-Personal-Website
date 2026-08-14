@@ -89,6 +89,7 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
   </div>
   <div data-stagger="1" style="display:flex;flex-wrap:wrap;gap:var(--sa-space-3);margin-top:var(--sa-space-8)">
     <a href="Leadership-HOSA.dc.html" style="display:inline-flex;align-items:center;height:44px;padding:0 20px;border:1px solid var(--sa-border-default);border-radius:var(--sa-radius-pill);font:var(--sa-type-ui);text-decoration:none;color:var(--sa-text-primary);transition:var(--sa-transition-control)">HOSA</a>
+    <a href="Leadership-StudentCouncil.dc.html" style="display:inline-flex;align-items:center;height:44px;padding:0 20px;border:1px solid var(--sa-border-default);border-radius:var(--sa-radius-pill);font:var(--sa-type-ui);text-decoration:none;color:var(--sa-text-primary);transition:var(--sa-transition-control)">Student Council / Senate</a>
     <a href="Leadership-Shadowing.dc.html" style="display:inline-flex;align-items:center;height:44px;padding:0 20px;border:1px solid var(--sa-border-default);border-radius:var(--sa-radius-pill);font:var(--sa-type-ui);text-decoration:none;color:var(--sa-text-primary);transition:var(--sa-transition-control)">Hospital Shadowing</a>
     <a href="Leadership-Volunteering.dc.html" style="display:inline-flex;align-items:center;height:44px;padding:0 20px;border:1px solid var(--sa-border-default);border-radius:var(--sa-radius-pill);font:var(--sa-type-ui);text-decoration:none;color:var(--sa-text-primary);transition:var(--sa-transition-control)">Volunteering</a>
     <a href="Leadership-Perkiomenite.dc.html" style="display:inline-flex;align-items:center;height:44px;padding:0 20px;border:1px solid var(--sa-border-default);border-radius:var(--sa-radius-pill);font:var(--sa-type-ui);text-decoration:none;color:var(--sa-text-primary);transition:var(--sa-transition-control)">The Perkiomenite</a>
@@ -100,9 +101,9 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
   <div class="sa-glow" style="width:380px;height:380px;right:-80px;bottom:-140px;background:var(--sa-verdigris-500)"></div>
   <div style="position:relative;z-index:1;width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-band-y) clamp(24px,5vw,64px) var(--sa-band-y) clamp(24px,11vw,168px);box-sizing:border-box;display:flex;flex-wrap:wrap;gap:var(--sa-space-10);align-items:flex-end;justify-content:space-between">
     <div data-rail-target="1">
-      <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="Next" title="Next: Hospital Shadowing" lede="Time on the floor." hint-size="100%,150px"></x-import>
+      <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="Next" title="Next: Student Council / Senate" lede="Representing the room you are sitting in." hint-size="100%,150px"></x-import>
     </div>
-    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Button" size="lg" href="Leadership-Shadowing.dc.html" hint-size="200px,52px">Go to shadowing</x-import>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Button" size="lg" href="Leadership-StudentCouncil.dc.html" hint-size="200px,52px">Go to student government</x-import>
   </div>
 </section>
 
@@ -159,6 +160,10 @@ class Component extends DCLogic {
                               {
                                       "label": "GVMUN",
                                       "href": "Leadership-GVMUN.dc.html"
+                              },
+                              {
+                                      "label": "Student Council / Senate",
+                                      "href": "Leadership-StudentCouncil.dc.html"
                               },
                               {
                                       "label": "Hospital Shadowing",

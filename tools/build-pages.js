@@ -49,10 +49,10 @@ const GROUPS = {
     { label: "United States", href: "Place-UnitedStates.dc.html" }
   ]},
   academics: { title: "Academics", items: [
-    { label: "ISPS", href: "Academics-ISPS.dc.html" },
+    { label: "International School of Port of Spain", href: "Academics-ISPS.dc.html" },
     { label: "Perkiomen School", href: "Academics-Perkiomen.dc.html" },
     { label: "Exeter Summer", href: "Academics-ExeterSummer.dc.html" },
-    { label: "Comp Bio at Carnegie Mellon", href: "Academics-CompBio.dc.html" }
+    { label: "Computational Biology at Carnegie Mellon University", href: "Academics-CompBio.dc.html" }
   ]},
   research: { title: "Research", items: [
     { label: "CellAtlas GBM", href: "Research-CellAtlas.dc.html" },
@@ -62,6 +62,7 @@ const GROUPS = {
   leadership: { title: "Leadership & service", items: [
     { label: "HOSA", href: "Leadership-HOSA.dc.html" },
     { label: "GVMUN", href: "Leadership-GVMUN.dc.html" },
+    { label: "Student Council / Senate", href: "Leadership-StudentCouncil.dc.html" },
     { label: "Hospital Shadowing", href: "Leadership-Shadowing.dc.html" },
     { label: "Volunteering", href: "Leadership-Volunteering.dc.html" },
     { label: "The Perkiomenite", href: "Leadership-Perkiomenite.dc.html" }
@@ -89,6 +90,7 @@ const PAGES = [
     cards: [
       { eyebrow: "Founder & President", title: "HOSA", href: "Leadership-HOSA.dc.html", body: "Founded Perkiomen's chapter to create opportunities for students interested in healthcare." },
       { eyebrow: "Director of Journalism", title: "GVMUN", href: "Leadership-GVMUN.dc.html", body: "Running the press corps at the Global Virtual Model United Nations conference." },
+      { eyebrow: "Student government", title: "Student Council / Senate", href: "Leadership-StudentCouncil.dc.html", body: "Representing classmates at ISPS, and student government at Perkiomen." },
       { eyebrow: "Clinical", title: "Hospital Shadowing", href: "Leadership-Shadowing.dc.html", body: "Time on the floor, watching how care actually gets delivered." },
       { eyebrow: "Service", title: "Volunteering", href: "Leadership-Volunteering.dc.html", body: "Community work, in and out of school." },
       { eyebrow: "Co-Editor", title: "The Perkiomenite", href: "Leadership-Perkiomenite.dc.html", body: "Writing and editing for the school paper." }
@@ -160,7 +162,7 @@ const PAGES = [
     desc: "Port of Spain — the International School of Port of Spain, Student Council, and Stronger Together.",
     intro: "The International School of Port of Spain. I arrived as schools everywhere were working out how to come back from remote learning, which turned out to be the thing worth working on.",
     body: ["I joined Student Council, and helped run Stronger Together — a student-led initiative supporting classmates through the return to in-person school. It was the first time I saw a student idea actually change how a school felt."],
-    facts: [["Arrived", "August 2021"], ["School", "ISPS"], ["Led", "StuCo · Stronger Together"]],
+    facts: [["Arrived", "August 2021"], ["School", "International School of Port of Spain"], ["Led", "Student Council · Stronger Together"]],
     slots: [
       { key: "tt-1", ratio: "4 / 3", label: "Port of Spain — a photo" },
       { key: "tt-2", ratio: "1 / 1", label: "ISPS" },
@@ -337,6 +339,26 @@ const PAGES = [
     slots: [
       { key: "gvmun-1", ratio: "4 / 3", label: "GVMUN committee room" },
       { key: "gvmun-2", ratio: "4 / 3", label: "The press corps" }
+    ],
+    next: { title: "Next: Student Council / Senate", lede: "Representing the room you are sitting in.", href: "Leadership-StudentCouncil.dc.html", label: "Go to student government" }
+  },
+  {
+    file: "Leadership-StudentCouncil.dc.html", section: "leadership", parent: { label: "Leadership & service", href: "Leadership.dc.html" },
+    eyebrow: "Leadership · Student government", title: "Student Council / Senate", lede: "Elected to represent classmates — at ISPS, and at Perkiomen.",
+    desc: "Student Council at the International School of Port of Spain, and student government at Perkiomen School.",
+    intro: "Student government is the least glamorous kind of leadership and the one that taught me the most. Nobody is impressed by it, the wins are small and procedural, and the job is almost entirely listening to people complain and then working out which complaints are actually solvable.",
+    body: ["At ISPS I served on Student Council — representing my class, and running school-wide events with the rest of the council. That was also where Stronger Together came from: the council was the room where it became obvious that people needed help coming back to in-person school, not just better assemblies.", "It is the clearest throughline into everything else on this page. Founding HOSA and directing the GVMUN newsroom are both the same instinct, scaled up: notice the gap, then take responsibility for filling it rather than waiting for someone else to."],
+    steps: [
+      ["ISPS", "Student Council — representing my class and running school-wide events."],
+      ["Perkiomen", TBD, true],
+      ["Impact", TBD, true]
+    ],
+    tbd: "Your Perkiomen Senate role and year, what you ran on, and anything the council actually changed — send these and this page fills in.",
+    facts: [["Role", "Student Council · Senate"], ["Schools", "ISPS · Perkiomen"], ["Started", "2021"]],
+    slots: [
+      { key: "stuco-1", ratio: "4 / 3", label: "Student Council at ISPS" },
+      { key: "stuco-2", ratio: "4 / 3", label: "Senate at Perkiomen" },
+      { key: "stuco-3", ratio: "1 / 1", label: "A council event" }
     ],
     next: { title: "Next: Hospital Shadowing", lede: "Time on the floor.", href: "Leadership-Shadowing.dc.html", label: "Go to shadowing" }
   },
