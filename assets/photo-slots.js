@@ -96,7 +96,11 @@
     connectedCallback() {
       if (this._built) { this._render(); return; }
       this._built = true;
-      this._key = this.getAttribute("key") || ("slot-" + Math.random().toString(36).slice(2));
+      // note: the attribute is "slot-key", not "key" — "key" is a reserved React prop
+      // name, and this element is instantiated via React.createElement in this codebase's
+      // template runtime, so a plain "key" attribute is consumed by React and never reaches
+      // the DOM at all (getAttribute("key") is always null).
+      this._key = this.getAttribute("slot-key") || ("slot-" + Math.random().toString(36).slice(2));
 
       var root = this.attachShadow({ mode: "open" });
       var style = document.createElement("style");
@@ -223,7 +227,9 @@
     btn.id = "sa-lock-toggle";
     btn.type = "button";
     Object.assign(btn.style, {
-      position: "fixed", right: "16px", bottom: "16px", zIndex: "50",
+      // bottom-left, not bottom-right: the Footer's social icon links sit bottom-right,
+      // and a fixed corner widget there would visually block them once scrolled that far.
+      position: "fixed", left: "16px", bottom: "16px", zIndex: "50",
       font: "500 12px/1 var(--sa-font-body, sans-serif)", letterSpacing: ".02em",
       padding: "10px 14px", borderRadius: "999px", border: "none", cursor: "pointer",
       background: "var(--sa-ink-800, #0F3D3E)", color: "var(--sa-paper-000, #FDFBF7)",
