@@ -24,6 +24,19 @@ const ROOT = path.join(__dirname, "..");
 const DS = "_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f";
 const NS = "SantiagoAguileraDesignSystem_983015";
 
+/**
+ * The public origin, e.g. "https://santiagoaguilera.com" — no trailing slash.
+ *
+ * Setting this turns on <link rel="canonical">, absolute og:url / og:image, and
+ * sitemap.xml. While it is empty those are omitted entirely: a canonical tag
+ * pointing at the wrong host actively hurts search ranking, so saying nothing is
+ * safer than guessing at the Vercel domain before it exists.
+ */
+const SITE_ORIGIN = "";
+
+/* Profile links live in assets/site-config.js so all ~30 pages share one list —
+   see the comment there. Pages read window.SA_SOCIALS at render time. */
+
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const attr = (s) => esc(s).replace(/"/g, "&quot;");
 
@@ -657,7 +670,7 @@ ${p.cards.map((c) => `    <x-import component-from-global-scope="${NS}.Card" int
     ? `
 <section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-8) clamp(24px,5vw,64px) var(--sa-space-20) clamp(24px,11vw,168px);box-sizing:border-box">
   <div data-rail-target="1">
-    <x-import component-from-global-scope="${NS}.SectionHeading" eyebrow="Photos" title="Add your own" lede="Every frame below is an empty slot — click one to drop a real photo in." hint-size="100%,150px"></x-import>
+    <x-import component-from-global-scope="${NS}.SectionHeading" eyebrow="Photos" title="In photographs" hint-size="100%,150px"></x-import>
   </div>
   <div data-stagger="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--sa-space-4);margin-top:var(--sa-space-10)">
 ${restSlots.map((s) => `    <sa-image-slot slot-key="${attr(s.key)}" ratio="${attr(s.ratio)}" placeholder="${attr(s.label)}"></sa-image-slot>`).join("\n")}
@@ -682,6 +695,14 @@ ${siblings.map((s) => `    <a href="${attr(s.href)}" style="display:inline-flex;
     group ? { title: group.title, links: group.items } : null
   ].filter(Boolean);
 
+  // Absolute URLs only once SITE_ORIGIN is known — see the constant's comment.
+  const canonical = SITE_ORIGIN
+    ? `<link rel="canonical" href="${attr(SITE_ORIGIN + "/" + p.file)}">
+<meta property="og:url" content="${attr(SITE_ORIGIN + "/" + p.file)}">
+`
+    : "";
+  const ogImage = SITE_ORIGIN ? SITE_ORIGIN + "/assets/og-image.png" : "assets/og-image.png";
+
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -690,10 +711,20 @@ ${siblings.map((s) => `    <a href="${attr(s.href)}" style="display:inline-flex;
 <title>${esc(title)}</title>
 <meta name="description" content="${attr(p.desc)}">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<meta property="og:title" content="${attr(title)}">
+<meta name="theme-color" content="#0F3D3E">
+${canonical}<meta property="og:title" content="${attr(title)}">
 <meta property="og:description" content="${attr(p.desc)}">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Santiago Aguilera">
+<meta property="og:image" content="${attr(ogImage)}">
+<meta name="twitter:card" content="summary_large_image">
 <script>(function(){try{var t=localStorage.getItem("sa:theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script>
+<!-- React is vendored, not pulled from a CDN: support.js skips its unpkg fetch when
+     window.React/ReactDOM already exist. Without this the whole site is a blank page
+     whenever unpkg is unreachable, since every page renders client-side. -->
+<script src="assets/vendor/react.production.min.js"></script>
+<script src="assets/vendor/react-dom.production.min.js"></script>
+<script src="assets/site-config.js"></script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -707,11 +738,18 @@ body{margin:0;background:var(--sa-surface-page);transition:background-color .15s
 a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 .sa-glow{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;z-index:0;opacity:.5}
+/* Every page opens with the same ~60 nav links; a keyboard or screen-reader user
+   needs one jump past them rather than 60 tabs on every single page. */
+.sa-skip{position:absolute;left:-9999px;top:0;z-index:100}
+.sa-skip:focus{left:16px;top:16px;padding:12px 18px;background:var(--sa-ink-800);color:var(--sa-paper-000);
+  border-radius:var(--sa-radius-control);font:var(--sa-type-ui);text-decoration:none}
 </style>
 </helmet>
 <div style="background:var(--sa-surface-page);color:var(--sa-text-primary);font:var(--sa-type-body);min-height:100vh;overflow-x:clip">
+<a class="sa-skip" href="#main">Skip to content</a>
 <dc-import name="SymbolRail" mode="${p.section === "research" ? "helix" : "unwind"}" hint-size="100%,100%"></dc-import>
 <dc-import name="SiteNav" active="${attr(p.section)}" hint-size="100%,72px"></dc-import>
+<main id="main">
 
 <section style="width:100%;max-width:1440px;margin:0 auto;padding:clamp(40px,6vh,72px) clamp(24px,5vw,64px) var(--sa-space-12) clamp(24px,11vw,168px);box-sizing:border-box">
 ${crumb}  <span style="display:block;margin-top:var(--sa-space-4);font:var(--sa-type-eyebrow);letter-spacing:var(--sa-tracking-eyebrow);text-transform:uppercase;color:var(--sa-text-accent)">${esc(p.eyebrow)}</span>
@@ -740,6 +778,7 @@ ${cards}${awards}${renderSteps(p.steps)}${quote}${video}${gallery}${more}
     <x-import component-from-global-scope="${NS}.Button" size="lg" href="${attr(p.next.href)}" hint-size="200px,52px">${esc(p.next.label)}</x-import>
   </div>
 </section>
+</main>
 
 <x-import component-from-global-scope="${NS}.Footer" icon-base="assets/icons/brand" columns="{{ footerColumns }}" socials="{{ footerSocials }}" style="position:relative;z-index:10" hint-size="100%,300px"></x-import>
 </div>
@@ -751,11 +790,7 @@ class Component extends DCLogic {
       true: true,
       soon: React.createElement(window.${NS}.Badge, { tone: "highlight" }, "To be added"),
       footerColumns: ${JSON.stringify(footerCols, null, 8).replace(/\n/g, "\n      ")},
-      footerSocials: [
-        { id: "instagram", label: "Instagram" },
-        { id: "linkedin", label: "LinkedIn", src: "https://unpkg.com/lucide-static@0.469.0/icons/linkedin.svg" },
-        { id: "discord", label: "Discord" }
-      ]
+      footerSocials: window.SA_SOCIALS || []
     };
   }
 
@@ -802,4 +837,45 @@ for (const p of PAGES) {
   fs.writeFileSync(path.join(ROOT, p.file), renderPage(p), "utf8");
   written++;
 }
-console.log(`generated ${written} pages`);
+
+/* The homepage has to exist at the site root: a static host serves index.html for "/",
+   and without one the root URL 404s (or worse, shows a directory listing) on Vercel,
+   GitHub Pages and local preview alike. Home.dc.html stays the authored file — the DC
+   tooling only opens .dc.html — so index.html is generated from it verbatim. Both carry
+   <link rel="canonical" href="/">, so the duplicate defers to the root URL. */
+const home = fs.readFileSync(path.join(ROOT, "Home.dc.html"), "utf8");
+if (!home.includes('rel="canonical"')) {
+  console.warn('WARNING: Home.dc.html has no <link rel="canonical" href="/">; index.html ' +
+    "will compete with it as a duplicate. Add it back before deploying.");
+}
+fs.writeFileSync(path.join(ROOT, "index.html"), home, "utf8");
+written++;
+
+/* Hand-written pages are not in PAGES but still belong in the sitemap. Home is listed
+   as "/" rather than Home.dc.html, matching the canonical. */
+const HAND_WRITTEN = ["About.dc.html", "Academics.dc.html", "Research.dc.html",
+  "Curiosities.dc.html", "Media.dc.html"];
+
+if (SITE_ORIGIN) {
+  const urls = ["", ...HAND_WRITTEN, ...PAGES.map((p) => p.file)];
+  const today = new Date().toISOString().slice(0, 10);
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.map((u) => `  <url><loc>${esc(SITE_ORIGIN + "/" + u)}</loc><lastmod>${today}</lastmod></url>`).join("\n")}
+</urlset>
+`;
+  fs.writeFileSync(path.join(ROOT, "sitemap.xml"), xml, "utf8");
+
+  fs.writeFileSync(path.join(ROOT, "robots.txt"),
+    `User-agent: *\nAllow: /\n\nSitemap: ${SITE_ORIGIN}/sitemap.xml\n`, "utf8");
+  console.log(`wrote sitemap.xml (${urls.length} urls) and robots.txt`);
+} else {
+  // Still worth shipping: without it, crawlers get a 404 for /robots.txt on every visit.
+  fs.writeFileSync(path.join(ROOT, "robots.txt"), "User-agent: *\nAllow: /\n", "utf8");
+}
+
+console.log(`generated ${written} pages (including index.html from Home.dc.html)`);
+if (!SITE_ORIGIN) {
+  console.log("note: SITE_ORIGIN is empty — canonical tags, absolute og:url and sitemap.xml\n" +
+    "      are omitted. Set it in this file once the Vercel domain is final.");
+}

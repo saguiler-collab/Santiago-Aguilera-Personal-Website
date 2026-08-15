@@ -6,10 +6,20 @@
 <title>Video games — Santiago Aguilera</title>
 <meta name="description" content="Video games — co-op, strategy, and staying in touch with people across time zones.">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<meta name="theme-color" content="#0F3D3E">
 <meta property="og:title" content="Video games — Santiago Aguilera">
 <meta property="og:description" content="Video games — co-op, strategy, and staying in touch with people across time zones.">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Santiago Aguilera">
+<meta property="og:image" content="assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
 <script>(function(){try{var t=localStorage.getItem("sa:theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script>
+<!-- React is vendored, not pulled from a CDN: support.js skips its unpkg fetch when
+     window.React/ReactDOM already exist. Without this the whole site is a blank page
+     whenever unpkg is unreachable, since every page renders client-side. -->
+<script src="assets/vendor/react.production.min.js"></script>
+<script src="assets/vendor/react-dom.production.min.js"></script>
+<script src="assets/site-config.js"></script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -23,11 +33,18 @@ body{margin:0;background:var(--sa-surface-page);transition:background-color .15s
 a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 .sa-glow{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;z-index:0;opacity:.5}
+/* Every page opens with the same ~60 nav links; a keyboard or screen-reader user
+   needs one jump past them rather than 60 tabs on every single page. */
+.sa-skip{position:absolute;left:-9999px;top:0;z-index:100}
+.sa-skip:focus{left:16px;top:16px;padding:12px 18px;background:var(--sa-ink-800);color:var(--sa-paper-000);
+  border-radius:var(--sa-radius-control);font:var(--sa-type-ui);text-decoration:none}
 </style>
 </helmet>
 <div style="background:var(--sa-surface-page);color:var(--sa-text-primary);font:var(--sa-type-body);min-height:100vh;overflow-x:clip">
+<a class="sa-skip" href="#main">Skip to content</a>
 <dc-import name="SymbolRail" mode="unwind" hint-size="100%,100%"></dc-import>
 <dc-import name="SiteNav" active="curiosities" hint-size="100%,72px"></dc-import>
+<main id="main">
 
 <section style="width:100%;max-width:1440px;margin:0 auto;padding:clamp(40px,6vh,72px) clamp(24px,5vw,64px) var(--sa-space-12) clamp(24px,11vw,168px);box-sizing:border-box">
       <a href="Curiosities.dc.html" style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-muted);text-decoration:none">← Curiosities</a>
@@ -65,7 +82,7 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
 
 <section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-8) clamp(24px,5vw,64px) var(--sa-space-20) clamp(24px,11vw,168px);box-sizing:border-box">
   <div data-rail-target="1">
-    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="Photos" title="Add your own" lede="Every frame below is an empty slot — click one to drop a real photo in." hint-size="100%,150px"></x-import>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="Photos" title="In photographs" hint-size="100%,150px"></x-import>
   </div>
   <div data-stagger="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--sa-space-4);margin-top:var(--sa-space-10)">
     <sa-image-slot slot-key="games-2" ratio="1 / 1" placeholder="Playing with friends"></sa-image-slot>
@@ -91,6 +108,7 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Button" size="lg" href="Media.dc.html" hint-size="200px,52px">See the media</x-import>
   </div>
 </section>
+</main>
 
 <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Footer" icon-base="assets/icons/brand" columns="{{ footerColumns }}" socials="{{ footerSocials }}" style="position:relative;z-index:10" hint-size="100%,300px"></x-import>
 </div>
@@ -153,11 +171,7 @@ class Component extends DCLogic {
                       ]
               }
       ],
-      footerSocials: [
-        { id: "instagram", label: "Instagram" },
-        { id: "linkedin", label: "LinkedIn", src: "https://unpkg.com/lucide-static@0.469.0/icons/linkedin.svg" },
-        { id: "discord", label: "Discord" }
-      ]
+      footerSocials: window.SA_SOCIALS || []
     };
   }
 

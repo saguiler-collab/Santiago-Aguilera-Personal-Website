@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found — Santiago Aguilera</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<meta name="theme-color" content="#0F3D3E">
+<!--
+  Deliberately plain HTML: no React, no dc-runtime, no client-side rendering. Every
+  other page on this site paints only after JavaScript boots, and a 404 that could
+  itself fail to render is a dead end with no way out. This one is just markup and a
+  stylesheet, so it works even when everything else is broken.
+
+  Asset paths are root-relative because a static host serves this file for any
+  unmatched URL, including nested ones like /academics/perkiomen — relative paths
+  would resolve against that missing directory and 404 in turn.
+-->
+<link rel="stylesheet" href="/_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/styles.css">
+<style>
+  body { margin:0; background:var(--sa-surface-page); color:var(--sa-text-primary); font:var(--sa-type-body); }
+  .wrap {
+    min-height:100vh; box-sizing:border-box;
+    display:flex; flex-direction:column; align-items:flex-start; justify-content:center;
+    padding:clamp(32px,8vw,96px);
+    background:radial-gradient(ellipse 120% 90% at 50% 30%,#14454a 0%,#0d3236 38%,#071e21 72%,#041214 100%);
+    color:#FDFBF7;
+  }
+  .eyebrow {
+    font:var(--sa-type-eyebrow); letter-spacing:var(--sa-tracking-eyebrow);
+    text-transform:uppercase; color:#F0A891;
+  }
+  h1 {
+    font:var(--sa-type-display); font-size:clamp(2.4rem,6vw,4.5rem);
+    letter-spacing:var(--sa-tracking-display); margin:var(--sa-space-5) 0 0;
+  }
+  p {
+    font:var(--sa-type-lede); font-size:var(--sa-text-lg); max-width:46ch;
+    margin-top:var(--sa-space-6); color:color-mix(in oklab,#FDFBF7 80%,transparent);
+    text-wrap:pretty;
+  }
+  .links { display:flex; flex-wrap:wrap; gap:var(--sa-space-3); margin-top:var(--sa-space-10); }
+  .links a {
+    display:inline-flex; align-items:center; height:48px; padding:0 22px;
+    border-radius:var(--sa-radius-pill); text-decoration:none; white-space:nowrap;
+    font:var(--sa-type-ui); font-size:var(--sa-text-base);
+    border:1px solid color-mix(in oklab,#FDFBF7 45%,transparent); color:#FDFBF7;
+    transition:background-color .15s ease, border-color .15s ease;
+  }
+  .links a:hover { background:color-mix(in oklab,#FDFBF7 14%,transparent); border-color:#FDFBF7; }
+  .links a.primary { background:#E0654A; border-color:#E0654A; }
+  .links a.primary:hover { background:#B2412A; border-color:#B2412A; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span class="eyebrow">404</span>
+  <h1>That page moved, or never existed</h1>
+  <p>The link you followed does not point anywhere on this site. Everything is reachable from the homepage, or jump straight to a section below.</p>
+  <div class="links">
+    <a class="primary" href="/">Go to the homepage</a>
+    <a href="/About.dc.html">About</a>
+    <a href="/Academics.dc.html">Academics</a>
+    <a href="/Research.dc.html">Research &amp; projects</a>
+    <a href="/Leadership.dc.html">Leadership &amp; service</a>
+    <a href="/Activities.dc.html">Activities</a>
+    <a href="/Curiosities.dc.html">Curiosities</a>
+    <a href="/Media.dc.html">Media</a>
+  </div>
+</div>
+</body>
+</html>

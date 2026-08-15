@@ -1,6 +1,6 @@
 (function () {
   "use strict";
-  var LOCK_KEY = "sa:photos:locked";
+  var EDIT_KEY = "sa:photos:edit";
   var IMG_PREFIX = "sa:img:";
   var MAX_EDGE = 1400;
   var JPEG_QUALITY = 0.82;
@@ -14,13 +14,28 @@
     .then(function (r) { return r.ok ? r.json() : {}; })
     .catch(function () { return {}; });
 
-  function isLocked() {
-    return localStorage.getItem(LOCK_KEY) === "1";
+  // Editing is off for everyone by default. This is a public portfolio going to
+  // universities and employers — a visitor should never see an upload affordance,
+  // and previously every page shipped one plus a fixed "Photos editable" button.
+  //
+  // Santiago turns it on by adding ?edit=1 to any page. It then persists for the
+  // rest of the browser session (sessionStorage, not localStorage) so navigating
+  // between pages keeps editing on without re-adding the parameter; ?edit=0 or
+  // closing the tab ends it.
+  function isEditMode() {
+    try {
+      var param = new URLSearchParams(location.search).get("edit");
+      if (param === "1") { sessionStorage.setItem(EDIT_KEY, "1"); return true; }
+      if (param === "0") { sessionStorage.removeItem(EDIT_KEY); return false; }
+      return sessionStorage.getItem(EDIT_KEY) === "1";
+    } catch (e) {
+      return false;
+    }
   }
 
-  function setLocked(v) {
-    try { localStorage.setItem(LOCK_KEY, v ? "1" : "0"); } catch (e) {}
-    window.dispatchEvent(new CustomEvent("sa:lock-changed", { detail: { locked: v } }));
+  function exitEditMode() {
+    try { sessionStorage.removeItem(EDIT_KEY); } catch (e) {}
+    window.dispatchEvent(new CustomEvent("sa:edit-changed"));
   }
 
   function readImage(key) {
@@ -186,21 +201,21 @@
         }).catch(() => this._showError("Could not read that image."));
       });
 
-      this._onLockChange = () => this._paint();
-      window.addEventListener("sa:lock-changed", this._onLockChange);
-      window.addEventListener("storage", this._onLockChange);
+      this._onEditChange = () => this._paint();
+      window.addEventListener("sa:edit-changed", this._onEditChange);
+      window.addEventListener("storage", this._onEditChange);
 
       this._render();
     }
 
     disconnectedCallback() {
-      window.removeEventListener("sa:lock-changed", this._onLockChange);
-      window.removeEventListener("storage", this._onLockChange);
+      window.removeEventListener("sa:edit-changed", this._onEditChange);
+      window.removeEventListener("storage", this._onEditChange);
     }
 
     attributeChangedCallback() { if (this._built) this._render(); }
 
-    _editable() { return !isLocked() && !this._committed; }
+    _editable() { return isEditMode() && !this._committed; }
 
     _render() {
       this._cap.textContent = this.getAttribute("placeholder") || "Photo to be supplied";
@@ -235,35 +250,55 @@
 
   if (!customElements.get("sa-image-slot")) customElements.define("sa-image-slot", SaImageSlot);
 
-  function injectLockToggle() {
-    if (document.getElementById("sa-lock-toggle")) return;
-    var btn = document.createElement("button");
-    btn.id = "sa-lock-toggle";
-    btn.type = "button";
-    Object.assign(btn.style, {
+  // Shown only in edit mode. The warning is the point: uploads live in this browser's
+  // localStorage, so they are a private preview — they do not exist for anyone else and
+  // they vanish if the browser clears its storage. Without saying so, it is very easy to
+  // fill in every slot, see a finished-looking site, and publish 161 empty boxes.
+  function injectEditBanner() {
+    if (!isEditMode() || document.getElementById("sa-edit-banner")) return;
+
+    var bar = document.createElement("div");
+    bar.id = "sa-edit-banner";
+    Object.assign(bar.style, {
       // bottom-left, not bottom-right: the Footer's social icon links sit bottom-right,
       // and a fixed corner widget there would visually block them once scrolled that far.
-      position: "fixed", left: "16px", bottom: "16px", zIndex: "50",
-      font: "500 12px/1 var(--sa-font-body, sans-serif)", letterSpacing: ".02em",
-      padding: "10px 14px", borderRadius: "999px", border: "none", cursor: "pointer",
+      position: "fixed", left: "16px", bottom: "16px", zIndex: "50", maxWidth: "min(380px, calc(100vw - 32px))",
+      font: "500 12px/1.45 var(--sa-font-body, sans-serif)", letterSpacing: ".01em",
+      padding: "12px 14px", borderRadius: "10px",
       background: "var(--sa-ink-800, #0F3D3E)", color: "var(--sa-paper-000, #FDFBF7)",
-      boxShadow: "var(--sa-shadow-2, 0 10px 24px -8px rgba(0,0,0,.3))", opacity: "0.88",
-      transition: "opacity .15s ease"
+      boxShadow: "var(--sa-shadow-2, 0 10px 24px -8px rgba(0,0,0,.3))",
+      display: "flex", gap: "12px", alignItems: "flex-start"
     });
-    btn.addEventListener("mouseenter", () => (btn.style.opacity = "1"));
-    btn.addEventListener("mouseleave", () => (btn.style.opacity = "0.88"));
-    function paint() {
-      btn.textContent = isLocked() ? "🔒 Photos locked" : "🔓 Photos editable — click to lock";
-    }
-    btn.addEventListener("click", () => { setLocked(!isLocked()); paint(); });
-    window.addEventListener("sa:lock-changed", paint);
-    paint();
-    document.body.appendChild(btn);
+
+    var text = document.createElement("div");
+    text.style.flex = "1";
+    text.innerHTML =
+      '<strong style="display:block;margin-bottom:3px">Editing photos</strong>' +
+      'Uploads are saved in this browser only. To publish one, put the file in ' +
+      '<code style="font-size:11px">assets/photos/</code> and map its slot key in ' +
+      '<code style="font-size:11px">manifest.json</code>.';
+
+    var exit = document.createElement("button");
+    exit.type = "button";
+    exit.textContent = "Done";
+    Object.assign(exit.style, {
+      font: "500 12px/1 var(--sa-font-body, sans-serif)", border: "none", cursor: "pointer",
+      padding: "7px 12px", borderRadius: "999px", flex: "none",
+      background: "var(--sa-paper-000, #FDFBF7)", color: "var(--sa-ink-800, #0F3D3E)"
+    });
+    exit.addEventListener("click", function () {
+      exitEditMode();
+      bar.remove();
+    });
+
+    bar.appendChild(text);
+    bar.appendChild(exit);
+    document.body.appendChild(bar);
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", injectLockToggle);
+    document.addEventListener("DOMContentLoaded", injectEditBanner);
   } else {
-    injectLockToggle();
+    injectEditBanner();
   }
 })();

@@ -11,7 +11,7 @@ const __ds_scope = {};
 // components/brand/Icon.jsx
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-const LUCIDE = "https://unpkg.com/lucide-static@0.469.0/icons/";
+const LUCIDE = "assets/icons/lucide/";
 
 /** Masked glyph that inherits currentColor. `name` pulls from Lucide; `src` points at a local SVG. */
 function Icon({

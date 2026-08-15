@@ -6,10 +6,17 @@
 <title>Academics — Santiago Aguilera</title>
 <meta name="description" content="International School of Port of Spain and Perkiomen School — Student Council, Stronger Together, HOSA, Model UN, GVMUN, Investment Club, and the Perkiomenite.">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<meta name="theme-color" content="#0F3D3E">
 <meta property="og:title" content="Academics — Santiago Aguilera">
 <meta property="og:description" content="International School of Port of Spain and Perkiomen School — Student Council, HOSA, Model UN, GVMUN, and more.">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Santiago Aguilera">
+<meta property="og:image" content="assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
 <script>(function(){try{var t=localStorage.getItem("sa:theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script>
+<script src="assets/vendor/react.production.min.js"></script>
+<script src="assets/vendor/react-dom.production.min.js"></script>
+<script src="assets/site-config.js"></script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -22,11 +29,18 @@
 body{margin:0;background:var(--sa-surface-page);transition:background-color .15s ease}
 a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* Every page opens with the same ~60 nav links; a keyboard or screen-reader user
+   needs one jump past them rather than 60 tabs on every single page. */
+.sa-skip{position:absolute;left:-9999px;top:0;z-index:100}
+.sa-skip:focus{left:16px;top:16px;padding:12px 18px;background:var(--sa-ink-800);color:var(--sa-paper-000);
+  border-radius:var(--sa-radius-control);font:var(--sa-type-ui);text-decoration:none}
 </style>
 </helmet>
 <div style="background:var(--sa-surface-page);color:var(--sa-text-primary);font:var(--sa-type-body);min-height:100vh;overflow-x:clip">
+<a class="sa-skip" href="#main">Skip to content</a>
 <dc-import name="SymbolRail" mode="unwind" hint-size="100%,100%"></dc-import>
 <dc-import name="SiteNav" active="academics" hint-size="100%,72px"></dc-import>
+<main id="main">
 
 <section style="width:100%;max-width:1440px;margin:0 auto;padding:clamp(48px,7vh,88px) clamp(24px,5vw,64px) var(--sa-space-12) clamp(24px,11vw,168px);box-sizing:border-box">
   <span style="font:var(--sa-type-eyebrow);letter-spacing:var(--sa-tracking-eyebrow);text-transform:uppercase;color:var(--sa-text-accent)">Academics</span>
@@ -85,6 +99,7 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
   </div>
 </section>
 
+</main>
 <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Footer" icon-base="assets/icons/brand" columns="{{ footerColumns }}" socials="{{ footerSocials }}" style="position:relative;z-index:10" hint-size="100%,300px"></x-import>
 </div>
 </x-dc>
@@ -94,14 +109,10 @@ class Component extends DCLogic {
     return {
       soon: React.createElement(window.SantiagoAguileraDesignSystem_983015.Badge, { tone: "highlight" }, "Coming soon"),
       footerColumns: [
-        { title: "Sections", links: [{ label: "Home", href: "Home.dc.html" }, { label: "About", href: "About.dc.html" }, { label: "Academics", href: "Academics.dc.html" }, { label: "Research & projects", href: "Research.dc.html" }, { label: "Leadership & service", href: "Leadership.dc.html" }, { label: "Activities", href: "Activities.dc.html" }, { label: "Curiosities", href: "Curiosities.dc.html" }, { label: "Media", href: "Media.dc.html" }] },
-        { title: "Schools", links: [{ label: "International School of Port of Spain" }, { label: "Perkiomen School" }] }
+        { title: "Sections", links: [{ label: "Home", href: "/" }, { label: "About", href: "About.dc.html" }, { label: "Academics", href: "Academics.dc.html" }, { label: "Research & projects", href: "Research.dc.html" }, { label: "Leadership & service", href: "Leadership.dc.html" }, { label: "Activities", href: "Activities.dc.html" }, { label: "Curiosities", href: "Curiosities.dc.html" }, { label: "Media", href: "Media.dc.html" }] },
+        { title: "Schools", links: [{ label: "International School of Port of Spain", href: "Academics-ISPS.dc.html" }, { label: "Perkiomen School", href: "Academics-Perkiomen.dc.html" }, { label: "Exeter Summer", href: "Academics-ExeterSummer.dc.html" }, { label: "Carnegie Mellon", href: "Academics-CompBio.dc.html" }] }
       ],
-      footerSocials: [
-        { id: "instagram", label: "Instagram" },
-        { id: "linkedin", label: "LinkedIn", src: "https://unpkg.com/lucide-static@0.469.0/icons/linkedin.svg" },
-        { id: "discord", label: "Discord" }
-      ]
+      footerSocials: window.SA_SOCIALS || []
     };
   }
 

@@ -6,10 +6,17 @@
 <title>Media — Santiago Aguilera</title>
 <meta name="description" content="Photos and video from six countries — cities, meets, the kit, and the committee room.">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<meta name="theme-color" content="#0F3D3E">
 <meta property="og:title" content="Media — Santiago Aguilera">
 <meta property="og:description" content="Photos and video from six countries — cities, meets, the kit, and the committee room.">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Santiago Aguilera">
+<meta property="og:image" content="assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
 <script>(function(){try{var t=localStorage.getItem("sa:theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script>
+<script src="assets/vendor/react.production.min.js"></script>
+<script src="assets/vendor/react-dom.production.min.js"></script>
+<script src="assets/site-config.js"></script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -22,6 +29,11 @@
 body{margin:0;background:var(--sa-surface-page);transition:background-color .15s ease}
 a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* Every page opens with the same ~60 nav links; a keyboard or screen-reader user
+   needs one jump past them rather than 60 tabs on every single page. */
+.sa-skip{position:absolute;left:-9999px;top:0;z-index:100}
+.sa-skip:focus{left:16px;top:16px;padding:12px 18px;background:var(--sa-ink-800);color:var(--sa-paper-000);
+  border-radius:var(--sa-radius-control);font:var(--sa-type-ui);text-decoration:none}
 .sa-glow{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;z-index:0;opacity:.5}
 .sa-filter-btn{font:var(--sa-type-ui);padding:8px 16px;border-radius:var(--sa-radius-pill);border:1px solid var(--sa-border-default);background:transparent;color:var(--sa-text-secondary);cursor:pointer;transition:var(--sa-transition-control)}
 .sa-media-tile{cursor:pointer}
@@ -29,14 +41,16 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
 </style>
 </helmet>
 <div style="background:var(--sa-surface-page);color:var(--sa-text-primary);font:var(--sa-type-body);min-height:100vh;overflow-x:clip">
+<a class="sa-skip" href="#main">Skip to content</a>
 <dc-import name="SymbolRail" mode="unwind" hint-size="100%,100%"></dc-import>
 <dc-import name="SiteNav" active="media" hint-size="100%,72px"></dc-import>
+<main id="main">
 
 <section style="width:100%;max-width:1440px;margin:0 auto;padding:clamp(48px,7vh,88px) clamp(24px,5vw,64px) var(--sa-space-8) clamp(24px,11vw,168px);box-sizing:border-box;display:flex;flex-wrap:wrap;gap:var(--sa-space-6);align-items:flex-end;justify-content:space-between">
   <div>
     <span style="font:var(--sa-type-eyebrow);letter-spacing:var(--sa-tracking-eyebrow);text-transform:uppercase;color:var(--sa-text-accent)">Media</span>
     <h1 style="font:var(--sa-type-display);font-size:clamp(2.5rem,5vw,4rem);letter-spacing:var(--sa-tracking-display);margin:var(--sa-space-5) 0 0;max-width:16ch">Photos and video</h1>
-    <p style="font:var(--sa-type-lede);font-size:var(--sa-text-lg);color:var(--sa-text-secondary);max-width:56ch;margin-top:var(--sa-space-6);text-wrap:pretty">Click any tile to add a photo, or click a filled one to see it larger. Video isn't upload-able here — those stay placeholders.</p>
+    <p style="font:var(--sa-type-lede);font-size:var(--sa-text-lg);color:var(--sa-text-secondary);max-width:56ch;margin-top:var(--sa-space-6);text-wrap:pretty">Cities, meets, the drum kit and the committee room, gathered in one place. Click any photo to see it larger.</p>
   </div>
 </section>
 
@@ -132,10 +146,11 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
   <div class="sa-glow" style="width:380px;height:380px;right:-80px;bottom:-140px;background:var(--sa-ochre-500)"></div>
   <div style="position:relative;z-index:1;width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-band-y) clamp(24px,5vw,64px) var(--sa-band-y) clamp(24px,11vw,168px);box-sizing:border-box;display:flex;flex-wrap:wrap;gap:var(--sa-space-10);align-items:flex-end;justify-content:space-between">
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="Start over" title="Or begin at the beginning" lede="Six countries, in order, from Houston to Pennsburg." hint-size="100%,150px"></x-import>
-    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Button" size="lg" href="Home.dc.html" hint-size="200px,52px">Back to home</x-import>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Button" size="lg" href="/" hint-size="200px,52px">Back to home</x-import>
   </div>
 </section>
 
+</main>
 <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Footer" icon-base="assets/icons/brand" columns="{{ footerColumns }}" socials="{{ footerSocials }}" style="position:relative;z-index:10" hint-size="100%,300px"></x-import>
 </div>
 </x-dc>
@@ -144,14 +159,10 @@ class Component extends DCLogic {
   renderVals() {
     return {
       footerColumns: [
-        { title: "Sections", links: [{ label: "Home", href: "Home.dc.html" }, { label: "About", href: "About.dc.html" }, { label: "Academics", href: "Academics.dc.html" }, { label: "Research & projects", href: "Research.dc.html" }, { label: "Leadership & service", href: "Leadership.dc.html" }, { label: "Activities", href: "Activities.dc.html" }, { label: "Curiosities", href: "Curiosities.dc.html" }, { label: "Media", href: "Media.dc.html" }] },
-        { title: "Tags", links: [{ label: "Swimming" }, { label: "Lifting" }, { label: "Music" }, { label: "MUN" }] }
+        { title: "Sections", links: [{ label: "Home", href: "/" }, { label: "About", href: "About.dc.html" }, { label: "Academics", href: "Academics.dc.html" }, { label: "Research & projects", href: "Research.dc.html" }, { label: "Leadership & service", href: "Leadership.dc.html" }, { label: "Activities", href: "Activities.dc.html" }, { label: "Curiosities", href: "Curiosities.dc.html" }, { label: "Media", href: "Media.dc.html" }] },
+        { title: "Tags", links: [{ label: "Swimming", href: "Activities-Swimming.dc.html" }, { label: "Lifting", href: "Activities-Weightlifting.dc.html" }, { label: "Music", href: "Activities-Music.dc.html" }, { label: "MUN", href: "Leadership-GVMUN.dc.html" }] }
       ],
-      footerSocials: [
-        { id: "instagram", label: "Instagram" },
-        { id: "linkedin", label: "LinkedIn", src: "https://unpkg.com/lucide-static@0.469.0/icons/linkedin.svg" },
-        { id: "discord", label: "Discord" }
-      ]
+      footerSocials: window.SA_SOCIALS || []
     };
   }
 
