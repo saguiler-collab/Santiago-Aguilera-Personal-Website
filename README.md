@@ -7,6 +7,7 @@
   Implement uploaded pictures
   Have a proper and very well-made design
   Be interactive in a way, add sliders about each city showing pictures of each one, or have scroll animations and numbers that count up     to show stuff about me.
+  Should be cinematic and incredibly well-designed.s
   *Turn it into an interactive life map/timeline.*
   
 Sections, subsections, different pages:
