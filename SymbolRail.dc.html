@@ -84,7 +84,10 @@ class Component extends DCLogic {
     if (svg) { svg.setAttribute("viewBox", `0 0 ${this.W} ${this.H}`); svg.style.opacity = this.hidden ? "0" : "1"; }
     this.cx = this.narrow ? 58 : 72;
     this.R = this.narrow ? 25 : 30; this.r0 = this.R * 0.08;
-    this.yTop = this.H * 0.1; this.yBot = this.H * 0.92; this.cy = this.H * 0.34;
+    // cy is where the coiled mark rests before it unwinds. 0.24 lines it up with the
+    // page title rather than the body copy below it — at 0.34 it floated unanchored
+    // beside the lede. Keep it clear of the ~72px nav: the mark reaches ~49px above cy.
+    this.yTop = this.H * 0.1; this.yBot = this.H * 0.92; this.cy = this.H * 0.24;
   }
 
   scan() {
