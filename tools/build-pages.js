@@ -619,7 +619,7 @@ ${steps.map(([k, v, pending]) => `      <x-import component-from-global-scope="$
 function renderPage(p) {
   const group = GROUPS[p.section];
   const siblings = group ? group.items.filter((i) => i.href !== p.file) : [];
-  const title = `${p.title} — Santiago Aguilera`;
+  const title = `${p.title} — Santiago Aguilera Library`;
   const slots = p.slots || [];
 
   const heroSlot = slots[0];
@@ -715,7 +715,7 @@ ${siblings.map((s) => `    <a href="${attr(s.href)}" style="display:inline-flex;
 ${canonical}<meta property="og:title" content="${attr(title)}">
 <meta property="og:description" content="${attr(p.desc)}">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Santiago Aguilera">
+<meta property="og:site_name" content="Santiago Aguilera Library">
 <meta property="og:image" content="${attr(ogImage)}">
 <meta name="twitter:card" content="summary_large_image">
 <script>(function(){try{var t=localStorage.getItem("sa:theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script>
@@ -731,6 +731,7 @@ ${canonical}<meta property="og:title" content="${attr(title)}">
 <x-dc>
 <helmet>
 <link rel="stylesheet" href="${DS}/styles.css">
+<link rel="stylesheet" href="assets/site.css">
 <script src="${DS}/_ds_bundle.js"></script>
 <script src="assets/photo-slots.js" defer></script>
 <style>

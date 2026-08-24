@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Santiago Aguilera</title>
-<meta name="description" content="A boarding student who has lived in six countries — Houston, Madrid, Monterrey, Bogotá, Ciudad de Panamá, Port of Spain, and Pennsburg. Health science, Model UN, a drum kit, and a swim lane.">
+<title>Santiago Aguilera Library</title>
+<meta name="description" content="The Santiago Aguilera Library — everything six countries left behind. Health science, research, Model UN, a drum kit and a swim lane, collected and kept in order.">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <meta name="theme-color" content="#0F3D3E">
 <!-- index.html is generated from this file (see tools/build-pages.js), so the homepage
      is reachable at the site root on Vercel, GitHub Pages and local preview alike.
      Both copies point search engines at "/" so the duplicate does not split ranking. -->
 <link rel="canonical" href="/">
-<meta property="og:title" content="Santiago Aguilera">
-<meta property="og:description" content="A boarding student who has lived in six countries. Health science, Model UN, a drum kit, and a swim lane — this is the whole picture, in order.">
+<meta property="og:title" content="Santiago Aguilera Library">
+<meta property="og:description" content="Everything six countries left behind — student, researcher, athlete, musician. Collected here, and kept in order.">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Santiago Aguilera">
+<meta property="og:site_name" content="Santiago Aguilera Library">
 <meta property="og:image" content="assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <script>(function(){try{var t=localStorage.getItem("sa:theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script>
@@ -27,6 +27,7 @@
 <x-dc>
 <helmet>
 <link rel="stylesheet" href="_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/styles.css">
+<link rel="stylesheet" href="assets/site.css">
 <script src="_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/_ds_bundle.js"></script>
 <script src="assets/photo-slots.js" defer></script>
 <style>
@@ -42,9 +43,6 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
 .sa-skip:focus{left:16px;top:16px;padding:12px 18px;background:var(--sa-ink-800);color:var(--sa-paper-000);
   border-radius:var(--sa-radius-control);font:var(--sa-type-ui);text-decoration:none}
 .sa-glow{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;z-index:0;opacity:.5}
-/* the scattered hero photos are decorative — at narrow widths their min clamp()
-   sizes collide with the centered text, so they step aside rather than crowd it */
-@media (max-width:720px){.sa-hero-photo{display:none}}
 /* Hero is a fixed dark "night sky" panel regardless of light/dark theme, so the
    nav floats over it transparently the way the reference site does. */
 /* --sa-nav-h is refined by JS once the real header is measured; the hero is pulled up
@@ -70,55 +68,91 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
 <dc-import name="SiteNav" active="home" overlay="{{ true }}" hint-size="100%,72px"></dc-import>
 <main id="main">
 
-<section class="sa-hero">
+<section class="sa-hero sa-grain">
   <div ref="{{ starLayer }}" aria-hidden="true" style="position:absolute;inset:0;z-index:0;will-change:transform"></div>
   <div class="sa-glow" style="width:720px;height:720px;left:50%;top:44%;transform:translate(-50%,-50%);background:#2A9D8F;opacity:.14;filter:blur(120px)"></div>
   <div class="sa-glow" style="width:420px;height:420px;left:22%;bottom:-8%;background:#E0654A;opacity:.12;filter:blur(110px)"></div>
 
-  <div ref="{{ f1 }}" class="sa-hero-photo" style="position:absolute;left:2%;top:15%;width:clamp(110px,12vw,180px);z-index:1;will-change:transform">
-    <div style="animation:sa-drift 7s ease-in-out infinite alternate;transform-origin:center;rotate:-2.5deg;box-shadow:var(--sa-shadow-3)">
-      <sa-image-slot slot-key="home-monterrey" ratio="3 / 4" placeholder="Monterrey, early years"></sa-image-slot>
+  <!-- The tiles drift on their own heading and shove each other aside on contact, so
+       the hero is never twice the same. Positions come from the loop in componentDidMount;
+       aria-hidden because this is decorative motion — the real gallery is on Media. -->
+  <div ref="{{ floatLayer }}" class="sa-float-layer" aria-hidden="true">
+    <div class="sa-float" style="width:clamp(48px,5.2vw,78px)">
+      <div class="sa-float-inner" style="rotate:-3.2deg">
+        <sa-image-slot compact slot-key="home-houston" ratio="4 / 3" placeholder="Houston"></sa-image-slot>
+      </div>
+    </div>
+    <div class="sa-float" style="width:clamp(38px,4.1vw,62px)">
+      <div class="sa-float-inner" style="rotate:2.4deg">
+        <sa-image-slot compact slot-key="home-madrid" ratio="1 / 1" placeholder="Madrid"></sa-image-slot>
+      </div>
+    </div>
+    <div class="sa-float" style="width:clamp(46px,4.9vw,74px)">
+      <div class="sa-float-inner" style="rotate:-1.8deg">
+        <sa-image-slot compact slot-key="home-monterrey" ratio="3 / 4" placeholder="Monterrey"></sa-image-slot>
+      </div>
+    </div>
+    <div class="sa-float" style="width:clamp(42px,4.5vw,68px)">
+      <div class="sa-float-inner" style="rotate:3.1deg">
+        <sa-image-slot compact slot-key="home-bogota" ratio="3 / 4" placeholder="Bogotá"></sa-image-slot>
+      </div>
+    </div>
+    <div class="sa-float" style="width:clamp(51px,5.5vw,82px)">
+      <div class="sa-float-inner" style="rotate:-2.6deg">
+        <sa-image-slot compact slot-key="home-panama" ratio="4 / 3" placeholder="Ciudad de Panamá"></sa-image-slot>
+      </div>
+    </div>
+    <div class="sa-float" style="width:clamp(43px,4.7vw,70px)">
+      <div class="sa-float-inner" style="rotate:1.6deg">
+        <sa-image-slot compact slot-key="home-drums-sonoarte" ratio="1 / 1" placeholder="Drums, SonoArte"></sa-image-slot>
+      </div>
+    </div>
+    <div class="sa-float" style="width:clamp(47px,5.1vw,76px)">
+      <div class="sa-float-inner" style="rotate:-3.6deg">
+        <sa-image-slot compact slot-key="home-port-of-spain" ratio="4 / 3" placeholder="Port of Spain"></sa-image-slot>
+      </div>
+    </div>
+    <div class="sa-float" style="width:clamp(36px,3.9vw,58px)">
+      <div class="sa-float-inner" style="rotate:2.2deg">
+        <sa-image-slot compact slot-key="home-isps-stuco" ratio="1 / 1" placeholder="Student Council"></sa-image-slot>
+      </div>
+    </div>
+    <div class="sa-float" style="width:clamp(53px,5.7vw,86px)">
+      <div class="sa-float-inner" style="rotate:-1.4deg">
+        <sa-image-slot compact slot-key="home-perkiomen" ratio="4 / 3" placeholder="Perkiomen"></sa-image-slot>
+      </div>
+    </div>
+    <div class="sa-float" style="width:clamp(40px,4.3vw,64px)">
+      <div class="sa-float-inner" style="rotate:2.8deg">
+        <sa-image-slot compact slot-key="home-swim-perkiomen" ratio="3 / 4" placeholder="Swim meet"></sa-image-slot>
+      </div>
+    </div>
+    <div class="sa-float" style="width:clamp(37px,4.0vw,60px)">
+      <div class="sa-float-inner" style="rotate:-2.1deg">
+        <sa-image-slot compact slot-key="home-hosa" ratio="1 / 1" placeholder="HOSA"></sa-image-slot>
+      </div>
+    </div>
+    <div class="sa-float" style="width:clamp(50px,5.3vw,80px)">
+      <div class="sa-float-inner" style="rotate:1.9deg">
+        <sa-image-slot compact slot-key="home-gvmun" ratio="4 / 3" placeholder="GVMUN"></sa-image-slot>
+      </div>
+    </div>
+    <div class="sa-float" style="width:clamp(45px,4.8vw,72px)">
+      <div class="sa-float-inner" style="rotate:-3deg">
+        <sa-image-slot compact slot-key="home-lab" ratio="4 / 3" placeholder="CellAtlas"></sa-image-slot>
+      </div>
+    </div>
+    <div class="sa-float" style="width:clamp(41px,4.4vw,66px)">
+      <div class="sa-float-inner" style="rotate:2.6deg">
+        <sa-image-slot compact slot-key="home-band" ratio="1 / 1" placeholder="Rock band"></sa-image-slot>
+      </div>
     </div>
   </div>
-  <div ref="{{ f2 }}" class="sa-hero-photo" style="position:absolute;right:2%;top:17%;width:clamp(120px,13vw,200px);z-index:1;will-change:transform">
-    <div style="animation:sa-drift 9s ease-in-out infinite alternate-reverse;rotate:1.8deg;box-shadow:var(--sa-shadow-3)">
-      <sa-image-slot slot-key="home-swim-perkiomen" ratio="4 / 3" placeholder="Swim meet, Perkiomen"></sa-image-slot>
-    </div>
-  </div>
-  <div ref="{{ f3 }}" class="sa-hero-photo" style="position:absolute;left:4%;bottom:8%;width:clamp(100px,10vw,150px);z-index:1;will-change:transform">
-    <div style="animation:sa-drift 8s ease-in-out infinite alternate;rotate:2.6deg;box-shadow:var(--sa-shadow-3)">
-      <sa-image-slot slot-key="home-drums-sonoarte" ratio="1 / 1" placeholder="Drum kit, SonoArte"></sa-image-slot>
-    </div>
-  </div>
-  <div ref="{{ f4 }}" class="sa-hero-photo" style="position:absolute;right:4%;bottom:7%;width:clamp(120px,12vw,180px);z-index:1;will-change:transform">
-    <div style="animation:sa-drift 11s ease-in-out infinite alternate-reverse;rotate:-1.6deg;box-shadow:var(--sa-shadow-3)">
-      <sa-image-slot slot-key="home-gvmun" ratio="4 / 3" placeholder="GVMUN committee room"></sa-image-slot>
-    </div>
-  </div>
-  <div ref="{{ f5 }}" class="sa-hero-photo" style="position:absolute;left:11%;top:47%;width:clamp(90px,9vw,135px);z-index:1;will-change:transform">
-    <div style="animation:sa-drift 10s ease-in-out infinite alternate-reverse;rotate:3.4deg;box-shadow:var(--sa-shadow-3)">
-      <sa-image-slot slot-key="home-bogota" ratio="3 / 4" placeholder="Bogotá"></sa-image-slot>
-    </div>
-  </div>
-  <div ref="{{ f6 }}" class="sa-hero-photo" style="position:absolute;right:12%;top:45%;width:clamp(85px,8vw,125px);z-index:1;will-change:transform">
-    <div style="animation:sa-drift 6.5s ease-in-out infinite alternate;rotate:-3deg;box-shadow:var(--sa-shadow-3)">
-      <sa-image-slot slot-key="home-port-of-spain" ratio="1 / 1" placeholder="Port of Spain"></sa-image-slot>
-    </div>
-  </div>
-  <div ref="{{ f7 }}" class="sa-hero-photo" style="position:absolute;left:21%;bottom:20%;width:clamp(85px,8.5vw,130px);z-index:1;will-change:transform">
-    <div style="animation:sa-drift 12s ease-in-out infinite alternate;rotate:2deg;box-shadow:var(--sa-shadow-3)">
-      <sa-image-slot slot-key="home-lab" ratio="4 / 3" placeholder="Research, CellAtlas"></sa-image-slot>
-    </div>
-  </div>
-  <div ref="{{ f8 }}" class="sa-hero-photo" style="position:absolute;right:21%;bottom:22%;width:clamp(85px,8.5vw,130px);z-index:1;will-change:transform">
-    <div style="animation:sa-drift 9.5s ease-in-out infinite alternate-reverse;rotate:-2.2deg;box-shadow:var(--sa-shadow-3)">
-      <sa-image-slot slot-key="home-hosa" ratio="1 / 1" placeholder="HOSA"></sa-image-slot>
-    </div>
-  </div>
+  <div class="sa-hero-well" aria-hidden="true"></div>
 
-  <div style="position:relative;z-index:2;width:100%;max-width:820px;margin:0 auto;text-align:center;color:#FDFBF7">
-    <h1 style="font:var(--sa-type-display);font-size:clamp(3.2rem,8vw,6.5rem);letter-spacing:var(--sa-tracking-display);margin:0;color:#FDFBF7">Santiago Aguilera</h1>
-    <p style="font:var(--sa-type-lede);font-size:var(--sa-text-lg);max-width:48ch;margin:var(--sa-space-6) auto 0;text-wrap:pretty;color:color-mix(in oklab,#FDFBF7 80%,transparent)">A boarding student who has lived in six countries — student, researcher, athlete, musician. This is the whole picture, in order.</p>
+  <div class="sa-hero-copy" style="position:relative;z-index:2;width:100%;max-width:860px;margin:0 auto;text-align:center;color:#FDFBF7">
+    <h1 class="sa-display-xl" style="font:var(--sa-type-display);font-size:clamp(2.9rem,7.4vw,6rem);margin:0;color:#FDFBF7">Santiago Aguilera<br><span style="color:var(--sa-coral-300)">Library</span></h1>
+    <p style="font:var(--sa-type-lede);font-size:var(--sa-text-lg);max-width:48ch;margin:var(--sa-space-6) auto 0;text-wrap:pretty;color:color-mix(in oklab,#FDFBF7 80%,transparent)">Everything six countries left behind — student, researcher, athlete, musician. Collected here, and kept in order.</p>
     <div style="display:flex;gap:var(--sa-space-3);margin-top:var(--sa-space-10);flex-wrap:wrap;justify-content:center">
       <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Button" size="lg" href="About.dc.html" hint-size="200px,52px">Walk the timeline</x-import>
       <a href="Research.dc.html" class="sa-hero-ghost" style="display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 26px;font:var(--sa-type-ui);font-size:var(--sa-text-base);letter-spacing:var(--sa-tracking-tight);border-radius:var(--sa-radius-control);text-decoration:none;white-space:nowrap;color:#FDFBF7;border:1px solid color-mix(in oklab,#FDFBF7 45%,transparent);transition:var(--sa-transition-control)">See the research</a>
@@ -127,10 +161,17 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
 </section>
 
 <section style="background:var(--sa-surface-sunken);border-top:var(--sa-hairline);border-bottom:var(--sa-hairline)">
-  <div style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-16) clamp(24px,5vw,64px) var(--sa-space-16) clamp(24px,11vw,168px);box-sizing:border-box;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:var(--sa-space-10)">
-    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Stat" value="{{ n6 }}" label="Countries lived in" note="United States, Spain, Mexico, Colombia, Panama, Trinidad & Tobago" hint-size="100%,120px"></x-import>
-    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Stat" value="{{ n6s }}" label="Schools" note="AIM, LICEO, Tilata, ISP-Panama, ISPS, Perkiomen" hint-size="100%,120px"></x-import>
-    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Stat" value="{{ n4 }}" label="Languages" note="Spanish and English; French and Chinese in progress" hint-size="100%,120px"></x-import>
+  <div data-stagger="1" style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-16) clamp(24px,5vw,64px) var(--sa-space-16) clamp(24px,11vw,168px);box-sizing:border-box;display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:var(--sa-space-5);align-items:stretch">
+    <div class="sa-stat sa-stat--verdigris">
+      <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Stat" value="{{ n6 }}" label="Countries lived in" note="United States, Spain, Mexico, Colombia, Panama, Trinidad & Tobago" hint-size="100%,120px"></x-import>
+    </div>
+    <div class="sa-stat sa-stat--feature sa-grain">
+      <span ref="{{ yearsRef }}" class="sa-stat-num sa-tabular">18</span>
+      <p class="sa-stat-note">years of exploring, learning, and defining my story.</p>
+    </div>
+    <div class="sa-stat sa-stat--coral">
+      <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Stat" value="{{ n4 }}" label="Languages" note="Spanish and English; French and Chinese in progress" hint-size="100%,120px"></x-import>
+    </div>
   </div>
 </section>
 
@@ -184,9 +225,8 @@ class Component extends DCLogic {
   renderVals() {
     const r = k => (this[k] = this[k] || React.createRef());
     return {
-      rail: this.props.rail ?? true, n6: 6, n6s: 6, n4: 4, true: true,
-      f1: r("_f1"), f2: r("_f2"), f3: r("_f3"), f4: r("_f4"), f5: r("_f5"), f6: r("_f6"),
-      f7: r("_f7"), f8: r("_f8"), starLayer: r("_stars"),
+      rail: this.props.rail ?? true, n6: 6, n18: 18, n4: 4, true: true,
+      floatLayer: r("_floats"), starLayer: r("_stars"), yearsRef: r("_years"),
       footerColumns: [
         { title: "Sections", links: [{ label: "About", href: "About.dc.html" }, { label: "Academics", href: "Academics.dc.html" }, { label: "Research & projects", href: "Research.dc.html" }, { label: "Leadership & service", href: "Leadership.dc.html" }, { label: "Activities", href: "Activities.dc.html" }, { label: "Curiosities", href: "Curiosities.dc.html" }, { label: "Media", href: "Media.dc.html" }] },
         { title: "Places", links: [{ label: "Houston", href: "Place-UnitedStates.dc.html" }, { label: "Monterrey", href: "Place-Mexico.dc.html" }, { label: "Bogotá", href: "Place-Colombia.dc.html" }, { label: "Ciudad de Panamá", href: "Place-Panama.dc.html" }, { label: "Port of Spain", href: "Place-Trinidad.dc.html" }, { label: "Pennsburg", href: "Place-UnitedStates.dc.html" }] }
@@ -226,6 +266,29 @@ class Component extends DCLogic {
     }
     this.buildStars();
 
+    // The featured stat counts up the way the two DS Stats beside it do, so the row
+    // reads as one thing rather than a component and a hand-rolled panel.
+    const years = this._years && this._years.current;
+    if (years) {
+      if (this.reduce) years.textContent = "18";
+      else {
+        years.textContent = "0";
+        const yio = new IntersectionObserver(es => {
+          if (!es[0].isIntersecting) return;
+          yio.disconnect();
+          const t0 = performance.now();
+          const step = t => {
+            const p = Math.min(1, (t - t0) / 900);
+            years.textContent = String(Math.round(18 * (1 - Math.pow(1 - p, 3))));
+            if (p < 1) requestAnimationFrame(step);
+          };
+          requestAnimationFrame(step);
+        }, { threshold: 0.4 });
+        yio.observe(years);
+        this._yio = yio;
+      }
+    }
+
     // the hero is pulled up behind the sticky nav; measure the real bar so the pull-up
     // and the compensating top padding always match its actual height
     const syncNavHeight = () => {
@@ -236,26 +299,100 @@ class Component extends DCLogic {
     this._onResize = syncNavHeight;
     addEventListener("resize", this._onResize, { passive: true });
 
-    if (this.props.parallax === false || this.reduce) return;
-    this.depths = [0.030, -0.024, 0.020, -0.032, 0.040, -0.018, 0.026, -0.028];
-    this.mx = 0; this.my = 0; this.cxp = 0; this.cyp = 0;
-    this.onMove = e => { this.mx = e.clientX - innerWidth / 2; this.my = e.clientY - innerHeight / 2; };
-    addEventListener("pointermove", this.onMove, { passive: true });
-    const loop = () => {
-      this._raf = requestAnimationFrame(loop);
-      this.cxp += (this.mx - this.cxp) * 0.06; this.cyp += (this.my - this.cyp) * 0.06;
-      const sy = scrollY;
-      [this._f1, this._f2, this._f3, this._f4, this._f5, this._f6, this._f7, this._f8].forEach((ref, i) => {
-        const el = ref && ref.current; if (!el) return;
-        const d = this.depths[i];
-        el.style.transform = `translate3d(${(this.cxp * d).toFixed(2)}px,${(this.cyp * d + sy * d * 1.5).toFixed(2)}px,0)`;
+    // ---- hero tile drift -------------------------------------------------
+    // Each tile carries its own heading and bounces off the panel edges; when two
+    // meet, the shallower overlap axis is resolved and they trade that component of
+    // velocity, so they visibly shove each other aside rather than sliding through.
+    // The arrangement is therefore never twice the same.
+    //
+    // Frozen (laid out, but not animated) when the reader asked for reduced motion,
+    // and in ?edit=1 — a tile drifting at 20px/s is not something you can click to
+    // upload a photo into.
+    const layer = this._floats && this._floats.current;
+    if (!layer) return;
+    const tiles = [...layer.children];
+    if (!tiles.length) return;
+
+    let editing = false;
+    try {
+      const q = new URLSearchParams(location.search).get("edit");
+      editing = q === "1" || (q !== "0" && sessionStorage.getItem("sa:photos:edit") === "1");
+    } catch (e) {}
+
+    // deterministic seeding: a composed opening frame that still differs per tile
+    let seed = 20080913;
+    const rnd = () => (seed = (seed * 1664525 + 1013904223) % 4294967296) / 4294967296;
+
+    const COLS = 5, ROWS = 3, SPEED = 15;
+    const place = () => {
+      const r = layer.getBoundingClientRect();
+      this.bw = r.width; this.bh = r.height;
+      tiles.forEach((el, i) => {
+        const b = el.getBoundingClientRect();
+        const w = b.width || 70, h = b.height || 70;
+        // lay out on a coarse grid with jitter so nothing starts stacked
+        const cw = this.bw / COLS, ch = this.bh / ROWS;
+        const cx = (i % COLS) * cw, cy = Math.floor(i / COLS) * ch;
+        const st = el._sa || (el._sa = {});
+        st.w = w; st.h = h;
+        st.x = Math.max(0, Math.min(this.bw - w, cx + rnd() * Math.max(1, cw - w)));
+        st.y = Math.max(0, Math.min(this.bh - h, cy + rnd() * Math.max(1, ch - h)));
+        const a = rnd() * Math.PI * 2;
+        st.vx = Math.cos(a) * SPEED; st.vy = Math.sin(a) * SPEED;
+        el.style.transform = `translate3d(${st.x.toFixed(1)}px,${st.y.toFixed(1)}px,0)`;
       });
-      // the star field drifts on the same input as the photos, just shallower, so the
-      // whole hero reads as one parallax scene rather than photos over a static backdrop
-      const stars = this._stars && this._stars.current;
-      if (stars) stars.style.transform = `translate3d(${(this.cxp * -0.012).toFixed(2)}px,${(this.cyp * -0.012 + sy * 0.05).toFixed(2)}px,0)`;
     };
-    loop();
+    place();
+    this._onFloatResize = () => place();
+    addEventListener("resize", this._onFloatResize, { passive: true });
+
+    if (this.reduce || editing || this.props.parallax === false) return;
+
+    let last = performance.now();
+    const tick = now => {
+      this._raf = requestAnimationFrame(tick);
+      // clamped so a backgrounded tab does not resume with one enormous jump
+      const dt = Math.min(0.05, (now - last) / 1000);
+      last = now;
+
+      for (const el of tiles) {
+        const st = el._sa;
+        st.x += st.vx * dt; st.y += st.vy * dt;
+        if (st.x <= 0) { st.x = 0; st.vx = Math.abs(st.vx); }
+        else if (st.x + st.w >= this.bw) { st.x = this.bw - st.w; st.vx = -Math.abs(st.vx); }
+        if (st.y <= 0) { st.y = 0; st.vy = Math.abs(st.vy); }
+        else if (st.y + st.h >= this.bh) { st.y = this.bh - st.h; st.vy = -Math.abs(st.vy); }
+      }
+
+      for (let i = 0; i < tiles.length; i++) {
+        const a = tiles[i]._sa;
+        for (let j = i + 1; j < tiles.length; j++) {
+          const b = tiles[j]._sa;
+          const ox = Math.min(a.x + a.w, b.x + b.w) - Math.max(a.x, b.x);
+          if (ox <= 0) continue;
+          const oy = Math.min(a.y + a.h, b.y + b.h) - Math.max(a.y, b.y);
+          if (oy <= 0) continue;
+          if (ox < oy) {
+            const push = (ox / 2) * (a.x < b.x ? -1 : 1);
+            a.x += push; b.x -= push;
+            const t = a.vx; a.vx = b.vx; b.vx = t;
+          } else {
+            const push = (oy / 2) * (a.y < b.y ? -1 : 1);
+            a.y += push; b.y -= push;
+            const t = a.vy; a.vy = b.vy; b.vy = t;
+          }
+        }
+      }
+
+      for (const el of tiles) {
+        const st = el._sa;
+        el.style.transform = `translate3d(${st.x.toFixed(1)}px,${st.y.toFixed(1)}px,0)`;
+      }
+
+      const stars = this._stars && this._stars.current;
+      if (stars) stars.style.transform = `translate3d(0,${(scrollY * 0.05).toFixed(1)}px,0)`;
+    };
+    this._raf = requestAnimationFrame(tick);
   }
 
   buildStars() {
@@ -284,11 +421,12 @@ class Component extends DCLogic {
   }
 
   componentWillUnmount() {
-    removeEventListener("pointermove", this.onMove);
     removeEventListener("resize", this._onResize);
+    if (this._onFloatResize) removeEventListener("resize", this._onFloatResize);
     cancelAnimationFrame(this._raf);
     if (this._io) this._io.disconnect();
     if (this._sio) this._sio.disconnect();
+    if (this._yio) this._yio.disconnect();
   }
 }
 </script>

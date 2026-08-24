@@ -93,6 +93,8 @@
     "gap:8px;color:var(--sa-text-faint,#86A3A3);padding:var(--sa-space-4,16px);text-align:center;",
     "transition:transform .2s var(--sa-ease-out,ease),color .2s var(--sa-ease-out,ease)}",
     ".empty svg{width:20px;height:20px;flex:none}",
+    ".box.compact .empty{gap:0;padding:2px}",
+    ".box.compact .empty svg{width:13px;height:13px;opacity:.75}",
     ".empty .cap{font:var(--sa-type-ui,500 13px/1.3 sans-serif);font-size:var(--sa-text-xs,13px);",
     "letter-spacing:var(--sa-tracking-wide,.04em);max-width:22ch}",
     ".box.editable:hover .empty{transform:scale(1.04);color:var(--sa-text-accent,#B2412A)}",
@@ -115,7 +117,7 @@
   var CAMERA_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A1.5 1.5 0 0 1 4.5 7h2l1.2-1.8A1.5 1.5 0 0 1 9 4.5h6a1.5 1.5 0 0 1 1.3.7L17.5 7h2A1.5 1.5 0 0 1 21 8.5v9A1.5 1.5 0 0 1 19.5 19h-15A1.5 1.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="3.4"/></svg>';
 
   class SaImageSlot extends HTMLElement {
-    static get observedAttributes() { return ["placeholder", "ratio"]; }
+    static get observedAttributes() { return ["placeholder", "ratio", "compact"]; }
 
     connectedCallback() {
       if (this._built) { this._render(); return; }
@@ -218,7 +220,10 @@
     _editable() { return isEditMode() && !this._committed; }
 
     _render() {
-      this._cap.textContent = this.getAttribute("placeholder") || "Photo to be supplied";
+      var compact = this.hasAttribute("compact");
+      this._box.classList.toggle("compact", compact);
+      this._cap.textContent = compact ? "" : (this.getAttribute("placeholder") || "Photo to be supplied");
+      this._cap.style.display = compact ? "none" : "";
       this._img.alt = this.getAttribute("placeholder") || "";
       this._box.style.setProperty("--ratio", this.getAttribute("ratio") || "4 / 3");
       this._paint();

@@ -1,0 +1,159 @@
+/* Site-level styles layered on top of the design system.
+   Kept here rather than edited into _ds/ because that directory is generated —
+   anything written there is lost the next time the design system is regenerated. */
+
+/* ---------------------------------------------------------------- type ---- */
+/* The DS already sets antialiasing and optical sizing. These are the remaining
+   refinements: never let the browser fake a weight or slant it does not have
+   (synthesised bold on a variable font looks muddy), and keep real kerning on. */
+:root {
+  font-synthesis: none;
+  font-kerning: normal;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Newsreader carries an optical-size axis from 6 to 72. At hero scale the auto
+   value already tops out, but the tracking needs to come in with it — display
+   type set at body tracking reads loose at 100px. */
+.sa-display-xl {
+  font-optical-sizing: auto;
+  letter-spacing: -0.032em;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+}
+
+/* Digits that animate must not reflow as they count. */
+.sa-tabular { font-variant-numeric: tabular-nums; }
+
+/* --------------------------------------------------------------- grain ---- */
+/* A fine film grain over the dark panels. Flat CSS gradients are what make a
+   page read as generated; a little analog noise breaks the banding and gives the
+   ink surfaces some tooth. Self-contained SVG, so nothing extra to load. */
+.sa-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.4;
+  mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+}
+
+/* -------------------------------------------------- hero float gallery ---- */
+/* The photo tiles drift and bounce off each other behind the title. Positions are
+   driven entirely by JS transforms, so the elements themselves sit at the origin. */
+.sa-float-layer {
+  position: absolute;
+  /* the hero is pulled up behind the sticky nav, so inset:0 would let tiles drift
+     across the navigation — they bounce off the bar's lower edge instead */
+  top: calc(var(--sa-nav-h, 80px) + 6px);
+  right: 0; bottom: 0; left: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+.sa-float {
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+  /* no transition: the animation loop writes transform every frame, and a
+     transition here would fight it and smear the collisions */
+}
+.sa-float-inner {
+  box-shadow: var(--sa-shadow-3);
+  border-radius: var(--sa-radius-media, 4px);
+  overflow: hidden;
+  outline: 1px solid rgba(253, 251, 247, 0.10);
+}
+/* The tiles pass behind the wordmark, so the text needs to stay the brightest
+   thing in the frame — a soft well of shade travels with it. */
+.sa-hero-well {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(1250px, 118%);
+  height: min(700px, 104%);
+  pointer-events: none;
+  z-index: 1;
+  /* Tiles crossing the wordmark fall out of focus rather than being painted over
+     with a grey wash — the title stays the only sharp thing in the frame, and the
+     blur reads as depth instead of dirt. The mask feathers the effect out. */
+  -webkit-backdrop-filter: blur(9px) brightness(0.5) saturate(0.85);
+  backdrop-filter: blur(9px) brightness(0.5) saturate(0.85);
+  -webkit-mask-image: radial-gradient(ellipse 50% 45% at 50% 50%, #000 0%, #000 40%, transparent 78%);
+  mask-image: radial-gradient(ellipse 50% 45% at 50% 50%, #000 0%, #000 40%, transparent 78%);
+}
+/* Older engines get the flat wash rather than nothing at all. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .sa-hero-well {
+    background: radial-gradient(ellipse 52% 46% at 50% 50%,
+      rgba(4, 18, 20, 0.9) 0%, rgba(4, 18, 20, 0.72) 40%, rgba(4, 18, 20, 0) 80%);
+  }
+}
+/* Hero copy sits above the tiles but must not swallow clicks meant for them —
+   in ?edit=1 the tiles are how photos get added. */
+.sa-hero-copy { pointer-events: none; }
+.sa-hero-copy a,
+.sa-hero-copy button { pointer-events: auto; }
+
+@media (max-width: 720px) {
+  .sa-float-layer { display: none; }
+  .sa-hero-well { display: none; }
+}
+
+/* --------------------------------------------------------------- stats ---- */
+/* Stat renders its number as color:var(--sa-text-primary) inline, so rebinding
+   that property on the wrapper recolours the numeral and nothing else — the
+   label and note read from --sa-text-muted / --sa-text-secondary. */
+.sa-stat {
+  position: relative;
+  padding: var(--sa-space-8) var(--sa-space-6);
+  border-radius: var(--sa-radius-md, 10px);
+  background: var(--sa-surface-page);
+  border: 1px solid var(--sa-border-hairline);
+  overflow: hidden;
+}
+.sa-stat::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: var(--sa-stat-accent, var(--sa-accent));
+}
+.sa-stat--coral { --sa-text-primary: var(--sa-coral-500); --sa-stat-accent: var(--sa-coral-500); }
+.sa-stat--verdigris { --sa-text-primary: var(--sa-verdigris-500); --sa-stat-accent: var(--sa-verdigris-500); }
+
+/* The featured one: filled rather than outlined, so it reads as the headline of
+   the three instead of a third of equal weight. */
+.sa-stat--feature {
+  background: linear-gradient(155deg, var(--sa-ink-800) 0%, var(--sa-ink-900) 62%, #041214 100%);
+  border-color: transparent;
+  color: var(--sa-paper-000);
+  --sa-text-primary: var(--sa-paper-000);
+  --sa-text-muted: color-mix(in oklab, var(--sa-paper-000) 62%, transparent);
+  --sa-text-secondary: color-mix(in oklab, var(--sa-paper-000) 82%, transparent);
+  --sa-stat-accent: var(--sa-coral-500);
+}
+.sa-stat--feature .sa-stat-num {
+  font-family: var(--sa-font-display);
+  font-size: clamp(3.4rem, 6vw, 5rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  font-optical-sizing: auto;
+  background: linear-gradient(100deg, var(--sa-coral-300) 0%, var(--sa-coral-500) 46%, var(--sa-verdigris-500) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: block;
+}
+.sa-stat--feature .sa-stat-note {
+  font: var(--sa-type-lede);
+  font-size: var(--sa-text-md);
+  color: color-mix(in oklab, var(--sa-paper-000) 84%, transparent);
+  margin-top: var(--sa-space-4);
+  max-width: 26ch;
+  text-wrap: pretty;
+}

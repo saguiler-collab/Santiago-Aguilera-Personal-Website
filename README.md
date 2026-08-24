@@ -1,8 +1,8 @@
-# Santiago Aguilera — personal website
+# The Santiago Aguilera Library
 
-A personal site built for universities, employers and anyone who wants the whole picture:
-six countries, two schools, health science, Model UN, a drum kit and a swim lane, told in
-order.
+A personal site — "the Santiago Aguilera Library" — built for universities, employers and
+anyone who wants the whole picture: six countries, two schools, health science, Model UN,
+a drum kit and a swim lane, collected and kept in order.
 
 The original plan and section outline live in [Instructions-v1.md](Instructions-v1.md).
 
@@ -28,6 +28,7 @@ python3 -m http.server 8000
 | `_ds/…/` | The design system: tokens, fonts and the components (`Card`, `SectionHeading`, `Footer`, …). |
 | `assets/vendor/` | React and ReactDOM, vendored locally. |
 | `assets/site-config.js` | Profile links, shared by every page. |
+| `assets/site.css` | Site-level CSS layered over the design system — type refinements, the hero tile gallery, the stat cards. Lives here because `_ds/` is generated. |
 | `assets/photo-slots.js` | The `<sa-image-slot>` element and the `?edit=1` photo editor. |
 | `tools/` | Build and helper scripts. |
 

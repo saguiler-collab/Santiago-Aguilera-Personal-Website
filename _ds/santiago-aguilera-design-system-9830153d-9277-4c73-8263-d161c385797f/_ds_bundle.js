@@ -551,7 +551,7 @@ try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** Deep-teal closing band: mark, one line, social icon row. */
 function Footer({
-  note = "Built to introduce myself — thanks for reading.",
+  note = "Six countries, collected in one place. Thanks for reading.",
   socials = [],
   columns = [],
   iconBase = "assets/icons/brand",
@@ -635,7 +635,7 @@ function Footer({
       fontWeight: "var(--sa-weight-regular)",
       color: "color-mix(in oklab, var(--sa-paper-000) 56%, transparent)"
     }
-  }, "\xA9 ", new Date().getFullYear(), " Santiago Aguilera"), /*#__PURE__*/React.createElement("div", {
+  }, "\xA9 ", new Date().getFullYear(), " Santiago Aguilera Library"), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
       gap: "var(--sa-space-1)"
