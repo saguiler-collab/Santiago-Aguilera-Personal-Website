@@ -92,7 +92,7 @@ const GROUPS = {
   ]}
 };
 
-const TBD = "Waiting on details";
+const TBD = "To be added";
 
 const PAGES = [
   /* ---------------------------------------------------------- landings ---- */
@@ -626,18 +626,27 @@ function renderPage(p) {
   const restSlots = slots.slice(1);
 
   const crumb = p.parent
-    ? `      <a href="${p.parent.href}" style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-muted);text-decoration:none">← ${esc(p.parent.label)}</a>\n`
+    ? `      <a href="${p.parent.href}" style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-muted);text-decoration:none;display:inline-block;padding-block:4px">← ${esc(p.parent.label)}</a>\n`
     : "";
 
   const bodyParas = (p.body || [])
     .map((t) => `      <p style="font:var(--sa-type-body);color:var(--sa-text-secondary);max-width:60ch;margin-top:var(--sa-space-4);text-wrap:pretty">${esc(t)}</p>`)
     .join("\n");
 
+  /* Two versions of the same block. Visitors get one honest sentence; the detailed
+     list of what is missing is author-only, because it is written as instructions to
+     Santiago ("Your Perkiomen Senate role and year, what you ran on") and was being
+     published on a page a university might be reading. ?edit=1 reveals it. */
+  const noteBox = (cls, eyebrow, text) =>
+    `      <div class="${cls}" style="margin-top:var(--sa-space-8);padding:var(--sa-space-5);border-left:3px solid var(--sa-highlight);background:var(--sa-highlight-soft);border-radius:var(--sa-radius-sm)">
+        <div style="font:var(--sa-type-eyebrow);letter-spacing:var(--sa-tracking-eyebrow);text-transform:uppercase;color:var(--sa-sienna-500)">${esc(eyebrow)}</div>
+        <p style="font:var(--sa-type-body);font-size:var(--sa-text-sm);color:var(--sa-ink-800);margin:6px 0 0;text-wrap:pretty">${esc(text)}</p>
+      </div>`;
+
   const tbdNote = p.tbd
-    ? `      <div style="margin-top:var(--sa-space-8);padding:var(--sa-space-5);border-left:3px solid var(--sa-highlight);background:var(--sa-highlight-soft);border-radius:var(--sa-radius-sm)">
-        <div style="font:var(--sa-type-eyebrow);letter-spacing:var(--sa-tracking-eyebrow);text-transform:uppercase;color:var(--sa-sienna-500)">Still to add</div>
-        <p style="font:var(--sa-type-body);font-size:var(--sa-text-sm);color:var(--sa-ink-800);margin:6px 0 0;text-wrap:pretty">${esc(p.tbd)}</p>
-      </div>`
+    ? noteBox("sa-tbd-public", "Still being written",
+        "This part is not finished yet. It will be filled in properly rather than padded out.") + "\n" +
+      noteBox("sa-tbd-author", "Still to add (only visible with ?edit=1)", p.tbd)
     : "";
 
   const quote = p.quote
@@ -660,6 +669,7 @@ function renderPage(p) {
   const cards = p.cards
     ? `
 <section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-8) clamp(24px,5vw,64px) var(--sa-space-20) clamp(24px,11vw,168px);box-sizing:border-box">
+  <h2 class="sa-vh">${attr(p.eyebrow)}</h2>
   <div data-stagger="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--sa-space-5)">
 ${p.cards.map((c) => `    <x-import component-from-global-scope="${NS}.Card" interactive="{{ true }}" href="${attr(c.href)}" eyebrow="${attr(c.eyebrow)}" title="${attr(c.title)}" hint-size="100%,180px">${esc(c.body)}</x-import>`).join("\n")}
   </div>

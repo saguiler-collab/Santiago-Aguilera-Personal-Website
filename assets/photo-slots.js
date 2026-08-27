@@ -259,7 +259,15 @@
   // localStorage, so they are a private preview, they do not exist for anyone else and
   // they vanish if the browser clears its storage. Without saying so, it is very easy to
   // fill in every slot, see a finished-looking site, and publish 161 empty boxes.
+  // Author-only notes ("still to add" prompts) are revealed by this class rather than
+  // shipped to visitors. Without it those blocks published a to-do list addressed to
+  // Santiago on a page a university might be reading.
+  function markEditing() {
+    document.documentElement.classList.toggle("sa-editing", isEditMode());
+  }
+
   function injectEditBanner() {
+    markEditing();
     if (!isEditMode() || document.getElementById("sa-edit-banner")) return;
 
     var bar = document.createElement("div");
@@ -293,6 +301,7 @@
     });
     exit.addEventListener("click", function () {
       exitEditMode();
+      markEditing();
       bar.remove();
     });
 

@@ -217,3 +217,26 @@
   max-width: 26ch;
   text-wrap: pretty;
 }
+
+/* ----------------------------------------------------- unfinished notes ---- */
+/* Pages that are still being written carry two versions of the same block: one
+   sentence for visitors, and the full list of what is missing for Santiago. The
+   detailed one is author-only, because it is written as instructions to him
+   ("Your Perkiomen Senate role and year, what you ran on") and was being published
+   to everyone. Add ?edit=1 to any page to see it. */
+.sa-tbd-author { display: none; }
+.sa-editing .sa-tbd-author { display: block; }
+.sa-editing .sa-tbd-public { display: none; }
+
+/* ---------------------------------------------------------- footer size ---- */
+/* Footer column links rendered 20px tall. WCAG's minimum pointer target is 24px,
+   and stacked 20px rows are easy to mis-tap on a phone. */
+footer nav a { padding-block: 4px; }
+
+/* A landing page went h1 straight to the h3s inside its cards, so the outline a
+   screen reader announces skipped a level. This names the grid without changing
+   anything on screen. */
+.sa-vh {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
