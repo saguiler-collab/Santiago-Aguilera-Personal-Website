@@ -28,7 +28,7 @@ const paperMark = favicon
   .replace(/<style>[\s\S]*?<\/style>/, '<style>path{stroke:#FDFBF7}</style>');
 const markDataUri = 'data:image/svg+xml;base64,' + Buffer.from(paperMark).toString('base64');
 
-const fontsDir = path.join(ROOT, '_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/assets/fonts');
+const fontsDir = path.join(ROOT, 'assets/fonts');
 
 let html = fs.readFileSync(path.join(__dirname, 'og-card.html'), 'utf8')
   .replace(/FONTS/g, 'file://' + fontsDir)
