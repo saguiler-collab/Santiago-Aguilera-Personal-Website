@@ -58,8 +58,8 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
         <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Icon" name="languages" size="20" hint-size="20px,20px"></x-import>
       </span>
       <div>
-        <h3 style="font:var(--sa-type-heading);font-size:var(--sa-text-md);margin:0">French and Mandarin</h3>
-        <p style="font:var(--sa-type-body);font-size:var(--sa-text-sm);color:var(--sa-text-secondary);margin-top:4px">Two languages in progress, on top of Spanish and English. <a href="About.dc.html#languages">The fluent two are on the About page</a>.</p>
+        <h3 style="font:var(--sa-type-heading);font-size:var(--sa-text-md);margin:0">French</h3>
+        <p style="font:var(--sa-type-body);font-size:var(--sa-text-sm);color:var(--sa-text-secondary);margin-top:4px">One more language in progress, on top of Spanish and English. <a href="About.dc.html#languages">The fluent two are on the About page</a>.</p>
       </div>
     </div>
     <div style="display:flex;gap:var(--sa-space-4)">
@@ -89,8 +89,8 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
 
 <section style="background:var(--sa-surface-sunken);border-top:var(--sa-hairline);border-bottom:var(--sa-hairline)">
   <div data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-12) clamp(24px,5vw,64px) var(--sa-space-12) clamp(24px,11vw,168px);box-sizing:border-box;display:flex;flex-wrap:wrap;gap:var(--sa-space-12)">
-    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Stat" value="{{ n4 }}" label="Languages" note="Spanish and English fluent; French and Mandarin in progress" hint-size="100%,120px"></x-import>
-    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Stat" value="{{ n2 }}" label="In progress" note="French and Mandarin" hint-size="100%,120px"></x-import>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Stat" value="{{ n3 }}" label="Languages" note="Spanish and English fluent; French in progress" hint-size="100%,120px"></x-import>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Stat" value="{{ n1 }}" label="In progress" note="French" hint-size="100%,120px"></x-import>
   </div>
 </section>
 
@@ -122,7 +122,7 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
 class Component extends DCLogic {
   renderVals() {
     return {
-      n4: 4, n2: 2,
+      n3: 3, n1: 1,
       footerColumns: [
         { title: "Sections", links: [{ label: "Home", href: "/" }, { label: "About", href: "About.dc.html" }, { label: "Academics", href: "Academics.dc.html" }, { label: "Research & projects", href: "Research.dc.html" }, { label: "Leadership & service", href: "Leadership.dc.html" }, { label: "Activities", href: "Activities.dc.html" }, { label: "Curiosities", href: "Curiosities.dc.html" }, { label: "Media", href: "Media.dc.html" }] },
         { title: "Curiosities", links: [{ label: "Literature", href: "Curiosities-Literature.dc.html" }, { label: "Music", href: "Curiosities-Music.dc.html" }, { label: "Video games", href: "Curiosities-Videogames.dc.html" }] }

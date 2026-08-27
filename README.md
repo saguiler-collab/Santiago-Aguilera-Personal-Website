@@ -139,7 +139,7 @@ node tools/make-og-image.js     # needs Playwright available
 │   ├── Trinidad        Port of Spain
 │   └── United States   Houston, then Pennsburg
 ├── Academics           ISPS · Perkiomen · Exeter Summer · Carnegie Mellon
-├── Research            CellAtlas GBM · Medical App · Venezuelan Immigration
+├── Research            CellAtlas GBM · SanaSanita · Venezuelan Immigration
 ├── Leadership          HOSA · GVMUN · Student Council · Shadowing · Volunteering · Perkiomenite
 ├── Activities          Swimming · Weightlifting · Drums & Music
 ├── Curiosities         Literature · Music · Video Games

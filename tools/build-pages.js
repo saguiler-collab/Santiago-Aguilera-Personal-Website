@@ -69,7 +69,7 @@ const GROUPS = {
   ]},
   research: { title: "Research", items: [
     { label: "CellAtlas GBM", href: "Research-CellAtlas.dc.html" },
-    { label: "Medical App", href: "Research-MedicalApp.dc.html" },
+    { label: "SanaSanita", href: "Research-MedicalApp.dc.html" },
     { label: "Venezuelan Immigration", href: "Research-Venezuela.dc.html" }
   ]},
   leadership: { title: "Leadership & service", items: [
@@ -189,7 +189,7 @@ const PAGES = [
     file: "Place-UnitedStates.dc.html", section: "about", parent: { label: "About", href: "About.dc.html" },
     eyebrow: "About · United States", title: "Houston, then Pennsburg", lede: "The country I was born in, and the one I came back to.",
     desc: "Born in Houston during Hurricane Ike; boarding at Perkiomen School in Pennsburg, Pennsylvania since 2025.",
-    intro: "I was born in Houston, Texas, on September 13, 2008, in the middle of Hurricane Ike. Seventeen years and five countries later I came back to the same country, to board at Perkiomen School in Pennsburg, Pennsylvania.",
+    intro: "I was born in Houston, Texas, on September 13, 2008, in the middle of Hurricane Ike. Fifteen years and five countries later I returned to where I was born, to board at Perkiomen School in Pennsburg, Pennsylvania.",
     body: ["The symbol on this site comes from that first fact: a spiral for the storm, two marks for the wind that has moved me ever since.", "Pennsburg is the first place I have lived without my family in the same building. Health science, HOSA, Model UN, the Perkiomenite, varsity swimming and the rock band all live here."],
     facts: [["Born", "Houston, TX · Sept 13, 2008"], ["Returned", "August 2025"], ["School", "Perkiomen School"]],
     slots: [
@@ -323,25 +323,57 @@ const PAGES = [
       { key: "gbm-1", ratio: "16 / 9", label: "A figure from the analysis" },
       { key: "gbm-2", ratio: "4 / 3", label: "Poster or presentation" }
     ],
-    next: { title: "Next: the Medical App", lede: "The hospital technology project.", href: "Research-MedicalApp.dc.html", label: "Go to the Medical App" }
+    next: { title: "Next: SanaSanita", lede: "The hospital technology project.", href: "Research-MedicalApp.dc.html", label: "Go to SanaSanita" }
   },
   {
     file: "Research-MedicalApp.dc.html", section: "research", parent: { label: "Research & projects", href: "Research.dc.html" },
-    eyebrow: "Research · Technology", title: "Medical App", lede: "A medical information platform.",
-    desc: "A medical information platform built to make hospital information easier to reach.",
-    intro: "A medical information platform. This is the project where the health science interest turns into something people can actually open and use.",
-    body: ["Having sat in waiting rooms in six countries, the gap that keeps showing up is not medical knowledge. It is access to it: the right information, in a language you speak, at the moment you need it."],
-    steps: [
-      ["Problem", "Medical information is hard to reach at the moment it matters most."],
-      ["Built", TBD, true],
-      ["Stack", TBD, true],
-      ["Where it stands", TBD, true]
+    eyebrow: "Research · Technology", title: "SanaSanita", lede: "Free, offline instructions for the families of children leaving a public hospital.",
+    desc: "SanaSanita, a free offline tool that tells caregivers at IMSS-Bienestar pediatric services what the doctor did not have time to say.",
+    intro: "SanaSanita is built for the pediatric tower of a public hospital in Veracruz, where I volunteered. A doctor there has a few minutes with each family and a prescription form with three medicine slots. The family leaves holding instructions for care that now happens at home, often in a house with no internet. SanaSanita is the part that comes after the consultation.",
+    link: { href: "https://sanasanita.vercel.app/", label: "Open SanaSanita" },
+    quote: {
+      text: "To tell parents what the doctor left out, forgot, or had no time to say, and to make sure they understand all of it, and forget none of it.",
+      by: "The mission, written at the top of the requirements and not changed since"
+    },
+    body: [
+      "That sentence is the test. Every feature is measured against it, and anything that does not help a parent understand or remember does not ship.",
+      "The vision is smaller and more stubborn than it sounds. Not new resources for a hospital that does not have them, but better use of the ones already there. A printer that already sits in consulta externa. A physician who already knows the answer. A national medicine catalogue that is already public and already free. The app assumes no internet at home, no data plan, and sometimes no reading at all.",
+      "It is written in Spanish, for this hospital, and it is free permanently. No account, no server, nothing stored, so there is nothing to breach. The design came out of two weeks of field notes on the ward rather than out of an idea I had first."
     ],
-    tbd: "What the app does, who it is for, the stack, and a link or screenshots. Send these and this becomes the strongest page on the site.",
-    facts: [["Type", "Medical information platform"], ["Role", "Builder"], ["Status", TBD]],
+    steps: [
+      ["The medicine layer", "A prescription that cannot be filled is not a treatment. The app searches the national catalogue by clave and shows whether a medicine is in the hospital, out of stock, or unknown. Unknown is the honest default, because a false yes sends a family to a pharmacy window for nothing."],
+      ["The evidence layer", "Residents here are assigned reading but have no institutional access to journals. The app searches only legal open-access sources: Europe PMC, PubMed, Semantic Scholar, SciELO México, Medigraphic and BVS/PAHO. It finds the passages that matter for home care and shows the exact citation for each one."],
+      ["The gate", "The system drafts. A physician reads it, corrects it, and signs it. Nothing reaches a family unsigned, and where there is no evidence behind a line the section stays empty. Blank beats invented."],
+      ["Anti-deferimiento", "Diferimiento is when a scheduled surgery does not happen. Theatre slots are scarce and a missed one can leave a child unoperated for months. The answer is a printed row of boxes, one for each day until the surgery, crossed off every morning. It needs no phone, no internet and no reading."]
+    ],
+    awards: {
+      title: "The lines that do not move",
+      lede: "Constraints written down before the code, and not moved since.",
+      groups: [
+        { title: "What it never does", items: [
+          { label: "No patient data", detail: "No name, no CURP, no expediente, no date of birth. Nothing is saved to any server." },
+          { label: "No diagnosis or triage", detail: "It does not decide what is wrong with a child, and it does not infer a referral." },
+          { label: "No dose calculation", detail: "It builds a schedule from what the physician entered. It does not work out the dose." },
+          { label: "No medication substitution", detail: "If a drug is out of stock the app says so. Proposing a different one would be prescribing." },
+          { label: "No paywall circumvention", detail: "Open-access sources only, always. Never Sci-Hub." }
+        ]},
+        { title: "What is guaranteed", items: [
+          { label: "Nothing unreviewed reaches a family", detail: "A physician reviews and signs every line before it is printed." },
+          { label: "Free, permanently", detail: "No procurement, no contract, no commercial relationship." },
+          { label: "It works offline", detail: "The consultation may have internet. The family's home usually does not." }
+        ]}
+      ]
+    },
+    tbd: "Two things only you can answer. First, how much of the story you want on the page: the short version stops at the prototype, the fuller one says what happened when you took it to hospital leadership and were told they could not act on it without university and school backing. Second, where it stands right now.",
+    facts: [["Built for", "IMSS-Bienestar pediatric services"], ["Where", "Veracruz, Mexico"], ["Role", "Builder"], ["Version", "v0.1, beta"]],
     slots: [
-      { key: "app-1", ratio: "16 / 9", label: "App screenshot" },
-      { key: "app-2", ratio: "4 / 3", label: "The hospital project" }
+      { key: "app-plan", ratio: "16 / 9", label: "Nuevo plan, the doctor's screen" },
+      { key: "app-evidence-search", ratio: "16 / 9", label: "Searching the open-access literature" },
+      { key: "app-evidence-engine", ratio: "16 / 9", label: "Motor de evidencia, where a draft is written" },
+      { key: "app-evidence-approve", ratio: "16 / 9", label: "Approving a passage with its citation" },
+      { key: "app-pictograms", ratio: "16 / 9", label: "Food and home pictograms, tapped to mark" },
+      { key: "app-medication", ratio: "16 / 9", label: "The medication row" },
+      { key: "app-icon", ratio: "1 / 1", label: "The SanaSanita mark" }
     ],
     next: { title: "Next: the publication", lede: "Venezuelan immigration research.", href: "Research-Venezuela.dc.html", label: "Go to the publication" }
   },
@@ -649,6 +681,14 @@ function renderPage(p) {
       noteBox("sa-tbd-author", "Still to add (only visible with ?edit=1)", p.tbd)
     : "";
 
+  /* A live project link, rendered as a button under the intro. Pages that ship
+     something people can actually open should say so above the fold. */
+  const liveLink = p.link
+    ? `      <div style="margin-top:var(--sa-space-8)">
+        <x-import component-from-global-scope="${NS}.Button" href="${attr(p.link.href)}" target="_blank" rel="noopener" hint-size="220px,44px">${esc(p.link.label)}</x-import>
+      </div>`
+    : "";
+
   const quote = p.quote
     ? `
 <section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-16) clamp(24px,5vw,64px) var(--sa-space-8) clamp(24px,11vw,168px);box-sizing:border-box">
@@ -772,6 +812,7 @@ ${crumb}  <span style="display:block;margin-top:var(--sa-space-4);font:var(--sa-
     <div>
       <p style="font:var(--sa-type-lede);color:var(--sa-text-primary);max-width:60ch;text-wrap:pretty">${esc(p.intro)}</p>
 ${bodyParas}
+${liveLink}
 ${tbdNote}
 ${renderFacts(p.facts)}
     </div>
