@@ -329,17 +329,21 @@ const PAGES = [
     file: "Research-MedicalApp.dc.html", section: "research", parent: { label: "Research & projects", href: "Research.dc.html" },
     eyebrow: "Research · Technology", title: "SanaSanita", lede: "Free, offline instructions for the families of children leaving a public hospital.",
     desc: "SanaSanita, a free offline tool that tells caregivers at IMSS-Bienestar pediatric services what the doctor did not have time to say.",
-    intro: "SanaSanita is built for the pediatric tower of a public hospital in Veracruz, where I volunteered. A doctor there has a few minutes with each family and a prescription form with three medicine slots. The family leaves holding instructions for care that now happens at home, often in a house with no internet. SanaSanita is the part that comes after the consultation.",
+    intro: "I did not start with an app. I started by asking what actually goes wrong inside a government-funded public pediatric hospital, and then spent two weeks on the ward at the Torre Pediátrica in Veracruz writing down what I saw. Ninety-four pages of notes later, the same problem kept turning up wearing different clothes.",
     link: { href: "https://sanasanita.vercel.app/", label: "Open SanaSanita" },
     quote: {
-      text: "To tell parents what the doctor left out, forgot, or had no time to say, and to make sure they understand all of it, and forget none of it.",
-      by: "The mission, written at the top of the requirements and not changed since"
+      text: "This really shows the medical potential of intelligence and creativity, based on the resources available.",
+      by: "A physician at the Torre Pediátrica, from the field notes"
     },
     body: [
-      "That sentence is the test. Every feature is measured against it, and anything that does not help a parent understand or remember does not ship.",
-      "The vision is smaller and more stubborn than it sounds. Not new resources for a hospital that does not have them, but better use of the ones already there. A printer that already sits in consulta externa. A physician who already knows the answer. A national medicine catalogue that is already public and already free. The app assumes no internet at home, no data plan, and sometimes no reading at all.",
-      "It is written in Spanish, for this hospital, and it is free permanently. No account, no server, nothing stored, so there is nothing to breach. The design came out of two weeks of field notes on the ward rather than out of an idea I had first."
+      "The consultorio is where it shows. A doctor has a few minutes with each family. The prescription form has three medicine slots. Rounds happen in the morning, because there is no time for them in the afternoon. Whatever a family does not follow in those few minutes, they take home anyway, and from that point the child's care is theirs to run.",
+      "So I wrote the failures down one at a time. Families were prescribed medicines the pharmacy did not stock, and nobody in the room knew until they reached the window. Surgeries were being missed, because a date three months out is easy to lose track of, and a missed slot can push a child back by months again. Families were arriving on the morning of an operation without their studies, without their documents, or having given the child breakfast. Residents were assigned reading they could not open, because the journals sit behind paywalls the hospital does not pay for. In one case a surgeon improvised a staged reduction with weights and elastic bands, because the material the textbook asks for was not in the building.",
+      "None of those are knowledge problems. The doctor already knows what the family should do. The national medicine catalogue is already public. The research already exists. Every one of them is a transfer problem: the information is real and it does not reach the person who needs it at the moment they need it. That gap is what SanaSanita is built into.",
+      "So the mission was written at the top of the requirements before any code, and it has not moved since. To tell parents what the doctor left out, forgot, or had no time to say, and to make sure they understand all of it, and forget none of it. Every feature is measured against that sentence. Anything that does not help a parent understand or remember does not ship.",
+      "The vision is smaller and more stubborn than it sounds. Not new resources for a hospital that does not have them, but better use of the ones already there. A printer that already sits in consulta externa. A physician who already knows the answer. A medicine catalogue that is already public and already free. The app assumes no internet at home, no data plan, and sometimes no reading at all.",
+      "Where it goes from here is the part that matters most to me. The aim is for this to run inside IMSS-Bienestar hospitals like the one it was written in, used by the doctors already working there. For a physician that means the evidence they cannot otherwise reach, in the language they work in, with the citation attached, as support for their own reasoning and never a replacement for it. For a family it means a clinical summary they can actually read and follow once they are home. The app never diagnoses and it never proposes a treatment. It makes the doctor's own answer easier to give, and much harder to lose."
     ],
+    stepsEyebrow: "How it works", stepsTitle: "Four layers",
     steps: [
       ["The medicine layer", "A prescription that cannot be filled is not a treatment. The app searches the national catalogue by clave and shows whether a medicine is in the hospital, out of stock, or unknown. Unknown is the honest default, because a false yes sends a family to a pharmacy window for nothing."],
       ["The evidence layer", "Residents here are assigned reading but have no institutional access to journals. The app searches only legal open-access sources: Europe PMC, PubMed, Semantic Scholar, SciELO México, Medigraphic and BVS/PAHO. It finds the passages that matter for home care and shows the exact citation for each one."],
@@ -347,8 +351,9 @@ const PAGES = [
       ["Anti-deferimiento", "Diferimiento is when a scheduled surgery does not happen. Theatre slots are scarce and a missed one can leave a child unoperated for months. The answer is a printed row of boxes, one for each day until the surgery, crossed off every morning. It needs no phone, no internet and no reading."]
     ],
     awards: {
+      eyebrow: "Constraints",
       title: "The lines that do not move",
-      lede: "Constraints written down before the code, and not moved since.",
+      lede: "Written down before the code, and not moved since.",
       groups: [
         { title: "What it never does", items: [
           { label: "No patient data", detail: "No name, no CURP, no expediente, no date of birth. Nothing is saved to any server." },
@@ -364,8 +369,7 @@ const PAGES = [
         ]}
       ]
     },
-    tbd: "Two things only you can answer. First, how much of the story you want on the page: the short version stops at the prototype, the fuller one says what happened when you took it to hospital leadership and were told they could not act on it without university and school backing. Second, where it stands right now.",
-    facts: [["Built for", "IMSS-Bienestar pediatric services"], ["Where", "Veracruz, Mexico"], ["Role", "Builder"], ["Version", "v0.1, beta"]],
+    facts: [["Built for", "IMSS-Bienestar pediatric services"], ["Where", "Torre Pediátrica, Veracruz"], ["Field research", "Two weeks on the ward, 94 pages of notes"], ["Version", "v0.1, beta"]],
     slots: [
       { key: "app-plan", ratio: "16 / 9", label: "Nuevo plan, the doctor's screen" },
       { key: "app-evidence-search", ratio: "16 / 9", label: "Searching the open-access literature" },
@@ -624,7 +628,7 @@ ${g.items.map((it) => {
 <section data-reveal="1" style="background:var(--sa-surface-sunken);border-top:var(--sa-hairline);border-bottom:var(--sa-hairline)">
   <div style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-band-y) clamp(24px,5vw,64px) var(--sa-band-y) clamp(24px,11vw,168px);box-sizing:border-box">
     <div data-rail-target="1">
-      <x-import component-from-global-scope="${NS}.SectionHeading" eyebrow="Recognition" title="${attr(a.title || "Awards")}" lede="${attr(a.lede || "")}" hint-size="100%,150px"></x-import>
+      <x-import component-from-global-scope="${NS}.SectionHeading" eyebrow="${attr(a.eyebrow || "Recognition")}" title="${attr(a.title || "Awards")}" lede="${attr(a.lede || "")}" hint-size="100%,150px"></x-import>
     </div>
     <div data-stagger="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(28px,4vw,56px);margin-top:var(--sa-space-12)">
 ${a.groups.map(group).join("\n")}
@@ -633,13 +637,13 @@ ${a.groups.map(group).join("\n")}
 </section>`;
 }
 
-function renderSteps(steps) {
+function renderSteps(steps, eyebrow, title) {
   if (!steps || !steps.length) return "";
   return `
 <section data-reveal="1" style="background:var(--sa-surface-sunken);border-top:var(--sa-hairline);border-bottom:var(--sa-hairline)">
   <div style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-band-y) clamp(24px,5vw,64px) var(--sa-band-y) clamp(24px,11vw,168px);box-sizing:border-box">
     <div data-rail-target="1">
-      <x-import component-from-global-scope="${NS}.SectionHeading" eyebrow="The work" title="How it breaks down" hint-size="100%,110px"></x-import>
+      <x-import component-from-global-scope="${NS}.SectionHeading" eyebrow="${attr(eyebrow || "The work")}" title="${attr(title || "How it breaks down")}" hint-size="100%,110px"></x-import>
     </div>
     <div data-stagger="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--sa-space-5);margin-top:var(--sa-space-10)">
 ${steps.map(([k, v, pending]) => `      <x-import component-from-global-scope="${NS}.Card" eyebrow="${attr(k)}" title="${attr(pending ? "To be added" : "")}"${pending ? ' meta="{{ soon }}"' : ""} hint-size="100%,170px">${esc(v)}</x-import>`).join("\n")}
@@ -818,7 +822,7 @@ ${renderFacts(p.facts)}
     </div>
 ${heroSlot ? `    <sa-image-slot slot-key="${attr(heroSlot.key)}" ratio="${attr(heroSlot.ratio)}" placeholder="${attr(heroSlot.label)}"></sa-image-slot>` : "    <div></div>"}
 </section>
-${cards}${awards}${renderSteps(p.steps)}${quote}${video}${gallery}${more}
+${cards}${awards}${renderSteps(p.steps, p.stepsEyebrow, p.stepsTitle)}${quote}${video}${gallery}${more}
 
 <section class="sa-on-ink" style="position:relative;z-index:10;background:var(--sa-surface-ink);overflow:hidden">
   <div class="sa-glow" style="width:420px;height:420px;left:-90px;top:-150px;background:var(--sa-coral-500)"></div>
