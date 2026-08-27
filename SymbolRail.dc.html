@@ -86,7 +86,7 @@ class Component extends DCLogic {
     this.cx = this.narrow ? 58 : 72;
     this.R = this.narrow ? 25 : 30; this.r0 = this.R * 0.08;
     // cy is where the coiled mark rests before it unwinds. 0.24 lines it up with the
-    // page title rather than the body copy below it — at 0.34 it floated unanchored
+    // page title rather than the body copy below it. At 0.34 it floated unanchored
     // beside the lede. Keep it clear of the ~72px nav: the mark reaches ~49px above cy.
     this.yTop = this.H * 0.1; this.yBot = this.H * 0.92; this.cy = this.H * 0.24;
   }
@@ -127,8 +127,8 @@ class Component extends DCLogic {
      rail's own extent and blended, so crossing a band edge fades instead of flipping.
 
      The closing CTA band and the footer count as "hide". They already sit above the
-     rail at z-index 10, so it was only ever invisible down there by luck of stacking —
-     fading it out makes that deliberate, and keeps it from showing through if the
+     rail at z-index 10, so it was only ever invisible down there by luck of stacking.
+     Fading it out makes that deliberate, and keeps it from showing through if the
      stacking ever changes. */
   surfaceAt(x, y) {
     let el = document.elementFromPoint(x, y);
@@ -272,7 +272,7 @@ class Component extends DCLogic {
    * arrows() also runs on the settled/early-return path where step() has not redrawn.
    *
    * Note the tip is driven by document scroll fraction mapped onto the yTop..yBot band,
-   * so it travels DOWN the viewport while section markers travel UP — they cross exactly
+   * so it travels DOWN the viewport while section markers travel UP, they cross exactly
    * once per section, which is what makes `markerY <= tip` a stable, flicker-free test.
    */
   tip() {

@@ -13,7 +13,7 @@
  * SiteNav, SymbolRail) are NOT touched by this script.
  *
  * Content note: where a real detail wasn't known at build time the copy says so
- * plainly ("Waiting on details") rather than inventing achievements — this is a
+ * plainly ("Waiting on details") rather than inventing achievements. This is a
  * real person's portfolio going to universities.
  */
 "use strict";
@@ -25,7 +25,7 @@ const DS = "_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385
 const NS = "SantiagoAguileraDesignSystem_983015";
 
 /**
- * The public origin, e.g. "https://santiagoaguilera.com" — no trailing slash.
+ * The public origin, e.g. "https://santiagoaguilera.com" (no trailing slash).
  *
  * Setting this turns on <link rel="canonical">, absolute og:url / og:image, and
  * sitemap.xml. While it is empty those are omitted entirely: a canonical tag
@@ -34,7 +34,7 @@ const NS = "SantiagoAguileraDesignSystem_983015";
  */
 const SITE_ORIGIN = "";
 
-/* Profile links live in assets/site-config.js so all ~30 pages share one list —
+/* Profile links live in assets/site-config.js so all ~30 pages share one list.
    see the comment there. Pages read window.SA_SOCIALS at render time. */
 
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -101,7 +101,7 @@ const PAGES = [
     eyebrow: "Leadership & service", title: "What I organise, and who it is for",
     lede: "Founding a chapter, directing a newsroom, and the hours that do not show up on a transcript.",
     desc: "HOSA, GVMUN, hospital shadowing, volunteering, and the Perkiomenite.",
-    intro: "These are the things where the work was not assigned to me. Each one started as a gap I noticed — a club that did not exist, a newsroom that needed running, a waiting room where nobody spoke Spanish.",
+    intro: "These are the things where the work was not assigned to me. Each one started as a gap I noticed. A club that did not exist. A newsroom that needed running. A waiting room where nobody spoke Spanish.",
     cards: [
       { eyebrow: "Founder & President", title: "HOSA", href: "Leadership-HOSA.dc.html", body: "Founded Perkiomen's chapter to create opportunities for students interested in healthcare." },
       { eyebrow: "Director of Journalism", title: "GVMUN", href: "Leadership-GVMUN.dc.html", body: "Running the press corps at the Global Virtual Model United Nations conference." },
@@ -110,7 +110,7 @@ const PAGES = [
       { eyebrow: "Service", title: "Volunteering", href: "Leadership-Volunteering.dc.html", body: "Community work, in and out of school." },
       { eyebrow: "Co-Editor", title: "The Perkiomenite", href: "Leadership-Perkiomenite.dc.html", body: "Writing and editing for the school paper." }
     ],
-    slots: [{ key: "leadership-hero", ratio: "16 / 9", label: "Leadership — a photo from an event" }],
+    slots: [{ key: "leadership-hero", ratio: "16 / 9", label: "A leadership event" }],
     next: { title: "The work behind it", lede: "Research and projects, in detail.", href: "Research.dc.html", label: "See the research" }
   },
   {
@@ -124,20 +124,20 @@ const PAGES = [
       { eyebrow: "Olympic lifting", title: "Weightlifting", href: "Activities-Weightlifting.dc.html", body: "Snatch and clean & jerk, programmed year-round." },
       { eyebrow: "Three bands", title: "Drums & Music", href: "Activities-Music.dc.html", body: "SonoArte Panamá, the ISPS musical, and the Perkiomen rock band." }
     ],
-    slots: [{ key: "activities-hero", ratio: "16 / 9", label: "Activities — a photo" }],
+    slots: [{ key: "activities-hero", ratio: "16 / 9", label: "Activities" }],
     next: { title: "What I do with the rest of it", lede: "Languages, manga, and whatever the group is playing.", href: "Curiosities.dc.html", label: "See the curiosities" }
   },
 
   /* ------------------------------------------------------------ places ---- */
   {
     file: "Place-Mexico.dc.html", section: "about", parent: { label: "About", href: "About.dc.html" },
-    eyebrow: "About · Mexico", title: "Monterrey", lede: "Nuevo León, Mexico — from 2011, age three.",
-    desc: "Monterrey, Nuevo León — AIM and LICEO, and the city I measure every other place against.",
+    eyebrow: "About · Mexico", title: "Monterrey", lede: "Nuevo León, Mexico. From 2011, age three.",
+    desc: "Monterrey, Nuevo León. AIM and LICEO, and the city I measure every other place against.",
     intro: "The third country but the first one I actually remember. School started here: AIM first, then LICEO. Spanish stopped being the language my parents spoke and became the language I thought in.",
     body: ["It is still the place I compare everything to. When I describe a city as hot, or loud, or close, Monterrey is the baseline I am measuring against."],
     facts: [["Years", "2011 onward"], ["Schools", "AIM, then LICEO"], ["Language", "Spanish"]],
     slots: [
-      { key: "mx-1", ratio: "4 / 3", label: "Monterrey — a photo" },
+      { key: "mx-1", ratio: "4 / 3", label: "Monterrey" },
       { key: "mx-2", ratio: "1 / 1", label: "AIM or LICEO" },
       { key: "mx-3", ratio: "4 / 3", label: "Family in Monterrey" }
     ],
@@ -145,13 +145,13 @@ const PAGES = [
   },
   {
     file: "Place-Colombia.dc.html", section: "about", parent: { label: "About", href: "About.dc.html" },
-    eyebrow: "About · Colombia", title: "Bogotá", lede: "Colombia — December 2016, age eight.",
-    desc: "Bogotá, Colombia — Colegio Tilata in La Calera, altitude, and a second accent.",
+    eyebrow: "About · Colombia", title: "Bogotá", lede: "Colombia. December 2016, age eight.",
+    desc: "Bogotá, Colombia. Colegio Tilata in La Calera, altitude, and a second accent.",
     intro: "Colegio Tilata, in La Calera, just outside the city. Bogotá sits at 2,640 metres, and the first thing the altitude teaches you is that running is different here.",
-    body: ["This is where I learned that Spanish is not one language. The accent, the slang and the register all shifted, and I had to shift with them — the first time I remember consciously adapting to fit a room."],
+    body: ["This is where I learned that Spanish is not one language. The accent, the slang and the register all shifted, and I had to shift with them. That was the first time I remember consciously adapting to fit a room."],
     facts: [["Arrived", "December 2016"], ["School", "Colegio Tilata, La Calera"], ["Altitude", "2,640 m"]],
     slots: [
-      { key: "co-1", ratio: "4 / 3", label: "Bogotá — a photo" },
+      { key: "co-1", ratio: "4 / 3", label: "Bogotá" },
       { key: "co-2", ratio: "1 / 1", label: "Colegio Tilata" },
       { key: "co-3", ratio: "4 / 3", label: "La Calera" }
     ],
@@ -159,13 +159,13 @@ const PAGES = [
   },
   {
     file: "Place-Panama.dc.html", section: "about", parent: { label: "About", href: "About.dc.html" },
-    eyebrow: "About · Panama", title: "Ciudad de Panamá", lede: "Panama — July 2019, age ten.",
-    desc: "Ciudad de Panamá — the International School of Panama, and SonoArte, where I started drumming.",
+    eyebrow: "About · Panama", title: "Ciudad de Panamá", lede: "Panama. July 2019, age ten.",
+    desc: "Ciudad de Panamá. The International School of Panama, and SonoArte, where I started drumming.",
     intro: "The International School of Panama for class, and SonoArte for the thing that actually changed how I spend my time: this is where I started playing drums.",
-    body: ["Drumming became the way I think. It is the one activity that has followed me into every country since — and the reason walking into a new school with a music room never felt like walking in cold."],
+    body: ["Drumming became the way I think. It is the one activity that has followed me into every country since, and the reason walking into a new school with a music room never felt like walking in cold."],
     facts: [["Arrived", "July 2019"], ["School", "International School of Panama"], ["Music", "SonoArte"]],
     slots: [
-      { key: "pa-1", ratio: "4 / 3", label: "Ciudad de Panamá — a photo" },
+      { key: "pa-1", ratio: "4 / 3", label: "Ciudad de Panamá" },
       { key: "pa-2", ratio: "1 / 1", label: "SonoArte" },
       { key: "pa-3", ratio: "4 / 3", label: "International School of Panama" }
     ],
@@ -173,13 +173,13 @@ const PAGES = [
   },
   {
     file: "Place-Trinidad.dc.html", section: "about", parent: { label: "About", href: "About.dc.html" },
-    eyebrow: "About · Trinidad & Tobago", title: "Port of Spain", lede: "Trinidad & Tobago — August 2021, age twelve.",
-    desc: "Port of Spain — the International School of Port of Spain, Student Council, and Stronger Together.",
+    eyebrow: "About · Trinidad & Tobago", title: "Port of Spain", lede: "Trinidad & Tobago. August 2021, age twelve.",
+    desc: "Port of Spain. The International School of Port of Spain, Student Council, and Stronger Together.",
     intro: "The International School of Port of Spain. I arrived as schools everywhere were working out how to come back from remote learning, which turned out to be the thing worth working on.",
-    body: ["I joined Student Council, and helped run Stronger Together — a student-led initiative supporting classmates through the return to in-person school. It was the first time I saw a student idea actually change how a school felt."],
+    body: ["I joined Student Council, and helped run Stronger Together, a student-led initiative supporting classmates through the return to in-person school. It was the first time I saw a student idea actually change how a school felt."],
     facts: [["Arrived", "August 2021"], ["School", "International School of Port of Spain"], ["Led", "Student Council · Stronger Together"]],
     slots: [
-      { key: "tt-1", ratio: "4 / 3", label: "Port of Spain — a photo" },
+      { key: "tt-1", ratio: "4 / 3", label: "Port of Spain" },
       { key: "tt-2", ratio: "1 / 1", label: "ISPS" },
       { key: "tt-3", ratio: "4 / 3", label: "Stronger Together" }
     ],
@@ -189,7 +189,7 @@ const PAGES = [
     file: "Place-UnitedStates.dc.html", section: "about", parent: { label: "About", href: "About.dc.html" },
     eyebrow: "About · United States", title: "Houston, then Pennsburg", lede: "The country I was born in, and the one I came back to.",
     desc: "Born in Houston during Hurricane Ike; boarding at Perkiomen School in Pennsburg, Pennsylvania since 2025.",
-    intro: "I was born in Houston, Texas, on September 13, 2008 — in the middle of Hurricane Ike. Seventeen years and five countries later I came back to the same country, to board at Perkiomen School in Pennsburg, Pennsylvania.",
+    intro: "I was born in Houston, Texas, on September 13, 2008, in the middle of Hurricane Ike. Seventeen years and five countries later I came back to the same country, to board at Perkiomen School in Pennsburg, Pennsylvania.",
     body: ["The symbol on this site comes from that first fact: a spiral for the storm, two marks for the wind that has moved me ever since.", "Pennsburg is the first place I have lived without my family in the same building. Health science, HOSA, Model UN, the Perkiomenite, varsity swimming and the rock band all live here."],
     facts: [["Born", "Houston, TX · Sept 13, 2008"], ["Returned", "August 2025"], ["School", "Perkiomen School"]],
     slots: [
@@ -204,10 +204,10 @@ const PAGES = [
   {
     file: "Academics-ISPS.dc.html", section: "academics", parent: { label: "Academics", href: "Academics.dc.html" },
     eyebrow: "Academics · Trinidad & Tobago", title: "International School of Port of Spain", lede: "2021–2025. Student Council, and Stronger Together.",
-    desc: "ISPS — Student Council and the Stronger Together initiative.",
+    desc: "ISPS. Student Council and the Stronger Together initiative.",
     intro: "ISPS is where I first took on something school-wide rather than something assigned. Student Council meant representing my class and actually running events; Stronger Together meant building the support I wished had existed.",
-    body: ["Stronger Together was a student-led initiative supporting classmates through the return to in-person school after remote learning. The problem was not academic — it was that a lot of people had quietly stopped knowing how to be around each other.", "Academically the same subjects kept reappearing across all four years — English every single year, with Spanish, music and Individuals & Societies close behind. That is a more honest description of where my attention goes than anything I could claim about myself."],
-    tbd: "What the Mr. Jefferies Memorial Award recognises. Its criteria are not published anywhere I could find, so rather than guess at what it honours, the entry below just states the fact of it — send the description and it goes in.",
+    body: ["Stronger Together was a student-led initiative supporting classmates through the return to in-person school after remote learning. The problem was not academic. A lot of people had quietly stopped knowing how to be around each other.", "Academically the same subjects kept reappearing across all four years. English every single year, with Spanish, music and Individuals & Societies close behind. That is a more honest description of where my attention goes than anything I could claim about myself."],
+    tbd: "What the Mr. Jefferies Memorial Award recognises. Its criteria are not published anywhere I could find, so rather than guess at what it honours, the entry below just states the fact of it. Send the description and it goes in.",
     facts: [["Years", "2021 – 2025"], ["Roles", "Student Council · Stronger Together"], ["Programme", "IB Middle Years Programme"]],
     awards: {
       title: "Four years of awards",
@@ -229,7 +229,7 @@ const PAGES = [
           { label: "Consistent Effort", detail: "Integrated Math (10th grade)" }
         ]},
         { title: "Grade 10", items: [
-          { label: "Personal Project Award", detail: "The MYP capstone — a self-directed project carried end to end." },
+          { label: "Personal Project Award", detail: "The MYP capstone. A self-directed project carried end to end." },
           { label: "MYP Bilingual Diploma", detail: "Awarded for completing the Middle Years Programme in two languages." },
           { label: "Academic Excellence", detail: "English · Individuals & Societies · Pre-Calculus · Physics II · Music II" },
           { label: "Consistent Effort", detail: "Chemistry" }
@@ -246,18 +246,18 @@ const PAGES = [
   {
     file: "Academics-Perkiomen.dc.html", section: "academics", parent: { label: "Academics", href: "Academics.dc.html" },
     eyebrow: "Academics · Pennsylvania", title: "Perkiomen School", lede: "Pennsburg, Pennsylvania. Boarding since August 2025.",
-    desc: "Perkiomen School — health science track, HOSA, Model UN, journalism, swimming, and the rock band.",
+    desc: "Perkiomen School. Health science track, HOSA, Model UN, journalism, swimming, and the rock band.",
     intro: "Perkiomen is where the separate threads finally started pointing the same direction. The health science track is the academic spine; almost everything else on this site either feeds it or balances it.",
     body: ["Boarding changed how I work. Nobody schedules your evening for you, which means the difference between a good week and a wasted one is entirely a decision you make on Sunday."],
     facts: [["Arrived", "August 2025"], ["Track", "Health science"], ["Status", "Boarding student"]],
     awards: {
       title: "Awards at Perkiomen",
-      lede: "Junior year — one for the medical track, one for maths and science, one from the pool.",
+      lede: "Junior year. One for the medical track, one for maths and science, one from the pool.",
       groups: [
         { title: "Grade 11", items: [
           { label: "Medical Spirit & Promise Award", detail: "For the health science track and the work around it." },
-          { label: "Rochester Institute of Technology Math & Science Award", detail: "2026 — awarded to a junior through RIT's recognition programme." },
-          { label: "Most Improved, Varsity Boys Swimming", detail: "2026 — see the swimming page." }
+          { label: "Rochester Institute of Technology Math & Science Award", detail: "2026. Awarded to a junior through RIT's recognition programme." },
+          { label: "Most Improved, Varsity Boys Swimming", detail: "2026. See the swimming page." }
         ]}
       ]
     },
@@ -271,9 +271,9 @@ const PAGES = [
   {
     file: "Academics-ExeterSummer.dc.html", section: "academics", parent: { label: "Academics", href: "Academics.dc.html" },
     eyebrow: "Academics · Summer program", title: "Exeter Summer", lede: "Phillips Exeter Academy.",
-    desc: "Exeter Summer at Phillips Exeter Academy — coursework and Harkness-style seminars.",
-    intro: "Exeter Summer at Phillips Exeter Academy. Exeter teaches around the Harkness table — twelve students, one oval table, and no lecture to hide behind.",
-    tbd: "The courses I took, what the Harkness format changed about how I argue, and what I brought back — send these and this page fills in.",
+    desc: "Exeter Summer at Phillips Exeter Academy. Coursework and Harkness-style seminars.",
+    intro: "Exeter Summer at Phillips Exeter Academy. Exeter teaches around the Harkness table. Twelve students, one oval table, and no lecture to hide behind.",
+    tbd: "The courses I took, what the Harkness format changed about how I argue, and what I brought back. Send these and this page fills in.",
     facts: [["Program", "Exeter Summer"], ["Place", "Exeter, New Hampshire"], ["Details", TBD]],
     slots: [
       { key: "exeter-1", ratio: "4 / 3", label: "Exeter campus" },
@@ -284,11 +284,11 @@ const PAGES = [
   {
     file: "Academics-CompBio.dc.html", section: "academics", parent: { label: "Academics", href: "Academics.dc.html" },
     eyebrow: "Academics · Carnegie Mellon", title: "Computational Biology", lede: "Carnegie Mellon University.",
-    desc: "Computational biology coursework at Carnegie Mellon — the training behind the CellAtlas GBM project.",
+    desc: "Computational biology coursework at Carnegie Mellon. The training behind the CellAtlas GBM project.",
     intro: "Computational biology at Carnegie Mellon. This is the training that makes the glioblastoma work possible: biology asked in a language a computer can actually answer.",
-    body: ["It is the clearest example of the direction I am heading — medicine is increasingly a data problem, and I would rather be able to write the analysis than wait for someone else to run it."],
-    tbd: "The specific coursework, the tools and languages covered, and what the final project actually investigated — send these and this page fills in.",
-    facts: [["Institution", "Carnegie Mellon University"], ["Field", "Computational biology"], ["Result", "Finalist — final project presentation"]],
+    body: ["It is the clearest example of the direction I am heading. Medicine is increasingly a data problem, and I would rather be able to write the analysis than wait for someone else to run it."],
+    tbd: "The specific coursework, the tools and languages covered, and what the final project actually investigated. Send these and this page fills in.",
+    facts: [["Institution", "Carnegie Mellon University"], ["Field", "Computational biology"], ["Result", "Finalist, final project presentation"]],
     awards: {
       title: "Recognition",
       lede: "",
@@ -309,15 +309,15 @@ const PAGES = [
   {
     file: "Research-CellAtlas.dc.html", section: "research", parent: { label: "Research & projects", href: "Research.dc.html" },
     eyebrow: "Research · Computational biology", title: "CellAtlas GBM", lede: "Glioblastoma tumour microenvironment.",
-    desc: "CellAtlas GBM — a computational look at the glioblastoma tumour microenvironment.",
-    intro: "Glioblastoma is the most aggressive primary brain tumour there is, and one reason it resists treatment is that the tumour is not one thing — it is an ecosystem of cell types propping each other up.",
+    desc: "CellAtlas GBM. A computational look at the glioblastoma tumour microenvironment.",
+    intro: "Glioblastoma is the most aggressive primary brain tumour there is, and one reason it resists treatment is that the tumour is not one thing. It is an ecosystem of cell types propping each other up.",
     steps: [
       ["Question", "What cell populations make up the glioblastoma microenvironment, and how do they differ across tumours?"],
-      ["Method", "Computational analysis of single-cell data — the work behind the Carnegie Mellon comp-bio training.", true],
+      ["Method", "Computational analysis of single-cell data. The work behind the Carnegie Mellon comp-bio training.", true],
       ["Results", TBD, true],
       ["What I learned", TBD, true]
     ],
-    tbd: "The dataset, the tools, the figures and where the project stands now — send these and the Question → Method → Results structure above fills in properly.",
+    tbd: "The dataset, the tools, the figures and where the project stands now. Send these and the Question → Method → Results structure above fills in properly.",
     facts: [["Field", "Computational biology · oncology"], ["Focus", "Tumour microenvironment"], ["Status", TBD]],
     slots: [
       { key: "gbm-1", ratio: "16 / 9", label: "A figure from the analysis" },
@@ -329,7 +329,7 @@ const PAGES = [
     file: "Research-MedicalApp.dc.html", section: "research", parent: { label: "Research & projects", href: "Research.dc.html" },
     eyebrow: "Research · Technology", title: "Medical App", lede: "A medical information platform.",
     desc: "A medical information platform built to make hospital information easier to reach.",
-    intro: "A medical information platform — the project where the health science interest turns into something people can actually open and use.",
+    intro: "A medical information platform. This is the project where the health science interest turns into something people can actually open and use.",
     body: ["Having sat in waiting rooms in six countries, the gap that keeps showing up is not medical knowledge. It is access to it: the right information, in a language you speak, at the moment you need it."],
     steps: [
       ["Problem", "Medical information is hard to reach at the moment it matters most."],
@@ -337,7 +337,7 @@ const PAGES = [
       ["Stack", TBD, true],
       ["Where it stands", TBD, true]
     ],
-    tbd: "What the app does, who it is for, the stack, and a link or screenshots — send these and this becomes the strongest page on the site.",
+    tbd: "What the app does, who it is for, the stack, and a link or screenshots. Send these and this becomes the strongest page on the site.",
     facts: [["Type", "Medical information platform"], ["Role", "Builder"], ["Status", TBD]],
     slots: [
       { key: "app-1", ratio: "16 / 9", label: "App screenshot" },
@@ -348,15 +348,15 @@ const PAGES = [
   {
     file: "Research-Venezuela.dc.html", section: "research", parent: { label: "Research & projects", href: "Research.dc.html" },
     eyebrow: "Research · Publication", title: "Venezuelan Immigration", lede: "A published paper on Venezuelan migration.",
-    desc: "A published paper on Venezuelan migration — the human side of the numbers.",
-    intro: "A paper on Venezuelan migration. Having lived in Colombia and Panama — two of the countries that absorbed the largest share of that movement — this is not an abstract topic to me. It is who was in my classrooms.",
+    desc: "A published paper on Venezuelan migration. The human side of the numbers.",
+    intro: "A paper on Venezuelan migration. Having lived in Colombia and Panama, two of the countries that absorbed the largest share of that movement, this is not an abstract topic to me. It is who was in my classrooms.",
     steps: [
       ["Question", "What does Venezuelan migration look like for the people and the countries receiving it?"],
       ["Method", TBD, true],
       ["Findings", TBD, true],
       ["Published in", TBD, true]
     ],
-    tbd: "The title, the venue, the abstract and a link to the paper — send these and this page can lead with the citation the way a publication should.",
+    tbd: "The title, the venue, the abstract and a link to the paper. Send these and this page can lead with the citation the way a publication should.",
     facts: [["Type", "Publication"], ["Topic", "Venezuelan migration"], ["Venue", TBD]],
     slots: [
       { key: "vz-1", ratio: "4 / 3", label: "The paper" },
@@ -368,16 +368,16 @@ const PAGES = [
   /* -------------------------------------------------------- leadership ---- */
   {
     file: "Leadership-HOSA.dc.html", section: "leadership", parent: { label: "Leadership & service", href: "Leadership.dc.html" },
-    eyebrow: "Leadership · Founder & President", title: "HOSA", lede: "Future Health Professionals — Perkiomen chapter.",
-    desc: "Founded and leads Perkiomen's HOSA chapter — Future Health Professionals.",
-    intro: "I founded Perkiomen's HOSA chapter because the school did not have one. HOSA — Future Health Professionals — is the national organisation for students heading into healthcare, and its absence meant anyone interested had nowhere to put that interest.",
+    eyebrow: "Leadership · Founder & President", title: "HOSA", lede: "Future Health Professionals. Perkiomen chapter.",
+    desc: "Founded and leads Perkiomen's HOSA chapter, Future Health Professionals.",
+    intro: "I founded Perkiomen's HOSA chapter because the school did not have one. HOSA, Future Health Professionals, is the national organisation for students heading into healthcare, and its absence meant anyone interested had nowhere to put that interest.",
     body: ["Founding it meant the usual unglamorous work: a charter, an advisor, a room, and enough people in that room to make it real."],
     steps: [
       ["Founded", "Perkiomen's HOSA chapter, to create opportunities for students interested in healthcare."],
       ["Built", TBD, true],
       ["Impact", TBD, true]
     ],
-    tbd: "The events run so far, participation numbers, competition results and anything raised — send these and this page can show impact rather than a title.",
+    tbd: "The events run so far, participation numbers, competition results and anything raised. Send these and this page can show impact rather than a title.",
     facts: [["Role", "Founder & President"], ["Organisation", "HOSA"], ["School", "Perkiomen"]],
     slots: [
       { key: "hosa-1", ratio: "4 / 3", label: "HOSA event" },
@@ -389,15 +389,15 @@ const PAGES = [
   {
     file: "Leadership-GVMUN.dc.html", section: "leadership", parent: { label: "Leadership & service", href: "Leadership.dc.html" },
     eyebrow: "Leadership · Director of Journalism", title: "GVMUN", lede: "Global Virtual Model United Nations.",
-    desc: "Director of Journalism at GVMUN — running the press corps for the conference.",
+    desc: "Director of Journalism at GVMUN, running the press corps for the conference.",
     intro: "Director of Journalism for the Global Virtual Model United Nations. Most delegates argue a country's position; the press corps has to describe every position fairly and fast enough to publish while the committee is still sitting.",
     body: ["Model UN taught me to defend a case that is not my own. Running the newsroom taught me the harder version: describing every case in the room accurately, including the ones I disagreed with."],
     steps: [
-      ["Role", "Director of Journalism — running the conference press corps."],
+      ["Role", "Director of Journalism, running the conference press corps."],
       ["Built", TBD, true],
       ["Impact", TBD, true]
     ],
-    tbd: "Team size, what the press corps published, and conference scale — send these and this page fills in.",
+    tbd: "Team size, what the press corps published, and conference scale. Send these and this page fills in.",
     facts: [["Role", "Director of Journalism"], ["Conference", "GVMUN"], ["Also", "Model UN delegate"]],
     slots: [
       { key: "gvmun-1", ratio: "4 / 3", label: "GVMUN committee room" },
@@ -407,16 +407,16 @@ const PAGES = [
   },
   {
     file: "Leadership-StudentCouncil.dc.html", section: "leadership", parent: { label: "Leadership & service", href: "Leadership.dc.html" },
-    eyebrow: "Leadership · Student government", title: "Student Council / Senate", lede: "Elected to represent classmates — at ISPS, and at Perkiomen.",
+    eyebrow: "Leadership · Student government", title: "Student Council / Senate", lede: "Elected to represent classmates at ISPS, and at Perkiomen.",
     desc: "Student Council at the International School of Port of Spain, and student government at Perkiomen School.",
     intro: "Student government is the least glamorous kind of leadership and the one that taught me the most. Nobody is impressed by it, the wins are small and procedural, and the job is almost entirely listening to people complain and then working out which complaints are actually solvable.",
-    body: ["At ISPS I served on Student Council — representing my class, and running school-wide events with the rest of the council. That was also where Stronger Together came from: the council was the room where it became obvious that people needed help coming back to in-person school, not just better assemblies.", "It is the clearest throughline into everything else on this page. Founding HOSA and directing the GVMUN newsroom are both the same instinct, scaled up: notice the gap, then take responsibility for filling it rather than waiting for someone else to."],
+    body: ["At ISPS I served on Student Council, representing my class and running school-wide events with the rest of the council. That was also where Stronger Together came from: the council was the room where it became obvious that people needed help coming back to in-person school, not just better assemblies.", "It is the clearest throughline into everything else on this page. Founding HOSA and directing the GVMUN newsroom are both the same instinct, scaled up: notice the gap, then take responsibility for filling it rather than waiting for someone else to."],
     steps: [
-      ["ISPS", "Student Council — representing my class and running school-wide events."],
+      ["ISPS", "Student Council, representing my class and running school-wide events."],
       ["Perkiomen", TBD, true],
       ["Impact", TBD, true]
     ],
-    tbd: "Your Perkiomen Senate role and year, what you ran on, and anything the council actually changed — send these and this page fills in.",
+    tbd: "Your Perkiomen Senate role and year, what you ran on, and anything the council actually changed. Send these and this page fills in.",
     facts: [["Role", "Student Council · Senate"], ["Schools", "ISPS · Perkiomen"], ["Started", "2021"]],
     slots: [
       { key: "stuco-1", ratio: "4 / 3", label: "Student Council at ISPS" },
@@ -428,10 +428,10 @@ const PAGES = [
   {
     file: "Leadership-Shadowing.dc.html", section: "leadership", parent: { label: "Leadership & service", href: "Leadership.dc.html" },
     eyebrow: "Leadership · Clinical", title: "Hospital Shadowing", lede: "Watching how care actually gets delivered.",
-    desc: "Hospital shadowing — observing clinical care first-hand.",
+    desc: "Hospital shadowing. Observing clinical care first-hand.",
     intro: "Shadowing is the part of a medical interest that cannot be read about. You can learn the science from a textbook; you cannot learn what a doctor does in the ninety seconds after delivering bad news.",
-    body: ["It is also where the language question stops being theoretical. In a waiting room, being the person who can explain something in Spanish is not a résumé line — it is the difference between a family understanding what is happening and not."],
-    tbd: "Where you shadowed, which departments, how many hours, and the moment that stuck with you — send these and this page fills in.",
+    body: ["It is also where the language question stops being theoretical. In a waiting room, being the person who can explain something in Spanish is not a résumé line. It is the difference between a family understanding what is happening and not."],
+    tbd: "Where you shadowed, which departments, how many hours, and the moment that stuck with you. Send these and this page fills in.",
     facts: [["Type", "Clinical observation"], ["Where", TBD], ["Hours", TBD]],
     slots: [
       { key: "shadow-1", ratio: "4 / 3", label: "At the hospital" },
@@ -443,8 +443,8 @@ const PAGES = [
     file: "Leadership-Volunteering.dc.html", section: "leadership", parent: { label: "Leadership & service", href: "Leadership.dc.html" },
     eyebrow: "Leadership · Service", title: "Volunteering", lede: "Community work, in and out of school.",
     desc: "Volunteering and community service work.",
-    intro: "The service work that sits outside any club structure — the hours that do not come with a title attached.",
-    tbd: "Which organisations, what you did, how often, and roughly how many hours — send these and this page fills in.",
+    intro: "The service work that sits outside any club structure. The hours that do not come with a title attached.",
+    tbd: "Which organisations, what you did, how often, and roughly how many hours. Send these and this page fills in.",
     facts: [["Type", "Community service"], ["Where", TBD], ["Hours", TBD]],
     slots: [
       { key: "vol-1", ratio: "4 / 3", label: "Volunteering" },
@@ -458,7 +458,7 @@ const PAGES = [
     desc: "Co-Editor of the Perkiomenite, Perkiomen School's newspaper.",
     intro: "Co-Editor of the Perkiomenite. Editing is a different skill from writing: most of the job is asking someone else's draft what it is actually trying to say, and then helping it say that.",
     body: ["It pairs with GVMUN more than it looks like it should. Both are about describing something accurately under a deadline, for readers who were not in the room."],
-    tbd: "Pieces you have written, what you cover, and the section you edit — send these and this page can link to the work itself.",
+    tbd: "Pieces you have written, what you cover, and the section you edit. Send these and this page can link to the work itself.",
     facts: [["Role", "Co-Editor"], ["Paper", "The Perkiomenite"], ["School", "Perkiomen"]],
     slots: [
       { key: "perkmt-1", ratio: "4 / 3", label: "The Perkiomenite" },
@@ -470,10 +470,10 @@ const PAGES = [
   /* -------------------------------------------------------- activities ---- */
   {
     file: "Activities-Swimming.dc.html", section: "activities", parent: { label: "Activities", href: "Activities.dc.html" },
-    eyebrow: "Activities · Varsity", title: "Swimming", lede: "Perkiomen School varsity — and a Most Improved award.",
+    eyebrow: "Activities · Varsity", title: "Swimming", lede: "Perkiomen School varsity, and a Most Improved award.",
     desc: "Varsity swimming at Perkiomen School, including a Most Improved award.",
     intro: "Varsity swimming at Perkiomen. Morning sets, meets, and the part of the day that keeps the rest of it in order.",
-    body: ["The award I am proudest of is Most Improved, Varsity Boys Swimming (2026), which is a strange thing to say out loud — it means I started behind. But it is the only award that measures the slope rather than the intercept, and the slope is the part I actually control."],
+    body: ["The award I am proudest of is Most Improved, Varsity Boys Swimming (2026), which is a strange thing to say out loud. It means I started behind. But it is the only award that measures the slope rather than the intercept, and the slope is the part I actually control."],
     facts: [["Level", "Varsity"], ["School", "Perkiomen"], ["Award", "Most Improved, Varsity Boys (2026)"]],
     slots: [
       { key: "swim-1", ratio: "4 / 3", label: "Swim meet" },
@@ -485,9 +485,9 @@ const PAGES = [
   {
     file: "Activities-Weightlifting.dc.html", section: "activities", parent: { label: "Activities", href: "Activities.dc.html" },
     eyebrow: "Activities · Olympic lifting", title: "Weightlifting", lede: "Snatch and clean & jerk, programmed year-round.",
-    desc: "Olympic weightlifting — snatch and clean & jerk, trained year-round.",
+    desc: "Olympic weightlifting. Snatch and clean & jerk, trained year-round.",
     intro: "I started lifting because I wanted to be stronger. It turned into the clearest lesson I have in patience: nothing here can be rushed, and the programme only works if you run it for months.",
-    body: ["Olympic lifting in particular is unforgiving about technique. You cannot muscle a bad snatch — the lift simply fails, in front of everyone, which is a useful thing to get comfortable with."],
+    body: ["Olympic lifting in particular is unforgiving about technique. You cannot muscle a bad snatch. The lift simply fails, in front of everyone, which is a useful thing to get comfortable with."],
     facts: [["Discipline", "Olympic weightlifting"], ["Lifts", "Snatch · clean & jerk"], ["Training", "Year-round"]],
     slots: [
       { key: "lift-1", ratio: "4 / 3", label: "Lifting session" },
@@ -498,7 +498,7 @@ const PAGES = [
   {
     file: "Activities-Music.dc.html", section: "activities", parent: { label: "Activities", href: "Activities.dc.html" },
     eyebrow: "Activities · Three bands", title: "Drums & Music", lede: "SonoArte Panamá, the ISPS musical, and the Perkiomen rock band.",
-    desc: "Drumming across three countries — SonoArte Panamá, ISPS musical productions, and the Perkiomen rock band.",
+    desc: "Drumming across three countries. SonoArte Panamá, ISPS musical productions, and the Perkiomen rock band.",
     intro: "I started at SonoArte in Panama, played the ISPS musical productions in Trinidad, and now play in the Perkiomen rock band. Three very different rooms, one kit.",
     quote: { text: "Every school I joined had a room with a kit in it. That is how I met people.", by: "On the drum kit" },
     body: ["That is not a small thing when you change countries every few years. Drumming is the reason arriving somewhere new has never meant arriving alone."],
@@ -508,7 +508,7 @@ const PAGES = [
       { key: "music-2", ratio: "4 / 3", label: "Rock band set" },
       { key: "music-3", ratio: "1 / 1", label: "SonoArte Panamá" }
     ],
-    video: { ratio: "16 / 9", label: "Rock band set — video to be supplied" },
+    video: { ratio: "16 / 9", label: "Rock band set" },
     next: { title: "Curiosities", lede: "The things that are not on a form.", href: "Curiosities.dc.html", label: "See the curiosities" }
   },
 
@@ -516,10 +516,10 @@ const PAGES = [
   {
     file: "Curiosities-Literature.dc.html", section: "curiosities", parent: { label: "Curiosities", href: "Curiosities.dc.html" },
     eyebrow: "Curiosities · Reading", title: "Literature", lede: "Long series, read in order, usually late.",
-    desc: "Reading — manga, long series, and whatever is currently open.",
+    desc: "Reading. Manga, long series, and whatever is currently open.",
     intro: "Mostly manga, mostly long series, mostly read in order and mostly late at night. Long-form serialised storytelling is its own discipline: keeping a thread coherent across hundreds of chapters is a harder problem than most single novels attempt.",
-    body: ["Reading in three languages also means noticing how differently the same idea lands depending on which one it arrives in — which is roughly the same skill six countries taught me."],
-    tbd: "What you are reading right now, and the series that mattered most — send these and this page gets a proper shelf.",
+    body: ["Reading in three languages also means noticing how differently the same idea lands depending on which one it arrives in, which is roughly the same skill six countries taught me."],
+    tbd: "What you are reading right now, and the series that mattered most. Send these and this page gets a proper shelf.",
     facts: [["Mostly", "Manga · long series"], ["Languages", "Spanish · English · French"], ["Currently reading", TBD]],
     slots: [
       { key: "lit-1", ratio: "4 / 3", label: "The shelf" },
@@ -530,13 +530,13 @@ const PAGES = [
   {
     file: "Curiosities-Music.dc.html", section: "curiosities", parent: { label: "Curiosities", href: "Curiosities.dc.html" },
     eyebrow: "Curiosities · Listening", title: "Music", lede: "What I listen to, as opposed to what I play.",
-    desc: "Listening — the music six countries left behind, separate from the drumming.",
-    intro: "This is the listening half. The playing half — SonoArte, the ISPS musical, the Perkiomen rock band — lives under Activities; this page is about what is actually in my ears the rest of the time.",
-    body: ["Moving every few years does something specific to a music taste: you end up with a library that is a map. Reggaeton and banda from Monterrey, vallenato from Bogotá, soca and calypso from Port of Spain, and whatever the rock band was covering that term.", "It is the least deliberate thing on this site. Nothing here was chosen to be interesting — it is just what stuck from each place."],
-    tbd: "Your current rotation, the artists that matter most, and a Spotify link if you want one embedded — send these and this page gets a real shelf.",
-    facts: [["From", "Mexico · Colombia · Trinidad · US"], ["Also plays", "Drums — see Activities"], ["On repeat", TBD]],
+    desc: "Listening. The music six countries left behind, separate from the drumming.",
+    intro: "This is the listening half. The playing half lives under Activities: SonoArte, the ISPS musical, the Perkiomen rock band. This page is about what is actually in my ears the rest of the time.",
+    body: ["Moving every few years does something specific to a music taste: you end up with a library that is a map. Reggaeton and banda from Monterrey, vallenato from Bogotá, soca and calypso from Port of Spain, and whatever the rock band was covering that term.", "It is the least deliberate thing on this site. Nothing here was chosen to be interesting. It is just what stuck from each place."],
+    tbd: "Your current rotation, the artists that matter most, and a Spotify link if you want one embedded. Send these and this page gets a real shelf.",
+    facts: [["From", "Mexico · Colombia · Trinidad · US"], ["Also plays", "Drums, see Activities"], ["On repeat", TBD]],
     slots: [
-      { key: "music-listen-1", ratio: "4 / 3", label: "Listening — a photo" },
+      { key: "music-listen-1", ratio: "4 / 3", label: "Listening" },
       { key: "music-listen-2", ratio: "1 / 1", label: "Records, headphones, a playlist" }
     ],
     next: { title: "Next: Video games", lede: "Co-op, strategy, and whatever the group is playing.", href: "Curiosities-Videogames.dc.html", label: "Go to video games" }
@@ -544,10 +544,10 @@ const PAGES = [
   {
     file: "Curiosities-Videogames.dc.html", section: "curiosities", parent: { label: "Curiosities", href: "Curiosities.dc.html" },
     eyebrow: "Curiosities · Games", title: "Video games", lede: "Co-op, strategy, and whatever the group is playing.",
-    desc: "Video games — co-op, strategy, and staying in touch with people across time zones.",
+    desc: "Video games. Co-op, strategy, and staying in touch with people across time zones.",
     intro: "Mostly co-op and strategy, and mostly whatever the group has decided we are playing this month.",
     body: ["Games have done something for me that is easy to undersell: when you leave a country, a shared server is often the last thing you still have in common with the people you left. Several friendships from Panama and Trinidad are still alive largely because of a standing lobby and a bad time-zone overlap."],
-    tbd: "The games you actually play, who you play them with, and anything you have built or modded — send these and this page fills in.",
+    tbd: "The games you actually play, who you play them with, and anything you have built or modded. Send these and this page fills in.",
     facts: [["Mostly", "Co-op · strategy"], ["Why it matters", "Friends across six countries"], ["Currently playing", TBD]],
     slots: [
       { key: "games-1", ratio: "16 / 9", label: "A game, or the setup" },
@@ -619,7 +619,7 @@ ${steps.map(([k, v, pending]) => `      <x-import component-from-global-scope="$
 function renderPage(p) {
   const group = GROUPS[p.section];
   const siblings = group ? group.items.filter((i) => i.href !== p.file) : [];
-  const title = `${p.title} — Santiago Aguilera Library`;
+  const title = `${p.title} · Santiago Aguilera Library`;
   const slots = p.slots || [];
 
   const heroSlot = slots[0];
@@ -695,7 +695,7 @@ ${siblings.map((s) => `    <a href="${attr(s.href)}" style="display:inline-flex;
     group ? { title: group.title, links: group.items } : null
   ].filter(Boolean);
 
-  // Absolute URLs only once SITE_ORIGIN is known — see the constant's comment.
+  // Absolute URLs only once SITE_ORIGIN is known. See the constant's comment.
   const canonical = SITE_ORIGIN
     ? `<link rel="canonical" href="${attr(SITE_ORIGIN + "/" + p.file)}">
 <meta property="og:url" content="${attr(SITE_ORIGIN + "/" + p.file)}">
@@ -841,8 +841,8 @@ for (const p of PAGES) {
 
 /* The homepage has to exist at the site root: a static host serves index.html for "/",
    and without one the root URL 404s (or worse, shows a directory listing) on Vercel,
-   GitHub Pages and local preview alike. Home.dc.html stays the authored file — the DC
-   tooling only opens .dc.html — so index.html is generated from it verbatim. Both carry
+   GitHub Pages and local preview alike. Home.dc.html stays the authored file (the DC
+   tooling only opens .dc.html), so index.html is generated from it verbatim. Both carry
    <link rel="canonical" href="/">, so the duplicate defers to the root URL. */
 const home = fs.readFileSync(path.join(ROOT, "Home.dc.html"), "utf8");
 if (!home.includes('rel="canonical"')) {
@@ -877,6 +877,6 @@ ${urls.map((u) => `  <url><loc>${esc(SITE_ORIGIN + "/" + u)}</loc><lastmod>${tod
 
 console.log(`generated ${written} pages (including index.html from Home.dc.html)`);
 if (!SITE_ORIGIN) {
-  console.log("note: SITE_ORIGIN is empty — canonical tags, absolute og:url and sitemap.xml\n" +
+  console.log("note: SITE_ORIGIN is empty, so canonical tags, absolute og:url and sitemap.xml\n" +
     "      are omitted. Set it in this file once the Vercel domain is final.");
 }

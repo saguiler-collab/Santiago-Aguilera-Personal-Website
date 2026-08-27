@@ -25,7 +25,7 @@ const manifest = fs.existsSync(MANIFEST)
 const onlyEmpty = process.argv.includes("--empty");
 const asJson = process.argv.includes("--json");
 
-// index.html is a generated copy of Home.dc.html — listing both would double every
+// index.html is a generated copy of Home.dc.html. Listing both would double every
 // homepage slot, and the keys are identical anyway.
 const files = fs.readdirSync(ROOT)
   .filter((f) => f.endsWith(".dc.html"))

@@ -2,7 +2,7 @@
  * Single source of truth for the profile links shown in every page footer.
  *
  * These used to be copy-pasted into all 30-odd pages, which is why all three had
- * quietly rotted to href="#" — the Footer component's fallback. Edit them here and
+ * quietly rotted to href="#", the Footer component's fallback. Edit them here and
  * every page updates at once.
  *
  * An entry with an empty href is dropped rather than rendered: an icon that looks

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Renders tools/og-card.html to assets/og-image.png — the 1200x630 preview image
+ * Renders tools/og-card.html to assets/og-image.png. The 1200x630 preview image
  * that Slack, iMessage, LinkedIn and Google show when the site is linked. Without it
  * a shared link is a bare grey rectangle.
  *
@@ -45,5 +45,5 @@ fs.writeFileSync(tmp, html, 'utf8');
   await page.screenshot({ path: path.join(ROOT, 'assets/og-image.png') });
   await browser.close();
   const st = fs.statSync(path.join(ROOT, 'assets/og-image.png'));
-  console.log('wrote assets/og-image.png —', (st.size / 1024).toFixed(0) + 'KB');
+  console.log('wrote assets/og-image.png:', (st.size / 1024).toFixed(0) + 'KB');
 })();

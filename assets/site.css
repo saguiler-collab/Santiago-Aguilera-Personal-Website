@@ -1,6 +1,6 @@
 /* Site-level styles layered on top of the design system.
-   Kept here rather than edited into _ds/ because that directory is generated —
-   anything written there is lost the next time the design system is regenerated. */
+   Kept here rather than edited into _ds/ because that directory is generated.
+   Anything written there is lost the next time the design system is regenerated. */
 
 /* ---------------------------------------------------------------- type ---- */
 /* The DS already sets antialiasing and optical sizing. These are the remaining
@@ -13,7 +13,7 @@
 }
 
 /* Newsreader carries an optical-size axis from 6 to 72. At hero scale the auto
-   value already tops out, but the tracking needs to come in with it — display
+   value already tops out, but the tracking needs to come in with it. Display
    type set at body tracking reads loose at 100px. */
 .sa-display-xl {
   font-optical-sizing: auto;
@@ -46,7 +46,7 @@
 .sa-float-layer {
   position: absolute;
   /* the hero is pulled up behind the sticky nav, so inset:0 would let tiles drift
-     across the navigation — they bounce off the bar's lower edge instead */
+     across the navigation, they bounce off the bar's lower edge instead */
   top: calc(var(--sa-nav-h, 80px) + 6px);
   right: 0; bottom: 0; left: 0;
   z-index: 1;
@@ -67,7 +67,7 @@
   outline: 1px solid rgba(253, 251, 247, 0.10);
 }
 /* The tiles pass behind the wordmark, so the text needs to stay the brightest
-   thing in the frame — a soft well of shade travels with it. */
+   thing in the frame. A soft well of shade travels with it. */
 .sa-hero-well {
   position: absolute;
   left: 50%;
@@ -78,7 +78,7 @@
   pointer-events: none;
   z-index: 1;
   /* Tiles crossing the wordmark fall out of focus rather than being painted over
-     with a grey wash — the title stays the only sharp thing in the frame, and the
+     with a grey wash. The title stays the only sharp thing in the frame, and the
      blur reads as depth instead of dirt. The mask feathers the effect out. */
   -webkit-backdrop-filter: blur(9px) brightness(0.5) saturate(0.85);
   backdrop-filter: blur(9px) brightness(0.5) saturate(0.85);
@@ -92,8 +92,8 @@
       rgba(4, 18, 20, 0.9) 0%, rgba(4, 18, 20, 0.72) 40%, rgba(4, 18, 20, 0) 80%);
   }
 }
-/* Hero copy sits above the tiles but must not swallow clicks meant for them —
-   in ?edit=1 the tiles are how photos get added. */
+/* Hero copy sits above the tiles but must not swallow clicks meant for them.
+   In ?edit=1 the tiles are how photos get added. */
 .sa-hero-copy { pointer-events: none; }
 .sa-hero-copy a,
 .sa-hero-copy button { pointer-events: auto; }
@@ -105,7 +105,7 @@
 
 /* --------------------------------------------------------------- stats ---- */
 /* Stat renders its number as color:var(--sa-text-primary) inline, so rebinding
-   that property on the wrapper recolours the numeral and nothing else — the
+   that property on the wrapper recolours the numeral and nothing else. The
    label and note read from --sa-text-muted / --sa-text-secondary. */
 .sa-stat {
   position: relative;

@@ -8,14 +8,14 @@
 
   // Real, committed image files always win over a browser-local upload preview.
   // assets/photos/manifest.json maps a slot's key to a filename that's actually been
-  // saved into the repo — that's the only way a static site with no backend gets an
+  // saved into the repo, that's the only way a static site with no backend gets an
   // upload to "stick" for every visitor instead of just the browser that uploaded it.
   var manifestPromise = fetch(PHOTOS_DIR + "manifest.json")
     .then(function (r) { return r.ok ? r.json() : {}; })
     .catch(function () { return {}; });
 
   // Editing is off for everyone by default. This is a public portfolio going to
-  // universities and employers — a visitor should never see an upload affordance,
+  // universities and employers. A visitor should never see an upload affordance,
   // and previously every page shipped one plus a fixed "Photos editable" button.
   //
   // Santiago turns it on by adding ?edit=1 to any page. It then persists for the
@@ -70,7 +70,7 @@
   }
 
   // createImageBitmap + imageOrientation:"from-image" bakes in EXIF rotation, which a
-  // plain <img> + canvas draw does not — without it, phone photos taken in portrait
+  // plain <img> + canvas draw does not. Without it, phone photos taken in portrait
   // often come out sideways.
   function resizeToDataUrl(file) {
     if (window.createImageBitmap) {
@@ -122,7 +122,7 @@
     connectedCallback() {
       if (this._built) { this._render(); return; }
       this._built = true;
-      // note: the attribute is "slot-key", not "key" — "key" is a reserved React prop
+      // note: the attribute is "slot-key", not "key". "key" is a reserved React prop
       // name, and this element is instantiated via React.createElement in this codebase's
       // template runtime, so a plain "key" attribute is consumed by React and never reaches
       // the DOM at all (getAttribute("key") is always null).
@@ -173,7 +173,7 @@
       this._box.appendChild(this._input);
       root.appendChild(this._box);
 
-      // Clicking the photo itself does nothing on purpose — pages that wrap a slot in a
+      // Clicking the photo itself does nothing on purpose. Pages that wrap a slot in a
       // lightbox (Media) get to own that click. Editing only happens through the empty
       // state or the explicit Replace/Remove chips.
       this._empty.addEventListener("click", () => { if (this._editable()) this._input.click(); });
@@ -198,7 +198,7 @@
             localStorage.setItem(IMG_PREFIX + this._key, dataUrl);
             this._paint();
           } catch (err) {
-            this._showError("Storage is full — remove another photo or use a smaller image.");
+            this._showError("Storage is full. Remove another photo or use a smaller image.");
           }
         }).catch(() => this._showError("Could not read that image."));
       });
@@ -256,7 +256,7 @@
   if (!customElements.get("sa-image-slot")) customElements.define("sa-image-slot", SaImageSlot);
 
   // Shown only in edit mode. The warning is the point: uploads live in this browser's
-  // localStorage, so they are a private preview — they do not exist for anyone else and
+  // localStorage, so they are a private preview, they do not exist for anyone else and
   // they vanish if the browser clears its storage. Without saying so, it is very easy to
   // fill in every slot, see a finished-looking site, and publish 161 empty boxes.
   function injectEditBanner() {

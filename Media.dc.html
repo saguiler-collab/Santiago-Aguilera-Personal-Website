@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Media — Santiago Aguilera Library</title>
-<meta name="description" content="Photos and video from six countries — cities, meets, the kit, and the committee room.">
+<title>Media · Santiago Aguilera Library</title>
+<meta name="description" content="Photos and video from six countries. Cities, meets, the kit, and the committee room.">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <meta name="theme-color" content="#0F3D3E">
-<meta property="og:title" content="Media — Santiago Aguilera Library">
-<meta property="og:description" content="Photos and video from six countries — cities, meets, the kit, and the committee room.">
+<meta property="og:title" content="Media · Santiago Aguilera Library">
+<meta property="og:description" content="Photos and video from six countries. Cities, meets, the kit, and the committee room.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Santiago Aguilera Library">
 <meta property="og:image" content="assets/og-image.png">
@@ -195,7 +195,7 @@ class Component extends DCLogic {
     });
     this._sio = sio;
 
-    // filters — plain data-attribute driven, no framework state
+    // filters: plain data-attribute driven, no framework state
     const buttons = [...document.querySelectorAll("[data-filter-btn]")];
     const tiles = [...document.querySelectorAll("[data-media-tile]")];
     const paint = (name) => {
@@ -211,7 +211,7 @@ class Component extends DCLogic {
     buttons.forEach(b => b.addEventListener("click", this._onFilter));
     paint("everything");
 
-    // lightbox — click a filled tile to see it larger; clicks on the upload controls inside
+    // lightbox: click a filled tile to see it larger; clicks on the upload controls inside
     // an <sa-image-slot> are ignored so editing and expanding never fight each other.
     const lb = document.getElementById("media-lightbox");
     const lbBody = document.getElementById("media-lightbox-body");
@@ -232,7 +232,7 @@ class Component extends DCLogic {
         ph.textContent = kind === "video" ? "Video to be supplied" : "Photo to be supplied";
         Object.assign(ph.style, { aspectRatio: "16 / 9", borderRadius: "var(--sa-radius-md)", background: "var(--sa-surface-tint)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--sa-text-faint)", font: "var(--sa-type-ui)", fontSize: "var(--sa-text-xs)" });
         lbBody.appendChild(ph);
-        lbCaption.textContent = label + " — file to be supplied.";
+        lbCaption.textContent = label + ". File to be supplied.";
       }
       lb.style.display = "flex";
     };
