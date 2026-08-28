@@ -42,12 +42,23 @@ for (const file of files) {
   }
 }
 
+/* A key can appear on more than one page now that Media re-uses the rest of the
+   site's slots. One key is one photograph, so count unique keys and list every page
+   a key shows up on. */
+const byKey = new Map();
+for (const r of rows) {
+  const e = byKey.get(r.key) || { ...r, pages: [] };
+  e.pages.push(r.page);
+  byKey.set(r.key, e);
+}
+const unique = [...byKey.values()];
+
 const shown = onlyEmpty ? rows.filter((r) => !r.photo) : rows;
 
 if (asJson) {
   // a manifest skeleton: every empty slot, ready to have filenames pasted in
   const out = {};
-  for (const r of rows) out[r.key] = r.photo || "";
+  for (const r of unique) out[r.key] = r.photo || "";
   console.log(JSON.stringify(out, null, 2));
 } else {
   let page = null;
@@ -56,7 +67,9 @@ if (asJson) {
     const status = r.photo ? `-> ${r.photo}` : "(empty)";
     console.log(`  ${r.key.padEnd(22)} ${status.padEnd(24)} ${r.caption}`);
   }
-  const filled = rows.filter((r) => r.photo).length;
-  console.log(`\n${filled} of ${rows.length} slots have a committed photo.`);
+  const filled = unique.filter((r) => r.photo).length;
+  const reused = unique.filter((r) => r.pages.length > 1).length;
+  console.log(`\n${filled} of ${unique.length} photographs are committed` +
+    (reused ? ` (${reused} of them appear on more than one page).` : "."));
   if (filled < rows.length && !onlyEmpty) console.log("Run with --empty to list just the rest.");
 }

@@ -1,0 +1,105 @@
+/* Palettes.
+   ---------------------------------------------------------------------------
+   Every colour in the design system derives from three ramps: paper (light
+   surfaces), ink (dark surfaces and text) and an accent. So a palette only has to
+   redefine those ramps and the entire site follows, including the scroll rail,
+   which reads its colour from the page's own text and paper values.
+
+   Light or dark is still [data-theme], because the design system already maps the
+   ramps for both. A palette declares which mode it belongs to and the head script
+   sets them together, so picking "Noir" gets dark surfaces without a second control.
+
+   Three of these are real brands, sampled from the logos rather than guessed:
+   Perkiomen #3C0C5B and #DBC299, ISPS #183663 and #28A9E2, SanaSanita #07666D.
+   Accents are darkened from the source where the original would not hold contrast
+   against paper. */
+
+/* ---------------------------------------------------- Library (default) ---- */
+/* Cream and deep teal, the site's own colours, with the coral swapped for antique
+   gold. The coral read as a default orange rather than a decision. */
+:root[data-palette="library"] {
+  --sa-paper-000:#FDFBF7; --sa-paper-100:#F6F0E6; --sa-paper-200:#EDE4D5; --sa-paper-300:#DFD2BD;
+  --sa-ink-900:#08282A; --sa-ink-800:#0F3D3E; --sa-ink-700:#1B5658;
+  --sa-ink-500:#467476; --sa-ink-300:#86A3A3; --sa-ink-100:#C3D2D1;
+  --sa-coral-600:#8A6410; --sa-coral-500:#B08428; --sa-coral-300:#D9BE7A; --sa-coral-100:#F3E8CE;
+  --sa-ochre-500:#B08428; --sa-ochre-100:#F3E8CE; --sa-sienna-500:#7A5A12;
+  --sa-hero-1:#14454a; --sa-hero-2:#0d3236; --sa-hero-3:#071e21; --sa-hero-4:#041214;
+}
+
+/* ------------------------------------------------------------ Perkiomen ---- */
+:root[data-palette="perkiomen"] {
+  --sa-paper-000:#FCFAFC; --sa-paper-100:#F4EEF6; --sa-paper-200:#E9DFEE; --sa-paper-300:#D8C8E0;
+  --sa-ink-900:#240638; --sa-ink-800:#3C0C5B; --sa-ink-700:#55207A;
+  --sa-ink-500:#7A4C9B; --sa-ink-300:#A98CC0; --sa-ink-100:#D5C6E2;
+  --sa-coral-600:#8A6A16; --sa-coral-500:#B8912F; --sa-coral-300:#DBC299; --sa-coral-100:#F2E8D3;
+  --sa-ochre-500:#B8912F; --sa-ochre-100:#F2E8D3; --sa-sienna-500:#7A5C13;
+  --sa-hero-1:#4A1670; --sa-hero-2:#360A52; --sa-hero-3:#22043A; --sa-hero-4:#150226;
+}
+
+/* ----------------------------------------------------------------- ISPS ---- */
+:root[data-palette="isps"] {
+  --sa-paper-000:#FBFDFE; --sa-paper-100:#EFF5FA; --sa-paper-200:#E1ECF5; --sa-paper-300:#CBDEED;
+  --sa-ink-900:#0C2244; --sa-ink-800:#183663; --sa-ink-700:#24487E;
+  --sa-ink-500:#3F6DA8; --sa-ink-300:#7C9CC4; --sa-ink-100:#BACDE0;
+  --sa-coral-600:#10658F; --sa-coral-500:#1B8FC7; --sa-coral-300:#6FC0E4; --sa-coral-100:#D6EDF8;
+  --sa-ochre-500:#1B8FC7; --sa-ochre-100:#D6EDF8; --sa-sienna-500:#0F5B80;
+  --sa-hero-1:#1E4A85; --sa-hero-2:#153563; --sa-hero-3:#0D2044; --sa-hero-4:#07142B;
+}
+
+/* ----------------------------------------------------------- SanaSanita ---- */
+:root[data-palette="sana"] {
+  --sa-paper-000:#FCFCF9; --sa-paper-100:#F2F3EE; --sa-paper-200:#E6E9E2; --sa-paper-300:#D3D8CE;
+  --sa-ink-900:#04383C; --sa-ink-800:#07666D; --sa-ink-700:#0A8189;
+  --sa-ink-500:#3AA0A6; --sa-ink-300:#86BEC2; --sa-ink-100:#C4DEDF;
+  --sa-coral-600:#0A6B5C; --sa-coral-500:#0E8E7A; --sa-coral-300:#6BC6B4; --sa-coral-100:#D6F0E9;
+  --sa-ochre-500:#0E8E7A; --sa-ochre-100:#D6F0E9; --sa-sienna-500:#095F52;
+  --sa-hero-1:#0A7A82; --sa-hero-2:#06565C; --sa-hero-3:#03383C; --sa-hero-4:#022226;
+}
+
+/* ------------------------------------------------------------------ Sky ---- */
+:root[data-palette="sky"] {
+  --sa-paper-000:#FFFFFF; --sa-paper-100:#F2F7FB; --sa-paper-200:#E5EFF7; --sa-paper-300:#CFE2EF;
+  --sa-ink-900:#0B2A44; --sa-ink-800:#123A5C; --sa-ink-700:#1B4E77;
+  --sa-ink-500:#3D74A0; --sa-ink-300:#7FA4C2; --sa-ink-100:#BDD3E3;
+  --sa-coral-600:#1E6796; --sa-coral-500:#2E7FB8; --sa-coral-300:#7EB6DA; --sa-coral-100:#DCEDF8;
+  --sa-ochre-500:#2E7FB8; --sa-ochre-100:#DCEDF8; --sa-sienna-500:#1A5A83;
+  --sa-hero-1:#2A6EA0; --sa-hero-2:#1B4E77; --sa-hero-3:#0F3252; --sa-hero-4:#081E33;
+}
+
+/* ----------------------------------------------------- Noir (red, dark) ---- */
+:root[data-palette="noir"] {
+  --sa-paper-000:#F7F5F5; --sa-paper-100:#EDEBEB; --sa-paper-200:#DCD9D9; --sa-paper-300:#C2BEBE;
+  --sa-ink-900:#0B0B0D; --sa-ink-800:#141418; --sa-ink-700:#1F1F26;
+  --sa-ink-500:#3E3E48; --sa-ink-300:#7A7A88; --sa-ink-100:#B4B4C0;
+  --sa-coral-600:#E23A50; --sa-coral-500:#C8102E; --sa-coral-300:#E8697C; --sa-coral-100:#3A0F17;
+  --sa-ochre-500:#C8102E; --sa-ochre-100:#320D14; --sa-sienna-500:#E8697C;
+  --sa-hero-1:#3B0A14; --sa-hero-2:#22060C; --sa-hero-3:#120407; --sa-hero-4:#080203;
+}
+
+/* ---------------------------------------------------- Gilt (gold, dark) ---- */
+:root[data-palette="gilt"] {
+  --sa-paper-000:#FAF7EF; --sa-paper-100:#F2EDE0; --sa-paper-200:#E4DCC8; --sa-paper-300:#CFC3A6;
+  --sa-ink-900:#0E0E0F; --sa-ink-800:#18181B; --sa-ink-700:#232329;
+  --sa-ink-500:#45454E; --sa-ink-300:#85858F; --sa-ink-100:#BEBEC6;
+  --sa-coral-600:#E0BC55; --sa-coral-500:#C9A227; --sa-coral-300:#E3CB78; --sa-coral-100:#332812;
+  --sa-ochre-500:#C9A227; --sa-ochre-100:#2C2210; --sa-sienna-500:#E3CB78;
+  --sa-hero-1:#2E2716; --sa-hero-2:#1D1910; --sa-hero-3:#110F09; --sa-hero-4:#080705;
+}
+
+/* ------------------------------------------- Atlas (violet, dark, CellAtlas) ---- */
+:root[data-palette="atlas"] {
+  --sa-paper-000:#EBEEF7; --sa-paper-100:#DDE3F1; --sa-paper-200:#C9D2E6; --sa-paper-300:#AAB6D2;
+  --sa-ink-900:#080B14; --sa-ink-800:#111624; --sa-ink-700:#1B2236;
+  --sa-ink-500:#3C4666; --sa-ink-300:#7B85A6; --sa-ink-100:#BFC6DA;
+  --sa-coral-600:#A48CFF; --sa-coral-500:#7C5CFF; --sa-coral-300:#AC98FF; --sa-coral-100:#1E1840;
+  --sa-ochre-500:#7C5CFF; --sa-ochre-100:#1A1538; --sa-sienna-500:#AC98FF;
+  --sa-hero-1:#241C55; --sa-hero-2:#15113A; --sa-hero-3:#0C0A22; --sa-hero-4:#060512;
+}
+
+/* The hero's night sky and the ink CTA glows were hard-coded teal, so they ignored
+   every palette. They read from the ramp now. */
+.sa-hero {
+  background: radial-gradient(ellipse 120% 90% at 50% 35%,
+    var(--sa-hero-1, #14454a) 0%, var(--sa-hero-2, #0d3236) 38%,
+    var(--sa-hero-3, #071e21) 72%, var(--sa-hero-4, #041214) 100%) !important;
+}

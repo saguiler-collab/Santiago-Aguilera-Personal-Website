@@ -13,7 +13,13 @@
 <meta property="og:site_name" content="Santiago Aguilera Library">
 <meta property="og:image" content="assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<script>(function(){try{var t=localStorage.getItem("sa:theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script>
+<script>(function(){try{
+var M={library:"light",perkiomen:"light",isps:"light",sana:"light",sky:"light",noir:"dark",gilt:"dark",atlas:"dark"};
+var d=document.documentElement,def="library",p=null;
+try{p=localStorage.getItem("sa:palette")}catch(e){}
+var k=(p&&M[p])?p:def;
+d.setAttribute("data-palette-default",def);d.setAttribute("data-palette",k);d.setAttribute("data-theme",M[k]);
+}catch(e){}})();</script>
 <script src="assets/vendor/react.production.min.js"></script>
 <script src="assets/vendor/react-dom.production.min.js"></script>
 <script src="assets/site-config.js"></script>
@@ -23,6 +29,7 @@
 <x-dc>
 <helmet>
 <link rel="stylesheet" href="_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/styles.css">
+<link rel="stylesheet" href="assets/palettes.css">
 <link rel="stylesheet" href="assets/site.css">
 <script src="_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/_ds_bundle.js"></script>
 <script src="assets/photo-slots.js" defer></script>
@@ -72,27 +79,379 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
       </figcaption>
     </figure>
 
-    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="media-swim-2025" data-label="Swim meet, 2025" data-tag="Swimming" style="margin:0">
-      <sa-image-slot slot-key="media-swim-2025" ratio="3 / 4" placeholder="Swim meet, 2025"></sa-image-slot>
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="about-portrait" data-label="Portrait" data-tag="Me" style="margin:0">
+      <sa-image-slot slot-key="about-portrait" ratio="4 / 5" placeholder="Portrait"></sa-image-slot>
       <figcaption>
-        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">Swim meet, 2025</span>
-        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Swimming</span>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">Portrait</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Me</span>
       </figcaption>
     </figure>
 
-    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="media-bogota" data-label="Bogotá" data-tag="Colombia" style="margin:0">
-      <sa-image-slot slot-key="media-bogota" ratio="4 / 3" placeholder="Bogotá"></sa-image-slot>
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="mx-1" data-label="Monterrey" data-tag="Mexico" style="margin:0">
+      <sa-image-slot slot-key="mx-1" ratio="4 / 3" placeholder="Monterrey"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">Monterrey</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Mexico</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="mx-2" data-label="AIM or LICEO" data-tag="Mexico" style="margin:0">
+      <sa-image-slot slot-key="mx-2" ratio="1 / 1" placeholder="AIM or LICEO"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">AIM or LICEO</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Mexico</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="mx-3" data-label="Family in Monterrey" data-tag="Mexico" style="margin:0">
+      <sa-image-slot slot-key="mx-3" ratio="4 / 3" placeholder="Family in Monterrey"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">Family in Monterrey</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Mexico</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="co-1" data-label="Bogotá" data-tag="Colombia" style="margin:0">
+      <sa-image-slot slot-key="co-1" ratio="4 / 3" placeholder="Bogotá"></sa-image-slot>
       <figcaption>
         <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">Bogotá</span>
         <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Colombia</span>
       </figcaption>
     </figure>
 
-    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="media-port-of-spain" data-label="Port of Spain" data-tag="Trinidad" style="margin:0">
-      <sa-image-slot slot-key="media-port-of-spain" ratio="4 / 3" placeholder="Port of Spain"></sa-image-slot>
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="co-2" data-label="Colegio Tilata" data-tag="Colombia" style="margin:0">
+      <sa-image-slot slot-key="co-2" ratio="1 / 1" placeholder="Colegio Tilata"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">Colegio Tilata</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Colombia</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="co-3" data-label="La Calera" data-tag="Colombia" style="margin:0">
+      <sa-image-slot slot-key="co-3" ratio="4 / 3" placeholder="La Calera"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">La Calera</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Colombia</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="pa-1" data-label="Ciudad de Panamá" data-tag="Panama" style="margin:0">
+      <sa-image-slot slot-key="pa-1" ratio="4 / 3" placeholder="Ciudad de Panamá"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">Ciudad de Panamá</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Panama</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="pa-2" data-label="SonoArte" data-tag="Panama" style="margin:0">
+      <sa-image-slot slot-key="pa-2" ratio="1 / 1" placeholder="SonoArte"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">SonoArte</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Panama</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="pa-3" data-label="International School of Panama" data-tag="Panama" style="margin:0">
+      <sa-image-slot slot-key="pa-3" ratio="4 / 3" placeholder="International School of Panama"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">International School of Panama</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Panama</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="tt-1" data-label="Port of Spain" data-tag="Trinidad" style="margin:0">
+      <sa-image-slot slot-key="tt-1" ratio="4 / 3" placeholder="Port of Spain"></sa-image-slot>
       <figcaption>
         <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">Port of Spain</span>
         <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Trinidad</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="tt-2" data-label="ISPS" data-tag="Trinidad" style="margin:0">
+      <sa-image-slot slot-key="tt-2" ratio="1 / 1" placeholder="ISPS"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">ISPS</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Trinidad</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="tt-3" data-label="Stronger Together" data-tag="Trinidad" style="margin:0">
+      <sa-image-slot slot-key="tt-3" ratio="4 / 3" placeholder="Stronger Together"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">Stronger Together</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Trinidad</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="us-1" data-label="Houston" data-tag="United States" style="margin:0">
+      <sa-image-slot slot-key="us-1" ratio="4 / 3" placeholder="Houston"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">Houston</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">United States</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="us-2" data-label="Perkiomen campus" data-tag="United States" style="margin:0">
+      <sa-image-slot slot-key="us-2" ratio="4 / 3" placeholder="Perkiomen campus"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">Perkiomen campus</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">United States</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="us-3" data-label="Pennsburg" data-tag="United States" style="margin:0">
+      <sa-image-slot slot-key="us-3" ratio="1 / 1" placeholder="Pennsburg"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">Pennsburg</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">United States</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="isps-1" data-label="ISPS campus" data-tag="School" style="margin:0">
+      <sa-image-slot slot-key="isps-1" ratio="4 / 3" placeholder="ISPS campus"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">ISPS campus</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">School</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="isps-2" data-label="Student Council" data-tag="School" style="margin:0">
+      <sa-image-slot slot-key="isps-2" ratio="4 / 3" placeholder="Student Council"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">Student Council</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">School</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="isps-3" data-label="Awards ceremony" data-tag="School" style="margin:0">
+      <sa-image-slot slot-key="isps-3" ratio="1 / 1" placeholder="Awards ceremony"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">Awards ceremony</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">School</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="perk-1" data-label="Perkiomen campus" data-tag="School" style="margin:0">
+      <sa-image-slot slot-key="perk-1" ratio="4 / 3" placeholder="Perkiomen campus"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">Perkiomen campus</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">School</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="perk-2" data-label="In class or lab" data-tag="School" style="margin:0">
+      <sa-image-slot slot-key="perk-2" ratio="4 / 3" placeholder="In class or lab"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">In class or lab</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">School</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="perk-3" data-label="Awards night" data-tag="School" style="margin:0">
+      <sa-image-slot slot-key="perk-3" ratio="1 / 1" placeholder="Awards night"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">Awards night</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">School</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="exeter-1" data-label="Exeter campus" data-tag="School" style="margin:0">
+      <sa-image-slot slot-key="exeter-1" ratio="4 / 3" placeholder="Exeter campus"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">Exeter campus</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">School</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="cmu-1" data-label="Carnegie Mellon" data-tag="School" style="margin:0">
+      <sa-image-slot slot-key="cmu-1" ratio="4 / 3" placeholder="Carnegie Mellon"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">Carnegie Mellon</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">School</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="hosa-1" data-label="HOSA event" data-tag="Leadership" style="margin:0">
+      <sa-image-slot slot-key="hosa-1" ratio="4 / 3" placeholder="HOSA event"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">HOSA event</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Leadership</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="hosa-2" data-label="HOSA competition" data-tag="Leadership" style="margin:0">
+      <sa-image-slot slot-key="hosa-2" ratio="4 / 3" placeholder="HOSA competition"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">HOSA competition</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Leadership</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="gvmun-1" data-label="GVMUN committee room" data-tag="MUN" style="margin:0">
+      <sa-image-slot slot-key="gvmun-1" ratio="4 / 3" placeholder="GVMUN committee room"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">GVMUN committee room</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">MUN</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="gvmun-2" data-label="The press corps" data-tag="MUN" style="margin:0">
+      <sa-image-slot slot-key="gvmun-2" ratio="4 / 3" placeholder="The press corps"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">The press corps</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">MUN</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="stuco-1" data-label="Student Council at ISPS" data-tag="Leadership" style="margin:0">
+      <sa-image-slot slot-key="stuco-1" ratio="4 / 3" placeholder="Student Council at ISPS"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">Student Council at ISPS</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Leadership</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="perkmt-1" data-label="The Perkiomenite" data-tag="Leadership" style="margin:0">
+      <sa-image-slot slot-key="perkmt-1" ratio="4 / 3" placeholder="The Perkiomenite"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">The Perkiomenite</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Leadership</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="shadow-1" data-label="At the hospital" data-tag="Leadership" style="margin:0">
+      <sa-image-slot slot-key="shadow-1" ratio="4 / 3" placeholder="At the hospital"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">At the hospital</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Leadership</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="vol-1" data-label="Volunteering" data-tag="Leadership" style="margin:0">
+      <sa-image-slot slot-key="vol-1" ratio="4 / 3" placeholder="Volunteering"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">Volunteering</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Leadership</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="swim-1" data-label="Swim meet" data-tag="Swimming" style="margin:0">
+      <sa-image-slot slot-key="swim-1" ratio="4 / 3" placeholder="Swim meet"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">Swim meet</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Swimming</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="swim-2" data-label="In the pool" data-tag="Swimming" style="margin:0">
+      <sa-image-slot slot-key="swim-2" ratio="4 / 3" placeholder="In the pool"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">In the pool</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Swimming</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="swim-3" data-label="The team" data-tag="Swimming" style="margin:0">
+      <sa-image-slot slot-key="swim-3" ratio="1 / 1" placeholder="The team"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">The team</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Swimming</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="lift-1" data-label="Lifting session" data-tag="Lifting" style="margin:0">
+      <sa-image-slot slot-key="lift-1" ratio="4 / 3" placeholder="Lifting session"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">Lifting session</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Lifting</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="lift-2" data-label="In the gym" data-tag="Lifting" style="margin:0">
+      <sa-image-slot slot-key="lift-2" ratio="1 / 1" placeholder="In the gym"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">In the gym</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Lifting</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="music-1" data-label="Behind the kit" data-tag="Music" style="margin:0">
+      <sa-image-slot slot-key="music-1" ratio="4 / 3" placeholder="Behind the kit"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">Behind the kit</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Music</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="music-2" data-label="Rock band set" data-tag="Music" style="margin:0">
+      <sa-image-slot slot-key="music-2" ratio="4 / 3" placeholder="Rock band set"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">Rock band set</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Music</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="music-3" data-label="SonoArte Panamá" data-tag="Music" style="margin:0">
+      <sa-image-slot slot-key="music-3" ratio="1 / 1" placeholder="SonoArte Panamá"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">SonoArte Panamá</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Music</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="gbm-1" data-label="A figure from the analysis" data-tag="Research" style="margin:0">
+      <sa-image-slot slot-key="gbm-1" ratio="16 / 9" placeholder="A figure from the analysis"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">A figure from the analysis</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Research</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="app-plan" data-label="SanaSanita, the doctor's screen" data-tag="Research" style="margin:0">
+      <sa-image-slot slot-key="app-plan" ratio="4 / 5" placeholder="SanaSanita, the doctor's screen"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">SanaSanita, the doctor's screen</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Research</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="app-evidence-approve" data-label="Approving a passage" data-tag="Research" style="margin:0">
+      <sa-image-slot slot-key="app-evidence-approve" ratio="4 / 5" placeholder="Approving a passage"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">Approving a passage</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Research</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="vz-1" data-label="The paper" data-tag="Research" style="margin:0">
+      <sa-image-slot slot-key="vz-1" ratio="4 / 3" placeholder="The paper"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">The paper</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Research</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="lit-1" data-label="The shelf" data-tag="Curiosities" style="margin:0">
+      <sa-image-slot slot-key="lit-1" ratio="4 / 3" placeholder="The shelf"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">The shelf</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Curiosities</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="games-1" data-label="A game, or the setup" data-tag="Curiosities" style="margin:0">
+      <sa-image-slot slot-key="games-1" ratio="16 / 9" placeholder="A game, or the setup"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">A game, or the setup</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Curiosities</span>
+      </figcaption>
+    </figure>
+
+    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="music-listen-1" data-label="Listening" data-tag="Curiosities" style="margin:0">
+      <sa-image-slot slot-key="music-listen-1" ratio="4 / 3" placeholder="Listening"></sa-image-slot>
+      <figcaption>
+        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">Listening</span>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Curiosities</span>
       </figcaption>
     </figure>
 
@@ -101,30 +460,6 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
       <figcaption>
         <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">MUN committee session</span>
         <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">MUN</span>
-      </figcaption>
-    </figure>
-
-    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="media-sonoarte" data-label="SonoArte Panamá" data-tag="Panama" style="margin:0">
-      <sa-image-slot slot-key="media-sonoarte" ratio="1 / 1" placeholder="SonoArte Panamá"></sa-image-slot>
-      <figcaption>
-        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">SonoArte Panamá</span>
-        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Panama</span>
-      </figcaption>
-    </figure>
-
-    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="media-lifting" data-label="Lifting session" data-tag="Lifting" style="margin:0">
-      <sa-image-slot slot-key="media-lifting" ratio="4 / 3" placeholder="Lifting session"></sa-image-slot>
-      <figcaption>
-        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">Lifting session</span>
-        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Lifting</span>
-      </figcaption>
-    </figure>
-
-    <figure class="sa-media-tile" data-media-tile data-kind="photo" data-key="media-monterrey" data-label="Monterrey" data-tag="Mexico" style="margin:0">
-      <sa-image-slot slot-key="media-monterrey" ratio="3 / 4" placeholder="Monterrey"></sa-image-slot>
-      <figcaption>
-        <span style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)">Monterrey</span>
-        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-text-faint)">Mexico</span>
       </figcaption>
     </figure>
 

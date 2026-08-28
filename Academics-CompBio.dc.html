@@ -13,7 +13,13 @@
 <meta property="og:site_name" content="Santiago Aguilera Library">
 <meta property="og:image" content="assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<script>(function(){try{var t=localStorage.getItem("sa:theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script>
+<script>(function(){try{
+var M={library:"light",perkiomen:"light",isps:"light",sana:"light",sky:"light",noir:"dark",gilt:"dark",atlas:"dark"};
+var d=document.documentElement,def="atlas",p=null;
+try{p=localStorage.getItem("sa:palette")}catch(e){}
+var k=(p&&M[p])?p:def;
+d.setAttribute("data-palette-default",def);d.setAttribute("data-palette",k);d.setAttribute("data-theme",M[k]);
+}catch(e){}})();</script>
 <!-- React is vendored, not pulled from a CDN: support.js skips its unpkg fetch when
      window.React/ReactDOM already exist. Without this the whole site is a blank page
      whenever unpkg is unreachable, since every page renders client-side. -->
@@ -26,6 +32,7 @@
 <x-dc>
 <helmet>
 <link rel="stylesheet" href="_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/styles.css">
+<link rel="stylesheet" href="assets/palettes.css">
 <link rel="stylesheet" href="assets/site.css">
 <script src="_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/_ds_bundle.js"></script>
 <script src="assets/photo-slots.js" defer></script>

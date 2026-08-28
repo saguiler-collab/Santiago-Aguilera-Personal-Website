@@ -169,8 +169,11 @@ class Component extends DCLogic {
 
     // body's resolved colour is the correct ink for a light surface in either theme;
     // paper is the constant to move toward as the surface goes dark
+    // both ends come from the active palette, so the rail recolours with the page
+    const rootCs = getComputedStyle(document.documentElement);
     const onLight = getComputedStyle(document.body).color || "#08282A";
-    svg.style.color = `color-mix(in oklab, #FDFBF7 ${(darkRatio * 100).toFixed(1)}%, ${onLight})`;
+    const onDark = (rootCs.getPropertyValue("--sa-paper-000") || "").trim() || "#FDFBF7";
+    svg.style.color = `color-mix(in oklab, ${onDark} ${(darkRatio * 100).toFixed(1)}%, ${onLight})`;
     // reaches zero once ~60% of the rail is over the closing bands, so it is fully
     // gone by the time the footer is in view rather than lingering faintly behind it
     svg.style.opacity = this.hidden ? "0" : Math.max(0, 1 - hideRatio * 1.6).toFixed(3);

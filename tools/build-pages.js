@@ -92,6 +92,25 @@ const GROUPS = {
   ]}
 };
 
+/* Each section carries its own palette, so the site is not one colour end to end and
+   you can tell where you are from across the room. Four of them are real brands:
+   Perkiomen purple and gold, ISPS navy and cyan, SanaSanita teal, and a violet
+   "Atlas" for the computational work. A reader can override all of it from the nav. */
+const SECTION_PALETTE = {
+  about: "sky", academics: "perkiomen", research: "atlas",
+  leadership: "isps", activities: "noir", curiosities: "gilt"
+};
+const PAGE_PALETTE = {
+  "Academics-ISPS.dc.html": "isps",
+  "Academics-Perkiomen.dc.html": "perkiomen",
+  "Academics-ExeterSummer.dc.html": "library",
+  "Academics-CompBio.dc.html": "atlas",
+  "Research-CellAtlas.dc.html": "atlas",
+  "Research-MedicalApp.dc.html": "sana",
+  "Research-Venezuela.dc.html": "sky"
+};
+const paletteFor = (p) => PAGE_PALETTE[p.file] || SECTION_PALETTE[p.section] || "library";
+
 const TBD = "To be added";
 
 const PAGES = [
@@ -889,7 +908,13 @@ ${canonical}<meta property="og:title" content="${attr(title)}">
 <meta property="og:site_name" content="Santiago Aguilera Library">
 <meta property="og:image" content="${attr(ogImage)}">
 <meta name="twitter:card" content="summary_large_image">
-<script>(function(){try{var t=localStorage.getItem("sa:theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script>
+<script>(function(){try{
+var M={library:"light",perkiomen:"light",isps:"light",sana:"light",sky:"light",noir:"dark",gilt:"dark",atlas:"dark"};
+var d=document.documentElement,def="${paletteFor(p)}",p=null;
+try{p=localStorage.getItem("sa:palette")}catch(e){}
+var k=(p&&M[p])?p:def;
+d.setAttribute("data-palette-default",def);d.setAttribute("data-palette",k);d.setAttribute("data-theme",M[k]);
+}catch(e){}})();</script>
 <!-- React is vendored, not pulled from a CDN: support.js skips its unpkg fetch when
      window.React/ReactDOM already exist. Without this the whole site is a blank page
      whenever unpkg is unreachable, since every page renders client-side. -->
@@ -902,6 +927,7 @@ ${canonical}<meta property="og:title" content="${attr(title)}">
 <x-dc>
 <helmet>
 <link rel="stylesheet" href="${DS}/styles.css">
+<link rel="stylesheet" href="assets/palettes.css">
 <link rel="stylesheet" href="assets/site.css">
 <script src="${DS}/_ds_bundle.js"></script>
 <script src="assets/photo-slots.js" defer></script>

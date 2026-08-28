@@ -128,14 +128,39 @@ const QUICK = [
   { label: "Research", href: "Research.dc.html" }
 ];
 
-const SUN_SVG = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.5v2.4M12 19.1v2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.9 19.1l1.7-1.7M17.4 6.6l1.7-1.7"></path></svg>';
-const MOON_SVG = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z"></path></svg>';
+/* Every page opens in the palette of its own section, and this lets a reader pin one
+   for the whole site. The swatch shows the accent and the surface together, because
+   the pair is what actually distinguishes them. Choice lives in localStorage and is
+   applied by the inline script in each page's head, before first paint. */
+const PALETTES = [
+  { id: "auto", name: "Match the section", mode: null, dot: "conic-gradient(#B08428,#3C0C5B,#183663,#0E8E7A,#C8102E,#7C5CFF,#B08428)" },
+  { id: "library", name: "Library", mode: "light", dot: "#B08428", bg: "#FDFBF7" },
+  { id: "perkiomen", name: "Perkiomen", mode: "light", dot: "#DBC299", bg: "#3C0C5B" },
+  { id: "isps", name: "Port of Spain", mode: "light", dot: "#28A9E2", bg: "#183663" },
+  { id: "sana", name: "SanaSanita", mode: "light", dot: "#0E8E7A", bg: "#07666D" },
+  { id: "sky", name: "Sky", mode: "light", dot: "#2E7FB8", bg: "#FFFFFF" },
+  { id: "noir", name: "Noir", mode: "dark", dot: "#C8102E", bg: "#0B0B0D" },
+  { id: "gilt", name: "Gilt", mode: "dark", dot: "#C9A227", bg: "#0E0E0F" },
+  { id: "atlas", name: "Atlas", mode: "dark", dot: "#7C5CFF", bg: "#080B14" }
+];
+const MODE_OF = { library: "light", perkiomen: "light", isps: "light", sana: "light",
+  sky: "light", noir: "dark", gilt: "dark", atlas: "dark" };
 
-function isDarkNow() {
-  const t = document.documentElement.getAttribute("data-theme");
-  if (t === "dark") return true;
-  if (t === "light") return false;
-  return matchMedia("(prefers-color-scheme: dark)").matches;
+const PALETTE_SVG = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18c1 0 1.6-.7 1.6-1.5 0-.5-.2-.8-.5-1.1-.3-.3-.5-.7-.5-1.1 0-.8.7-1.5 1.6-1.5H16a5 5 0 0 0 5-5c0-4.4-4-8-9-8Z"/><circle cx="7.5" cy="11.5" r="1.1" fill="currentColor" stroke="none"/><circle cx="10.5" cy="7.5" r="1.1" fill="currentColor" stroke="none"/><circle cx="15" cy="8.5" r="1.1" fill="currentColor" stroke="none"/></svg>';
+
+function savedPalette() {
+  try { return localStorage.getItem("sa:palette") || "auto"; } catch (e) { return "auto"; }
+}
+function pageDefaultPalette() {
+  return document.documentElement.getAttribute("data-palette-default") ||
+         document.documentElement.getAttribute("data-palette") || "library";
+}
+function applyPalette(id) {
+  const d = document.documentElement;
+  const key = id === "auto" ? pageDefaultPalette() : id;
+  d.setAttribute("data-palette", key);
+  d.setAttribute("data-theme", MODE_OF[key] || "light");
+  try { id === "auto" ? localStorage.removeItem("sa:palette") : localStorage.setItem("sa:palette", id); } catch (e) {}
 }
 
 class Component extends DCLogic {
@@ -173,19 +198,75 @@ class Component extends DCLogic {
 
     const themeBtn = this._themeBtn.current;
     if (themeBtn) {
-      const paintTheme = () => {
-        const dark = isDarkNow();
-        themeBtn.innerHTML = dark ? SUN_SVG : MOON_SVG;
-        themeBtn.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+      themeBtn.innerHTML = PALETTE_SVG;
+      themeBtn.setAttribute("aria-label", "Change colours");
+      themeBtn.setAttribute("aria-haspopup", "true");
+      themeBtn.setAttribute("aria-expanded", "false");
+
+      const menu = document.createElement("div");
+      menu.setAttribute("role", "menu");
+      Object.assign(menu.style, {
+        position: "absolute", top: "calc(100% + 8px)", right: "0", zIndex: "60",
+        display: "none", minWidth: "210px", padding: "6px",
+        background: "var(--sa-surface-card)", color: "var(--sa-text-primary)",
+        border: "1px solid var(--sa-border-default)", borderRadius: "12px",
+        boxShadow: "var(--sa-shadow-2, 0 10px 30px -10px rgba(0,0,0,.35))"
+      });
+
+      const rows = PALETTES.map((pl) => {
+        const b = document.createElement("button");
+        b.type = "button"; b.setAttribute("role", "menuitemradio");
+        Object.assign(b.style, {
+          display: "flex", alignItems: "center", gap: "10px", width: "100%",
+          padding: "8px 10px", border: "none", borderRadius: "8px", cursor: "pointer",
+          background: "transparent", color: "inherit", textAlign: "left",
+          font: "var(--sa-type-ui)", fontSize: "var(--sa-text-sm)"
+        });
+        const dot = document.createElement("span");
+        Object.assign(dot.style, {
+          width: "18px", height: "18px", borderRadius: "50%", flex: "none",
+          background: pl.bg || pl.dot,
+          boxShadow: pl.bg ? `inset 0 0 0 5px ${pl.dot}, inset 0 0 0 6px rgba(0,0,0,.18)` : "none",
+          border: "1px solid var(--sa-border-default)"
+        });
+        if (!pl.bg) dot.style.background = pl.dot;
+        const label = document.createElement("span");
+        label.textContent = pl.name; label.style.flex = "1";
+        // the mark is set per state rather than hidden with opacity, or every item
+        // announces a checkmark to a screen reader
+        const tick = document.createElement("span");
+        tick.setAttribute("aria-hidden", "true");
+        b.append(dot, label, tick);
+        b.addEventListener("mouseenter", () => (b.style.background = "var(--sa-surface-sunken)"));
+        b.addEventListener("mouseleave", () => (b.style.background = "transparent"));
+        b.addEventListener("click", () => { applyPalette(pl.id); paint(); close(); });
+        menu.appendChild(b);
+        return { pl, tick, btn: b };
+      });
+
+      const paint = () => {
+        const cur = savedPalette();
+        rows.forEach(({ pl, tick, btn }) => {
+          const on = pl.id === cur;
+          tick.textContent = on ? "\u2713" : "";
+          btn.setAttribute("aria-checked", on ? "true" : "false");
+        });
       };
-      this._onTheme = () => {
-        const next = isDarkNow() ? "light" : "dark";
-        document.documentElement.setAttribute("data-theme", next);
-        try { localStorage.setItem("sa:theme", next); } catch (e) {}
-        paintTheme();
+      const close = () => { menu.style.display = "none"; themeBtn.setAttribute("aria-expanded", "false"); };
+      const open = () => { menu.style.display = "block"; themeBtn.setAttribute("aria-expanded", "true"); };
+
+      themeBtn.parentNode.style.position = "relative";
+      themeBtn.parentNode.appendChild(menu);
+      this._onTheme = (e) => {
+        e.stopPropagation();
+        menu.style.display === "block" ? close() : open();
       };
       themeBtn.addEventListener("click", this._onTheme);
-      paintTheme();
+      this._onDocClick = (e) => { if (!menu.contains(e.target) && e.target !== themeBtn) close(); };
+      document.addEventListener("click", this._onDocClick);
+      this._onEsc = (e) => { if (e.key === "Escape") close(); };
+      document.addEventListener("keydown", this._onEsc);
+      paint();
     }
 
     const open = () => {
