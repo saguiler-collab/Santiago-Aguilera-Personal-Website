@@ -372,11 +372,9 @@ const PAGES = [
     facts: [["Built for", "IMSS-Bienestar pediatric services"], ["Where", "Torre Pediátrica, Veracruz"], ["Field research", "Two weeks on the ward, 94 pages of notes"], ["Version", "v0.1, beta"]],
     /* The screenshots are the app's own column, so they are portrait. 4/5 is close to
        all six, which keeps the grid even without cropping anything meaningful. */
-    galleryEyebrow: "The app", galleryTitle: "What a doctor sees",
     /* The mark sits beside the intro; the screenshots are the gallery. They are the
        app's own column, so they are portrait, and the tiles are widened because UI
        text at 220px is unreadable. */
-    galleryMin: "340px",
     slots: [
       { key: "app-icon", ratio: "1 / 1", label: "The SanaSanita mark" },
       { key: "app-plan", ratio: "4 / 5", label: "Nuevo plan, the doctor's screen" },
@@ -727,17 +725,61 @@ ${p.cards.map((c) => `    <x-import component-from-global-scope="${NS}.Card" int
 </section>`
     : "";
 
-  const gallery = restSlots.length
-    ? `
-<section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-8) clamp(24px,5vw,64px) var(--sa-space-20) clamp(24px,11vw,168px);box-sizing:border-box">
-  <div data-rail-target="1">
-    <x-import component-from-global-scope="${NS}.SectionHeading" eyebrow="${attr(p.galleryEyebrow || "Photos")}" title="${attr(p.galleryTitle || "In photographs")}" hint-size="100%,150px"></x-import>
-  </div>
-  <div data-stagger="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(${attr(p.galleryMin || "220px")},1fr));gap:var(--sa-space-4);margin-top:var(--sa-space-10)">
-${restSlots.map((s) => `    <sa-image-slot slot-key="${attr(s.key)}" ratio="${attr(s.ratio)}" placeholder="${attr(s.label)}"></sa-image-slot>`).join("\n")}
-  </div>
-</section>`
-    : "";
+  /* Photographs are spread through the page instead of collected into one grid at
+     the end. The grid was the same on every page and read as an afterthought.
+
+     Group sizes and the treatment of each group come from a hash of the file name,
+     so a page always lays out the same way but neighbouring pages do not match. */
+  const seedOf = (str) => { let h = 0; for (const ch of str) h = (h * 31 + ch.charCodeAt(0)) >>> 0; return h; };
+  const seed = seedOf(p.file);
+
+  const PATTERNS = [[1, 2, 2, 1], [2, 1, 2, 1], [1, 1, 2, 2], [2, 2, 1, 2], [1, 2, 1, 2], [3, 1, 2]];
+  const groupSlots = (list) => {
+    const pat = PATTERNS[seed % PATTERNS.length];
+    const out = [];
+    for (let i = 0, k = 0; i < list.length; k++) {
+      const n = Math.min(pat[k % pat.length], list.length - i);
+      out.push(list.slice(i, i + n));
+      i += n;
+    }
+    return out;
+  };
+
+  /* A lone figure is sized from its aspect, not given one width for everything. A
+     square at the full text measure becomes a 1000px block, which is overbearing when
+     filled and an enormous empty rectangle while it is not. */
+  const aspectOf = (r) => {
+    const m = String(r).split("/").map((n) => parseFloat(n));
+    return m.length === 2 && m[1] ? m[0] / m[1] : 1;
+  };
+  const singleWidth = (r, band) => {
+    const a = aspectOf(r);
+    if (a >= 1.3) return band ? 1020 : 860;   // landscape
+    if (a >= 1) return band ? 780 : 660;      // square-ish
+    return band ? 560 : 470;                  // portrait
+  };
+
+  const figure = (sl, maxW) => `      <figure class="sa-fig"${maxW ? ` style="max-width:${maxW}px"` : ""}>
+        <sa-image-slot slot-key="${attr(sl.key)}" ratio="${attr(sl.ratio)}" placeholder="${attr(sl.label)}"></sa-image-slot>
+        <figcaption>${esc(sl.label)}</figcaption>
+      </figure>`;
+
+  const SINGLES = ["band", "one", "one-right"];
+  const renderGroup = (group, idx) => {
+    if (group.length === 1) {
+      const kind = SINGLES[(seed + idx) % SINGLES.length];
+      const inner = `
+<section data-reveal="1" class="sa-figs sa-figs-${kind === "band" ? "one" : kind}">
+${figure(group[0], singleWidth(group[0].ratio, kind === "band"))}
+</section>`;
+      return kind === "band" ? `\n<div class="sa-band-figs">${inner}\n</div>` : inner;
+    }
+    const kind = group.length >= 3 ? "trio" : "pair";
+    return `
+<section data-reveal="1" class="sa-figs sa-figs-${kind}">
+${group.map(figure).join("\n")}
+</section>`;
+  };
 
   const more = siblings.length
     ? `
@@ -750,6 +792,23 @@ ${siblings.map((s) => `    <a href="${attr(s.href)}" style="display:inline-flex;
   </div>
 </section>`
     : "";
+
+  /* Lay the figure groups into the gaps between content sections, spread from the
+     first gap to the last so images punctuate the page rather than trailing it. */
+  const contentSections = [cards, awards, renderSteps(p.steps, p.stepsEyebrow, p.stepsTitle), quote, video]
+    .filter((x) => x && x.trim());
+  const groups = groupSlots(restSlots);
+  const gapCount = contentSections.length + 1;
+  const buckets = Array.from({ length: gapCount }, () => []);
+  groups.forEach((g, i) => {
+    const gap = groups.length === 1
+      ? Math.min(1, gapCount - 1)
+      : Math.round((i * (gapCount - 1)) / (groups.length - 1));
+    buckets[gap].push(renderGroup(g, i));
+  });
+  const bodySections = buckets
+    .map((b, i) => b.join("") + (contentSections[i] || ""))
+    .join("");
 
   const footerCols = [
     { title: "Sections", links: SECTION_LINKS },
@@ -829,7 +888,7 @@ ${renderFacts(p.facts)}
     </div>
 ${heroSlot ? `    <sa-image-slot slot-key="${attr(heroSlot.key)}" ratio="${attr(heroSlot.ratio)}" placeholder="${attr(heroSlot.label)}"></sa-image-slot>` : "    <div></div>"}
 </section>
-${cards}${awards}${renderSteps(p.steps, p.stepsEyebrow, p.stepsTitle)}${quote}${video}${gallery}${more}
+${bodySections}${more}
 
 <section class="sa-on-ink" style="position:relative;z-index:10;background:var(--sa-surface-ink);overflow:hidden">
   <div class="sa-glow" style="width:420px;height:420px;left:-90px;top:-150px;background:var(--sa-coral-500)"></div>

@@ -114,14 +114,15 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
     </div>
   </div>
 </section>
-<section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-8) clamp(24px,5vw,64px) var(--sa-space-20) clamp(24px,11vw,168px);box-sizing:border-box">
-  <div data-rail-target="1">
-    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="Photos" title="In photographs" hint-size="100%,150px"></x-import>
-  </div>
-  <div data-stagger="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--sa-space-4);margin-top:var(--sa-space-10)">
-    <sa-image-slot slot-key="perk-2" ratio="4 / 3" placeholder="In class or lab"></sa-image-slot>
-    <sa-image-slot slot-key="perk-3" ratio="1 / 1" placeholder="Awards night"></sa-image-slot>
-  </div>
+<section data-reveal="1" class="sa-figs sa-figs-pair">
+      <figure class="sa-fig">
+        <sa-image-slot slot-key="perk-2" ratio="4 / 3" placeholder="In class or lab"></sa-image-slot>
+        <figcaption>In class or lab</figcaption>
+      </figure>
+      <figure class="sa-fig" style="max-width:1px">
+        <sa-image-slot slot-key="perk-3" ratio="1 / 1" placeholder="Awards night"></sa-image-slot>
+        <figcaption>Awards night</figcaption>
+      </figure>
 </section>
 <section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-8) clamp(24px,5vw,64px) var(--sa-space-20) clamp(24px,11vw,168px);box-sizing:border-box">
   <div data-rail-target="1">

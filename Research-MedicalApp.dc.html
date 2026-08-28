@@ -90,6 +90,12 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
     <sa-image-slot slot-key="app-icon" ratio="1 / 1" placeholder="The SanaSanita mark"></sa-image-slot>
 </section>
 
+<section data-reveal="1" class="sa-figs sa-figs-one">
+      <figure class="sa-fig" style="max-width:470px">
+        <sa-image-slot slot-key="app-plan" ratio="4 / 5" placeholder="Nuevo plan, the doctor's screen"></sa-image-slot>
+        <figcaption>Nuevo plan, the doctor's screen</figcaption>
+      </figure>
+</section>
 <section data-reveal="1" style="background:var(--sa-surface-sunken);border-top:var(--sa-hairline);border-bottom:var(--sa-hairline)">
   <div style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-band-y) clamp(24px,5vw,64px) var(--sa-band-y) clamp(24px,11vw,168px);box-sizing:border-box">
     <div data-rail-target="1">
@@ -165,6 +171,16 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
     </div>
   </div>
 </section>
+<section data-reveal="1" class="sa-figs sa-figs-pair">
+      <figure class="sa-fig">
+        <sa-image-slot slot-key="app-evidence-search" ratio="4 / 5" placeholder="Searching the open-access literature"></sa-image-slot>
+        <figcaption>Searching the open-access literature</figcaption>
+      </figure>
+      <figure class="sa-fig" style="max-width:1px">
+        <sa-image-slot slot-key="app-evidence-engine" ratio="4 / 5" placeholder="Motor de evidencia, where a draft is written"></sa-image-slot>
+        <figcaption>Motor de evidencia, where a draft is written</figcaption>
+      </figure>
+</section>
 <section data-reveal="1" style="background:var(--sa-surface-sunken);border-top:var(--sa-hairline);border-bottom:var(--sa-hairline)">
   <div style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-band-y) clamp(24px,5vw,64px) var(--sa-band-y) clamp(24px,11vw,168px);box-sizing:border-box">
     <div data-rail-target="1">
@@ -178,21 +194,26 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
     </div>
   </div>
 </section>
+<div class="sa-band-figs">
+<section data-reveal="1" class="sa-figs sa-figs-one">
+      <figure class="sa-fig" style="max-width:560px">
+        <sa-image-slot slot-key="app-evidence-approve" ratio="4 / 5" placeholder="Approving a passage with its citation"></sa-image-slot>
+        <figcaption>Approving a passage with its citation</figcaption>
+      </figure>
+</section>
+</div>
 <section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-16) clamp(24px,5vw,64px) var(--sa-space-8) clamp(24px,11vw,168px);box-sizing:border-box">
   <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Quote" attribution="A physician at the Torre Pediátrica, from the field notes" hint-size="100%,120px">This really shows the medical potential of intelligence and creativity, based on the resources available.</x-import>
 </section>
-<section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-8) clamp(24px,5vw,64px) var(--sa-space-20) clamp(24px,11vw,168px);box-sizing:border-box">
-  <div data-rail-target="1">
-    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="The app" title="What a doctor sees" hint-size="100%,150px"></x-import>
-  </div>
-  <div data-stagger="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:var(--sa-space-4);margin-top:var(--sa-space-10)">
-    <sa-image-slot slot-key="app-plan" ratio="4 / 5" placeholder="Nuevo plan, the doctor's screen"></sa-image-slot>
-    <sa-image-slot slot-key="app-evidence-search" ratio="4 / 5" placeholder="Searching the open-access literature"></sa-image-slot>
-    <sa-image-slot slot-key="app-evidence-engine" ratio="4 / 5" placeholder="Motor de evidencia, where a draft is written"></sa-image-slot>
-    <sa-image-slot slot-key="app-evidence-approve" ratio="4 / 5" placeholder="Approving a passage with its citation"></sa-image-slot>
-    <sa-image-slot slot-key="app-pictograms" ratio="4 / 5" placeholder="Food and home pictograms, tapped to mark"></sa-image-slot>
-    <sa-image-slot slot-key="app-medication" ratio="4 / 5" placeholder="The medication row"></sa-image-slot>
-  </div>
+<section data-reveal="1" class="sa-figs sa-figs-pair">
+      <figure class="sa-fig">
+        <sa-image-slot slot-key="app-pictograms" ratio="4 / 5" placeholder="Food and home pictograms, tapped to mark"></sa-image-slot>
+        <figcaption>Food and home pictograms, tapped to mark</figcaption>
+      </figure>
+      <figure class="sa-fig" style="max-width:1px">
+        <sa-image-slot slot-key="app-medication" ratio="4 / 5" placeholder="The medication row"></sa-image-slot>
+        <figcaption>The medication row</figcaption>
+      </figure>
 </section>
 <section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-8) clamp(24px,5vw,64px) var(--sa-space-20) clamp(24px,11vw,168px);box-sizing:border-box">
   <div data-rail-target="1">

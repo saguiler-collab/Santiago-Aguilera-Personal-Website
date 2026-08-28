@@ -240,3 +240,32 @@ footer nav a { padding-block: 4px; }
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
   overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
 }
+
+/* ------------------------------------------------------------- figures ---- */
+/* Images are placed through the page rather than swept into one grid at the bottom,
+   and the arrangement is derived from the page name, so no two pages lay out the
+   same way. Captions only appear once a real photo is in the frame: while a slot is
+   empty it already prints what belongs there, and showing both read as a bug. */
+.sa-figs {
+  width: 100%; max-width: 1440px; margin: 0 auto; box-sizing: border-box;
+  padding: var(--sa-space-12) clamp(24px, 5vw, 64px) var(--sa-space-12) clamp(24px, 11vw, 168px);
+}
+.sa-fig { margin: 0; }
+.sa-fig figcaption {
+  display: none;
+  font: var(--sa-type-ui); font-size: var(--sa-text-sm);
+  color: var(--sa-text-muted); margin-top: 10px; text-wrap: pretty;
+}
+.sa-fig sa-image-slot[filled] + figcaption { display: block; }
+
+.sa-figs-pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(20px, 3vw, 40px); }
+.sa-figs-trio { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: clamp(16px, 2vw, 26px); }
+.sa-figs-one-right .sa-fig { margin-left: auto; }
+
+/* One image alone on a tinted band, used to break a run of text sections. */
+.sa-band-figs {
+  background: var(--sa-surface-sunken);
+  border-top: var(--sa-hairline); border-bottom: var(--sa-hairline);
+}
+.sa-band-figs .sa-figs { padding-top: var(--sa-band-y); padding-bottom: var(--sa-band-y); }
+.sa-band-figs .sa-fig { margin: 0 auto; }

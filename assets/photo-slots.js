@@ -234,6 +234,9 @@
       var data = this._committed || readImage(this._key);
       this._box.classList.toggle("editable", editable);
       this._box.classList.toggle("has-img", !!data);
+      // lets the page style around a filled frame (captions, borders) from outside
+      // the shadow root, which cannot see .has-img
+      this.toggleAttribute("filled", !!data);
       this._box.tabIndex = editable && !data ? 0 : -1;
       if (data) {
         this._img.src = data; this._img.hidden = false; this._empty.style.display = "none";
