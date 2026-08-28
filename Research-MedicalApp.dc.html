@@ -87,14 +87,21 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
     </div>
   </div>
     </div>
-    <sa-image-slot slot-key="app-icon" ratio="1 / 1" placeholder="The SanaSanita mark"></sa-image-slot>
+    <div style="max-width:340px;width:100%"><sa-image-slot slot-key="app-icon" ratio="1 / 1" placeholder="The SanaSanita mark"></sa-image-slot></div>
 </section>
 
-<section data-reveal="1" class="sa-figs sa-figs-one">
-      <figure class="sa-fig" style="max-width:470px">
+<section data-reveal="1" class="sa-media-row">
+  <div class="sa-media-figs n1">
+      <figure class="sa-fig">
         <sa-image-slot slot-key="app-plan" ratio="4 / 5" placeholder="Nuevo plan, the doctor's screen"></sa-image-slot>
         <figcaption>Nuevo plan, the doctor's screen</figcaption>
       </figure>
+  </div>
+  <div class="sa-media-text">
+    <h3>The screen a doctor opens</h3>
+    <p>Everything starts here, and the first line on it is the promise: no name, no CURP, no expediente, and nothing saved to any server. There is no patient record, so there is none to leak.</p>
+    <p>The doctor types the diagnosis in Spanish, the child's age and weight, and what happened in the consultation. The yellow band stays on screen as a standing warning that nothing in the prototype goes home with a family until a physician has read it, corrected it and signed it.</p>
+  </div>
 </section>
 <section data-reveal="1" style="background:var(--sa-surface-sunken);border-top:var(--sa-hairline);border-bottom:var(--sa-hairline)">
   <div style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-band-y) clamp(24px,5vw,64px) var(--sa-band-y) clamp(24px,11vw,168px);box-sizing:border-box">
@@ -171,16 +178,6 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
     </div>
   </div>
 </section>
-<section data-reveal="1" class="sa-figs sa-figs-pair">
-      <figure class="sa-fig">
-        <sa-image-slot slot-key="app-evidence-search" ratio="4 / 5" placeholder="Searching the open-access literature"></sa-image-slot>
-        <figcaption>Searching the open-access literature</figcaption>
-      </figure>
-      <figure class="sa-fig" style="max-width:1px">
-        <sa-image-slot slot-key="app-evidence-engine" ratio="4 / 5" placeholder="Motor de evidencia, where a draft is written"></sa-image-slot>
-        <figcaption>Motor de evidencia, where a draft is written</figcaption>
-      </figure>
-</section>
 <section data-reveal="1" style="background:var(--sa-surface-sunken);border-top:var(--sa-hairline);border-bottom:var(--sa-hairline)">
   <div style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-band-y) clamp(24px,5vw,64px) var(--sa-band-y) clamp(24px,11vw,168px);box-sizing:border-box">
     <div data-rail-target="1">
@@ -194,26 +191,47 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
     </div>
   </div>
 </section>
-<div class="sa-band-figs">
-<section data-reveal="1" class="sa-figs sa-figs-one">
-      <figure class="sa-fig" style="max-width:560px">
+<section data-reveal="1" class="sa-media-row flip">
+  <div class="sa-media-figs n3">
+      <figure class="sa-fig">
+        <sa-image-slot slot-key="app-evidence-search" ratio="4 / 5" placeholder="Searching the open-access literature"></sa-image-slot>
+        <figcaption>Searching the open-access literature</figcaption>
+      </figure>
+      <figure class="sa-fig">
+        <sa-image-slot slot-key="app-evidence-engine" ratio="4 / 5" placeholder="Motor de evidencia, where a draft is written"></sa-image-slot>
+        <figcaption>Motor de evidencia, where a draft is written</figcaption>
+      </figure>
+      <figure class="sa-fig">
         <sa-image-slot slot-key="app-evidence-approve" ratio="4 / 5" placeholder="Approving a passage with its citation"></sa-image-slot>
         <figcaption>Approving a passage with its citation</figcaption>
       </figure>
+  </div>
+  <div class="sa-media-text">
+    <h3>Where the evidence comes from, and who signs it</h3>
+    <p>A resident here is assigned reading they cannot open, because the journals sit behind paywalls the hospital does not pay for. So the app searches only what is legally free: Europe PMC, PubMed, Semantic Scholar, SciELO México, Medigraphic and BVS/PAHO. Never Sci-Hub.</p>
+    <p>It ranks what it finds by clinical relevance, marks which papers are open access and peer reviewed, and pulls the passages that actually bear on care at home. Each passage arrives with its exact citation, its study population and a link to the source, and any machine translation is labelled as one.</p>
+    <p>Then the gate. The doctor writes the family's version in plain words, informed by the passage rather than copied from it. Aprobar keeps it. Rechazar throws it away. The system never writes the family-facing line itself, and where there is no evidence the section stays empty.</p>
+  </div>
 </section>
-</div>
 <section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-16) clamp(24px,5vw,64px) var(--sa-space-8) clamp(24px,11vw,168px);box-sizing:border-box">
   <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Quote" attribution="A physician at the Torre Pediátrica, from the field notes" hint-size="100%,120px">This really shows the medical potential of intelligence and creativity, based on the resources available.</x-import>
 </section>
-<section data-reveal="1" class="sa-figs sa-figs-pair">
+<section data-reveal="1" class="sa-media-row">
+  <div class="sa-media-figs n2">
       <figure class="sa-fig">
         <sa-image-slot slot-key="app-pictograms" ratio="4 / 5" placeholder="Food and home pictograms, tapped to mark"></sa-image-slot>
         <figcaption>Food and home pictograms, tapped to mark</figcaption>
       </figure>
-      <figure class="sa-fig" style="max-width:1px">
+      <figure class="sa-fig">
         <sa-image-slot slot-key="app-medication" ratio="4 / 5" placeholder="The medication row"></sa-image-slot>
         <figcaption>The medication row</figcaption>
       </figure>
+  </div>
+  <div class="sa-media-text">
+    <h3>Built for a house, not a clinic</h3>
+    <p>What the family leaves with is pictures first. Foods and household triggers are tapped to mark, and anything left unmarked is understood to be allowed, so a parent is never asked to interpret a list of exceptions.</p>
+    <p>Medicines are chosen against the national catalogue by clave, using the same fields the paper prescription uses: form, route, dose, interval and first dose. The app builds the schedule from what the doctor entered. It does not calculate the dose, and when something is out of stock it says so rather than proposing a different drug.</p>
+  </div>
 </section>
 <section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-8) clamp(24px,5vw,64px) var(--sa-space-20) clamp(24px,11vw,168px);box-sizing:border-box">
   <div data-rail-target="1">

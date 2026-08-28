@@ -375,6 +375,33 @@ const PAGES = [
     /* The mark sits beside the intro; the screenshots are the gallery. They are the
        app's own column, so they are portrait, and the tiles are widened because UI
        text at 220px is unreadable. */
+    media: [
+      {
+        slots: ["app-plan"],
+        title: "The screen a doctor opens",
+        body: [
+          "Everything starts here, and the first line on it is the promise: no name, no CURP, no expediente, and nothing saved to any server. There is no patient record, so there is none to leak.",
+          "The doctor types the diagnosis in Spanish, the child's age and weight, and what happened in the consultation. The yellow band stays on screen as a standing warning that nothing in the prototype goes home with a family until a physician has read it, corrected it and signed it."
+        ]
+      },
+      {
+        slots: ["app-evidence-search", "app-evidence-engine", "app-evidence-approve"],
+        title: "Where the evidence comes from, and who signs it",
+        body: [
+          "A resident here is assigned reading they cannot open, because the journals sit behind paywalls the hospital does not pay for. So the app searches only what is legally free: Europe PMC, PubMed, Semantic Scholar, SciELO México, Medigraphic and BVS/PAHO. Never Sci-Hub.",
+          "It ranks what it finds by clinical relevance, marks which papers are open access and peer reviewed, and pulls the passages that actually bear on care at home. Each passage arrives with its exact citation, its study population and a link to the source, and any machine translation is labelled as one.",
+          "Then the gate. The doctor writes the family's version in plain words, informed by the passage rather than copied from it. Aprobar keeps it. Rechazar throws it away. The system never writes the family-facing line itself, and where there is no evidence the section stays empty."
+        ]
+      },
+      {
+        slots: ["app-pictograms", "app-medication"],
+        title: "Built for a house, not a clinic",
+        body: [
+          "What the family leaves with is pictures first. Foods and household triggers are tapped to mark, and anything left unmarked is understood to be allowed, so a parent is never asked to interpret a list of exceptions.",
+          "Medicines are chosen against the national catalogue by clave, using the same fields the paper prescription uses: form, route, dose, interval and first dose. The app builds the schedule from what the doctor entered. It does not calculate the dose, and when something is out of stock it says so rather than proposing a different drug."
+        ]
+      }
+    ],
     slots: [
       { key: "app-icon", ratio: "1 / 1", label: "The SanaSanita mark" },
       { key: "app-plan", ratio: "4 / 5", label: "Nuevo plan, the doctor's screen" },
@@ -752,6 +779,8 @@ ${p.cards.map((c) => `    <x-import component-from-global-scope="${NS}.Card" int
     const m = String(r).split("/").map((n) => parseFloat(n));
     return m.length === 2 && m[1] ? m[0] / m[1] : 1;
   };
+  // a square hero beside the intro was rendering 480px and swamping the text
+  const heroWidth = (r) => { const a = aspectOf(r); return a >= 1.3 ? 460 : a >= 1 ? 340 : 300; };
   const singleWidth = (r, band) => {
     const a = aspectOf(r);
     if (a >= 1.3) return band ? 1020 : 860;   // landscape
@@ -763,6 +792,26 @@ ${p.cards.map((c) => `    <x-import component-from-global-scope="${NS}.Card" int
         <sa-image-slot slot-key="${attr(sl.key)}" ratio="${attr(sl.ratio)}" placeholder="${attr(sl.label)}"></sa-image-slot>
         <figcaption>${esc(sl.label)}</figcaption>
       </figure>`;
+
+  /* A page can pair its images with prose instead of leaving them to sit between two
+     text blocks. Each row is a cluster of images on one side and a paragraph on the
+     other, alternating sides down the page. Used where the pictures need explaining;
+     photo pages fall through to the plain figure groups below. */
+  const mediaRow = (row, idx) => {
+    const sl = row.slots.map((k) => slots.find((x) => x.key === k)).filter(Boolean);
+    if (!sl.length) return "";
+    const flip = idx % 2 === 1;
+    return `
+<section data-reveal="1" class="sa-media-row${flip ? " flip" : ""}">
+  <div class="sa-media-figs n${sl.length}">
+${sl.map((x) => figure(x)).join("\n")}
+  </div>
+  <div class="sa-media-text">
+    <h3>${esc(row.title)}</h3>
+${row.body.map((t) => `    <p>${esc(t)}</p>`).join("\n")}
+  </div>
+</section>`;
+  };
 
   const SINGLES = ["band", "one", "one-right"];
   const renderGroup = (group, idx) => {
@@ -777,7 +826,7 @@ ${figure(group[0], singleWidth(group[0].ratio, kind === "band"))}
     const kind = group.length >= 3 ? "trio" : "pair";
     return `
 <section data-reveal="1" class="sa-figs sa-figs-${kind}">
-${group.map(figure).join("\n")}
+${group.map((sl) => figure(sl)).join("\n")}
 </section>`;
   };
 
@@ -797,14 +846,16 @@ ${siblings.map((s) => `    <a href="${attr(s.href)}" style="display:inline-flex;
      first gap to the last so images punctuate the page rather than trailing it. */
   const contentSections = [cards, awards, renderSteps(p.steps, p.stepsEyebrow, p.stepsTitle), quote, video]
     .filter((x) => x && x.trim());
-  const groups = groupSlots(restSlots);
+  const blocks = p.media
+    ? p.media.map((row, i) => mediaRow(row, i))
+    : groupSlots(restSlots).map((g, i) => renderGroup(g, i));
   const gapCount = contentSections.length + 1;
   const buckets = Array.from({ length: gapCount }, () => []);
-  groups.forEach((g, i) => {
-    const gap = groups.length === 1
+  blocks.forEach((html, i) => {
+    const gap = blocks.length === 1
       ? Math.min(1, gapCount - 1)
-      : Math.round((i * (gapCount - 1)) / (groups.length - 1));
-    buckets[gap].push(renderGroup(g, i));
+      : Math.round((i * (gapCount - 1)) / (blocks.length - 1));
+    buckets[gap].push(html);
   });
   const bodySections = buckets
     .map((b, i) => b.join("") + (contentSections[i] || ""))
@@ -886,7 +937,7 @@ ${liveLink}
 ${tbdNote}
 ${renderFacts(p.facts)}
     </div>
-${heroSlot ? `    <sa-image-slot slot-key="${attr(heroSlot.key)}" ratio="${attr(heroSlot.ratio)}" placeholder="${attr(heroSlot.label)}"></sa-image-slot>` : "    <div></div>"}
+${heroSlot ? `    <div style="max-width:${heroWidth(heroSlot.ratio)}px;width:100%"><sa-image-slot slot-key="${attr(heroSlot.key)}" ratio="${attr(heroSlot.ratio)}" placeholder="${attr(heroSlot.label)}"></sa-image-slot></div>` : "    <div></div>"}
 </section>
 ${bodySections}${more}
 
@@ -951,6 +1002,31 @@ class Component extends DCLogic {
 </html>
 `;
 }
+
+/* --------------------------------------------------------- token check ---- */
+/* A custom property that does not exist invalidates the whole declaration it sits in,
+   silently. `padding: var(--sa-space-14) ...` cost a media row its entire left inset
+   with nothing in the console to show for it, because the scale jumps 12 to 16.
+   Anything with a fallback, var(--x, 80px), is fine and skipped. */
+function checkTokens() {
+  const cssPath = path.join(ROOT, "assets/site.css");
+  if (!fs.existsSync(cssPath)) return;
+  const css = fs.readFileSync(cssPath, "utf8");
+  const defined = new Set([...css.matchAll(/(--sa-[a-z0-9-]+)\s*:/g)].map((m) => m[1]));
+  for (const f of fs.readdirSync(path.join(ROOT, DS, "tokens"))) {
+    const t = fs.readFileSync(path.join(ROOT, DS, "tokens", f), "utf8");
+    for (const m of t.matchAll(/(--sa-[a-z0-9-]+)\s*:/g)) defined.add(m[1]);
+  }
+  const missing = new Set();
+  for (const m of css.matchAll(/var\(\s*(--sa-[a-z0-9-]+)\s*([,)])/g)) {
+    if (m[2] === ")" && !defined.has(m[1])) missing.add(m[1]);
+  }
+  if (missing.size) {
+    console.warn("WARNING: assets/site.css uses design tokens that do not exist: " +
+      [...missing].join(", ") + "\n         Each one silently voids the declaration it is in.");
+  }
+}
+checkTokens();
 
 /* ---------------------------------------------------------------- run ---- */
 

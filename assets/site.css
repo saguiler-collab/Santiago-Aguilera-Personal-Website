@@ -269,3 +269,39 @@ footer nav a { padding-block: 4px; }
 }
 .sa-band-figs .sa-figs { padding-top: var(--sa-band-y); padding-bottom: var(--sa-band-y); }
 .sa-band-figs .sa-fig { margin: 0 auto; }
+
+/* ----------------------------------------------------------- media rows ---- */
+/* An image with a paragraph beside it, rather than a picture parked between two
+   blocks of text with nothing to say for itself. Rows alternate sides down the page.
+   Below 900px the text always follows the images, whatever side it sat on. */
+.sa-media-row {
+  width: 100%; max-width: 1440px; margin: 0 auto; box-sizing: border-box;
+  padding: var(--sa-space-16) clamp(24px, 5vw, 64px) var(--sa-space-16) clamp(24px, 11vw, 168px);
+  display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.8fr);
+  gap: clamp(28px, 4vw, 64px); align-items: center;
+}
+/* Flipping the row moves the images to the right, but the columns have to swap with
+   them or the pictures end up in the narrow half. They are the point of the row, so
+   they always take the wider column. */
+.sa-media-row.flip { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.05fr); }
+.sa-media-row.flip .sa-media-figs { order: 2; }
+.sa-media-text h3 {
+  font: var(--sa-type-title); font-size: var(--sa-text-2xl);
+  letter-spacing: var(--sa-tracking-display); margin: 0;
+}
+.sa-media-text p {
+  font: var(--sa-type-body); color: var(--sa-text-secondary);
+  margin-top: var(--sa-space-4); max-width: 48ch; text-wrap: pretty;
+}
+.sa-media-figs { display: grid; gap: clamp(12px, 1.6vw, 20px); }
+.sa-media-figs.n2, .sa-media-figs.n3, .sa-media-figs.n4 { grid-template-columns: 1fr 1fr; }
+.sa-media-figs.n3 .sa-fig:last-child { grid-column: 1 / -1; max-width: 60%; margin: 0 auto; }
+
+@media (max-width: 900px) {
+  /* .sa-media-row.flip has to be named here too. It is more specific than
+     .sa-media-row, so a single-column rule on the plain class loses to it and the
+     flipped row stayed two-up on a phone, at 126px an image. */
+  .sa-media-row,
+  .sa-media-row.flip { grid-template-columns: 1fr; gap: var(--sa-space-8); }
+  .sa-media-row.flip .sa-media-figs { order: 0; }
+}
