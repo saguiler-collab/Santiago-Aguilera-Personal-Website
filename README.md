@@ -66,7 +66,21 @@ images straight in. Editing stays on as you navigate; `?edit=0` or closing the t
 > see them and they disappear if the browser clears its storage. They are a preview, not a
 > publish.
 
-**Publish for real (committed to the repo).** Two steps:
+**Publish for real, the easy way.** Drop your images in a folder, name each file after
+the slot it belongs in, and run:
+
+```bash
+node tools/add-photos.js ~/Desktop/my-photos
+```
+
+It trims the flat background around the image (the grey bars either side of an app
+screenshot, or a window frame), caps the long edge at 1600px, writes the result into
+`assets/photos/`, and adds the manifest entry. So `app-plan.png` fills the slot with
+`slot-key="app-plan"`. Pass `--keep-border` to skip the trim.
+
+Originals live in `website.img/`, which is excluded from the deploy by `.vercelignore`.
+
+**Publish for real, by hand.** Two steps:
 
 1. Put the image file in `assets/photos/`. E.g. `assets/photos/monterrey-2013.jpg`.
 2. Map the slot key to that filename in `assets/photos/manifest.json`:

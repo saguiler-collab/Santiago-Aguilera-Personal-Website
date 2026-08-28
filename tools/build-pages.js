@@ -370,14 +370,21 @@ const PAGES = [
       ]
     },
     facts: [["Built for", "IMSS-Bienestar pediatric services"], ["Where", "Torre Pediátrica, Veracruz"], ["Field research", "Two weeks on the ward, 94 pages of notes"], ["Version", "v0.1, beta"]],
+    /* The screenshots are the app's own column, so they are portrait. 4/5 is close to
+       all six, which keeps the grid even without cropping anything meaningful. */
+    galleryEyebrow: "The app", galleryTitle: "What a doctor sees",
+    /* The mark sits beside the intro; the screenshots are the gallery. They are the
+       app's own column, so they are portrait, and the tiles are widened because UI
+       text at 220px is unreadable. */
+    galleryMin: "340px",
     slots: [
-      { key: "app-plan", ratio: "16 / 9", label: "Nuevo plan, the doctor's screen" },
-      { key: "app-evidence-search", ratio: "16 / 9", label: "Searching the open-access literature" },
-      { key: "app-evidence-engine", ratio: "16 / 9", label: "Motor de evidencia, where a draft is written" },
-      { key: "app-evidence-approve", ratio: "16 / 9", label: "Approving a passage with its citation" },
-      { key: "app-pictograms", ratio: "16 / 9", label: "Food and home pictograms, tapped to mark" },
-      { key: "app-medication", ratio: "16 / 9", label: "The medication row" },
-      { key: "app-icon", ratio: "1 / 1", label: "The SanaSanita mark" }
+      { key: "app-icon", ratio: "1 / 1", label: "The SanaSanita mark" },
+      { key: "app-plan", ratio: "4 / 5", label: "Nuevo plan, the doctor's screen" },
+      { key: "app-evidence-search", ratio: "4 / 5", label: "Searching the open-access literature" },
+      { key: "app-evidence-engine", ratio: "4 / 5", label: "Motor de evidencia, where a draft is written" },
+      { key: "app-evidence-approve", ratio: "4 / 5", label: "Approving a passage with its citation" },
+      { key: "app-pictograms", ratio: "4 / 5", label: "Food and home pictograms, tapped to mark" },
+      { key: "app-medication", ratio: "4 / 5", label: "The medication row" }
     ],
     next: { title: "Next: the publication", lede: "Venezuelan immigration research.", href: "Research-Venezuela.dc.html", label: "Go to the publication" }
   },
@@ -724,9 +731,9 @@ ${p.cards.map((c) => `    <x-import component-from-global-scope="${NS}.Card" int
     ? `
 <section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-8) clamp(24px,5vw,64px) var(--sa-space-20) clamp(24px,11vw,168px);box-sizing:border-box">
   <div data-rail-target="1">
-    <x-import component-from-global-scope="${NS}.SectionHeading" eyebrow="Photos" title="In photographs" hint-size="100%,150px"></x-import>
+    <x-import component-from-global-scope="${NS}.SectionHeading" eyebrow="${attr(p.galleryEyebrow || "Photos")}" title="${attr(p.galleryTitle || "In photographs")}" hint-size="100%,150px"></x-import>
   </div>
-  <div data-stagger="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--sa-space-4);margin-top:var(--sa-space-10)">
+  <div data-stagger="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(${attr(p.galleryMin || "220px")},1fr));gap:var(--sa-space-4);margin-top:var(--sa-space-10)">
 ${restSlots.map((s) => `    <sa-image-slot slot-key="${attr(s.key)}" ratio="${attr(s.ratio)}" placeholder="${attr(s.label)}"></sa-image-slot>`).join("\n")}
   </div>
 </section>`

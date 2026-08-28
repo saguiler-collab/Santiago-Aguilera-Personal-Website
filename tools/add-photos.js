@@ -43,9 +43,12 @@ const files = fs.readdirSync(src)
   .sort();
 if (!files.length) { console.error("no images in " + src); process.exit(1); }
 
-/* Runs in the page. Finds how many rows/columns at each edge are a single flat
-   colour and returns the rectangle inside them. Tolerance is generous because
-   screenshot borders are often very slightly noisy. */
+/* Runs in the page. Works out the page background from the border, then keeps only
+   the band of rows and columns that actually carry content. A strict "this column is
+   perfectly flat" test was tried first and failed on exactly the images that needed it
+   most: a modal over a dimmed backdrop has antialiasing and a soft shadow, so almost no
+   column is literally uniform. Counting how much of each column differs from the
+   background is tolerant of that, and of a stray line of text bleeding into a margin. */
 function trimAndScale({ dataUrl, maxEdge, keep }) {
   return new Promise((resolve) => {
     const img = new Image();
@@ -59,22 +62,66 @@ function trimAndScale({ dataUrl, maxEdge, keep }) {
 
       if (!keep) {
         const d = ctx.getImageData(0, 0, w, h).data;
-        const at = (x, y) => { const i = (y * w + x) * 4; return [d[i], d[i + 1], d[i + 2], d[i + 3]]; };
-        const near = (a, b) => Math.abs(a[0] - b[0]) < 10 && Math.abs(a[1] - b[1]) < 10 &&
-                               Math.abs(a[2] - b[2]) < 10 && Math.abs(a[3] - b[3]) < 10;
-        const colFlat = (x) => { const c0 = at(x, 0); for (let y = 1; y < h; y += 2) if (!near(at(x, y), c0)) return null; return c0; };
-        const rowFlat = (y) => { const c0 = at(0, y); for (let x = 1; x < w; x += 2) if (!near(at(x, y), c0)) return null; return c0; };
+        const at = (x, y) => { const i = (y * w + x) * 4; return [d[i], d[i + 1], d[i + 2]]; };
 
-        const left = colFlat(0);
-        if (left) while (x0 < w - 1) { const c1 = colFlat(x0); if (c1 && near(c1, left)) x0++; else break; }
-        const right = colFlat(w - 1);
-        if (right) while (x1 > x0 + 1) { const c1 = colFlat(x1 - 1); if (c1 && near(c1, right)) x1--; else break; }
-        const top = rowFlat(0);
-        if (top) while (y0 < h - 1) { const c1 = rowFlat(y0); if (c1 && near(c1, top)) y0++; else break; }
-        const bot = rowFlat(h - 1);
-        if (bot) while (y1 > y0 + 1) { const c1 = rowFlat(y1 - 1); if (c1 && near(c1, bot)) y1--; else break; }
-        // a fully flat image would trim to nothing
-        if (x1 - x0 < 16 || y1 - y0 < 16) { x0 = 0; y0 = 0; x1 = w; y1 = h; }
+        const TOL = 26;      // ignore antialiasing and gentle shadow
+        const FRAC = 0.02;   // a content column differs on at least 2% of its pixels
+
+        /* One pass over the current box: find the background from its border ring,
+           then shrink to the band that carries content. */
+        const pass = (bx0, by0, bx1, by1) => {
+          const bw = bx1 - bx0, bh = by1 - by0;
+          const votes = new Map();
+          const vote = (x, y) => {
+            const p = at(x, y), k = `${p[0] >> 3},${p[1] >> 3},${p[2] >> 3}`;
+            votes.set(k, (votes.get(k) || 0) + 1);
+          };
+          const sx = Math.max(1, Math.floor(bw / 200)), sy = Math.max(1, Math.floor(bh / 200));
+          for (let x = bx0; x < bx1; x += sx) { vote(x, by0); vote(x, by1 - 1); }
+          for (let y = by0; y < by1; y += sy) { vote(bx0, y); vote(bx1 - 1, y); }
+          let best = null, bestN = -1;
+          for (const [k, n] of votes) if (n > bestN) { bestN = n; best = k; }
+          const bg = best.split(",").map((v) => (+v << 3) + 4);
+          const off = (p) => Math.abs(p[0] - bg[0]) + Math.abs(p[1] - bg[1]) + Math.abs(p[2] - bg[2]) > TOL;
+          const cols = new Float32Array(bw), rows = new Float32Array(bh);
+          for (let x = bx0; x < bx1; x++) { let n = 0; for (let y = by0; y < by1; y++) if (off(at(x, y))) n++; cols[x - bx0] = n / bh; }
+          for (let y = by0; y < by1; y++) { let n = 0; for (let x = bx0; x < bx1; x++) if (off(at(x, y))) n++; rows[y - by0] = n / bw; }
+
+          /* Content has to persist for a run of pixels, not just one. A window frame
+             leaves a single hairline whose column differs on 100% of its pixels, and
+             stopping at the first such column left the whole page margin in frame. */
+          const RUN = 8;
+          const runAt = (arr, i, dir) => {
+            for (let k = 0; k < RUN; k++) {
+              const j = i + k * dir;
+              if (j < 0 || j >= arr.length) return false;
+              if (arr[j] < FRAC) return false;
+            }
+            return true;
+          };
+          let a = 0, b = bw, c2 = 0, e = bh;
+          while (a < bw - RUN && !runAt(cols, a, 1)) a++;
+          while (b > a + RUN && !runAt(cols, b - 1, -1)) b--;
+          while (c2 < bh - RUN && !runAt(rows, c2, 1)) c2++;
+          while (e > c2 + RUN && !runAt(rows, e - 1, -1)) e--;
+          return [bx0 + a, by0 + c2, bx0 + b, by0 + e];
+        };
+
+        /* Repeat while a pass only shaved a thin frame. A macOS window shot can be a
+           dark chrome border around a cream page around the actual content column, and
+           one pass only removes the outermost layer. Once a pass takes a real bite the
+           content has been found, so stop rather than eating the layout's own padding. */
+        for (let i = 0; i < 3; i++) {
+          const [a, b2, c2, e] = pass(x0, y0, x1, y1);
+          const cut = (a - x0) + (x1 - c2);
+          const wide = (x1 - x0);
+          x0 = a; y0 = b2; x1 = c2; y1 = e;
+          if (cut > wide * 0.03) break;   // took a real bite: done
+          if (cut === 0) break;           // nothing left to shave
+        }
+
+        // never crop away essentially everything
+        if (x1 - x0 < w * 0.05 || y1 - y0 < h * 0.05) { x0 = 0; y0 = 0; x1 = w; y1 = h; }
       }
 
       const cw = x1 - x0, ch = y1 - y0;
