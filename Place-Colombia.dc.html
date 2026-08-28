@@ -18,7 +18,7 @@ var M={library:"light",perkiomen:"light",isps:"light",sana:"light",sky:"light",n
 var d=document.documentElement,def="sky",p=null;
 try{p=localStorage.getItem("sa:palette")}catch(e){}
 var k=(p&&M[p])?p:def;
-d.setAttribute("data-palette-default",def);d.setAttribute("data-palette",k);d.setAttribute("data-theme",M[k]);
+d.setAttribute("data-palette-default",def);d.setAttribute("data-palette",k);d.setAttribute("data-theme",M[k]);d.setAttribute("data-country","colombia");
 }catch(e){}})();</script>
 <!-- React is vendored, not pulled from a CDN: support.js skips its unpkg fetch when
      window.React/ReactDOM already exist. Without this the whole site is a blank page

@@ -111,6 +111,16 @@ const PAGE_PALETTE = {
 };
 const paletteFor = (p) => PAGE_PALETTE[p.file] || SECTION_PALETTE[p.section] || "library";
 
+/* A place page takes its country's flag colours as the accent, over the section's
+   palette. Set on the root so the whole page follows, the scroll rail included. */
+const PAGE_COUNTRY = {
+  "Place-Mexico.dc.html": "mexico",
+  "Place-Colombia.dc.html": "colombia",
+  "Place-Panama.dc.html": "panama",
+  "Place-Trinidad.dc.html": "trinidad",
+  "Place-UnitedStates.dc.html": "usa"
+};
+
 const TBD = "To be added";
 
 const PAGES = [
@@ -913,7 +923,7 @@ var M={library:"light",perkiomen:"light",isps:"light",sana:"light",sky:"light",n
 var d=document.documentElement,def="${paletteFor(p)}",p=null;
 try{p=localStorage.getItem("sa:palette")}catch(e){}
 var k=(p&&M[p])?p:def;
-d.setAttribute("data-palette-default",def);d.setAttribute("data-palette",k);d.setAttribute("data-theme",M[k]);
+d.setAttribute("data-palette-default",def);d.setAttribute("data-palette",k);d.setAttribute("data-theme",M[k]);${PAGE_COUNTRY[p.file] ? `d.setAttribute("data-country","${PAGE_COUNTRY[p.file]}");` : ""}
 }catch(e){}})();</script>
 <!-- React is vendored, not pulled from a CDN: support.js skips its unpkg fetch when
      window.React/ReactDOM already exist. Without this the whole site is a blank page

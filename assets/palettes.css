@@ -103,3 +103,69 @@
     var(--sa-hero-1, #14454a) 0%, var(--sa-hero-2, #0d3236) 38%,
     var(--sa-hero-3, #071e21) 72%, var(--sa-hero-4, #041214) 100%) !important;
 }
+
+/* ------------------------------------------------------------- countries ---- */
+/* Flag colours, used as the accent on that country's page and as the stripe down its
+   entry in the timeline. These come after the palette blocks on purpose: same
+   specificity, so the later rule wins and a country's accent overrides its section's.
+   Yellows and whites are never used as the primary; on paper they would fail contrast,
+   so the darker flag colour leads and the bright one is the second stop. */
+:root[data-country="mexico"]   { --sa-coral-600:#00553A; --sa-coral-500:#006847; --sa-coral-300:#5BA97F; --sa-coral-100:#DCEFE3; --sa-flag-a:#006847; --sa-flag-b:#CE1126; }
+:root[data-country="colombia"] { --sa-coral-600:#002E75; --sa-coral-500:#003893; --sa-coral-300:#6E8FD0; --sa-coral-100:#DCE5F7; --sa-flag-a:#003893; --sa-flag-b:#FCD116; }
+:root[data-country="panama"]   { --sa-coral-600:#004073; --sa-coral-500:#005293; --sa-coral-300:#6C9FCD; --sa-coral-100:#DBE9F5; --sa-flag-a:#005293; --sa-flag-b:#DA121A; }
+:root[data-country="trinidad"] { --sa-coral-600:#A81228; --sa-coral-500:#DA1A35; --sa-coral-300:#EC8092; --sa-coral-100:#FBDDE2; --sa-flag-a:#DA1A35; --sa-flag-b:#111111; }
+:root[data-country="usa"]      { --sa-coral-600:#2E2D57; --sa-coral-500:#3C3B6E; --sa-coral-300:#8988B0; --sa-coral-100:#E0E0EC; --sa-flag-a:#3C3B6E; --sa-flag-b:#B22234; }
+:root[data-country="spain"]    { --sa-coral-600:#8A1015; --sa-coral-500:#AA151B; --sa-coral-300:#D4787C; --sa-coral-100:#F7DDDE; --sa-flag-a:#AA151B; --sa-flag-b:#F1BF00; }
+
+/* The timeline dots read from these, so they match the country rather than the
+   arbitrary set the design system shipped with (Panama was white). */
+:root {
+  --sa-place-usa:#3C3B6E; --sa-place-spain:#AA151B; --sa-place-mexico:#006847;
+  --sa-place-colombia:#003893; --sa-place-panama:#005293; --sa-place-trinidad:#DA1A35;
+  --sa-place-pennsburg:#3C3B6E;
+}
+
+/* ------------------------------------------------------ timeline entries ---- */
+/* Each entry on About is the country's own link. The flag stripe is always there so
+   the colours are part of the page rather than a hover trick, and it strengthens
+   along with a border and a tint when the row is pointed at or focused. */
+.sa-tl-link {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  padding: var(--sa-space-4) var(--sa-space-5) var(--sa-space-4) var(--sa-space-6);
+  border: 1px solid transparent;
+  border-radius: var(--sa-radius-md, 10px);
+  transition: background-color var(--sa-dur-2) var(--sa-ease-out),
+              border-color var(--sa-dur-2) var(--sa-ease-out),
+              transform var(--sa-dur-2) var(--sa-ease-out);
+}
+.sa-tl-link::before {
+  content: "";
+  position: absolute; left: 0; top: 10px; bottom: 10px; width: 4px;
+  border-radius: 3px;
+  background: linear-gradient(to bottom, var(--sa-flag-a, var(--sa-accent)) 0 50%,
+                                          var(--sa-flag-b, var(--sa-accent)) 50% 100%);
+  opacity: .45;
+  transition: opacity var(--sa-dur-2) var(--sa-ease-out);
+}
+.sa-tl-link:hover,
+.sa-tl-link:focus-visible {
+  background: color-mix(in oklab, var(--sa-flag-a, var(--sa-accent)) 7%, transparent);
+  border-color: color-mix(in oklab, var(--sa-flag-a, var(--sa-accent)) 55%, transparent);
+  transform: translateX(3px);
+  outline: none;
+}
+.sa-tl-link:hover::before,
+.sa-tl-link:focus-visible::before { opacity: 1; }
+/* Madrid has no page of its own yet, so it is presented as a plain row rather than a
+   link that goes nowhere. It still carries Spain's colours. */
+.sa-tl-static { display: block; position: relative;
+  padding: var(--sa-space-4) var(--sa-space-5) var(--sa-space-4) var(--sa-space-6); }
+.sa-tl-static::before {
+  content: ""; position: absolute; left: 0; top: 10px; bottom: 10px; width: 4px;
+  border-radius: 3px; opacity: .45;
+  background: linear-gradient(to bottom, var(--sa-flag-a) 0 50%, var(--sa-flag-b) 50% 100%);
+}
+@media (prefers-reduced-motion: reduce) { .sa-tl-link { transition: none; } }
