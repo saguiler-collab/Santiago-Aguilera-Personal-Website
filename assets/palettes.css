@@ -18,6 +18,7 @@
 /* Cream and deep teal, the site's own colours, with the coral swapped for antique
    gold. The coral read as a default orange rather than a decision. */
 :root[data-palette="library"] {
+  --sa-verdigris-500:#2A9D8F; --sa-glow-b:#2A9D8F; --sa-glow-a:var(--sa-coral-500);
   --sa-paper-000:#FDFBF7; --sa-paper-100:#F6F0E6; --sa-paper-200:#EDE4D5; --sa-paper-300:#DFD2BD;
   --sa-ink-900:#08282A; --sa-ink-800:#0F3D3E; --sa-ink-700:#1B5658;
   --sa-ink-500:#467476; --sa-ink-300:#86A3A3; --sa-ink-100:#C3D2D1;
@@ -28,6 +29,7 @@
 
 /* ------------------------------------------------------------ Perkiomen ---- */
 :root[data-palette="perkiomen"] {
+  --sa-verdigris-500:#7A4C9B; --sa-glow-b:#7A4C9B; --sa-glow-a:var(--sa-coral-500);
   --sa-paper-000:#FCFAFC; --sa-paper-100:#F4EEF6; --sa-paper-200:#E9DFEE; --sa-paper-300:#D8C8E0;
   --sa-ink-900:#240638; --sa-ink-800:#3C0C5B; --sa-ink-700:#55207A;
   --sa-ink-500:#7A4C9B; --sa-ink-300:#A98CC0; --sa-ink-100:#D5C6E2;
@@ -38,6 +40,7 @@
 
 /* ----------------------------------------------------------------- ISPS ---- */
 :root[data-palette="isps"] {
+  --sa-verdigris-500:#28A9E2; --sa-glow-b:#28A9E2; --sa-glow-a:var(--sa-coral-500);
   --sa-paper-000:#FBFDFE; --sa-paper-100:#EFF5FA; --sa-paper-200:#E1ECF5; --sa-paper-300:#CBDEED;
   --sa-ink-900:#0C2244; --sa-ink-800:#183663; --sa-ink-700:#24487E;
   --sa-ink-500:#3F6DA8; --sa-ink-300:#7C9CC4; --sa-ink-100:#BACDE0;
@@ -48,6 +51,7 @@
 
 /* ----------------------------------------------------------- SanaSanita ---- */
 :root[data-palette="sana"] {
+  --sa-verdigris-500:#0E8E7A; --sa-glow-b:#0E8E7A; --sa-glow-a:var(--sa-coral-500);
   --sa-paper-000:#FCFCF9; --sa-paper-100:#F2F3EE; --sa-paper-200:#E6E9E2; --sa-paper-300:#D3D8CE;
   --sa-ink-900:#04383C; --sa-ink-800:#07666D; --sa-ink-700:#0A8189;
   --sa-ink-500:#3AA0A6; --sa-ink-300:#86BEC2; --sa-ink-100:#C4DEDF;
@@ -58,6 +62,7 @@
 
 /* ------------------------------------------------------------------ Sky ---- */
 :root[data-palette="sky"] {
+  --sa-verdigris-500:#3D74A0; --sa-glow-b:#3D74A0; --sa-glow-a:var(--sa-coral-500);
   --sa-paper-000:#FFFFFF; --sa-paper-100:#F2F7FB; --sa-paper-200:#E5EFF7; --sa-paper-300:#CFE2EF;
   --sa-ink-900:#0B2A44; --sa-ink-800:#123A5C; --sa-ink-700:#1B4E77;
   --sa-ink-500:#3D74A0; --sa-ink-300:#7FA4C2; --sa-ink-100:#BDD3E3;
@@ -66,18 +71,74 @@
   --sa-hero-1:#2A6EA0; --sa-hero-2:#1B4E77; --sa-hero-3:#0F3252; --sa-hero-4:#081E33;
 }
 
-/* ----------------------------------------------------- Noir (red, dark) ---- */
+/* ------------------------------------------------ Noir (black and white) ---- */
+/* No hue at all. The accent is white, so a primary button is a white block with black
+   type, which is the whole idea: contrast is the only device. */
 :root[data-palette="noir"] {
-  --sa-paper-000:#F7F5F5; --sa-paper-100:#EDEBEB; --sa-paper-200:#DCD9D9; --sa-paper-300:#C2BEBE;
-  --sa-ink-900:#0B0B0D; --sa-ink-800:#141418; --sa-ink-700:#1F1F26;
-  --sa-ink-500:#3E3E48; --sa-ink-300:#7A7A88; --sa-ink-100:#B4B4C0;
-  --sa-coral-600:#E23A50; --sa-coral-500:#C8102E; --sa-coral-300:#E8697C; --sa-coral-100:#3A0F17;
-  --sa-ochre-500:#C8102E; --sa-ochre-100:#320D14; --sa-sienna-500:#E8697C;
-  --sa-hero-1:#3B0A14; --sa-hero-2:#22060C; --sa-hero-3:#120407; --sa-hero-4:#080203;
+  --sa-verdigris-500:#8A8A8A; --sa-glow-b:#8A8A8A; --sa-glow-a:var(--sa-coral-500);
+  --sa-paper-000:#FFFFFF; --sa-paper-100:#EDEDED; --sa-paper-200:#D6D6D6; --sa-paper-300:#B4B4B4;
+  --sa-ink-900:#000000; --sa-ink-800:#111111; --sa-ink-700:#1C1C1C;
+  --sa-ink-500:#3D3D3D; --sa-ink-300:#7A7A7A; --sa-ink-100:#B0B0B0;
+  --sa-coral-600:#FFFFFF; --sa-coral-500:#E6E6E6; --sa-coral-300:#BFBFBF; --sa-coral-100:#1A1A1A;
+  --sa-ochre-500:#E6E6E6; --sa-ochre-100:#1A1A1A; --sa-sienna-500:#BFBFBF;
+  --sa-hero-1:#2E2E2E; --sa-hero-2:#1A1A1A; --sa-hero-3:#0B0B0B; --sa-hero-4:#000000;
+}
+
+/* -------------------------------------------------------------- Ferrari ---- */
+/* Built from the Ferrari design notes rather than eyeballed. Canvas is #181818 and
+   deliberately not pure black; the brand calls for a slightly warm near-black. Rosso
+   Corsa #DA291C is the single voltage and stays scarce, so it lands on buttons, links
+   and section eyebrows and nowhere else. The hero is the neutral atmospheric darken
+   from the notes, not a red wash, because red is meant to be rationed.
+
+   The brand's other signature is geometry: sharp corners on every control and card,
+   with pill shapes reserved for badges. That is a shape rule rather than a colour, so
+   this palette overrides the radius ladder too. */
+:root[data-palette="ferrari"] {
+  --sa-verdigris-500:#7A7A7A; --sa-glow-b:#7A7A7A; --sa-glow-a:var(--sa-coral-500);
+  --sa-paper-000:#FFFFFF; --sa-paper-100:#F7F7F7; --sa-paper-200:#EBEBEB; --sa-paper-300:#D2D2D2;
+  --sa-ink-900:#181818; --sa-ink-800:#242424; --sa-ink-700:#303030;
+  --sa-ink-500:#666666; --sa-ink-300:#969696; --sa-ink-100:#C9C9C9;
+  --sa-coral-600:#B01E0A; --sa-coral-500:#DA291C; --sa-coral-300:#F0685C; --sa-coral-100:#2A0F0C;
+  --sa-ochre-500:#DA291C; --sa-ochre-100:#2A0F0C; --sa-sienna-500:#F0685C;
+  --sa-hero-1:#3C3C3C; --sa-hero-2:#242424; --sa-hero-3:#131313; --sa-hero-4:#030303;
+
+  --sa-radius-xs:0px; --sa-radius-sm:0px; --sa-radius-md:0px;
+  --sa-radius-lg:0px; --sa-radius-xl:0px;
+  --sa-radius-control:0px; --sa-radius-media:0px;
+}
+/* The notes are firm that Ferrari is one sans across every role, display set at 500
+   and never bold, with negative tracking on display sizes only. A serif would read as
+   the wrong brand however good the colours are, so this palette swaps the display face
+   for the sans already loaded. Inter is the documented substitute for FerrariSans;
+   IBM Plex Sans is what this site ships and sits in the same territory. */
+:root[data-palette="ferrari"] {
+  --sa-font-display: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --sa-tracking-display: -0.02em;
+}
+/* !important because every heading carries an inline `font:` shorthand, which sets
+   weight and would otherwise win. This is the one place the brand rule needs it. */
+:root[data-palette="ferrari"] h1,
+:root[data-palette="ferrari"] h2,
+:root[data-palette="ferrari"] h3 { font-weight: 500 !important; }
+
+/* The sans is wider than the serif it replaces and pushed the last nav item out of
+   the bar. The notes put nav links at 13px with 0.65px tracking, which both fits and
+   is what the brand actually does. */
+:root[data-palette="ferrari"] .sa-nav-inline a { font-size: 13px; letter-spacing: .05em; }
+
+/* Pills stay pills only where the notes allow them: badges. Buttons and cards square
+   off. Uppercase, tracked labels are the other half of the brand's CTA voice. */
+:root[data-palette="ferrari"] a[href][style*="radius-pill"],
+:root[data-palette="ferrari"] .sa-hero-ghost { border-radius: 0 !important; }
+:root[data-palette="ferrari"] .sa-hero-ghost,
+:root[data-palette="ferrari"] button[data-filter-btn] {
+  text-transform: uppercase; letter-spacing: .1em; font-weight: 700; font-size: var(--sa-text-sm);
 }
 
 /* ---------------------------------------------------- Gilt (gold, dark) ---- */
 :root[data-palette="gilt"] {
+  --sa-verdigris-500:#C9A227; --sa-glow-b:#C9A227; --sa-glow-a:var(--sa-coral-500);
   --sa-paper-000:#FAF7EF; --sa-paper-100:#F2EDE0; --sa-paper-200:#E4DCC8; --sa-paper-300:#CFC3A6;
   --sa-ink-900:#0E0E0F; --sa-ink-800:#18181B; --sa-ink-700:#232329;
   --sa-ink-500:#45454E; --sa-ink-300:#85858F; --sa-ink-100:#BEBEC6;
@@ -88,6 +149,7 @@
 
 /* ------------------------------------------- Atlas (violet, dark, CellAtlas) ---- */
 :root[data-palette="atlas"] {
+  --sa-verdigris-500:#7C5CFF; --sa-glow-b:#7C5CFF; --sa-glow-a:var(--sa-coral-500);
   --sa-paper-000:#EBEEF7; --sa-paper-100:#DDE3F1; --sa-paper-200:#C9D2E6; --sa-paper-300:#AAB6D2;
   --sa-ink-900:#080B14; --sa-ink-800:#111624; --sa-ink-700:#1B2236;
   --sa-ink-500:#3C4666; --sa-ink-300:#7B85A6; --sa-ink-100:#BFC6DA;

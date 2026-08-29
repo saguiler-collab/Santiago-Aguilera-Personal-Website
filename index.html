@@ -18,7 +18,7 @@
 <meta property="og:image" content="assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <script>(function(){try{
-var M={library:"light",perkiomen:"light",isps:"light",sana:"light",sky:"light",noir:"dark",gilt:"dark",atlas:"dark"};
+var M={library:"light",perkiomen:"light",isps:"light",sana:"light",sky:"light",noir:"dark",gilt:"dark",atlas:"dark",ferrari:"dark"};
 var d=document.documentElement,def="library",p=null;
 try{p=localStorage.getItem("sa:palette")}catch(e){}
 var k=(p&&M[p])?p:def;
@@ -77,8 +77,8 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
 
 <section class="sa-hero sa-grain" data-rail-surface="dark">
   <div ref="{{ starLayer }}" aria-hidden="true" style="position:absolute;inset:0;z-index:0;will-change:transform"></div>
-  <div class="sa-glow" style="width:720px;height:720px;left:50%;top:44%;transform:translate(-50%,-50%);background:#2A9D8F;opacity:.14;filter:blur(120px)"></div>
-  <div class="sa-glow" style="width:420px;height:420px;left:22%;bottom:-8%;background:#E0654A;opacity:.12;filter:blur(110px)"></div>
+  <div class="sa-glow" style="width:720px;height:720px;left:50%;top:44%;transform:translate(-50%,-50%);background:var(--sa-glow-b, #2A9D8F);opacity:.14;filter:blur(120px)"></div>
+  <div class="sa-glow" style="width:420px;height:420px;left:22%;bottom:-8%;background:var(--sa-glow-a, #E0654A);opacity:.12;filter:blur(110px)"></div>
 
   <!-- The tiles drift on their own heading and shove each other aside on contact, so
        the hero is never twice the same. Positions come from the loop in componentDidMount;

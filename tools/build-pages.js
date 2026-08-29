@@ -919,7 +919,7 @@ ${canonical}<meta property="og:title" content="${attr(title)}">
 <meta property="og:image" content="${attr(ogImage)}">
 <meta name="twitter:card" content="summary_large_image">
 <script>(function(){try{
-var M={library:"light",perkiomen:"light",isps:"light",sana:"light",sky:"light",noir:"dark",gilt:"dark",atlas:"dark"};
+var M={library:"light",perkiomen:"light",isps:"light",sana:"light",sky:"light",noir:"dark",gilt:"dark",atlas:"dark",ferrari:"dark"};
 var d=document.documentElement,def="${paletteFor(p)}",p=null;
 try{p=localStorage.getItem("sa:palette")}catch(e){}
 var k=(p&&M[p])?p:def;
