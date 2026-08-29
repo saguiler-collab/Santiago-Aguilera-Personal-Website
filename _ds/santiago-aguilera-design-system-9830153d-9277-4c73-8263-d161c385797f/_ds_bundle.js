@@ -11,7 +11,10 @@ const __ds_scope = {};
 // components/brand/Icon.jsx
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-const LUCIDE = "assets/icons/lucide/";
+/* Patched: root-absolute. This is resolved against the page URL, and the pages sit
+   in /pages while index.html sits at the root, so a relative path cannot be right
+   for both. Re-apply if the design system is ever regenerated. See README. */
+const LUCIDE = "/assets/icons/lucide/";
 
 /** Masked glyph that inherits currentColor. `name` pulls from Lucide; `src` points at a local SVG. */
 function Icon({
@@ -554,7 +557,7 @@ function Footer({
   note = "Six countries, collected in one place. Thanks for reading.",
   socials = [],
   columns = [],
-  iconBase = "assets/icons/brand",
+  iconBase = "/assets/icons/brand",
   style,
   ...rest
 }) {

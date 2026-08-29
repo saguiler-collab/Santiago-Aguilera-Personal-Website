@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SiteFooter</title>
+<!-- Vendored the same way SiteNav and SymbolRail do it. A component file opened on
+     its own still boots the runtime, and without these it falls back to unpkg, which
+     is the one thing the whole site is built not to do. -->
+<script src="../assets/vendor/react.production.min.js"></script>
+<script src="../assets/vendor/react-dom.production.min.js"></script>
+<script src="../assets/site-config.js"></script>
+<script>window.__SA_COMPONENT_DIR="/pages";</script>
+<script src="../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="../_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/styles.css">
+<link rel="stylesheet" href="../assets/site.css">
+<script src="../_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/_ds_bundle.js"></script>
+</helmet>
+
+<footer class="sa-on-ink sa-footer">
+  <div class="sa-footer-inner">
+
+    <!-- The link map. Four columns on a desktop, filled by the same seven sections the
+         nav has plus one for everything that is not a section, so the footer is a plan
+         of the site rather than a shortlist. -->
+    <nav class="sa-foot-grid" aria-label="Site map">
+      <sc-for list="{{ groups }}" as="g" hint-placeholder-count="8">
+        <div class="sa-foot-col">
+          <a class="sa-foot-head" href="{{ g.href }}">{{ g.title }}</a>
+          <ul class="sa-foot-list">
+            <sc-for list="{{ g.links }}" as="l" hint-placeholder-count="5">
+              <li><a href="{{ l.href }}" target="{{ l.target }}" rel="{{ l.rel }}">{{ l.label }}<span class="sa-foot-ext" aria-hidden="{{ l.hideArrow }}">{{ l.arrow }}</span></a></li>
+            </sc-for>
+          </ul>
+        </div>
+      </sc-for>
+    </nav>
+
+    <div class="sa-foot-mid">
+      <div class="sa-foot-brand">
+        <a class="sa-foot-mark" href="/" aria-label="Home">
+          <svg width="46" height="46" viewBox="-320 -342 640 640" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path transform="translate(26 12) rotate(-90) scale(0.86)" stroke-width="62" d="M 0 -20 C 5.2 -24.3, 14.1 -26.2, 23.2 -23.2 C 32.3 -20.1, 41.3 -11.9, 45.6 0 C 49.8 11.9, 49 27.4, 41.2 41.2 C 33.5 55.1, 18.6 66.9, 0 71.1 C -18.6 75.4, -40.8 71.8, -59.3 59.3 C -77.9 46.8, -92.4 25.3, -96.7 0 C -100.9 -25.3, -94.6 -54.1, -77.4 -77.4 C -60.1 -100.7, -32 -118, 0 -122.2 C 32 -126.5, 67.5 -117.4, 95.5 -95.5 C 123.5 -73.5, 143.5 -38.7, 147.8 0 C 152 38.7, 140.2 80.8, 113.5 113.5 C 86.8 146.3, 45.4 169.1, 0 173.3 C -45.4 177.6, -94.1 163, -131.6 131.6 C -169.1 100.2, -194.6 52.1, -198.9 0 C -203.1 -52.1, -185.8 -107.5, -149.7 -149.7 C -113.5 -191.9, -58.8 -220.2, 0 -224.4 C 58.8 -228.7, 120.8 -208.6, 167.7 -167.7 C 214.7 -126.8, 245.7 -65.4, 250 0"></path>
+            <path stroke-width="56" d="M -196 -212 L -272 -292"></path>
+            <path stroke-width="56" d="M 196 -212 L 272 -292"></path>
+          </svg>
+          <span>Santiago Aguilera <em>Library</em></span>
+        </a>
+        <p class="sa-foot-note">Six countries, collected in one place. Student, researcher, athlete, musician. Thanks for reading.</p>
+        <p class="sa-foot-where">Currently at Perkiomen School, Pennsburg, Pennsylvania. Born in Houston, and five countries in between.</p>
+        <ul class="sa-foot-social" data-social-list>
+          <sc-for list="{{ socials }}" as="s" hint-placeholder-count="3">
+            <li><a href="{{ s.href }}" aria-label="{{ s.label }}" target="_blank" rel="noopener noreferrer" data-social="{{ s.id }}"></a></li>
+          </sc-for>
+        </ul>
+      </div>
+
+      <!-- The one thing in here that is asking for something, so it is the one thing
+           that gets a surface, a border and a filled button. -->
+      <aside class="sa-foot-contact">
+        <span class="sa-foot-kicker">Get in touch</span>
+        <p class="sa-foot-ask">Questions about any of this?</p>
+        <p class="sa-foot-sub">Admissions offices, teachers, researchers, or anyone who found something here worth asking about. It goes straight to my inbox and I read all of it.</p>
+        <a class="sa-foot-cta" href="Contact.dc.html">
+          Send a message
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"></path></svg>
+        </a>
+      </aside>
+    </div>
+
+    <div class="sa-foot-legal">
+      <p>© <span data-foot-year>2026</span> Santiago Aguilera Library</p>
+      <p class="sa-foot-built">Written, designed and maintained by Santiago Aguilera.</p>
+      <button type="button" class="sa-foot-top" data-foot-top>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg>
+        Back to top
+      </button>
+    </div>
+
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+/* One footer for the whole site. It used to be a footerColumns array copy-pasted into
+   every page, which is how two of the three profile links had quietly rotted; this is
+   the same fix applied to the rest of it. */
+const GROUPS = [
+  { title: "About", href: "About.dc.html", links: [
+    { label: "Houston", href: "Place-UnitedStates.dc.html" },
+    { label: "Monterrey", href: "Place-Mexico.dc.html" },
+    { label: "Bogotá", href: "Place-Colombia.dc.html" },
+    { label: "Ciudad de Panamá", href: "Place-Panama.dc.html" },
+    { label: "Port of Spain", href: "Place-Trinidad.dc.html" },
+    { label: "Pennsburg", href: "Place-UnitedStates.dc.html" }
+  ]},
+  { title: "Academics", href: "Academics.dc.html", links: [
+    { label: "Int. School of Port of Spain", href: "Academics-ISPS.dc.html" },
+    { label: "Perkiomen School", href: "Academics-Perkiomen.dc.html" },
+    { label: "Exeter Summer", href: "Academics-ExeterSummer.dc.html" },
+    { label: "Computational Biology, CMU", href: "Academics-CompBio.dc.html" }
+  ]},
+  { title: "Research & projects", href: "Research.dc.html", links: [
+    { label: "CellAtlas GBM", href: "Research-CellAtlas.dc.html" },
+    { label: "SanaSanita", href: "Research-MedicalApp.dc.html" },
+    { label: "Venezuelan Immigration", href: "Research-Venezuela.dc.html" }
+  ]},
+  { title: "Leadership & service", href: "Leadership.dc.html", links: [
+    { label: "HOSA", href: "Leadership-HOSA.dc.html" },
+    { label: "GVMUN", href: "Leadership-GVMUN.dc.html" },
+    { label: "Student Council / Senate", href: "Leadership-StudentCouncil.dc.html" },
+    { label: "Hospital Shadowing", href: "Leadership-Shadowing.dc.html" },
+    { label: "Volunteering", href: "Leadership-Volunteering.dc.html" },
+    { label: "The Perkiomenite", href: "Leadership-Perkiomenite.dc.html" }
+  ]},
+  { title: "Activities", href: "Activities.dc.html", links: [
+    { label: "Swimming", href: "Activities-Swimming.dc.html" },
+    { label: "Weightlifting", href: "Activities-Weightlifting.dc.html" },
+    { label: "Drums & Music", href: "Activities-Music.dc.html" }
+  ]},
+  { title: "Curiosities", href: "Curiosities.dc.html", links: [
+    { label: "Literature", href: "Curiosities-Literature.dc.html" },
+    { label: "Music", href: "Curiosities-Music.dc.html" },
+    { label: "Video Games", href: "Curiosities-Videogames.dc.html" }
+  ]},
+  { title: "Media", href: "Media.dc.html", links: [
+    { label: "Photos and video", href: "Media.dc.html" },
+    { label: "The symbol", href: "About.dc.html" }
+  ]},
+  { title: "Elsewhere", href: "Contact.dc.html", links: [
+    { label: "Contact", href: "Contact.dc.html" },
+    { label: "SanaSanita, live", href: "https://sanasanita.vercel.app/", external: true }
+  ]}
+];
+
+/* Inline rather than four more files in assets/icons: they are one path each, they
+   inherit currentColor so every palette gets them right, and nothing extra is fetched. */
+const GLYPH = {
+  instagram: '<rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/>',
+  linkedin: '<rect x="2.5" y="2.5" width="19" height="19" rx="3"/><path d="M7 10.5v7M7 7.2v.1M11.5 17.5v-4a2.6 2.6 0 0 1 5.2 0v4"/>',
+  discord: '<path d="M8.4 8.1a13 13 0 0 1 7.2 0M7.6 16.4a13 13 0 0 0 8.8 0"/><path d="M15.6 6.8c2.6.5 3.9 1.9 4.4 4.2.6 2.6.4 5-.6 6.6-1 1-2.4 1.6-3.6 1.8l-.9-1.7M8.4 6.8c-2.6.5-3.9 1.9-4.4 4.2-.6 2.6-.4 5 .6 6.6 1 1 2.4 1.6 3.6 1.8l.9-1.7"/><circle cx="9.3" cy="12.6" r="1.2" fill="currentColor" stroke="none"/><circle cx="14.7" cy="12.6" r="1.2" fill="currentColor" stroke="none"/>',
+  spotify: '<circle cx="12" cy="12" r="9.5"/><path d="M7.4 9.4c3-.8 6.4-.5 9.2 1M8 12.7c2.5-.7 5.2-.4 7.5.9M8.6 15.8c2-.5 4.1-.3 5.9.7"/>',
+  github: '<path d="M9 19.5c-4 1.2-4-2.2-5.6-2.6m11.2 5v-3.4c0-1 .1-1.4-.5-2 2.6-.3 5-1.3 5-5.4a4.2 4.2 0 0 0-1.1-2.9 3.9 3.9 0 0 0-.1-2.9s-.9-.3-3 1.1a10.3 10.3 0 0 0-5.4 0C7.4 3.1 6.5 3.4 6.5 3.4a3.9 3.9 0 0 0-.1 2.9 4.2 4.2 0 0 0-1.1 3c0 4 2.4 5 5 5.3-.6.6-.6 1.2-.5 2v3.3"/>',
+  youtube: '<rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="M10.2 9.3l4.8 2.7-4.8 2.7z" fill="currentColor" stroke="none"/>',
+  email: '<rect x="2.5" y="4.5" width="19" height="15" rx="3"/><path d="M3.5 7l7.4 5.2a2 2 0 0 0 2.2 0L20.5 7"/>'
+};
+
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      groups: GROUPS.map((g) => ({
+        title: g.title, href: g.href,
+        links: g.links.map((l) => ({
+          label: l.label, href: l.href,
+          /* Exeter marks the links that leave the site and it is worth copying: a
+             reader deserves to know a click opens a new tab before it happens. */
+          arrow: l.external ? " ↗" : "",
+          hideArrow: "true",
+          target: l.external ? "_blank" : "",
+          rel: l.external ? "noopener noreferrer" : ""
+        }))
+      })),
+      socials: window.SA_SOCIALS || []
+    };
+  }
+
+  componentDidMount() {
+    const root = document.querySelector(".sa-footer");
+    if (!root) return;
+
+    root.querySelectorAll("[data-social]").forEach((a) => {
+      const g = GLYPH[a.getAttribute("data-social")];
+      if (!g) { a.parentNode.remove(); return; }   // a nameless circle helps nobody
+      a.innerHTML = '<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+                    'stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + g + '</svg>';
+    });
+
+    /* Hidden rather than left as an empty row, so an unfilled site-config does not
+       leave a gap where the icons should be. */
+    const list = root.querySelector("[data-social-list]");
+    if (list && !list.children.length) list.style.display = "none";
+
+    const year = root.querySelector("[data-foot-year]");
+    if (year) year.textContent = String(new Date().getFullYear());
+
+    const top = root.querySelector("[data-foot-top]");
+    if (top) {
+      this._top = top;
+      this._onTop = () => window.scrollTo({
+        top: 0,
+        behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
+      });
+      top.addEventListener("click", this._onTop);
+    }
+  }
+
+  componentWillUnmount() {
+    if (this._top && this._onTop) this._top.removeEventListener("click", this._onTop);
+  }
+}
+</script>
+</body>
+</html>

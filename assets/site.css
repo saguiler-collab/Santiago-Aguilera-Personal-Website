@@ -666,3 +666,176 @@ footer nav a { padding-block: 4px; }
 @media (max-width: 900px) {
   .sa-form { max-width: none; }
 }
+
+
+/* --------------------------------------------------------------- footer ---- */
+/* Three bands. The link map, which is the whole site laid out rather than a
+   shortlist of seven. Then the brand on the left against the one thing in here that
+   is asking for something, which is why the contact block is the only part with a
+   surface, a border and a filled button. Then the legal line.
+
+   Column headings sit over an accent rule and the links are separated by hairlines,
+   both borrowed from Carnegie Mellon's footer, where they are doing the work of
+   making eight columns scan as eight groups instead of one wall. */
+.sa-footer {
+  position: relative; z-index: 10;
+  background: var(--sa-surface-ink);
+  color: var(--sa-text-primary);
+}
+.sa-footer-inner {
+  width: 100%; max-width: 1440px; margin: 0 auto; box-sizing: border-box;
+  padding: clamp(56px, 8vh, 88px) clamp(24px, 5vw, 64px) clamp(28px, 4vh, 40px) clamp(24px, 11vw, 168px);
+}
+
+.sa-foot-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(28px, 3.4vw, 52px) clamp(24px, 3vw, 48px);
+}
+.sa-foot-col { min-width: 0; }
+.sa-foot-head {
+  display: block;
+  font: var(--sa-type-eyebrow);
+  letter-spacing: var(--sa-tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--sa-text-primary);
+  text-decoration: none;
+  padding-bottom: var(--sa-space-3);
+  border-bottom: 2px solid var(--sa-accent);
+  transition: color var(--sa-dur-2) var(--sa-ease-out);
+}
+.sa-foot-head:hover { color: var(--sa-coral-300); }
+.sa-foot-list { list-style: none; margin: 0; padding: 0; }
+.sa-foot-list li + li { border-top: 1px solid var(--sa-border-on-ink); }
+.sa-foot-list a {
+  display: block;
+  padding: 11px 0;
+  font: var(--sa-type-body);
+  font-size: var(--sa-text-sm);
+  line-height: 1.35;
+  color: var(--sa-text-secondary);
+  text-decoration: none;
+  transition: color var(--sa-dur-2) var(--sa-ease-out), padding-left var(--sa-dur-2) var(--sa-ease-out);
+}
+.sa-foot-list a:hover,
+.sa-foot-list a:focus-visible { color: var(--sa-text-primary); padding-left: 4px; }
+.sa-foot-ext { white-space: nowrap; }
+
+.sa-foot-mid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  gap: clamp(32px, 4vw, 64px);
+  align-items: start;
+  margin-top: clamp(48px, 7vh, 80px);
+  padding-top: clamp(32px, 5vh, 48px);
+  border-top: 1px solid var(--sa-border-on-ink);
+}
+.sa-foot-mark {
+  display: inline-flex; align-items: center; gap: var(--sa-space-4);
+  color: var(--sa-text-primary); text-decoration: none;
+}
+.sa-foot-mark span {
+  font-family: var(--sa-font-display);
+  font-size: var(--sa-text-xl);
+  letter-spacing: var(--sa-tracking-tight);
+}
+.sa-foot-mark em { font-style: normal; color: var(--sa-coral-300); }
+.sa-foot-note {
+  font: var(--sa-type-body); font-size: var(--sa-text-sm);
+  color: var(--sa-text-secondary);
+  max-width: 42ch; margin: var(--sa-space-5) 0 0; text-wrap: pretty;
+}
+.sa-foot-social {
+  list-style: none; display: flex; flex-wrap: wrap; gap: var(--sa-space-3);
+  margin: var(--sa-space-6) 0 0; padding: 0;
+}
+.sa-foot-social a {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 42px; height: 42px;
+  border: 1px solid var(--sa-border-on-ink);
+  border-radius: var(--sa-radius-control);
+  color: var(--sa-text-secondary);
+  transition: var(--sa-transition-control);
+}
+.sa-foot-social a:hover,
+.sa-foot-social a:focus-visible {
+  color: var(--sa-text-primary);
+  border-color: var(--sa-accent);
+  background: color-mix(in oklab, var(--sa-accent) 14%, transparent);
+}
+
+.sa-foot-contact {
+  background: color-mix(in oklab, var(--sa-accent) 10%, transparent);
+  border: 1px solid color-mix(in oklab, var(--sa-accent) 42%, transparent);
+  border-radius: var(--sa-radius-lg);
+  padding: clamp(24px, 3vw, 34px);
+}
+.sa-foot-kicker {
+  display: block;
+  font: var(--sa-type-eyebrow); letter-spacing: var(--sa-tracking-eyebrow);
+  text-transform: uppercase; color: var(--sa-coral-300);
+}
+.sa-foot-ask {
+  font: var(--sa-type-title); font-size: var(--sa-text-2xl);
+  letter-spacing: var(--sa-tracking-display);
+  color: var(--sa-text-primary);
+  margin: var(--sa-space-3) 0 0; text-wrap: pretty;
+}
+.sa-foot-sub {
+  font: var(--sa-type-body); font-size: var(--sa-text-sm);
+  color: var(--sa-text-secondary);
+  margin: var(--sa-space-3) 0 0; max-width: 44ch; text-wrap: pretty;
+}
+.sa-foot-cta {
+  display: inline-flex; align-items: center; gap: 10px;
+  height: var(--sa-control-h-lg); padding: 0 26px;
+  margin-top: var(--sa-space-6);
+  font: var(--sa-type-ui); font-size: var(--sa-text-base);
+  letter-spacing: var(--sa-tracking-tight);
+  border-radius: var(--sa-radius-control);
+  background: var(--sa-accent);
+  color: var(--sa-on-accent, var(--sa-text-inverse));
+  text-decoration: none;
+  transition: var(--sa-transition-control);
+}
+.sa-foot-cta:hover { background: var(--sa-accent-hover); color: var(--sa-on-accent, var(--sa-text-inverse)); }
+.sa-foot-cta:focus-visible { outline: none; box-shadow: var(--sa-ring); }
+
+.sa-foot-legal {
+  display: flex; align-items: center; gap: var(--sa-space-6); flex-wrap: wrap;
+  margin-top: clamp(32px, 5vh, 48px);
+  padding-top: var(--sa-space-6);
+  border-top: 1px solid var(--sa-border-on-ink);
+  font: var(--sa-type-ui); font-size: var(--sa-text-xs); font-weight: 400;
+  color: var(--sa-text-muted);
+}
+.sa-foot-legal p { margin: 0; }
+.sa-foot-built { color: var(--sa-text-muted); }
+.sa-foot-top {
+  margin-left: auto;
+  display: inline-flex; align-items: center; gap: 9px;
+  height: 40px; padding: 0 18px;
+  font: var(--sa-type-ui); font-size: var(--sa-text-xs);
+  border: 1px solid var(--sa-border-on-ink);
+  border-radius: var(--sa-radius-control);
+  background: transparent; color: var(--sa-text-secondary);
+  cursor: pointer; transition: var(--sa-transition-control);
+}
+.sa-foot-top:hover { color: var(--sa-text-primary); border-color: var(--sa-accent); }
+.sa-foot-top:focus-visible { outline: none; box-shadow: var(--sa-ring); }
+
+@media (max-width: 1100px) {
+  .sa-foot-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .sa-foot-mid { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .sa-foot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sa-footer-inner { padding-left: clamp(24px, 6vw, 40px); }
+  .sa-foot-legal { gap: var(--sa-space-3); }
+  .sa-foot-top { margin-left: 0; }
+}
+.sa-foot-where {
+  font: var(--sa-type-ui); font-size: var(--sa-text-xs); font-weight: 400;
+  line-height: 1.6; color: var(--sa-text-muted);
+  max-width: 40ch; margin: var(--sa-space-4) 0 0;
+}

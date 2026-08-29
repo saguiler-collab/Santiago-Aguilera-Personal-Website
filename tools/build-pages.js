@@ -21,7 +21,17 @@ const fs = require("fs");
 const path = require("path");
 
 const ROOT = path.join(__dirname, "..");
-const DS = "_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f";
+/* Every .dc.html lives here, pages and shared components alike, because the runtime
+   resolves <dc-import name="X"> against one directory. index.html is the exception:
+   a static host serves it for "/", so it is written to the root with its paths
+   un-relativised. See the block that generates it. */
+const PAGES_DIR = path.join(ROOT, "pages");
+/* The design system is referenced two ways and they are not the same string any more.
+   DS_DIR is where it is on disk, relative to the repo root. DS is how a page links to
+   it, and the generated pages live one level down in pages/, so it needs the walk-up.
+   index.html strips that back off when it is written to the root. */
+const DS_DIR = "_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f";
+const DS = "../" + DS_DIR;
 const NS = "SantiagoAguileraDesignSystem_983015";
 
 /**
@@ -903,7 +913,7 @@ ${siblings.map((s) => `    <a href="${attr(s.href)}" style="display:inline-flex;
 <meta property="og:url" content="${attr(SITE_ORIGIN + "/" + p.file)}">
 `
     : "";
-  const ogImage = SITE_ORIGIN ? SITE_ORIGIN + "/assets/og-image.png" : "assets/og-image.png";
+  const ogImage = SITE_ORIGIN ? SITE_ORIGIN + "/assets/og-image.png" : "../assets/og-image.png";
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -912,7 +922,7 @@ ${siblings.map((s) => `    <a href="${attr(s.href)}" style="display:inline-flex;
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
 <meta name="description" content="${attr(p.desc)}">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <meta name="theme-color" content="#0F3D3E">
 ${canonical}<meta property="og:title" content="${attr(title)}">
 <meta property="og:description" content="${attr(p.desc)}">
@@ -930,19 +940,20 @@ d.setAttribute("data-palette-default",def);d.setAttribute("data-palette",k);d.se
 <!-- React is vendored, not pulled from a CDN: support.js skips its unpkg fetch when
      window.React/ReactDOM already exist. Without this the whole site is a blank page
      whenever unpkg is unreachable, since every page renders client-side. -->
-<script src="assets/vendor/react.production.min.js"></script>
-<script src="assets/vendor/react-dom.production.min.js"></script>
-<script src="assets/site-config.js"></script>
-<script src="./support.js"></script>
+<script src="../assets/vendor/react.production.min.js"></script>
+<script src="../assets/vendor/react-dom.production.min.js"></script>
+<script src="../assets/site-config.js"></script>
+<script>window.__SA_COMPONENT_DIR="/pages";</script>
+<script src="../support.js"></script>
 </head>
 <body>
 <x-dc>
 <helmet>
 <link rel="stylesheet" href="${DS}/styles.css">
-<link rel="stylesheet" href="assets/palettes.css">
-<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="../assets/palettes.css">
+<link rel="stylesheet" href="../assets/site.css">
 <script src="${DS}/_ds_bundle.js"></script>
-<script src="assets/photo-slots.js" defer></script>
+<script src="../assets/photo-slots.js" defer></script>
 <style>
 body{margin:0;background:var(--sa-surface-page);transition:background-color .15s ease}
 a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
@@ -991,7 +1002,7 @@ ${bodySections}${more}
 </section>
 </main>
 
-<x-import component-from-global-scope="${NS}.Footer" icon-base="assets/icons/brand" columns="{{ footerColumns }}" socials="{{ footerSocials }}" style="position:relative;z-index:10" hint-size="100%,300px"></x-import>
+<dc-import name="SiteFooter" hint-size="100%,620px"></dc-import>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{}">
@@ -1000,8 +1011,6 @@ class Component extends DCLogic {
     return {
       true: true,
       soon: React.createElement(window.${NS}.Badge, { tone: "highlight" }, "To be added"),
-      footerColumns: ${JSON.stringify(footerCols, null, 8).replace(/\n/g, "\n      ")},
-      footerSocials: window.SA_SOCIALS || []
     };
   }
 
@@ -1051,8 +1060,8 @@ function checkTokens() {
   if (!fs.existsSync(cssPath)) return;
   const css = fs.readFileSync(cssPath, "utf8");
   const defined = new Set([...css.matchAll(/(--sa-[a-z0-9-]+)\s*:/g)].map((m) => m[1]));
-  for (const f of fs.readdirSync(path.join(ROOT, DS, "tokens"))) {
-    const t = fs.readFileSync(path.join(ROOT, DS, "tokens", f), "utf8");
+  for (const f of fs.readdirSync(path.join(ROOT, DS_DIR, "tokens"))) {
+    const t = fs.readFileSync(path.join(ROOT, DS_DIR, "tokens", f), "utf8");
     for (const m of t.matchAll(/(--sa-[a-z0-9-]+)\s*:/g)) defined.add(m[1]);
   }
   const missing = new Set();
@@ -1070,7 +1079,7 @@ checkTokens();
 
 let written = 0;
 for (const p of PAGES) {
-  fs.writeFileSync(path.join(ROOT, p.file), renderPage(p), "utf8");
+  fs.writeFileSync(path.join(PAGES_DIR, p.file), renderPage(p), "utf8");
   written++;
 }
 
@@ -1079,12 +1088,19 @@ for (const p of PAGES) {
    GitHub Pages and local preview alike. Home.dc.html stays the authored file (the DC
    tooling only opens .dc.html), so index.html is generated from it verbatim. Both carry
    <link rel="canonical" href="/">, so the duplicate defers to the root URL. */
-const home = fs.readFileSync(path.join(ROOT, "Home.dc.html"), "utf8");
+const home = fs.readFileSync(path.join(PAGES_DIR, "Home.dc.html"), "utf8");
 if (!home.includes('rel="canonical"')) {
   console.warn('WARNING: Home.dc.html has no <link rel="canonical" href="/">; index.html ' +
     "will compete with it as a duplicate. Add it back before deploying.");
 }
-fs.writeFileSync(path.join(ROOT, "index.html"), home, "utf8");
+/* Home.dc.html is written for /pages, so every relative path in it has to be walked
+   back one level, and every link to a sibling page has to gain the folder. The
+   component directory is absolute already, so it needs nothing. */
+const index = home
+  .replace(/((?:href|src|content)=")\.\.\/(assets\/|_ds\/)/g, "$1$2")
+  .replace(/src="\.\.\/support\.js"/g, 'src="support.js"')
+  .replace(/((?:href|action)=")([A-Za-z][\w .%-]*\.dc\.html)"/g, '$1pages/$2"');
+fs.writeFileSync(path.join(ROOT, "index.html"), index, "utf8");
 written++;
 
 /* Hand-written pages are not in PAGES but still belong in the sitemap. Home is listed
@@ -1094,7 +1110,7 @@ const HAND_WRITTEN = ["About.dc.html", "Academics.dc.html", "Research.dc.html",
   "Contact.dc.html"];
 
 if (SITE_ORIGIN) {
-  const urls = ["", ...HAND_WRITTEN, ...PAGES.map((p) => p.file)];
+  const urls = ["", ...HAND_WRITTEN, ...PAGES.map((p) => p.file)].map((u) => (u ? "pages/" + u : u));
   const today = new Date().toISOString().slice(0, 10);
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

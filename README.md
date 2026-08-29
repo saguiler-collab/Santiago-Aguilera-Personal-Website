@@ -110,9 +110,10 @@ Resize large photos before committing. These are shipped as-is to every visitor.
 
 Two things are deliberately left blank rather than guessed at:
 
-- [ ] **Profile links.** Instagram, LinkedIn and Discord in `assets/site-config.js` have
-      empty `href`s, so those icons are hidden. Fill in the real URLs and they appear in
-      every footer. (They previously all pointed at `#`.)
+- [ ] **Profile links.** Every entry in `assets/site-config.js` has an empty `href`, so
+      the whole icon row is hidden and the footer closes up around it. Fill in the real
+      URLs and the icons appear site-wide. The footer knows these ids: `linkedin`,
+      `instagram`, `github`, `youtube`, `spotify`, `discord`, `email` (a `mailto:` href).
 - [ ] **`SITE_ORIGIN`** in `tools/build-pages.js`. Set it to the final domain. E.g.
       `https://santiagoaguilera.com`, no trailing slash. Then re-run the build. That turns
       on `<link rel="canonical">`, absolute `og:` URLs and `sitemap.xml`. While it is empty
@@ -142,6 +143,29 @@ Two things are deliberately left blank rather than guessed at:
 Import the GitHub repo in Vercel as a **static site**. No framework preset, no build
 command, output directory `.` (the repo root). Everything is committed, so there is nothing
 to install.
+
+Every page lives in `pages/`, `index.html` at the root. A static host serves `index.html`
+for `/`, so that one file has to stay where it is; it is generated from `pages/Home.dc.html`
+with its relative paths walked back a level. The runtime resolves `<dc-import name="X">`
+against `window.__SA_COMPONENT_DIR`, set to `/pages` in every page head, which is what lets
+the pages sit in a folder while the homepage sits above it.
+
+`vercel.json` redirects the old flat URLs (`/About.dc.html`) to the new ones
+(`/pages/About.dc.html`), so any link shared before the move still lands.
+
+### Two patched generated files
+
+Both are committed and nothing in this repo regenerates them, but if either is ever
+replaced, these edits have to go back in or the site breaks in a way that is easy to
+misread as a missing file:
+
+| File | Edit | Why |
+| --- | --- | --- |
+| `support.js` | `COMPONENT_DIR` reads `window.__SA_COMPONENT_DIR` instead of being `"."` | It resolved `<dc-import>` next to whichever page asked, which forces pages and shared components into one directory |
+| `_ds/…/_ds_bundle.js` | `LUCIDE` and the default `iconBase` are root-absolute | They were resolved against the page URL, so from `/pages/` they looked for `/pages/assets/icons/…` |
+
+`assets/photo-slots.js` has the same root-absolute treatment for the photo manifest, but
+that file is hand-written, so it is not at risk.
 
 `api/contact.js` becomes a serverless function on its own, with no configuration: Vercel
 treats any file in `api/` that way regardless of preset. That is why the contact form uses

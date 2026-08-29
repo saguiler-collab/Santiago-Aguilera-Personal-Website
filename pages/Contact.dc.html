@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact · Santiago Aguilera Library</title>
+<meta name="description" content="Get in touch with Santiago Aguilera about admissions, research, SanaSanita, or anything else on this site.">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<meta name="theme-color" content="#0F3D3E">
+<meta property="og:title" content="Contact · Santiago Aguilera Library">
+<meta property="og:description" content="Get in touch with Santiago Aguilera about admissions, research, SanaSanita, or anything else on this site.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Santiago Aguilera Library">
+<meta property="og:image" content="../assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<script>(function(){try{
+var M={library:"light",perkiomen:"light",isps:"light",sana:"light",sky:"light",ps:"light",exeter:"light",noir:"dark",gilt:"dark",atlas:"dark",ferrari:"dark",lambo:"dark",arcade:"dark",cmu:"dark"};
+var d=document.documentElement,def="library",p=null;
+try{p=localStorage.getItem("sa:palette")}catch(e){}
+var k=(p&&M[p])?p:def;
+d.setAttribute("data-palette-default",def);d.setAttribute("data-palette",k);d.setAttribute("data-theme",M[k]);
+}catch(e){}})();</script>
+<script src="../assets/vendor/react.production.min.js"></script>
+<script src="../assets/vendor/react-dom.production.min.js"></script>
+<script src="../assets/site-config.js"></script>
+<script>window.__SA_COMPONENT_DIR="/pages";</script>
+<script src="../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="../_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/styles.css">
+<link rel="stylesheet" href="../assets/palettes.css">
+<link rel="stylesheet" href="../assets/site.css">
+<script src="../_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/_ds_bundle.js"></script>
+<style>
+body{margin:0;background:var(--sa-surface-page);transition:background-color .15s ease}
+a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+.sa-skip{position:absolute;left:-9999px;top:0;z-index:100}
+.sa-skip:focus{left:16px;top:16px;padding:12px 18px;background:var(--sa-ink-800);color:var(--sa-paper-000);
+  border-radius:var(--sa-radius-control);font:var(--sa-type-ui);text-decoration:none}
+.sa-glow{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;z-index:0;opacity:.5}
+</style>
+</helmet>
+<div style="background:var(--sa-surface-page);color:var(--sa-text-primary);font:var(--sa-type-body);min-height:100vh;overflow-x:clip">
+<a class="sa-skip" href="#main">Skip to content</a>
+<dc-import name="SymbolRail" mode="unwind" hint-size="100%,100%"></dc-import>
+<dc-import name="SiteNav" active="contact" hint-size="100%,72px"></dc-import>
+<main id="main">
+
+<section class="sa-pagehead sa-pagehead--section" style="width:100%;max-width:1440px;margin:0 auto;padding:clamp(48px,7vh,88px) clamp(24px,5vw,64px) var(--sa-space-10) clamp(24px,11vw,168px);box-sizing:border-box">
+  <span class="sa-kicker" style="font:var(--sa-type-eyebrow);letter-spacing:var(--sa-tracking-eyebrow);text-transform:uppercase;color:var(--sa-text-accent)">Contact</span>
+  <h1 style="font:var(--sa-type-display);font-size:clamp(3rem,6.2vw,5.25rem);letter-spacing:var(--sa-tracking-display);margin:var(--sa-space-5) 0 0;max-width:18ch">Say something, <em class="sa-hl">I'll answer</em></h1>
+  <p style="font:var(--sa-type-lede);font-size:var(--sa-text-lg);color:var(--sa-text-secondary);max-width:56ch;margin-top:var(--sa-space-6);text-wrap:pretty">Admissions offices, teachers, researchers, or anyone who found something here worth asking about. This goes straight to my inbox and I read all of it.</p>
+</section>
+
+<section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:0 clamp(24px,5vw,64px) var(--sa-space-24) clamp(24px,11vw,168px);box-sizing:border-box;display:grid;grid-template-columns:minmax(320px,1.15fr) minmax(240px,0.85fr);gap:clamp(32px,5vw,72px);align-items:start">
+
+  <form class="sa-form" novalidate>
+    <div class="sa-field">
+      <label for="sa-name">Your name</label>
+      <input id="sa-name" name="name" type="text" autocomplete="name" maxlength="120" required>
+      <p class="sa-err" data-err-for="name">Please tell me who you are.</p>
+    </div>
+
+    <div class="sa-field">
+      <label for="sa-email">Email</label>
+      <input id="sa-email" name="email" type="email" autocomplete="email" maxlength="200" required>
+      <p class="sa-err" data-err-for="email">That address does not look right, and it is the only way I can reply.</p>
+    </div>
+
+    <div class="sa-field">
+      <label for="sa-subject">Subject <span class="sa-opt">optional</span></label>
+      <input id="sa-subject" name="subject" type="text" maxlength="160">
+    </div>
+
+    <div class="sa-field">
+      <label for="sa-message">Message</label>
+      <textarea id="sa-message" name="message" rows="8" maxlength="5000" required></textarea>
+      <p class="sa-err" data-err-for="message">The message is empty.</p>
+    </div>
+
+    <!-- A field no person can see and no person fills in. Bots fill everything. -->
+    <div class="sa-pot" aria-hidden="true">
+      <label for="sa-company">Company</label>
+      <input id="sa-company" name="company" type="text" tabindex="-1" autocomplete="off">
+    </div>
+
+    <div class="sa-actions">
+      <button type="submit" class="sa-send">Send message</button>
+      <p class="sa-status" role="status" aria-live="polite"></p>
+    </div>
+  </form>
+
+  <aside data-stagger="1" style="display:grid;gap:var(--sa-space-4)">
+    <div class="sa-aside-card">
+      <span style="font:var(--sa-type-eyebrow);letter-spacing:var(--sa-tracking-eyebrow);text-transform:uppercase;color:var(--sa-text-accent)">What reaches me fastest</span>
+      <p style="font:var(--sa-type-body);color:var(--sa-text-secondary);margin:var(--sa-space-3) 0 0;text-wrap:pretty">A sentence on who you are and what you are asking about. If it is about a specific project, naming it saves us both a round trip.</p>
+    </div>
+    <div class="sa-aside-card">
+      <span style="font:var(--sa-type-eyebrow);letter-spacing:var(--sa-tracking-eyebrow);text-transform:uppercase;color:var(--sa-text-accent)">Things people write about</span>
+      <ul style="font:var(--sa-type-body);color:var(--sa-text-secondary);margin:var(--sa-space-3) 0 0;padding-left:1.1em;line-height:1.7">
+        <li>Admissions and school questions</li>
+        <li><a href="Research-MedicalApp.dc.html">SanaSanita</a>, including the hospital side</li>
+        <li><a href="Research-CellAtlas.dc.html">CellAtlas GBM</a> and the computational work</li>
+        <li><a href="Media.dc.html">Photos</a> and anything else on the site</li>
+      </ul>
+    </div>
+    <div class="sa-aside-card">
+      <span style="font:var(--sa-type-eyebrow);letter-spacing:var(--sa-tracking-eyebrow);text-transform:uppercase;color:var(--sa-text-accent)">Reply time</span>
+      <p style="font:var(--sa-type-body);color:var(--sa-text-secondary);margin:var(--sa-space-3) 0 0;text-wrap:pretty">Usually a day or two. Slower during exam weeks and swim season.</p>
+    </div>
+  </aside>
+</section>
+
+</main>
+<dc-import name="SiteFooter" hint-size="100%,620px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+    };
+  }
+
+  componentDidMount() {
+    const form = document.querySelector(".sa-form");
+    if (!form) return;
+    const status = form.querySelector(".sa-status");
+    const send = form.querySelector(".sa-send");
+    const errFor = (n) => form.querySelector('[data-err-for="' + n + '"]');
+    const val = (n) => (form.elements[n] ? form.elements[n].value : "").trim();
+
+    const setStatus = (text, tone) => {
+      status.textContent = text || "";
+      status.dataset.tone = tone || "";
+    };
+
+    /* Validated here as well as on the server. The server is the one that counts;
+       this exists so a mistyped address is caught before a round trip. */
+    const validate = () => {
+      const bad = [];
+      if (!val("name")) bad.push("name");
+      if (!/^[^\s@]+@[^\s@.]+\.[^\s@]+$/.test(val("email"))) bad.push("email");
+      if (!val("message")) bad.push("message");
+      ["name", "email", "message"].forEach((n) => {
+        const el = errFor(n);
+        const on = bad.indexOf(n) !== -1;
+        if (el) el.classList.toggle("is-on", on);
+        if (form.elements[n]) form.elements[n].setAttribute("aria-invalid", on ? "true" : "false");
+      });
+      if (bad.length && form.elements[bad[0]]) form.elements[bad[0]].focus();
+      return bad.length === 0;
+    };
+
+    /* If the endpoint is not configured yet, or the network is gone, the visitor
+       still leaves with their message intact rather than losing what they typed. */
+    const fallbackMailto = () => {
+      const body = "From: " + val("name") + " <" + val("email") + ">\n\n" + val("message");
+      return "mailto:?subject=" + encodeURIComponent(val("subject") || "Message from your website")
+           + "&body=" + encodeURIComponent(body);
+    };
+    const offerFallback = (reason) => {
+      setStatus("", "");
+      status.innerHTML = "";
+      const p = document.createElement("span");
+      p.textContent = reason + " ";
+      const a = document.createElement("a");
+      a.href = fallbackMailto();
+      a.textContent = "Open this in your mail app instead";
+      status.append(p, a);
+      status.dataset.tone = "warn";
+    };
+
+    this._onSubmit = async (e) => {
+      e.preventDefault();
+      if (!validate()) { setStatus("Have another look at the fields above.", "warn"); return; }
+
+      send.disabled = true;
+      const label = send.textContent;
+      send.textContent = "Sending…";
+      setStatus("", "");
+
+      try {
+        const r = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: val("name"), email: val("email"), subject: val("subject"),
+            message: val("message"), company: val("company")
+          })
+        });
+        if (r.ok) {
+          form.reset();
+          setStatus("Sent. Thank you, I will get back to you.", "ok");
+        } else if (r.status === 503 || r.status === 404) {
+          /* 503 is the endpoint saying its keys are missing; 404 is the endpoint not
+             being there at all, which is what a plain static preview looks like.
+             Same thing from the visitor's side. */
+          offerFallback("The form is not wired to an inbox yet.");
+        } else if (r.status === 429) {
+          setStatus("That is a few messages in a row. Give it a minute and try again.", "warn");
+        } else {
+          offerFallback("Something went wrong sending that.");
+        }
+      } catch (err) {
+        offerFallback("Could not reach the server.");
+      } finally {
+        send.disabled = false;
+        send.textContent = label;
+      }
+    };
+    form.addEventListener("submit", this._onSubmit);
+    this._form = form;
+
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.style.transition = "opacity 520ms cubic-bezier(.22,.61,.36,1), transform 520ms cubic-bezier(.22,.61,.36,1)";
+      e.target.style.opacity = "1"; e.target.style.transform = "none";
+      io.unobserve(e.target);
+    }), { threshold: 0.1 });
+    document.querySelectorAll("[data-reveal]").forEach(el => {
+      el.style.opacity = "0"; el.style.transform = "translateY(12px)"; io.observe(el);
+    });
+    this._io = io;
+  }
+
+  componentWillUnmount() {
+    if (this._form && this._onSubmit) this._form.removeEventListener("submit", this._onSubmit);
+    if (this._io) this._io.disconnect();
+  }
+}
+</script>
+</body>
+</html>

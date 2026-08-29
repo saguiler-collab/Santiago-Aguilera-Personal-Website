@@ -1619,7 +1619,12 @@
   }
 
   // src/runtime.ts
-  var COMPONENT_DIR = ".";
+  // Patched: the runtime resolves <dc-import name="X"> to COMPONENT_DIR + "/X.dc.html",
+  // and "." means "next to whichever page is asking". That forces every page and every
+  // shared component to sit in one directory. Reading a global instead lets the pages
+  // live in /pages while index.html stays at the site root, which a static host needs
+  // for "/". Set window.__SA_COMPONENT_DIR before this file loads; unset behaves as before.
+  var COMPONENT_DIR = (typeof window !== "undefined" && window.__SA_COMPONENT_DIR) || ".";
   function createRuntime(doc = document) {
     const registry = createRegistry();
     const pseudoClass = createPseudoSheet(doc);

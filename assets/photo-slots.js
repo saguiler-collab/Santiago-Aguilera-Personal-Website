@@ -4,7 +4,10 @@
   var IMG_PREFIX = "sa:img:";
   var MAX_EDGE = 1400;
   var JPEG_QUALITY = 0.82;
-  var PHOTOS_DIR = "assets/photos/";
+  // Root-absolute on purpose: this path is resolved against the page's URL, and the
+  // pages sit in /pages while index.html sits at the root. A relative path would
+  // have to be right for both, and cannot be.
+  var PHOTOS_DIR = "/assets/photos/";
 
   // Real, committed image files always win over a browser-local upload preview.
   // assets/photos/manifest.json maps a slot's key to a filename that's actually been

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../assets/vendor/react.production.min.js"></script>
+<script src="../assets/vendor/react-dom.production.min.js"></script>
+<script src="../assets/site-config.js"></script>
+<script>window.__SA_COMPONENT_DIR="/pages";</script>
+<script src="../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="../_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/styles.css">
+<link rel="stylesheet" href="../assets/site.css">
+<script src="../_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/_ds_bundle.js"></script>
+<style>
+.sa-nav-scroll{scrollbar-width:none}.sa-nav-scroll::-webkit-scrollbar{display:none}
+.sa-menu-link{text-decoration:none;transition:color var(--sa-dur-2) var(--sa-ease-out),transform var(--sa-dur-2) var(--sa-ease-out);display:inline-block}
+.sa-menu-link:hover{transform:translateX(3px)}
+/* Whether seven sections, the wordmark and two controls fit side by side depends on
+   which palette is on, because each one sets the nav in a different face: Archivo
+   uppercase needs 160px more than Fraunces does. A fixed breakpoint is therefore
+   wrong for eleven of the twelve, so the width is measured instead (see fitNav) and
+   this class is toggled. The media query below is only the floor, for the widths
+   where nothing fits and for the moment before the script has run. */
+.sa-nav-cramped .sa-nav-inline{display:none!important}
+@media (max-width:1180px){.sa-nav-inline{display:none!important}}
+</style>
+</helmet>
+<header ref="{{ headerRef }}" style="position:sticky;top:0;z-index:20;transition:background-color var(--sa-dur-3) var(--sa-ease-out),border-color var(--sa-dur-3) var(--sa-ease-out)">
+  <nav style="max-width:1440px;margin:0 auto;padding:var(--sa-space-4) clamp(16px,5vw,64px) var(--sa-space-4) clamp(16px,11vw,168px);display:flex;align-items:center;gap:var(--sa-space-4)">
+    <a href="/" style="display:inline-flex;align-items:center;gap:var(--sa-space-3);text-decoration:none;color:inherit;flex:none">
+      <span style="font-family:var(--sa-font-display);font-size:var(--sa-text-md);letter-spacing:var(--sa-tracking-tight);white-space:nowrap">Santiago Aguilera <span style="color:var(--sa-text-accent)">Library</span></span>
+    </a>
+
+    <div class="sa-nav-inline sa-nav-scroll" style="display:flex;align-items:center;gap:var(--sa-space-1);margin-left:auto;min-width:0;overflow-x:auto">
+      <sc-for list="{{ links }}" as="l" hint-placeholder-count="7">
+        <a href="{{ l.href }}" style="padding:8px 12px;font:var(--sa-type-ui);text-decoration:none;color:inherit;opacity:{{ l.opacity }};border-radius:var(--sa-radius-pill);transition:var(--sa-transition-control);white-space:nowrap;flex:none" style-hover="opacity:1">
+          {{ l.label }}
+        </a>
+      </sc-for>
+    </div>
+
+    <button ref="{{ themeBtn }}" type="button" aria-label="Toggle dark mode" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;flex:none;margin-left:auto;border-radius:999px;border:1px solid currentColor;background:transparent;color:inherit;opacity:.75;cursor:pointer;transition:var(--sa-transition-control)" style-hover="opacity:1"></button>
+
+    <button ref="{{ menuBtn }}" type="button" aria-label="Open menu" aria-expanded="false" style="display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:48px;height:48px;flex:none;border:none;background:transparent;color:inherit;cursor:pointer;padding:0">
+      <span style="display:block;width:22px;height:2px;background:currentColor;border-radius:2px"></span>
+      <span style="display:block;width:22px;height:2px;background:currentColor;border-radius:2px"></span>
+      <span style="display:block;width:22px;height:2px;background:currentColor;border-radius:2px"></span>
+      <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin-top:3px">Menu</span>
+    </button>
+  </nav>
+</header>
+
+<div ref="{{ overlayRef }}" class="sa-on-ink" role="dialog" aria-modal="true" aria-label="Site menu" style="position:fixed;inset:0;z-index:60;display:none;opacity:0;transition:opacity var(--sa-dur-3) var(--sa-ease-out);background:var(--sa-ink-900);overflow-y:auto">
+  <div style="max-width:1440px;margin:0 auto;padding:clamp(24px,4vw,48px) clamp(24px,5vw,64px) clamp(48px,8vh,96px)">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:var(--sa-space-8);flex-wrap:wrap">
+      <div style="display:flex;gap:var(--sa-space-3);flex-wrap:wrap">
+        <sc-for list="{{ quickLinks }}" as="q" hint-placeholder-count="3">
+          <a href="{{ q.href }}" style="padding:10px 20px;border:1px solid var(--sa-border-default);border-radius:var(--sa-radius-pill);font:var(--sa-type-ui);text-decoration:none;color:var(--sa-text-primary);transition:var(--sa-transition-control)" style-hover="background:var(--sa-surface-card)">{{ q.label }}</a>
+        </sc-for>
+      </div>
+      <button ref="{{ closeBtn }}" type="button" aria-label="Close menu" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;border:none;background:transparent;color:var(--sa-text-primary);cursor:pointer;padding:4px;margin-left:auto">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"></path></svg>
+        <span style="font:var(--sa-type-eyebrow);font-size:10px;letter-spacing:.1em;text-transform:uppercase">Close</span>
+      </button>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:clamp(28px,4vw,56px);margin-top:clamp(32px,6vh,64px)">
+      <sc-for list="{{ sections }}" as="s" hint-placeholder-count="7">
+        <nav style="display:flex;flex-direction:column;gap:var(--sa-space-3);break-inside:avoid">
+          <a href="{{ s.href }}" class="sa-menu-link" style="font:var(--sa-type-heading);font-size:var(--sa-text-xl);color:var(--sa-text-primary)">{{ s.label }}</a>
+          <sc-for list="{{ s.children }}" as="c" hint-placeholder-count="4">
+            <a href="{{ c.href }}" class="sa-menu-link" style="font:var(--sa-type-body);font-size:var(--sa-text-sm);color:var(--sa-text-secondary)" style-hover="color:var(--sa-text-primary)">{{ c.label }}</a>
+          </sc-for>
+        </nav>
+      </sc-for>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:var(--sa-space-5);margin-top:clamp(40px,7vh,80px);padding-top:var(--sa-space-8);border-top:1px solid var(--sa-border-on-ink)">
+      <span style="font:var(--sa-type-caption);font-size:var(--sa-text-xs);color:var(--sa-text-muted)">The Santiago Aguilera Library</span>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;about&quot;,&quot;academics&quot;,&quot;research&quot;,&quot;activities&quot;,&quot;leadership&quot;,&quot;curiosities&quot;,&quot;media&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;overlay&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+// Single source of truth for the site map. The top bar shows the section row,
+// the hamburger menu shows the whole tree.
+const SECTIONS = [
+  { id: "about", label: "About", href: "About.dc.html", children: [
+    { label: "Mexico", href: "Place-Mexico.dc.html" },
+    { label: "Colombia", href: "Place-Colombia.dc.html" },
+    { label: "Panama", href: "Place-Panama.dc.html" },
+    { label: "Trinidad & Tobago", href: "Place-Trinidad.dc.html" },
+    { label: "United States", href: "Place-UnitedStates.dc.html" }
+  ]},
+  { id: "academics", label: "Academics", href: "Academics.dc.html", children: [
+    { label: "International School of Port of Spain", href: "Academics-ISPS.dc.html" },
+    { label: "Perkiomen School", href: "Academics-Perkiomen.dc.html" },
+    { label: "Exeter Summer", href: "Academics-ExeterSummer.dc.html" },
+    { label: "Computational Biology at Carnegie Mellon University", href: "Academics-CompBio.dc.html" }
+  ]},
+  { id: "research", label: "Research & Projects", href: "Research.dc.html", children: [
+    { label: "CellAtlas GBM", href: "Research-CellAtlas.dc.html" },
+    { label: "SanaSanita", href: "Research-MedicalApp.dc.html" },
+    { label: "Venezuelan Immigration", href: "Research-Venezuela.dc.html" }
+  ]},
+  { id: "leadership", label: "Leadership & Service", href: "Leadership.dc.html", children: [
+    { label: "HOSA", href: "Leadership-HOSA.dc.html" },
+    { label: "GVMUN", href: "Leadership-GVMUN.dc.html" },
+    { label: "Student Council / Senate", href: "Leadership-StudentCouncil.dc.html" },
+    { label: "Hospital Shadowing", href: "Leadership-Shadowing.dc.html" },
+    { label: "Volunteering", href: "Leadership-Volunteering.dc.html" },
+    { label: "The Perkiomenite", href: "Leadership-Perkiomenite.dc.html" }
+  ]},
+  { id: "activities", label: "Activities", href: "Activities.dc.html", children: [
+    { label: "Swimming", href: "Activities-Swimming.dc.html" },
+    { label: "Weightlifting", href: "Activities-Weightlifting.dc.html" },
+    { label: "Drums & Music", href: "Activities-Music.dc.html" }
+  ]},
+  { id: "curiosities", label: "Curiosities", href: "Curiosities.dc.html", children: [
+    { label: "Literature", href: "Curiosities-Literature.dc.html" },
+    { label: "Music", href: "Curiosities-Music.dc.html" },
+    { label: "Video Games", href: "Curiosities-Videogames.dc.html" }
+  ]},
+  { id: "media", label: "Media", href: "Media.dc.html", children: [
+    { label: "Photos & Videos", href: "Media.dc.html" }
+  ]}
+];
+
+const QUICK = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "About.dc.html" },
+  { label: "Research", href: "Research.dc.html" },
+  { label: "Contact", href: "Contact.dc.html" }
+];
+
+/* Every page opens in the palette of its own section, and this lets a reader pin one
+   for the whole site. The swatch shows the accent and the surface together, because
+   the pair is what actually distinguishes them. Choice lives in localStorage and is
+   applied by the inline script in each page's head, before first paint. */
+const PALETTES = [
+  { id: "auto", name: "Match the section", mode: null, dot: "conic-gradient(#B08428,#3C0C5B,#5FBD49,#0E8E7A,#ED8B00,#C41230,#FFC000,#FF2D78,#7C5CFF,#B08428)" },
+  { id: "library", name: "Library", mode: "light", dot: "#B08428", bg: "#FDFBF7" },
+  { id: "perkiomen", name: "Perkiomen", mode: "light", dot: "#DBC299", bg: "#3C0C5B" },
+  { id: "isps", name: "Port of Spain", mode: "light", dot: "#5FBD49", bg: "#14335F" },
+  { id: "sana", name: "SanaSanita", mode: "light", dot: "#0E8E7A", bg: "#07666D" },
+  { id: "sky", name: "Sky", mode: "light", dot: "#2E7FB8", bg: "#FFFFFF" },
+  { id: "noir", name: "Noir", mode: "dark", dot: "#FFFFFF", bg: "#000000" },
+  { id: "gilt", name: "Gilt", mode: "dark", dot: "#C9A227", bg: "#0E0E0F" },
+  { id: "atlas", name: "Atlas", mode: "dark", dot: "#7C5CFF", bg: "#080B14" },
+  { id: "ferrari", name: "Rosso Corsa", mode: "dark", dot: "#DA291C", bg: "#181818" },
+  { id: "lambo", name: "Toro", mode: "dark", dot: "#FFC000", bg: "#000000" },
+  { id: "ps", name: "Player One", mode: "light", dot: "#0070D1", bg: "#FFFFFF" },
+  { id: "arcade", name: "Arcade", mode: "dark", dot: "#FF2D78", bg: "#05060E" },
+  { id: "exeter", name: "Exeter Summer", mode: "light", dot: "#ED8B00", bg: "#FCF9F8" },
+  { id: "cmu", name: "Carnegie Mellon", mode: "dark", dot: "#C41230", bg: "#000000" }
+];
+const MODE_OF = { library: "light", perkiomen: "light", isps: "light", sana: "light",
+  sky: "light", ps: "light", exeter: "light", noir: "dark", gilt: "dark", atlas: "dark",
+  ferrari: "dark", lambo: "dark", arcade: "dark", cmu: "dark" };
+
+const PALETTE_SVG = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18c1 0 1.6-.7 1.6-1.5 0-.5-.2-.8-.5-1.1-.3-.3-.5-.7-.5-1.1 0-.8.7-1.5 1.6-1.5H16a5 5 0 0 0 5-5c0-4.4-4-8-9-8Z"/><circle cx="7.5" cy="11.5" r="1.1" fill="currentColor" stroke="none"/><circle cx="10.5" cy="7.5" r="1.1" fill="currentColor" stroke="none"/><circle cx="15" cy="8.5" r="1.1" fill="currentColor" stroke="none"/></svg>';
+
+function savedPalette() {
+  try { return localStorage.getItem("sa:palette") || "auto"; } catch (e) { return "auto"; }
+}
+function pageDefaultPalette() {
+  return document.documentElement.getAttribute("data-palette-default") ||
+         document.documentElement.getAttribute("data-palette") || "library";
+}
+function applyPalette(id) {
+  const d = document.documentElement;
+  const key = id === "auto" ? pageDefaultPalette() : id;
+  d.setAttribute("data-palette", key);
+  d.setAttribute("data-theme", MODE_OF[key] || "light");
+  try { id === "auto" ? localStorage.removeItem("sa:palette") : localStorage.setItem("sa:palette", id); } catch (e) {}
+}
+
+class Component extends DCLogic {
+  renderVals() {
+    const r = k => (this[k] = this[k] || React.createRef());
+    const active = this.props.active || "home";
+    return {
+      headerRef: r("_header"), themeBtn: r("_themeBtn"), menuBtn: r("_menuBtn"),
+      overlayRef: r("_overlay"), closeBtn: r("_closeBtn"),
+      sections: SECTIONS,
+      quickLinks: QUICK,
+      links: SECTIONS.map(s => ({ label: s.label, href: s.href, opacity: s.id === active ? 1 : 0.62 }))
+    };
+  }
+
+  componentDidMount() {
+    const header = this._header.current;
+    const overlay = this._overlay.current;
+
+    // On pages with a dark full-bleed hero (Home), the bar floats transparently over it
+    // and only picks up its own background once you've scrolled past the hero.
+    this._overlayMode = this.props.overlay === true || this.props.overlay === "true";
+    const paintHeader = () => {
+      if (!header) return;
+      const solid = !this._overlayMode || scrollY > innerHeight * 0.72;
+      header.style.background = solid ? "color-mix(in oklab, var(--sa-surface-page) 82%, transparent)" : "transparent";
+      header.style.backdropFilter = solid ? "var(--sa-blur-veil)" : "none";
+      header.style.webkitBackdropFilter = solid ? "var(--sa-blur-veil)" : "none";
+      header.style.borderBottom = solid ? "1px solid var(--sa-border-hairline)" : "1px solid transparent";
+      header.style.color = solid ? "var(--sa-text-primary)" : "var(--sa-paper-000)";
+    };
+    this._onScroll = paintHeader;
+    addEventListener("scroll", this._onScroll, { passive: true });
+    paintHeader();
+
+    // The inline strip is overflow-x:auto, so when it does not fit it silently
+    // scrolls and the last section just looks cut off. Measure it instead: drop the
+    // collapsed class, read the overflow, put it back if there is any. Both steps
+    // happen inside one frame, so nothing is painted in between and there is no
+    // flicker. Re-run whenever the width changes, whenever the face changes (the
+    // palette menu) and once the webfonts have actually swapped in, because until
+    // then it is being measured in the fallback face.
+    const nav = header && header.querySelector(".sa-nav-inline");
+    const fitNav = () => {
+      if (!nav) return;
+      header.classList.remove("sa-nav-cramped");
+      if (getComputedStyle(nav).display === "none") return;   // below the floor
+      if (nav.scrollWidth - nav.clientWidth > 0) header.classList.add("sa-nav-cramped");
+    };
+    this._fitNav = fitNav;
+    this._onResize = () => {
+      cancelAnimationFrame(this._fitRaf);
+    if (this._paletteWatch) this._paletteWatch.disconnect();
+      this._fitRaf = requestAnimationFrame(fitNav);
+    };
+    addEventListener("resize", this._onResize, { passive: true });
+    fitNav();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitNav);
+    // Watch the attribute rather than only the menu click, so any route into a
+    // palette change re-measures: the menu, a restored preference, a future control.
+    this._paletteWatch = new MutationObserver(() => {
+      fitNav();
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitNav);
+    });
+    this._paletteWatch.observe(document.documentElement, { attributeFilter: ["data-palette"] });
+
+    const themeBtn = this._themeBtn.current;
+    if (themeBtn) {
+      themeBtn.innerHTML = PALETTE_SVG;
+      themeBtn.setAttribute("aria-label", "Change colours");
+      themeBtn.setAttribute("aria-haspopup", "true");
+      themeBtn.setAttribute("aria-expanded", "false");
+
+      const menu = document.createElement("div");
+      menu.setAttribute("role", "menu");
+      Object.assign(menu.style, {
+        position: "absolute", top: "calc(100% + 8px)", right: "0", zIndex: "60",
+        display: "none", minWidth: "210px", padding: "6px",
+        background: "var(--sa-surface-card)", color: "var(--sa-text-primary)",
+        border: "1px solid var(--sa-border-default)", borderRadius: "12px",
+        boxShadow: "var(--sa-shadow-2, 0 10px 30px -10px rgba(0,0,0,.35))"
+      });
+
+      const rows = PALETTES.map((pl) => {
+        const b = document.createElement("button");
+        b.type = "button"; b.setAttribute("role", "menuitemradio");
+        Object.assign(b.style, {
+          display: "flex", alignItems: "center", gap: "10px", width: "100%",
+          padding: "8px 10px", border: "none", borderRadius: "8px", cursor: "pointer",
+          background: "transparent", color: "inherit", textAlign: "left",
+          font: "var(--sa-type-ui)", fontSize: "var(--sa-text-sm)"
+        });
+        const dot = document.createElement("span");
+        Object.assign(dot.style, {
+          width: "18px", height: "18px", borderRadius: "50%", flex: "none",
+          background: pl.bg || pl.dot,
+          boxShadow: pl.bg ? `inset 0 0 0 5px ${pl.dot}, inset 0 0 0 6px rgba(0,0,0,.18)` : "none",
+          border: "1px solid var(--sa-border-default)"
+        });
+        if (!pl.bg) dot.style.background = pl.dot;
+        const label = document.createElement("span");
+        label.textContent = pl.name; label.style.flex = "1";
+        // the mark is set per state rather than hidden with opacity, or every item
+        // announces a checkmark to a screen reader
+        const tick = document.createElement("span");
+        tick.setAttribute("aria-hidden", "true");
+        b.append(dot, label, tick);
+        b.addEventListener("mouseenter", () => (b.style.background = "var(--sa-surface-sunken)"));
+        b.addEventListener("mouseleave", () => (b.style.background = "transparent"));
+        b.addEventListener("click", () => { applyPalette(pl.id); paint(); close(); });
+        menu.appendChild(b);
+        return { pl, tick, btn: b };
+      });
+
+      const paint = () => {
+        const cur = savedPalette();
+        rows.forEach(({ pl, tick, btn }) => {
+          const on = pl.id === cur;
+          tick.textContent = on ? "\u2713" : "";
+          btn.setAttribute("aria-checked", on ? "true" : "false");
+        });
+      };
+      const close = () => { menu.style.display = "none"; themeBtn.setAttribute("aria-expanded", "false"); };
+      const open = () => { menu.style.display = "block"; themeBtn.setAttribute("aria-expanded", "true"); };
+
+      themeBtn.parentNode.style.position = "relative";
+      themeBtn.parentNode.appendChild(menu);
+      this._onTheme = (e) => {
+        e.stopPropagation();
+        menu.style.display === "block" ? close() : open();
+      };
+      themeBtn.addEventListener("click", this._onTheme);
+      this._onDocClick = (e) => { if (!menu.contains(e.target) && e.target !== themeBtn) close(); };
+      document.addEventListener("click", this._onDocClick);
+      this._onEsc = (e) => { if (e.key === "Escape") close(); };
+      document.addEventListener("keydown", this._onEsc);
+      paint();
+    }
+
+    const open = () => {
+      overlay.style.display = "block";
+      requestAnimationFrame(() => { overlay.style.opacity = "1"; });
+      document.body.style.overflow = "hidden";
+      this._menuBtn.current.setAttribute("aria-expanded", "true");
+      const first = this._closeBtn.current;
+      if (first) first.focus();
+    };
+    const close = () => {
+      overlay.style.opacity = "0";
+      this._menuBtn.current.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+      setTimeout(() => { if (overlay.style.opacity === "0") overlay.style.display = "none"; }, 220);
+      this._menuBtn.current.focus();
+    };
+    this._open = open; this._close = close;
+    this._menuBtn.current.addEventListener("click", open);
+    this._closeBtn.current.addEventListener("click", close);
+    this._onKey = (e) => { if (e.key === "Escape" && overlay.style.display === "block") close(); };
+    document.addEventListener("keydown", this._onKey);
+    // any navigation out of the overlay should leave it closed behind you
+    overlay.querySelectorAll("a").forEach(a => a.addEventListener("click", close));
+  }
+
+  componentWillUnmount() {
+    removeEventListener("scroll", this._onScroll);
+    removeEventListener("resize", this._onResize);
+    cancelAnimationFrame(this._fitRaf);
+    if (this._paletteWatch) this._paletteWatch.disconnect();
+    document.removeEventListener("keydown", this._onKey);
+    document.body.style.overflow = "";
+  }
+}
+</script>
+</body>
+</html>

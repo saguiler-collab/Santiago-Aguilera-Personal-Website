@@ -27,7 +27,7 @@ const asJson = process.argv.includes("--json");
 
 // index.html is a generated copy of Home.dc.html. Listing both would double every
 // homepage slot, and the keys are identical anyway.
-const files = fs.readdirSync(ROOT)
+const files = fs.readdirSync(path.join(ROOT, "pages"))
   .filter((f) => f.endsWith(".dc.html"))
   .sort();
 
@@ -35,7 +35,7 @@ const slotRe = /<sa-image-slot\s+slot-key="([^"]+)"[^>]*?placeholder="([^"]*)"/g
 
 const rows = [];
 for (const file of files) {
-  const src = fs.readFileSync(path.join(ROOT, file), "utf8");
+  const src = fs.readFileSync(path.join(ROOT, "pages", file), "utf8");
   let m;
   while ((m = slotRe.exec(src)) !== null) {
     rows.push({ key: m[1], page: file, caption: m[2], photo: manifest[m[1]] || null });

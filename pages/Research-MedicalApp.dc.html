@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SanaSanita · Santiago Aguilera Library</title>
+<meta name="description" content="SanaSanita, a free offline tool that tells caregivers at IMSS-Bienestar pediatric services what the doctor did not have time to say.">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<meta name="theme-color" content="#0F3D3E">
+<meta property="og:title" content="SanaSanita · Santiago Aguilera Library">
+<meta property="og:description" content="SanaSanita, a free offline tool that tells caregivers at IMSS-Bienestar pediatric services what the doctor did not have time to say.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Santiago Aguilera Library">
+<meta property="og:image" content="../assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<script>(function(){try{
+var M={library:"light",perkiomen:"light",isps:"light",sana:"light",sky:"light",ps:"light",exeter:"light",noir:"dark",gilt:"dark",atlas:"dark",ferrari:"dark",lambo:"dark",arcade:"dark",cmu:"dark"};
+var d=document.documentElement,def="sana",p=null;
+try{p=localStorage.getItem("sa:palette")}catch(e){}
+var k=(p&&M[p])?p:def;
+d.setAttribute("data-palette-default",def);d.setAttribute("data-palette",k);d.setAttribute("data-theme",M[k]);
+}catch(e){}})();</script>
+<!-- React is vendored, not pulled from a CDN: support.js skips its unpkg fetch when
+     window.React/ReactDOM already exist. Without this the whole site is a blank page
+     whenever unpkg is unreachable, since every page renders client-side. -->
+<script src="../assets/vendor/react.production.min.js"></script>
+<script src="../assets/vendor/react-dom.production.min.js"></script>
+<script src="../assets/site-config.js"></script>
+<script>window.__SA_COMPONENT_DIR="/pages";</script>
+<script src="../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="../_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/styles.css">
+<link rel="stylesheet" href="../assets/palettes.css">
+<link rel="stylesheet" href="../assets/site.css">
+<script src="../_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/_ds_bundle.js"></script>
+<script src="../assets/photo-slots.js" defer></script>
+<style>
+body{margin:0;background:var(--sa-surface-page);transition:background-color .15s ease}
+a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+.sa-glow{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;z-index:0;opacity:.5}
+/* Every page opens with the same ~60 nav links; a keyboard or screen-reader user
+   needs one jump past them rather than 60 tabs on every single page. */
+.sa-skip{position:absolute;left:-9999px;top:0;z-index:100}
+.sa-skip:focus{left:16px;top:16px;padding:12px 18px;background:var(--sa-ink-800);color:var(--sa-paper-000);
+  border-radius:var(--sa-radius-control);font:var(--sa-type-ui);text-decoration:none}
+</style>
+</helmet>
+<div style="background:var(--sa-surface-page);color:var(--sa-text-primary);font:var(--sa-type-body);min-height:100vh;overflow-x:clip">
+<a class="sa-skip" href="#main">Skip to content</a>
+<dc-import name="SymbolRail" mode="helix" hint-size="100%,100%"></dc-import>
+<dc-import name="SiteNav" active="research" hint-size="100%,72px"></dc-import>
+<main id="main">
+
+<section class="sa-pagehead sa-pagehead--leaf" style="width:100%;max-width:1440px;margin:0 auto;padding:clamp(40px,6vh,72px) clamp(24px,5vw,64px) var(--sa-space-12) clamp(24px,11vw,168px);box-sizing:border-box">
+      <a href="Research.dc.html" style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-muted);text-decoration:none;display:inline-block;padding-block:4px">← Research &amp; projects</a>
+  <span class="sa-kicker" style="margin-top:var(--sa-space-4);font:var(--sa-type-eyebrow);letter-spacing:var(--sa-tracking-eyebrow);text-transform:uppercase;color:var(--sa-text-accent)">Research · Technology</span>
+  <h1 style="font:var(--sa-type-display);font-size:clamp(2.5rem,5vw,4rem);letter-spacing:var(--sa-tracking-display);margin:var(--sa-space-5) 0 0;max-width:20ch">SanaSanita</h1>
+  <p style="font:var(--sa-type-lede);font-size:var(--sa-text-lg);color:var(--sa-text-secondary);max-width:56ch;margin-top:var(--sa-space-6);text-wrap:pretty">Free, offline instructions for the families of children leaving a public hospital.</p>
+</section>
+
+<section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:0 clamp(24px,5vw,64px) var(--sa-space-16) clamp(24px,11vw,168px);box-sizing:border-box;display:grid;grid-template-columns:minmax(300px,1.05fr) minmax(260px,0.95fr);gap:clamp(32px,5vw,72px);align-items:start">
+    <div>
+      <p style="font:var(--sa-type-lede);color:var(--sa-text-primary);max-width:60ch;text-wrap:pretty">I did not start with an app. I started by asking what actually goes wrong inside a government-funded public pediatric hospital, and then spent two weeks on the ward at the Torre Pediátrica in Veracruz writing down what I saw. Ninety-four pages of notes later, the same problem kept turning up wearing different clothes.</p>
+      <p style="font:var(--sa-type-body);color:var(--sa-text-secondary);max-width:60ch;margin-top:var(--sa-space-4);text-wrap:pretty">The consultorio is where it shows. A doctor has a few minutes with each family. The prescription form has three medicine slots. Rounds happen in the morning, because there is no time for them in the afternoon. Whatever a family does not follow in those few minutes, they take home anyway, and from that point the child's care is theirs to run.</p>
+      <p style="font:var(--sa-type-body);color:var(--sa-text-secondary);max-width:60ch;margin-top:var(--sa-space-4);text-wrap:pretty">So I wrote the failures down one at a time. Families were prescribed medicines the pharmacy did not stock, and nobody in the room knew until they reached the window. Surgeries were being missed, because a date three months out is easy to lose track of, and a missed slot can push a child back by months again. Families were arriving on the morning of an operation without their studies, without their documents, or having given the child breakfast. Residents were assigned reading they could not open, because the journals sit behind paywalls the hospital does not pay for. In one case a surgeon improvised a staged reduction with weights and elastic bands, because the material the textbook asks for was not in the building.</p>
+      <p style="font:var(--sa-type-body);color:var(--sa-text-secondary);max-width:60ch;margin-top:var(--sa-space-4);text-wrap:pretty">None of those are knowledge problems. The doctor already knows what the family should do. The national medicine catalogue is already public. The research already exists. Every one of them is a transfer problem: the information is real and it does not reach the person who needs it at the moment they need it. That gap is what SanaSanita is built into.</p>
+      <p style="font:var(--sa-type-body);color:var(--sa-text-secondary);max-width:60ch;margin-top:var(--sa-space-4);text-wrap:pretty">So the mission was written at the top of the requirements before any code, and it has not moved since. To tell parents what the doctor left out, forgot, or had no time to say, and to make sure they understand all of it, and forget none of it. Every feature is measured against that sentence. Anything that does not help a parent understand or remember does not ship.</p>
+      <p style="font:var(--sa-type-body);color:var(--sa-text-secondary);max-width:60ch;margin-top:var(--sa-space-4);text-wrap:pretty">The vision is smaller and more stubborn than it sounds. Not new resources for a hospital that does not have them, but better use of the ones already there. A printer that already sits in consulta externa. A physician who already knows the answer. A medicine catalogue that is already public and already free. The app assumes no internet at home, no data plan, and sometimes no reading at all.</p>
+      <p style="font:var(--sa-type-body);color:var(--sa-text-secondary);max-width:60ch;margin-top:var(--sa-space-4);text-wrap:pretty">Where it goes from here is the part that matters most to me. The aim is for this to run inside IMSS-Bienestar hospitals like the one it was written in, used by the doctors already working there. For a physician that means the evidence they cannot otherwise reach, in the language they work in, with the citation attached, as support for their own reasoning and never a replacement for it. For a family it means a clinical summary they can actually read and follow once they are home. The app never diagnoses and it never proposes a treatment. It makes the doctor's own answer easier to give, and much harder to lose.</p>
+      <div style="margin-top:var(--sa-space-8)">
+        <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Button" href="https://sanasanita.vercel.app/" target="_blank" rel="noopener" hint-size="220px,44px">Open SanaSanita</x-import>
+      </div>
+
+
+  <div data-stagger="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:var(--sa-space-5);margin-top:var(--sa-space-10)">
+    <div style="border-top:1px solid var(--sa-border-hairline);padding-top:var(--sa-space-3)">
+      <div style="font:var(--sa-type-eyebrow);letter-spacing:var(--sa-tracking-eyebrow);text-transform:uppercase;color:var(--sa-text-muted)">Built for</div>
+      <div style="font:var(--sa-type-body);color:var(--sa-text-primary);margin-top:4px">IMSS-Bienestar pediatric services</div>
+    </div>
+    <div style="border-top:1px solid var(--sa-border-hairline);padding-top:var(--sa-space-3)">
+      <div style="font:var(--sa-type-eyebrow);letter-spacing:var(--sa-tracking-eyebrow);text-transform:uppercase;color:var(--sa-text-muted)">Where</div>
+      <div style="font:var(--sa-type-body);color:var(--sa-text-primary);margin-top:4px">Torre Pediátrica, Veracruz</div>
+    </div>
+    <div style="border-top:1px solid var(--sa-border-hairline);padding-top:var(--sa-space-3)">
+      <div style="font:var(--sa-type-eyebrow);letter-spacing:var(--sa-tracking-eyebrow);text-transform:uppercase;color:var(--sa-text-muted)">Field research</div>
+      <div style="font:var(--sa-type-body);color:var(--sa-text-primary);margin-top:4px">Two weeks on the ward, 94 pages of notes</div>
+    </div>
+    <div style="border-top:1px solid var(--sa-border-hairline);padding-top:var(--sa-space-3)">
+      <div style="font:var(--sa-type-eyebrow);letter-spacing:var(--sa-tracking-eyebrow);text-transform:uppercase;color:var(--sa-text-muted)">Version</div>
+      <div style="font:var(--sa-type-body);color:var(--sa-text-primary);margin-top:4px">v0.1, beta</div>
+    </div>
+  </div>
+    </div>
+    <div style="max-width:340px;width:100%"><sa-image-slot slot-key="app-icon" ratio="1 / 1" placeholder="The SanaSanita mark"></sa-image-slot></div>
+</section>
+
+<section data-reveal="1" class="sa-media-row">
+  <div class="sa-media-figs n1">
+      <figure class="sa-fig">
+        <sa-image-slot slot-key="app-plan" ratio="4 / 5" placeholder="Nuevo plan, the doctor's screen"></sa-image-slot>
+        <figcaption>Nuevo plan, the doctor's screen</figcaption>
+      </figure>
+  </div>
+  <div class="sa-media-text">
+    <h3>The screen a doctor opens</h3>
+    <p>Everything starts here, and the first line on it is the promise: no name, no CURP, no expediente, and nothing saved to any server. There is no patient record, so there is none to leak.</p>
+    <p>The doctor types the diagnosis in Spanish, the child's age and weight, and what happened in the consultation. The yellow band stays on screen as a standing warning that nothing in the prototype goes home with a family until a physician has read it, corrected it and signed it.</p>
+  </div>
+</section>
+<section data-reveal="1" style="background:var(--sa-surface-sunken);border-top:var(--sa-hairline);border-bottom:var(--sa-hairline)">
+  <div style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-band-y) clamp(24px,5vw,64px) var(--sa-band-y) clamp(24px,11vw,168px);box-sizing:border-box">
+    <div data-rail-target="1">
+      <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="Constraints" title="The lines that do not move" lede="Written down before the code, and not moved since." hint-size="100%,150px"></x-import>
+    </div>
+    <div data-stagger="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(28px,4vw,56px);margin-top:var(--sa-space-12)">
+      <div>
+        <div style="font:var(--sa-type-eyebrow);letter-spacing:var(--sa-tracking-eyebrow);text-transform:uppercase;color:var(--sa-text-accent);padding-bottom:var(--sa-space-3);border-bottom:1px solid var(--sa-border-default)">What it never does</div>
+        <ul style="list-style:none;margin:var(--sa-space-5) 0 0;padding:0;display:flex;flex-direction:column;gap:var(--sa-space-5)">
+          <li style="display:flex;gap:10px;align-items:flex-start">
+            <span style="width:6px;height:6px;border-radius:50%;background:var(--sa-accent);margin-top:9px;flex:none"></span>
+            <span>
+              <span style="display:block;font:var(--sa-type-ui);font-size:var(--sa-text-base);color:var(--sa-text-primary)">No patient data</span>
+              <span style="display:block;font:var(--sa-type-body);font-size:var(--sa-text-sm);color:var(--sa-text-secondary);margin-top:2px;text-wrap:pretty">No name, no CURP, no expediente, no date of birth. Nothing is saved to any server.</span>
+            </span>
+          </li>
+          <li style="display:flex;gap:10px;align-items:flex-start">
+            <span style="width:6px;height:6px;border-radius:50%;background:var(--sa-accent);margin-top:9px;flex:none"></span>
+            <span>
+              <span style="display:block;font:var(--sa-type-ui);font-size:var(--sa-text-base);color:var(--sa-text-primary)">No diagnosis or triage</span>
+              <span style="display:block;font:var(--sa-type-body);font-size:var(--sa-text-sm);color:var(--sa-text-secondary);margin-top:2px;text-wrap:pretty">It does not decide what is wrong with a child, and it does not infer a referral.</span>
+            </span>
+          </li>
+          <li style="display:flex;gap:10px;align-items:flex-start">
+            <span style="width:6px;height:6px;border-radius:50%;background:var(--sa-accent);margin-top:9px;flex:none"></span>
+            <span>
+              <span style="display:block;font:var(--sa-type-ui);font-size:var(--sa-text-base);color:var(--sa-text-primary)">No dose calculation</span>
+              <span style="display:block;font:var(--sa-type-body);font-size:var(--sa-text-sm);color:var(--sa-text-secondary);margin-top:2px;text-wrap:pretty">It builds a schedule from what the physician entered. It does not work out the dose.</span>
+            </span>
+          </li>
+          <li style="display:flex;gap:10px;align-items:flex-start">
+            <span style="width:6px;height:6px;border-radius:50%;background:var(--sa-accent);margin-top:9px;flex:none"></span>
+            <span>
+              <span style="display:block;font:var(--sa-type-ui);font-size:var(--sa-text-base);color:var(--sa-text-primary)">No medication substitution</span>
+              <span style="display:block;font:var(--sa-type-body);font-size:var(--sa-text-sm);color:var(--sa-text-secondary);margin-top:2px;text-wrap:pretty">If a drug is out of stock the app says so. Proposing a different one would be prescribing.</span>
+            </span>
+          </li>
+          <li style="display:flex;gap:10px;align-items:flex-start">
+            <span style="width:6px;height:6px;border-radius:50%;background:var(--sa-accent);margin-top:9px;flex:none"></span>
+            <span>
+              <span style="display:block;font:var(--sa-type-ui);font-size:var(--sa-text-base);color:var(--sa-text-primary)">No paywall circumvention</span>
+              <span style="display:block;font:var(--sa-type-body);font-size:var(--sa-text-sm);color:var(--sa-text-secondary);margin-top:2px;text-wrap:pretty">Open-access sources only, always. Never Sci-Hub.</span>
+            </span>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <div style="font:var(--sa-type-eyebrow);letter-spacing:var(--sa-tracking-eyebrow);text-transform:uppercase;color:var(--sa-text-accent);padding-bottom:var(--sa-space-3);border-bottom:1px solid var(--sa-border-default)">What is guaranteed</div>
+        <ul style="list-style:none;margin:var(--sa-space-5) 0 0;padding:0;display:flex;flex-direction:column;gap:var(--sa-space-5)">
+          <li style="display:flex;gap:10px;align-items:flex-start">
+            <span style="width:6px;height:6px;border-radius:50%;background:var(--sa-accent);margin-top:9px;flex:none"></span>
+            <span>
+              <span style="display:block;font:var(--sa-type-ui);font-size:var(--sa-text-base);color:var(--sa-text-primary)">Nothing unreviewed reaches a family</span>
+              <span style="display:block;font:var(--sa-type-body);font-size:var(--sa-text-sm);color:var(--sa-text-secondary);margin-top:2px;text-wrap:pretty">A physician reviews and signs every line before it is printed.</span>
+            </span>
+          </li>
+          <li style="display:flex;gap:10px;align-items:flex-start">
+            <span style="width:6px;height:6px;border-radius:50%;background:var(--sa-accent);margin-top:9px;flex:none"></span>
+            <span>
+              <span style="display:block;font:var(--sa-type-ui);font-size:var(--sa-text-base);color:var(--sa-text-primary)">Free, permanently</span>
+              <span style="display:block;font:var(--sa-type-body);font-size:var(--sa-text-sm);color:var(--sa-text-secondary);margin-top:2px;text-wrap:pretty">No procurement, no contract, no commercial relationship.</span>
+            </span>
+          </li>
+          <li style="display:flex;gap:10px;align-items:flex-start">
+            <span style="width:6px;height:6px;border-radius:50%;background:var(--sa-accent);margin-top:9px;flex:none"></span>
+            <span>
+              <span style="display:block;font:var(--sa-type-ui);font-size:var(--sa-text-base);color:var(--sa-text-primary)">It works offline</span>
+              <span style="display:block;font:var(--sa-type-body);font-size:var(--sa-text-sm);color:var(--sa-text-secondary);margin-top:2px;text-wrap:pretty">The consultation may have internet. The family's home usually does not.</span>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section data-reveal="1" style="background:var(--sa-surface-sunken);border-top:var(--sa-hairline);border-bottom:var(--sa-hairline)">
+  <div style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-band-y) clamp(24px,5vw,64px) var(--sa-band-y) clamp(24px,11vw,168px);box-sizing:border-box">
+    <div data-rail-target="1">
+      <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="How it works" title="Four layers" hint-size="100%,110px"></x-import>
+    </div>
+    <div data-stagger="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--sa-space-5);margin-top:var(--sa-space-10)">
+      <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="The medicine layer" title="" hint-size="100%,170px">A prescription that cannot be filled is not a treatment. The app searches the national catalogue by clave and shows whether a medicine is in the hospital, out of stock, or unknown. Unknown is the honest default, because a false yes sends a family to a pharmacy window for nothing.</x-import>
+      <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="The evidence layer" title="" hint-size="100%,170px">Residents here are assigned reading but have no institutional access to journals. The app searches only legal open-access sources: Europe PMC, PubMed, Semantic Scholar, SciELO México, Medigraphic and BVS/PAHO. It finds the passages that matter for home care and shows the exact citation for each one.</x-import>
+      <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="The gate" title="" hint-size="100%,170px">The system drafts. A physician reads it, corrects it, and signs it. Nothing reaches a family unsigned, and where there is no evidence behind a line the section stays empty. Blank beats invented.</x-import>
+      <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="Anti-deferimiento" title="" hint-size="100%,170px">Diferimiento is when a scheduled surgery does not happen. Theatre slots are scarce and a missed one can leave a child unoperated for months. The answer is a printed row of boxes, one for each day until the surgery, crossed off every morning. It needs no phone, no internet and no reading.</x-import>
+    </div>
+  </div>
+</section>
+<section data-reveal="1" class="sa-media-row flip">
+  <div class="sa-media-figs n3">
+      <figure class="sa-fig">
+        <sa-image-slot slot-key="app-evidence-search" ratio="4 / 5" placeholder="Searching the open-access literature"></sa-image-slot>
+        <figcaption>Searching the open-access literature</figcaption>
+      </figure>
+      <figure class="sa-fig">
+        <sa-image-slot slot-key="app-evidence-engine" ratio="4 / 5" placeholder="Motor de evidencia, where a draft is written"></sa-image-slot>
+        <figcaption>Motor de evidencia, where a draft is written</figcaption>
+      </figure>
+      <figure class="sa-fig">
+        <sa-image-slot slot-key="app-evidence-approve" ratio="4 / 5" placeholder="Approving a passage with its citation"></sa-image-slot>
+        <figcaption>Approving a passage with its citation</figcaption>
+      </figure>
+  </div>
+  <div class="sa-media-text">
+    <h3>Where the evidence comes from, and who signs it</h3>
+    <p>A resident here is assigned reading they cannot open, because the journals sit behind paywalls the hospital does not pay for. So the app searches only what is legally free: Europe PMC, PubMed, Semantic Scholar, SciELO México, Medigraphic and BVS/PAHO. Never Sci-Hub.</p>
+    <p>It ranks what it finds by clinical relevance, marks which papers are open access and peer reviewed, and pulls the passages that actually bear on care at home. Each passage arrives with its exact citation, its study population and a link to the source, and any machine translation is labelled as one.</p>
+    <p>Then the gate. The doctor writes the family's version in plain words, informed by the passage rather than copied from it. Aprobar keeps it. Rechazar throws it away. The system never writes the family-facing line itself, and where there is no evidence the section stays empty.</p>
+  </div>
+</section>
+<section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-16) clamp(24px,5vw,64px) var(--sa-space-8) clamp(24px,11vw,168px);box-sizing:border-box">
+  <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Quote" attribution="A physician at the Torre Pediátrica, from the field notes" hint-size="100%,120px">This really shows the medical potential of intelligence and creativity, based on the resources available.</x-import>
+</section>
+<section data-reveal="1" class="sa-media-row">
+  <div class="sa-media-figs n2">
+      <figure class="sa-fig">
+        <sa-image-slot slot-key="app-pictograms" ratio="4 / 5" placeholder="Food and home pictograms, tapped to mark"></sa-image-slot>
+        <figcaption>Food and home pictograms, tapped to mark</figcaption>
+      </figure>
+      <figure class="sa-fig">
+        <sa-image-slot slot-key="app-medication" ratio="4 / 5" placeholder="The medication row"></sa-image-slot>
+        <figcaption>The medication row</figcaption>
+      </figure>
+  </div>
+  <div class="sa-media-text">
+    <h3>Built for a house, not a clinic</h3>
+    <p>What the family leaves with is pictures first. Foods and household triggers are tapped to mark, and anything left unmarked is understood to be allowed, so a parent is never asked to interpret a list of exceptions.</p>
+    <p>Medicines are chosen against the national catalogue by clave, using the same fields the paper prescription uses: form, route, dose, interval and first dose. The app builds the schedule from what the doctor entered. It does not calculate the dose, and when something is out of stock it says so rather than proposing a different drug.</p>
+  </div>
+</section>
+<section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-8) clamp(24px,5vw,64px) var(--sa-space-20) clamp(24px,11vw,168px);box-sizing:border-box">
+  <div data-rail-target="1">
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="More in Research" title="Keep going" hint-size="100%,110px"></x-import>
+  </div>
+  <div data-stagger="1" style="display:flex;flex-wrap:wrap;gap:var(--sa-space-3);margin-top:var(--sa-space-8)">
+    <a href="Research-CellAtlas.dc.html" style="display:inline-flex;align-items:center;height:44px;padding:0 20px;border:1px solid var(--sa-border-default);border-radius:var(--sa-radius-pill);font:var(--sa-type-ui);text-decoration:none;color:var(--sa-text-primary);transition:var(--sa-transition-control)">CellAtlas GBM</a>
+    <a href="Research-Venezuela.dc.html" style="display:inline-flex;align-items:center;height:44px;padding:0 20px;border:1px solid var(--sa-border-default);border-radius:var(--sa-radius-pill);font:var(--sa-type-ui);text-decoration:none;color:var(--sa-text-primary);transition:var(--sa-transition-control)">Venezuelan Immigration</a>
+  </div>
+</section>
+
+<section class="sa-on-ink" style="position:relative;z-index:10;background:var(--sa-surface-ink);overflow:hidden">
+  <div class="sa-glow" style="width:420px;height:420px;left:-90px;top:-150px;background:var(--sa-coral-500)"></div>
+  <div class="sa-glow" style="width:380px;height:380px;right:-80px;bottom:-140px;background:var(--sa-verdigris-500)"></div>
+  <div style="position:relative;z-index:1;width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-band-y) clamp(24px,5vw,64px) var(--sa-band-y) clamp(24px,11vw,168px);box-sizing:border-box;display:flex;flex-wrap:wrap;gap:var(--sa-space-10);align-items:flex-end;justify-content:space-between">
+    <div data-rail-target="1">
+      <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="Next" title="Next: the publication" lede="Venezuelan immigration research." hint-size="100%,150px"></x-import>
+    </div>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Button" size="lg" href="Research-Venezuela.dc.html" hint-size="200px,52px">Go to the publication</x-import>
+  </div>
+</section>
+</main>
+
+<dc-import name="SiteFooter" hint-size="100%,620px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      true: true,
+      soon: React.createElement(window.SantiagoAguileraDesignSystem_983015.Badge, { tone: "highlight" }, "To be added"),
+    };
+  }
+
+  componentDidMount() {
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.style.transition = "opacity 560ms cubic-bezier(.22,.61,.36,1), transform 560ms cubic-bezier(.22,.61,.36,1)";
+      e.target.style.opacity = "1"; e.target.style.transform = "none";
+      io.unobserve(e.target);
+    }), { threshold: 0.1 });
+    document.querySelectorAll("[data-reveal]").forEach(el => {
+      el.style.opacity = "0"; el.style.transform = "translateY(12px)"; io.observe(el);
+    });
+    this._io = io;
+
+    const sio = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      [...e.target.children].forEach((child, i) => {
+        child.style.transition = `opacity 480ms cubic-bezier(.22,.61,.36,1) ${i * 70}ms, transform 480ms cubic-bezier(.22,.61,.36,1) ${i * 70}ms`;
+        child.style.opacity = "1"; child.style.transform = "none";
+      });
+      sio.unobserve(e.target);
+    }), { threshold: 0.1 });
+    document.querySelectorAll("[data-stagger]").forEach(el => {
+      [...el.children].forEach(child => { child.style.opacity = "0"; child.style.transform = "translateY(14px)"; });
+      sio.observe(el);
+    });
+    this._sio = sio;
+  }
+
+  componentWillUnmount() { if (this._io) this._io.disconnect(); if (this._sio) this._sio.disconnect(); }
+}
+</script>
+</body>
+</html>
