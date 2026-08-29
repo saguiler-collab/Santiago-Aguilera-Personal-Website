@@ -839,3 +839,44 @@ footer nav a { padding-block: 4px; }
   line-height: 1.6; color: var(--sa-text-muted);
   max-width: 40ch; margin: var(--sa-space-4) 0 0;
 }
+
+
+/* ------------------------------------------------------- contact, sent ---- */
+/* The confirmation swaps in for the form. Both toggled by class, not by the hidden
+   attribute, which the page template does not carry through its render. */
+.sa-form.is-gone { display: none; }
+.sa-sent { display: none; max-width: 44rem; }
+.sa-sent.is-on { display: block; }
+.sa-sent:focus { outline: none; }
+.sa-sent svg { color: var(--sa-accent); }
+.sa-sent h2 {
+  font: var(--sa-type-title); font-size: var(--sa-text-2xl);
+  letter-spacing: var(--sa-tracking-display);
+  margin: var(--sa-space-4) 0 0;
+}
+.sa-sent p {
+  font: var(--sa-type-body); color: var(--sa-text-secondary);
+  max-width: 52ch; margin: var(--sa-space-4) 0 0; text-wrap: pretty;
+}
+.sa-sent-actions { display: flex; flex-wrap: wrap; gap: var(--sa-space-4); margin-top: var(--sa-space-8); }
+a.sa-send { display: inline-flex; align-items: center; text-decoration: none; }
+.sa-sent-again {
+  font: var(--sa-type-ui); font-size: var(--sa-text-base);
+  height: var(--sa-control-h-lg); padding: 0 26px;
+  border: 1px solid var(--sa-border-default); border-radius: var(--sa-radius-control);
+  background: transparent; color: var(--sa-text-primary);
+  cursor: pointer; transition: var(--sa-transition-control);
+}
+.sa-sent-again:hover { border-color: var(--sa-accent); }
+.sa-sent-again:focus-visible { outline: none; box-shadow: var(--sa-ring); }
+
+.sa-form-fine {
+  font: var(--sa-type-ui); font-size: var(--sa-text-sm); font-weight: 400;
+  color: var(--sa-text-muted); max-width: 52ch; margin: 0; text-wrap: pretty;
+}
+
+/* Both of these are written by script only when site-config has something real. */
+.sa-aside-card[hidden] { display: none; }
+.sa-contact-social { list-style: none; margin: var(--sa-space-3) 0 0; padding: 0; }
+.sa-contact-social li + li { margin-top: var(--sa-space-2); }
+.sa-contact-social a { font: var(--sa-type-body); font-size: var(--sa-text-sm); color: var(--sa-text-accent); }

@@ -313,11 +313,16 @@
 }
 :root[data-palette="arcade"] .sa-nav-inline a { font-size: 14px; }
 
-/* --------------------------------------------------------- Carnegie Mellon ---- */
-/* Read off cmu.edu rather than remembered: the homepage is black, the h1 is
-   source-serif-pro at weight 600, everything functional is open-sans, and the only
-   chromatic thing on the page is Carnegie Red, measured at rgb(196,18,48). Both
-   faces are free, so this is the school's actual typography and not a stand-in.
+/* ------------------------------------------------------------- Pre-College ---- */
+/* The colours of the pre-college programme, read off cmu.edu rather than remembered:
+   the homepage is black, the h1 is source-serif-pro at weight 600, everything
+   functional is open-sans, and the only chromatic thing on the page is Carnegie Red,
+   measured at rgb(196,18,48). Both faces are free, so this is the programme's actual
+   typography and not a stand-in.
+
+   It is listed as "Pre-College" rather than by the university's name. A colour theme
+   named after one university reads as a preference to every other one, and the
+   programme is what Santiago actually did.
 
    Carnegie Red is too dark to read as text on black (2.5:1), so the text accent
    steps up to Scots Rose from their secondary palette and the red stays on fills,

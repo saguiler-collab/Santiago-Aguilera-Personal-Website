@@ -52,7 +52,7 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
 <section class="sa-pagehead sa-pagehead--section" style="width:100%;max-width:1440px;margin:0 auto;padding:clamp(48px,7vh,88px) clamp(24px,5vw,64px) var(--sa-space-10) clamp(24px,11vw,168px);box-sizing:border-box">
   <span class="sa-kicker" style="font:var(--sa-type-eyebrow);letter-spacing:var(--sa-tracking-eyebrow);text-transform:uppercase;color:var(--sa-text-accent)">Contact</span>
   <h1 style="font:var(--sa-type-display);font-size:clamp(3rem,6.2vw,5.25rem);letter-spacing:var(--sa-tracking-display);margin:var(--sa-space-5) 0 0;max-width:18ch">Say something, <em class="sa-hl">I'll answer</em></h1>
-  <p style="font:var(--sa-type-lede);font-size:var(--sa-text-lg);color:var(--sa-text-secondary);max-width:56ch;margin-top:var(--sa-space-6);text-wrap:pretty">Admissions offices, teachers, researchers, or anyone who found something here worth asking about. This goes straight to my inbox and I read all of it.</p>
+  <p style="font:var(--sa-type-lede);font-size:var(--sa-text-lg);color:var(--sa-text-secondary);max-width:56ch;margin-top:var(--sa-space-6);text-wrap:pretty">Admissions offices, teachers, researchers, or anyone who found something here worth asking about. Every message goes straight to my inbox, and I answer all of them.</p>
 </section>
 
 <section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:0 clamp(24px,5vw,64px) var(--sa-space-24) clamp(24px,11vw,168px);box-sizing:border-box;display:grid;grid-template-columns:minmax(320px,1.15fr) minmax(240px,0.85fr);gap:clamp(32px,5vw,72px);align-items:start">
@@ -91,7 +91,22 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
       <button type="submit" class="sa-send">Send message</button>
       <p class="sa-status" role="status" aria-live="polite"></p>
     </div>
+    <p class="sa-form-fine">I use your address to reply and nothing else. Nothing is stored on this site,
+      no analytics run on this page, and there is no list to be added to.</p>
   </form>
+
+  <!-- Swapped in for the form once a message actually lands, rather than a line of text
+       under a form that still looks unsent. -->
+  <div class="sa-sent" data-sent hidden>
+    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-4.2-7.6"/><path d="M9 12l2.4 2.4L21.5 4.5"/></svg>
+    <h2>That reached me.</h2>
+    <p>Thank you for writing. I read everything that comes through here, and I will reply to
+      the address you gave me, usually within a day or two.</p>
+    <div class="sa-sent-actions">
+      <a class="sa-send" href="/">Back to the homepage</a>
+      <button type="button" class="sa-sent-again" data-send-again>Send another message</button>
+    </div>
+  </div>
 
   <aside data-stagger="1" style="display:grid;gap:var(--sa-space-4)">
     <div class="sa-aside-card">
@@ -109,7 +124,18 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
     </div>
     <div class="sa-aside-card">
       <span style="font:var(--sa-type-eyebrow);letter-spacing:var(--sa-tracking-eyebrow);text-transform:uppercase;color:var(--sa-text-accent)">Reply time</span>
-      <p style="font:var(--sa-type-body);color:var(--sa-text-secondary);margin:var(--sa-space-3) 0 0;text-wrap:pretty">Usually a day or two. Slower during exam weeks and swim season.</p>
+      <p style="font:var(--sa-type-body);color:var(--sa-text-secondary);margin:var(--sa-space-3) 0 0;text-wrap:pretty">Usually a day or two. Slower during exam weeks and swim season, so if a week goes by, it is worth sending again.</p>
+    </div>
+    <!-- Both of these fill themselves in from assets/site-config.js and stay hidden
+         while it is empty, so the page never shows an address or an icon that is not
+         real yet. -->
+    <div class="sa-aside-card" data-direct-card hidden>
+      <span style="font:var(--sa-type-eyebrow);letter-spacing:var(--sa-tracking-eyebrow);text-transform:uppercase;color:var(--sa-text-accent)">Rather use your own mail app</span>
+      <p style="font:var(--sa-type-body);color:var(--sa-text-secondary);margin:var(--sa-space-3) 0 0;text-wrap:pretty">The form is the same thing with fewer steps, but if you would rather write from your own address, <a data-direct-link href="#">email me directly</a>.</p>
+    </div>
+    <div class="sa-aside-card" data-elsewhere-card hidden>
+      <span style="font:var(--sa-type-eyebrow);letter-spacing:var(--sa-tracking-eyebrow);text-transform:uppercase;color:var(--sa-text-accent)">Elsewhere</span>
+      <ul class="sa-contact-social" data-elsewhere></ul>
     </div>
   </aside>
 </section>
@@ -174,6 +200,50 @@ class Component extends DCLogic {
       status.dataset.tone = "warn";
     };
 
+    /* The form is replaced rather than left sitting there with a note under it. A
+       filled-in form under the words "sent" is the single most common way a contact
+       page leaves someone unsure whether it worked. */
+    const sentPanel = document.querySelector("[data-sent]");
+    const showSent = (on) => {
+      if (!sentPanel) return;
+      form.classList.toggle("is-gone", on);
+      sentPanel.classList.toggle("is-on", on);
+      if (on) {
+        sentPanel.setAttribute("tabindex", "-1");
+        sentPanel.focus({ preventScroll: true });
+        sentPanel.scrollIntoView({ block: "center",
+          behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+      }
+    };
+    const again = document.querySelector("[data-send-again]");
+    if (again) {
+      this._again = again;
+      this._onAgain = () => { showSent(false); setStatus("", ""); form.elements.name.focus(); };
+      again.addEventListener("click", this._onAgain);
+    }
+
+    /* An address and a set of profile links only appear once site-config.js has real
+       ones. An icon that goes nowhere reads worse than no icon. */
+    const socials = window.SA_SOCIALS || [];
+    const mail = socials.filter((x) => x.id === "email")[0];
+    const directCard = document.querySelector("[data-direct-card]");
+    if (mail && mail.href && directCard) {
+      const a = directCard.querySelector("[data-direct-link]");
+      a.href = mail.href;
+      a.textContent = mail.href.replace(/^mailto:/, "");
+      directCard.removeAttribute("hidden");
+      directCard.classList.add("is-on");
+    }
+    const rest = socials.filter((x) => x.id !== "email" && x.href);
+    const elsewhereCard = document.querySelector("[data-elsewhere-card]");
+    const elsewhere = document.querySelector("[data-elsewhere]");
+    if (rest.length && elsewhere && elsewhereCard) {
+      elsewhere.innerHTML = rest.map((x) =>
+        '<li><a href="' + x.href + '" target="_blank" rel="noopener noreferrer">' + x.label + ' ↗</a></li>').join("");
+      elsewhereCard.removeAttribute("hidden");
+      elsewhereCard.classList.add("is-on");
+    }
+
     this._onSubmit = async (e) => {
       e.preventDefault();
       if (!validate()) { setStatus("Have another look at the fields above.", "warn"); return; }
@@ -194,7 +264,7 @@ class Component extends DCLogic {
         });
         if (r.ok) {
           form.reset();
-          setStatus("Sent. Thank you, I will get back to you.", "ok");
+          showSent(true);
         } else if (r.status === 503 || r.status === 404) {
           /* 503 is the endpoint saying its keys are missing; 404 is the endpoint not
              being there at all, which is what a plain static preview looks like.
@@ -229,6 +299,7 @@ class Component extends DCLogic {
 
   componentWillUnmount() {
     if (this._form && this._onSubmit) this._form.removeEventListener("submit", this._onSubmit);
+    if (this._again && this._onAgain) this._again.removeEventListener("click", this._onAgain);
     if (this._io) this._io.disconnect();
   }
 }
