@@ -18,7 +18,7 @@
 <meta property="og:image" content="assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <script>(function(){try{
-var M={library:"light",perkiomen:"light",isps:"light",sana:"light",sky:"light",ps:"light",noir:"dark",gilt:"dark",atlas:"dark",ferrari:"dark",lambo:"dark",arcade:"dark"};
+var M={library:"light",perkiomen:"light",isps:"light",sana:"light",sky:"light",ps:"light",exeter:"light",noir:"dark",gilt:"dark",atlas:"dark",ferrari:"dark",lambo:"dark",arcade:"dark",cmu:"dark"};
 var d=document.documentElement,def="library",p=null;
 try{p=localStorage.getItem("sa:palette")}catch(e){}
 var k=(p&&M[p])?p:def;
@@ -192,7 +192,7 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.PlaceCard" place="mexico" city="Monterrey" country="Mexico" years="2011" hint-size="100%,150px">AIM, then LICEO. The city I measure every other place against.</x-import>
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.PlaceCard" place="colombia" city="Bogotá" country="Colombia" years="2016" hint-size="100%,150px">Altitude, Colegio Tilata, a second accent.</x-import>
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.PlaceCard" place="panama" city="Ciudad de Panamá" country="Panama" years="2019" hint-size="100%,150px">International School of Panama, and where I started playing drums, at SonoArte.</x-import>
-    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.PlaceCard" place="trinidad" city="Port of Spain" country="Trinidad &amp; Tobago" years="2021" hint-size="100%,150px">StuCo and Stronger Together at ISPS.</x-import>
+    <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.PlaceCard" place="trinidad" city="Port of Spain" country="Trinidad &amp; Tobago" years="2021" hint-size="100%,150px">StuCo and Stronger Together at ISPS, and SonoArte online from Panama.</x-import>
     <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.PlaceCard" place="pennsburg" city="Pennsburg" country="United States" years="2025" hint-size="100%,150px">Boarding at Perkiomen. HOSA, MUN, swimming and the rock band.</x-import>
   </div>
 </section>
@@ -235,7 +235,7 @@ class Component extends DCLogic {
       rail: this.props.rail ?? true, n6: 6, n18: 18, n3: 3, true: true,
       floatLayer: r("_floats"), starLayer: r("_stars"), yearsRef: r("_years"),
       footerColumns: [
-        { title: "Sections", links: [{ label: "About", href: "About.dc.html" }, { label: "Academics", href: "Academics.dc.html" }, { label: "Research & projects", href: "Research.dc.html" }, { label: "Leadership & service", href: "Leadership.dc.html" }, { label: "Activities", href: "Activities.dc.html" }, { label: "Curiosities", href: "Curiosities.dc.html" }, { label: "Media", href: "Media.dc.html" }] },
+        { title: "Sections", links: [{ label: "About", href: "About.dc.html" }, { label: "Academics", href: "Academics.dc.html" }, { label: "Research & projects", href: "Research.dc.html" }, { label: "Leadership & service", href: "Leadership.dc.html" }, { label: "Activities", href: "Activities.dc.html" }, { label: "Curiosities", href: "Curiosities.dc.html" }, { label: "Media", href: "Media.dc.html" }, { label: "Contact", href: "Contact.dc.html" }] },
         { title: "Places", links: [{ label: "Houston", href: "Place-UnitedStates.dc.html" }, { label: "Monterrey", href: "Place-Mexico.dc.html" }, { label: "Bogotá", href: "Place-Colombia.dc.html" }, { label: "Ciudad de Panamá", href: "Place-Panama.dc.html" }, { label: "Port of Spain", href: "Place-Trinidad.dc.html" }, { label: "Pennsburg", href: "Place-UnitedStates.dc.html" }] }
       ],
       footerSocials: window.SA_SOCIALS || []

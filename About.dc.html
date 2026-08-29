@@ -14,7 +14,7 @@
 <meta property="og:image" content="assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <script>(function(){try{
-var M={library:"light",perkiomen:"light",isps:"light",sana:"light",sky:"light",ps:"light",noir:"dark",gilt:"dark",atlas:"dark",ferrari:"dark",lambo:"dark",arcade:"dark"};
+var M={library:"light",perkiomen:"light",isps:"light",sana:"light",sky:"light",ps:"light",exeter:"light",noir:"dark",gilt:"dark",atlas:"dark",ferrari:"dark",lambo:"dark",arcade:"dark",cmu:"dark"};
 var d=document.documentElement,def="sky",p=null;
 try{p=localStorage.getItem("sa:palette")}catch(e){}
 var k=(p&&M[p])?p:def;
@@ -78,7 +78,7 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
       <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.TimelineItem" year="2019" place="panama" title="Ciudad de Panamá" where="Panama" meta="{{ tagDrums }}" hint-size="100%,150px">Age ten, July 2019. International School of Panama, and where I started playing drums, at SonoArte. It became the thing I do to think.</x-import>
     </a>
     <a class="sa-tl-link" data-country="trinidad" href="Place-Trinidad.dc.html" aria-label="Port of Spain, read the full page">
-      <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.TimelineItem" year="2021" place="trinidad" title="Port of Spain" where="Trinidad &amp; Tobago" meta="{{ tagIsps }}" hint-size="100%,150px">Age twelve, August 2021. Student Council, and Stronger Together, a student-led initiative supporting classmates through the return to in-person school.</x-import>
+      <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.TimelineItem" year="2021" place="trinidad" title="Port of Spain" where="Trinidad &amp; Tobago" meta="{{ tagIsps }}" hint-size="100%,150px">Age twelve, August 2021. The International School of Port of Spain, Student Council, and Stronger Together, a student-led initiative supporting classmates through the return to in-person school. I kept up drums here too, taking SonoArte online from Panama.</x-import>
     </a>
     <a class="sa-tl-link" data-country="usa" href="Place-UnitedStates.dc.html" aria-label="Pennsburg, read the full page">
       <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.TimelineItem" year="2025" place="pennsburg" title="Pennsburg" where="Pennsylvania, United States" meta="{{ tagPerk }}" last="{{ true }}" hint-size="100%,150px">Age sixteen, August 2025, as a boarding student. Health science, HOSA, Model UN and GVMUN, Investment Club, the Perkiomenite, varsity swimming and the rock band.</x-import>
@@ -161,11 +161,11 @@ class Component extends DCLogic {
       tagBorn: tag("usa", "Born · Hurricane Ike"),
       tagMty: tag("mexico", "AIM · LICEO"),
       tagBogota: tag("colombia", "Colegio Tilata"),
-      tagDrums: tag("panama", "SonoArte"),
-      tagIsps: tag("trinidad", "StuCo · Stronger Together"),
+      tagDrums: tag("panama", "International School of Panama · SonoArte"),
+      tagIsps: tag("trinidad", "ISPS · StuCo · Stronger Together · SonoArte"),
       tagPerk: tag("usa", "HOSA · MUN · Swimming"),
       footerColumns: [
-        { title: "Sections", links: [{ label: "Home", href: "/" }, { label: "About", href: "About.dc.html" }, { label: "Academics", href: "Academics.dc.html" }, { label: "Research & projects", href: "Research.dc.html" }, { label: "Leadership & service", href: "Leadership.dc.html" }, { label: "Activities", href: "Activities.dc.html" }, { label: "Curiosities", href: "Curiosities.dc.html" }, { label: "Media", href: "Media.dc.html" }] },
+        { title: "Sections", links: [{ label: "Home", href: "/" }, { label: "About", href: "About.dc.html" }, { label: "Academics", href: "Academics.dc.html" }, { label: "Research & projects", href: "Research.dc.html" }, { label: "Leadership & service", href: "Leadership.dc.html" }, { label: "Activities", href: "Activities.dc.html" }, { label: "Curiosities", href: "Curiosities.dc.html" }, { label: "Media", href: "Media.dc.html" }, { label: "Contact", href: "Contact.dc.html" }] },
         // Madrid is named in the timeline above but has no page of its own yet, so it is
         // not listed here, since a footer column is navigation and every row has to go somewhere.
         { title: "Places", links: [{ label: "Houston", href: "Place-UnitedStates.dc.html" }, { label: "Monterrey", href: "Place-Mexico.dc.html" }, { label: "Bogotá", href: "Place-Colombia.dc.html" }, { label: "Ciudad de Panamá", href: "Place-Panama.dc.html" }, { label: "Port of Spain", href: "Place-Trinidad.dc.html" }, { label: "Pennsburg", href: "Place-UnitedStates.dc.html" }] }

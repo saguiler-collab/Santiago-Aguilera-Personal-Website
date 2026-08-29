@@ -8,8 +8,8 @@
    A palette owns its typography too. --sa-font-display and --sa-font-body feed
    every --sa-type-* token in the design system, so setting those two changes the
    voice of every heading, lede, button and eyebrow at once. Where a face needs a
-   different weight than the default to hold at display size (Cormorant is drawn
-   light, Nunito is drawn soft) the palette restates --sa-type-display rather than
+   different weight than the default to hold at display size (Nunito is drawn soft,
+   Cinzel wants air) the palette restates --sa-type-display rather than
    reaching for !important, because the page's inline `font:` shorthand resolves
    through that token.
 
@@ -313,10 +313,79 @@
 }
 :root[data-palette="arcade"] .sa-nav-inline a { font-size: 14px; }
 
+/* --------------------------------------------------------- Carnegie Mellon ---- */
+/* Read off cmu.edu rather than remembered: the homepage is black, the h1 is
+   source-serif-pro at weight 600, everything functional is open-sans, and the only
+   chromatic thing on the page is Carnegie Red, measured at rgb(196,18,48). Both
+   faces are free, so this is the school's actual typography and not a stand-in.
+
+   Carnegie Red is too dark to read as text on black (2.5:1), so the text accent
+   steps up to Scots Rose from their secondary palette and the red stays on fills,
+   where white sits at 8.5:1. Their CTA is a hard-edged rectangle with a square icon
+   block, so the radius ladder zeroes out. */
+:root[data-palette="cmu"] {
+  --sa-verdigris-500:#FDB515; --sa-glow-b:#FDB515; --sa-glow-a:var(--sa-coral-500);
+  --sa-paper-000:#FFFFFF; --sa-paper-100:#F2F2F2; --sa-paper-200:#E6E6E6; --sa-paper-300:#CCCCCC;
+  --sa-ink-900:#000000; --sa-ink-800:#141414; --sa-ink-700:#222222;
+  --sa-ink-500:#4A4A4A; --sa-ink-300:#8A8A8A; --sa-ink-100:#C2C2C2;
+  --sa-coral-600:#EF3A47; --sa-coral-500:#C41230; --sa-coral-300:#F26B78; --sa-coral-100:#2A0810;
+  --sa-ochre-500:#C41230; --sa-ochre-100:#2A0810; --sa-sienna-500:#FDB515;
+  --sa-hero-1:#222222; --sa-hero-2:#141414; --sa-hero-3:#0A0A0A; --sa-hero-4:#000000;
+
+  --sa-radius-xs:0px; --sa-radius-sm:0px; --sa-radius-md:0px;
+  --sa-radius-lg:0px; --sa-radius-xl:0px;
+  --sa-radius-control:0px; --sa-radius-media:0px;
+
+  --sa-font-display:"Source Serif 4", "Iowan Old Style", Georgia, serif;
+  --sa-font-body:"Open Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sa-type-display:600 var(--sa-text-5xl)/1.08 var(--sa-font-display);
+  --sa-type-title:600 var(--sa-text-3xl)/var(--sa-leading-snug) var(--sa-font-display);
+  --sa-type-heading:600 var(--sa-text-xl)/var(--sa-leading-snug) var(--sa-font-display);
+  --sa-tracking-display:-0.015em;
+  --sa-on-accent:var(--sa-paper-000);
+}
+:root[data-palette="cmu"] a[href][style*="radius-pill"],
+:root[data-palette="cmu"] .sa-hero-ghost { border-radius: 0 !important; }
+
+/* ---------------------------------------------------------- Exeter Summer ---- */
+/* Also measured rather than guessed: the page is #FCF9F8, the field is #ED8B00, the
+   academy crimson is #9B1D31, the display is Graphik at 500 and the running text is
+   Lyon. Graphik and Lyon are both Commercial Type and licensed per site, so this is
+   the one palette here built on substitutes: Hanken Grotesk sits closest to Graphik's
+   proportions, and Newsreader is a Times-derived serif in Lyon's territory.
+
+   Exeter sets its ledes in the serif and everything else in the grotesk, so this
+   palette restates --sa-type-lede on its own rather than picking one family for
+   the whole page.
+
+   The orange cannot carry text on paper at 2.5:1, so it is a fill colour only and
+   the text accent darkens to #A85F00. The hero deepens for the same reason: theirs
+   is white on flat #ED8B00, which is 2.5:1 and would not be readable here. */
+:root[data-palette="exeter"] {
+  --sa-verdigris-500:#9B1D31; --sa-glow-b:#9B1D31; --sa-glow-a:var(--sa-coral-500);
+  --sa-paper-000:#FCF9F8; --sa-paper-100:#F7F1ED; --sa-paper-200:#EFE5DE; --sa-paper-300:#DFD0C5;
+  --sa-ink-900:#1C1613; --sa-ink-800:#2A211C; --sa-ink-700:#3A2E27;
+  --sa-ink-500:#6B5A50; --sa-ink-300:#A2938A; --sa-ink-100:#D2C7BF;
+  --sa-coral-600:#A85F00; --sa-coral-500:#ED8B00; --sa-coral-300:#F5B25C; --sa-coral-100:#FDF0DE;
+  --sa-ochre-500:#ED8B00; --sa-ochre-100:#FDF0DE; --sa-sienna-500:#9B1D31;
+  --sa-hero-1:#C86F00; --sa-hero-2:#9A5200; --sa-hero-3:#6A3800; --sa-hero-4:#422200;
+
+  --sa-font-display:"Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --sa-font-body:"Hanken Grotesk", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sa-type-display:500 var(--sa-text-5xl)/0.98 var(--sa-font-display);
+  --sa-type-title:600 var(--sa-text-3xl)/var(--sa-leading-snug) var(--sa-font-display);
+  --sa-type-heading:600 var(--sa-text-xl)/var(--sa-leading-snug) var(--sa-font-display);
+  --sa-type-lede:400 var(--sa-text-md)/1.5 "Newsreader", Georgia, serif;
+  --sa-tracking-display:-0.028em;
+  --sa-on-accent:var(--sa-ink-900);
+}
+
 /* ---------------------------------------------------- Gilt (gold, dark) ---- */
-/* Cormorant Garamond is drawn very light and very high-contrast, which is why it
-   reads as gold leaf on black; at display size it needs the top of the weight axis
-   or the hairlines disappear. */
+/* Cinzel, which is drawn from first-century Roman inscriptions. The Elden Ring logo
+   is set in Mantinia, a Matthew Carter face in the same inscriptional tradition and
+   licensed commercially; Cinzel is the free one that lands in the same place, and on
+   gold-on-black it does exactly the job asked of it. Inscriptional capitals were cut
+   with air around them, so the tracking goes positive here rather than negative. */
 :root[data-palette="gilt"] {
   --sa-verdigris-500:#C9A227; --sa-glow-b:#C9A227; --sa-glow-a:var(--sa-coral-500);
   --sa-paper-000:#FAF7EF; --sa-paper-100:#F2EDE0; --sa-paper-200:#E4DCC8; --sa-paper-300:#CFC3A6;
@@ -326,11 +395,12 @@
   --sa-ochre-500:#C9A227; --sa-ochre-100:#2C2210; --sa-sienna-500:#E3CB78;
   --sa-hero-1:#2E2716; --sa-hero-2:#1D1910; --sa-hero-3:#110F09; --sa-hero-4:#080705;
 
-  --sa-font-display:"Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --sa-font-display:"Cinzel", "Trajan Pro", "Iowan Old Style", Georgia, serif;
   --sa-font-body:"IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --sa-type-display:600 var(--sa-text-5xl)/1.02 var(--sa-font-display);
-  --sa-type-title:600 var(--sa-text-3xl)/var(--sa-leading-snug) var(--sa-font-display);
-  --sa-tracking-display:-0.008em;
+  --sa-type-display:500 var(--sa-text-5xl)/1.12 var(--sa-font-display);
+  --sa-type-title:500 var(--sa-text-3xl)/1.24 var(--sa-font-display);
+  --sa-type-heading:600 var(--sa-text-xl)/var(--sa-leading-snug) var(--sa-font-display);
+  --sa-tracking-display:0.012em;
   --sa-on-accent:var(--sa-ink-900);
 }
 

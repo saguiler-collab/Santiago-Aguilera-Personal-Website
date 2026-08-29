@@ -4,17 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Port of Spain · Santiago Aguilera Library</title>
-<meta name="description" content="Port of Spain. The International School of Port of Spain, Student Council, and Stronger Together.">
+<meta name="description" content="Port of Spain. The International School of Port of Spain, Student Council, Stronger Together, and SonoArte online.">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <meta name="theme-color" content="#0F3D3E">
 <meta property="og:title" content="Port of Spain · Santiago Aguilera Library">
-<meta property="og:description" content="Port of Spain. The International School of Port of Spain, Student Council, and Stronger Together.">
+<meta property="og:description" content="Port of Spain. The International School of Port of Spain, Student Council, Stronger Together, and SonoArte online.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Santiago Aguilera Library">
 <meta property="og:image" content="assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <script>(function(){try{
-var M={library:"light",perkiomen:"light",isps:"light",sana:"light",sky:"light",ps:"light",noir:"dark",gilt:"dark",atlas:"dark",ferrari:"dark",lambo:"dark",arcade:"dark"};
+var M={library:"light",perkiomen:"light",isps:"light",sana:"light",sky:"light",ps:"light",exeter:"light",noir:"dark",gilt:"dark",atlas:"dark",ferrari:"dark",lambo:"dark",arcade:"dark",cmu:"dark"};
 var d=document.documentElement,def="sky",p=null;
 try{p=localStorage.getItem("sa:palette")}catch(e){}
 var k=(p&&M[p])?p:def;
@@ -65,6 +65,7 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
     <div>
       <p style="font:var(--sa-type-lede);color:var(--sa-text-primary);max-width:60ch;text-wrap:pretty">The International School of Port of Spain. I arrived as schools everywhere were working out how to come back from remote learning, which turned out to be the thing worth working on.</p>
       <p style="font:var(--sa-type-body);color:var(--sa-text-secondary);max-width:60ch;margin-top:var(--sa-space-4);text-wrap:pretty">I joined Student Council, and helped run Stronger Together, a student-led initiative supporting classmates through the return to in-person school. It was the first time I saw a student idea actually change how a school felt.</p>
+      <p style="font:var(--sa-type-body);color:var(--sa-text-secondary);max-width:60ch;margin-top:var(--sa-space-4);text-wrap:pretty">The drums carried over. I kept taking SonoArte online from Panama, so the kit stayed part of the week through the move.</p>
 
 
 
@@ -80,6 +81,10 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
     <div style="border-top:1px solid var(--sa-border-hairline);padding-top:var(--sa-space-3)">
       <div style="font:var(--sa-type-eyebrow);letter-spacing:var(--sa-tracking-eyebrow);text-transform:uppercase;color:var(--sa-text-muted)">Led</div>
       <div style="font:var(--sa-type-body);color:var(--sa-text-primary);margin-top:4px">Student Council · Stronger Together</div>
+    </div>
+    <div style="border-top:1px solid var(--sa-border-hairline);padding-top:var(--sa-space-3)">
+      <div style="font:var(--sa-type-eyebrow);letter-spacing:var(--sa-tracking-eyebrow);text-transform:uppercase;color:var(--sa-text-muted)">Music</div>
+      <div style="font:var(--sa-type-body);color:var(--sa-text-primary);margin-top:4px">SonoArte, online from Panama</div>
     </div>
   </div>
     </div>
@@ -160,6 +165,10 @@ class Component extends DCLogic {
                               {
                                       "label": "Media",
                                       "href": "Media.dc.html"
+                              },
+                              {
+                                      "label": "Contact",
+                                      "href": "Contact.dc.html"
                               }
                       ]
               },

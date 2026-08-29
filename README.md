@@ -118,12 +118,35 @@ Two things are deliberately left blank rather than guessed at:
       on `<link rel="canonical">`, absolute `og:` URLs and `sitemap.xml`. While it is empty
       those are omitted, because a canonical pointing at the wrong host hurts search ranking
       more than having none.
+- [ ] **Contact form delivery.** Two environment variables in the Vercel project, under
+      Settings → Environment Variables, ticked for Production and Preview:
+
+      | Name | Value |
+      | --- | --- |
+      | `RESEND_API_KEY` | An API key from [resend.com](https://resend.com). Free, 3000 emails a month. |
+      | `CONTACT_TO` | The address the messages should arrive at. |
+
+      Redeploy after adding them; environment variables are read at request time but
+      only reach a deployment made after they were set.
+
+      The default sender is Resend's own `onboarding@resend.dev`, which needs no DNS
+      setup but will **only deliver to the address that owns the Resend account** —
+      so sign up with the same address as `CONTACT_TO`. To send from a custom address,
+      verify a domain with Resend and set `CONTACT_FROM` as well.
+
+      Until the variables exist, `/api/contact` answers 503 and the form offers a
+      mailto link carrying whatever the visitor typed, so it is never a dead end.
 
 ## Deploying to Vercel
 
 Import the GitHub repo in Vercel as a **static site**. No framework preset, no build
 command, output directory `.` (the repo root). Everything is committed, so there is nothing
 to install.
+
+`api/contact.js` becomes a serverless function on its own, with no configuration: Vercel
+treats any file in `api/` that way regardless of preset. That is why the contact form uses
+a function rather than posting to a form service — the API key stays on the server, so the
+browser only ever talks to this site's own origin and no page makes a third-party request.
 
 `404.html` is served for unknown URLs and is plain HTML with no JavaScript, so it still
 renders if the runtime ever fails.
@@ -157,7 +180,8 @@ node tools/make-og-image.js     # needs Playwright available
 ├── Leadership          HOSA · GVMUN · Student Council · Shadowing · Volunteering · Perkiomenite
 ├── Activities          Swimming · Weightlifting · Drums & Music
 ├── Curiosities         Literature · Music · Video Games
-└── Media               Photos and video
+├── Media               Photos and video
+└── Contact             The form, which posts to /api/contact
 ```
 
 Pages marked "Still to add" say so on purpose. The design system's rule is that honest

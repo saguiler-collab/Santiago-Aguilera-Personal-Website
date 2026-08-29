@@ -49,7 +49,8 @@ const SECTION_LINKS = [
   { label: "Leadership & service", href: "Leadership.dc.html" },
   { label: "Activities", href: "Activities.dc.html" },
   { label: "Curiosities", href: "Curiosities.dc.html" },
-  { label: "Media", href: "Media.dc.html" }
+  { label: "Media", href: "Media.dc.html" },
+  { label: "Contact", href: "Contact.dc.html" }
 ];
 
 // siblings shown in each page's footer + "more in this section" strip
@@ -103,8 +104,8 @@ const SECTION_PALETTE = {
 const PAGE_PALETTE = {
   "Academics-ISPS.dc.html": "isps",
   "Academics-Perkiomen.dc.html": "perkiomen",
-  "Academics-ExeterSummer.dc.html": "library",
-  "Academics-CompBio.dc.html": "atlas",
+  "Academics-ExeterSummer.dc.html": "exeter",
+  "Academics-CompBio.dc.html": "cmu",
   "Research-CellAtlas.dc.html": "atlas",
   "Research-MedicalApp.dc.html": "sana",
   "Research-Venezuela.dc.html": "sky",
@@ -204,10 +205,10 @@ const PAGES = [
   {
     file: "Place-Trinidad.dc.html", section: "about", parent: { label: "About", href: "About.dc.html" },
     eyebrow: "About · Trinidad & Tobago", title: "Port of Spain", lede: "Trinidad & Tobago. August 2021, age twelve.",
-    desc: "Port of Spain. The International School of Port of Spain, Student Council, and Stronger Together.",
+    desc: "Port of Spain. The International School of Port of Spain, Student Council, Stronger Together, and SonoArte online.",
     intro: "The International School of Port of Spain. I arrived as schools everywhere were working out how to come back from remote learning, which turned out to be the thing worth working on.",
-    body: ["I joined Student Council, and helped run Stronger Together, a student-led initiative supporting classmates through the return to in-person school. It was the first time I saw a student idea actually change how a school felt."],
-    facts: [["Arrived", "August 2021"], ["School", "International School of Port of Spain"], ["Led", "Student Council · Stronger Together"]],
+    body: ["I joined Student Council, and helped run Stronger Together, a student-led initiative supporting classmates through the return to in-person school. It was the first time I saw a student idea actually change how a school felt.", "The drums carried over. I kept taking SonoArte online from Panama, so the kit stayed part of the week through the move."],
+    facts: [["Arrived", "August 2021"], ["School", "International School of Port of Spain"], ["Led", "Student Council · Stronger Together"], ["Music", "SonoArte, online from Panama"]],
     slots: [
       { key: "tt-1", ratio: "4 / 3", label: "Port of Spain" },
       { key: "tt-2", ratio: "1 / 1", label: "ISPS" },
@@ -595,12 +596,12 @@ const PAGES = [
   },
   {
     file: "Activities-Music.dc.html", section: "activities", parent: { label: "Activities", href: "Activities.dc.html" },
-    eyebrow: "Activities · Three bands", title: "Drums & Music", lede: "SonoArte Panamá, the ISPS musical, and the Perkiomen rock band.",
+    eyebrow: "Activities · Three bands", title: "Drums & Music", lede: "SonoArte Panamá, in person and then online, the ISPS musical, and the Perkiomen rock band.",
     desc: "Drumming across three countries. SonoArte Panamá, ISPS musical productions, and the Perkiomen rock band.",
-    intro: "I started at SonoArte in Panama, played the ISPS musical productions in Trinidad, and now play in the Perkiomen rock band. Three very different rooms, one kit.",
+    intro: "I started at SonoArte at the International School of Panama, kept taking it online after the move to Trinidad, played the ISPS musical productions there, and now play in the Perkiomen rock band. Three very different rooms, one kit.",
     quote: { text: "Every school I joined had a room with a kit in it. That is how I met people.", by: "On the drum kit" },
     body: ["That is not a small thing when you change countries every few years. Drumming is the reason arriving somewhere new has never meant arriving alone."],
-    facts: [["Bands", "SonoArte · ISPS musical · Perkiomen rock band"], ["Countries", "Panama · Trinidad · United States"], ["Instrument", "Drum kit"]],
+    facts: [["Bands", "SonoArte · ISPS musical · Perkiomen rock band"], ["Countries", "Panama · Trinidad · United States"], ["SonoArte", "In person, then online"], ["Instrument", "Drum kit"]],
     slots: [
       { key: "music-1", ratio: "4 / 3", label: "Behind the kit" },
       { key: "music-2", ratio: "4 / 3", label: "Rock band set" },
@@ -920,7 +921,7 @@ ${canonical}<meta property="og:title" content="${attr(title)}">
 <meta property="og:image" content="${attr(ogImage)}">
 <meta name="twitter:card" content="summary_large_image">
 <script>(function(){try{
-var M={library:"light",perkiomen:"light",isps:"light",sana:"light",sky:"light",ps:"light",noir:"dark",gilt:"dark",atlas:"dark",ferrari:"dark",lambo:"dark",arcade:"dark"};
+var M={library:"light",perkiomen:"light",isps:"light",sana:"light",sky:"light",ps:"light",exeter:"light",noir:"dark",gilt:"dark",atlas:"dark",ferrari:"dark",lambo:"dark",arcade:"dark",cmu:"dark"};
 var d=document.documentElement,def="${paletteFor(p)}",p=null;
 try{p=localStorage.getItem("sa:palette")}catch(e){}
 var k=(p&&M[p])?p:def;
@@ -1089,7 +1090,8 @@ written++;
 /* Hand-written pages are not in PAGES but still belong in the sitemap. Home is listed
    as "/" rather than Home.dc.html, matching the canonical. */
 const HAND_WRITTEN = ["About.dc.html", "Academics.dc.html", "Research.dc.html",
-  "Curiosities.dc.html", "Media.dc.html"];
+  "Leadership.dc.html", "Activities.dc.html", "Curiosities.dc.html", "Media.dc.html",
+  "Contact.dc.html"];
 
 if (SITE_ORIGIN) {
   const urls = ["", ...HAND_WRITTEN, ...PAGES.map((p) => p.file)];
