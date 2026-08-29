@@ -5,18 +5,29 @@
    redefine those ramps and the entire site follows, including the scroll rail,
    which reads its colour from the page's own text and paper values.
 
+   A palette owns its typography too. --sa-font-display and --sa-font-body feed
+   every --sa-type-* token in the design system, so setting those two changes the
+   voice of every heading, lede, button and eyebrow at once. Where a face needs a
+   different weight than the default to hold at display size (Cormorant is drawn
+   light, Nunito is drawn soft) the palette restates --sa-type-display rather than
+   reaching for !important, because the page's inline `font:` shorthand resolves
+   through that token.
+
    Light or dark is still [data-theme], because the design system already maps the
    ramps for both. A palette declares which mode it belongs to and the head script
    sets them together, so picking "Noir" gets dark surfaces without a second control.
 
-   Three of these are real brands, sampled from the logos rather than guessed:
-   Perkiomen #3C0C5B and #DBC299, ISPS #183663 and #28A9E2, SanaSanita #07666D.
-   Accents are darkened from the source where the original would not hold contrast
-   against paper. */
+   Four of these are real brands, sampled from the logos rather than guessed:
+   Perkiomen #3C0C5B and #DBC299, ISPS #14335F / #29A9E2 / #5FBD49, SanaSanita
+   #07666D. Three more are built from the design notes in the reference folder:
+   Ferrari, Lamborghini and PlayStation. Accents are darkened from the source where
+   the original would not hold contrast against paper. */
 
 /* ---------------------------------------------------- Library (default) ---- */
 /* Cream and deep teal, the site's own colours, with the coral swapped for antique
-   gold. The coral read as a default orange rather than a decision. */
+   gold. The coral read as a default orange rather than a decision.
+   Fraunces is a display serif with an optical-size axis, so it is drawn for the
+   size it is set at rather than scaled into it. */
 :root[data-palette="library"] {
   --sa-verdigris-500:#2A9D8F; --sa-glow-b:#2A9D8F; --sa-glow-a:var(--sa-coral-500);
   --sa-paper-000:#FDFBF7; --sa-paper-100:#F6F0E6; --sa-paper-200:#EDE4D5; --sa-paper-300:#DFD2BD;
@@ -25,9 +36,16 @@
   --sa-coral-600:#8A6410; --sa-coral-500:#B08428; --sa-coral-300:#D9BE7A; --sa-coral-100:#F3E8CE;
   --sa-ochre-500:#B08428; --sa-ochre-100:#F3E8CE; --sa-sienna-500:#7A5A12;
   --sa-hero-1:#14454a; --sa-hero-2:#0d3236; --sa-hero-3:#071e21; --sa-hero-4:#041214;
+
+  --sa-font-display:"Fraunces", "Iowan Old Style", Georgia, serif;
+  --sa-font-body:"IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sa-on-accent:var(--sa-ink-900);
 }
 
 /* ------------------------------------------------------------ Perkiomen ---- */
+/* Purple and gold from the school seal. Playfair Display is the engraved
+   Transitional serif that prep-school arms are usually cut in: high stroke
+   contrast, sharp serifs, formal without being stiff. */
 :root[data-palette="perkiomen"] {
   --sa-verdigris-500:#7A4C9B; --sa-glow-b:#7A4C9B; --sa-glow-a:var(--sa-coral-500);
   --sa-paper-000:#FCFAFC; --sa-paper-100:#F4EEF6; --sa-paper-200:#E9DFEE; --sa-paper-300:#D8C8E0;
@@ -36,52 +54,104 @@
   --sa-coral-600:#8A6A16; --sa-coral-500:#B8912F; --sa-coral-300:#DBC299; --sa-coral-100:#F2E8D3;
   --sa-ochre-500:#B8912F; --sa-ochre-100:#F2E8D3; --sa-sienna-500:#7A5C13;
   --sa-hero-1:#4A1670; --sa-hero-2:#360A52; --sa-hero-3:#22043A; --sa-hero-4:#150226;
+
+  --sa-font-display:"Playfair Display", "Iowan Old Style", Georgia, serif;
+  --sa-font-body:"IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sa-type-display:500 var(--sa-text-5xl)/var(--sa-leading-tight) var(--sa-font-display);
+  --sa-type-title:500 var(--sa-text-3xl)/var(--sa-leading-snug) var(--sa-font-display);
+  --sa-tracking-display:-0.018em;
+  --sa-on-accent:var(--sa-ink-900);
 }
 
 /* ----------------------------------------------------------------- ISPS ---- */
+/* Sampled off the seal rather than remembered from it: white is 34% of the mark,
+   navy #14335F is the ring, #29A9E2 the petals and #5FBD49 the rays behind the
+   globe. The old version of this palette was navy and cyan only, which threw the
+   two things the mark is actually about away. Green leads now and the paper is
+   white with the faintest green in it, the way the seal sits on the page.
+   The logo green is too light to carry text on white, so the accent darkens to
+   #3C7F2E for anything that has to be read and keeps #5FBD49 as the bright stop.
+   Outfit is a geometric sans with open counters and full circular bowls, which is
+   the register international schools brand themselves in. */
 :root[data-palette="isps"] {
-  --sa-verdigris-500:#28A9E2; --sa-glow-b:#28A9E2; --sa-glow-a:var(--sa-coral-500);
-  --sa-paper-000:#FBFDFE; --sa-paper-100:#EFF5FA; --sa-paper-200:#E1ECF5; --sa-paper-300:#CBDEED;
-  --sa-ink-900:#0C2244; --sa-ink-800:#183663; --sa-ink-700:#24487E;
+  --sa-verdigris-500:#29A9E2; --sa-glow-b:#29A9E2; --sa-glow-a:#5FBD49;
+  --sa-paper-000:#FFFFFF; --sa-paper-100:#F3F8F2; --sa-paper-200:#E6F0E4; --sa-paper-300:#CEE2CC;
+  --sa-ink-900:#0C2244; --sa-ink-800:#14335F; --sa-ink-700:#1D4576;
   --sa-ink-500:#3F6DA8; --sa-ink-300:#7C9CC4; --sa-ink-100:#BACDE0;
-  --sa-coral-600:#10658F; --sa-coral-500:#1B8FC7; --sa-coral-300:#6FC0E4; --sa-coral-100:#D6EDF8;
-  --sa-ochre-500:#1B8FC7; --sa-ochre-100:#D6EDF8; --sa-sienna-500:#0F5B80;
-  --sa-hero-1:#1E4A85; --sa-hero-2:#153563; --sa-hero-3:#0D2044; --sa-hero-4:#07142B;
+  --sa-coral-600:#2E6B22; --sa-coral-500:#3C7F2E; --sa-coral-300:#5FBD49; --sa-coral-100:#E3F4DE;
+  --sa-ochre-500:#3C7F2E; --sa-ochre-100:#E3F4DE; --sa-sienna-500:#29A9E2;
+  --sa-hero-1:#2B7A46; --sa-hero-2:#1B4A6B; --sa-hero-3:#102F4E; --sa-hero-4:#07142B;
+
+  --sa-font-display:"Outfit", ui-sans-serif, system-ui, sans-serif;
+  --sa-font-body:"Outfit", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sa-type-display:600 var(--sa-text-5xl)/var(--sa-leading-tight) var(--sa-font-display);
+  --sa-type-title:600 var(--sa-text-3xl)/var(--sa-leading-snug) var(--sa-font-display);
+  --sa-type-heading:600 var(--sa-text-xl)/var(--sa-leading-snug) var(--sa-font-display);
+  --sa-tracking-display:-0.03em;
+  --sa-on-accent:var(--sa-paper-000);
 }
 
 /* ----------------------------------------------------------- SanaSanita ---- */
+/* The app's own teal. Nunito is a rounded-terminal sans; on a paediatric project
+   that reads as warmth rather than as a toy, and it is drawn soft enough that
+   display sizes need the heavy end of the axis to keep their edge. */
 :root[data-palette="sana"] {
-  --sa-verdigris-500:#0E8E7A; --sa-glow-b:#0E8E7A; --sa-glow-a:var(--sa-coral-500);
+  --sa-verdigris-500:#0D8370; --sa-glow-b:#0D8370; --sa-glow-a:var(--sa-coral-500);
   --sa-paper-000:#FCFCF9; --sa-paper-100:#F2F3EE; --sa-paper-200:#E6E9E2; --sa-paper-300:#D3D8CE;
   --sa-ink-900:#04383C; --sa-ink-800:#07666D; --sa-ink-700:#0A8189;
   --sa-ink-500:#3AA0A6; --sa-ink-300:#86BEC2; --sa-ink-100:#C4DEDF;
-  --sa-coral-600:#0A6B5C; --sa-coral-500:#0E8E7A; --sa-coral-300:#6BC6B4; --sa-coral-100:#D6F0E9;
-  --sa-ochre-500:#0E8E7A; --sa-ochre-100:#D6F0E9; --sa-sienna-500:#095F52;
+  --sa-coral-600:#0A6B5C; --sa-coral-500:#0D8370; --sa-coral-300:#6BC6B4; --sa-coral-100:#D6F0E9;
+  --sa-ochre-500:#0D8370; --sa-ochre-100:#D6F0E9; --sa-sienna-500:#095F52;
   --sa-hero-1:#0A7A82; --sa-hero-2:#06565C; --sa-hero-3:#03383C; --sa-hero-4:#022226;
+
+  --sa-font-display:"Nunito", ui-rounded, "SF Pro Rounded", ui-sans-serif, sans-serif;
+  --sa-font-body:"Nunito", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sa-type-display:800 var(--sa-text-5xl)/var(--sa-leading-tight) var(--sa-font-display);
+  --sa-type-title:800 var(--sa-text-3xl)/var(--sa-leading-snug) var(--sa-font-display);
+  --sa-type-heading:700 var(--sa-text-xl)/var(--sa-leading-snug) var(--sa-font-display);
+  --sa-tracking-display:-0.025em;
+  --sa-on-accent:var(--sa-paper-000);
 }
 
 /* ------------------------------------------------------------------ Sky ---- */
+/* Lora is a contemporary book serif with brushed curves; it reads calm at length,
+   which suits the pages that are mostly reading. */
 :root[data-palette="sky"] {
   --sa-verdigris-500:#3D74A0; --sa-glow-b:#3D74A0; --sa-glow-a:var(--sa-coral-500);
   --sa-paper-000:#FFFFFF; --sa-paper-100:#F2F7FB; --sa-paper-200:#E5EFF7; --sa-paper-300:#CFE2EF;
   --sa-ink-900:#0B2A44; --sa-ink-800:#123A5C; --sa-ink-700:#1B4E77;
   --sa-ink-500:#3D74A0; --sa-ink-300:#7FA4C2; --sa-ink-100:#BDD3E3;
-  --sa-coral-600:#1E6796; --sa-coral-500:#2E7FB8; --sa-coral-300:#7EB6DA; --sa-coral-100:#DCEDF8;
-  --sa-ochre-500:#2E7FB8; --sa-ochre-100:#DCEDF8; --sa-sienna-500:#1A5A83;
+  --sa-coral-600:#1E6796; --sa-coral-500:#2D7BB2; --sa-coral-300:#7EB6DA; --sa-coral-100:#DCEDF8;
+  --sa-ochre-500:#2D7BB2; --sa-ochre-100:#DCEDF8; --sa-sienna-500:#1A5A83;
   --sa-hero-1:#2A6EA0; --sa-hero-2:#1B4E77; --sa-hero-3:#0F3252; --sa-hero-4:#081E33;
+
+  --sa-font-display:"Lora", "Iowan Old Style", Georgia, serif;
+  --sa-font-body:"IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sa-type-display:500 var(--sa-text-5xl)/var(--sa-leading-tight) var(--sa-font-display);
+  --sa-tracking-display:-0.015em;
+  --sa-on-accent:var(--sa-paper-000);
 }
 
 /* ------------------------------------------------ Noir (black and white) ---- */
-/* No hue at all. The accent is white, so a primary button is a white block with black
-   type, which is the whole idea: contrast is the only device. */
+/* No hue at all, anywhere. The accent is white, so a primary button is a white
+   block with black type, which is the whole idea: contrast is the only device.
+   The country colours are stripped too, further down the file. Archivo is a
+   grotesque with no warmth and no personality to leak into the monochrome. */
 :root[data-palette="noir"] {
-  --sa-verdigris-500:#8A8A8A; --sa-glow-b:#8A8A8A; --sa-glow-a:var(--sa-coral-500);
+  --sa-verdigris-500:#8A8A8A; --sa-glow-b:#8A8A8A; --sa-glow-a:#FFFFFF;
   --sa-paper-000:#FFFFFF; --sa-paper-100:#EDEDED; --sa-paper-200:#D6D6D6; --sa-paper-300:#B4B4B4;
   --sa-ink-900:#000000; --sa-ink-800:#111111; --sa-ink-700:#1C1C1C;
   --sa-ink-500:#3D3D3D; --sa-ink-300:#7A7A7A; --sa-ink-100:#B0B0B0;
   --sa-coral-600:#FFFFFF; --sa-coral-500:#E6E6E6; --sa-coral-300:#BFBFBF; --sa-coral-100:#1A1A1A;
   --sa-ochre-500:#E6E6E6; --sa-ochre-100:#1A1A1A; --sa-sienna-500:#BFBFBF;
   --sa-hero-1:#2E2E2E; --sa-hero-2:#1A1A1A; --sa-hero-3:#0B0B0B; --sa-hero-4:#000000;
+
+  --sa-font-display:"Archivo", ui-sans-serif, system-ui, sans-serif;
+  --sa-font-body:"Archivo", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sa-type-display:600 var(--sa-text-5xl)/var(--sa-leading-tight) var(--sa-font-display);
+  --sa-type-title:600 var(--sa-text-3xl)/var(--sa-leading-snug) var(--sa-font-display);
+  --sa-tracking-display:-0.032em;
+  --sa-on-accent:var(--sa-ink-900);
 }
 
 /* -------------------------------------------------------------- Ferrari ---- */
@@ -93,7 +163,11 @@
 
    The brand's other signature is geometry: sharp corners on every control and card,
    with pill shapes reserved for badges. That is a shape rule rather than a colour, so
-   this palette overrides the radius ladder too. */
+   this palette overrides the radius ladder too.
+
+   The notes are firm that Ferrari is one sans across every role, display set at 500
+   and never bold, with negative tracking on display sizes only. Inter is the
+   substitute the notes name for FerrariSans. */
 :root[data-palette="ferrari"] {
   --sa-verdigris-500:#7A7A7A; --sa-glow-b:#7A7A7A; --sa-glow-a:var(--sa-coral-500);
   --sa-paper-000:#FFFFFF; --sa-paper-100:#F7F7F7; --sa-paper-200:#EBEBEB; --sa-paper-300:#D2D2D2;
@@ -106,27 +180,19 @@
   --sa-radius-xs:0px; --sa-radius-sm:0px; --sa-radius-md:0px;
   --sa-radius-lg:0px; --sa-radius-xl:0px;
   --sa-radius-control:0px; --sa-radius-media:0px;
-}
-/* The notes are firm that Ferrari is one sans across every role, display set at 500
-   and never bold, with negative tracking on display sizes only. A serif would read as
-   the wrong brand however good the colours are, so this palette swaps the display face
-   for the sans already loaded. Inter is the documented substitute for FerrariSans;
-   IBM Plex Sans is what this site ships and sits in the same territory. */
-:root[data-palette="ferrari"] {
-  --sa-font-display: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
-  --sa-tracking-display: -0.02em;
-}
-/* !important because every heading carries an inline `font:` shorthand, which sets
-   weight and would otherwise win. This is the one place the brand rule needs it. */
-:root[data-palette="ferrari"] h1,
-:root[data-palette="ferrari"] h2,
-:root[data-palette="ferrari"] h3 { font-weight: 500 !important; }
 
-/* The sans is wider than the serif it replaces and pushed the last nav item out of
-   the bar. The notes put nav links at 13px with 0.65px tracking, which both fits and
-   is what the brand actually does. */
+  --sa-font-display:"Inter", ui-sans-serif, system-ui, sans-serif;
+  --sa-font-body:"Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sa-type-display:500 var(--sa-text-5xl)/var(--sa-leading-tight) var(--sa-font-display);
+  --sa-type-title:500 var(--sa-text-3xl)/var(--sa-leading-snug) var(--sa-font-display);
+  --sa-type-heading:500 var(--sa-text-xl)/var(--sa-leading-snug) var(--sa-font-display);
+  --sa-tracking-display:-0.022em;
+  --sa-on-accent:var(--sa-paper-000);
+}
+/* Inter is wider than the serif it replaces and pushed the last nav item out of the
+   bar. The notes put nav links at 13px with tight tracking, which both fits and is
+   what the brand actually does. */
 :root[data-palette="ferrari"] .sa-nav-inline a { font-size: 13px; letter-spacing: .05em; }
-
 /* Pills stay pills only where the notes allow them: badges. Buttons and cards square
    off. Uppercase, tracked labels are the other half of the brand's CTA voice. */
 :root[data-palette="ferrari"] a[href][style*="radius-pill"],
@@ -136,7 +202,121 @@
   text-transform: uppercase; letter-spacing: .1em; font-weight: 700; font-size: var(--sa-text-sm);
 }
 
+/* --------------------------------------------------------- Lamborghini ---- */
+/* From the Lamborghini notes. True black, never dark grey as a substitute, with
+   #FFC000 reserved for primary actions and nothing decorative. Depth comes from
+   surface layering (#000 to #181818 to #202020) rather than shadow, which is why
+   the hero ramp barely moves. Zero radius throughout.
+
+   LamboType is a Neo-Grotesk with 12-degree angled terminals set at weight 400 and
+   always uppercase. Archivo is the closest free grotesque with the same square,
+   tightly-fitted proportions; the uppercase and the 0.95 line-height below are
+   doing as much of the brand's work as the colour is. */
+:root[data-palette="lambo"] {
+  --sa-verdigris-500:#29ABE2; --sa-glow-b:#29ABE2; --sa-glow-a:var(--sa-coral-500);
+  --sa-paper-000:#FFFFFF; --sa-paper-100:#F8F8F8; --sa-paper-200:#E6E6E6; --sa-paper-300:#C9C9C9;
+  --sa-ink-900:#000000; --sa-ink-800:#0E0E0E; --sa-ink-700:#202020;
+  --sa-ink-500:#494949; --sa-ink-300:#7D7D7D; --sa-ink-100:#B4B4B4;
+  --sa-coral-600:#FFCE3E; --sa-coral-500:#FFC000; --sa-coral-300:#FFD97A; --sa-coral-100:#2A2000;
+  --sa-ochre-500:#FFC000; --sa-ochre-100:#2A2000; --sa-sienna-500:#917300;
+  --sa-hero-1:#202020; --sa-hero-2:#141414; --sa-hero-3:#0A0A0A; --sa-hero-4:#000000;
+
+  --sa-radius-xs:0px; --sa-radius-sm:0px; --sa-radius-md:0px;
+  --sa-radius-lg:0px; --sa-radius-xl:0px;
+  --sa-radius-control:0px; --sa-radius-media:0px;
+
+  --sa-font-display:"Archivo", ui-sans-serif, system-ui, sans-serif;
+  --sa-font-body:"Archivo", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sa-type-display:400 var(--sa-text-5xl)/0.95 var(--sa-font-display);
+  --sa-type-title:400 var(--sa-text-3xl)/1.05 var(--sa-font-display);
+  --sa-type-heading:500 var(--sa-text-xl)/1.15 var(--sa-font-display);
+  --sa-tracking-display:-0.005em;
+  --sa-on-accent:var(--sa-ink-900);
+}
+:root[data-palette="lambo"] h1,
+:root[data-palette="lambo"] h2 { text-transform: uppercase; }
+:root[data-palette="lambo"] a[href][style*="radius-pill"],
+:root[data-palette="lambo"] .sa-hero-ghost { border-radius: 0 !important; }
+:root[data-palette="lambo"] .sa-hero-ghost,
+:root[data-palette="lambo"] button[data-filter-btn] {
+  text-transform: uppercase; letter-spacing: .12em; font-weight: 500; font-size: var(--sa-text-sm);
+}
+/* The notes are unusually specific here: Lamborghini's navigation is "always
+   hamburger-based, no horizontal nav expansion on any breakpoint". So this palette
+   is the one that hides the inline strip outright rather than at a width. It also
+   happens to be the palette whose uppercase Archivo does not fit the bar at 1440px,
+   which is presumably why the brand made that call in the first place. */
+:root[data-palette="lambo"] .sa-nav-inline { display: none !important; }
+
+/* ----------------------------------------------------------- PlayStation ---- */
+/* From the PlayStation notes: three surfaces (white, black, blue) rather than a
+   light-to-dark ramp, #0070d1 on every primary action as a fully-rounded pill, and
+   an 8px card radius that never becomes a pill. The notes are specific that display
+   copy is set at weight 300 — the airiness is the brand, and setting it at 400
+   loses it. SST is proprietary; Inter is the usual stand-in and holds at 300. */
+:root[data-palette="ps"] {
+  --sa-verdigris-500:#D53B00; --sa-glow-b:#0070D1; --sa-glow-a:#53B1FF;
+  --sa-paper-000:#FFFFFF; --sa-paper-100:#F3F3F3; --sa-paper-200:#F5F7FA; --sa-paper-300:#DCDEE3;
+  --sa-ink-900:#000000; --sa-ink-800:#121314; --sa-ink-700:#1F2024;
+  --sa-ink-500:#6B6B6B; --sa-ink-300:#A0A0A0; --sa-ink-100:#CCCCCC;
+  --sa-coral-600:#0064B7; --sa-coral-500:#0070D1; --sa-coral-300:#53B1FF; --sa-coral-100:#E3F0FC;
+  --sa-ochre-500:#0070D1; --sa-ochre-100:#E3F0FC; --sa-sienna-500:#D53B00;
+  --sa-hero-1:#1F2024; --sa-hero-2:#121314; --sa-hero-3:#0A0A0B; --sa-hero-4:#000000;
+
+  --sa-radius-md:8px; --sa-radius-lg:8px; --sa-radius-xl:8px; --sa-radius-media:8px;
+
+  --sa-font-display:"Inter", ui-sans-serif, system-ui, sans-serif;
+  --sa-font-body:"Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sa-type-display:300 var(--sa-text-5xl)/1.12 var(--sa-font-display);
+  --sa-type-title:300 var(--sa-text-3xl)/1.25 var(--sa-font-display);
+  --sa-type-heading:600 var(--sa-text-xl)/1.25 var(--sa-font-display);
+  --sa-tracking-display:-0.004em;
+  --sa-on-accent:var(--sa-paper-000);
+}
+
+/* --------------------------------------------------------------- Arcade ---- */
+/* The videogame theme. Edo SZ carries the display, which is a brush face with
+   uneven weight and a hard rightward lean, so it needs air around it: the tracking
+   goes positive rather than negative, the opposite of every other palette here, and
+   it is only ever asked to set a few words at a time.
+
+   Around it, an arcade cabinet: a near-black with violet in it, hot magenta on the
+   actions and cyan as the second light. Orbitron takes the eyebrows and nav, which
+   is the wide, squared-off face game UI has used since the eighties, and Space
+   Grotesk reads the paragraphs, because Edo cannot and Orbitron should not. */
+:root[data-palette="arcade"] {
+  --sa-verdigris-500:#2DE2E6; --sa-glow-b:#2DE2E6; --sa-glow-a:var(--sa-coral-500);
+  --sa-paper-000:#FFFFFF; --sa-paper-100:#F2F3FA; --sa-paper-200:#E2E4F2; --sa-paper-300:#C2C6E0;
+  --sa-ink-900:#05060E; --sa-ink-800:#0C0F1D; --sa-ink-700:#151A2E;
+  --sa-ink-500:#3A4160; --sa-ink-300:#7A82A3; --sa-ink-100:#B9BFD4;
+  --sa-coral-600:#FF5B96; --sa-coral-500:#FF2D78; --sa-coral-300:#FF8FBB; --sa-coral-100:#2A0A1B;
+  --sa-ochre-500:#FF2D78; --sa-ochre-100:#2A0A1B; --sa-sienna-500:#2DE2E6;
+  --sa-hero-1:#2B1046; --sa-hero-2:#170B2E; --sa-hero-3:#0B0619; --sa-hero-4:#04030C;
+
+  --sa-font-display:"Edo SZ", "Brush Script MT", ui-sans-serif, sans-serif;
+  --sa-font-body:"Space Grotesk", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sa-type-display:400 var(--sa-text-5xl)/1.06 var(--sa-font-display);
+  --sa-type-title:400 var(--sa-text-3xl)/1.15 var(--sa-font-display);
+  --sa-type-heading:700 var(--sa-text-xl)/var(--sa-leading-snug) var(--sa-font-body);
+  --sa-type-eyebrow:700 var(--sa-text-2xs)/1.2 "Orbitron", var(--sa-font-body);
+  /* Edo leans hard to the right and its strokes already crowd; it needs the space
+     back that every other display face here gives up. */
+  --sa-tracking-display:0.02em;
+  --sa-tracking-eyebrow:0.18em;
+  --sa-on-accent:var(--sa-ink-900);
+}
+/* Orbitron is very wide, and seven section names set in it do not fit the bar at any
+   sane size. It stays on the eyebrows and the filter chips, where it is a few words
+   at a time, and the nav keeps the body face. */
+:root[data-palette="arcade"] button[data-filter-btn] {
+  font-family:"Orbitron", var(--sa-font-body); font-size:12px; letter-spacing:.1em; text-transform:uppercase;
+}
+:root[data-palette="arcade"] .sa-nav-inline a { font-size: 14px; }
+
 /* ---------------------------------------------------- Gilt (gold, dark) ---- */
+/* Cormorant Garamond is drawn very light and very high-contrast, which is why it
+   reads as gold leaf on black; at display size it needs the top of the weight axis
+   or the hairlines disappear. */
 :root[data-palette="gilt"] {
   --sa-verdigris-500:#C9A227; --sa-glow-b:#C9A227; --sa-glow-a:var(--sa-coral-500);
   --sa-paper-000:#FAF7EF; --sa-paper-100:#F2EDE0; --sa-paper-200:#E4DCC8; --sa-paper-300:#CFC3A6;
@@ -145,9 +325,19 @@
   --sa-coral-600:#E0BC55; --sa-coral-500:#C9A227; --sa-coral-300:#E3CB78; --sa-coral-100:#332812;
   --sa-ochre-500:#C9A227; --sa-ochre-100:#2C2210; --sa-sienna-500:#E3CB78;
   --sa-hero-1:#2E2716; --sa-hero-2:#1D1910; --sa-hero-3:#110F09; --sa-hero-4:#080705;
+
+  --sa-font-display:"Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --sa-font-body:"IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sa-type-display:600 var(--sa-text-5xl)/1.02 var(--sa-font-display);
+  --sa-type-title:600 var(--sa-text-3xl)/var(--sa-leading-snug) var(--sa-font-display);
+  --sa-tracking-display:-0.008em;
+  --sa-on-accent:var(--sa-ink-900);
 }
 
 /* ------------------------------------------- Atlas (violet, dark, CellAtlas) ---- */
+/* Space Grotesk was drawn from a monospace, so its figures and its slightly odd
+   letterforms read as instrument-panel rather than as marketing, which is the right
+   register for the genomics work. */
 :root[data-palette="atlas"] {
   --sa-verdigris-500:#7C5CFF; --sa-glow-b:#7C5CFF; --sa-glow-a:var(--sa-coral-500);
   --sa-paper-000:#EBEEF7; --sa-paper-100:#DDE3F1; --sa-paper-200:#C9D2E6; --sa-paper-300:#AAB6D2;
@@ -156,6 +346,13 @@
   --sa-coral-600:#A48CFF; --sa-coral-500:#7C5CFF; --sa-coral-300:#AC98FF; --sa-coral-100:#1E1840;
   --sa-ochre-500:#7C5CFF; --sa-ochre-100:#1A1538; --sa-sienna-500:#AC98FF;
   --sa-hero-1:#241C55; --sa-hero-2:#15113A; --sa-hero-3:#0C0A22; --sa-hero-4:#060512;
+
+  --sa-font-display:"Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --sa-font-body:"IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sa-type-display:500 var(--sa-text-5xl)/var(--sa-leading-tight) var(--sa-font-display);
+  --sa-type-title:500 var(--sa-text-3xl)/var(--sa-leading-snug) var(--sa-font-display);
+  --sa-tracking-display:-0.03em;
+  --sa-on-accent:var(--sa-ink-900);
 }
 
 /* The hero's night sky and the ink CTA glows were hard-coded teal, so they ignored
@@ -166,25 +363,87 @@
     var(--sa-hero-3, #071e21) 72%, var(--sa-hero-4, #041214) 100%) !important;
 }
 
+/* ------------------------------------------------------ label on accent ---- */
+/* The design system paints every filled control as --sa-text-inverse on --sa-accent,
+   and --sa-text-inverse is the paper colour. That is right whenever the accent is
+   dark and wrong the moment it is not: white on Noir's #E6E6E6 is 1.25:1 and white on
+   Lamborghini's gold is 1.64:1, both of which are an invisible button. Lamborghini's
+   own notes call for black type on the gold for exactly this reason.
+
+   CSS cannot pick the better of two colours by contrast yet (color-contrast() is not
+   shipped), and the same token cannot serve both jobs, because on a dark palette the
+   ink bands genuinely do want white. So each palette declares which of its own two
+   ends reads on its accent, chosen by measuring rather than by eye, and this rule
+   applies it. !important is unavoidable: the component sets colour inline.
+
+   Matching on the inline value is how a control filled with the accent is identified;
+   the design system gives it no class of its own. */
+a[style*="var(--sa-accent)"],
+button[style*="var(--sa-accent)"] { color: var(--sa-on-accent, var(--sa-text-inverse)) !important; }
+
 /* ------------------------------------------------------------- countries ---- */
-/* Flag colours, used as the accent on that country's page and as the stripe down its
-   entry in the timeline. These come after the palette blocks on purpose: same
-   specificity, so the later rule wins and a country's accent overrides its section's.
-   Yellows and whites are never used as the primary; on paper they would fail contrast,
-   so the darker flag colour leads and the bright one is the second stop. */
-:root[data-country="mexico"]   { --sa-coral-600:#00553A; --sa-coral-500:#006847; --sa-coral-300:#5BA97F; --sa-coral-100:#DCEFE3; --sa-flag-a:#006847; --sa-flag-b:#CE1126; }
-:root[data-country="colombia"] { --sa-coral-600:#002E75; --sa-coral-500:#003893; --sa-coral-300:#6E8FD0; --sa-coral-100:#DCE5F7; --sa-flag-a:#003893; --sa-flag-b:#FCD116; }
-:root[data-country="panama"]   { --sa-coral-600:#004073; --sa-coral-500:#005293; --sa-coral-300:#6C9FCD; --sa-coral-100:#DBE9F5; --sa-flag-a:#005293; --sa-flag-b:#DA121A; }
-:root[data-country="trinidad"] { --sa-coral-600:#A81228; --sa-coral-500:#DA1A35; --sa-coral-300:#EC8092; --sa-coral-100:#FBDDE2; --sa-flag-a:#DA1A35; --sa-flag-b:#111111; }
-:root[data-country="usa"]      { --sa-coral-600:#2E2D57; --sa-coral-500:#3C3B6E; --sa-coral-300:#8988B0; --sa-coral-100:#E0E0EC; --sa-flag-a:#3C3B6E; --sa-flag-b:#B22234; }
-:root[data-country="spain"]    { --sa-coral-600:#8A1015; --sa-coral-500:#AA151B; --sa-coral-300:#D4787C; --sa-coral-100:#F7DDDE; --sa-flag-a:#AA151B; --sa-flag-b:#F1BF00; }
+/* Two separate jobs, so two separate mechanisms.
+
+   The first is the page accent: on a country's own page the whole site takes that
+   country's colour. That is :root-only and comes after the palette blocks on
+   purpose — same specificity, so the later rule wins and the country overrides its
+   section's palette. Yellows and whites are never the primary; on paper they would
+   fail contrast, so the darker flag colour leads.
+
+   The second is the flag stripe, three stops now rather than two, which has to work
+   on any element because the About timeline paints one per row. Hence [data-country]
+   unqualified, feeding --sa-flag-a/b/c.
+
+   The orders are chosen so no two of them read as the same flag at 4px wide:
+     Mexico    green, then the gold of the eagle, then red. Green-white-red in that
+               order is Italy, so the white comes out and the emblem colour goes in.
+     Colombia  yellow, blue, red, which is its own flag top to bottom.
+     Panama    red, white, blue. Panama is the one of the two that keeps its white,
+               because half its flag is white. Blue-white-red is France, so the red
+               leads instead, and Panama's blue is a bright #0B5AA6 nothing like the
+               navy next door.
+     Trinidad  red, white, black, off the diagonal.
+     USA       navy and red only, no white. Two colours, no possible confusion with
+               Panama or with France.
+     Spain     red, gold, red. Already unmistakable, so unchanged. */
+:root[data-country="mexico"]   { --sa-coral-600:#00553A; --sa-coral-500:#006847; --sa-coral-300:#5BA97F; --sa-coral-100:#DCEFE3; }
+:root[data-country="colombia"] { --sa-coral-600:#002E75; --sa-coral-500:#003893; --sa-coral-300:#6E8FD0; --sa-coral-100:#DCE5F7; }
+:root[data-country="panama"]   { --sa-coral-600:#08477F; --sa-coral-500:#0B5AA6; --sa-coral-300:#6CA4D6; --sa-coral-100:#DBE9F5; }
+:root[data-country="trinidad"] { --sa-coral-600:#A81228; --sa-coral-500:#DA1A35; --sa-coral-300:#EC8092; --sa-coral-100:#FBDDE2; }
+:root[data-country="usa"]      { --sa-coral-600:#2E2D57; --sa-coral-500:#3C3B6E; --sa-coral-300:#8988B0; --sa-coral-100:#E0E0EC; }
+:root[data-country="spain"]    { --sa-coral-600:#8A1015; --sa-coral-500:#AA151B; --sa-coral-300:#D4787C; --sa-coral-100:#F7DDDE; }
+
+[data-country] { --sa-flag-a:var(--flag-a); --sa-flag-b:var(--flag-b); --sa-flag-c:var(--flag-c); }
+[data-country="mexico"]   { --flag-a:#006847; --flag-b:#A57C1B; --flag-c:#CE1126; }
+[data-country="colombia"] { --flag-a:#FCD116; --flag-b:#003893; --flag-c:#CE1126; }
+[data-country="panama"]   { --flag-a:#DA121A; --flag-b:#FFFFFF; --flag-c:#0B5AA6; }
+[data-country="trinidad"] { --flag-a:#DA1A35; --flag-b:#FFFFFF; --flag-c:#111111; }
+[data-country="usa"]      { --flag-a:#3C3B6E; --flag-b:#3C3B6E; --flag-c:#B22234; }
+[data-country="spain"]    { --flag-a:#AA151B; --flag-b:#F1BF00; --flag-c:#AA151B; }
 
 /* The timeline dots read from these, so they match the country rather than the
    arbitrary set the design system shipped with (Panama was white). */
 :root {
   --sa-place-usa:#3C3B6E; --sa-place-spain:#AA151B; --sa-place-mexico:#006847;
-  --sa-place-colombia:#003893; --sa-place-panama:#005293; --sa-place-trinidad:#DA1A35;
+  --sa-place-colombia:#003893; --sa-place-panama:#0B5AA6; --sa-place-trinidad:#DA1A35;
   --sa-place-pennsburg:#3C3B6E;
+}
+
+/* Noir means no colour at all, and a flag is colour. Both selectors are needed:
+   the first for a country's own page, where [data-country] sits on <html> beside
+   the palette, and the second for the About timeline, where every row carries one.
+   Both outrank the country rules above on specificity rather than on order. */
+:root[data-palette="noir"][data-country],
+:root[data-palette="noir"] [data-country] {
+  --flag-a:#FFFFFF; --flag-b:#8A8A8A; --flag-c:#2B2B2B;
+}
+:root[data-palette="noir"][data-country] {
+  --sa-coral-600:#FFFFFF; --sa-coral-500:#E6E6E6; --sa-coral-300:#BFBFBF; --sa-coral-100:#1A1A1A;
+}
+:root[data-palette="noir"] {
+  --sa-place-usa:#FFFFFF; --sa-place-spain:#D4D4D4; --sa-place-mexico:#AFAFAF;
+  --sa-place-colombia:#8A8A8A; --sa-place-panama:#6B6B6B; --sa-place-trinidad:#4D4D4D;
+  --sa-place-pennsburg:#FFFFFF;
 }
 
 /* ------------------------------------------------------ timeline entries ---- */
@@ -203,13 +462,19 @@
               border-color var(--sa-dur-2) var(--sa-ease-out),
               transform var(--sa-dur-2) var(--sa-ease-out);
 }
-.sa-tl-link::before {
+.sa-tl-link::before,
+.sa-tl-static::before {
   content: "";
   position: absolute; left: 0; top: 10px; bottom: 10px; width: 4px;
   border-radius: 3px;
-  background: linear-gradient(to bottom, var(--sa-flag-a, var(--sa-accent)) 0 50%,
-                                          var(--sa-flag-b, var(--sa-accent)) 50% 100%);
-  opacity: .45;
+  background: linear-gradient(to bottom,
+    var(--sa-flag-a, var(--sa-accent)) 0 33.34%,
+    var(--sa-flag-b, var(--sa-accent)) 33.33% 66.67%,
+    var(--sa-flag-c, var(--sa-accent)) 66.66% 100%);
+  /* Panama and Trinidad both carry a white band, which would be an invisible gap on
+     paper. The ring gives every stop an edge without tinting the coloured ones. */
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--sa-ink-900) 22%, transparent);
+  opacity: .5;
   transition: opacity var(--sa-dur-2) var(--sa-ease-out);
 }
 .sa-tl-link:hover,
@@ -225,9 +490,4 @@
    link that goes nowhere. It still carries Spain's colours. */
 .sa-tl-static { display: block; position: relative;
   padding: var(--sa-space-4) var(--sa-space-5) var(--sa-space-4) var(--sa-space-6); }
-.sa-tl-static::before {
-  content: ""; position: absolute; left: 0; top: 10px; bottom: 10px; width: 4px;
-  border-radius: 3px; opacity: .45;
-  background: linear-gradient(to bottom, var(--sa-flag-a) 0 50%, var(--sa-flag-b) 50% 100%);
-}
 @media (prefers-reduced-motion: reduce) { .sa-tl-link { transition: none; } }

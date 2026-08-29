@@ -107,7 +107,8 @@ const PAGE_PALETTE = {
   "Academics-CompBio.dc.html": "atlas",
   "Research-CellAtlas.dc.html": "atlas",
   "Research-MedicalApp.dc.html": "sana",
-  "Research-Venezuela.dc.html": "sky"
+  "Research-Venezuela.dc.html": "sky",
+  "Curiosities-Videogames.dc.html": "arcade"
 };
 const paletteFor = (p) => PAGE_PALETTE[p.file] || SECTION_PALETTE[p.section] || "library";
 
@@ -919,7 +920,7 @@ ${canonical}<meta property="og:title" content="${attr(title)}">
 <meta property="og:image" content="${attr(ogImage)}">
 <meta name="twitter:card" content="summary_large_image">
 <script>(function(){try{
-var M={library:"light",perkiomen:"light",isps:"light",sana:"light",sky:"light",noir:"dark",gilt:"dark",atlas:"dark",ferrari:"dark"};
+var M={library:"light",perkiomen:"light",isps:"light",sana:"light",sky:"light",ps:"light",noir:"dark",gilt:"dark",atlas:"dark",ferrari:"dark",lambo:"dark",arcade:"dark"};
 var d=document.documentElement,def="${paletteFor(p)}",p=null;
 try{p=localStorage.getItem("sa:palette")}catch(e){}
 var k=(p&&M[p])?p:def;
@@ -959,8 +960,8 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
 <dc-import name="SiteNav" active="${attr(p.section)}" hint-size="100%,72px"></dc-import>
 <main id="main">
 
-<section style="width:100%;max-width:1440px;margin:0 auto;padding:clamp(40px,6vh,72px) clamp(24px,5vw,64px) var(--sa-space-12) clamp(24px,11vw,168px);box-sizing:border-box">
-${crumb}  <span style="display:block;margin-top:var(--sa-space-4);font:var(--sa-type-eyebrow);letter-spacing:var(--sa-tracking-eyebrow);text-transform:uppercase;color:var(--sa-text-accent)">${esc(p.eyebrow)}</span>
+<section class="sa-pagehead sa-pagehead--leaf" style="width:100%;max-width:1440px;margin:0 auto;padding:clamp(40px,6vh,72px) clamp(24px,5vw,64px) var(--sa-space-12) clamp(24px,11vw,168px);box-sizing:border-box">
+${crumb}  <span class="sa-kicker" style="margin-top:var(--sa-space-4);font:var(--sa-type-eyebrow);letter-spacing:var(--sa-tracking-eyebrow);text-transform:uppercase;color:var(--sa-text-accent)">${esc(p.eyebrow)}</span>
   <h1 style="font:var(--sa-type-display);font-size:clamp(2.5rem,5vw,4rem);letter-spacing:var(--sa-tracking-display);margin:var(--sa-space-5) 0 0;max-width:20ch">${esc(p.title)}</h1>
   <p style="font:var(--sa-type-lede);font-size:var(--sa-text-lg);color:var(--sa-text-secondary);max-width:56ch;margin-top:var(--sa-space-6);text-wrap:pretty">${esc(p.lede)}</p>
 </section>

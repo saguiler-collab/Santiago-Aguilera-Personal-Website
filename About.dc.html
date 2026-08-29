@@ -14,7 +14,7 @@
 <meta property="og:image" content="assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <script>(function(){try{
-var M={library:"light",perkiomen:"light",isps:"light",sana:"light",sky:"light",noir:"dark",gilt:"dark",atlas:"dark",ferrari:"dark"};
+var M={library:"light",perkiomen:"light",isps:"light",sana:"light",sky:"light",ps:"light",noir:"dark",gilt:"dark",atlas:"dark",ferrari:"dark",lambo:"dark",arcade:"dark"};
 var d=document.documentElement,def="sky",p=null;
 try{p=localStorage.getItem("sa:palette")}catch(e){}
 var k=(p&&M[p])?p:def;
@@ -51,9 +51,9 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
 <dc-import name="SiteNav" active="about" hint-size="100%,72px"></dc-import>
 <main id="main">
 
-<section style="width:100%;max-width:1440px;margin:0 auto;padding:clamp(48px,7vh,88px) clamp(24px,5vw,64px) var(--sa-space-12) clamp(24px,11vw,168px);box-sizing:border-box">
-  <span style="font:var(--sa-type-eyebrow);letter-spacing:var(--sa-tracking-eyebrow);text-transform:uppercase;color:var(--sa-text-accent)">About me</span>
-  <h1 style="font:var(--sa-type-display);font-size:clamp(2.5rem,5vw,4rem);letter-spacing:var(--sa-tracking-display);margin:var(--sa-space-5) 0 0;max-width:18ch">Six countries, in order</h1>
+<section class="sa-pagehead sa-pagehead--section" style="width:100%;max-width:1440px;margin:0 auto;padding:clamp(48px,7vh,88px) clamp(24px,5vw,64px) var(--sa-space-12) clamp(24px,11vw,168px);box-sizing:border-box">
+  <span class="sa-kicker" style="font:var(--sa-type-eyebrow);letter-spacing:var(--sa-tracking-eyebrow);text-transform:uppercase;color:var(--sa-text-accent)">About me</span>
+  <h1 style="font:var(--sa-type-display);font-size:clamp(3rem,6.2vw,5.25rem);letter-spacing:var(--sa-tracking-display);margin:var(--sa-space-5) 0 0;max-width:18ch">Six countries, <em class="sa-hl">in order</em></h1>
   <p style="font:var(--sa-type-lede);font-size:var(--sa-text-lg);color:var(--sa-text-secondary);max-width:56ch;margin-top:var(--sa-space-6);text-wrap:pretty">I was born in Houston, Texas, in the middle of Hurricane Ike, and have lived across six countries since: Spain, Mexico, Colombia, Panama, and Trinidad &amp; Tobago, before boarding at Perkiomen in Pennsylvania. Every place added something: a language, an instrument, a way of reading a room. This page is that story in order, plus the symbol I drew for it.</p>
 </section>
 
@@ -62,25 +62,25 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
     <div data-rail-target="1" style="margin-bottom:var(--sa-space-10)">
       <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="The timeline" title="Where I have lived" hint-size="100%,110px"></x-import>
     </div>
-    <a class="sa-tl-link" href="Place-UnitedStates.dc.html" style="--sa-flag-a:#3C3B6E;--sa-flag-b:#B22234" aria-label="Houston, read the full page">
+    <a class="sa-tl-link" data-country="usa" href="Place-UnitedStates.dc.html" aria-label="Houston, read the full page">
       <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.TimelineItem" year="2008" place="usa" title="Houston" where="Texas, United States" meta="{{ tagBorn }}" hint-size="100%,150px">Born September 13, 2008, in the middle of Hurricane Ike, which is where the spiral on this site started, in more ways than one.</x-import>
     </a>
-    <div class="sa-tl-static" style="--sa-flag-a:#AA151B;--sa-flag-b:#F1BF00">
+    <div class="sa-tl-static" data-country="spain">
       <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.TimelineItem" year="2010" place="spain" title="Madrid" where="Spain" hint-size="100%,150px">Age two. The first move, though I don't remember it. It's the one that started the pattern.</x-import>
     </div>
-    <a class="sa-tl-link" href="Place-Mexico.dc.html" style="--sa-flag-a:#006847;--sa-flag-b:#CE1126" aria-label="Monterrey, read the full page">
+    <a class="sa-tl-link" data-country="mexico" href="Place-Mexico.dc.html" aria-label="Monterrey, read the full page">
       <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.TimelineItem" year="2011" place="mexico" title="Monterrey" where="Nuevo León, Mexico" meta="{{ tagMty }}" hint-size="100%,150px">Age three. School started here, AIM then LICEO, and it's still the city I measure every other place against.</x-import>
     </a>
-    <a class="sa-tl-link" href="Place-Colombia.dc.html" style="--sa-flag-a:#003893;--sa-flag-b:#FCD116" aria-label="Bogotá, read the full page">
+    <a class="sa-tl-link" data-country="colombia" href="Place-Colombia.dc.html" aria-label="Bogotá, read the full page">
       <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.TimelineItem" year="2016" place="colombia" title="Bogotá" where="Colombia" meta="{{ tagBogota }}" hint-size="100%,150px">Age eight, December 2016. A new school at altitude, at Colegio Tilata in La Calera, and a second accent in the same language.</x-import>
     </a>
-    <a class="sa-tl-link" href="Place-Panama.dc.html" style="--sa-flag-a:#005293;--sa-flag-b:#DA121A" aria-label="Ciudad de Panamá, read the full page">
+    <a class="sa-tl-link" data-country="panama" href="Place-Panama.dc.html" aria-label="Ciudad de Panamá, read the full page">
       <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.TimelineItem" year="2019" place="panama" title="Ciudad de Panamá" where="Panama" meta="{{ tagDrums }}" hint-size="100%,150px">Age ten, July 2019. International School of Panama, and where I started playing drums, at SonoArte. It became the thing I do to think.</x-import>
     </a>
-    <a class="sa-tl-link" href="Place-Trinidad.dc.html" style="--sa-flag-a:#DA1A35;--sa-flag-b:#111111" aria-label="Port of Spain, read the full page">
+    <a class="sa-tl-link" data-country="trinidad" href="Place-Trinidad.dc.html" aria-label="Port of Spain, read the full page">
       <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.TimelineItem" year="2021" place="trinidad" title="Port of Spain" where="Trinidad &amp; Tobago" meta="{{ tagIsps }}" hint-size="100%,150px">Age twelve, August 2021. Student Council, and Stronger Together, a student-led initiative supporting classmates through the return to in-person school.</x-import>
     </a>
-    <a class="sa-tl-link" href="Place-UnitedStates.dc.html" style="--sa-flag-a:#3C3B6E;--sa-flag-b:#B22234" aria-label="Pennsburg, read the full page">
+    <a class="sa-tl-link" data-country="usa" href="Place-UnitedStates.dc.html" aria-label="Pennsburg, read the full page">
       <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.TimelineItem" year="2025" place="pennsburg" title="Pennsburg" where="Pennsylvania, United States" meta="{{ tagPerk }}" last="{{ true }}" hint-size="100%,150px">Age sixteen, August 2025, as a boarding student. Health science, HOSA, Model UN and GVMUN, Investment Club, the Perkiomenite, varsity swimming and the rock band.</x-import>
     </a>
   </div>

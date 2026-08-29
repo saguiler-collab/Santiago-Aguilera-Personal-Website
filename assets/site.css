@@ -47,6 +47,155 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+/* The palette faces. Each theme owns a display and a body family, so switching
+   palette changes the voice of the page and not only its colour. Every one of
+   these is a variable font carrying its whole weight range in a single file, and
+   a browser only downloads a face when a rule actually renders text in it, so
+   the eleven themes nobody picked cost a visitor nothing. */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(fonts/PlayfairDisplay-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(fonts/PlayfairDisplay-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url(fonts/Outfit-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url(fonts/Outfit-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url(fonts/Nunito-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url(fonts/Nunito-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(fonts/Lora-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(fonts/Lora-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(fonts/Archivo-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(fonts/Archivo-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(fonts/CormorantGaramond-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(fonts/CormorantGaramond-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(fonts/SpaceGrotesk-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(fonts/SpaceGrotesk-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url(fonts/Inter-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url(fonts/Inter-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url(fonts/Orbitron-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Edo SZ';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/EdoSZ.woff2) format('woff2');
+}
+
 :root {
   --sa-font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
   --sa-font-body: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -304,4 +453,72 @@ footer nav a { padding-block: 4px; }
   .sa-media-row,
   .sa-media-row.flip { grid-template-columns: 1fr; gap: var(--sa-space-8); }
   .sa-media-row.flip .sa-media-figs { order: 0; }
+}
+
+
+/* -------------------------------------------------------- page openings ---- */
+/* Three levels of loudness, deliberately unequal.
+
+   The homepage hero is the loudest thing on the site and stays untouched. A section
+   opening (About, Academics, Research, Leadership, Activities, Curiosities, Media)
+   is the second level: a larger display size, an accent wash bleeding in behind it,
+   a rule under the title, the closing phrase set in the accent, and a short
+   staggered entrance. A leaf opening (SanaSanita, Colombia, Music) gets the same
+   family of marks at roughly half strength and no motion, so arriving from a section
+   reads as one level down rather than as landing somewhere unrelated.
+
+   Everything scales off four custom properties, so the difference between the two
+   tiers is four numbers rather than two sets of rules. */
+.sa-pagehead { position: relative; isolation: isolate; }
+.sa-pagehead::before {
+  content: "";
+  position: absolute; inset: -56px -12% auto -12%; height: var(--sa-head-wash-h, 300px);
+  z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(58% 100% at 20% 0%,
+      color-mix(in oklab, var(--sa-accent) var(--sa-head-wash, 10%), transparent) 0%, transparent 70%),
+    radial-gradient(44% 88% at 76% 8%,
+      color-mix(in oklab, var(--sa-glow-b, var(--sa-accent)) calc(var(--sa-head-wash, 10%) * 0.7), transparent) 0%, transparent 72%);
+}
+.sa-pagehead--section { --sa-head-wash: 16%; --sa-head-wash-h: 360px; --sa-head-rule-w: 108px; --sa-head-rule-h: 3px; --sa-kicker-w: 44px; }
+.sa-pagehead--leaf    { --sa-head-wash: 7%;  --sa-head-wash-h: 230px; --sa-head-rule-w: 56px;  --sa-head-rule-h: 2px; --sa-kicker-w: 26px; }
+/* A tint that carries on paper disappears against ink, so the dark palettes get more. */
+:root[data-theme="dark"] .sa-pagehead--section { --sa-head-wash: 24%; }
+:root[data-theme="dark"] .sa-pagehead--leaf { --sa-head-wash: 12%; }
+
+/* The eyebrow gets a rule leading into it, the length of which is the quickest
+   read on which of the two tiers a page belongs to. */
+.sa-kicker { display: flex; align-items: center; gap: 10px; }
+.sa-kicker::before {
+  content: ""; flex: none;
+  width: var(--sa-kicker-w, 26px); height: 2px;
+  background: linear-gradient(90deg, var(--sa-accent),
+    color-mix(in oklab, var(--sa-accent) 15%, transparent));
+}
+
+.sa-pagehead h1::after {
+  content: ""; display: block;
+  margin-top: var(--sa-space-6);
+  width: var(--sa-head-rule-w, 56px); height: var(--sa-head-rule-h, 2px);
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--sa-accent),
+    color-mix(in oklab, var(--sa-accent) 6%, transparent));
+}
+
+/* The closing phrase of a section title, in the accent. It is an <em> so that a
+   screen reader still hears the emphasis; the italic is what gets dropped. */
+.sa-hl { font-style: normal; color: var(--sa-text-accent); }
+
+/* Motion is only on the section tier, and only once. The design system zeroes its
+   duration tokens, so these are literal values rather than var(--sa-dur-*). */
+@keyframes sa-head-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+/* Descendant rather than child: Media wraps its opening in a flex row, so the three
+   elements are one level deeper there than on the other six. */
+.sa-pagehead--section .sa-kicker { animation: sa-head-in 420ms var(--sa-ease-out) both; }
+.sa-pagehead--section h1 { animation: sa-head-in 420ms var(--sa-ease-out) 70ms both; }
+.sa-pagehead--section p { animation: sa-head-in 420ms var(--sa-ease-out) 140ms both; }
+@media (prefers-reduced-motion: reduce) {
+  .sa-pagehead--section .sa-kicker,
+  .sa-pagehead--section h1,
+  .sa-pagehead--section p { animation: none; }
 }

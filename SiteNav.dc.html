@@ -18,10 +18,14 @@
 .sa-nav-scroll{scrollbar-width:none}.sa-nav-scroll::-webkit-scrollbar{display:none}
 .sa-menu-link{text-decoration:none;transition:color var(--sa-dur-2) var(--sa-ease-out),transform var(--sa-dur-2) var(--sa-ease-out);display:inline-block}
 .sa-menu-link:hover{transform:translateX(3px)}
-/* Seven sections, the wordmark and two controls do not fit side by side until about
-   1360px. Below that the strip was scrolling horizontally, which just reads as the
-   last item being cut off, so the drawer takes over instead. */
-@media (max-width:1360px){.sa-nav-inline{display:none!important}}
+/* Whether seven sections, the wordmark and two controls fit side by side depends on
+   which palette is on, because each one sets the nav in a different face: Archivo
+   uppercase needs 160px more than Fraunces does. A fixed breakpoint is therefore
+   wrong for eleven of the twelve, so the width is measured instead (see fitNav) and
+   this class is toggled. The media query below is only the floor, for the widths
+   where nothing fits and for the moment before the script has run. */
+.sa-nav-cramped .sa-nav-inline{display:none!important}
+@media (max-width:1180px){.sa-nav-inline{display:none!important}}
 </style>
 </helmet>
 <header ref="{{ headerRef }}" style="position:sticky;top:0;z-index:20;transition:background-color var(--sa-dur-3) var(--sa-ease-out),border-color var(--sa-dur-3) var(--sa-ease-out)">
@@ -136,19 +140,23 @@ const QUICK = [
    the pair is what actually distinguishes them. Choice lives in localStorage and is
    applied by the inline script in each page's head, before first paint. */
 const PALETTES = [
-  { id: "auto", name: "Match the section", mode: null, dot: "conic-gradient(#B08428,#3C0C5B,#183663,#0E8E7A,#C8102E,#7C5CFF,#B08428)" },
+  { id: "auto", name: "Match the section", mode: null, dot: "conic-gradient(#B08428,#3C0C5B,#5FBD49,#0E8E7A,#DA291C,#FFC000,#FF2D78,#7C5CFF,#B08428)" },
   { id: "library", name: "Library", mode: "light", dot: "#B08428", bg: "#FDFBF7" },
   { id: "perkiomen", name: "Perkiomen", mode: "light", dot: "#DBC299", bg: "#3C0C5B" },
-  { id: "isps", name: "Port of Spain", mode: "light", dot: "#28A9E2", bg: "#183663" },
+  { id: "isps", name: "Port of Spain", mode: "light", dot: "#5FBD49", bg: "#14335F" },
   { id: "sana", name: "SanaSanita", mode: "light", dot: "#0E8E7A", bg: "#07666D" },
   { id: "sky", name: "Sky", mode: "light", dot: "#2E7FB8", bg: "#FFFFFF" },
   { id: "noir", name: "Noir", mode: "dark", dot: "#FFFFFF", bg: "#000000" },
   { id: "gilt", name: "Gilt", mode: "dark", dot: "#C9A227", bg: "#0E0E0F" },
   { id: "atlas", name: "Atlas", mode: "dark", dot: "#7C5CFF", bg: "#080B14" },
-  { id: "ferrari", name: "Rosso Corsa", mode: "dark", dot: "#DA291C", bg: "#181818" }
+  { id: "ferrari", name: "Rosso Corsa", mode: "dark", dot: "#DA291C", bg: "#181818" },
+  { id: "lambo", name: "Toro", mode: "dark", dot: "#FFC000", bg: "#000000" },
+  { id: "ps", name: "Player One", mode: "light", dot: "#0070D1", bg: "#FFFFFF" },
+  { id: "arcade", name: "Arcade", mode: "dark", dot: "#FF2D78", bg: "#05060E" }
 ];
 const MODE_OF = { library: "light", perkiomen: "light", isps: "light", sana: "light",
-  sky: "light", noir: "dark", gilt: "dark", atlas: "dark", ferrari: "dark" };
+  sky: "light", ps: "light", noir: "dark", gilt: "dark", atlas: "dark", ferrari: "dark",
+  lambo: "dark", arcade: "dark" };
 
 const PALETTE_SVG = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18c1 0 1.6-.7 1.6-1.5 0-.5-.2-.8-.5-1.1-.3-.3-.5-.7-.5-1.1 0-.8.7-1.5 1.6-1.5H16a5 5 0 0 0 5-5c0-4.4-4-8-9-8Z"/><circle cx="7.5" cy="11.5" r="1.1" fill="currentColor" stroke="none"/><circle cx="10.5" cy="7.5" r="1.1" fill="currentColor" stroke="none"/><circle cx="15" cy="8.5" r="1.1" fill="currentColor" stroke="none"/></svg>';
 
@@ -199,6 +207,37 @@ class Component extends DCLogic {
     this._onScroll = paintHeader;
     addEventListener("scroll", this._onScroll, { passive: true });
     paintHeader();
+
+    // The inline strip is overflow-x:auto, so when it does not fit it silently
+    // scrolls and the last section just looks cut off. Measure it instead: drop the
+    // collapsed class, read the overflow, put it back if there is any. Both steps
+    // happen inside one frame, so nothing is painted in between and there is no
+    // flicker. Re-run whenever the width changes, whenever the face changes (the
+    // palette menu) and once the webfonts have actually swapped in, because until
+    // then it is being measured in the fallback face.
+    const nav = header && header.querySelector(".sa-nav-inline");
+    const fitNav = () => {
+      if (!nav) return;
+      header.classList.remove("sa-nav-cramped");
+      if (getComputedStyle(nav).display === "none") return;   // below the floor
+      if (nav.scrollWidth - nav.clientWidth > 0) header.classList.add("sa-nav-cramped");
+    };
+    this._fitNav = fitNav;
+    this._onResize = () => {
+      cancelAnimationFrame(this._fitRaf);
+    if (this._paletteWatch) this._paletteWatch.disconnect();
+      this._fitRaf = requestAnimationFrame(fitNav);
+    };
+    addEventListener("resize", this._onResize, { passive: true });
+    fitNav();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitNav);
+    // Watch the attribute rather than only the menu click, so any route into a
+    // palette change re-measures: the menu, a restored preference, a future control.
+    this._paletteWatch = new MutationObserver(() => {
+      fitNav();
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitNav);
+    });
+    this._paletteWatch.observe(document.documentElement, { attributeFilter: ["data-palette"] });
 
     const themeBtn = this._themeBtn.current;
     if (themeBtn) {
@@ -299,6 +338,9 @@ class Component extends DCLogic {
 
   componentWillUnmount() {
     removeEventListener("scroll", this._onScroll);
+    removeEventListener("resize", this._onResize);
+    cancelAnimationFrame(this._fitRaf);
+    if (this._paletteWatch) this._paletteWatch.disconnect();
     document.removeEventListener("keydown", this._onKey);
     document.body.style.overflow = "";
   }
