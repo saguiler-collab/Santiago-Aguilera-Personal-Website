@@ -142,7 +142,7 @@ const QUICK = [
    the pair is what actually distinguishes them. Choice lives in localStorage and is
    applied by the inline script in each page's head, before first paint. */
 const PALETTES = [
-  { id: "auto", name: "Match the section", mode: null, dot: "conic-gradient(#B08428,#3C0C5B,#5FBD49,#0E8E7A,#ED8B00,#C41230,#FFC000,#FF2D78,#7C5CFF,#B08428)" },
+  { id: "auto", name: "Match the section", mode: null, dot: "conic-gradient(#B08428,#3C0C5B,#5FBD49,#0E8E7A,#ED8B00,#D7346F,#C41230,#FFC000,#FF2D78,#7C5CFF,#B08428)" },
   { id: "library", name: "Library", mode: "light", dot: "#B08428", bg: "#FDFBF7" },
   { id: "perkiomen", name: "Perkiomen", mode: "light", dot: "#DBC299", bg: "#3C0C5B" },
   { id: "isps", name: "Port of Spain", mode: "light", dot: "#5FBD49", bg: "#14335F" },
@@ -156,11 +156,12 @@ const PALETTES = [
   { id: "ps", name: "Player One", mode: "light", dot: "#0070D1", bg: "#FFFFFF" },
   { id: "arcade", name: "Arcade", mode: "dark", dot: "#FF2D78", bg: "#05060E" },
   { id: "exeter", name: "Exeter Summer", mode: "light", dot: "#ED8B00", bg: "#FCF9F8" },
-  { id: "cmu", name: "Pre-College", mode: "dark", dot: "#C41230", bg: "#000000" }
+  { id: "cmu", name: "Pre-College", mode: "dark", dot: "#C41230", bg: "#000000" },
+  { id: "isef", name: "ISEF", mode: "light", dot: "#D7346F", bg: "#005587" }
 ];
 const MODE_OF = { library: "light", perkiomen: "light", isps: "light", sana: "light",
-  sky: "light", ps: "light", exeter: "light", noir: "dark", gilt: "dark", atlas: "dark",
-  ferrari: "dark", lambo: "dark", arcade: "dark", cmu: "dark" };
+  sky: "light", ps: "light", exeter: "light", isef: "light", noir: "dark", gilt: "dark",
+  atlas: "dark", ferrari: "dark", lambo: "dark", arcade: "dark", cmu: "dark" };
 
 const PALETTE_SVG = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18c1 0 1.6-.7 1.6-1.5 0-.5-.2-.8-.5-1.1-.3-.3-.5-.7-.5-1.1 0-.8.7-1.5 1.6-1.5H16a5 5 0 0 0 5-5c0-4.4-4-8-9-8Z"/><circle cx="7.5" cy="11.5" r="1.1" fill="currentColor" stroke="none"/><circle cx="10.5" cy="7.5" r="1.1" fill="currentColor" stroke="none"/><circle cx="15" cy="8.5" r="1.1" fill="currentColor" stroke="none"/></svg>';
 

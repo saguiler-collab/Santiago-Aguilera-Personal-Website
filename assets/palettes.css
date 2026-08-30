@@ -385,6 +385,55 @@
   --sa-on-accent:var(--sa-ink-900);
 }
 
+/* ---------------------------------------------------------------- ISEF ---- */
+/* Careful: this is "isef", the science fair. "isps" a few blocks up is the
+   International School of Port of Spain. Four letters apart and nothing to do with
+   each other.
+
+   Sampled off isef.net rather than guessed. The page is white with #EEEEEE as the
+   only other surface, the text is #373737 rather than black, and there are two
+   brand colours: a deep #005587 blue and the Regeneron magenta at rgb(219,53,113).
+   The blue is deep enough to carry the ink ramp here, so dark bands come out that
+   colour rather than grey, which is what makes the theme read as a science fair
+   and not as any other white-and-accent site.
+
+   The magenta measures 4.41:1 on white, just under the line for body text. It is
+   darkened by two percent to #D7346F, which clears 4.5 and is not a visible change.
+
+   Their display is Trade Gothic Next LT Pro Bold Condensed, a Linotype face and
+   licensed. Oswald is the free condensed gothic in the same tradition and is the
+   usual stand-in. Being condensed, it wants a little tracking rather than the
+   negative every other display face here takes. */
+:root[data-palette="isef"] {
+  --sa-verdigris-500:#509DD7; --sa-glow-b:#509DD7; --sa-glow-a:var(--sa-coral-500);
+  --sa-paper-000:#FFFFFF; --sa-paper-100:#F5F6F8; --sa-paper-200:#EEEEEE; --sa-paper-300:#D5D9DD;
+  --sa-ink-900:#00263D; --sa-ink-800:#003A5D; --sa-ink-700:#005587;
+  --sa-ink-500:#3E7FA8; --sa-ink-300:#86B0CB; --sa-ink-100:#C4D8E5;
+  --sa-coral-600:#B92A5C; --sa-coral-500:#D7346F; --sa-coral-300:#EE8FB2; --sa-coral-100:#FBE4EC;
+  --sa-ochre-500:#D7346F; --sa-ochre-100:#FBE4EC; --sa-sienna-500:#509DD7;
+  --sa-hero-1:#0A6A9E; --sa-hero-2:#005587; --sa-hero-3:#003A5D; --sa-hero-4:#00263D;
+
+  /* Their primary button is an 8px rectangle, their secondary a square-cornered one.
+     Nothing on the site is a pill. */
+  --sa-radius-md:8px; --sa-radius-lg:8px; --sa-radius-xl:8px;
+  --sa-radius-media:8px; --sa-radius-control:8px;
+
+  --sa-font-display:"Oswald", "Trade Gothic Next", "Helvetica Neue Condensed Bold", sans-serif;
+  --sa-font-body:"Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sa-type-display:500 var(--sa-text-5xl)/1.08 var(--sa-font-display);
+  --sa-type-title:500 var(--sa-text-3xl)/1.16 var(--sa-font-display);
+  --sa-type-heading:600 var(--sa-text-xl)/1.2 var(--sa-font-display);
+  --sa-type-eyebrow:600 var(--sa-text-2xs)/1.2 var(--sa-font-display);
+  --sa-tracking-display:0.005em;
+  --sa-on-accent:var(--sa-paper-000);
+}
+/* Their hero title is sentence case and their section headings are uppercase. That is
+   a real distinction on the site, not decoration, so it is kept: h1 reads normally and
+   everything below it is set the way "ISEF SCHEDULE OF EVENTS" is. */
+:root[data-palette="isef"] h2,
+:root[data-palette="isef"] h3 { text-transform: uppercase; letter-spacing: .01em; }
+:root[data-palette="isef"] .sa-nav-inline a { font-size: 15px; }
+
 /* ---------------------------------------------------- Gilt (gold, dark) ---- */
 /* Cinzel, which is drawn from first-century Roman inscriptions. The Elden Ring logo
    is set in Mantinia, a Matthew Carter face in the same inscriptional tradition and
