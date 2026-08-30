@@ -114,9 +114,15 @@ module.exports = async function handler(req, res) {
     if (!r.ok) {
       const detail = await r.text().catch(() => "");
       console.error("resend failed", r.status, detail.slice(0, 400));
-      return res.status(502).json({ error: "send_failed" });
+      return res.status(502).json({ error: "send_failed", status: r.status, detail: detail.slice(0, 300) });
     }
-    return res.status(200).json({ ok: true });
+    /* Resend answers with the id it filed the message under. Accepted is not the same
+       as delivered: from here it can still be greylisted, spam-foldered or bounced, and
+       none of that comes back on this request. Handing the id back is what makes the
+       difference findable in Resend's own Emails log rather than a guess. */
+    const body = await r.json().catch(() => ({}));
+    console.log("resend accepted", body.id || "(no id)");
+    return res.status(200).json({ ok: true, id: body.id || null });
   } catch (e) {
     console.error("resend threw", e && e.message);
     return res.status(502).json({ error: "send_failed" });
