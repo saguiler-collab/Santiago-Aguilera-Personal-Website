@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://santiaguilera-personalwebsite.vercel.app/sitemap.xml

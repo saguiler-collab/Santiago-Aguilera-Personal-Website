@@ -85,7 +85,7 @@ If Santiago is not sure how to start, offer him a few different openings to reac
 * Starting with the moment: "I drew this during [when], after [what]."
 * Starting with the meaning: "Every [part] is a different move, and [why that matters]."
 
-He can also fill in the six countries and cities along the way if the current version needs names or dates confirmed. The home page already lists a rough sequence (a birth in a hurricane in September 2008, then a first move, then a school called Altitude and Colegio Tilata, then the International School of Panama, then boarding at Perkiomen). Confirm names, order, and any dates directly with him rather than assuming.
+He can also fill in the six countries and cities along the way if the current version needs names or dates confirmed. The home page already lists a rough sequence. Confirm names, order, and any dates directly with him rather than assuming.
 
 ### Leadership page
 

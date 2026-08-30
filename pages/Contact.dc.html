@@ -9,6 +9,8 @@
 <meta name="theme-color" content="#0F3D3E">
 <meta property="og:title" content="Contact · Santiago Aguilera Library">
 <meta property="og:description" content="Get in touch with Santiago Aguilera about admissions, research, SanaSanita, or anything else on this site.">
+<link rel="canonical" href="/pages/Contact.dc.html">
+<meta property="og:url" content="https://santiaguilera-personalwebsite.vercel.app/pages/Contact.dc.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Santiago Aguilera Library">
 <meta property="og:image" content="../assets/og-image.png">
@@ -268,7 +270,15 @@ class Component extends DCLogic {
         } else if (r.status === 503 || r.status === 404) {
           /* 503 is the endpoint saying its keys are missing; 404 is the endpoint not
              being there at all, which is what a plain static preview looks like.
-             Same thing from the visitor's side. */
+             Same thing from the visitor's side, so the wording does not change, but
+             the console line names the variable so it is fixable without guessing. */
+          if (r.status === 503) {
+            const d = await r.json().catch(() => null);
+            if (d && d.missing && d.missing.length) {
+              console.warn("[contact] not sending. Missing in Vercel: " + d.missing.join(", ") +
+                ". Check the variable is ticked for Production, then redeploy.");
+            }
+          }
           offerFallback("The form is not wired to an inbox yet.");
         } else if (r.status === 429) {
           setStatus("That is a few messages in a row. Give it a minute and try again.", "warn");

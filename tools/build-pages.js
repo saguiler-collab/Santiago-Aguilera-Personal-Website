@@ -42,7 +42,7 @@ const NS = "SantiagoAguileraDesignSystem_983015";
  * pointing at the wrong host actively hurts search ranking, so saying nothing is
  * safer than guessing at the Vercel domain before it exists.
  */
-const SITE_ORIGIN = "";
+const SITE_ORIGIN = "https://santiaguilera-personalwebsite.vercel.app";
 
 /* Profile links live in assets/site-config.js so all ~30 pages share one list.
    see the comment there. Pages read window.SA_SOCIALS at render time. */
@@ -909,8 +909,8 @@ ${siblings.map((s) => `    <a href="${attr(s.href)}" style="display:inline-flex;
 
   // Absolute URLs only once SITE_ORIGIN is known. See the constant's comment.
   const canonical = SITE_ORIGIN
-    ? `<link rel="canonical" href="${attr(SITE_ORIGIN + "/" + p.file)}">
-<meta property="og:url" content="${attr(SITE_ORIGIN + "/" + p.file)}">
+    ? `<link rel="canonical" href="${attr("/pages/" + p.file)}">
+<meta property="og:url" content="${attr(SITE_ORIGIN + "/pages/" + p.file)}">
 `
     : "";
   const ogImage = SITE_ORIGIN ? SITE_ORIGIN + "/assets/og-image.png" : "../assets/og-image.png";
@@ -1105,9 +1105,11 @@ written++;
 
 /* Hand-written pages are not in PAGES but still belong in the sitemap. Home is listed
    as "/" rather than Home.dc.html, matching the canonical. */
+/* Pages with no entry in PAGES. Leadership and Activities are NOT here: they are
+   generated, so PAGES already contributes them and listing them twice duplicates
+   them in the sitemap. */
 const HAND_WRITTEN = ["About.dc.html", "Academics.dc.html", "Research.dc.html",
-  "Leadership.dc.html", "Activities.dc.html", "Curiosities.dc.html", "Media.dc.html",
-  "Contact.dc.html"];
+  "Curiosities.dc.html", "Media.dc.html", "Contact.dc.html"];
 
 if (SITE_ORIGIN) {
   const urls = ["", ...HAND_WRITTEN, ...PAGES.map((p) => p.file)].map((u) => (u ? "pages/" + u : u));

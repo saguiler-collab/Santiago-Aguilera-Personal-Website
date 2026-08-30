@@ -58,7 +58,15 @@ module.exports = async function handler(req, res) {
 
   const key = process.env.RESEND_API_KEY;
   const to = process.env.CONTACT_TO;
-  if (!key || !to) return res.status(503).json({ error: "unconfigured" });
+  if (!key || !to) {
+    /* Naming which one is absent turns a dead end into a ten-second fix, and it is not
+       a leak: the variable names are in this file, which is public. The values never
+       appear. The three things that cause this, in order of how often they do:
+       the variable is ticked for Preview but not Production, the deployment predates
+       the variable being saved, or the name has a typo or a trailing space. */
+    const missing = [!key && "RESEND_API_KEY", !to && "CONTACT_TO"].filter(Boolean);
+    return res.status(503).json({ error: "unconfigured", missing });
+  }
 
   let body = req.body;
   if (typeof body === "string") { try { body = JSON.parse(body); } catch (e) { body = null; } }
