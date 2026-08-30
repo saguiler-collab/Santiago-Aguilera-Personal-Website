@@ -108,19 +108,21 @@ Resize large photos before committing. These are shipped as-is to every visitor.
 
 ## Before deploying
 
-Two things are deliberately left blank rather than guessed at:
+One thing is still deliberately left blank rather than guessed at. The other two are
+done and confirmed against the live deployment.
 
 - [ ] **Profile links.** Every entry in `assets/site-config.js` has an empty `href`, so
       the whole icon row is hidden and the footer closes up around it. Fill in the real
       URLs and the icons appear site-wide. The footer knows these ids: `linkedin`,
       `instagram`, `github`, `youtube`, `spotify`, `discord`, `email` (a `mailto:` href).
-- [ ] **`SITE_ORIGIN`** in `tools/build-pages.js`. Set it to the final domain. E.g.
-      `https://santiagoaguilera.com`, no trailing slash. Then re-run the build. That turns
-      on `<link rel="canonical">`, absolute `og:` URLs and `sitemap.xml`. While it is empty
-      those are omitted, because a canonical pointing at the wrong host hurts search ranking
-      more than having none.
-- [ ] **Contact form delivery.** Two environment variables in the Vercel project, under
-      Settings → Environment Variables, ticked for Production and Preview:
+- [x] **`SITE_ORIGIN`** in `tools/build-pages.js`, set to
+      `https://santiaguilera-personalwebsite.vercel.app`. This turns on `og:` URLs,
+      `sitemap.xml` and the `Sitemap:` line in `robots.txt`. Change it and re-run the build
+      if a custom domain is added; `<link rel="canonical">` is root-relative and needs no
+      change either way.
+- [x] **Contact form delivery.** Live and confirmed end to end. Two environment
+      variables in the Vercel project, under Settings → Environment Variables, ticked
+      for Production and Preview:
 
       | Name | Value |
       | --- | --- |
