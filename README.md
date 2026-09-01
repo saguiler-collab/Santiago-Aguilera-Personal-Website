@@ -180,6 +180,21 @@ renders if the runtime ever fails.
 After the domain is live, set `SITE_ORIGIN`, re-run `node tools/build-pages.js`, and commit
 the regenerated pages and `sitemap.xml`.
 
+## Pages that are still being written
+
+A page whose spec carries a `tbd` note and has fewer than 70 words of real prose is
+treated as thin: the build gives it `<meta name="robots" content="noindex,follow">` and
+leaves it out of `sitemap.xml`. It stays linked in the nav and the footer and is fully
+reachable — this only affects search engines.
+
+The test is the prose the page actually has, not a hand-kept list. Send the details for
+one of them, and the moment it crosses 70 words it re-enters the index on the next build
+with nothing to remember. `node tools/build-pages.js` prints which pages are currently in
+that state and their word counts.
+
+Eight are, as of the last build: Exeter Summer, Computational Biology, CellAtlas GBM,
+Venezuelan Immigration, HOSA, Volunteering, The Perkiomenite, and Literature.
+
 ## Regenerating the social preview image
 
 `assets/og-image.png` is the 1200×630 card shown when the site is linked in Slack, iMessage

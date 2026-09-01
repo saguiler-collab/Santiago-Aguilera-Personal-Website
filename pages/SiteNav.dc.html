@@ -287,7 +287,18 @@ class Component extends DCLogic {
         b.append(dot, label, tick);
         b.addEventListener("mouseenter", () => (b.style.background = "var(--sa-surface-sunken)"));
         b.addEventListener("mouseleave", () => (b.style.background = "transparent"));
-        b.addEventListener("click", () => { applyPalette(pl.id); paint(); close(); });
+        /* Sixteen buttons with no focus ring: a keyboard user could not see which one
+           they were on. The design system's ring token, applied inline because these
+           rows are built in script and carry no class. */
+        b.addEventListener("focus", () => {
+          b.style.background = "var(--sa-surface-sunken)";
+          b.style.boxShadow = "var(--sa-ring)";
+        });
+        b.addEventListener("blur", () => {
+          b.style.background = "transparent";
+          b.style.boxShadow = "none";
+        });
+        b.addEventListener("click", () => { applyPalette(pl.id); paint(); close(true); });
         menu.appendChild(b);
         return { pl, tick, btn: b };
       });
@@ -300,19 +311,49 @@ class Component extends DCLogic {
           btn.setAttribute("aria-checked", on ? "true" : "false");
         });
       };
-      const close = () => { menu.style.display = "none"; themeBtn.setAttribute("aria-expanded", "false"); };
-      const open = () => { menu.style.display = "block"; themeBtn.setAttribute("aria-expanded", "true"); };
+      const isOpen = () => menu.style.display === "block";
+      /* restoreFocus is false when the menu is closing because the pointer went
+         somewhere else: yanking focus back to the button would be wrong then. */
+      const close = (restoreFocus) => {
+        if (!isOpen()) return;
+        menu.style.display = "none";
+        themeBtn.setAttribute("aria-expanded", "false");
+        if (restoreFocus) themeBtn.focus();
+      };
+      const open = () => {
+        menu.style.display = "block";
+        themeBtn.setAttribute("aria-expanded", "true");
+      };
+
+      /* role="menu" tells a screen reader arrow keys will work, so they have to. */
+      const items = () => [...menu.querySelectorAll('[role="menuitemradio"]')];
+      menu.addEventListener("keydown", (e) => {
+        const list = items();
+        const i = list.indexOf(document.activeElement);
+        if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+          e.preventDefault();
+          const step = e.key === "ArrowDown" ? 1 : -1;
+          list[(i + step + list.length) % list.length].focus();
+        } else if (e.key === "Home") { e.preventDefault(); list[0].focus(); }
+        else if (e.key === "End") { e.preventDefault(); list[list.length - 1].focus(); }
+        else if (e.key === "Tab") { close(false); }
+      });
 
       themeBtn.parentNode.style.position = "relative";
       themeBtn.parentNode.appendChild(menu);
       this._onTheme = (e) => {
         e.stopPropagation();
-        menu.style.display === "block" ? close() : open();
+        if (isOpen()) { close(true); return; }
+        open();
+        /* Opening from the keyboard should land on the current choice, not nowhere. */
+        const list = items();
+        const cur = list.filter((el) => el.getAttribute("aria-checked") === "true")[0];
+        (cur || list[0]).focus();
       };
       themeBtn.addEventListener("click", this._onTheme);
-      this._onDocClick = (e) => { if (!menu.contains(e.target) && e.target !== themeBtn) close(); };
+      this._onDocClick = (e) => { if (!menu.contains(e.target) && e.target !== themeBtn) close(false); };
       document.addEventListener("click", this._onDocClick);
-      this._onEsc = (e) => { if (e.key === "Escape") close(); };
+      this._onEsc = (e) => { if (e.key === "Escape" && isOpen()) close(true); };
       document.addEventListener("keydown", this._onEsc);
       paint();
     }

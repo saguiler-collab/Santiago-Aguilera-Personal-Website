@@ -123,6 +123,20 @@ const PAGE_PALETTE = {
 };
 const paletteFor = (p) => PAGE_PALETTE[p.file] || SECTION_PALETTE[p.section] || "library";
 
+/* A page that is mostly a "still being written" note is thin content. Left in the
+   index it drags on the whole site's quality signal, and it is a poor thing for an
+   admissions officer to land on from a search result. So those pages carry
+   noindex,follow and stay out of sitemap.xml.
+
+   The test is the prose the page actually has, not a hand-kept list, so a page
+   re-enters the index by being written rather than by someone remembering to take
+   it off a list. `follow` because the links on them should still count. */
+const PROSE_MIN_WORDS = 70;
+const proseWords = (p) => [p.intro, ...(p.body || []), ...(p.steps || []).map((x) => x.body || x)]
+  .filter((x) => typeof x === "string")
+  .join(" ").split(/\s+/).filter(Boolean).length;
+const isThin = (p) => Boolean(p.tbd) && proseWords(p) < PROSE_MIN_WORDS;
+
 /* A place page takes its country's flag colours as the accent, over the section's
    palette. Set on the root so the whole page follows, the scroll rail included. */
 const PAGE_COUNTRY = {
@@ -728,7 +742,9 @@ ${steps.map(([k, v, pending]) => `      <x-import component-from-global-scope="$
 function renderPage(p) {
   const group = GROUPS[p.section];
   const siblings = group ? group.items.filter((i) => i.href !== p.file) : [];
-  const title = `${p.title} · Santiago Aguilera Library`;
+  /* Kept under ~60 characters, which is where search results truncate. The full
+     "Santiago Aguilera Library" stays as og:site_name. */
+  const title = `${p.title} · Santiago Aguilera`;
   const slots = p.slots || [];
 
   const heroSlot = slots[0];
@@ -921,7 +937,7 @@ ${siblings.map((s) => `    <a href="${attr(s.href)}" style="display:inline-flex;
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
-<meta name="description" content="${attr(p.desc)}">
+<meta name="description" content="${attr(p.desc)}">${isThin(p) ? '\n<meta name="robots" content="noindex,follow">' : ""}
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <meta name="theme-color" content="#0F3D3E">
 ${canonical}<meta property="og:title" content="${attr(title)}">
@@ -1112,7 +1128,8 @@ const HAND_WRITTEN = ["About.dc.html", "Academics.dc.html", "Research.dc.html",
   "Curiosities.dc.html", "Media.dc.html", "Contact.dc.html"];
 
 if (SITE_ORIGIN) {
-  const urls = ["", ...HAND_WRITTEN, ...PAGES.map((p) => p.file)].map((u) => (u ? "pages/" + u : u));
+  const urls = ["", ...HAND_WRITTEN, ...PAGES.filter((p) => !isThin(p)).map((p) => p.file)]
+    .map((u) => (u ? "pages/" + u : u));
   const today = new Date().toISOString().slice(0, 10);
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -1129,6 +1146,14 @@ ${urls.map((u) => `  <url><loc>${esc(SITE_ORIGIN + "/" + u)}</loc><lastmod>${tod
   fs.writeFileSync(path.join(ROOT, "robots.txt"), "User-agent: *\nAllow: /\n", "utf8");
 }
 
+const thin = PAGES.filter(isThin);
+if (thin.length) {
+  console.log(`\n${thin.length} page(s) are mostly a "still being written" note, so they carry`);
+  console.log("noindex,follow and are left out of sitemap.xml. They are still linked and");
+  console.log(`still reachable. Each returns on its own once it has ${PROSE_MIN_WORDS}+ words of prose:`);
+  for (const p of thin) console.log(`  ${p.file.padEnd(38)} ${proseWords(p)} words`);
+  console.log("");
+}
 console.log(`generated ${written} pages (including index.html from Home.dc.html)`);
 if (!SITE_ORIGIN) {
   console.log("note: SITE_ORIGIN is empty, so canonical tags, absolute og:url and sitemap.xml\n" +
