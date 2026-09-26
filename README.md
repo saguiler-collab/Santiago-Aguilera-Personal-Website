@@ -30,6 +30,7 @@ python3 -m http.server 8000
 | `assets/site-config.js` | Profile links, shared by every page. |
 | `assets/site.css` | Site-level CSS layered over the design system. Type refinements, the hero tile gallery, the stat cards. Lives here because `_ds/` is generated. |
 | `assets/photo-slots.js` | The `<sa-image-slot>` element and the `?edit=1` photo editor. |
+| `assets/favicon.svg`, `assets/icons/`, `favicon.ico`, `assets/apple-touch-icon.png`, `assets/site.webmanifest` | The tab/home-screen symbol. The SVG adapts to light/dark and is what modern Chrome and Firefox use; the PNGs, `.ico` and manifest are the fallback Safari, iOS/Android home-screen icons, and Windows need, since none of them render an SVG favicon. Regenerate the PNGs from `assets/favicon.svg` if the mark ever changes (see the icon-tile SVG pattern in git history: a solid `#0F3D3E` tile with the cream mark scaled in for maskable safety, rasterized with `sips`/QuickLook since the repo has no image library installed). |
 | `tools/` | Build and helper scripts. |
 
 Every page renders **client-side**: nothing is visible until React and the runtime boot.

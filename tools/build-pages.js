@@ -470,20 +470,38 @@ const PAGES = [
   },
   {
     file: "Research-Venezuela.dc.html", section: "research", parent: { label: "Research & projects", href: "Research.dc.html" },
-    eyebrow: "Research · Publication", title: "Venezuelan Immigration", lede: "A published paper on Venezuelan migration.",
-    desc: "A published paper on Venezuelan migration. The human side of the numbers.",
-    intro: "A paper on Venezuelan migration. Having lived in Colombia and Panama, two of the countries that absorbed the largest share of that movement, this is not an abstract topic to me. It is who was in my classrooms.",
+    eyebrow: "Research · Publication", title: "Venezuelan Immigration", lede: "Venezuelan Immigration and Integration to Trinidad and Tobago in Recent Years, a 42-page paper published on SSRN.",
+    desc: "A published, 62-source paper on Venezuelan migration to Trinidad and Tobago, built from five interviews conducted in Spanish. My IB MYP Personal Project.",
+    intro: "Trinidad is seven miles off Venezuela's coast, close enough that thousands have crossed it by open boat. Having also grown up in Colombia and Panama, two of the countries that absorbed the largest share of that same migration, this was never an abstract topic to me. It was my housekeeper's children, my brother's refugee classmates in Bogotá, and now the community down the road from where I live.",
+    link: { href: "https://ssrn.com/abstract=5169766", label: "Read the paper on SSRN" },
+    quote: {
+      text: "If there was something I would choose, it would be legislation for asylum.",
+      by: "Amanda Solano, UNHCR protection officer for Trinidad and Tobago, interviewed for the paper"
+    },
     steps: [
-      ["Question", "What does Venezuelan migration look like for the people and the countries receiving it?"],
-      ["Method", TBD, true],
-      ["Findings", TBD, true],
-      ["Published in", TBD, true]
+      ["Question", "What does Venezuelan migration and integration into Trinidad and Tobago look like, for the people living it and the country receiving them?"],
+      ["Method", "62 sources cross-checked against five interviews conducted in Spanish, cited and tracked through NoodleTools."],
+      ["Findings", "Deadly sea crossings, mass deportations, sex trafficking, wages under the legal minimum, and a five-year wait to enrol Venezuelan children in public school."],
+      ["Published in", "SSRN, the Social Science Research Network. Indexed on ResearchGate as well."]
     ],
-    tbd: "The title, the venue, the abstract and a link to the paper. Send these and this page can lead with the citation the way a publication should.",
-    facts: [["Type", "Publication"], ["Topic", "Venezuelan migration"], ["Venue", TBD]],
+    facts: [["Type", "Publication"], ["Topic", "Venezuelan migration to Trinidad & Tobago"], ["Length", "42 pages · 62 sources"], ["Venue", "SSRN"]],
+    body: [
+      "The project did not start as a paper. It started as a book drive for a Venezuelan children's library at La Casita, a Hispanic cultural centre in Arima, Trinidad. Once the books were collected, the drive was not teaching me anything about the crisis itself, only advertising it, so the product changed: a full research paper on why Venezuelans were leaving and what happened to them once they arrived, researched, interviewed and cited the way an academic paper is.",
+      "Five interviews carry the paper, all conducted and translated from Spanish: a housekeeper who crossed by open boat, a Venezuelan doctor now cleaning houses because Trinidad will not recognise her degree, the founder of La Casita, and a protection officer with the UNHCR. Every quotation is timestamped to a recording and cross-checked against IOM displacement-tracking data, Trinidadian reporting from the Guardian and Newsday, and filings from Amnesty International, Human Rights Watch and the U.S. State Department."
+    ],
+    media: [
+      {
+        slots: ["vz-2"],
+        title: "From La Casita's book box to a personal project exhibition",
+        body: [
+          "Built and defended as my IB Middle Years Programme Personal Project: a full report on the planning, the criteria I graded my own work against, and the reflection on what I would do differently, alongside the paper itself.",
+          "Presented on this board at the school's Personal Project Exhibition, tracing the same path the sources above take: the interviews, the drivers behind the migration, the routes across the Bocas del Dragón, and the case built line by line back to the two goals it started from."
+        ]
+      }
+    ],
     slots: [
-      { key: "vz-1", ratio: "4 / 3", label: "The paper" },
-      { key: "vz-2", ratio: "4 / 3", label: "Presenting the work" }
+      { key: "vz-1", ratio: "3 / 4", label: "The paper's title page, published on SSRN" },
+      { key: "vz-2", ratio: "4 / 3", label: "Presenting the work at the Personal Project Exhibition" }
     ],
     next: { title: "Leadership & service", lede: "The work that is not assigned.", href: "Leadership.dc.html", label: "See leadership" }
   },
@@ -939,6 +957,12 @@ ${siblings.map((s) => `    <a href="${attr(s.href)}" style="display:inline-flex;
 <title>${esc(title)}</title>
 <meta name="description" content="${attr(p.desc)}">${isThin(p) ? '\n<meta name="robots" content="noindex,follow">' : ""}
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="manifest" href="../assets/site.webmanifest">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="SA Library">
 <meta name="theme-color" content="#0F3D3E">
 ${canonical}<meta property="og:title" content="${attr(title)}">
 <meta property="og:description" content="${attr(p.desc)}">
