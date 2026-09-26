@@ -177,7 +177,7 @@ const PAGES = [
     cards: [
       { eyebrow: "Varsity", title: "Swimming", href: "Activities-Swimming.dc.html", body: "Morning sets, meets, and the part of the day that keeps the rest of it in order." },
       { eyebrow: "Olympic lifting", title: "Weightlifting", href: "Activities-Weightlifting.dc.html", body: "Snatch and clean & jerk, programmed year-round." },
-      { eyebrow: "Three bands", title: "Drums & Music", href: "Activities-Music.dc.html", body: "SonoArte Panamá, the ISPS musical, and the Perkiomen rock band." }
+      { eyebrow: "Three bands", title: "Drums & Music", href: "Activities-Music.dc.html", body: "SonoArte Panamá, Mamma Mia! at ISPS, and the Perkiomen rock band." }
     ],
     slots: [{ key: "activities-hero", ratio: "16 / 9", label: "Activities" }],
     next: { title: "What I do with the rest of it", lede: "Languages, manga, and whatever the group is playing.", href: "Curiosities.dc.html", label: "See the curiosities" }
@@ -231,8 +231,8 @@ const PAGES = [
     eyebrow: "About · Trinidad & Tobago", title: "Port of Spain", lede: "Trinidad & Tobago. August 2021, age twelve.",
     desc: "Port of Spain. The International School of Port of Spain, Student Council, Stronger Together, and SonoArte online.",
     intro: "The International School of Port of Spain. I arrived as schools everywhere were working out how to come back from remote learning, which turned out to be the thing worth working on.",
-    body: ["I joined Student Council, and helped run Stronger Together, a student-led initiative supporting classmates through the return to in-person school. It was the first time I saw a student idea actually change how a school felt.", "The drums carried over. I kept taking SonoArte online from Panama, so the kit stayed part of the week through the move."],
-    facts: [["Arrived", "August 2021"], ["School", "International School of Port of Spain"], ["Led", "Student Council · Stronger Together"], ["Music", "SonoArte, online from Panama"]],
+    body: ["I joined Student Council, and helped run Stronger Together, a student-led initiative supporting classmates through the return to in-person school. It was the first time I saw a student idea actually change how a school felt.", "The drums carried over. I kept taking SonoArte online from Panama, so the kit stayed part of the week through the move.", "By the time I left, the place had given me my Personal Project too: a paper on Venezuelan migration to Trinidad, the country I had just spent four years living in."],
+    facts: [["Arrived", "August 2021"], ["School", "International School of Port of Spain"], ["Led", "Student Council · Stronger Together"], ["Music", "SonoArte, online from Panama"], ["Capstone", "Venezuelan migration paper, 2025"]],
     slots: [
       { key: "tt-1", ratio: "4 / 3", label: "Port of Spain" },
       { key: "tt-2", ratio: "1 / 1", label: "ISPS" },
@@ -641,12 +641,12 @@ const PAGES = [
   },
   {
     file: "Activities-Music.dc.html", section: "activities", parent: { label: "Activities", href: "Activities.dc.html" },
-    eyebrow: "Activities · Three bands", title: "Drums & Music", lede: "SonoArte Panamá, in person and then online, the ISPS musical, and the Perkiomen rock band.",
-    desc: "Drumming across three countries. SonoArte Panamá, ISPS musical productions, and the Perkiomen rock band.",
-    intro: "I started at SonoArte at the International School of Panama, kept taking it online after the move to Trinidad, played the ISPS musical productions there, and now play in the Perkiomen rock band. Three very different rooms, one kit.",
+    eyebrow: "Activities · Three bands", title: "Drums & Music", lede: "SonoArte Panamá, in person and then online, Mamma Mia! at ISPS, and the Perkiomen rock band.",
+    desc: "Drumming across three countries. SonoArte Panamá, Mamma Mia! at ISPS, and the Perkiomen rock band.",
+    intro: "I started at SonoArte at the International School of Panama, kept taking it online after the move to Trinidad, played drums for ISPS's Mamma Mia! in my last term there, and now play in the Perkiomen rock band. Three very different rooms, one kit.",
     quote: { text: "Every school I joined had a room with a kit in it. That is how I met people.", by: "On the drum kit" },
     body: ["That is not a small thing when you change countries every few years. Drumming is the reason arriving somewhere new has never meant arriving alone."],
-    facts: [["Bands", "SonoArte · ISPS musical · Perkiomen rock band"], ["Countries", "Panama · Trinidad · United States"], ["SonoArte", "In person, then online"], ["Instrument", "Drum kit"]],
+    facts: [["Bands", "SonoArte · Mamma Mia! (ISPS) · Perkiomen rock band"], ["Countries", "Panama · Trinidad · United States"], ["SonoArte", "In person, then online"], ["Instrument", "Drum kit"]],
     slots: [
       { key: "music-1", ratio: "4 / 3", label: "Behind the kit" },
       { key: "music-2", ratio: "4 / 3", label: "Rock band set" },
@@ -675,7 +675,7 @@ const PAGES = [
     file: "Curiosities-Music.dc.html", section: "curiosities", parent: { label: "Curiosities", href: "Curiosities.dc.html" },
     eyebrow: "Curiosities · Listening", title: "Music", lede: "What I listen to, as opposed to what I play.",
     desc: "Listening. The music six countries left behind, separate from the drumming.",
-    intro: "This is the listening half. The playing half lives under Activities: SonoArte, the ISPS musical, the Perkiomen rock band. This page is about what is actually in my ears the rest of the time.",
+    intro: "This is the listening half. The playing half lives under Activities: SonoArte, Mamma Mia! at ISPS, the Perkiomen rock band. This page is about what is actually in my ears the rest of the time.",
     body: ["Moving every few years does something specific to a music taste: you end up with a library that is a map. Reggaeton and banda from Monterrey, vallenato from Bogotá, soca and calypso from Port of Spain, and whatever the rock band was covering that term.", "It is the least deliberate thing on this site. Nothing here was chosen to be interesting. It is just what stuck from each place."],
     tbd: "Your current rotation, the artists that matter most, and a Spotify link if you want one embedded. Send these and this page gets a real shelf.",
     facts: [["From", "Mexico · Colombia · Trinidad · US"], ["Also plays", "Drums, see Activities"], ["On repeat", TBD]],
