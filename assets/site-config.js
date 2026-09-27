@@ -21,7 +21,7 @@
   "use strict";
 
   var SOCIALS = [
-    { id: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/in/santiago-aguilera-d341416/" },
+    { id: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/in/santiagoaguilera1" },
     { id: "github", label: "GitHub", href: "https://github.com/saguiler-collab" },
     { id: "instagram", label: "Instagram", href: "https://www.instagram.com/tatoguilera/" },
     { id: "youtube", label: "YouTube", href: "" },

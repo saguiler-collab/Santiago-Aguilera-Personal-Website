@@ -81,7 +81,8 @@ const GROUPS = {
   research: { title: "Research", items: [
     { label: "CellAtlas GBM", href: "Research-CellAtlas.dc.html" },
     { label: "SanaSanita", href: "Research-MedicalApp.dc.html" },
-    { label: "Venezuelan Immigration", href: "Research-Venezuela.dc.html" }
+    { label: "Venezuelan Immigration", href: "Research-Venezuela.dc.html" },
+    { label: "CSR-x", href: "Research-CSRx.dc.html" }
   ]},
   leadership: { title: "Leadership & service", items: [
     { label: "HOSA", href: "Leadership-HOSA.dc.html" },
@@ -328,8 +329,12 @@ const PAGES = [
     eyebrow: "Academics · Summer program", title: "Exeter Summer", lede: "Phillips Exeter Academy.",
     desc: "Exeter Summer at Phillips Exeter Academy. Coursework and Harkness-style seminars.",
     intro: "Exeter Summer at Phillips Exeter Academy. Exeter teaches around the Harkness table. Twelve students, one oval table, and no lecture to hide behind.",
-    tbd: "The courses I took, what the Harkness format changed about how I argue, and what I brought back. Send these and this page fills in.",
-    facts: [["Program", "Exeter Summer"], ["Place", "Exeter, New Hampshire"], ["Details", TBD]],
+    body: [
+      "It was the Charles J. Hamm '55 Leadership Program specifically, a track built around social justice and community engagement rather than a general academic sampler. Two courses ran alongside it: a practical leadership seminar, and a leadership analysis class where I picked apart Franklin Delano Roosevelt's leadership against the models we had just been taught.",
+      "The seminar's project was physical, not written: building models meant to show what violence and a lack of opportunity actually do to people cut off from them by discrimination, with the design itself carrying part of the argument. A visit to the Edward M. Kennedy Institute sat alongside it, and made policy a lot less abstract.",
+      "Underneath the leadership track sat the ordinary reason most people go to a summer program: SAT preparation, and an introduction to calculus."
+    ],
+    facts: [["Program", "Hamm '55 Leadership Program"], ["Place", "Exeter, New Hampshire"], ["Focus", "Social justice · community engagement"], ["Also", "SAT prep · intro calculus"]],
     slots: [
       { key: "exeter-1", ratio: "4 / 3", label: "Exeter campus" },
       { key: "exeter-2", ratio: "4 / 3", label: "Harkness table" }
@@ -341,9 +346,8 @@ const PAGES = [
     eyebrow: "Academics · Carnegie Mellon", title: "Computational Biology", lede: "Carnegie Mellon University.",
     desc: "Computational biology coursework at Carnegie Mellon. The training behind the CellAtlas GBM project.",
     intro: "Computational biology at Carnegie Mellon. This is the training that makes the glioblastoma work possible: biology asked in a language a computer can actually answer.",
-    body: ["It is the clearest example of the direction I am heading. Medicine is increasingly a data problem, and I would rather be able to write the analysis than wait for someone else to run it."],
-    tbd: "The specific coursework, the tools and languages covered, and what the final project actually investigated. Send these and this page fills in.",
-    facts: [["Institution", "Carnegie Mellon University"], ["Field", "Computational biology"], ["Result", "Finalist, final project presentation"]],
+    body: ["It is the clearest example of the direction I am heading. Medicine is increasingly a data problem, and I would rather be able to write the analysis than wait for someone else to run it.", "The four weeks ran on coding, lab work, research and algorithm development, with professors and teaching assistants around for the parts a group could not work out alone. The final project asked whether cell-type composition, estimated by deconvolving bulk RNA-seq with NNLS and SVR across 153 TCGA-GBM samples, tracked with a patient's prognosis on its own terms, not just as a stand-in for tumour grade."],
+    facts: [["Institution", "Carnegie Mellon University"], ["Field", "Computational biology"], ["Data", "153 TCGA-GBM samples"], ["Result", "Finalist, final project presentation"]],
     awards: {
       title: "Recognition",
       lede: "",
@@ -366,14 +370,14 @@ const PAGES = [
     eyebrow: "Research · Computational biology", title: "CellAtlas GBM", lede: "Glioblastoma tumour microenvironment.",
     desc: "CellAtlas GBM. A computational look at the glioblastoma tumour microenvironment.",
     intro: "Glioblastoma is the most aggressive primary brain tumour there is, and one reason it resists treatment is that the tumour is not one thing. It is an ecosystem of cell types propping each other up.",
+    body: ["The project came out of a selective, four-week computational biology program at Carnegie Mellon in June and July of 2026: coding, lab work, and algorithm development, with professors and teaching assistants around for the parts a group could not work out alone, competing against the rest of the cohort on a final project."],
     steps: [
       ["Question", "What cell populations make up the glioblastoma microenvironment, and how do they differ across tumours?"],
-      ["Method", "Computational analysis of single-cell data. The work behind the Carnegie Mellon comp-bio training.", true],
-      ["Results", TBD, true],
-      ["What I learned", TBD, true]
+      ["Method", "Cell-type deconvolution on bulk RNA-seq, not single-cell: NNLS and SVR run against 153 TCGA-GBM samples, built during Carnegie Mellon's computational biology program."],
+      ["Results", "A finalist project among the program's cohorts. The composition each algorithm estimated was tested against tumour outcomes, to see whether cell mix tracked with prognosis on its own, separate from grade."],
+      ["What I learned", "A deconvolution algorithm is only as honest as the reference it is built against. Getting NNLS and SVR to agree on the same sample turned out to be the real lesson, more than either algorithm was by itself."]
     ],
-    tbd: "The dataset, the tools, the figures and where the project stands now. Send these and the Question → Method → Results structure above fills in properly.",
-    facts: [["Field", "Computational biology · oncology"], ["Focus", "Tumour microenvironment"], ["Status", TBD]],
+    facts: [["Field", "Computational biology · oncology"], ["Focus", "Tumour microenvironment"], ["Data", "153 TCGA-GBM samples"], ["Status", "Finalist, Carnegie Mellon 2026"]],
     slots: [
       { key: "gbm-1", ratio: "16 / 9", label: "A figure from the analysis" },
       { key: "gbm-2", ratio: "4 / 3", label: "Poster or presentation" }
@@ -424,7 +428,7 @@ const PAGES = [
         ]}
       ]
     },
-    facts: [["Built for", "IMSS-Bienestar pediatric services"], ["Where", "Torre Pediátrica, Veracruz"], ["Field research", "Two weeks on the ward, 94 pages of notes"], ["Version", "v0.1, beta"]],
+    facts: [["Built for", "IMSS-Bienestar pediatric services"], ["Where", "Torre Pediátrica, Veracruz"], ["Field research", "Two weeks on the ward, 94 pages of notes, plus a 60+ hour return in summer 2026"], ["Version", "v0.1, beta"]],
     /* The screenshots are the app's own column, so they are portrait. 4/5 is close to
        all six, which keeps the grid even without cropping anything meaningful. */
     /* The mark sits beside the intro; the screenshots are the gallery. They are the
@@ -506,6 +510,29 @@ const PAGES = [
       { key: "vz-1", ratio: "3 / 4", label: "The paper's title page, published on SSRN" },
       { key: "vz-2", ratio: "4 / 3", label: "Presenting the work at the Personal Project Exhibition" }
     ],
+    next: { title: "Next: CSR-x", lede: "Environmental epigenetics, summer 2026.", href: "Research-CSRx.dc.html", label: "Go to CSR-x" }
+  },
+  {
+    file: "Research-CSRx.dc.html", section: "research", parent: { label: "Research & projects", href: "Research.dc.html" },
+    eyebrow: "Research · Epigenetics", title: "CSR-x", lede: "Polycyclic aromatic hydrocarbons, epigenetic aging, and lung cancer risk.",
+    desc: "CSR-x, a selective remote research program on PAH exposure, epigenetic aging, and DNA methylation.",
+    intro: "PAHs, polycyclic aromatic hydrocarbons, are wherever something has been burned: exhaust, cigarette smoke, charred food. CSR-x is where I spent five weeks asking what chronic exposure to them does at the level of the genome, not just the lungs.",
+    body: [
+      "CSR-x, the Collaborative Summer Research eXperience, is selective, remote, and student-led: no professor running the room, a small cohort of students building the research together. Mine spent the summer of 2026 on one question, how PAH exposure links to epigenetic aging and DNA methylation, and how much of that risk becomes lung cancer.",
+      "It is the same instinct as SanaSanita and the Venezuela paper in different clothes: a health outcome nobody disputes, traced back to a mechanism most people never see. Here the mechanism is not a hospital workflow or a border. It is a chemical mark on DNA that changes how a cell reads its own instructions."
+    ],
+    steps: [
+      ["Question", "How does chronic PAH exposure show up in epigenetic aging and DNA methylation, and how much of that risk becomes lung cancer?"],
+      ["Method", "A five-week, remote, student-led research program: a small cohort building the analysis together rather than a professor assigning it."],
+      ["Findings", TBD, true],
+      ["Published in", TBD, true]
+    ],
+    tbd: "What the cohort actually found, the dataset behind it, and whether it is being written up anywhere. Send these and the two steps above fill in properly.",
+    facts: [["Type", "Research program"], ["Program", "CSR-x, Collaborative Summer Research eXperience"], ["Focus", "PAH exposure · epigenetic aging · DNA methylation"], ["When", "Summer 2026"]],
+    slots: [
+      { key: "csrx-1", ratio: "16 / 9", label: "The research cohort, remote" },
+      { key: "csrx-2", ratio: "4 / 3", label: "A figure from the analysis" }
+    ],
     next: { title: "Leadership & service", lede: "The work that is not assigned.", href: "Leadership.dc.html", label: "See leadership" }
   },
 
@@ -538,11 +565,11 @@ const PAGES = [
     body: ["Model UN taught me to defend a case that is not my own. Running the newsroom taught me the harder version: describing every case in the room accurately, including the ones I disagreed with."],
     steps: [
       ["Role", "Director of Journalism, running the conference press corps."],
-      ["Built", TBD, true],
-      ["Impact", TBD, true]
+      ["Term", "Six months, March through August 2026, as the conference's journalism intern."],
+      ["Impact", "Publishing while committees were still sitting built real proficiency in international relations and current events, on top of the writing itself."]
     ],
-    tbd: "Team size, what the press corps published, and conference scale. Send these and this page fills in.",
-    facts: [["Role", "Director of Journalism"], ["Conference", "GVMUN"], ["Also", "Model UN delegate"]],
+    tbd: "Team size, what the press corps actually published, and the conference's scale. Send these and this page fills in the rest.",
+    facts: [["Role", "Director of Journalism"], ["Conference", "GVMUN"], ["Term", "March – August 2026"], ["Also", "Model UN delegate"]],
     slots: [
       { key: "gvmun-1", ratio: "4 / 3", label: "GVMUN committee room" },
       { key: "gvmun-2", ratio: "4 / 3", label: "The press corps" }
@@ -574,9 +601,12 @@ const PAGES = [
     eyebrow: "Leadership · Clinical", title: "Hospital Shadowing", lede: "Watching how care actually gets delivered.",
     desc: "Hospital shadowing. Observing clinical care first-hand.",
     intro: "Shadowing is the part of a medical interest that cannot be read about. You can learn the science from a textbook; you cannot learn what a doctor does in the ninety seconds after delivering bad news.",
-    body: ["It is also where the language question stops being theoretical. In a waiting room, being the person who can explain something in Spanish is not a résumé line. It is the difference between a family understanding what is happening and not."],
-    tbd: "Where you shadowed, which departments, how many hours, and the moment that stuck with you. Send these and this page fills in.",
-    facts: [["Type", "Clinical observation"], ["Where", TBD], ["Hours", TBD]],
+    body: [
+      "Sixty-plus hours of it came at the Hospital Regional de Alta Especialidad in Veracruz, in the summer of 2026, shadowing pediatric and neonatal surgeons and the residents around them. The rotation was not just surgery: traumatology, orthopedics, anesthesiology, nursing, immunology, allergology and cardiology all had a turn, which is closer to what a hospital actually runs on than any one specialty by itself.",
+      "It is also where the language question stops being theoretical. In a waiting room, being the person who can explain something in Spanish is not a résumé line. It is the difference between a family understanding what is happening and not, and I watched physicians make that call, in real time, more times than I could count."
+    ],
+    tbd: "The one moment from the floor that stuck with you most. Send that and this page is complete.",
+    facts: [["Type", "Clinical observation"], ["Where", "Hospital Regional de Alta Especialidad, Veracruz"], ["Hours", "60+"]],
     slots: [
       { key: "shadow-1", ratio: "4 / 3", label: "At the hospital" },
       { key: "shadow-2", ratio: "1 / 1", label: "Shadowing" }
