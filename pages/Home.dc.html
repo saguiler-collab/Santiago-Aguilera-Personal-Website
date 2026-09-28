@@ -352,7 +352,29 @@ class Component extends DCLogic {
       });
     };
     place();
-    this._onFloatResize = () => place();
+    // iOS/iPadOS Safari fires "resize" repeatedly during scroll, as its own toolbar
+    // hides and shows, and that only ever changes viewport height. Calling place()
+    // on every one of those re-rolled every tile to a brand new random position and
+    // velocity mid-scroll, which read as the whole layer suddenly lurching. A resize
+    // now only reflows the layer, clamping tiles into the new bounds without
+    // touching their velocity, and only when the width has actually changed.
+    let floatW = innerWidth;
+    const reflow = () => {
+      const r = layer.getBoundingClientRect();
+      this.bw = r.width; this.bh = r.height;
+      for (const el of tiles) {
+        const st = el._sa;
+        if (!st) continue;
+        st.x = Math.max(0, Math.min(this.bw - st.w, st.x));
+        st.y = Math.max(0, Math.min(this.bh - st.h, st.y));
+        el.style.transform = `translate3d(${st.x.toFixed(1)}px,${st.y.toFixed(1)}px,0)`;
+      }
+    };
+    this._onFloatResize = () => {
+      if (innerWidth === floatW) return;
+      floatW = innerWidth;
+      reflow();
+    };
     addEventListener("resize", this._onFloatResize, { passive: true });
 
     if (this.reduce || editing || this.props.parallax === false) return;

@@ -346,8 +346,8 @@ const PAGES = [
     eyebrow: "Academics · Carnegie Mellon", title: "Computational Biology", lede: "Carnegie Mellon University.",
     desc: "Computational biology coursework at Carnegie Mellon. The training behind the CellAtlas GBM project.",
     intro: "Computational biology at Carnegie Mellon. This is the training that makes the glioblastoma work possible: biology asked in a language a computer can actually answer.",
-    body: ["It is the clearest example of the direction I am heading. Medicine is increasingly a data problem, and I would rather be able to write the analysis than wait for someone else to run it.", "The four weeks ran on coding, lab work, research and algorithm development, with professors and teaching assistants around for the parts a group could not work out alone. The final project asked whether cell-type composition, estimated by deconvolving bulk RNA-seq with NNLS and SVR across 153 TCGA-GBM samples, tracked with a patient's prognosis on its own terms, not just as a stand-in for tumour grade."],
-    facts: [["Institution", "Carnegie Mellon University"], ["Field", "Computational biology"], ["Data", "153 TCGA-GBM samples"], ["Result", "Finalist, final project presentation"]],
+    body: ["It is the clearest example of the direction I am heading. Medicine is increasingly a data problem, and I would rather be able to write the analysis than wait for someone else to run it.", "The four weeks ran on coding, lab work, research and algorithm development, with professors and teaching assistants around for the parts a five-person team could not work out alone. The final project asked whether cell-type composition, estimated by deconvolving bulk RNA-seq across 153 TCGA-GBM samples, said anything about a patient's prognosis on its own terms, not just as a stand-in for tumour grade. My part of it was validation: proving whether the numbers the rest of the pipeline produced could actually be trusted."],
+    facts: [["Institution", "Carnegie Mellon University"], ["Field", "Computational biology"], ["Team", "Five-person team"], ["Result", "Finalist, final project presentation"]],
     awards: {
       title: "Recognition",
       lede: "",
@@ -358,8 +358,8 @@ const PAGES = [
       ]
     },
     slots: [
-      { key: "cmu-1", ratio: "4 / 3", label: "Carnegie Mellon" },
-      { key: "cmu-2", ratio: "4 / 3", label: "Working on the analysis" }
+      { key: "gbm-3", ratio: "3 / 2", label: "The full Carnegie Mellon cohort, summer 2026" },
+      { key: "gbm-2", ratio: "4 / 3", label: "The team, mid-project" }
     ],
     next: { title: "The research it feeds", lede: "CellAtlas GBM, in detail.", href: "Research-CellAtlas.dc.html", label: "See CellAtlas GBM" }
   },
@@ -367,20 +367,29 @@ const PAGES = [
   /* ---------------------------------------------------------- research ---- */
   {
     file: "Research-CellAtlas.dc.html", section: "research", parent: { label: "Research & projects", href: "Research.dc.html" },
-    eyebrow: "Research · Computational biology", title: "CellAtlas GBM", lede: "Glioblastoma tumour microenvironment.",
-    desc: "CellAtlas GBM. A computational look at the glioblastoma tumour microenvironment.",
-    intro: "Glioblastoma is the most aggressive primary brain tumour there is, and one reason it resists treatment is that the tumour is not one thing. It is an ecosystem of cell types propping each other up.",
-    body: ["The project came out of a selective, four-week computational biology program at Carnegie Mellon in June and July of 2026: coding, lab work, and algorithm development, with professors and teaching assistants around for the parts a group could not work out alone, competing against the rest of the cohort on a final project."],
-    steps: [
-      ["Question", "What cell populations make up the glioblastoma microenvironment, and how do they differ across tumours?"],
-      ["Method", "Cell-type deconvolution on bulk RNA-seq, not single-cell: NNLS and SVR run against 153 TCGA-GBM samples, built during Carnegie Mellon's computational biology program."],
-      ["Results", "A finalist project among the program's cohorts. The composition each algorithm estimated was tested against tumour outcomes, to see whether cell mix tracked with prognosis on its own, separate from grade."],
-      ["What I learned", "A deconvolution algorithm is only as honest as the reference it is built against. Getting NNLS and SVR to agree on the same sample turned out to be the real lesson, more than either algorithm was by itself."]
+    eyebrow: "Research · Computational biology", title: "CellAtlas GBM", lede: "Estimating a brain tumour's cellular makeup from cheap data, and rigorously testing whether to believe it.",
+    desc: "A five-person team's glioblastoma deconvolution pipeline. My part was proving whether the numbers could be trusted.",
+    intro: "A tumour sample is never pure cancer. It is cancer cells, immune cells, blood-vessel cells and normal brain tissue, blended into one signal by bulk RNA sequencing, like a smoothie: you can taste the blend, but not see the fruit that went into it. Single-cell sequencing can see the fruit, but it is expensive and unavailable for most patients.",
+    link: { href: "https://cellatlasgbm.vercel.app/", label: "Open CellAtlas GBM" },
+    body: [
+      "It did not start as a deconvolution pipeline. The five of us began with a broad question about the tumour microenvironment, the neighbourhood of stromal and immune cells that helps a glioblastoma resist chemotherapy, and covered cancer-associated fibroblasts, hypoxia and drug-efflux pumps before narrowing it, over several checkpoints, to something we could actually execute and defend: estimate the fraction of seven cell types (tumour, macrophage/microglia, T cell, NK cell, B cell, endothelial, oligodendrocyte) in each of 153 TCGA-GBM tumours from public bulk RNA-seq, and test whether that composition says anything about survival. My part was the validation side, proving whether the numbers the rest of the pipeline produced could actually be trusted, not just that they looked plausible.",
+      "The first results looked plausible and were biologically wrong, which turned out to be the most useful part of the project. Solving on log-transformed values produced nonsense, immune cells near zero, because the underlying mixing model is linear and additive; switching to linear counts-per-million fixed it immediately. A handful of high-expression housekeeping genes were dominating the fit regardless of whether they actually distinguished cell types, so we weighted each gene by how discriminative it was. And one donor supplied 38% of every astrocyte cell in our reference atlas; a plain average would have mostly described that one person, so we rarefied instead, one cell per donor per trial, repeated and averaged, so no single patient can dominate.",
+      "ν-SVR, the algorithm CIBERSORT uses, came out the most reliable of the three methods we benchmarked; NNLS drove many lymphocyte estimates to exactly zero. Our RNA-based tumour-purity estimate correlated with an independent, DNA-based measurement at ρ = 0.76, the check I am proudest of, since it never touched RNA at all. Composition features added to a clinical survival model moved the concordance index by +0.001, essentially nothing, and we reported that as a genuine null result rather than hunting for a cutoff that looked better. We chose our method from pre-registered accuracy benchmarks on known-truth data, before ever checking which choice made the survival numbers look best, and the failed and null results both stayed in the final report.",
+      "A metric that is easy to optimise, like reconstruction error, is not the same thing as evidence of correctness. Real validation has to come from a measurement that could actually have proven us wrong. That discipline, freezing a schema before looking at results, and being willing to report a well-supported null finding, is exactly the kind of thinking I want to carry into medicine, where believing a plausible but unvalidated number costs a great deal more than a lower grade."
     ],
-    facts: [["Field", "Computational biology · oncology"], ["Focus", "Tumour microenvironment"], ["Data", "153 TCGA-GBM samples"], ["Status", "Finalist, Carnegie Mellon 2026"]],
+    stepsEyebrow: "What I built", stepsTitle: "Five checks on whether to believe the numbers",
+    steps: [
+      ["Donor-split integrity", "A leakage test by mutation: deliberately corrupt every held-out donor's data, rebuild the reference, and confirm nothing changes, rather than trusting a comment that says the test set was never touched. I also built the accuracy scorer itself, MAE, RMSE, signed bias, Spearman and Pearson correlation, validated against synthetic fixtures before trusting it on real predictions."],
+      ["Sample and barcode audit", "TCGA identifiers encode real biology: tissue site, patient, sample type. I audited the whole cohort against those rules, no duplicate patients, no mismatched sample types, which closed a gate several downstream analyses depended on."],
+      ["A frozen data contract", "Exactly seven cell types, non-negative, summing to 100 per patient, enforced in code. An unexpected column gets rejected, not silently dropped, which is what let five people work in parallel without quietly drifting out of sync with each other's assumptions."],
+      ["Orthogonal validation", "The most important check in the project: does the RNA-based estimate agree with a measurement that never touched RNA at all? I compared inferred tumour fraction against DNA-derived tumour purity, and inferred immune fraction against methylation-derived leukocyte fraction, with bootstrap confidence intervals and correction for multiple comparisons."],
+      ["Reference-free TME scoring", "The current phase: running MCP-counter and ESTIMATE, marker-based methods entirely independent of the deconvolution math, to see which composition columns deserve less trust. The T-cell, NK-cell and B-cell columns failed held-out validation and are reported as diagnostic only, not confident biological claims."]
+    ],
+    facts: [["Team", "Five people, Carnegie Mellon, summer 2026"], ["My role", "Validation, benchmarking, quality control"], ["Cohort", "153 TCGA-GBM tumours"], ["Validation", "ρ = 0.76 vs. an independent, DNA-based measurement"], ["Prognosis", "ΔC-index = +0.001, a reported null result"]],
     slots: [
-      { key: "gbm-1", ratio: "16 / 9", label: "A figure from the analysis" },
-      { key: "gbm-2", ratio: "4 / 3", label: "Poster or presentation" }
+      { key: "gbm-1", ratio: "3 / 4", label: "Presenting the null result to the cohort" },
+      { key: "gbm-2", ratio: "4 / 3", label: "The team, mid-project" },
+      { key: "gbm-3", ratio: "3 / 2", label: "The full Carnegie Mellon cohort, summer 2026" }
     ],
     next: { title: "Next: SanaSanita", lede: "The hospital technology project.", href: "Research-MedicalApp.dc.html", label: "Go to SanaSanita" }
   },
@@ -396,7 +405,8 @@ const PAGES = [
     },
     body: [
       "The consultorio is where it shows. A doctor has a few minutes with each family. The prescription form has three medicine slots. Rounds happen in the morning, because there is no time for them in the afternoon. Whatever a family does not follow in those few minutes, they take home anyway, and from that point the child's care is theirs to run.",
-      "So I wrote the failures down one at a time. Families were prescribed medicines the pharmacy did not stock, and nobody in the room knew until they reached the window. Surgeries were being missed, because a date three months out is easy to lose track of, and a missed slot can push a child back by months again. Families were arriving on the morning of an operation without their studies, without their documents, or having given the child breakfast. Residents were assigned reading they could not open, because the journals sit behind paywalls the hospital does not pay for. In one case a surgeon improvised a staged reduction with weights and elastic bands, because the material the textbook asks for was not in the building.",
+      "So I wrote the failures down one at a time. Families were prescribed medicines the pharmacy did not stock, and nobody in the room knew until they reached the window. Surgeries were being missed, because a date three months out is easy to lose track of, and a missed slot can push a child back by months again. Families were arriving on the morning of an operation without their studies, without their documents, or having given the child breakfast. Residents were assigned reading they could not open, because the journals sit behind paywalls the hospital does not pay for. In one case a surgeon improvised a staged reduction of a newborn's omphalocele with colloid dressings and elastic bands, because the material the textbook asks for was not in the building.",
+      "A return trip to the same ward in the summer of 2026, two years on, found the same shape of problem again. Some patient documentation there is still produced on typewriters, because there are not enough computers to go around. Physicians personally buy the printers, laptops and protective gear the institution does not supply. Families arrive from mountain communities where neighbouring villages speak mutually unintelligible languages, and there is no interpreter on staff. And by policy, the pharmacy keeps the physical prescription once it fills it, so a family can walk out with no written record of what their own child is taking, for how long, or why. None of that is a skill problem. It is the same transfer gap, still there two years later.",
       "None of those are knowledge problems. The doctor already knows what the family should do. The national medicine catalogue is already public. The research already exists. Every one of them is a transfer problem: the information is real and it does not reach the person who needs it at the moment they need it. That gap is what SanaSanita is built into.",
       "So the mission was written at the top of the requirements before any code, and it has not moved since. To tell parents what the doctor left out, forgot, or had no time to say, and to make sure they understand all of it, and forget none of it. Every feature is measured against that sentence. Anything that does not help a parent understand or remember does not ship.",
       "The vision is smaller and more stubborn than it sounds. Not new resources for a hospital that does not have them, but better use of the ones already there. A printer that already sits in consulta externa. A physician who already knows the answer. A medicine catalogue that is already public and already free. The app assumes no internet at home, no data plan, and sometimes no reading at all.",
@@ -428,7 +438,7 @@ const PAGES = [
         ]}
       ]
     },
-    facts: [["Built for", "IMSS-Bienestar pediatric services"], ["Where", "Torre Pediátrica, Veracruz"], ["Field research", "Two weeks on the ward, 94 pages of notes, plus a 60+ hour return in summer 2026"], ["Version", "v0.1, beta"]],
+    facts: [["Built for", "IMSS-Bienestar pediatric services"], ["Where", "Torre Pediátrica, HAEV, Veracruz"], ["Field research", "Two weeks on the ward (94 pages of notes), plus 60+ hours back in summer 2026"], ["Version", "v0.1, beta"]],
     /* The screenshots are the app's own column, so they are portrait. 4/5 is close to
        all six, which keeps the grid even without cropping anything meaningful. */
     /* The mark sits beside the intro; the screenshots are the gallery. They are the
@@ -459,6 +469,14 @@ const PAGES = [
           "What the family leaves with is pictures first. Foods and household triggers are tapped to mark, and anything left unmarked is understood to be allowed, so a parent is never asked to interpret a list of exceptions.",
           "Medicines are chosen against the national catalogue by clave, using the same fields the paper prescription uses: form, route, dose, interval and first dose. The app builds the schedule from what the doctor entered. It does not calculate the dose, and when something is out of stock it says so rather than proposing a different drug."
         ]
+      },
+      {
+        slots: ["sana-field-surgery", "sana-field-rounds", "sana-field-teaching"],
+        title: "Back on the ward, summer 2026",
+        body: [
+          "A second round of field research, not one: pediatric surgery consultations and operating rooms, an allergy and immunology consultory, and morning rounds with the surgical team, at the same Torre Pediátrica this app was first written in.",
+          "The problem had not moved. What had changed was how much hospital I had personally sat inside of by the time I rewrote the requirements a second time."
+        ]
       }
     ],
     slots: [
@@ -468,7 +486,10 @@ const PAGES = [
       { key: "app-evidence-engine", ratio: "4 / 5", label: "Motor de evidencia, where a draft is written" },
       { key: "app-evidence-approve", ratio: "4 / 5", label: "Approving a passage with its citation" },
       { key: "app-pictograms", ratio: "4 / 5", label: "Food and home pictograms, tapped to mark" },
-      { key: "app-medication", ratio: "4 / 5", label: "The medication row" }
+      { key: "app-medication", ratio: "4 / 5", label: "The medication row" },
+      { key: "sana-field-surgery", ratio: "3 / 2", label: "Laparoscopic view, the operating room" },
+      { key: "sana-field-rounds", ratio: "3 / 4", label: "Morning case presentation" },
+      { key: "sana-field-teaching", ratio: "3 / 4", label: "Reading an ultrasound with the team" }
     ],
     next: { title: "Next: the publication", lede: "Venezuelan immigration research.", href: "Research-Venezuela.dc.html", label: "Go to the publication" }
   },
@@ -493,8 +514,9 @@ const PAGES = [
       "It started with a school unit, not a book drive. Grade 9 Individuals & Societies spent weeks that year on migration itself, drivers, routes, sending and receiving countries, and I turned in the unit's research paper on June 8th, 2024. Ten days later I was already listing Venezuelan migration as a Personal Project topic.",
       "Even then, the project did not start as a paper. By May 2024 there was a whole La Casita club at school, objectives, a plan, a membership list, and its first move that fall was a book drive for the Venezuelan children's library the centre runs in Arima, Trinidad. Once the books were collected, though, it was clear the drive was teaching me nothing about the crisis itself, only advertising it.",
       "So my father and I talked it through, and the product changed: a full research paper on why Venezuelans were leaving and what happened to them once they arrived, researched, interviewed and cited the way an academic paper is. My supervisor's one condition was that every interview question had to be open-ended, so an answer could not be led.",
-      "Five interviews carry the paper, all conducted and translated from Spanish: a housekeeper who crossed by open boat, a Venezuelan doctor now cleaning houses because Trinidad will not recognise her degree, the founder of La Casita, and a protection officer with the UNHCR. Every quotation is timestamped to a recording and cross-checked against IOM displacement-tracking data, Trinidadian reporting from the Guardian and Newsday, and filings from Amnesty International, Human Rights Watch and the U.S. State Department.",
-      "It was not a clean process. I meant to publish by January; it went up in March, after other classes pushed it down my list for a month I did not have. And most of the people I interviewed, migrants, a shelter's founder, a UNHCR officer, already agreed with the paper's argument. The version I would write next puts more of the Trinidadian side in the room too."
+      "Five interviews carry the paper, all conducted and translated from Spanish: a housekeeper who crossed by open boat, a Venezuelan doctor now cleaning houses because Trinidad will not recognise her degree, Andreina Briceño Ventura-Brown of La Casita, and a protection officer with the UNHCR. Every quotation is timestamped to a recording and cross-checked against IOM displacement-tracking data, Trinidadian reporting from the Guardian and Newsday, and filings from Amnesty International, Human Rights Watch and the U.S. State Department.",
+      "It was not a clean process. I meant to publish by January; it went up in March, after other classes pushed it down my list for a month I did not have. And most of the people I interviewed, migrants, a shelter's founder, a UNHCR officer, already agreed with the paper's argument. The version I would write next puts more of the Trinidadian side in the room too.",
+      "I graded the paper against my own criteria before anyone else did: a 7 out of 8 for research, a 7 for analysis, a 6 for the interviews, and a 4 for communication, the honest mark for publishing late and rushing the final read-through. The number is not really the point. Writing down where it fell short, on purpose, before handing it to anyone else, is."
     ],
     media: [
       {
@@ -602,14 +624,16 @@ const PAGES = [
     desc: "Hospital shadowing. Observing clinical care first-hand.",
     intro: "Shadowing is the part of a medical interest that cannot be read about. You can learn the science from a textbook; you cannot learn what a doctor does in the ninety seconds after delivering bad news.",
     body: [
-      "Sixty-plus hours of it came at the Hospital Regional de Alta Especialidad in Veracruz, in the summer of 2026, shadowing pediatric and neonatal surgeons and the residents around them. The rotation was not just surgery: traumatology, orthopedics, anesthesiology, nursing, immunology, allergology and cardiology all had a turn, which is closer to what a hospital actually runs on than any one specialty by itself.",
-      "It is also where the language question stops being theoretical. In a waiting room, being the person who can explain something in Spanish is not a résumé line. It is the difference between a family understanding what is happening and not, and I watched physicians make that call, in real time, more times than I could count."
+      "Sixty-plus hours of it, across eleven days, came at the Torre Pediátrica of the Hospital de Alta Especialidad de Veracruz (HAEV), a public hospital under Mexico's IMSS-Bienestar system, in the summer of 2026. I split the time between pediatric surgery consultations and operating rooms, an allergy and immunology consultory, and morning rounds with the surgical team.",
+      "Over nine of those days I watched an appendectomy on a four-year-old, a laparoscopic gallbladder removal on a six-year-old, a circumcision on a nine-year-old who had lived with untreated pain for years because no one had told his family it could be fixed, and the staged reduction of a newborn's omphalocele, improvised with colloid dressings and elastic bands because the equipment the procedure usually calls for was not in the building.",
+      "One consultation has stayed with me longer than any of the surgeries: a young girl with facial asymmetry and distinctive skin findings, her presentation cross-referenced against her mother's nearly identical features, pointing to a genetic condition with fewer than 300 confirmed cases worldwide, undiagnosed in the family for a lifetime.",
+      "It is also where the language question stops being theoretical. Some families arrive from mountain communities where neighboring villages speak mutually unintelligible languages, and the hospital has no interpreters on staff. Being the person who can explain something in Spanish there is not a résumé line. It is the difference between a family understanding what is happening and not.",
+      "I had just spent a year at a boarding school with laboratories, mentorship and academic access that most students in this hemisphere will never see. Standing in that hospital, the distance between what I have and what those physicians have was not a distance in skill or effort. I watched people do more with less than I thought was possible. It was a distance in tools and infrastructure, and closing it, for the region my family comes from, is the direction I want my work pointed at."
     ],
-    tbd: "The one moment from the floor that stuck with you most. Send that and this page is complete.",
-    facts: [["Type", "Clinical observation"], ["Where", "Hospital Regional de Alta Especialidad, Veracruz"], ["Hours", "60+"]],
+    facts: [["Type", "Clinical observation"], ["Where", "Torre Pediátrica, HAEV, Veracruz"], ["Hours", "60+, over eleven days"], ["System", "IMSS-Bienestar, public"]],
     slots: [
-      { key: "shadow-1", ratio: "4 / 3", label: "At the hospital" },
-      { key: "shadow-2", ratio: "1 / 1", label: "Shadowing" }
+      { key: "shadow-1", ratio: "4 / 3", label: "In the operating room at HAEV" },
+      { key: "shadow-2", ratio: "3 / 4", label: "Between cases, summer 2026" }
     ],
     next: { title: "Next: Volunteering", lede: "Community work, in and out of school.", href: "Leadership-Volunteering.dc.html", label: "Go to volunteering" }
   },
