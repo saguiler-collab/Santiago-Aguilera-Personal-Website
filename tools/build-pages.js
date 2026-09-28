@@ -469,14 +469,6 @@ const PAGES = [
           "What the family leaves with is pictures first. Foods and household triggers are tapped to mark, and anything left unmarked is understood to be allowed, so a parent is never asked to interpret a list of exceptions.",
           "Medicines are chosen against the national catalogue by clave, using the same fields the paper prescription uses: form, route, dose, interval and first dose. The app builds the schedule from what the doctor entered. It does not calculate the dose, and when something is out of stock it says so rather than proposing a different drug."
         ]
-      },
-      {
-        slots: ["sana-field-surgery", "sana-field-rounds", "sana-field-teaching"],
-        title: "Back on the ward, summer 2026",
-        body: [
-          "A second round of field research, not one: pediatric surgery consultations and operating rooms, an allergy and immunology consultory, and morning rounds with the surgical team, at the same Torre Pediátrica this app was first written in.",
-          "The problem had not moved. What had changed was how much hospital I had personally sat inside of by the time I rewrote the requirements a second time."
-        ]
       }
     ],
     slots: [
@@ -486,10 +478,7 @@ const PAGES = [
       { key: "app-evidence-engine", ratio: "4 / 5", label: "Motor de evidencia, where a draft is written" },
       { key: "app-evidence-approve", ratio: "4 / 5", label: "Approving a passage with its citation" },
       { key: "app-pictograms", ratio: "4 / 5", label: "Food and home pictograms, tapped to mark" },
-      { key: "app-medication", ratio: "4 / 5", label: "The medication row" },
-      { key: "sana-field-surgery", ratio: "3 / 2", label: "Laparoscopic view, the operating room" },
-      { key: "sana-field-rounds", ratio: "3 / 4", label: "Morning case presentation" },
-      { key: "sana-field-teaching", ratio: "3 / 4", label: "Reading an ultrasound with the team" }
+      { key: "app-medication", ratio: "4 / 5", label: "The medication row" }
     ],
     next: { title: "Next: the publication", lede: "Venezuelan immigration research.", href: "Research-Venezuela.dc.html", label: "Go to the publication" }
   },
@@ -624,15 +613,45 @@ const PAGES = [
     desc: "Hospital shadowing. Observing clinical care first-hand.",
     intro: "Shadowing is the part of a medical interest that cannot be read about. You can learn the science from a textbook; you cannot learn what a doctor does in the ninety seconds after delivering bad news.",
     body: [
-      "Sixty-plus hours of it, across eleven days, came at the Torre Pediátrica of the Hospital de Alta Especialidad de Veracruz (HAEV), a public hospital under Mexico's IMSS-Bienestar system, in the summer of 2026. I split the time between pediatric surgery consultations and operating rooms, an allergy and immunology consultory, and morning rounds with the surgical team.",
-      "Over nine of those days I watched an appendectomy on a four-year-old, a laparoscopic gallbladder removal on a six-year-old, a circumcision on a nine-year-old who had lived with untreated pain for years because no one had told his family it could be fixed, and the staged reduction of a newborn's omphalocele, improvised with colloid dressings and elastic bands because the equipment the procedure usually calls for was not in the building.",
-      "One consultation has stayed with me longer than any of the surgeries: a young girl with facial asymmetry and distinctive skin findings, her presentation cross-referenced against her mother's nearly identical features, pointing to a genetic condition with fewer than 300 confirmed cases worldwide, undiagnosed in the family for a lifetime.",
-      "It is also where the language question stops being theoretical. Some families arrive from mountain communities where neighboring villages speak mutually unintelligible languages, and the hospital has no interpreters on staff. Being the person who can explain something in Spanish there is not a résumé line. It is the difference between a family understanding what is happening and not.",
-      "I had just spent a year at a boarding school with laboratories, mentorship and academic access that most students in this hemisphere will never see. Standing in that hospital, the distance between what I have and what those physicians have was not a distance in skill or effort. I watched people do more with less than I thought was possible. It was a distance in tools and infrastructure, and closing it, for the region my family comes from, is the direction I want my work pointed at."
+      "Sixty-plus hours of it, across eleven days, came at the Torre Pediátrica of the Hospital de Alta Especialidad de Veracruz (HAEV), a public hospital under Mexico's IMSS-Bienestar system, in the summer of 2026. I split the time between pediatric surgery consultations and operating rooms, an allergy and immunology consultory, and morning rounds with the surgical team."
     ],
     facts: [["Type", "Clinical observation"], ["Where", "Torre Pediátrica, HAEV, Veracruz"], ["Hours", "60+, over eleven days"], ["System", "IMSS-Bienestar, public"]],
+    media: [
+      {
+        slots: ["sana-field-surgery"],
+        title: "Nine days in the operating room",
+        body: [
+          "That monitor is a laparoscope's view mid-procedure, one of a run that over nine days included an appendectomy on a four-year-old, a laparoscopic gallbladder removal on a six-year-old, a circumcision on a nine-year-old who had lived with untreated pain for years because no one had told his family it could be fixed, and the staged reduction of a newborn's omphalocele, improvised with colloid dressings and elastic bands because the equipment the procedure usually calls for was not in the building."
+        ]
+      },
+      {
+        slots: ["sana-field-rounds"],
+        title: "Morning rounds",
+        body: [
+          "Every morning began the same way, before anyone touched a patient: a physician presenting the overnight admissions and the day's planned cases to the residents and students on the team. The habit stuck with me. A diagnosis that lives only in one person's head is not much safer than one that was never made."
+        ]
+      },
+      {
+        slots: ["sana-field-teaching"],
+        title: "The case that stayed with me",
+        body: [
+          "Reading an ultrasound alongside the team, for a young girl with facial asymmetry and distinctive skin findings, her presentation cross-referenced against her mother's nearly identical features, pointing to a genetic condition with fewer than 300 confirmed cases worldwide, undiagnosed in the family for a lifetime."
+        ]
+      },
+      {
+        slots: ["shadow-2"],
+        title: "Showing up",
+        body: [
+          "It is also where the language question stops being theoretical. Some families arrive from mountain communities where neighboring villages speak mutually unintelligible languages, and the hospital has no interpreters on staff. Being the person who can explain something in Spanish there is not a résumé line. It is the difference between a family understanding what is happening and not.",
+          "I had just spent a year at a boarding school with laboratories, mentorship and academic access that most students in this hemisphere will never see. Standing in that hospital, the distance between what I have and what those physicians have was not a distance in skill or effort. I watched people do more with less than I thought was possible. It was a distance in tools and infrastructure, and closing it, for the region my family comes from, is the direction I want my work pointed at."
+        ]
+      }
+    ],
     slots: [
       { key: "shadow-1", ratio: "4 / 3", label: "In the operating room at HAEV" },
+      { key: "sana-field-surgery", ratio: "3 / 2", label: "Laparoscopic view, mid-procedure" },
+      { key: "sana-field-rounds", ratio: "3 / 4", label: "Morning case presentation" },
+      { key: "sana-field-teaching", ratio: "3 / 4", label: "Reading an ultrasound with the team" },
       { key: "shadow-2", ratio: "3 / 4", label: "Between cases, summer 2026" }
     ],
     next: { title: "Next: Volunteering", lede: "Community work, in and out of school.", href: "Leadership-Volunteering.dc.html", label: "Go to volunteering" }
