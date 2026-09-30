@@ -95,7 +95,8 @@ const GROUPS = {
   activities: { title: "Activities", items: [
     { label: "Swimming", href: "Activities-Swimming.dc.html" },
     { label: "Weightlifting", href: "Activities-Weightlifting.dc.html" },
-    { label: "Drums & Music", href: "Activities-Music.dc.html" }
+    { label: "Drums & Music", href: "Activities-Music.dc.html" },
+    { label: "Running", href: "Activities-Running.dc.html" }
   ]},
   curiosities: { title: "Curiosities", items: [
     { label: "Literature", href: "Curiosities-Literature.dc.html" },
@@ -171,14 +172,15 @@ const PAGES = [
   },
   {
     file: "Activities.dc.html", section: "activities", kind: "landing",
-    eyebrow: "Activities", title: "Drums, water, weight",
-    lede: "Three commitments that have followed me across the six countries.",
-    desc: "Varsity swimming, Olympic weightlifting, and three bands' worth of drumming.",
-    intro: "None of these are electives I picked up at Perkiomen. Each one moved with me, and each one is the reason a new country stopped feeling new.",
+    eyebrow: "Activities", title: "Drums, water, weight, road",
+    lede: "Four commitments; three of them followed me across six countries, the newest started in Trinidad.",
+    desc: "Varsity swimming, Olympic weightlifting, three bands' worth of drumming, and road racing.",
+    intro: "None of these are electives I picked up at Perkiomen. Drums, water and weight moved with me across six countries and each one is the reason a new country stopped feeling new. Running started later, in Trinidad, and has not stopped since.",
     cards: [
       { eyebrow: "Varsity", title: "Swimming", href: "Activities-Swimming.dc.html", body: "Morning sets, meets, and the part of the day that keeps the rest of it in order." },
       { eyebrow: "Olympic lifting", title: "Weightlifting", href: "Activities-Weightlifting.dc.html", body: "Snatch and clean & jerk, programmed year-round." },
-      { eyebrow: "Three bands", title: "Drums & Music", href: "Activities-Music.dc.html", body: "SonoArte Panamá, Mamma Mia! at ISPS, and the Perkiomen rock band." }
+      { eyebrow: "Three bands", title: "Drums & Music", href: "Activities-Music.dc.html", body: "SonoArte Panamá, Mamma Mia! at ISPS, and the Perkiomen rock band." },
+      { eyebrow: "Road racing", title: "Running", href: "Activities-Running.dc.html", body: "The RBC Race for the Kids 15K, three years running, and years of 5Ks across Trinidad." }
     ],
     slots: [{ key: "activities-hero", ratio: "16 / 9", label: "Activities" }],
     next: { title: "What I do with the rest of it", lede: "Languages, manga, and whatever the group is playing.", href: "Curiosities.dc.html", label: "See the curiosities" }
@@ -681,7 +683,7 @@ const PAGES = [
       { key: "perkmt-1", ratio: "4 / 3", label: "The Perkiomenite" },
       { key: "perkmt-2", ratio: "4 / 3", label: "In the newsroom" }
     ],
-    next: { title: "Activities", lede: "Drums, water, weight.", href: "Activities.dc.html", label: "See the activities" }
+    next: { title: "Activities", lede: "Drums, water, weight, road.", href: "Activities.dc.html", label: "See the activities" }
   },
 
   /* -------------------------------------------------------- activities ---- */
@@ -726,6 +728,23 @@ const PAGES = [
       { key: "music-3", ratio: "1 / 1", label: "SonoArte Panamá" }
     ],
     video: { ratio: "16 / 9", label: "Rock band set" },
+    next: { title: "Next: Running", lede: "The RBC Race for the Kids, three years running.", href: "Activities-Running.dc.html", label: "Go to running" }
+  },
+  {
+    file: "Activities-Running.dc.html", section: "activities", parent: { label: "Activities", href: "Activities.dc.html" },
+    eyebrow: "Activities · Road racing", title: "Running", lede: "The RBC Race for the Kids 15K, three years running, and years of 5Ks across Trinidad.",
+    desc: "Road racing in Trinidad. The RBC Race for the Kids 15K three years running, G2G and Scotiabank 5Ks, and running to actually see a place.",
+    intro: "Running started as training for other sports and became its own thing. I like it for a reason that has nothing to do with racing: it is the cheapest way I know to actually see a place, on foot, at the pace a place is meant to be seen at.",
+    body: [
+      "The RBC Race for the Kids is Trinidad and Tobago's biggest charity run, a 15K that starts at 5:45 in the morning and funds the RBC Caribbean Children's Cancer Fund, which has treated more than 280 children under sixteen since it began. I ran the 15K three years running, the only member of Peak Performers, my school's running club, to run the 15K rather than the 5K in any of those years.",
+      "The rest of it was 5Ks, whichever one was on: G2G's Grind to Give, which raises money with the Mary Care Centre to rebuild a home for young women and their babies, the Scotiabank Women Against Breast Cancer run, and whatever else Trinidad's road-race calendar had that month.",
+      "I still run for the same two reasons I started. It is training, the plainest way there is to teach a body to keep going past where it wants to stop. And it is still the cheapest way to actually see a place, long after the people who flew in for a week have gone home."
+    ],
+    facts: [["Signature race", "RBC Race for the Kids, 15K, 3 years running"], ["Also", "G2G 5Ks · Scotiabank 5K"], ["Cause", "RBC Caribbean Children's Cancer Fund"], ["Club", "Peak Performers"]],
+    slots: [
+      { key: "run-1", ratio: "4 / 3", label: "RBC Race for the Kids" },
+      { key: "run-2", ratio: "4 / 3", label: "A 5K somewhere in Trinidad" }
+    ],
     next: { title: "Curiosities", lede: "The things that are not on a form.", href: "Curiosities.dc.html", label: "See the curiosities" }
   },
 
