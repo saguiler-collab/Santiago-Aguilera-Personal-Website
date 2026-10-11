@@ -479,6 +479,34 @@
   --sa-on-accent:var(--sa-ink-900);
 }
 
+/* --------------------------------------------- CSR-x (indigo, dark) ---- */
+/* Sampled off csr-x.org's own stylesheet rather than guessed: pulled the compiled
+   CSS and counted hex codes by frequency. Two colours carry the whole site, #6366f1
+   (their signature indigo, used on the hero glow and every CTA) and #302d7d, a
+   darker, more desaturated version of the same hue used for the hero's gradient.
+   #ececff, a very pale lavender, is their light text colour on the dark hero; it is
+   paper-000 here, the same role it plays there.
+
+   Their own display face is a plain, confident geometric sans for big bold
+   headings, nothing with a licensed name attached, so Archivo stands in: same
+   geometric bones, same weight when set bold, free. */
+:root[data-palette="csrx"] {
+  --sa-verdigris-500:#6366F1; --sa-glow-b:#6366F1; --sa-glow-a:var(--sa-coral-500);
+  --sa-paper-000:#ECECFF; --sa-paper-100:#D7D7F5; --sa-paper-200:#BDBDE8; --sa-paper-300:#9494D1;
+  --sa-ink-900:#0A0918; --sa-ink-800:#131128; --sa-ink-700:#1E1B3D;
+  --sa-ink-500:#3C3870; --sa-ink-300:#7472A8; --sa-ink-100:#B5B3D6;
+  --sa-coral-600:#8183F5; --sa-coral-500:#6366F1; --sa-coral-300:#A7A9F8; --sa-coral-100:#1E1B4A;
+  --sa-ochre-500:#6366F1; --sa-ochre-100:#1A1740; --sa-sienna-500:#A7A9F8;
+  --sa-hero-1:#302D7D; --sa-hero-2:#1F1B54; --sa-hero-3:#120F30; --sa-hero-4:#07050F;
+
+  --sa-font-display:"Archivo", ui-sans-serif, system-ui, sans-serif;
+  --sa-font-body:"Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sa-type-display:600 var(--sa-text-5xl)/var(--sa-leading-tight) var(--sa-font-display);
+  --sa-type-title:600 var(--sa-text-3xl)/var(--sa-leading-snug) var(--sa-font-display);
+  --sa-tracking-display:-0.02em;
+  --sa-on-accent:var(--sa-paper-000);
+}
+
 /* The hero's night sky and the ink CTA glows were hard-coded teal, so they ignored
    every palette. They read from the ramp now. */
 .sa-hero {

@@ -121,6 +121,7 @@ const PAGE_PALETTE = {
   "Research-CellAtlas.dc.html": "atlas",
   "Research-MedicalApp.dc.html": "sana",
   "Research-Venezuela.dc.html": "sky",
+  "Research-CSRx.dc.html": "csrx",
   "Curiosities-Videogames.dc.html": "arcade"
 };
 const paletteFor = (p) => PAGE_PALETTE[p.file] || SECTION_PALETTE[p.section] || "library";
@@ -530,8 +531,9 @@ const PAGES = [
     eyebrow: "Research · Epigenetics", title: "CSR-x", lede: "Polycyclic aromatic hydrocarbons, epigenetic aging, and lung cancer risk.",
     desc: "CSR-x, a selective remote research program on PAH exposure, epigenetic aging, and DNA methylation.",
     intro: "PAHs, polycyclic aromatic hydrocarbons, are wherever something has been burned: exhaust, cigarette smoke, charred food. CSR-x is where I spent five weeks asking what chronic exposure to them does at the level of the genome, not just the lungs.",
+    link: { href: "https://www.csr-x.org/", label: "About CSR-x" },
     body: [
-      "CSR-x, the Collaborative Summer Research eXperience, is selective, remote, and student-led: no professor running the room, a small cohort of students building the research together. Mine spent the summer of 2026 on one question, how PAH exposure links to epigenetic aging and DNA methylation, and how much of that risk becomes lung cancer.",
+      "CSR-x, the Collaborative Summer Research eXperience, is selective, remote, and student-led: no professor running the room, a small cohort of students building the research together. The program runs five tracks, AI and data science, biomedical and health sciences, environmental science, cognitive science, and economics. Mine was biomedical, and spent the summer of 2026 on one question: how PAH exposure links to epigenetic aging and DNA methylation, and how much of that risk becomes lung cancer.",
       "It is the same instinct as SanaSanita and the Venezuela paper in different clothes: a health outcome nobody disputes, traced back to a mechanism most people never see. Here the mechanism is not a hospital workflow or a border. It is a chemical mark on DNA that changes how a cell reads its own instructions."
     ],
     steps: [
@@ -1066,7 +1068,7 @@ ${canonical}<meta property="og:title" content="${attr(title)}">
 <meta property="og:image" content="${attr(ogImage)}">
 <meta name="twitter:card" content="summary_large_image">
 <script>(function(){try{
-var M={library:"light",perkiomen:"light",isps:"light",sana:"light",sky:"light",ps:"light",exeter:"light",isef:"light",noir:"dark",gilt:"dark",atlas:"dark",ferrari:"dark",lambo:"dark",arcade:"dark",cmu:"dark"};
+var M={library:"light",perkiomen:"light",isps:"light",sana:"light",sky:"light",ps:"light",exeter:"light",isef:"light",noir:"dark",gilt:"dark",atlas:"dark",ferrari:"dark",lambo:"dark",arcade:"dark",cmu:"dark",csrx:"dark"};
 var d=document.documentElement,def="${paletteFor(p)}",p=null;
 try{p=localStorage.getItem("sa:palette")}catch(e){}
 var k=(p&&M[p])?p:def;
