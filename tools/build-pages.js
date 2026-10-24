@@ -643,6 +643,41 @@ const PAGES = [
         ]
       },
       {
+        slots: ["hosp-or", "hosp-mirror"],
+        title: "In the room",
+        body: [
+          "Most of the eleven days were spent a step behind the surgical team, watching, handing over what was asked for and keeping out of the way. Scrubs, a mask and a long shift in the same corridor as everyone else turned out to be the quickest way of being taken seriously."
+        ]
+      },
+      {
+        slots: ["hosp-mri", "hosp-ultrasound"],
+        title: "Reading the images",
+        body: [
+          "Imaging was part of almost every case: an MRI cholangiogram of the biliary tree on the radiology workstation, an ultrasound talked through slowly on the classroom screen. Learning to find the structure that matters in a grey, grainy picture is a skill the textbooks only hint at."
+        ]
+      },
+      {
+        slots: ["hosp-talk"],
+        title: "Teaching sessions",
+        body: [
+          "Attending physicians gave short lectures to the residents and students between cases. One of them took apart the textbook picture of appendicitis: in the published series he showed, about half of children do not present with the classic signs, which is exactly why it gets missed."
+        ]
+      },
+      {
+        slots: ["hosp-patient"],
+        title: "The reason for all of it",
+        body: [
+          "Thumbs up from a young patient and one of the surgeons, taken with her family's permission. The tools I am building afterwards are for children like her and for the families who carry the care plan home."
+        ]
+      },
+      {
+        slots: ["hosp-mural", "hosp-facade"],
+        title: "The hospital itself",
+        body: [
+          "The Hospital Regional de Veracruz mural, painted in 2004, shows a physician holding a family in open hands. The building outside carries the city's coat of arms. Neither is incidental. This is the hospital the community has leaned on since 1952."
+        ]
+      },
+      {
         slots: ["shadow-2"],
         title: "Showing up",
         body: [
@@ -656,7 +691,15 @@ const PAGES = [
       { key: "sana-field-surgery", ratio: "3 / 2", label: "Laparoscopic view, mid-procedure" },
       { key: "sana-field-rounds", ratio: "3 / 4", label: "Morning case presentation" },
       { key: "sana-field-teaching", ratio: "3 / 4", label: "Reading an ultrasound with the team" },
-      { key: "shadow-2", ratio: "3 / 4", label: "Between cases, summer 2026" }
+      { key: "shadow-2", ratio: "3 / 4", label: "Between cases, summer 2026" },
+      { key: "hosp-or", ratio: "3 / 4", label: "Watching a procedure from the operating table" },
+      { key: "hosp-mirror", ratio: "3 / 4", label: "Between cases, scrubs and mask" },
+      { key: "hosp-mri", ratio: "3 / 2", label: "MRI cholangiogram on the radiology workstation" },
+      { key: "hosp-ultrasound", ratio: "4 / 3", label: "Walking through an ultrasound with the residents" },
+      { key: "hosp-talk", ratio: "4 / 3", label: "A teaching session on appendicitis presentation" },
+      { key: "hosp-patient", ratio: "3 / 4", label: "A young patient and her surgeon" },
+      { key: "hosp-mural", ratio: "3 / 4", label: "The Hospital Regional de Veracruz mural" },
+      { key: "hosp-facade", ratio: "3 / 4", label: "The hospital facade" }
     ],
     next: { title: "Next: Volunteering", lede: "Community work, in and out of school.", href: "Leadership-Volunteering.dc.html", label: "Go to volunteering" }
   },

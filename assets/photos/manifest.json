@@ -16,5 +16,13 @@
   "gbm-1": "gbm-1.jpg",
   "gbm-2": "gbm-2.jpg",
   "gbm-3": "gbm-3.jpg",
-  "home-lab": "gbm-2.jpg"
+  "home-lab": "gbm-2.jpg",
+  "hosp-mri": "hosp-mri.jpg",
+  "hosp-mirror": "hosp-mirror.jpg",
+  "hosp-or": "hosp-or.jpg",
+  "hosp-patient": "hosp-patient.jpg",
+  "hosp-talk": "hosp-talk.jpg",
+  "hosp-ultrasound": "hosp-ultrasound.jpg",
+  "hosp-mural": "hosp-mural.jpg",
+  "hosp-facade": "hosp-facade.jpg"
 }
