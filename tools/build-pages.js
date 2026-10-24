@@ -362,7 +362,12 @@ const PAGES = [
     },
     slots: [
       { key: "gbm-3", ratio: "3 / 2", label: "The full Carnegie Mellon cohort, summer 2026" },
-      { key: "gbm-2", ratio: "4 / 3", label: "The team, mid-project" }
+      { key: "gbm-2", ratio: "4 / 3", label: "The team, mid-project" },
+      { key: "cmu-present", ratio: "3 / 4", label: "Presenting with the team" },
+      { key: "cmu-lecture", ratio: "3 / 2", label: "Final project presentation in the lecture hall" },
+      { key: "cmu-lobby", ratio: "3 / 2", label: "With a teammate and two of the instructors" },
+      { key: "cmu-fireworks", ratio: "4 / 3", label: "Fireworks over campus with friends from the program" },
+      { key: "cmu-pole", ratio: "3 / 4", label: "Looking up at the Walking to the Sky sculpture" }
     ],
     next: { title: "The research it feeds", lede: "CellAtlas GBM, in detail.", href: "Research-CellAtlas.dc.html", label: "See CellAtlas GBM" }
   },
@@ -566,8 +571,8 @@ const PAGES = [
     tbd: "The events run so far, participation numbers, competition results and anything raised. Send these and this page can show impact rather than a title.",
     facts: [["Role", "Founder & President"], ["Organisation", "HOSA"], ["School", "Perkiomen"]],
     slots: [
-      { key: "hosa-1", ratio: "4 / 3", label: "HOSA event" },
-      { key: "hosa-2", ratio: "4 / 3", label: "HOSA competition" },
+      { key: "hosa-1", ratio: "3 / 4", label: "Addressing the room at a school event" },
+      { key: "hosa-2", ratio: "4 / 3", label: "With fellow students in the gym" },
       { key: "hosa-3", ratio: "1 / 1", label: "The chapter" }
     ],
     next: { title: "Next: GVMUN", lede: "Directing the press corps.", href: "Leadership-GVMUN.dc.html", label: "Go to GVMUN" }
@@ -711,7 +716,7 @@ const PAGES = [
     tbd: "Which organisations, what you did, how often, and roughly how many hours. Send these and this page fills in.",
     facts: [["Type", "Community service"], ["Where", TBD], ["Hours", TBD]],
     slots: [
-      { key: "vol-1", ratio: "4 / 3", label: "Volunteering" },
+      { key: "vol-1", ratio: "1 / 1", label: "Pulling a tire out of the river on a clean-up day" },
       { key: "vol-2", ratio: "4 / 3", label: "Community work" }
     ],
     next: { title: "Next: The Perkiomenite", lede: "Writing and editing the school paper.", href: "Leadership-Perkiomenite.dc.html", label: "Go to the Perkiomenite" }
@@ -754,7 +759,7 @@ const PAGES = [
     body: ["Olympic lifting in particular is unforgiving about technique. You cannot muscle a bad snatch. The lift simply fails, in front of everyone, which is a useful thing to get comfortable with."],
     facts: [["Discipline", "Olympic weightlifting"], ["Lifts", "Snatch · clean & jerk"], ["Training", "Year-round"]],
     slots: [
-      { key: "lift-1", ratio: "4 / 3", label: "Lifting session" },
+      { key: "lift-1", ratio: "3 / 4", label: "Back squats" },
       { key: "lift-2", ratio: "1 / 1", label: "In the gym" }
     ],
     next: { title: "Next: Drums & Music", lede: "Three countries, three bands, one kit.", href: "Activities-Music.dc.html", label: "Go to music" }
