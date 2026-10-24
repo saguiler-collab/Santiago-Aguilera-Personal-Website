@@ -254,7 +254,8 @@ const PAGES = [
     slots: [
       { key: "us-1", ratio: "4 / 3", label: "Houston" },
       { key: "us-2", ratio: "4 / 3", label: "Perkiomen School campus" },
-      { key: "us-3", ratio: "1 / 1", label: "Pennsburg" }
+      { key: "us-3", ratio: "1 / 1", label: "Pennsburg" },
+      { key: "us-4", ratio: "3 / 4", label: "Under Cloud Gate, Chicago" }
     ],
     next: { title: "The academics", lede: "Two schools, and the work that came out of them.", href: "Academics.dc.html", label: "See the academics" }
   },
@@ -339,8 +340,10 @@ const PAGES = [
     ],
     facts: [["Program", "Hamm '55 Leadership Program"], ["Place", "Exeter, New Hampshire"], ["Focus", "Social justice · community engagement"], ["Also", "SAT prep · intro calculus"]],
     slots: [
-      { key: "exeter-1", ratio: "4 / 3", label: "Exeter campus" },
-      { key: "exeter-2", ratio: "4 / 3", label: "Harkness table" }
+      { key: "exeter-1", ratio: "4 / 3", label: "Along the river in Exeter" },
+      { key: "exeter-2", ratio: "4 / 3", label: "A team huddle in class" },
+      { key: "exeter-3", ratio: "4 / 3", label: "Under the Exeter banner" },
+      { key: "exeter-4", ratio: "4 / 3", label: "Canobie Lake Park, summer 2025" }
     ],
     next: { title: "Next: Comp Bio", lede: "Computational biology at Carnegie Mellon.", href: "Academics-CompBio.dc.html", label: "Go to Comp Bio" }
   },
@@ -573,7 +576,7 @@ const PAGES = [
     slots: [
       { key: "hosa-1", ratio: "3 / 4", label: "Addressing the room at a school event" },
       { key: "hosa-2", ratio: "4 / 3", label: "With fellow students in the gym" },
-      { key: "hosa-3", ratio: "1 / 1", label: "The chapter" }
+      { key: "hosa-3", ratio: "4 / 3", label: "Between sessions at a HOSA conference" }
     ],
     next: { title: "Next: GVMUN", lede: "Directing the press corps.", href: "Leadership-GVMUN.dc.html", label: "Go to GVMUN" }
   },
@@ -746,7 +749,7 @@ const PAGES = [
     facts: [["Level", "Varsity"], ["School", "Perkiomen"], ["Award", "Most Improved, Varsity Boys (2026)"]],
     slots: [
       { key: "swim-1", ratio: "4 / 3", label: "Swim meet" },
-      { key: "swim-2", ratio: "4 / 3", label: "In the pool" },
+      { key: "swim-2", ratio: "3 / 4", label: "On the starting block" },
       { key: "swim-3", ratio: "1 / 1", label: "The team" }
     ],
     next: { title: "Next: Weightlifting", lede: "Snatch, clean & jerk, year-round.", href: "Activities-Weightlifting.dc.html", label: "Go to weightlifting" }
@@ -792,7 +795,7 @@ const PAGES = [
     ],
     facts: [["Signature race", "RBC Race for the Kids, 15K, 3 years running"], ["Also", "G2G 5Ks · Scotiabank 5K"], ["Cause", "RBC Caribbean Children's Cancer Fund"], ["Club", "Peak Performers"]],
     slots: [
-      { key: "run-1", ratio: "4 / 3", label: "RBC Race for the Kids" },
+      { key: "run-1", ratio: "3 / 2", label: "RBC Race for the Kids, 15K bibs" },
       { key: "run-2", ratio: "4 / 3", label: "A 5K somewhere in Trinidad" }
     ],
     next: { title: "Curiosities", lede: "The things that are not on a form.", href: "Curiosities.dc.html", label: "See the curiosities" }
@@ -836,8 +839,9 @@ const PAGES = [
     tbd: "The games you actually play, who you play them with, and anything you have built or modded. Send these and this page fills in.",
     facts: [["Mostly", "Co-op · strategy"], ["Why it matters", "Friends across six countries"], ["Currently playing", TBD]],
     slots: [
-      { key: "games-1", ratio: "16 / 9", label: "A game, or the setup" },
-      { key: "games-2", ratio: "1 / 1", label: "Playing with friends" }
+      { key: "games-1", ratio: "4 / 3", label: "Dark Souls" },
+      { key: "games-2", ratio: "3 / 4", label: "Dark Souls, with Solaire" },
+      { key: "games-3", ratio: "4 / 3", label: "The Wind Waker HD on the Wii U" }
     ],
     next: { title: "Media", lede: "Photos and video from six countries.", href: "Media.dc.html", label: "See the media" }
   }
