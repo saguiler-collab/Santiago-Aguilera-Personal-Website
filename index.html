@@ -44,6 +44,19 @@ d.setAttribute("data-palette-default",def);d.setAttribute("data-palette",k);d.se
 <link rel="stylesheet" href="assets/site.css">
 <script src="_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/_ds_bundle.js"></script>
 <script src="assets/photo-slots.js" defer></script>
+<link rel="preload" as="image" href="/assets/photos/hero/hosp-or.jpg">
+<link rel="preload" as="image" href="/assets/photos/hero/cmu-hearts.jpg">
+<link rel="preload" as="image" href="/assets/photos/hero/hosp-mirror.jpg">
+<link rel="preload" as="image" href="/assets/photos/hero/cmu-fireworks.jpg">
+<link rel="preload" as="image" href="/assets/photos/hero/cmu-present.jpg">
+<link rel="preload" as="image" href="/assets/photos/hero/cmu-lobby.jpg">
+<link rel="preload" as="image" href="/assets/photos/hero/vol-river.jpg">
+<link rel="preload" as="image" href="/assets/photos/hero/cmu-pole.jpg">
+<link rel="preload" as="image" href="/assets/photos/hero/lift-squat.jpg">
+<link rel="preload" as="image" href="/assets/photos/hero/hosa-mic.jpg">
+<link rel="preload" as="image" href="/assets/photos/hero/about-church.jpg">
+<link rel="preload" as="image" href="/assets/photos/hero/cmu-lecture.jpg">
+<link rel="preload" as="image" href="/assets/photos/hero/gbm-2.jpg">
 <style>
 body{margin:0;background:var(--sa-surface-page);transition:background-color .15s ease}
 a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
@@ -91,99 +104,69 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
        the hero is never twice the same. Positions come from the loop in componentDidMount;
        aria-hidden because this is decorative motion. The real gallery is on Media. -->
   <div ref="{{ floatLayer }}" class="sa-float-layer" aria-hidden="true">
-    <div class="sa-float" style="width:clamp(48px,5.2vw,78px)">
+    <div class="sa-float" style="width:clamp(49px,5.2vw,74px)">
       <div class="sa-float-inner" style="rotate:-3.2deg">
-        <sa-image-slot compact slot-key="home-houston" ratio="4 / 3" placeholder="Houston"></sa-image-slot>
+        <img src="/assets/photos/hero/hosp-or.jpg" width="225" height="300" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:225 / 300">
       </div>
     </div>
-    <div class="sa-float" style="width:clamp(38px,4.1vw,62px)">
+    <div class="sa-float" style="width:clamp(53px,5.6vw,80px)">
       <div class="sa-float-inner" style="rotate:2.4deg">
-        <sa-image-slot compact slot-key="home-madrid" ratio="1 / 1" placeholder="Madrid"></sa-image-slot>
+        <img src="/assets/photos/hero/cmu-hearts.jpg" width="300" height="200" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:300 / 200">
       </div>
     </div>
-    <div class="sa-float" style="width:clamp(46px,4.9vw,74px)">
-      <div class="sa-float-inner" style="rotate:-1.8deg">
-        <sa-image-slot compact slot-key="home-monterrey" ratio="3 / 4" placeholder="Monterrey"></sa-image-slot>
-      </div>
-    </div>
-    <div class="sa-float" style="width:clamp(42px,4.5vw,68px)">
-      <div class="sa-float-inner" style="rotate:3.1deg">
-        <sa-image-slot compact slot-key="home-bogota" ratio="3 / 4" placeholder="Bogotá"></sa-image-slot>
-      </div>
-    </div>
-    <div class="sa-float" style="width:clamp(51px,5.5vw,82px)">
-      <div class="sa-float-inner" style="rotate:-2.6deg">
-        <sa-image-slot compact slot-key="home-panama" ratio="4 / 3" placeholder="Ciudad de Panamá"></sa-image-slot>
-      </div>
-    </div>
-    <div class="sa-float" style="width:clamp(43px,4.7vw,70px)">
-      <div class="sa-float-inner" style="rotate:1.6deg">
-        <sa-image-slot compact slot-key="home-drums-sonoarte" ratio="1 / 1" placeholder="Drums, SonoArte"></sa-image-slot>
-      </div>
-    </div>
-    <div class="sa-float" style="width:clamp(47px,5.1vw,76px)">
-      <div class="sa-float-inner" style="rotate:-3.6deg">
-        <sa-image-slot compact slot-key="home-port-of-spain" ratio="4 / 3" placeholder="Port of Spain"></sa-image-slot>
-      </div>
-    </div>
-    <div class="sa-float" style="width:clamp(36px,3.9vw,58px)">
-      <div class="sa-float-inner" style="rotate:2.2deg">
-        <sa-image-slot compact slot-key="home-isps-stuco" ratio="1 / 1" placeholder="Student Council"></sa-image-slot>
-      </div>
-    </div>
-    <div class="sa-float" style="width:clamp(53px,5.7vw,86px)">
-      <div class="sa-float-inner" style="rotate:-1.4deg">
-        <sa-image-slot compact slot-key="home-perkiomen" ratio="4 / 3" placeholder="Perkiomen"></sa-image-slot>
-      </div>
-    </div>
-    <div class="sa-float" style="width:clamp(40px,4.3vw,64px)">
-      <div class="sa-float-inner" style="rotate:2.8deg">
-        <sa-image-slot compact slot-key="home-swim-perkiomen" ratio="3 / 4" placeholder="Swim meet"></sa-image-slot>
-      </div>
-    </div>
-    <div class="sa-float" style="width:clamp(37px,4.0vw,60px)">
-      <div class="sa-float-inner" style="rotate:-2.1deg">
-        <sa-image-slot compact slot-key="home-hosa" ratio="1 / 1" placeholder="HOSA"></sa-image-slot>
-      </div>
-    </div>
-    <div class="sa-float" style="width:clamp(50px,5.3vw,80px)">
-      <div class="sa-float-inner" style="rotate:1.9deg">
-        <sa-image-slot compact slot-key="home-gvmun" ratio="4 / 3" placeholder="GVMUN"></sa-image-slot>
-      </div>
-    </div>
-    <div class="sa-float" style="width:clamp(45px,4.8vw,72px)">
-      <div class="sa-float-inner" style="rotate:-3deg">
-        <sa-image-slot compact slot-key="home-lab" ratio="4 / 3" placeholder="CellAtlas"></sa-image-slot>
-      </div>
-    </div>
-    <div class="sa-float" style="width:clamp(41px,4.4vw,66px)">
-      <div class="sa-float-inner" style="rotate:2.6deg">
-        <sa-image-slot compact slot-key="home-band" ratio="1 / 1" placeholder="Rock band"></sa-image-slot>
-      </div>
-    </div>
-    <div class="sa-float" style="width:clamp(42px,4.5vw,68px)">
+    <div class="sa-float" style="width:clamp(43px,4.6vw,66px)">
       <div class="sa-float-inner" style="rotate:-2.2deg">
-        <sa-image-slot compact slot-key="home-veracruz-or" ratio="3 / 4" placeholder="Veracruz, operating room"></sa-image-slot>
+        <img src="/assets/photos/hero/hosp-mirror.jpg" width="225" height="300" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:225 / 300">
       </div>
     </div>
-    <div class="sa-float" style="width:clamp(42px,4.5vw,68px)">
+    <div class="sa-float" style="width:clamp(51px,5.4vw,77px)">
       <div class="sa-float-inner" style="rotate:3deg">
-        <sa-image-slot compact slot-key="home-veracruz-mirror" ratio="3 / 4" placeholder="Veracruz, scrubs and mask"></sa-image-slot>
+        <img src="/assets/photos/hero/cmu-fireworks.jpg" width="300" height="225" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:300 / 225">
       </div>
     </div>
-    <div class="sa-float" style="width:clamp(46px,5.0vw,72px)">
+    <div class="sa-float" style="width:clamp(43px,4.6vw,66px)">
       <div class="sa-float-inner" style="rotate:2deg">
-        <sa-image-slot compact slot-key="home-me-presenting" ratio="3 / 4" placeholder="Santiago"></sa-image-slot>
+        <img src="/assets/photos/hero/cmu-present.jpg" width="232" height="300" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:232 / 300">
       </div>
     </div>
-    <div class="sa-float" style="width:clamp(42px,4.6vw,68px)">
+    <div class="sa-float" style="width:clamp(53px,5.6vw,80px)">
+      <div class="sa-float-inner" style="rotate:-2.8deg">
+        <img src="/assets/photos/hero/cmu-lobby.jpg" width="300" height="195" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:300 / 195">
+      </div>
+    </div>
+    <div class="sa-float" style="width:clamp(45px,4.8vw,69px)">
+      <div class="sa-float-inner" style="rotate:2.6deg">
+        <img src="/assets/photos/hero/vol-river.jpg" width="275" height="300" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:275 / 300">
+      </div>
+    </div>
+    <div class="sa-float" style="width:clamp(41px,4.4vw,63px)">
       <div class="sa-float-inner" style="rotate:-2.6deg">
-        <sa-image-slot compact slot-key="home-me-pole" ratio="3 / 4" placeholder="Santiago"></sa-image-slot>
+        <img src="/assets/photos/hero/cmu-pole.jpg" width="225" height="300" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:225 / 300">
       </div>
     </div>
-    <div class="sa-float" style="width:clamp(44px,4.8vw,70px)">
+    <div class="sa-float" style="width:clamp(41px,4.4vw,63px)">
+      <div class="sa-float-inner" style="rotate:1.8deg">
+        <img src="/assets/photos/hero/lift-squat.jpg" width="229" height="300" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:229 / 300">
+      </div>
+    </div>
+    <div class="sa-float" style="width:clamp(43px,4.6vw,66px)">
       <div class="sa-float-inner" style="rotate:1.6deg">
-        <sa-image-slot compact slot-key="home-me-mic" ratio="3 / 4" placeholder="Santiago"></sa-image-slot>
+        <img src="/assets/photos/hero/hosa-mic.jpg" width="225" height="300" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:225 / 300">
+      </div>
+    </div>
+    <div class="sa-float" style="width:clamp(39px,4.2vw,60px)">
+      <div class="sa-float-inner" style="rotate:-1.9deg">
+        <img src="/assets/photos/hero/about-church.jpg" width="203" height="300" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:203 / 300">
+      </div>
+    </div>
+    <div class="sa-float" style="width:clamp(51px,5.4vw,77px)">
+      <div class="sa-float-inner" style="rotate:2.2deg">
+        <img src="/assets/photos/hero/cmu-lecture.jpg" width="300" height="195" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:300 / 195">
+      </div>
+    </div>
+    <div class="sa-float" style="width:clamp(47px,5.0vw,72px)">
+      <div class="sa-float-inner" style="rotate:-3deg">
+        <img src="/assets/photos/hero/gbm-2.jpg" width="300" height="225" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:300 / 225">
       </div>
     </div>
   </div>
