@@ -389,7 +389,8 @@ const PAGES = [
       { key: "cmu-lecture", ratio: "3 / 2", label: "Final project presentation in the lecture hall" },
       { key: "cmu-lobby", ratio: "3 / 2", label: "With a teammate and two of the instructors" },
       { key: "cmu-fireworks", ratio: "4 / 3", label: "Fireworks over campus with friends from the program" },
-      { key: "cmu-pole", ratio: "3 / 4", label: "Looking up at the Walking to the Sky sculpture" }
+      { key: "cmu-pole", ratio: "3 / 4", label: "Looking up at the Walking to the Sky sculpture" },
+      { key: "gbm-4", ratio: "4 / 3", label: "Pre-College Program in Computational Biology, certificate, summer 2026" }
     ],
     next: { title: "The research it feeds", lede: "CellAtlas GBM, in detail.", href: "Research-CellAtlas.dc.html", label: "See CellAtlas GBM" }
   },
@@ -573,7 +574,8 @@ const PAGES = [
     facts: [["Type", "Research program"], ["Program", "CSR-x, Collaborative Summer Research eXperience"], ["Focus", "PAH exposure · epigenetic aging · DNA methylation"], ["When", "Summer 2026"]],
     slots: [
       { key: "csrx-1", ratio: "16 / 9", label: "The research cohort, remote" },
-      { key: "csrx-2", ratio: "4 / 3", label: "A figure from the analysis" }
+      { key: "csrx-2", ratio: "4 / 3", label: "A figure from the analysis" },
+      { key: "csrx-3", ratio: "7 / 5", label: "CSR-x 2026 Program, certificate of completion" }
     ],
     next: { title: "Leadership & service", lede: "The work that is not assigned.", href: "Leadership.dc.html", label: "See leadership" }
   },
@@ -806,7 +808,7 @@ const PAGES = [
     facts: [["Discipline", "Olympic weightlifting"], ["Lifts", "Snatch · clean & jerk"], ["Training", "Year-round"]],
     slots: [
       { key: "lift-1", ratio: "3 / 4", label: "Back squats" },
-      { key: "lift-2", ratio: "1 / 1", label: "In the gym" }
+      { key: "lift-2", ratio: "3 / 4", label: "Between sets in the gym" }
     ],
     next: { title: "Next: Drums & Music", lede: "Three countries, three bands, one kit.", href: "Activities-Music.dc.html", label: "Go to music" }
   },
@@ -821,7 +823,8 @@ const PAGES = [
     slots: [
       { key: "music-1", ratio: "3 / 4", label: "Behind the kit with the Perkiomen rock band" },
       { key: "music-2", ratio: "4 / 3", label: "The band before the set" },
-      { key: "music-3", ratio: "1 / 1", label: "SonoArte Panamá" }
+      { key: "music-3", ratio: "1 / 1", label: "SonoArte Panamá" },
+      { key: "music-4", ratio: "3 / 4", label: "Practising on an electronic kit at home" }
     ],
     video: { ratio: "16 / 9", label: "Rock band set" },
     next: { title: "Next: Running", lede: "The RBC Race for the Kids, three years running.", href: "Activities-Running.dc.html", label: "Go to running" }
