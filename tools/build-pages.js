@@ -25,6 +25,11 @@ const ROOT = path.join(__dirname, "..");
    resolves <dc-import name="X"> against one directory. index.html is the exception:
    a static host serves it for "/", so it is written to the root with its paths
    un-relativised. See the block that generates it. */
+const PHOTO_MANIFEST = (() => {
+  try { return JSON.parse(fs.readFileSync(path.join(__dirname, "../assets/photos/manifest.json"), "utf8")); }
+  catch (e) { return {}; }
+})();
+
 const PAGES_DIR = path.join(ROOT, "pages");
 /* The design system is referenced two ways and they are not the same string any more.
    DS_DIR is where it is on disk, relative to the repo root. DS is how a page links to
@@ -328,7 +333,8 @@ const PAGES = [
     },
     slots: [
       { key: "perk-1", ratio: "4 / 3", label: "Perkiomen campus" },
-      { key: "perk-2", ratio: "4 / 3", label: "In class or lab" },
+      { key: "perk-2", ratio: "4 / 3", label: "Medical Spirit and Promise Award, Perkiomen School" },
+      { key: "perk-4", ratio: "4 / 3", label: "Science and Math Award, Rochester Institute of Technology" },
       { key: "perk-3", ratio: "1 / 1", label: "Awards night" }
     ],
     next: { title: "Next: Exeter Summer", lede: "A summer of coursework away from home.", href: "Academics-ExeterSummer.dc.html", label: "Go to Exeter Summer" }
@@ -348,7 +354,8 @@ const PAGES = [
       { key: "exeter-1", ratio: "4 / 3", label: "Along the river in Exeter" },
       { key: "exeter-2", ratio: "4 / 3", label: "A team huddle in class" },
       { key: "exeter-3", ratio: "4 / 3", label: "Under the Exeter banner" },
-      { key: "exeter-4", ratio: "4 / 3", label: "Canobie Lake Park, summer 2025" }
+      { key: "exeter-4", ratio: "4 / 3", label: "Canobie Lake Park, summer 2025" },
+      { key: "exeter-5", ratio: "4 / 3", label: "Friends and instructors signing shirts on the last day" }
     ],
     next: { title: "Next: Comp Bio", lede: "Computational biology at Carnegie Mellon.", href: "Academics-CompBio.dc.html", label: "Go to Comp Bio" }
   },
@@ -371,6 +378,7 @@ const PAGES = [
     slots: [
       { key: "gbm-3", ratio: "3 / 2", label: "The full Carnegie Mellon cohort, summer 2026" },
       { key: "gbm-2", ratio: "4 / 3", label: "The team, mid-project" },
+      { key: "cmu-lab", ratio: "4 / 3", label: "In the lab with teammates" },
       { key: "cmu-present", ratio: "3 / 4", label: "Presenting with the team" },
       { key: "cmu-lecture", ratio: "3 / 2", label: "Final project presentation in the lecture hall" },
       { key: "cmu-lobby", ratio: "3 / 2", label: "With a teammate and two of the instructors" },
@@ -725,7 +733,8 @@ const PAGES = [
     facts: [["Type", "Community service"], ["Where", TBD], ["Hours", TBD]],
     slots: [
       { key: "vol-1", ratio: "1 / 1", label: "Pulling a tire out of the river on a clean-up day" },
-      { key: "vol-2", ratio: "4 / 3", label: "Community work" }
+      { key: "vol-2", ratio: "9 / 16", label: "Running a water station at a race" },
+      { key: "vol-3", ratio: "3 / 4", label: "Bingo with residents at a care home" }
     ],
     next: { title: "Next: The Perkiomenite", lede: "Writing and editing the school paper.", href: "Leadership-Perkiomenite.dc.html", label: "Go to the Perkiomenite" }
   },
@@ -781,8 +790,8 @@ const PAGES = [
     body: ["That is not a small thing when you change countries every few years. Drumming is the reason arriving somewhere new has never meant arriving alone."],
     facts: [["Bands", "SonoArte · Mamma Mia! (ISPS) · Perkiomen rock band"], ["Countries", "Panama · Trinidad · United States"], ["SonoArte", "In person, then online"], ["Instrument", "Drum kit"]],
     slots: [
-      { key: "music-1", ratio: "4 / 3", label: "Behind the kit" },
-      { key: "music-2", ratio: "4 / 3", label: "Rock band set" },
+      { key: "music-1", ratio: "3 / 4", label: "Behind the kit with the Perkiomen rock band" },
+      { key: "music-2", ratio: "4 / 3", label: "The band before the set" },
       { key: "music-3", ratio: "1 / 1", label: "SonoArte Panamá" }
     ],
     video: { ratio: "16 / 9", label: "Rock band set" },
@@ -921,8 +930,13 @@ function renderPage(p) {
   const title = `${p.title} · Santiago Aguilera`;
   const slots = p.slots || [];
 
-  const heroSlot = slots[0];
-  const restSlots = slots.slice(1);
+  /* Only photos that exist are shown. An unfilled slot renders as an empty camera frame,
+     which on a public page reads as unfinished. Add the file and its manifest entry and
+     the slot appears. The lead photo is the first one that exists; a page with none keeps
+     a single placeholder so it is clear where the first photo goes. */
+  const filledSlots = slots.filter((sl) => PHOTO_MANIFEST[sl.key]);
+  const heroSlot = filledSlots[0] || slots[0];
+  const restSlots = filledSlots.filter((sl) => sl !== heroSlot);
 
   const crumb = p.parent
     ? `      <a href="${p.parent.href}" style="font:var(--sa-type-ui);font-size:var(--sa-text-sm);color:var(--sa-text-muted);text-decoration:none;display:inline-block;padding-block:4px">← ${esc(p.parent.label)}</a>\n`
@@ -1077,9 +1091,19 @@ ${siblings.map((s) => `    <a href="${attr(s.href)}" style="display:inline-flex;
      first gap to the last so images punctuate the page rather than trailing it. */
   const contentSections = [cards, awards, renderSteps(p.steps, p.stepsEyebrow, p.stepsTitle), quote, video]
     .filter((x) => x && x.trim());
+  /* Photo pages get one tidy gallery after the text instead of single figures scattered
+     through the gaps, which left large empty stretches and a different size every time. */
+  const gallery = (list) => list.length ? `
+<section data-reveal="1" class="sa-gallery-wrap">
+  <div class="sa-gallery-head"><span class="sa-gallery-kicker">Photographs</span></div>
+  <div class="sa-gallery n${Math.min(list.length, 3)}">
+${list.map((sl) => figure(sl)).join("\n")}
+  </div>
+</section>` : "";
   const blocks = p.media
     ? p.media.map((row, i) => mediaRow(row, i))
-    : groupSlots(restSlots).map((g, i) => renderGroup(g, i));
+    : [];
+  const galleryHtml = p.media ? "" : gallery(restSlots);
   const gapCount = contentSections.length + 1;
   const buckets = Array.from({ length: gapCount }, () => []);
   blocks.forEach((html, i) => {
@@ -1090,7 +1114,7 @@ ${siblings.map((s) => `    <a href="${attr(s.href)}" style="display:inline-flex;
   });
   const bodySections = buckets
     .map((b, i) => b.join("") + (contentSections[i] || ""))
-    .join("");
+    .join("") + galleryHtml;
 
   const footerCols = [
     { title: "Sections", links: SECTION_LINKS },
