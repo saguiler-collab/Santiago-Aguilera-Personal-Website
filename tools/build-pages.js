@@ -91,6 +91,7 @@ const GROUPS = {
   ]},
   leadership: { title: "Leadership & service", items: [
     { label: "HOSA", href: "Leadership-HOSA.dc.html" },
+    { label: "Model UN", href: "Leadership-MUN.dc.html" },
     { label: "GVMUN", href: "Leadership-GVMUN.dc.html" },
     { label: "Student Council / Senate", href: "Leadership-StudentCouncil.dc.html" },
     { label: "Hospital Shadowing", href: "Leadership-Shadowing.dc.html" },
@@ -167,6 +168,7 @@ const PAGES = [
     intro: "These are the things where the work was not assigned to me. Each one started as a gap I noticed. A club that did not exist. A newsroom that needed running. A waiting room where nobody spoke Spanish.",
     cards: [
       { eyebrow: "Founder & President", title: "HOSA", href: "Leadership-HOSA.dc.html", body: "Founded Perkiomen's chapter to create opportunities for students interested in healthcare." },
+      { eyebrow: "Delegate", title: "Model UN", href: "Leadership-MUN.dc.html", body: "Representing Nigeria in SPECPOL at Princeton, and Eagle MUNC." },
       { eyebrow: "Director of Journalism", title: "GVMUN", href: "Leadership-GVMUN.dc.html", body: "Running the press corps at the Global Virtual Model United Nations conference." },
       { eyebrow: "Student government", title: "Student Council / Senate", href: "Leadership-StudentCouncil.dc.html", body: "Representing classmates at ISPS, and student government at Perkiomen." },
       { eyebrow: "Clinical", title: "Hospital Shadowing", href: "Leadership-Shadowing.dc.html", body: "Time on the floor, watching how care actually gets delivered." },
@@ -203,7 +205,8 @@ const PAGES = [
     slots: [
       { key: "mx-1", ratio: "4 / 3", label: "Monterrey" },
       { key: "mx-2", ratio: "1 / 1", label: "AIM or LICEO" },
-      { key: "mx-3", ratio: "4 / 3", label: "Family in Monterrey" }
+      { key: "mx-3", ratio: "4 / 3", label: "Family in Monterrey" },
+      { key: "mx-4", ratio: "3 / 4", label: "Dressed up as a pirate" }
     ],
     next: { title: "Next: Colombia", lede: "Altitude, and a second accent in the same language.", href: "Place-Colombia.dc.html", label: "Go to Colombia" }
   },
@@ -221,7 +224,8 @@ const PAGES = [
       { key: "co-7", ratio: "3 / 2", label: "Outside the shelter we built" },
       { key: "co-1", ratio: "4 / 3", label: "Bogotá" },
       { key: "co-2", ratio: "1 / 1", label: "Colegio Tilata" },
-      { key: "co-3", ratio: "4 / 3", label: "La Calera" }
+      { key: "co-3", ratio: "4 / 3", label: "La Calera" },
+      { key: "co-8", ratio: "2 / 3", label: "With an alpaca and its keeper in the Andes, Peru" }
     ],
     next: { title: "Next: Panama", lede: "Where I started playing drums.", href: "Place-Panama.dc.html", label: "Go to Panama" }
   },
@@ -250,7 +254,8 @@ const PAGES = [
     slots: [
       { key: "tt-1", ratio: "4 / 3", label: "Port of Spain" },
       { key: "tt-2", ratio: "1 / 1", label: "ISPS" },
-      { key: "tt-3", ratio: "4 / 3", label: "Stronger Together" }
+      { key: "tt-3", ratio: "4 / 3", label: "Stronger Together" },
+      { key: "tt-4", ratio: "4 / 3", label: "On a bench by the water, with the dog" }
     ],
     next: { title: "Next: the United States", lede: "Where it started, and where it is now.", href: "Place-UnitedStates.dc.html", label: "Go to the US" }
   },
@@ -335,7 +340,8 @@ const PAGES = [
       { key: "perk-1", ratio: "4 / 3", label: "Perkiomen campus" },
       { key: "perk-2", ratio: "4 / 3", label: "Medical Spirit and Promise Award, Perkiomen School" },
       { key: "perk-4", ratio: "4 / 3", label: "Science and Math Award, Rochester Institute of Technology" },
-      { key: "perk-3", ratio: "1 / 1", label: "Awards night" }
+      { key: "perk-3", ratio: "1 / 1", label: "Awards night" },
+      { key: "perk-5", ratio: "4 / 3", label: "A birthday dinner in the dining hall" }
     ],
     next: { title: "Next: Exeter Summer", lede: "A summer of coursework away from home.", href: "Academics-ExeterSummer.dc.html", label: "Go to Exeter Summer" }
   },
@@ -590,6 +596,29 @@ const PAGES = [
       { key: "hosa-1", ratio: "3 / 4", label: "Addressing the room at a school event" },
       { key: "hosa-2", ratio: "4 / 3", label: "With fellow students in the gym" },
       { key: "hosa-3", ratio: "4 / 3", label: "Between sessions at a HOSA conference" }
+    ],
+    next: { title: "Next: Model UN", lede: "Delegate at Princeton and Eagle MUNC.", href: "Leadership-MUN.dc.html", label: "Go to Model UN" }
+  },
+  {
+    file: "Leadership-MUN.dc.html", section: "leadership", parent: { label: "Leadership & service", href: "Leadership.dc.html" },
+    eyebrow: "Leadership · Delegate", title: "Model UN", lede: "Representing a country that is not mine.",
+    desc: "Model UN delegate at Perkiomen School. Verbal Commendation at the 2025 Princeton Model United Nations Conference, and Eagle MUNC.",
+    intro: "Model UN at Perkiomen means being handed a country, a committee and a problem, and arguing the case as that country would, whatever you think yourself.",
+    body: ["At the 2025 Princeton Model United Nations Conference I represented Nigeria in SPECPOL, the Special Political and Decolonization Committee, for Perkiomen School, and was given a Verbal Commendation by the secretaries-general. I also attended Eagle MUNC. GVMUN, where I directed the press corps, is the other side of the same activity."],
+    awards: {
+      title: "Recognition",
+      lede: "",
+      groups: [
+        { title: "Princeton Model United Nations Conference 2025", items: [
+          { label: "Verbal Commendation", detail: "Awarded for representing Nigeria in SPECPOL. Parsippany, New Jersey, November 20th to 23rd, 2025." }
+        ]}
+      ]
+    },
+    tbd: "Committee topics, how many conferences, and what you argued at Eagle MUNC. Send these and this page fills in.",
+    facts: [["Role", "Delegate"], ["Princeton (PMUNC 2025)", "Nigeria, SPECPOL"], ["Recognition", "Verbal Commendation"], ["Also", "Eagle MUNC"]],
+    slots: [
+      { key: "mun-1", ratio: "5 / 6", label: "At Eagle MUNC" },
+      { key: "mun-2", ratio: "4 / 3", label: "Verbal Commendation, PMUNC 2025" }
     ],
     next: { title: "Next: GVMUN", lede: "Directing the press corps.", href: "Leadership-GVMUN.dc.html", label: "Go to GVMUN" }
   },
