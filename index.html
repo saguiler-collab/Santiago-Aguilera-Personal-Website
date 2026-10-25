@@ -30,6 +30,12 @@ try{p=localStorage.getItem("sa:palette")}catch(e){}
 var k=(p&&M[p])?p:def;
 d.setAttribute("data-palette-default",def);d.setAttribute("data-palette",k);d.setAttribute("data-theme",M[k]);
 }catch(e){}})();</script>
+<!-- The nav and rail templates are only discovered once the runtime has parsed this page,
+     so they are preloaded here to start with the HTML. (Preloading the stylesheets and the
+     bundle as well made the hero tiles measure a half-styled layer and pile up at the left
+     edge, so those are left to the runtime.) -->
+<link rel="preload" as="fetch" href="/pages/SiteNav.dc.html" crossorigin>
+<link rel="preload" as="fetch" href="/pages/SymbolRail.dc.html" crossorigin>
 <script src="assets/vendor/react.production.min.js"></script>
 <script src="assets/vendor/react-dom.production.min.js"></script>
 <script src="assets/site-config.js"></script>
@@ -44,24 +50,6 @@ d.setAttribute("data-palette-default",def);d.setAttribute("data-palette",k);d.se
 <link rel="stylesheet" href="assets/site.css">
 <script src="_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/_ds_bundle.js"></script>
 <script src="assets/photo-slots.js" defer></script>
-<link rel="preload" as="image" href="/assets/photos/hero/hosp-or.jpg">
-<link rel="preload" as="image" href="/assets/photos/hero/cmu-hearts.jpg">
-<link rel="preload" as="image" href="/assets/photos/hero/hosp-mirror.jpg">
-<link rel="preload" as="image" href="/assets/photos/hero/cmu-fireworks.jpg">
-<link rel="preload" as="image" href="/assets/photos/hero/cmu-present.jpg">
-<link rel="preload" as="image" href="/assets/photos/hero/cmu-lobby.jpg">
-<link rel="preload" as="image" href="/assets/photos/hero/vol-river.jpg">
-<link rel="preload" as="image" href="/assets/photos/hero/cmu-pole.jpg">
-<link rel="preload" as="image" href="/assets/photos/hero/lift-squat.jpg">
-<link rel="preload" as="image" href="/assets/photos/hero/hosa-mic.jpg">
-<link rel="preload" as="image" href="/assets/photos/hero/about-church.jpg">
-<link rel="preload" as="image" href="/assets/photos/hero/cmu-lecture.jpg">
-<link rel="preload" as="image" href="/assets/photos/hero/gbm-2.jpg">
-<link rel="preload" as="image" href="/assets/photos/hero/me-dog.jpg">
-<link rel="preload" as="image" href="/assets/photos/hero/exeter-hands.jpg">
-<link rel="preload" as="image" href="/assets/photos/hero/me-tired.jpg">
-<link rel="preload" as="image" href="/assets/photos/hero/kid-vest.jpg">
-<link rel="preload" as="image" href="/assets/photos/hero/kid-camp.jpg">
 <style>
 body{margin:0;background:var(--sa-surface-page);transition:background-color .15s ease}
 a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
@@ -111,92 +99,92 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
   <div ref="{{ floatLayer }}" class="sa-float-layer" aria-hidden="true">
     <div class="sa-float" style="width:clamp(49px,5.2vw,74px)">
       <div class="sa-float-inner" style="rotate:-3.2deg">
-        <img src="/assets/photos/hero/hosp-or.jpg" width="225" height="300" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:225 / 300">
+        <img src="/assets/photos/hero/hosp-or.jpg" width="135" height="180" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:135 / 180">
       </div>
     </div>
     <div class="sa-float" style="width:clamp(53px,5.6vw,80px)">
       <div class="sa-float-inner" style="rotate:2.4deg">
-        <img src="/assets/photos/hero/cmu-hearts.jpg" width="300" height="200" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:300 / 200">
+        <img src="/assets/photos/hero/cmu-hearts.jpg" width="180" height="120" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:180 / 120">
       </div>
     </div>
     <div class="sa-float" style="width:clamp(43px,4.6vw,66px)">
       <div class="sa-float-inner" style="rotate:-2.2deg">
-        <img src="/assets/photos/hero/hosp-mirror.jpg" width="225" height="300" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:225 / 300">
+        <img src="/assets/photos/hero/hosp-mirror.jpg" width="135" height="180" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:135 / 180">
       </div>
     </div>
     <div class="sa-float" style="width:clamp(51px,5.4vw,77px)">
       <div class="sa-float-inner" style="rotate:3deg">
-        <img src="/assets/photos/hero/cmu-fireworks.jpg" width="300" height="225" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:300 / 225">
+        <img src="/assets/photos/hero/cmu-fireworks.jpg" width="180" height="135" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:180 / 135">
       </div>
     </div>
     <div class="sa-float" style="width:clamp(43px,4.6vw,66px)">
       <div class="sa-float-inner" style="rotate:2deg">
-        <img src="/assets/photos/hero/cmu-present.jpg" width="232" height="300" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:232 / 300">
+        <img src="/assets/photos/hero/cmu-present.jpg" width="139" height="180" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:139 / 180">
       </div>
     </div>
     <div class="sa-float" style="width:clamp(53px,5.6vw,80px)">
       <div class="sa-float-inner" style="rotate:-2.8deg">
-        <img src="/assets/photos/hero/cmu-lobby.jpg" width="300" height="195" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:300 / 195">
+        <img src="/assets/photos/hero/cmu-lobby.jpg" width="180" height="117" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:180 / 117">
       </div>
     </div>
     <div class="sa-float" style="width:clamp(45px,4.8vw,69px)">
       <div class="sa-float-inner" style="rotate:2.6deg">
-        <img src="/assets/photos/hero/vol-river.jpg" width="275" height="300" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:275 / 300">
+        <img src="/assets/photos/hero/vol-river.jpg" width="165" height="180" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:165 / 180">
       </div>
     </div>
     <div class="sa-float" style="width:clamp(41px,4.4vw,63px)">
       <div class="sa-float-inner" style="rotate:-2.6deg">
-        <img src="/assets/photos/hero/cmu-pole.jpg" width="225" height="300" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:225 / 300">
+        <img src="/assets/photos/hero/cmu-pole.jpg" width="135" height="180" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:135 / 180">
       </div>
     </div>
     <div class="sa-float" style="width:clamp(41px,4.4vw,63px)">
       <div class="sa-float-inner" style="rotate:1.8deg">
-        <img src="/assets/photos/hero/lift-squat.jpg" width="229" height="300" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:229 / 300">
+        <img src="/assets/photos/hero/lift-squat.jpg" width="137" height="180" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:137 / 180">
       </div>
     </div>
     <div class="sa-float" style="width:clamp(43px,4.6vw,66px)">
       <div class="sa-float-inner" style="rotate:1.6deg">
-        <img src="/assets/photos/hero/hosa-mic.jpg" width="225" height="300" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:225 / 300">
+        <img src="/assets/photos/hero/hosa-mic.jpg" width="135" height="180" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:135 / 180">
       </div>
     </div>
     <div class="sa-float" style="width:clamp(39px,4.2vw,60px)">
       <div class="sa-float-inner" style="rotate:-1.9deg">
-        <img src="/assets/photos/hero/about-church.jpg" width="203" height="300" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:203 / 300">
+        <img src="/assets/photos/hero/about-church.jpg" width="122" height="180" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:122 / 180">
       </div>
     </div>
     <div class="sa-float" style="width:clamp(51px,5.4vw,77px)">
       <div class="sa-float-inner" style="rotate:2.2deg">
-        <img src="/assets/photos/hero/cmu-lecture.jpg" width="300" height="195" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:300 / 195">
+        <img src="/assets/photos/hero/cmu-lecture.jpg" width="180" height="117" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:180 / 117">
       </div>
     </div>
     <div class="sa-float" style="width:clamp(47px,5.0vw,72px)">
       <div class="sa-float-inner" style="rotate:-3deg">
-        <img src="/assets/photos/hero/gbm-2.jpg" width="300" height="225" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:300 / 225">
+        <img src="/assets/photos/hero/gbm-2.jpg" width="180" height="135" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:180 / 135">
       </div>
     </div>
     <div class="sa-float" style="width:clamp(41px,4.4vw,63px)">
       <div class="sa-float-inner" style="rotate:1.7deg">
-        <img src="/assets/photos/hero/me-dog.jpg" width="225" height="300" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:225 / 300">
+        <img src="/assets/photos/hero/me-dog.jpg" width="135" height="180" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:135 / 180">
       </div>
     </div>
     <div class="sa-float" style="width:clamp(49px,5.2vw,74px)">
       <div class="sa-float-inner" style="rotate:-2.4deg">
-        <img src="/assets/photos/hero/exeter-hands.jpg" width="300" height="225" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:300 / 225">
+        <img src="/assets/photos/hero/exeter-hands.jpg" width="180" height="135" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:180 / 135">
       </div>
     </div>
     <div class="sa-float" style="width:clamp(47px,5.0vw,72px)">
       <div class="sa-float-inner" style="rotate:-2.2deg">
-        <img src="/assets/photos/hero/me-tired.jpg" width="300" height="246" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:300 / 246">
+        <img src="/assets/photos/hero/me-tired.jpg" width="180" height="148" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:180 / 148">
       </div>
     </div>
     <div class="sa-float" style="width:clamp(43px,4.6vw,66px)">
       <div class="sa-float-inner" style="rotate:2.5deg">
-        <img src="/assets/photos/hero/kid-vest.jpg" width="300" height="261" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:300 / 261">
+        <img src="/assets/photos/hero/kid-vest.jpg" width="180" height="157" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:180 / 157">
       </div>
     </div>
     <div class="sa-float" style="width:clamp(49px,5.2vw,74px)">
       <div class="sa-float-inner" style="rotate:-1.7deg">
-        <img src="/assets/photos/hero/kid-camp.jpg" width="300" height="200" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:300 / 200">
+        <img src="/assets/photos/hero/kid-camp.jpg" width="180" height="120" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:180 / 120">
       </div>
     </div>
   </div>
@@ -418,8 +406,17 @@ class Component extends DCLogic {
     if (this.reduce || editing || this.props.parallax === false) return;
 
     let last = performance.now();
+    let settle = 240;
     const tick = now => {
       this._raf = requestAnimationFrame(tick);
+      // The first placement can run before the stylesheet has sized the layer, which piles
+      // every tile against the left edge. For the first few seconds, re-place whenever the
+      // layer's width turns out to differ from the one the tiles were laid out against.
+      if (settle > 0) {
+        settle--;
+        const lw = layer.getBoundingClientRect().width;
+        if (Math.abs(lw - this.bw) > 40 || (settle % 30 === 0 && tiles.some(el => Math.abs(el.getBoundingClientRect().width - el._sa.w) > 6))) place();
+      }
       // clamped so a backgrounded tab does not resume with one enormous jump
       const dt = Math.min(0.05, (now - last) / 1000);
       last = now;
