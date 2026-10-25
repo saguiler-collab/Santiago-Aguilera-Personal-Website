@@ -210,6 +210,10 @@ const PAGES = [
     body: ["This is where I learned that Spanish is not one language. The accent, the slang and the register all shifted, and I had to shift with them. That was the first time I remember consciously adapting to fit a room."],
     facts: [["Arrived", "December 2016"], ["School", "Colegio Tilata, La Calera"], ["Altitude", "2,640 m"]],
     slots: [
+      { key: "co-4", ratio: "3 / 4", label: "Riding a mammoth at the dinosaur park" },
+      { key: "co-5", ratio: "3 / 4", label: "Face to face with a T. rex, map guide in hand" },
+      { key: "co-6", ratio: "8 / 7", label: "Life jacket on, ready for the canoe" },
+      { key: "co-7", ratio: "3 / 2", label: "Outside the shelter we built" },
       { key: "co-1", ratio: "4 / 3", label: "Bogotá" },
       { key: "co-2", ratio: "1 / 1", label: "Colegio Tilata" },
       { key: "co-3", ratio: "4 / 3", label: "La Calera" }
@@ -224,6 +228,7 @@ const PAGES = [
     body: ["Drumming became the way I think. It is the one activity that has followed me into every country since, and the reason walking into a new school with a music room never felt like walking in cold."],
     facts: [["Arrived", "July 2019"], ["School", "International School of Panama"], ["Music", "SonoArte"]],
     slots: [
+      { key: "pa-4", ratio: "3 / 4", label: "At the Cerro Ancón nature reserve" },
       { key: "pa-1", ratio: "4 / 3", label: "Ciudad de Panamá" },
       { key: "pa-2", ratio: "1 / 1", label: "SonoArte" },
       { key: "pa-3", ratio: "4 / 3", label: "International School of Panama" }
@@ -795,7 +800,9 @@ const PAGES = [
     ],
     facts: [["Signature race", "RBC Race for the Kids, 15K, 3 years running"], ["Also", "G2G 5Ks · Scotiabank 5K"], ["Cause", "RBC Caribbean Children's Cancer Fund"], ["Club", "Peak Performers"]],
     slots: [
+      { key: "run-hero", ratio: "4 / 5", label: "Finishing a long one in Trinidad, worn out and happy" },
       { key: "run-1", ratio: "3 / 2", label: "RBC Race for the Kids, 15K bibs" },
+      { key: "run-3", ratio: "3 / 4", label: "Mid-race, 15K, bib 437" },
       { key: "run-2", ratio: "4 / 3", label: "A 5K somewhere in Trinidad" }
     ],
     next: { title: "Curiosities", lede: "The things that are not on a form.", href: "Curiosities.dc.html", label: "See the curiosities" }
