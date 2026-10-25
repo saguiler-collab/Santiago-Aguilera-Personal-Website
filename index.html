@@ -59,6 +59,9 @@ d.setAttribute("data-palette-default",def);d.setAttribute("data-palette",k);d.se
 <link rel="preload" as="image" href="/assets/photos/hero/gbm-2.jpg">
 <link rel="preload" as="image" href="/assets/photos/hero/me-dog.jpg">
 <link rel="preload" as="image" href="/assets/photos/hero/exeter-hands.jpg">
+<link rel="preload" as="image" href="/assets/photos/hero/me-tired.jpg">
+<link rel="preload" as="image" href="/assets/photos/hero/kid-vest.jpg">
+<link rel="preload" as="image" href="/assets/photos/hero/kid-camp.jpg">
 <style>
 body{margin:0;background:var(--sa-surface-page);transition:background-color .15s ease}
 a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
@@ -179,6 +182,21 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
     <div class="sa-float" style="width:clamp(49px,5.2vw,74px)">
       <div class="sa-float-inner" style="rotate:-2.4deg">
         <img src="/assets/photos/hero/exeter-hands.jpg" width="300" height="225" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:300 / 225">
+      </div>
+    </div>
+    <div class="sa-float" style="width:clamp(47px,5.0vw,72px)">
+      <div class="sa-float-inner" style="rotate:-2.2deg">
+        <img src="/assets/photos/hero/me-tired.jpg" width="300" height="246" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:300 / 246">
+      </div>
+    </div>
+    <div class="sa-float" style="width:clamp(43px,4.6vw,66px)">
+      <div class="sa-float-inner" style="rotate:2.5deg">
+        <img src="/assets/photos/hero/kid-vest.jpg" width="300" height="261" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:300 / 261">
+      </div>
+    </div>
+    <div class="sa-float" style="width:clamp(49px,5.2vw,74px)">
+      <div class="sa-float-inner" style="rotate:-1.7deg">
+        <img src="/assets/photos/hero/kid-camp.jpg" width="300" height="200" alt="" decoding="async" draggable="false" style="display:block;width:100%;height:auto;aspect-ratio:300 / 200">
       </div>
     </div>
   </div>
@@ -352,7 +370,7 @@ class Component extends DCLogic {
     let seed = 20080913;
     const rnd = () => (seed = (seed * 1664525 + 1013904223) % 4294967296) / 4294967296;
 
-    const COLS = 5, ROWS = 3, SPEED = 15;
+    const COLS = 5, SPEED = 15, ROWS = Math.max(3, Math.ceil(tiles.length / 5));
     const place = () => {
       const r = layer.getBoundingClientRect();
       this.bw = r.width; this.bh = r.height;
