@@ -390,7 +390,16 @@ class Component extends DCLogic {
     // upload a photo into.
     const layer = this._floats && this._floats.current;
     if (!layer) return;
-    const tiles = [...layer.children];
+    // Every refresh shows a different random subset of the photo tiles, so the hero is
+    // never the same twice. The rest stay in the page but are hidden and left out of the loop.
+    const all = [...layer.children];
+    for (let i = all.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [all[i], all[j]] = [all[j], all[i]];
+    }
+    const SHOWN = 15;
+    all.slice(SHOWN).forEach(el => { el.style.display = "none"; });
+    const tiles = all.slice(0, SHOWN);
     if (!tiles.length) return;
 
     let editing = false;
@@ -400,7 +409,7 @@ class Component extends DCLogic {
     } catch (e) {}
 
     // deterministic seeding: a composed opening frame that still differs per tile
-    let seed = 20080913;
+    let seed = Math.floor(Math.random() * 4294967296);
     const rnd = () => (seed = (seed * 1664525 + 1013904223) % 4294967296) / 4294967296;
 
     const COLS = 5, SPEED = 15, ROWS = Math.max(3, Math.ceil(tiles.length / 5));
