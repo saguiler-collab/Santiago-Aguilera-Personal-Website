@@ -1895,3 +1895,28 @@ if (!SITE_ORIGIN) {
   console.log("note: SITE_ORIGIN is empty, so canonical tags, absolute og:url and sitemap.xml\n" +
     "      are omitted. Set it in this file once the Vercel domain is final.");
 }
+
+
+/* Cache-busting. The stylesheets and scripts are cached by browsers, so a page that ships new
+   markup could meet an old stylesheet and render broken. Every reference gets ?v=<hash of the
+   file>, so a changed file is always fetched fresh and an unchanged one stays cached. */
+{
+  const crypto = require("crypto");
+  const ROOT = path.join(__dirname, "..");
+  const versioned = ["assets/site.css", "assets/palettes.css", "assets/photo-slots.js", "assets/site-config.js", "support.js"];
+  const hashes = {};
+  for (const f of versioned) {
+    try { hashes[f] = crypto.createHash("md5").update(fs.readFileSync(path.join(ROOT, f))).digest("hex").slice(0, 8); } catch (e) {}
+  }
+  const targets = fs.readdirSync(PAGES_DIR).filter((f) => f.endsWith(".html")).map((f) => path.join(PAGES_DIR, f))
+    .concat([path.join(ROOT, "index.html"), path.join(ROOT, "404.html")]);
+  for (const t of targets) {
+    if (!fs.existsSync(t)) continue;
+    let html = fs.readFileSync(t, "utf8"), out = html;
+    for (const f of Object.keys(hashes)) {
+      const re = new RegExp("((?:\\.\\./|/)?" + f.replace(/[.\/]/g, "\\$&") + ")(\\?v=[0-9a-f]+)?(?=[\"'])", "g");
+      out = out.replace(re, "$1?v=" + hashes[f]);
+    }
+    if (out !== html) fs.writeFileSync(t, out);
+  }
+}
