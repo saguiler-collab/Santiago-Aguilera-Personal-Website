@@ -865,6 +865,7 @@ const PAGES = [
       },
       {
         "title": "Grading it myself first",
+      "slots": ["vz-3"],
         "body": [
           "I graded the paper against my own criteria before anyone else did. The number is not the point. Writing down where it fell short, on purpose, is."
         ],
@@ -901,7 +902,8 @@ const PAGES = [
     facts: [["Type", "Publication"], ["Topic", "Venezuelan migration to Trinidad & Tobago"], ["Length", "42 pages · 62 sources"], ["Venue", "SSRN"], ["When", "November 2024 – May 2025"]],
     slots: [
       { key: "vz-1", ratio: "3 / 4", label: "The paper's title page, published on SSRN" },
-      { key: "vz-2", ratio: "4 / 3", label: "Presenting the work at the Personal Project Exhibition" }
+      { key: "vz-2", ratio: "4 / 3", label: "Presenting the work at the Personal Project Exhibition" },
+      { key: "vz-3", ratio: "995 / 1202", label: "The first page of the final report, with the planning and the learning goal" }
     ],
     next: { title: "Next: CSR-x", lede: "Environmental epigenetics, summer 2026.", href: "Research-CSRx.dc.html", label: "Go to CSR-x" }
   },
