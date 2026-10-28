@@ -953,3 +953,17 @@ a.sa-send { display: inline-flex; align-items: center; text-decoration: none; }
 }
 .sa-points strong { color: var(--sa-text-primary); font-weight: 600; }
 @media (max-width: 720px) { .sa-text-row { grid-template-columns: 1fr; gap: 6px; } }
+
+/* ---- hero performance ----
+   The tiles move every frame, so anything that has to re-composite over them is paid for 60
+   times a second. A backdrop blur, a soft-light grain layer and wide soft shadows were doing
+   exactly that. They are replaced with static gradients and a cheap shadow. */
+.sa-hero.sa-grain::after { display: none; }
+.sa-hero-well {
+  -webkit-backdrop-filter: none; backdrop-filter: none;
+  -webkit-mask-image: none; mask-image: none;
+  background: radial-gradient(ellipse 52% 46% at 50% 50%,
+    rgba(4, 18, 20, 0.88) 0%, rgba(4, 18, 20, 0.7) 40%, rgba(4, 18, 20, 0) 80%);
+}
+.sa-float-inner { box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35); }
+.sa-float { contain: layout paint; }
