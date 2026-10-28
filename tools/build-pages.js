@@ -341,7 +341,8 @@ const PAGES = [
       { key: "perk-2", ratio: "4 / 3", label: "Medical Spirit and Promise Award, Perkiomen School" },
       { key: "perk-4", ratio: "4 / 3", label: "Science and Math Award, Rochester Institute of Technology" },
       { key: "perk-3", ratio: "1 / 1", label: "Awards night" },
-      { key: "perk-5", ratio: "4 / 3", label: "A birthday dinner in the dining hall" }
+      { key: "perk-5", ratio: "4 / 3", label: "A birthday dinner in the dining hall" },
+      { key: "perk-6", ratio: "3 / 4", label: "Meeting Alberto, the anatomy skeleton, in class" }
     ],
     next: { title: "Next: Exeter Summer", lede: "A summer of coursework away from home.", href: "Academics-ExeterSummer.dc.html", label: "Go to Exeter Summer" }
   },
@@ -804,11 +805,16 @@ const PAGES = [
     eyebrow: "Activities · Olympic lifting", title: "Weightlifting", lede: "Snatch and clean & jerk, programmed year-round.",
     desc: "Olympic weightlifting. Snatch and clean & jerk, trained year-round.",
     intro: "I started lifting because I wanted to be stronger. It turned into the clearest lesson I have in patience: nothing here can be rushed, and the programme only works if you run it for months.",
-    body: ["Olympic lifting in particular is unforgiving about technique. You cannot muscle a bad snatch. The lift simply fails, in front of everyone, which is a useful thing to get comfortable with."],
-    facts: [["Discipline", "Olympic weightlifting"], ["Lifts", "Snatch · clean & jerk"], ["Training", "Year-round"]],
+    body: [
+      "Olympic lifting in particular is unforgiving about technique. You cannot muscle a bad snatch. The lift simply fails, in front of everyone, which is a useful thing to get comfortable with.",
+      "I started training in August 2024 and log every session in Liftoff, a lifting app with around four million active users. My current records are a 265 lb bench press, a 335 lb squat and a 455 lb deadlift. In the app's global leaderboards, screenshotted on October 28, 2026, I sit at #186 (Top 0.1%) on one board and #48 on another. The calendar is the app's memory view of the first month, August 2024."
+    ],
+    facts: [["Discipline", "Olympic weightlifting"], ["Lifts", "Snatch · clean & jerk"], ["Training", "Year-round, since August 2024"], ["Bench press", "265 lb"], ["Squat", "335 lb"], ["Deadlift", "455 lb"], ["Liftoff ranking", "#186 global (Top 0.1%), Oct 28, 2026"]],
     slots: [
       { key: "lift-1", ratio: "3 / 4", label: "Back squats" },
-      { key: "lift-2", ratio: "3 / 4", label: "Between sets in the gym" }
+      { key: "lift-2", ratio: "3 / 4", label: "Between sets in the gym" },
+      { key: "lift-3", ratio: "1170 / 391", label: "Liftoff global leaderboards, screenshots taken October 28, 2026" },
+      { key: "lift-4", ratio: "1170 / 1516", label: "Liftoff memories, August 2024, the first month of training" }
     ],
     next: { title: "Next: Drums & Music", lede: "Three countries, three bands, one kit.", href: "Activities-Music.dc.html", label: "Go to music" }
   },
