@@ -1357,14 +1357,14 @@ const PAGES = [
   },
   {
     file: "Curiosities-Videogames.dc.html", section: "curiosities", parent: { label: "Curiosities", href: "Curiosities.dc.html" },
-    eyebrow: "Curiosities · Games", title: "Video games", lede: "Yakuza, hack and slash, Dark Souls, and five platinum trophies.",
-    desc: "Video games. Five platinum trophies, a love of the Yakuza games, hack and slash, and Dark Souls.",
+    eyebrow: "Curiosities · Games", title: "Video games", lede: "Yakuza, hack and slash, Dark Souls, and three platinum trophies.",
+    desc: "Video games. Three platinum trophies, a love of the Yakuza games, hack and slash, and Dark Souls.",
     intro: "Yakuza, hack and slash, and Dark Souls, and otherwise whatever the group has decided we are playing this month.",
     media: [
       {
-        "title": "Five platinum trophies",
+        "title": "Three platinum trophies",
         "body": [
-          "A platinum means every other trophy in the game is done. These are screenshots from my PlayStation trophy pages, and between them they cover 205 trophies."
+          "A platinum means every other trophy in the game is done. These are screenshots from my PlayStation trophy pages, and between them they cover 140 trophies."
         ],
         "points": [
           [
@@ -1374,14 +1374,6 @@ const PAGES = [
           [
             "Like a Dragon Gaiden: The Man Who Erased His Name",
             "PS5. 62 of 62, platinum earned May 20, 2025."
-          ],
-          [
-            "Cuphead",
-            "PS4. 29 of 29, platinum earned May 20, 2025."
-          ],
-          [
-            "God of War Ragnarök",
-            "PS5 and PC. 36 of 36, platinum earned May 13, 2025."
           ],
           [
             "God of War",
@@ -1394,8 +1386,6 @@ const PAGES = [
         "slots": [
           "plat-1",
           "plat-2",
-          "plat-3",
-          "plat-4",
           "plat-5"
         ],
         "gallery": true
@@ -1412,7 +1402,7 @@ const PAGES = [
           ],
           [
             "Hack and slash",
-            "God of War and its sequel, both finished to 100%."
+            "God of War, finished to 100%."
           ],
           [
             "Dark Souls",
@@ -1442,15 +1432,13 @@ const PAGES = [
         "gallery": true
       }
     ],
-    facts: [["Favourites", "Yakuza · hack and slash · Dark Souls"], ["Platinums", "5"], ["Trophies earned", "205 across the five"], ["Also", "Co-op · strategy"]],
+    facts: [["Favourites", "Yakuza · hack and slash · Dark Souls"], ["Platinums", "3"], ["Trophies earned", "140 across the three"], ["Also", "Co-op · strategy"]],
     slots: [
       { key: "games-1", ratio: "4 / 3", label: "Dark Souls" },
       { key: "games-2", ratio: "3 / 4", label: "Dark Souls, with Solaire" },
       { key: "games-3", ratio: "4 / 3", label: "The Wind Waker HD on the Wii U" },
       { key: "plat-1", ratio: "1400 / 400", label: "Dark Souls: Remastered trophy page" },
       { key: "plat-2", ratio: "1400 / 400", label: "Like a Dragon Gaiden trophy page" },
-      { key: "plat-3", ratio: "1400 / 402", label: "Cuphead trophy page" },
-      { key: "plat-4", ratio: "1400 / 396", label: "God of War Ragnarök trophy page" },
       { key: "plat-5", ratio: "1400 / 399", label: "God of War trophy page" }
     ],
     next: { title: "Media", lede: "Photos and video from six countries.", href: "Media.dc.html", label: "See the media" }
