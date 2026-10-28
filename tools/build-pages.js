@@ -1824,7 +1824,7 @@ ${liveLink}
 ${tbdNote}
 ${renderFacts(p.facts)}
     </div>
-${heroSlot ? `    <div style="max-width:${heroWidth(heroSlot.ratio)}px;width:100%"><sa-image-slot slot-key="${attr(heroSlot.key)}" ratio="${attr(heroSlot.ratio)}" placeholder="${attr(heroSlot.label)}"></sa-image-slot></div>` : "    <div></div>"}
+${heroSlot ? `    <div style="max-width:${heroWidth(heroSlot.ratio)}px;width:100%"><sa-image-slot slot-key="${attr(heroSlot.key)}" ratio="${attr(heroSlot.ratio)}" placeholder="${attr(heroSlot.label)}"></sa-image-slot></div>` : `    <div style="max-width:${heroWidth("4 / 3")}px;width:100%"><div class="sa-banner" aria-hidden="true">${spiralSvg()}</div></div>`}
 </section>
 ${bodySections}${more}
 
@@ -2003,6 +2003,54 @@ if (!SITE_ORIGIN) {
       const re = new RegExp("((?:\\.\\./|/)?" + f.replace(/[.\/]/g, "\\$&") + ")(\\?v=[0-9a-f]+)?(?=[\"'])", "g");
       out = out.replace(re, "$1?v=" + hashes[f]);
     }
+    if (out !== html) fs.writeFileSync(t, out);
+  }
+}
+
+
+/* Photo cards. The section landings, and the homepage's "ways in" and places grids, use the
+   design system's plain text cards. Every interactive card is turned into a photo card with a
+   colour accent here, after the pages are written, so the spec stays simple. Idempotent. */
+function spiralSvg() {
+  let d = "";
+  for (let i = 0; i <= 140; i++) { const t = i / 140 * Math.PI * 5.2, r = 3 + t * 2.6; d += (i ? "L" : "M") + (50 + r * Math.cos(t)).toFixed(1) + " " + (50 + r * Math.sin(t)).toFixed(1); }
+  return `<svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${d}"/></svg>`;
+}
+{
+  const CARD_IMG = {
+    "About.dc.html": "about-church", "Academics.dc.html": "exeter-banner", "Research.dc.html": "cmu-lab", "Leadership.dc.html": "hosa-mic",
+    "Activities.dc.html": "lift-squat", "Curiosities.dc.html": "games-artorias", "Media.dc.html": "trip-versailles",
+    "Leadership-HOSA.dc.html": "hosa-conference", "Leadership-MUN.dc.html": "mun-eagle", "Leadership-Shadowing.dc.html": "hosp-or",
+    "Leadership-Volunteering.dc.html": "vol-river", "Activities-Swimming.dc.html": "swim-blocks", "Activities-Weightlifting.dc.html": "lift-squat",
+    "Activities-Music.dc.html": "music-drums", "Activities-Running.dc.html": "run-tired", "Academics-ISPS.dc.html": "isps-guayasamin",
+    "Academics-Perkiomen.dc.html": "perk-skeleton", "Academics-ExeterSummer.dc.html": "exeter-banner", "Academics-CompBio.dc.html": "cmu-friends",
+    "Research-CellAtlas.dc.html": "gbm-3", "Research-MedicalApp.dc.html": "field-notes", "Research-CSRx.dc.html": "cert-csrx",
+    "Research-Venezuela.dc.html": "vz-exhibit", "Curiosities-Videogames.dc.html": "games-artorias", "Curiosities-Music.dc.html": "music-band",
+    "Curiosities-Literature.dc.html": "sea-look", "Place-Mexico.dc.html": "kid-pirate", "Place-Colombia.dc.html": "co-mammoth",
+    "Place-Panama.dc.html": "pa-ancon", "Place-Trinidad.dc.html": "trip-bench", "Place-UnitedStates.dc.html": "perk-sky1"
+  };
+  const CITY_IMG = { "Madrid": "trip-madrid", "Monterrey": "kid-pirate", "Bogotá": "co-mammoth", "Ciudad de Panamá": "pa-ancon", "Port of Spain": "trip-bench", "Pennsburg": "perk-sky1" };
+  const PLACE_COLOR = { usa: "#3A7CA5", spain: "#D9A441", mexico: "#3F9A5A", colombia: "#E3B93C", panama: "#E0654A", trinidad: "#C2403A", pennsburg: "#7B5EA7" };
+  const PAL = ["#E0654A", "#2F8F83", "#D9A441", "#7B5EA7", "#3A7CA5", "#C2527A", "#5E8C3A"];
+  const A = (attrs, n) => { const m = attrs.match(new RegExp("(?:^|\\s)" + n + '="([^"]*)"')); return m ? m[1] : ""; };
+  const img = (name, alt) => `<span class="sa-pcard-img"><img src="/assets/photos/card/${name}.jpg" alt="" loading="lazy" decoding="async" width="640" height="400"></span>`;
+  const noimg = () => `<span class="sa-pcard-img noimg">${spiralSvg()}</span>`;
+  const hash = (t) => { let h = 0; for (const ch of t) h = (h * 31 + ch.charCodeAt(0)) >>> 0; return h; };
+  const cardRe = /<x-import component-from-global-scope="[^"]*\.Card"([^>]*)>([\s\S]*?)<\/x-import>/g;
+  const placeRe = /<x-import component-from-global-scope="[^"]*\.PlaceCard"([^>]*)>([\s\S]*?)<\/x-import>/g;
+  const targets = fs.readdirSync(PAGES_DIR).filter((f) => f.endsWith(".html")).map((f) => path.join(PAGES_DIR, f)).concat([path.join(path.join(__dirname, ".."), "index.html")]);
+  for (const t of targets) {
+    if (!fs.existsSync(t)) continue;
+    const html = fs.readFileSync(t, "utf8");
+    let out = html.replace(cardRe, (all, attrs, inner) => {
+      const href = A(attrs, "href"); if (!href || !/interactive/.test(attrs)) return all;
+      const pic = CARD_IMG[href.split("/").pop()];
+      return `<a class="sa-pcard" href="${href}" style="--c:${PAL[hash(href) % PAL.length]}">${pic ? img(pic) : noimg()}<span class="sa-pcard-body"><span class="sa-pcard-eyebrow">${A(attrs, "eyebrow")}</span><span class="sa-pcard-title">${A(attrs, "title")}</span><span class="sa-pcard-text">${inner}</span></span></a>`;
+    });
+    out = out.replace(placeRe, (all, attrs, inner) => {
+      const city = A(attrs, "city"), pic = CITY_IMG[city];
+      return `<span class="sa-pcard" style="--c:${PLACE_COLOR[A(attrs, "place")] || PAL[0]}">${pic ? img(pic) : noimg()}<span class="sa-pcard-body"><span class="sa-pcard-years">${A(attrs, "years")}</span><span class="sa-pcard-title">${city}</span><span class="sa-pcard-eyebrow">${A(attrs, "country")}</span><span class="sa-pcard-text">${inner}</span></span></span>`;
+    });
     if (out !== html) fs.writeFileSync(t, out);
   }
 }
