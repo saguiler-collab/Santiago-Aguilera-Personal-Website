@@ -299,6 +299,13 @@ const PAGES = [
         ]
       },
       {
+      "title": "Guayasamín, recreated",
+      "body": [
+        "For Spanish class I recreated a painting by the Ecuadorian artist Oswaldo Guayasamín. I was pretty impressed with how accurate it ended up."
+      ],
+      "slots": ["isps-4", "isps-5"]
+    },
+    {
         "title": "Where the Venezuela paper came from",
         "body": [
           "The clearest thread runs through Individuals & Societies. Grade 9 spent weeks on migration, and ten days after I turned in that unit's paper I was already listing Venezuelan migration as a Personal Project topic. The coursework is where the questions came from."
@@ -353,7 +360,9 @@ const PAGES = [
     slots: [
       { key: "isps-1", ratio: "4 / 3", label: "ISPS campus" },
       { key: "isps-2", ratio: "4 / 3", label: "Student Council" },
-      { key: "isps-3", ratio: "1 / 1", label: "Awards ceremony" }
+      { key: "isps-3", ratio: "1 / 1", label: "Awards ceremony" },
+      { key: "isps-4", ratio: "1141 / 1145", label: "Oswaldo Guayasamín, the original" },
+      { key: "isps-5", ratio: "1400 / 1238", label: "My recreation, for Spanish class" }
     ],
     next: { title: "Next: Perkiomen", lede: "The health science track, and boarding.", href: "Academics-Perkiomen.dc.html", label: "Go to Perkiomen" }
   },
@@ -895,7 +904,8 @@ const PAGES = [
           "Presented on this board at the school's Personal Project Exhibition: the interviews, the drivers behind the migration, the routes across the Bocas del Dragón, and the case built line by line back to the two goals it started from."
         ],
         "slots": [
-          "vz-2"
+          "vz-2",
+          "vz-4"
         ]
       }
     ],
@@ -903,7 +913,8 @@ const PAGES = [
     slots: [
       { key: "vz-1", ratio: "3 / 4", label: "The paper's title page, published on SSRN" },
       { key: "vz-2", ratio: "4 / 3", label: "Presenting the work at the Personal Project Exhibition" },
-      { key: "vz-3", ratio: "995 / 1202", label: "The first page of the final report, with the planning and the learning goal" }
+      { key: "vz-3", ratio: "995 / 1202", label: "The first page of the final report, with the planning and the learning goal" },
+      { key: "vz-4", ratio: "888 / 1600", label: "Explaining the project at the Personal Project Exhibition" }
     ],
     next: { title: "Next: CSR-x", lede: "Environmental epigenetics, summer 2026.", href: "Research-CSRx.dc.html", label: "Go to CSR-x" }
   },
