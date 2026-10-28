@@ -206,6 +206,8 @@ const PAGES = [
       { key: "mx-1", ratio: "4 / 3", label: "Monterrey" },
       { key: "mx-2", ratio: "1 / 1", label: "AIM or LICEO" },
       { key: "mx-3", ratio: "4 / 3", label: "Family in Monterrey" },
+      { key: "mx-5", ratio: "1454 / 2576", label: "Inside a church in Mexico" },
+      { key: "mx-6", ratio: "1200 / 1600", label: "Back home in Mexico, summer 2026" },
       { key: "mx-4", ratio: "3 / 4", label: "Dressed up as a pirate" }
     ],
     next: { title: "Next: Colombia", lede: "Altitude, and a second accent in the same language.", href: "Place-Colombia.dc.html", label: "Go to Colombia" }
@@ -332,7 +334,8 @@ const PAGES = [
         { title: "Grade 11", items: [
           { label: "Medical Spirit & Promise Award", detail: "For the health science track and the work around it." },
           { label: "Rochester Institute of Technology Math & Science Award", detail: "2026. Awarded to a junior through RIT's recognition programme." },
-          { label: "Most Improved, Varsity Boys Swimming", detail: "2026. See the swimming page." }
+          { label: "Most Improved, Varsity Boys Swimming", detail: "2026. See the swimming page." },
+          { label: "AP International Diploma", detail: "Featured by Perkiomen School for earning it." }
         ]}
       ]
     },
@@ -343,7 +346,11 @@ const PAGES = [
       { key: "perk-3", ratio: "1 / 1", label: "Awards night" },
       { key: "perk-5", ratio: "4 / 3", label: "A birthday dinner in the dining hall" },
       { key: "perk-6", ratio: "3 / 4", label: "Meeting Alberto, the anatomy skeleton, in class" },
-      { key: "perk-7", ratio: "4 / 3", label: "My first room at Perkiomen, the start of my own adventure" }
+      { key: "perk-7", ratio: "4 / 3", label: "My first room at Perkiomen, the start of my own adventure" },
+      { key: "perk-8", ratio: "974 / 778", label: "Perkiomen School's post on earning the AP International Diploma" },
+      { key: "perk-9", ratio: "2016 / 1512", label: "A winter sunset over campus" },
+      { key: "perk-10", ratio: "2016 / 1512", label: "Dusk on the lawn" },
+      { key: "perk-11", ratio: "2016 / 1512", label: "A rainbow after the storm" }
     ],
     video: { src: "/assets/video/perk-suit.mp4", poster: "/assets/video/perk-suit.jpg", ratio: "9 / 16", width: 340, label: "In the Perkiomen blazer and tie" },
     next: { title: "Next: Exeter Summer", lede: "A summer of coursework away from home.", href: "Academics-ExeterSummer.dc.html", label: "Go to Exeter Summer" }
@@ -490,6 +497,13 @@ const PAGES = [
        text at 220px is unreadable. */
     media: [
       {
+        slots: ["field-notes"],
+        title: "Where it started: a notebook",
+        body: [
+          "The ward notes behind the app were handwritten, in Spanish and English, one page per observation. This spread is from the Veracruz weeks: what families did not understand, what a doctor wished he could hand them, and what the app should do about it. It is shown for the handwriting, not the content; no patient names appear in it."
+        ]
+      },
+      {
         slots: ["app-plan"],
         title: "The screen a doctor opens",
         body: [
@@ -517,6 +531,7 @@ const PAGES = [
     ],
     slots: [
       { key: "app-icon", ratio: "1 / 1", label: "The SanaSanita mark" },
+      { key: "field-notes", ratio: "2016 / 1512", label: "Field notes from the ward, handwritten" },
       { key: "app-plan", ratio: "4 / 5", label: "Nuevo plan, the doctor's screen" },
       { key: "app-evidence-search", ratio: "4 / 5", label: "Searching the open-access literature" },
       { key: "app-evidence-engine", ratio: "4 / 5", label: "Motor de evidencia, where a draft is written" },
@@ -599,7 +614,7 @@ const PAGES = [
     eyebrow: "Leadership · Founder & President", title: "HOSA", lede: "Future Health Professionals. Perkiomen chapter.",
     desc: "Founded and leads Perkiomen's HOSA chapter, Future Health Professionals.",
     intro: "I founded Perkiomen's HOSA chapter because the school did not have one. HOSA, Future Health Professionals, is the national organisation for students heading into healthcare, and its absence meant anyone interested had nowhere to put that interest.",
-    body: ["Founding it meant the usual unglamorous work: a charter, an advisor, a room, and enough people in that room to make it real."],
+    body: ["Founding it meant the usual unglamorous work: a charter, an advisor, a room, and enough people in that room to make it real.", "One of the chapter's events was a volleyball tournament with La Casa Latina for Childhood Cancer Awareness Month, held on a Friday night at the Hollenbach Athletic Center and raising money for Alex's Lemonade Stand Foundation."],
     steps: [
       ["Founded", "Perkiomen's HOSA chapter, to create opportunities for students interested in healthcare."],
       ["Built", TBD, true],
@@ -610,7 +625,8 @@ const PAGES = [
     slots: [
       { key: "hosa-1", ratio: "3 / 4", label: "Addressing the room at a school event" },
       { key: "hosa-2", ratio: "4 / 3", label: "With fellow students in the gym" },
-      { key: "hosa-3", ratio: "4 / 3", label: "Between sessions at a HOSA conference" }
+      { key: "hosa-3", ratio: "4 / 3", label: "Between sessions at a HOSA conference" },
+      { key: "hosa-4", ratio: "848 / 1090", label: "Poster for the Perk HOSA and La Casa Latina volleyball tournament for Childhood Cancer Awareness" }
     ],
     next: { title: "Next: Model UN", lede: "Delegate at Princeton and Eagle MUNC.", href: "Leadership-MUN.dc.html", label: "Go to Model UN" }
   },
