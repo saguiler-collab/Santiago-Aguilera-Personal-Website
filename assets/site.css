@@ -929,3 +929,27 @@ a.sa-send { display: inline-flex; align-items: center; text-decoration: none; }
 .sa-gallery .sa-fig { break-inside: avoid; margin: 0 0 clamp(14px, 1.8vw, 24px); }
 @media (max-width: 980px) { .sa-gallery { column-count: 2; } .sa-gallery.n1 { column-count: 1; } }
 @media (max-width: 560px) { .sa-gallery, .sa-gallery.n2 { column-count: 1; } }
+
+/* ---- text-only story rows and bullet lists on long pages ---- */
+.sa-text-row {
+  width: 100%; max-width: 1440px; margin: 0 auto; box-sizing: border-box;
+  padding: var(--sa-space-10) clamp(24px, 5vw, 64px) var(--sa-space-10) clamp(24px, 11vw, 168px);
+  display: grid; grid-template-columns: minmax(56px, 0.18fr) minmax(0, 1fr); gap: clamp(16px, 3vw, 40px);
+  border-top: 1px solid var(--sa-border-hairline, rgba(0,0,0,.12));
+}
+.sa-text-kicker {
+  font: var(--sa-type-eyebrow); letter-spacing: var(--sa-tracking-eyebrow); color: var(--sa-text-accent);
+  font-size: var(--sa-text-lg);
+}
+.sa-text-row .sa-media-text { max-width: 68ch; }
+.sa-points { list-style: none; margin: var(--sa-space-4) 0 0; padding: 0; display: grid; gap: 12px; }
+.sa-points li {
+  display: grid; gap: 2px; padding-left: 16px; position: relative;
+  font: var(--sa-type-body); color: var(--sa-text-secondary);
+}
+.sa-points li::before {
+  content: ""; position: absolute; left: 0; top: .62em; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--sa-text-accent);
+}
+.sa-points strong { color: var(--sa-text-primary); font-weight: 600; }
+@media (max-width: 720px) { .sa-text-row { grid-template-columns: 1fr; gap: 6px; } }

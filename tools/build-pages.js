@@ -283,8 +283,45 @@ const PAGES = [
     eyebrow: "Academics · Trinidad & Tobago", title: "International School of Port of Spain", lede: "2021–2025. Student Council, and Stronger Together.",
     desc: "ISPS. Student Council and the Stronger Together initiative.",
     intro: "ISPS is where I first took on something school-wide rather than something assigned. Student Council meant representing my class and actually running events; Stronger Together meant building the support I wished had existed.",
-    body: ["Stronger Together was a student-led initiative supporting classmates through the return to in-person school after remote learning. The problem was not academic. A lot of people had quietly stopped knowing how to be around each other.", "Academically the same subjects kept reappearing across all four years. English every single year, with Spanish, music and Individuals & Societies close behind. That is a more honest description of where my attention goes than anything I could claim about myself.", "The clearest thread runs through Individuals & Societies. Grade 9 spent weeks on migration itself, push and pull factors, sending and receiving countries, and I turned in that unit's research paper on June 8th, 2024. Ten days later I was already listing Venezuelan migration as a Personal Project topic. The coursework did not just come before the paper. It is where the questions came from.", "The rest filled in around the edges: secretary of the Debate Club, writing for the World News Journalism Club, and enough in-class debates, doping in sport, zoos, phones at school, that arguing a position in front of people who disagree stopped feeling unusual well before Model UN did the same thing at Perkiomen."],
     tbd: "What the Mr. Jefferies Memorial Award recognises. Its criteria are not published anywhere I could find, so rather than guess at what it honours, the entry below just states the fact of it. Send the description and it goes in.",
+    media: [
+      {
+        "title": "Student Council and Stronger Together",
+        "body": [
+          "Student Council meant representing my class and running school-wide events. Stronger Together was a student-led initiative supporting classmates through the return to in-person school after remote learning.",
+          "The problem was not academic. A lot of people had quietly stopped knowing how to be around each other."
+        ]
+      },
+      {
+        "title": "The same subjects, four years running",
+        "body": [
+          "English every single year, with Spanish, music and Individuals & Societies close behind. That is a more honest description of where my attention goes than anything I could claim about myself."
+        ]
+      },
+      {
+        "title": "Where the Venezuela paper came from",
+        "body": [
+          "The clearest thread runs through Individuals & Societies. Grade 9 spent weeks on migration, and ten days after I turned in that unit's paper I was already listing Venezuelan migration as a Personal Project topic. The coursework is where the questions came from."
+        ]
+      },
+      {
+        "title": "Clubs and debate",
+        "points": [
+          [
+            "Debate Club",
+            "Secretary."
+          ],
+          [
+            "World News Journalism Club",
+            "Writing for it."
+          ],
+          [
+            "In-class debates",
+            "Doping in sport, zoos, phones at school. Arguing a position in front of people who disagree stopped feeling unusual well before Model UN did the same thing at Perkiomen."
+          ]
+        ]
+      }
+    ],
     facts: [["Years", "2021 – 2025"], ["Roles", "Student Council · Stronger Together"], ["Programme", "IB Middle Years Programme"]],
     awards: {
       title: "Four years of awards",
@@ -360,10 +397,61 @@ const PAGES = [
     eyebrow: "Academics · Summer program", title: "Exeter Summer", lede: "Phillips Exeter Academy.",
     desc: "Exeter Summer at Phillips Exeter Academy. Coursework and Harkness-style seminars.",
     intro: "Exeter Summer at Phillips Exeter Academy. Exeter teaches around the Harkness table. Twelve students, one oval table, and no lecture to hide behind.",
-    body: [
-      "It was the Charles J. Hamm '55 Leadership Program specifically, a track built around social justice and community engagement rather than a general academic sampler. Two courses ran alongside it: a practical leadership seminar, and a leadership analysis class where I picked apart Franklin Delano Roosevelt's leadership against the models we had just been taught.",
-      "The seminar's project was physical, not written: building models meant to show what violence and a lack of opportunity actually do to people cut off from them by discrimination, with the design itself carrying part of the argument. A visit to the Edward M. Kennedy Institute sat alongside it, and made policy a lot less abstract.",
-      "Underneath the leadership track sat the ordinary reason most people go to a summer program: SAT preparation, and an introduction to calculus."
+    media: [
+      {
+        "title": "The Hamm '55 Leadership Program",
+        "body": [
+          "Not a general academic sampler: a track built around social justice and community engagement, focused on the philosophy, interpretation and execution of leadership."
+        ],
+        "points": [
+          [
+            "Practical leadership seminar",
+            "The project was physical, not written: models that show what violence and a lack of opportunity do to people cut off by discrimination, with the design carrying part of the argument."
+          ],
+          [
+            "Leadership analysis",
+            "I investigated and presented Franklin Delano Roosevelt's leadership, set against the models we had been taught."
+          ],
+          [
+            "Edward M. Kennedy Institute",
+            "A visit that made policy a lot less abstract."
+          ]
+        ],
+        "slots": [
+          "exeter-3",
+          "exeter-2"
+        ]
+      },
+      {
+        "title": "Underneath",
+        "body": [
+          "Underneath the leadership track sat the ordinary reason most people go to a summer program: online SAT preparation, and advanced mathematics on introductory calculus."
+        ]
+      },
+      {
+        "title": "Around campus",
+        "slots": [
+          "exeter-1",
+          "exeter-13",
+          "exeter-11",
+          "exeter-12",
+          "exeter-14"
+        ],
+        "gallery": true
+      },
+      {
+        "title": "Outside class",
+        "slots": [
+          "exeter-6",
+          "exeter-7",
+          "exeter-8",
+          "exeter-9",
+          "exeter-10",
+          "exeter-4",
+          "exeter-5"
+        ],
+        "gallery": true
+      }
     ],
     facts: [["Program", "Hamm '55 Leadership Program"], ["Place", "Exeter, New Hampshire"], ["Focus", "Social justice · community engagement"], ["Also", "SAT prep · intro calculus"]],
     slots: [
@@ -389,7 +477,49 @@ const PAGES = [
     eyebrow: "Academics · Carnegie Mellon", title: "Computational Biology", lede: "Carnegie Mellon University.",
     desc: "Computational biology coursework at Carnegie Mellon. The training behind the CellAtlas GBM project.",
     intro: "Computational biology at Carnegie Mellon. This is the training that makes the glioblastoma work possible: biology asked in a language a computer can actually answer.",
-    body: ["It is the clearest example of the direction I am heading. Medicine is increasingly a data problem, and I would rather be able to write the analysis than wait for someone else to run it.", "The four weeks ran on coding, lab work, research and algorithm development, with professors and teaching assistants around for the parts a five-person team could not work out alone. The final project asked whether cell-type composition, estimated by deconvolving bulk RNA-seq across 153 TCGA-GBM samples, said anything about a patient's prognosis on its own terms, not just as a stand-in for tumour grade. My part of it was validation: proving whether the numbers the rest of the pipeline produced could actually be trusted."],
+    media: [
+      {
+        "title": "Four weeks, five people",
+        "body": [
+          "An intensive, selective program with sessions in coding, laboratory work, research and algorithm development, with professors and teaching assistants around for the parts a five-person team could not work out alone."
+        ],
+        "slots": [
+          "cmu-lab",
+          "gbm-2"
+        ]
+      },
+      {
+        "title": "The final project",
+        "body": [
+          "Does cell-type composition, estimated by deconvolving bulk RNA-seq across 153 TCGA-GBM samples, say anything about a patient's prognosis on its own terms, not just as a stand-in for tumour grade? My part was validation: proving whether the numbers the rest of the pipeline produced could be trusted.",
+          "We were finalists in the final project presentation."
+        ],
+        "slots": [
+          "cmu-present",
+          "cmu-lecture"
+        ]
+      },
+      {
+        "title": "Why it matters to me",
+        "body": [
+          "Medicine is increasingly a data problem, and I would rather be able to write the analysis than wait for someone else to run it. The certificate says Pre-College Program in Computational Biology, summer 2026."
+        ],
+        "slots": [
+          "gbm-4",
+          "gbm-3"
+        ]
+      },
+      {
+        "title": "Off the clock",
+        "slots": [
+          "cmu-friends",
+          "cmu-fireworks",
+          "cmu-pole",
+          "cmu-lobby"
+        ],
+        "gallery": true
+      }
+    ],
     facts: [["Institution", "Carnegie Mellon University"], ["Field", "Computational biology"], ["Team", "Five-person team"], ["Result", "Finalist, final project presentation"]],
     awards: {
       title: "Recognition",
@@ -422,12 +552,6 @@ const PAGES = [
     desc: "A five-person team's glioblastoma deconvolution pipeline. My part was proving whether the numbers could be trusted.",
     intro: "A tumour sample is never pure cancer. It is cancer cells, immune cells, blood-vessel cells and normal brain tissue, blended into one signal by bulk RNA sequencing, like a smoothie: you can taste the blend, but not see the fruit that went into it. Single-cell sequencing can see the fruit, but it is expensive and unavailable for most patients.",
     link: { href: "https://cellatlasgbm.vercel.app/", label: "Open CellAtlas GBM" },
-    body: [
-      "It did not start as a deconvolution pipeline. The five of us began with a broad question about the tumour microenvironment, the neighbourhood of stromal and immune cells that helps a glioblastoma resist chemotherapy, and covered cancer-associated fibroblasts, hypoxia and drug-efflux pumps before narrowing it, over several checkpoints, to something we could actually execute and defend: estimate the fraction of seven cell types (tumour, macrophage/microglia, T cell, NK cell, B cell, endothelial, oligodendrocyte) in each of 153 TCGA-GBM tumours from public bulk RNA-seq, and test whether that composition says anything about survival. My part was the validation side, proving whether the numbers the rest of the pipeline produced could actually be trusted, not just that they looked plausible.",
-      "The first results looked plausible and were biologically wrong, which turned out to be the most useful part of the project. Solving on log-transformed values produced nonsense, immune cells near zero, because the underlying mixing model is linear and additive; switching to linear counts-per-million fixed it immediately. A handful of high-expression housekeeping genes were dominating the fit regardless of whether they actually distinguished cell types, so we weighted each gene by how discriminative it was. And one donor supplied 38% of every astrocyte cell in our reference atlas; a plain average would have mostly described that one person, so we rarefied instead, one cell per donor per trial, repeated and averaged, so no single patient can dominate.",
-      "ν-SVR, the algorithm CIBERSORT uses, came out the most reliable of the three methods we benchmarked; NNLS drove many lymphocyte estimates to exactly zero. Our RNA-based tumour-purity estimate correlated with an independent, DNA-based measurement at ρ = 0.76, the check I am proudest of, since it never touched RNA at all. Composition features added to a clinical survival model moved the concordance index by +0.001, essentially nothing, and we reported that as a genuine null result rather than hunting for a cutoff that looked better. We chose our method from pre-registered accuracy benchmarks on known-truth data, before ever checking which choice made the survival numbers look best, and the failed and null results both stayed in the final report.",
-      "A metric that is easy to optimise, like reconstruction error, is not the same thing as evidence of correctness. Real validation has to come from a measurement that could actually have proven us wrong. That discipline, freezing a schema before looking at results, and being willing to report a well-supported null finding, is exactly the kind of thinking I want to carry into medicine, where believing a plausible but unvalidated number costs a great deal more than a lower grade."
-    ],
     stepsEyebrow: "What I built", stepsTitle: "Five checks on whether to believe the numbers",
     steps: [
       ["Donor-split integrity", "A leakage test by mutation: deliberately corrupt every held-out donor's data, rebuild the reference, and confirm nothing changes, rather than trusting a comment that says the test set was never touched. I also built the accuracy scorer itself, MAE, RMSE, signed bias, Spearman and Pearson correlation, validated against synthetic fixtures before trusting it on real predictions."],
@@ -435,6 +559,86 @@ const PAGES = [
       ["A frozen data contract", "Exactly seven cell types, non-negative, summing to 100 per patient, enforced in code. An unexpected column gets rejected, not silently dropped, which is what let five people work in parallel without quietly drifting out of sync with each other's assumptions."],
       ["Orthogonal validation", "The most important check in the project: does the RNA-based estimate agree with a measurement that never touched RNA at all? I compared inferred tumour fraction against DNA-derived tumour purity, and inferred immune fraction against methylation-derived leukocyte fraction, with bootstrap confidence intervals and correction for multiple comparisons."],
       ["Reference-free TME scoring", "The current phase: running MCP-counter and ESTIMATE, marker-based methods entirely independent of the deconvolution math, to see which composition columns deserve less trust. The T-cell, NK-cell and B-cell columns failed held-out validation and are reported as diagnostic only, not confident biological claims."]
+    ],
+    media: [
+      {
+        "title": "From a broad question to one we could test",
+        "body": [
+          "The five of us began with the tumour microenvironment, the neighbourhood of stromal and immune cells that helps a glioblastoma resist chemotherapy. Over several checkpoints we narrowed it to something we could execute and defend."
+        ],
+        "points": [
+          [
+            "The question",
+            "Can the cell-type makeup of a tumour, estimated from cheap bulk RNA-seq, say anything about survival?"
+          ],
+          [
+            "The data",
+            "153 TCGA-GBM tumours from public bulk RNA-seq."
+          ],
+          [
+            "Seven cell types",
+            "Tumour, macrophage/microglia, T cell, NK cell, B cell, endothelial, oligodendrocyte."
+          ],
+          [
+            "My part",
+            "Validation: proving whether the numbers the rest of the pipeline produced could be trusted, not just that they looked plausible."
+          ]
+        ],
+        "slots": [
+          "gbm-2"
+        ]
+      },
+      {
+        "title": "The first results were plausible, and wrong",
+        "points": [
+          [
+            "Log scale",
+            "Solving on log values pushed immune cells near zero, because the mixing model is linear and additive. Linear counts-per-million fixed it."
+          ],
+          [
+            "Housekeeping genes",
+            "A handful of high-expression genes dominated the fit, so each gene was weighted by how well it told cell types apart."
+          ],
+          [
+            "One donor, 38% of a cell type",
+            "A single donor supplied 38% of the astrocyte cells in the reference. We rarefied: one cell per donor per trial, repeated and averaged."
+          ]
+        ],
+        "slots": [
+          "gbm-1"
+        ]
+      },
+      {
+        "title": "What we found",
+        "points": [
+          [
+            "Best method",
+            "ν-SVR, the algorithm CIBERSORT uses, was the most reliable of the three. NNLS drove many lymphocyte estimates to exactly zero."
+          ],
+          [
+            "An independent check",
+            "The RNA-based tumour purity correlated with a DNA-based measurement at ρ = 0.76. That check never touched RNA at all."
+          ],
+          [
+            "A null result",
+            "Composition features moved the survival model's concordance index by +0.001, essentially nothing. We reported it as it was."
+          ],
+          [
+            "Order of choices",
+            "We chose the method from pre-registered accuracy benchmarks, before checking which choice made the survival numbers look best."
+          ]
+        ],
+        "slots": [
+          "gbm-3"
+        ]
+      },
+      {
+        "title": "What I took from it",
+        "body": [
+          "A metric that is easy to optimise, like reconstruction error, is not evidence of correctness. Validation has to come from a measurement that could have proven us wrong.",
+          "Freezing a schema before looking at results, and reporting a well-supported null, is the kind of thinking I want to carry into medicine, where believing a plausible number costs more than a lower grade."
+        ]
+      }
     ],
     facts: [["Team", "Five people, Carnegie Mellon, summer 2026"], ["My role", "Validation, benchmarking, quality control"], ["Cohort", "153 TCGA-GBM tumours"], ["Validation", "ρ = 0.76 vs. an independent, DNA-based measurement"], ["Prognosis", "ΔC-index = +0.001, a reported null result"]],
     slots: [
@@ -454,22 +658,7 @@ const PAGES = [
       text: "This really shows the medical potential of intelligence and creativity, based on the resources available.",
       by: "A physician at the Torre Pediátrica, from the field notes"
     },
-    body: [
-      "The consultorio is where it shows. A doctor has a few minutes with each family. The prescription form has three medicine slots. Rounds happen in the morning, because there is no time for them in the afternoon. Whatever a family does not follow in those few minutes, they take home anyway, and from that point the child's care is theirs to run.",
-      "So I wrote the failures down one at a time. Families were prescribed medicines the pharmacy did not stock, and nobody in the room knew until they reached the window. Surgeries were being missed, because a date three months out is easy to lose track of, and a missed slot can push a child back by months again. Families were arriving on the morning of an operation without their studies, without their documents, or having given the child breakfast. Residents were assigned reading they could not open, because the journals sit behind paywalls the hospital does not pay for. In one case a surgeon improvised a staged reduction of a newborn's omphalocele with colloid dressings and elastic bands, because the material the textbook asks for was not in the building.",
-      "A return trip to the same ward in the summer of 2026, two years on, found the same shape of problem again. Some patient documentation there is still produced on typewriters, because there are not enough computers to go around. Physicians personally buy the printers, laptops and protective gear the institution does not supply. Families arrive from mountain communities where neighbouring villages speak mutually unintelligible languages, and there is no interpreter on staff. And by policy, the pharmacy keeps the physical prescription once it fills it, so a family can walk out with no written record of what their own child is taking, for how long, or why. None of that is a skill problem. It is the same transfer gap, still there two years later.",
-      "None of those are knowledge problems. The doctor already knows what the family should do. The national medicine catalogue is already public. The research already exists. Every one of them is a transfer problem: the information is real and it does not reach the person who needs it at the moment they need it. That gap is what SanaSanita is built into.",
-      "So the mission was written at the top of the requirements before any code, and it has not moved since. To tell parents what the doctor left out, forgot, or had no time to say, and to make sure they understand all of it, and forget none of it. Every feature is measured against that sentence. Anything that does not help a parent understand or remember does not ship.",
-      "The vision is smaller and more stubborn than it sounds. Not new resources for a hospital that does not have them, but better use of the ones already there. A printer that already sits in consulta externa. A physician who already knows the answer. A medicine catalogue that is already public and already free. The app assumes no internet at home, no data plan, and sometimes no reading at all.",
-      "Where it goes from here is the part that matters most to me. The aim is for this to run inside IMSS-Bienestar hospitals like the one it was written in, used by the doctors already working there. For a physician that means the evidence they cannot otherwise reach, in the language they work in, with the citation attached, as support for their own reasoning and never a replacement for it. For a family it means a clinical summary they can actually read and follow once they are home. The app never diagnoses and it never proposes a treatment. It makes the doctor's own answer easier to give, and much harder to lose."
-    ],
     stepsEyebrow: "How it works", stepsTitle: "Four layers",
-    steps: [
-      ["The medicine layer", "A prescription that cannot be filled is not a treatment. The app searches the national catalogue by clave and shows whether a medicine is in the hospital, out of stock, or unknown. Unknown is the honest default, because a false yes sends a family to a pharmacy window for nothing."],
-      ["The evidence layer", "Residents here are assigned reading but have no institutional access to journals. The app searches only legal open-access sources: Europe PMC, PubMed, Semantic Scholar, SciELO México, Medigraphic and BVS/PAHO. It finds the passages that matter for home care and shows the exact citation for each one."],
-      ["The gate", "The system drafts. A physician reads it, corrects it, and signs it. Nothing reaches a family unsigned, and where there is no evidence behind a line the section stays empty. Blank beats invented."],
-      ["Anti-deferimiento", "Diferimiento is when a scheduled surgery does not happen. Theatre slots are scarce and a missed one can leave a child unoperated for months. The answer is a printed row of boxes, one for each day until the surgery, crossed off every morning. It needs no phone, no internet and no reading."]
-    ],
     awards: {
       eyebrow: "Constraints",
       title: "The lines that do not move",
@@ -489,46 +678,116 @@ const PAGES = [
         ]}
       ]
     },
+    media: [
+      {
+        "title": "The notebook",
+        "body": [
+          "The notes behind the app were handwritten, one page per observation, over two weeks on the ward. This spread is shown for the handwriting, not the content; no patient names appear in it.",
+          "A consultation lasts a few minutes, the prescription form has three medicine slots, and rounds happen in the morning because there is no time in the afternoon. So I wrote the failures down one at a time."
+        ],
+        "points": [
+          [
+            "Medicines the pharmacy did not stock",
+            "Nobody in the room knew until the family reached the window."
+          ],
+          [
+            "Surgeries lost to a date three months out",
+            "A missed slot can push a child back by months again."
+          ],
+          [
+            "Families arriving unprepared",
+            "Without their studies, without their documents, or having given the child breakfast."
+          ],
+          [
+            "Reading nobody could open",
+            "Residents were assigned journals that sit behind paywalls the hospital does not pay for."
+          ]
+        ],
+        "slots": [
+          "field-notes"
+        ]
+      },
+      {
+        "title": "Two years on, the same gap",
+        "body": [
+          "A return trip to the same ward in the summer of 2026 found the same shape of problem."
+        ],
+        "points": [
+          [
+            "Typewriters",
+            "Some patient documentation is still typed, because there are not enough computers."
+          ],
+          [
+            "No interpreter",
+            "Families arrive from mountain communities where neighbouring villages speak mutually unintelligible languages."
+          ],
+          [
+            "A prescription that stays behind",
+            "By policy the pharmacy keeps the paper once it fills it, so a family leaves with no record of what the child is taking, for how long, or why."
+          ]
+        ]
+      },
+      {
+        "title": "A transfer problem, not a knowledge problem",
+        "body": [
+          "The doctor already knows what the family should do. The national medicine catalogue is public. The research exists. In every case the information is real and does not reach the person who needs it at the moment they need it. That gap is what SanaSanita is built into."
+        ]
+      },
+      {
+        "title": "The mission, written before any code",
+        "body": [
+          "To tell parents what the doctor left out, forgot, or had no time to say, and to make sure they understand all of it, and forget none of it.",
+          "Every feature is measured against that sentence. Anything that does not help a parent understand or remember does not ship."
+        ]
+      },
+      {
+        "title": "The screen a doctor opens",
+        "body": [
+          "The first line on it is the promise: no name, no CURP, no expediente, and nothing saved to any server. There is no patient record, so there is none to leak.",
+          "The doctor types the diagnosis in Spanish, the child's age and weight, and what happened in the consultation. A yellow band stays on screen as a standing warning that nothing goes home with a family until a physician has read, corrected and signed it."
+        ],
+        "slots": [
+          "app-plan"
+        ]
+      },
+      {
+        "title": "Where the evidence comes from, and who signs it",
+        "body": [
+          "The app searches only what is legally free: Europe PMC, PubMed, Semantic Scholar, SciELO México, Medigraphic and BVS/PAHO. Never Sci-Hub. It pulls the passages that bear on care at home, each with its exact citation, study population and link.",
+          "Then the gate. The doctor writes the family's version in plain words. Aprobar keeps it. Rechazar throws it away. The system never writes the family-facing line itself, and where there is no evidence the section stays empty."
+        ],
+        "slots": [
+          "app-evidence-search",
+          "app-evidence-engine",
+          "app-evidence-approve"
+        ]
+      },
+      {
+        "title": "Built for a house, not a clinic",
+        "body": [
+          "What the family leaves with is pictures first. Foods and household triggers are tapped to mark, and anything left unmarked is understood to be allowed.",
+          "Medicines are chosen against the national catalogue by clave, using the same fields as the paper prescription. The app builds the schedule from what the doctor entered. It does not calculate the dose, and when something is out of stock it says so rather than proposing a different drug."
+        ],
+        "slots": [
+          "app-pictograms",
+          "app-medication"
+        ]
+      },
+      {
+        "title": "Where it goes from here",
+        "body": [
+          "The aim is for SanaSanita to run inside IMSS-Bienestar hospitals like the one it was written in, used by the doctors already working there.",
+          "For a physician: the evidence they cannot otherwise reach, in their language, with the citation attached, as support for their own reasoning. For a family: a summary they can read and follow at home.",
+          "The app never diagnoses and never proposes a treatment. It makes the doctor's own answer easier to give, and much harder to lose."
+        ]
+      }
+    ],
     facts: [["Built for", "IMSS-Bienestar pediatric services"], ["Where", "Torre Pediátrica, HAEV, Veracruz"], ["Field research", "Two weeks on the ward (94 pages of notes), plus 60+ hours back in summer 2026"], ["Version", "v0.1, beta"]],
     /* The screenshots are the app's own column, so they are portrait. 4/5 is close to
        all six, which keeps the grid even without cropping anything meaningful. */
     /* The mark sits beside the intro; the screenshots are the gallery. They are the
        app's own column, so they are portrait, and the tiles are widened because UI
        text at 220px is unreadable. */
-    media: [
-      {
-        slots: ["field-notes"],
-        title: "Where it started: a notebook",
-        body: [
-          "The ward notes behind the app were handwritten, in Spanish and English, one page per observation. This spread is from the Veracruz weeks: what families did not understand, what a doctor wished he could hand them, and what the app should do about it. It is shown for the handwriting, not the content; no patient names appear in it."
-        ]
-      },
-      {
-        slots: ["app-plan"],
-        title: "The screen a doctor opens",
-        body: [
-          "Everything starts here, and the first line on it is the promise: no name, no CURP, no expediente, and nothing saved to any server. There is no patient record, so there is none to leak.",
-          "The doctor types the diagnosis in Spanish, the child's age and weight, and what happened in the consultation. The yellow band stays on screen as a standing warning that nothing in the prototype goes home with a family until a physician has read it, corrected it and signed it."
-        ]
-      },
-      {
-        slots: ["app-evidence-search", "app-evidence-engine", "app-evidence-approve"],
-        title: "Where the evidence comes from, and who signs it",
-        body: [
-          "A resident here is assigned reading they cannot open, because the journals sit behind paywalls the hospital does not pay for. So the app searches only what is legally free: Europe PMC, PubMed, Semantic Scholar, SciELO México, Medigraphic and BVS/PAHO. Never Sci-Hub.",
-          "It ranks what it finds by clinical relevance, marks which papers are open access and peer reviewed, and pulls the passages that actually bear on care at home. Each passage arrives with its exact citation, its study population and a link to the source, and any machine translation is labelled as one.",
-          "Then the gate. The doctor writes the family's version in plain words, informed by the passage rather than copied from it. Aprobar keeps it. Rechazar throws it away. The system never writes the family-facing line itself, and where there is no evidence the section stays empty."
-        ]
-      },
-      {
-        slots: ["app-pictograms", "app-medication"],
-        title: "Built for a house, not a clinic",
-        body: [
-          "What the family leaves with is pictures first. Foods and household triggers are tapped to mark, and anything left unmarked is understood to be allowed, so a parent is never asked to interpret a list of exceptions.",
-          "Medicines are chosen against the national catalogue by clave, using the same fields the paper prescription uses: form, route, dose, interval and first dose. The app builds the schedule from what the doctor entered. It does not calculate the dose, and when something is out of stock it says so rather than proposing a different drug."
-        ]
-      }
-    ],
     slots: [
       { key: "app-icon", ratio: "1 / 1", label: "The SanaSanita mark" },
       { key: "field-notes", ratio: "2016 / 1512", label: "Field notes from the ward, handwritten" },
@@ -555,27 +814,91 @@ const PAGES = [
       ["Question", "What does Venezuelan migration and integration into Trinidad and Tobago look like, for the people living it and the country receiving them?"],
       ["Method", "62 sources cross-checked against five interviews conducted in Spanish, cited and tracked through NoodleTools."],
       ["Findings", "Deadly sea crossings, mass deportations, sex trafficking, wages under the legal minimum, and a five-year wait to enrol Venezuelan children in public school."],
-      ["Published in", "SSRN, the Social Science Research Network. Indexed on ResearchGate as well."]
-    ],
-    facts: [["Type", "Publication"], ["Topic", "Venezuelan migration to Trinidad & Tobago"], ["Length", "42 pages · 62 sources"], ["Venue", "SSRN"]],
-    body: [
-      "It started with a school unit, not a book drive. Grade 9 Individuals & Societies spent weeks that year on migration itself, drivers, routes, sending and receiving countries, and I turned in the unit's research paper on June 8th, 2024. Ten days later I was already listing Venezuelan migration as a Personal Project topic.",
-      "Even then, the project did not start as a paper. By May 2024 there was a whole La Casita club at school, objectives, a plan, a membership list, and its first move that fall was a book drive for the Venezuelan children's library the centre runs in Arima, Trinidad. Once the books were collected, though, it was clear the drive was teaching me nothing about the crisis itself, only advertising it.",
-      "So my father and I talked it through, and the product changed: a full research paper on why Venezuelans were leaving and what happened to them once they arrived, researched, interviewed and cited the way an academic paper is. My supervisor's one condition was that every interview question had to be open-ended, so an answer could not be led.",
-      "Five interviews carry the paper, all conducted and translated from Spanish: a housekeeper who crossed by open boat, a Venezuelan doctor now cleaning houses because Trinidad will not recognise her degree, Andreina Briceño Ventura-Brown of La Casita, and a protection officer with the UNHCR. Every quotation is timestamped to a recording and cross-checked against IOM displacement-tracking data, Trinidadian reporting from the Guardian and Newsday, and filings from Amnesty International, Human Rights Watch and the U.S. State Department.",
-      "It was not a clean process. I meant to publish by January; it went up in March, after other classes pushed it down my list for a month I did not have. And most of the people I interviewed, migrants, a shelter's founder, a UNHCR officer, already agreed with the paper's argument. The version I would write next puts more of the Trinidadian side in the room too.",
-      "I graded the paper against my own criteria before anyone else did: a 7 out of 8 for research, a 7 for analysis, a 6 for the interviews, and a 4 for communication, the honest mark for publishing late and rushing the final read-through. The number is not really the point. Writing down where it fell short, on purpose, before handing it to anyone else, is."
+      ["Published in", "SSRN, the Social Science Research Network. Ranked against other SSRN publications, and also on ResearchGate and Academia."]
     ],
     media: [
       {
-        slots: ["vz-2"],
-        title: "From La Casita's book box to a personal project exhibition",
-        body: [
-          "Built and defended as my IB Middle Years Programme Personal Project: a full report on the planning, the criteria I graded my own work against, and the reflection on what I would do differently, alongside the paper itself.",
-          "Presented on this board at the school's Personal Project Exhibition, tracing the same path the sources above take: the interviews, the drivers behind the migration, the routes across the Bocas del Dragón, and the case built line by line back to the two goals it started from."
+        "title": "It started with a school unit",
+        "body": [
+          "Grade 9 Individuals & Societies spent weeks on migration itself: drivers, routes, sending and receiving countries. I turned in that unit's research paper on June 8th, 2024. Ten days later I was already listing Venezuelan migration as a Personal Project topic."
+        ]
+      },
+      {
+        "title": "From a book drive to a research paper",
+        "body": [
+          "By May 2024 there was a La Casita club at school, and its first move that fall was a book drive for the Venezuelan children's library the centre runs in Arima. Once the books were collected it was clear the drive was advertising the crisis, not teaching me about it.",
+          "So my father and I talked it through and the product changed: a full research paper on why Venezuelans were leaving and what happened to them once they arrived. My supervisor's one condition was that every interview question had to be open-ended."
+        ],
+        "slots": [
+          "vz-1"
+        ]
+      },
+      {
+        "title": "Five interviews, all in Spanish",
+        "body": [
+          "Every quotation is timestamped to a recording and cross-checked against IOM displacement-tracking data, Trinidadian reporting from the Guardian and Newsday, and filings from Amnesty International, Human Rights Watch and the U.S. State Department."
+        ],
+        "points": [
+          [
+            "A housekeeper",
+            "who crossed by open boat."
+          ],
+          [
+            "A Venezuelan doctor",
+            "now cleaning houses because Trinidad will not recognise her degree."
+          ],
+          [
+            "Andreina Briceño Ventura-Brown",
+            "of La Casita."
+          ],
+          [
+            "A UNHCR protection officer",
+            "for Trinidad and Tobago."
+          ]
+        ]
+      },
+      {
+        "title": "What did not go well",
+        "body": [
+          "I meant to publish by January; it went up in March, after other classes pushed it down my list for a month I did not have. And most of the people I interviewed already agreed with the paper's argument. The version I would write next puts more of the Trinidadian side in the room too."
+        ]
+      },
+      {
+        "title": "Grading it myself first",
+        "body": [
+          "I graded the paper against my own criteria before anyone else did. The number is not the point. Writing down where it fell short, on purpose, is."
+        ],
+        "points": [
+          [
+            "Research",
+            "7 out of 8"
+          ],
+          [
+            "Analysis",
+            "7"
+          ],
+          [
+            "Interviews",
+            "6"
+          ],
+          [
+            "Communication",
+            "4, the honest mark for publishing late and rushing the final read-through"
+          ]
+        ]
+      },
+      {
+        "title": "From La Casita's book box to a personal project exhibition",
+        "body": [
+          "Built and defended as my IB Middle Years Programme Personal Project, with a full report on the planning, the criteria I graded my own work against, and what I would do differently.",
+          "Presented on this board at the school's Personal Project Exhibition: the interviews, the drivers behind the migration, the routes across the Bocas del Dragón, and the case built line by line back to the two goals it started from."
+        ],
+        "slots": [
+          "vz-2"
         ]
       }
     ],
+    facts: [["Type", "Publication"], ["Topic", "Venezuelan migration to Trinidad & Tobago"], ["Length", "42 pages · 62 sources"], ["Venue", "SSRN"], ["When", "November 2024 – May 2025"]],
     slots: [
       { key: "vz-1", ratio: "3 / 4", label: "The paper's title page, published on SSRN" },
       { key: "vz-2", ratio: "4 / 3", label: "Presenting the work at the Personal Project Exhibition" }
@@ -588,17 +911,45 @@ const PAGES = [
     desc: "CSR-x, a selective remote research program on PAH exposure, epigenetic aging, and DNA methylation.",
     intro: "PAHs, polycyclic aromatic hydrocarbons, are wherever something has been burned: exhaust, cigarette smoke, charred food. CSR-x is where I spent five weeks asking what chronic exposure to them does at the level of the genome, not just the lungs.",
     link: { href: "https://www.csr-x.org/", label: "About CSR-x" },
-    body: [
-      "CSR-x, the Collaborative Summer Research eXperience, is selective, remote, and student-led: no professor running the room, a small cohort of students building the research together. The program runs five tracks, AI and data science, biomedical and health sciences, environmental science, cognitive science, and economics. Mine was biomedical, and spent the summer of 2026 on one question: how PAH exposure links to epigenetic aging and DNA methylation, and how much of that risk becomes lung cancer.",
-      "It is the same instinct as SanaSanita and the Venezuela paper in different clothes: a health outcome nobody disputes, traced back to a mechanism most people never see. Here the mechanism is not a hospital workflow or a border. It is a chemical mark on DNA that changes how a cell reads its own instructions."
+    media: [
+      {
+        "title": "Five weeks, remote, student-led",
+        "body": [
+          "CSR-x, the Collaborative Summer Research eXperience, is selective and remote, with no professor running the room: a small cohort of students building the research together."
+        ],
+        "points": [
+          [
+            "Tracks",
+            "AI and data science, biomedical and health sciences, environmental science, cognitive science, and economics. Mine was biomedical."
+          ],
+          [
+            "When",
+            "July to August 2026."
+          ]
+        ]
+      },
+      {
+        "title": "The question",
+        "body": [
+          "How does chronic PAH exposure show up in epigenetic aging and DNA methylation, and how much of that risk becomes lung cancer?"
+        ],
+        "slots": [
+          "csrx-3"
+        ]
+      },
+      {
+        "title": "My part: the literature review",
+        "body": [
+          "I built a large table tracking 33 studies and did a close read of seven of them. The most interesting finding is that no single study has tested all three parts of the chain, exposure, aging and cancer risk, in the same group of people. Some groups have studied separate pieces without connecting them yet."
+        ]
+      },
+      {
+        "title": "The same instinct",
+        "body": [
+          "It is the same instinct as SanaSanita and the Venezuela paper: a health outcome nobody disputes, traced back to a mechanism most people never see. Here it is a chemical mark on DNA that changes how a cell reads its own instructions."
+        ]
+      }
     ],
-    steps: [
-      ["Question", "How does chronic PAH exposure show up in epigenetic aging and DNA methylation, and how much of that risk becomes lung cancer?"],
-      ["Method", "A five-week, remote, student-led research program: a small cohort building the analysis together rather than a professor assigning it."],
-      ["Findings", TBD, true],
-      ["Published in", TBD, true]
-    ],
-    tbd: "What the cohort actually found, the dataset behind it, and whether it is being written up anywhere. Send these and the two steps above fill in properly.",
     facts: [["Type", "Research program"], ["Program", "CSR-x, Collaborative Summer Research eXperience"], ["Focus", "PAH exposure · epigenetic aging · DNA methylation"], ["When", "Summer 2026"]],
     slots: [
       { key: "csrx-1", ratio: "16 / 9", label: "The research cohort, remote" },
@@ -677,13 +1028,26 @@ const PAGES = [
     eyebrow: "Leadership · Student government", title: "Student Council / Senate", lede: "Elected to represent classmates at ISPS, and at Perkiomen.",
     desc: "Student Council at the International School of Port of Spain, and student government at Perkiomen School.",
     intro: "Student government is the least glamorous kind of leadership and the one that taught me the most. Nobody is impressed by it, the wins are small and procedural, and the job is almost entirely listening to people complain and then working out which complaints are actually solvable.",
-    body: ["At ISPS I served on Student Council, representing my class and running school-wide events with the rest of the council. That was also where Stronger Together came from: by November of that first term, the council was the room where it became obvious that people needed help coming back to in-person school, not just better assemblies.", "It is the clearest throughline into everything else on this page. Founding HOSA and directing the GVMUN newsroom are both the same instinct, scaled up: notice the gap, then take responsibility for filling it rather than waiting for someone else to."],
     steps: [
       ["ISPS", "Student Council, representing my class and running school-wide events."],
       ["Perkiomen", TBD, true],
       ["Impact", TBD, true]
     ],
     tbd: "Your Perkiomen Senate role and year, what you ran on, and anything the council actually changed. Send these and this page fills in.",
+    media: [
+      {
+        "title": "At ISPS",
+        "body": [
+          "I served on Student Council, representing my class and running school-wide events. By November of that first term the council was the room where it became obvious that people needed help coming back to in-person school, not just better assemblies. That is where Stronger Together came from."
+        ]
+      },
+      {
+        "title": "The throughline",
+        "body": [
+          "Founding HOSA and directing the GVMUN newsroom are the same instinct, scaled up: notice the gap, then take responsibility for filling it rather than waiting for someone else to."
+        ]
+      }
+    ],
     facts: [["Role", "Student Council · Senate"], ["Schools", "ISPS · Perkiomen"], ["Started", "2021"]],
     slots: [
       { key: "stuco-1", ratio: "4 / 3", label: "Student Council at ISPS" },
@@ -724,10 +1088,10 @@ const PAGES = [
         ]
       },
       {
-        slots: ["hosp-or", "hosp-mirror"],
+        slots: ["hosp-or"],
         title: "In the room",
         body: [
-          "Most of the eleven days were spent a step behind the surgical team, watching, handing over what was asked for and keeping out of the way. Scrubs, a mask and a long shift in the same corridor as everyone else turned out to be the quickest way of being taken seriously."
+          "Most of the eleven days were spent a step behind the surgical team, watching, handing over what was asked for and keeping out of the way."
         ]
       },
       {
@@ -745,13 +1109,6 @@ const PAGES = [
         ]
       },
       {
-        slots: ["hosp-patient"],
-        title: "The reason for all of it",
-        body: [
-          "Thumbs up from a young patient and one of the surgeons, taken with her family's permission. The tools I am building afterwards are for children like her and for the families who carry the care plan home."
-        ]
-      },
-      {
         slots: ["hosp-mural", "hosp-facade"],
         title: "The hospital itself",
         body: [
@@ -762,8 +1119,7 @@ const PAGES = [
         slots: ["shadow-2"],
         title: "Showing up",
         body: [
-          "It is also where the language question stops being theoretical. Some families arrive from mountain communities where neighboring villages speak mutually unintelligible languages, and the hospital has no interpreters on staff. Being the person who can explain something in Spanish there is not a résumé line. It is the difference between a family understanding what is happening and not.",
-          "I had just spent a year at a boarding school with laboratories, mentorship and academic access that most students in this hemisphere will never see. Standing in that hospital, the distance between what I have and what those physicians have was not a distance in skill or effort. I watched people do more with less than I thought was possible. It was a distance in tools and infrastructure, and closing it, for the region my family comes from, is the direction I want my work pointed at."
+          "It is also where the language question stops being theoretical. Some families arrive from mountain communities where neighboring villages speak mutually unintelligible languages, and the hospital has no interpreters on staff. Being the person who can explain something in Spanish there is not a résumé line. It is the difference between a family understanding what is happening and not."
         ]
       }
     ],
@@ -833,9 +1189,53 @@ const PAGES = [
     eyebrow: "Activities · Olympic lifting", title: "Weightlifting", lede: "Snatch and clean & jerk, programmed year-round.",
     desc: "Olympic weightlifting. Snatch and clean & jerk, trained year-round.",
     intro: "I started lifting because I wanted to be stronger. It turned into the clearest lesson I have in patience: nothing here can be rushed, and the programme only works if you run it for months.",
-    body: [
-      "Olympic lifting in particular is unforgiving about technique. You cannot muscle a bad snatch. The lift simply fails, in front of everyone, which is a useful thing to get comfortable with.",
-      "I started training in August 2024 and log every session in Liftoff, a lifting app with around four million active users. My current records are a 265 lb bench press, a 335 lb squat and a 455 lb deadlift. In the app's global leaderboards, screenshotted on October 28, 2026, I sit at #186 (Top 0.1%) on one board and #48 on another. The calendar is the app's memory view of the first month, August 2024."
+    media: [
+      {
+        "title": "Technique before weight",
+        "body": [
+          "Olympic lifting is unforgiving about technique. You cannot muscle a bad snatch. The lift simply fails, in front of everyone, which is a useful thing to get comfortable with."
+        ],
+        "slots": [
+          "lift-1"
+        ]
+      },
+      {
+        "title": "The numbers",
+        "body": [
+          "I started training in August 2024."
+        ],
+        "points": [
+          [
+            "Bench press",
+            "265 lb"
+          ],
+          [
+            "Squat",
+            "335 lb"
+          ],
+          [
+            "Deadlift",
+            "455 lb"
+          ]
+        ]
+      },
+      {
+        "title": "Tracked in Liftoff",
+        "body": [
+          "I log every session in Liftoff, a lifting app with around four million active users. The leaderboard screenshots were taken on October 28, 2026: #186 (Top 0.1%) on one board and #48 on another. The calendar is the app's memory view of August 2024, the first month."
+        ],
+        "slots": [
+          "lift-3",
+          "lift-4"
+        ]
+      },
+      {
+        "title": "In the gym",
+        "slots": [
+          "lift-2"
+        ],
+        "gallery": true
+      }
     ],
     facts: [["Discipline", "Olympic weightlifting"], ["Lifts", "Snatch · clean & jerk"], ["Training", "Year-round, since August 2024"], ["Bench press", "265 lb"], ["Squat", "335 lb"], ["Deadlift", "455 lb"], ["Liftoff ranking", "#186 global (Top 0.1%), Oct 28, 2026"]],
     slots: [
@@ -868,10 +1268,40 @@ const PAGES = [
     eyebrow: "Activities · Road racing", title: "Running", lede: "The RBC Race for the Kids 15K, three years running, and years of 5Ks across Trinidad.",
     desc: "Road racing in Trinidad. The RBC Race for the Kids 15K three years running, G2G and Scotiabank 5Ks, and running to actually see a place.",
     intro: "Running started as training for other sports and became its own thing. I like it for a reason that has nothing to do with racing: it is the cheapest way I know to actually see a place, on foot, at the pace a place is meant to be seen at.",
-    body: [
-      "The RBC Race for the Kids is Trinidad and Tobago's biggest charity run, a 15K that starts at 5:45 in the morning and funds the RBC Caribbean Children's Cancer Fund, which has treated more than 280 children under sixteen since it began. I ran the 15K three years running, the only member of Peak Performers, my school's running club, to run the 15K rather than the 5K in any of those years.",
-      "The rest of it was 5Ks, whichever one was on: G2G's Grind to Give, which raises money with the Mary Care Centre to rebuild a home for young women and their babies, the Scotiabank Women Against Breast Cancer run, and whatever else Trinidad's road-race calendar had that month.",
-      "I still run for the same two reasons I started. It is training, the plainest way there is to teach a body to keep going past where it wants to stop. And it is still the cheapest way to actually see a place, long after the people who flew in for a week have gone home."
+    media: [
+      {
+        "title": "The RBC Race for the Kids",
+        "body": [
+          "Trinidad and Tobago's biggest charity run: a 15K that starts at 5:45 in the morning and funds the RBC Caribbean Children's Cancer Fund, which has treated more than 280 children under sixteen since it began.",
+          "I ran the 15K three years running, the only member of Peak Performers, my school's running club, to run the 15K rather than the 5K in any of those years."
+        ],
+        "slots": [
+          "run-1",
+          "run-3"
+        ]
+      },
+      {
+        "title": "Everything else was 5Ks",
+        "body": [
+          "Whichever one was on that month."
+        ],
+        "points": [
+          [
+            "G2G's Grind to Give",
+            "Raises money with the Mary Care Centre to rebuild a home for young women and their babies."
+          ],
+          [
+            "Scotiabank Women Against Breast Cancer",
+            "A 5K."
+          ]
+        ]
+      },
+      {
+        "title": "Why I still run",
+        "body": [
+          "It is training, the plainest way there is to teach a body to keep going past where it wants to stop. And it is still the cheapest way to actually see a place, long after the people who flew in for a week have gone home."
+        ]
+      }
     ],
     facts: [["Signature race", "RBC Race for the Kids, 15K, 3 years running"], ["Also", "G2G 5Ks · Scotiabank 5K"], ["Cause", "RBC Caribbean Children's Cancer Fund"], ["Club", "Peak Performers"]],
     slots: [
@@ -973,8 +1403,9 @@ ${a.groups.map(group).join("\n")}
 </section>`;
 }
 
-function renderSteps(steps, eyebrow, title) {
-  if (!steps || !steps.length) return "";
+function renderSteps(allSteps, eyebrow, title) {
+  const steps = (allSteps || []).filter((st) => !st[2]);
+  if (!steps.length) return "";
   return `
 <section data-reveal="1" style="background:var(--sa-surface-sunken);border-top:var(--sa-hairline);border-bottom:var(--sa-hairline)">
   <div style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-band-y) clamp(24px,5vw,64px) var(--sa-band-y) clamp(24px,11vw,168px);box-sizing:border-box">
@@ -1001,7 +1432,7 @@ function renderPage(p) {
      the slot appears. The lead photo is the first one that exists; a page with none keeps
      a single placeholder so it is clear where the first photo goes. */
   const filledSlots = slots.filter((sl) => PHOTO_MANIFEST[sl.key]);
-  const heroSlot = filledSlots[0] || slots[0];
+  const heroSlot = filledSlots[0];
   const restSlots = filledSlots.filter((sl) => sl !== heroSlot);
 
   const crumb = p.parent
@@ -1022,10 +1453,10 @@ function renderPage(p) {
         <p style="font:var(--sa-type-body);font-size:var(--sa-text-sm);color:var(--sa-ink-800);margin:6px 0 0;text-wrap:pretty">${esc(text)}</p>
       </div>`;
 
+  /* Public pages no longer carry a "still being written" box: it read as unfinished. The
+     author note stays, visible only with ?edit=1. */
   const tbdNote = p.tbd
-    ? noteBox("sa-tbd-public", "Still being written",
-        "This part is not finished yet. It will be filled in properly rather than padded out.") + "\n" +
-      noteBox("sa-tbd-author", "Still to add (only visible with ?edit=1)", p.tbd)
+    ? noteBox("sa-tbd-author", "Still to add (only visible with ?edit=1)", p.tbd)
     : "";
 
   /* A live project link, rendered as a button under the intro. Pages that ship
@@ -1116,9 +1547,37 @@ ${p.cards.map((c) => `    <x-import component-from-global-scope="${NS}.Card" int
      text blocks. Each row is a cluster of images on one side and a paragraph on the
      other, alternating sides down the page. Used where the pictures need explaining;
      photo pages fall through to the plain figure groups below. */
+  let textRowNo = 0;
+  const pointsHtml = (row) => row.points && row.points.length ? `
+    <ul class="sa-points">
+${row.points.map((pt) => Array.isArray(pt)
+    ? `      <li><strong>${esc(pt[0])}</strong><span>${esc(pt[1])}</span></li>`
+    : `      <li><span>${esc(pt)}</span></li>`).join("\n")}
+    </ul>` : "";
+  const textHtml = (row) => `    <h3>${esc(row.title)}</h3>
+${(row.body || []).map((t) => `    <p>${esc(t)}</p>`).join("\n")}${pointsHtml(row)}`;
   const mediaRow = (row, idx) => {
-    const sl = row.slots.map((k) => slots.find((x) => x.key === k)).filter(Boolean);
-    if (!sl.length) return "";
+    const sl = (row.slots || []).map((k) => slots.find((x) => x.key === k)).filter((x) => x && PHOTO_MANIFEST[x.key] && x !== heroSlot);
+    if (row.gallery) {
+      if (!sl.length) return "";
+      return `
+<section data-reveal="1" class="sa-gallery-wrap" style="padding-top:var(--sa-space-8);padding-bottom:var(--sa-space-8)">
+  <div class="sa-gallery-head"><span class="sa-gallery-kicker">${esc(row.title)}</span></div>
+  <div class="sa-gallery n${Math.min(sl.length, 3)}">
+${sl.map((x) => figure(x)).join("\n")}
+  </div>
+</section>`;
+    }
+    if (!sl.length) {
+      textRowNo += 1;
+      return `
+<section data-reveal="1" class="sa-text-row">
+  <div class="sa-text-head"><span class="sa-text-kicker">${String(textRowNo).padStart(2, "0")}</span></div>
+  <div class="sa-media-text">
+${textHtml(row)}
+  </div>
+</section>`;
+    }
     const flip = idx % 2 === 1;
     return `
 <section data-reveal="1" class="sa-media-row${flip ? " flip" : ""}">
@@ -1126,8 +1585,7 @@ ${p.cards.map((c) => `    <x-import component-from-global-scope="${NS}.Card" int
 ${sl.map((x) => figure(x)).join("\n")}
   </div>
   <div class="sa-media-text">
-    <h3>${esc(row.title)}</h3>
-${row.body.map((t) => `    <p>${esc(t)}</p>`).join("\n")}
+${textHtml(row)}
   </div>
 </section>`;
   };
@@ -1186,9 +1644,9 @@ ${list.map((sl) => figure(sl)).join("\n")}
       : Math.round((i * (gapCount - 1)) / (blocks.length - 1));
     buckets[gap].push(html);
   });
-  const bodySections = buckets
-    .map((b, i) => b.join("") + (contentSections[i] || ""))
-    .join("") + galleryHtml;
+  const bodySections = p.media
+    ? blocks.join("") + contentSections.join("")
+    : buckets.map((b, i) => b.join("") + (contentSections[i] || "")).join("") + galleryHtml;
 
   const footerCols = [
     { title: "Sections", links: SECTION_LINKS },

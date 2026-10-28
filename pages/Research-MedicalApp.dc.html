@@ -73,13 +73,7 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
 <section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:0 clamp(24px,5vw,64px) var(--sa-space-16) clamp(24px,11vw,168px);box-sizing:border-box;display:grid;grid-template-columns:minmax(300px,1.05fr) minmax(260px,0.95fr);gap:clamp(32px,5vw,72px);align-items:start">
     <div>
       <p style="font:var(--sa-type-lede);color:var(--sa-text-primary);max-width:60ch;text-wrap:pretty">I did not start with an app. I started by asking what actually goes wrong inside a government-funded public pediatric hospital, and then spent two weeks on the ward at the Torre Pediátrica in Veracruz writing down what I saw. Ninety-four pages of notes later, the same problem kept turning up wearing different clothes.</p>
-      <p style="font:var(--sa-type-body);color:var(--sa-text-secondary);max-width:60ch;margin-top:var(--sa-space-4);text-wrap:pretty">The consultorio is where it shows. A doctor has a few minutes with each family. The prescription form has three medicine slots. Rounds happen in the morning, because there is no time for them in the afternoon. Whatever a family does not follow in those few minutes, they take home anyway, and from that point the child's care is theirs to run.</p>
-      <p style="font:var(--sa-type-body);color:var(--sa-text-secondary);max-width:60ch;margin-top:var(--sa-space-4);text-wrap:pretty">So I wrote the failures down one at a time. Families were prescribed medicines the pharmacy did not stock, and nobody in the room knew until they reached the window. Surgeries were being missed, because a date three months out is easy to lose track of, and a missed slot can push a child back by months again. Families were arriving on the morning of an operation without their studies, without their documents, or having given the child breakfast. Residents were assigned reading they could not open, because the journals sit behind paywalls the hospital does not pay for. In one case a surgeon improvised a staged reduction of a newborn's omphalocele with colloid dressings and elastic bands, because the material the textbook asks for was not in the building.</p>
-      <p style="font:var(--sa-type-body);color:var(--sa-text-secondary);max-width:60ch;margin-top:var(--sa-space-4);text-wrap:pretty">A return trip to the same ward in the summer of 2026, two years on, found the same shape of problem again. Some patient documentation there is still produced on typewriters, because there are not enough computers to go around. Physicians personally buy the printers, laptops and protective gear the institution does not supply. Families arrive from mountain communities where neighbouring villages speak mutually unintelligible languages, and there is no interpreter on staff. And by policy, the pharmacy keeps the physical prescription once it fills it, so a family can walk out with no written record of what their own child is taking, for how long, or why. None of that is a skill problem. It is the same transfer gap, still there two years later.</p>
-      <p style="font:var(--sa-type-body);color:var(--sa-text-secondary);max-width:60ch;margin-top:var(--sa-space-4);text-wrap:pretty">None of those are knowledge problems. The doctor already knows what the family should do. The national medicine catalogue is already public. The research already exists. Every one of them is a transfer problem: the information is real and it does not reach the person who needs it at the moment they need it. That gap is what SanaSanita is built into.</p>
-      <p style="font:var(--sa-type-body);color:var(--sa-text-secondary);max-width:60ch;margin-top:var(--sa-space-4);text-wrap:pretty">So the mission was written at the top of the requirements before any code, and it has not moved since. To tell parents what the doctor left out, forgot, or had no time to say, and to make sure they understand all of it, and forget none of it. Every feature is measured against that sentence. Anything that does not help a parent understand or remember does not ship.</p>
-      <p style="font:var(--sa-type-body);color:var(--sa-text-secondary);max-width:60ch;margin-top:var(--sa-space-4);text-wrap:pretty">The vision is smaller and more stubborn than it sounds. Not new resources for a hospital that does not have them, but better use of the ones already there. A printer that already sits in consulta externa. A physician who already knows the answer. A medicine catalogue that is already public and already free. The app assumes no internet at home, no data plan, and sometimes no reading at all.</p>
-      <p style="font:var(--sa-type-body);color:var(--sa-text-secondary);max-width:60ch;margin-top:var(--sa-space-4);text-wrap:pretty">Where it goes from here is the part that matters most to me. The aim is for this to run inside IMSS-Bienestar hospitals like the one it was written in, used by the doctors already working there. For a physician that means the evidence they cannot otherwise reach, in the language they work in, with the citation attached, as support for their own reasoning and never a replacement for it. For a family it means a clinical summary they can actually read and follow once they are home. The app never diagnoses and it never proposes a treatment. It makes the doctor's own answer easier to give, and much harder to lose.</p>
+
       <div style="margin-top:var(--sa-space-8)">
         <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Button" href="https://sanasanita.vercel.app/" target="_blank" rel="noopener" hint-size="220px,44px">Open SanaSanita</x-import>
       </div>
@@ -115,8 +109,102 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
       </figure>
   </div>
   <div class="sa-media-text">
-    <h3>Where it started: a notebook</h3>
-    <p>The ward notes behind the app were handwritten, in Spanish and English, one page per observation. This spread is from the Veracruz weeks: what families did not understand, what a doctor wished he could hand them, and what the app should do about it. It is shown for the handwriting, not the content; no patient names appear in it.</p>
+    <h3>The notebook</h3>
+    <p>The notes behind the app were handwritten, one page per observation, over two weeks on the ward. This spread is shown for the handwriting, not the content; no patient names appear in it.</p>
+    <p>A consultation lasts a few minutes, the prescription form has three medicine slots, and rounds happen in the morning because there is no time in the afternoon. So I wrote the failures down one at a time.</p>
+    <ul class="sa-points">
+      <li><strong>Medicines the pharmacy did not stock</strong><span>Nobody in the room knew until the family reached the window.</span></li>
+      <li><strong>Surgeries lost to a date three months out</strong><span>A missed slot can push a child back by months again.</span></li>
+      <li><strong>Families arriving unprepared</strong><span>Without their studies, without their documents, or having given the child breakfast.</span></li>
+      <li><strong>Reading nobody could open</strong><span>Residents were assigned journals that sit behind paywalls the hospital does not pay for.</span></li>
+    </ul>
+  </div>
+</section>
+<section data-reveal="1" class="sa-text-row">
+  <div class="sa-text-head"><span class="sa-text-kicker">01</span></div>
+  <div class="sa-media-text">
+    <h3>Two years on, the same gap</h3>
+    <p>A return trip to the same ward in the summer of 2026 found the same shape of problem.</p>
+    <ul class="sa-points">
+      <li><strong>Typewriters</strong><span>Some patient documentation is still typed, because there are not enough computers.</span></li>
+      <li><strong>No interpreter</strong><span>Families arrive from mountain communities where neighbouring villages speak mutually unintelligible languages.</span></li>
+      <li><strong>A prescription that stays behind</strong><span>By policy the pharmacy keeps the paper once it fills it, so a family leaves with no record of what the child is taking, for how long, or why.</span></li>
+    </ul>
+  </div>
+</section>
+<section data-reveal="1" class="sa-text-row">
+  <div class="sa-text-head"><span class="sa-text-kicker">02</span></div>
+  <div class="sa-media-text">
+    <h3>A transfer problem, not a knowledge problem</h3>
+    <p>The doctor already knows what the family should do. The national medicine catalogue is public. The research exists. In every case the information is real and does not reach the person who needs it at the moment they need it. That gap is what SanaSanita is built into.</p>
+  </div>
+</section>
+<section data-reveal="1" class="sa-text-row">
+  <div class="sa-text-head"><span class="sa-text-kicker">03</span></div>
+  <div class="sa-media-text">
+    <h3>The mission, written before any code</h3>
+    <p>To tell parents what the doctor left out, forgot, or had no time to say, and to make sure they understand all of it, and forget none of it.</p>
+    <p>Every feature is measured against that sentence. Anything that does not help a parent understand or remember does not ship.</p>
+  </div>
+</section>
+<section data-reveal="1" class="sa-media-row">
+  <div class="sa-media-figs n1">
+      <figure class="sa-fig">
+        <sa-image-slot slot-key="app-plan" ratio="4 / 5" placeholder="Nuevo plan, the doctor's screen"></sa-image-slot>
+        <figcaption>Nuevo plan, the doctor's screen</figcaption>
+      </figure>
+  </div>
+  <div class="sa-media-text">
+    <h3>The screen a doctor opens</h3>
+    <p>The first line on it is the promise: no name, no CURP, no expediente, and nothing saved to any server. There is no patient record, so there is none to leak.</p>
+    <p>The doctor types the diagnosis in Spanish, the child's age and weight, and what happened in the consultation. A yellow band stays on screen as a standing warning that nothing goes home with a family until a physician has read, corrected and signed it.</p>
+  </div>
+</section>
+<section data-reveal="1" class="sa-media-row flip">
+  <div class="sa-media-figs n3">
+      <figure class="sa-fig">
+        <sa-image-slot slot-key="app-evidence-search" ratio="4 / 5" placeholder="Searching the open-access literature"></sa-image-slot>
+        <figcaption>Searching the open-access literature</figcaption>
+      </figure>
+      <figure class="sa-fig">
+        <sa-image-slot slot-key="app-evidence-engine" ratio="4 / 5" placeholder="Motor de evidencia, where a draft is written"></sa-image-slot>
+        <figcaption>Motor de evidencia, where a draft is written</figcaption>
+      </figure>
+      <figure class="sa-fig">
+        <sa-image-slot slot-key="app-evidence-approve" ratio="4 / 5" placeholder="Approving a passage with its citation"></sa-image-slot>
+        <figcaption>Approving a passage with its citation</figcaption>
+      </figure>
+  </div>
+  <div class="sa-media-text">
+    <h3>Where the evidence comes from, and who signs it</h3>
+    <p>The app searches only what is legally free: Europe PMC, PubMed, Semantic Scholar, SciELO México, Medigraphic and BVS/PAHO. Never Sci-Hub. It pulls the passages that bear on care at home, each with its exact citation, study population and link.</p>
+    <p>Then the gate. The doctor writes the family's version in plain words. Aprobar keeps it. Rechazar throws it away. The system never writes the family-facing line itself, and where there is no evidence the section stays empty.</p>
+  </div>
+</section>
+<section data-reveal="1" class="sa-media-row">
+  <div class="sa-media-figs n2">
+      <figure class="sa-fig">
+        <sa-image-slot slot-key="app-pictograms" ratio="4 / 5" placeholder="Food and home pictograms, tapped to mark"></sa-image-slot>
+        <figcaption>Food and home pictograms, tapped to mark</figcaption>
+      </figure>
+      <figure class="sa-fig">
+        <sa-image-slot slot-key="app-medication" ratio="4 / 5" placeholder="The medication row"></sa-image-slot>
+        <figcaption>The medication row</figcaption>
+      </figure>
+  </div>
+  <div class="sa-media-text">
+    <h3>Built for a house, not a clinic</h3>
+    <p>What the family leaves with is pictures first. Foods and household triggers are tapped to mark, and anything left unmarked is understood to be allowed.</p>
+    <p>Medicines are chosen against the national catalogue by clave, using the same fields as the paper prescription. The app builds the schedule from what the doctor entered. It does not calculate the dose, and when something is out of stock it says so rather than proposing a different drug.</p>
+  </div>
+</section>
+<section data-reveal="1" class="sa-text-row">
+  <div class="sa-text-head"><span class="sa-text-kicker">04</span></div>
+  <div class="sa-media-text">
+    <h3>Where it goes from here</h3>
+    <p>The aim is for SanaSanita to run inside IMSS-Bienestar hospitals like the one it was written in, used by the doctors already working there.</p>
+    <p>For a physician: the evidence they cannot otherwise reach, in their language, with the citation attached, as support for their own reasoning. For a family: a summary they can read and follow at home.</p>
+    <p>The app never diagnoses and never proposes a treatment. It makes the doctor's own answer easier to give, and much harder to lose.</p>
   </div>
 </section>
 <section data-reveal="1" style="background:var(--sa-surface-sunken);border-top:var(--sa-hairline);border-bottom:var(--sa-hairline)">
@@ -194,73 +282,8 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
     </div>
   </div>
 </section>
-<section data-reveal="1" class="sa-media-row flip">
-  <div class="sa-media-figs n1">
-      <figure class="sa-fig">
-        <sa-image-slot slot-key="app-plan" ratio="4 / 5" placeholder="Nuevo plan, the doctor's screen"></sa-image-slot>
-        <figcaption>Nuevo plan, the doctor's screen</figcaption>
-      </figure>
-  </div>
-  <div class="sa-media-text">
-    <h3>The screen a doctor opens</h3>
-    <p>Everything starts here, and the first line on it is the promise: no name, no CURP, no expediente, and nothing saved to any server. There is no patient record, so there is none to leak.</p>
-    <p>The doctor types the diagnosis in Spanish, the child's age and weight, and what happened in the consultation. The yellow band stays on screen as a standing warning that nothing in the prototype goes home with a family until a physician has read it, corrected it and signed it.</p>
-  </div>
-</section>
-<section data-reveal="1" style="background:var(--sa-surface-sunken);border-top:var(--sa-hairline);border-bottom:var(--sa-hairline)">
-  <div style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-band-y) clamp(24px,5vw,64px) var(--sa-band-y) clamp(24px,11vw,168px);box-sizing:border-box">
-    <div data-rail-target="1">
-      <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="How it works" title="Four layers" hint-size="100%,110px"></x-import>
-    </div>
-    <div data-stagger="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--sa-space-5);margin-top:var(--sa-space-10)">
-      <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="The medicine layer" title="" hint-size="100%,170px">A prescription that cannot be filled is not a treatment. The app searches the national catalogue by clave and shows whether a medicine is in the hospital, out of stock, or unknown. Unknown is the honest default, because a false yes sends a family to a pharmacy window for nothing.</x-import>
-      <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="The evidence layer" title="" hint-size="100%,170px">Residents here are assigned reading but have no institutional access to journals. The app searches only legal open-access sources: Europe PMC, PubMed, Semantic Scholar, SciELO México, Medigraphic and BVS/PAHO. It finds the passages that matter for home care and shows the exact citation for each one.</x-import>
-      <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="The gate" title="" hint-size="100%,170px">The system drafts. A physician reads it, corrects it, and signs it. Nothing reaches a family unsigned, and where there is no evidence behind a line the section stays empty. Blank beats invented.</x-import>
-      <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="Anti-deferimiento" title="" hint-size="100%,170px">Diferimiento is when a scheduled surgery does not happen. Theatre slots are scarce and a missed one can leave a child unoperated for months. The answer is a printed row of boxes, one for each day until the surgery, crossed off every morning. It needs no phone, no internet and no reading.</x-import>
-    </div>
-  </div>
-</section>
-<section data-reveal="1" class="sa-media-row">
-  <div class="sa-media-figs n3">
-      <figure class="sa-fig">
-        <sa-image-slot slot-key="app-evidence-search" ratio="4 / 5" placeholder="Searching the open-access literature"></sa-image-slot>
-        <figcaption>Searching the open-access literature</figcaption>
-      </figure>
-      <figure class="sa-fig">
-        <sa-image-slot slot-key="app-evidence-engine" ratio="4 / 5" placeholder="Motor de evidencia, where a draft is written"></sa-image-slot>
-        <figcaption>Motor de evidencia, where a draft is written</figcaption>
-      </figure>
-      <figure class="sa-fig">
-        <sa-image-slot slot-key="app-evidence-approve" ratio="4 / 5" placeholder="Approving a passage with its citation"></sa-image-slot>
-        <figcaption>Approving a passage with its citation</figcaption>
-      </figure>
-  </div>
-  <div class="sa-media-text">
-    <h3>Where the evidence comes from, and who signs it</h3>
-    <p>A resident here is assigned reading they cannot open, because the journals sit behind paywalls the hospital does not pay for. So the app searches only what is legally free: Europe PMC, PubMed, Semantic Scholar, SciELO México, Medigraphic and BVS/PAHO. Never Sci-Hub.</p>
-    <p>It ranks what it finds by clinical relevance, marks which papers are open access and peer reviewed, and pulls the passages that actually bear on care at home. Each passage arrives with its exact citation, its study population and a link to the source, and any machine translation is labelled as one.</p>
-    <p>Then the gate. The doctor writes the family's version in plain words, informed by the passage rather than copied from it. Aprobar keeps it. Rechazar throws it away. The system never writes the family-facing line itself, and where there is no evidence the section stays empty.</p>
-  </div>
-</section>
 <section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-16) clamp(24px,5vw,64px) var(--sa-space-8) clamp(24px,11vw,168px);box-sizing:border-box">
   <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Quote" attribution="A physician at the Torre Pediátrica, from the field notes" hint-size="100%,120px">This really shows the medical potential of intelligence and creativity, based on the resources available.</x-import>
-</section>
-<section data-reveal="1" class="sa-media-row flip">
-  <div class="sa-media-figs n2">
-      <figure class="sa-fig">
-        <sa-image-slot slot-key="app-pictograms" ratio="4 / 5" placeholder="Food and home pictograms, tapped to mark"></sa-image-slot>
-        <figcaption>Food and home pictograms, tapped to mark</figcaption>
-      </figure>
-      <figure class="sa-fig">
-        <sa-image-slot slot-key="app-medication" ratio="4 / 5" placeholder="The medication row"></sa-image-slot>
-        <figcaption>The medication row</figcaption>
-      </figure>
-  </div>
-  <div class="sa-media-text">
-    <h3>Built for a house, not a clinic</h3>
-    <p>What the family leaves with is pictures first. Foods and household triggers are tapped to mark, and anything left unmarked is understood to be allowed, so a parent is never asked to interpret a list of exceptions.</p>
-    <p>Medicines are chosen against the national catalogue by clave, using the same fields the paper prescription uses: form, route, dose, interval and first dose. The app builds the schedule from what the doctor entered. It does not calculate the dose, and when something is out of stock it says so rather than proposing a different drug.</p>
-  </div>
 </section>
 <section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-8) clamp(24px,5vw,64px) var(--sa-space-20) clamp(24px,11vw,168px);box-sizing:border-box">
   <div data-rail-target="1">

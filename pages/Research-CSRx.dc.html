@@ -73,19 +73,11 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
 <section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:0 clamp(24px,5vw,64px) var(--sa-space-16) clamp(24px,11vw,168px);box-sizing:border-box;display:grid;grid-template-columns:minmax(300px,1.05fr) minmax(260px,0.95fr);gap:clamp(32px,5vw,72px);align-items:start">
     <div>
       <p style="font:var(--sa-type-lede);color:var(--sa-text-primary);max-width:60ch;text-wrap:pretty">PAHs, polycyclic aromatic hydrocarbons, are wherever something has been burned: exhaust, cigarette smoke, charred food. CSR-x is where I spent five weeks asking what chronic exposure to them does at the level of the genome, not just the lungs.</p>
-      <p style="font:var(--sa-type-body);color:var(--sa-text-secondary);max-width:60ch;margin-top:var(--sa-space-4);text-wrap:pretty">CSR-x, the Collaborative Summer Research eXperience, is selective, remote, and student-led: no professor running the room, a small cohort of students building the research together. The program runs five tracks, AI and data science, biomedical and health sciences, environmental science, cognitive science, and economics. Mine was biomedical, and spent the summer of 2026 on one question: how PAH exposure links to epigenetic aging and DNA methylation, and how much of that risk becomes lung cancer.</p>
-      <p style="font:var(--sa-type-body);color:var(--sa-text-secondary);max-width:60ch;margin-top:var(--sa-space-4);text-wrap:pretty">It is the same instinct as SanaSanita and the Venezuela paper in different clothes: a health outcome nobody disputes, traced back to a mechanism most people never see. Here the mechanism is not a hospital workflow or a border. It is a chemical mark on DNA that changes how a cell reads its own instructions.</p>
+
       <div style="margin-top:var(--sa-space-8)">
         <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Button" href="https://www.csr-x.org/" target="_blank" rel="noopener" hint-size="220px,44px">About CSR-x</x-import>
       </div>
-      <div class="sa-tbd-public" style="margin-top:var(--sa-space-8);padding:var(--sa-space-5);border-left:3px solid var(--sa-highlight);background:var(--sa-highlight-soft);border-radius:var(--sa-radius-sm)">
-        <div style="font:var(--sa-type-eyebrow);letter-spacing:var(--sa-tracking-eyebrow);text-transform:uppercase;color:var(--sa-sienna-500)">Still being written</div>
-        <p style="font:var(--sa-type-body);font-size:var(--sa-text-sm);color:var(--sa-ink-800);margin:6px 0 0;text-wrap:pretty">This part is not finished yet. It will be filled in properly rather than padded out.</p>
-      </div>
-      <div class="sa-tbd-author" style="margin-top:var(--sa-space-8);padding:var(--sa-space-5);border-left:3px solid var(--sa-highlight);background:var(--sa-highlight-soft);border-radius:var(--sa-radius-sm)">
-        <div style="font:var(--sa-type-eyebrow);letter-spacing:var(--sa-tracking-eyebrow);text-transform:uppercase;color:var(--sa-sienna-500)">Still to add (only visible with ?edit=1)</div>
-        <p style="font:var(--sa-type-body);font-size:var(--sa-text-sm);color:var(--sa-ink-800);margin:6px 0 0;text-wrap:pretty">What the cohort actually found, the dataset behind it, and whether it is being written up anywhere. Send these and the two steps above fill in properly.</p>
-      </div>
+
 
   <div data-stagger="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:var(--sa-space-5);margin-top:var(--sa-space-10)">
     <div style="border-top:1px solid var(--sa-border-hairline);padding-top:var(--sa-space-3)">
@@ -109,17 +101,36 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
     <div style="max-width:460px;width:100%"><sa-image-slot slot-key="csrx-3" ratio="7 / 5" placeholder="CSR-x 2026 Program, certificate of completion"></sa-image-slot></div>
 </section>
 
-<section data-reveal="1" style="background:var(--sa-surface-sunken);border-top:var(--sa-hairline);border-bottom:var(--sa-hairline)">
-  <div style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-band-y) clamp(24px,5vw,64px) var(--sa-band-y) clamp(24px,11vw,168px);box-sizing:border-box">
-    <div data-rail-target="1">
-      <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="The work" title="How it breaks down" hint-size="100%,110px"></x-import>
-    </div>
-    <div data-stagger="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--sa-space-5);margin-top:var(--sa-space-10)">
-      <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="Question" title="" hint-size="100%,170px">How does chronic PAH exposure show up in epigenetic aging and DNA methylation, and how much of that risk becomes lung cancer?</x-import>
-      <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="Method" title="" hint-size="100%,170px">A five-week, remote, student-led research program: a small cohort building the analysis together rather than a professor assigning it.</x-import>
-      <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="Findings" title="To be added" meta="{{ soon }}" hint-size="100%,170px">To be added</x-import>
-      <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="Published in" title="To be added" meta="{{ soon }}" hint-size="100%,170px">To be added</x-import>
-    </div>
+<section data-reveal="1" class="sa-text-row">
+  <div class="sa-text-head"><span class="sa-text-kicker">01</span></div>
+  <div class="sa-media-text">
+    <h3>Five weeks, remote, student-led</h3>
+    <p>CSR-x, the Collaborative Summer Research eXperience, is selective and remote, with no professor running the room: a small cohort of students building the research together.</p>
+    <ul class="sa-points">
+      <li><strong>Tracks</strong><span>AI and data science, biomedical and health sciences, environmental science, cognitive science, and economics. Mine was biomedical.</span></li>
+      <li><strong>When</strong><span>July to August 2026.</span></li>
+    </ul>
+  </div>
+</section>
+<section data-reveal="1" class="sa-text-row">
+  <div class="sa-text-head"><span class="sa-text-kicker">02</span></div>
+  <div class="sa-media-text">
+    <h3>The question</h3>
+    <p>How does chronic PAH exposure show up in epigenetic aging and DNA methylation, and how much of that risk becomes lung cancer?</p>
+  </div>
+</section>
+<section data-reveal="1" class="sa-text-row">
+  <div class="sa-text-head"><span class="sa-text-kicker">03</span></div>
+  <div class="sa-media-text">
+    <h3>My part: the literature review</h3>
+    <p>I built a large table tracking 33 studies and did a close read of seven of them. The most interesting finding is that no single study has tested all three parts of the chain, exposure, aging and cancer risk, in the same group of people. Some groups have studied separate pieces without connecting them yet.</p>
+  </div>
+</section>
+<section data-reveal="1" class="sa-text-row">
+  <div class="sa-text-head"><span class="sa-text-kicker">04</span></div>
+  <div class="sa-media-text">
+    <h3>The same instinct</h3>
+    <p>It is the same instinct as SanaSanita and the Venezuela paper: a health outcome nobody disputes, traced back to a mechanism most people never see. Here it is a chemical mark on DNA that changes how a cell reads its own instructions.</p>
   </div>
 </section>
 <section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-8) clamp(24px,5vw,64px) var(--sa-space-20) clamp(24px,11vw,168px);box-sizing:border-box">

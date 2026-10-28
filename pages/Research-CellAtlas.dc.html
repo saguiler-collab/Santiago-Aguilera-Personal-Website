@@ -73,10 +73,7 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
 <section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:0 clamp(24px,5vw,64px) var(--sa-space-16) clamp(24px,11vw,168px);box-sizing:border-box;display:grid;grid-template-columns:minmax(300px,1.05fr) minmax(260px,0.95fr);gap:clamp(32px,5vw,72px);align-items:start">
     <div>
       <p style="font:var(--sa-type-lede);color:var(--sa-text-primary);max-width:60ch;text-wrap:pretty">A tumour sample is never pure cancer. It is cancer cells, immune cells, blood-vessel cells and normal brain tissue, blended into one signal by bulk RNA sequencing, like a smoothie: you can taste the blend, but not see the fruit that went into it. Single-cell sequencing can see the fruit, but it is expensive and unavailable for most patients.</p>
-      <p style="font:var(--sa-type-body);color:var(--sa-text-secondary);max-width:60ch;margin-top:var(--sa-space-4);text-wrap:pretty">It did not start as a deconvolution pipeline. The five of us began with a broad question about the tumour microenvironment, the neighbourhood of stromal and immune cells that helps a glioblastoma resist chemotherapy, and covered cancer-associated fibroblasts, hypoxia and drug-efflux pumps before narrowing it, over several checkpoints, to something we could actually execute and defend: estimate the fraction of seven cell types (tumour, macrophage/microglia, T cell, NK cell, B cell, endothelial, oligodendrocyte) in each of 153 TCGA-GBM tumours from public bulk RNA-seq, and test whether that composition says anything about survival. My part was the validation side, proving whether the numbers the rest of the pipeline produced could actually be trusted, not just that they looked plausible.</p>
-      <p style="font:var(--sa-type-body);color:var(--sa-text-secondary);max-width:60ch;margin-top:var(--sa-space-4);text-wrap:pretty">The first results looked plausible and were biologically wrong, which turned out to be the most useful part of the project. Solving on log-transformed values produced nonsense, immune cells near zero, because the underlying mixing model is linear and additive; switching to linear counts-per-million fixed it immediately. A handful of high-expression housekeeping genes were dominating the fit regardless of whether they actually distinguished cell types, so we weighted each gene by how discriminative it was. And one donor supplied 38% of every astrocyte cell in our reference atlas; a plain average would have mostly described that one person, so we rarefied instead, one cell per donor per trial, repeated and averaged, so no single patient can dominate.</p>
-      <p style="font:var(--sa-type-body);color:var(--sa-text-secondary);max-width:60ch;margin-top:var(--sa-space-4);text-wrap:pretty">ν-SVR, the algorithm CIBERSORT uses, came out the most reliable of the three methods we benchmarked; NNLS drove many lymphocyte estimates to exactly zero. Our RNA-based tumour-purity estimate correlated with an independent, DNA-based measurement at ρ = 0.76, the check I am proudest of, since it never touched RNA at all. Composition features added to a clinical survival model moved the concordance index by +0.001, essentially nothing, and we reported that as a genuine null result rather than hunting for a cutoff that looked better. We chose our method from pre-registered accuracy benchmarks on known-truth data, before ever checking which choice made the survival numbers look best, and the failed and null results both stayed in the final report.</p>
-      <p style="font:var(--sa-type-body);color:var(--sa-text-secondary);max-width:60ch;margin-top:var(--sa-space-4);text-wrap:pretty">A metric that is easy to optimise, like reconstruction error, is not the same thing as evidence of correctness. Real validation has to come from a measurement that could actually have proven us wrong. That discipline, freezing a schema before looking at results, and being willing to report a well-supported null finding, is exactly the kind of thinking I want to carry into medicine, where believing a plausible but unvalidated number costs a great deal more than a lower grade.</p>
+
       <div style="margin-top:var(--sa-space-8)">
         <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Button" href="https://cellatlasgbm.vercel.app/" target="_blank" rel="noopener" hint-size="220px,44px">Open CellAtlas GBM</x-import>
       </div>
@@ -108,6 +105,62 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
     <div style="max-width:300px;width:100%"><sa-image-slot slot-key="gbm-1" ratio="3 / 4" placeholder="Presenting the null result to the cohort"></sa-image-slot></div>
 </section>
 
+<section data-reveal="1" class="sa-media-row">
+  <div class="sa-media-figs n1">
+      <figure class="sa-fig">
+        <sa-image-slot slot-key="gbm-2" ratio="4 / 3" placeholder="The team, mid-project"></sa-image-slot>
+        <figcaption>The team, mid-project</figcaption>
+      </figure>
+  </div>
+  <div class="sa-media-text">
+    <h3>From a broad question to one we could test</h3>
+    <p>The five of us began with the tumour microenvironment, the neighbourhood of stromal and immune cells that helps a glioblastoma resist chemotherapy. Over several checkpoints we narrowed it to something we could execute and defend.</p>
+    <ul class="sa-points">
+      <li><strong>The question</strong><span>Can the cell-type makeup of a tumour, estimated from cheap bulk RNA-seq, say anything about survival?</span></li>
+      <li><strong>The data</strong><span>153 TCGA-GBM tumours from public bulk RNA-seq.</span></li>
+      <li><strong>Seven cell types</strong><span>Tumour, macrophage/microglia, T cell, NK cell, B cell, endothelial, oligodendrocyte.</span></li>
+      <li><strong>My part</strong><span>Validation: proving whether the numbers the rest of the pipeline produced could be trusted, not just that they looked plausible.</span></li>
+    </ul>
+  </div>
+</section>
+<section data-reveal="1" class="sa-text-row">
+  <div class="sa-text-head"><span class="sa-text-kicker">01</span></div>
+  <div class="sa-media-text">
+    <h3>The first results were plausible, and wrong</h3>
+
+    <ul class="sa-points">
+      <li><strong>Log scale</strong><span>Solving on log values pushed immune cells near zero, because the mixing model is linear and additive. Linear counts-per-million fixed it.</span></li>
+      <li><strong>Housekeeping genes</strong><span>A handful of high-expression genes dominated the fit, so each gene was weighted by how well it told cell types apart.</span></li>
+      <li><strong>One donor, 38% of a cell type</strong><span>A single donor supplied 38% of the astrocyte cells in the reference. We rarefied: one cell per donor per trial, repeated and averaged.</span></li>
+    </ul>
+  </div>
+</section>
+<section data-reveal="1" class="sa-media-row">
+  <div class="sa-media-figs n1">
+      <figure class="sa-fig">
+        <sa-image-slot slot-key="gbm-3" ratio="3 / 2" placeholder="The full Carnegie Mellon cohort, summer 2026"></sa-image-slot>
+        <figcaption>The full Carnegie Mellon cohort, summer 2026</figcaption>
+      </figure>
+  </div>
+  <div class="sa-media-text">
+    <h3>What we found</h3>
+
+    <ul class="sa-points">
+      <li><strong>Best method</strong><span>ν-SVR, the algorithm CIBERSORT uses, was the most reliable of the three. NNLS drove many lymphocyte estimates to exactly zero.</span></li>
+      <li><strong>An independent check</strong><span>The RNA-based tumour purity correlated with a DNA-based measurement at ρ = 0.76. That check never touched RNA at all.</span></li>
+      <li><strong>A null result</strong><span>Composition features moved the survival model's concordance index by +0.001, essentially nothing. We reported it as it was.</span></li>
+      <li><strong>Order of choices</strong><span>We chose the method from pre-registered accuracy benchmarks, before checking which choice made the survival numbers look best.</span></li>
+    </ul>
+  </div>
+</section>
+<section data-reveal="1" class="sa-text-row">
+  <div class="sa-text-head"><span class="sa-text-kicker">02</span></div>
+  <div class="sa-media-text">
+    <h3>What I took from it</h3>
+    <p>A metric that is easy to optimise, like reconstruction error, is not evidence of correctness. Validation has to come from a measurement that could have proven us wrong.</p>
+    <p>Freezing a schema before looking at results, and reporting a well-supported null, is the kind of thinking I want to carry into medicine, where believing a plausible number costs more than a lower grade.</p>
+  </div>
+</section>
 <section data-reveal="1" style="background:var(--sa-surface-sunken);border-top:var(--sa-hairline);border-bottom:var(--sa-hairline)">
   <div style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-band-y) clamp(24px,5vw,64px) var(--sa-band-y) clamp(24px,11vw,168px);box-sizing:border-box">
     <div data-rail-target="1">
@@ -120,19 +173,6 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
       <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="Orthogonal validation" title="" hint-size="100%,170px">The most important check in the project: does the RNA-based estimate agree with a measurement that never touched RNA at all? I compared inferred tumour fraction against DNA-derived tumour purity, and inferred immune fraction against methylation-derived leukocyte fraction, with bootstrap confidence intervals and correction for multiple comparisons.</x-import>
       <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.Card" eyebrow="Reference-free TME scoring" title="" hint-size="100%,170px">The current phase: running MCP-counter and ESTIMATE, marker-based methods entirely independent of the deconvolution math, to see which composition columns deserve less trust. The T-cell, NK-cell and B-cell columns failed held-out validation and are reported as diagnostic only, not confident biological claims.</x-import>
     </div>
-  </div>
-</section>
-<section data-reveal="1" class="sa-gallery-wrap">
-  <div class="sa-gallery-head"><span class="sa-gallery-kicker">Photographs</span></div>
-  <div class="sa-gallery n2">
-      <figure class="sa-fig">
-        <sa-image-slot slot-key="gbm-2" ratio="4 / 3" placeholder="The team, mid-project"></sa-image-slot>
-        <figcaption>The team, mid-project</figcaption>
-      </figure>
-      <figure class="sa-fig">
-        <sa-image-slot slot-key="gbm-3" ratio="3 / 2" placeholder="The full Carnegie Mellon cohort, summer 2026"></sa-image-slot>
-        <figcaption>The full Carnegie Mellon cohort, summer 2026</figcaption>
-      </figure>
   </div>
 </section>
 <section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-8) clamp(24px,5vw,64px) var(--sa-space-20) clamp(24px,11vw,168px);box-sizing:border-box">
