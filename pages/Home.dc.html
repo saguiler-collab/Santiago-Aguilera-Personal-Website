@@ -47,7 +47,7 @@ d.setAttribute("data-palette-default",def);d.setAttribute("data-palette",k);d.se
 <helmet>
 <link rel="stylesheet" href="../_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/styles.css">
 <link rel="stylesheet" href="../assets/palettes.css?v=a3d7f883">
-<link rel="stylesheet" href="../assets/site.css?v=05016f5f">
+<link rel="stylesheet" href="../assets/site.css?v=08ad989c">
 <script src="../_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/_ds_bundle.js"></script>
 <script src="../assets/photo-slots.js?v=d6c3d8e0" defer></script>
 <style>
@@ -402,7 +402,7 @@ class Component extends DCLogic {
       const j = Math.floor(Math.random() * (i + 1));
       [all[i], all[j]] = [all[j], all[i]];
     }
-    const SHOWN = 15;
+    const SHOWN = 12;
     all.slice(SHOWN).forEach(el => { el.style.display = "none"; });
     const tiles = all.slice(0, SHOWN);
     if (!tiles.length) return;
@@ -465,7 +465,7 @@ class Component extends DCLogic {
     if (this.reduce || editing || this.props.parallax === false) return;
 
     let last = performance.now();
-    let settle = 240;
+    let settle = 60;
     const tick = now => {
       this._raf = requestAnimationFrame(tick);
       // The first placement can run before the stylesheet has sized the layer, which piles
@@ -473,8 +473,10 @@ class Component extends DCLogic {
       // layer's width turns out to differ from the one the tiles were laid out against.
       if (settle > 0) {
         settle--;
-        const lw = layer.getBoundingClientRect().width;
-        if (Math.abs(lw - this.bw) > 40 || (settle % 30 === 0 && tiles.some(el => Math.abs(el.getBoundingClientRect().width - el._sa.w) > 6))) place();
+        if (settle % 10 === 0) {
+          const lw = layer.getBoundingClientRect().width;
+          if (Math.abs(lw - this.bw) > 40 || tiles.some(el => Math.abs(el.getBoundingClientRect().width - el._sa.w) > 6)) place();
+        }
       }
       // clamped so a backgrounded tab does not resume with one enormous jump
       const dt = Math.min(0.05, (now - last) / 1000);
@@ -518,6 +520,16 @@ class Component extends DCLogic {
       if (stars) stars.style.transform = `translate3d(0,${(scrollY * 0.05).toFixed(1)}px,0)`;
     };
     this._raf = requestAnimationFrame(tick);
+    // Nothing to animate when the hero is scrolled away or the tab is hidden.
+    const setRunning = (on) => {
+      if (on && !this._raf) { last = performance.now(); this._raf = requestAnimationFrame(tick); }
+      else if (!on && this._raf) { cancelAnimationFrame(this._raf); this._raf = 0; }
+    };
+    let heroVisible = true;
+    this._heroIO = new IntersectionObserver(es => { heroVisible = es[0].isIntersecting; setRunning(heroVisible && !document.hidden); }, { threshold: 0 });
+    this._heroIO.observe(layer);
+    this._onVis = () => setRunning(heroVisible && !document.hidden);
+    document.addEventListener("visibilitychange", this._onVis);
   }
 
   buildStars() {
@@ -549,6 +561,8 @@ class Component extends DCLogic {
     removeEventListener("resize", this._onResize);
     if (this._onFloatResize) removeEventListener("resize", this._onFloatResize);
     cancelAnimationFrame(this._raf);
+    if (this._heroIO) this._heroIO.disconnect();
+    if (this._onVis) document.removeEventListener("visibilitychange", this._onVis);
     if (this._io) this._io.disconnect();
     if (this._sio) this._sio.disconnect();
     if (this._yio) this._yio.disconnect();
