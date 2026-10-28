@@ -323,7 +323,7 @@ const PAGES = [
     eyebrow: "Academics · Pennsylvania", title: "Perkiomen School", lede: "Pennsburg, Pennsylvania. Boarding since August 2025.",
     desc: "Perkiomen School. Health science track, HOSA, Model UN, journalism, swimming, and the rock band.",
     intro: "Perkiomen is where the separate threads finally started pointing the same direction. The health science track is the academic spine; almost everything else on this site either feeds it or balances it.",
-    body: ["Boarding changed how I work. Nobody schedules your evening for you, which means the difference between a good week and a wasted one is entirely a decision you make on Sunday."],
+    body: ["My first room was small, with a desk, a bed and a window, and it was the start of my own adventure. Boarding changed how I work. Nobody schedules your evening for you, which means the difference between a good week and a wasted one is entirely a decision you make on Sunday."],
     facts: [["Arrived", "August 2025"], ["Track", "Health science"], ["Status", "Boarding student"]],
     awards: {
       title: "Awards at Perkiomen",
@@ -342,7 +342,8 @@ const PAGES = [
       { key: "perk-4", ratio: "4 / 3", label: "Science and Math Award, Rochester Institute of Technology" },
       { key: "perk-3", ratio: "1 / 1", label: "Awards night" },
       { key: "perk-5", ratio: "4 / 3", label: "A birthday dinner in the dining hall" },
-      { key: "perk-6", ratio: "3 / 4", label: "Meeting Alberto, the anatomy skeleton, in class" }
+      { key: "perk-6", ratio: "3 / 4", label: "Meeting Alberto, the anatomy skeleton, in class" },
+      { key: "perk-7", ratio: "4 / 3", label: "My first room at Perkiomen, the start of my own adventure" }
     ],
     video: { src: "/assets/video/perk-suit.mp4", poster: "/assets/video/perk-suit.jpg", ratio: "9 / 16", width: 340, label: "In the Perkiomen blazer and tie" },
     next: { title: "Next: Exeter Summer", lede: "A summer of coursework away from home.", href: "Academics-ExeterSummer.dc.html", label: "Go to Exeter Summer" }
@@ -363,7 +364,16 @@ const PAGES = [
       { key: "exeter-2", ratio: "4 / 3", label: "A team huddle in class" },
       { key: "exeter-3", ratio: "4 / 3", label: "Under the Exeter banner" },
       { key: "exeter-4", ratio: "4 / 3", label: "Canobie Lake Park, summer 2025" },
-      { key: "exeter-5", ratio: "4 / 3", label: "Friends and instructors signing shirts on the last day" }
+      { key: "exeter-5", ratio: "4 / 3", label: "Friends and instructors signing shirts on the last day" },
+      { key: "exeter-6", ratio: "3 / 4", label: "Hanging out in the dorm common room" },
+      { key: "exeter-7", ratio: "7 / 6", label: "Celebrating under the Exeter banner" },
+      { key: "exeter-8", ratio: "4 / 3", label: "Evening football on the lawn with friends from the program" },
+      { key: "exeter-9", ratio: "4 / 3", label: "Blazer on, sunset over the river" },
+      { key: "exeter-10", ratio: "3 / 4", label: "Arms out on the dock" },
+      { key: "exeter-11", ratio: "4 / 3", label: "The quad on a bright summer day" },
+      { key: "exeter-12", ratio: "4 / 3", label: "The Academy building at dusk" },
+      { key: "exeter-13", ratio: "3 / 4", label: "Leadership readings, highlighted and annotated" },
+      { key: "exeter-14", ratio: "4 / 3", label: "Inside the Phillips Exeter Academy library" }
     ],
     next: { title: "Next: Comp Bio", lede: "Computational biology at Carnegie Mellon.", href: "Academics-CompBio.dc.html", label: "Go to Comp Bio" }
   },
@@ -387,6 +397,7 @@ const PAGES = [
       { key: "gbm-3", ratio: "3 / 2", label: "The full Carnegie Mellon cohort, summer 2026" },
       { key: "gbm-2", ratio: "4 / 3", label: "The team, mid-project" },
       { key: "cmu-lab", ratio: "4 / 3", label: "In the lab with teammates" },
+      { key: "cmu-friends", ratio: "3 / 2", label: "With three friends from the program, a medal around one neck" },
       { key: "cmu-present", ratio: "3 / 4", label: "Presenting with the team" },
       { key: "cmu-lecture", ratio: "3 / 2", label: "Final project presentation in the lecture hall" },
       { key: "cmu-lobby", ratio: "3 / 2", label: "With a teammate and two of the instructors" },
