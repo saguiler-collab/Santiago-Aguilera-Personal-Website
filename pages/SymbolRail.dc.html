@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="../assets/site.css?v=56a550ea">
 <script src="../_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/_ds_bundle.js"></script>
 </helmet>
-<div ref="{{ rootRef }}" style="position:fixed;inset:0;z-index:6;pointer-events:none;contain:strict">
+<div ref="{{ rootRef }}" style="position:fixed;inset:0;z-index:30;pointer-events:none;contain:strict">
   <svg ref="{{ svgRef }}" style="position:absolute;inset:0;width:100%;height:100%;display:block;color:var(--sa-text-primary)" fill="none" preserveAspectRatio="none" aria-hidden="true">
     <g ref="{{ decoRef }}"></g>
     <path ref="{{ strandB }}" fill="none" stroke="currentColor" stroke-opacity="0.16" stroke-width="1.6" stroke-linecap="round" style="opacity:0"></path>
@@ -89,7 +89,13 @@ class Component extends DCLogic {
     // cy is where the coiled mark rests before it unwinds. 0.24 lines it up with the
     // page title rather than the body copy below it. At 0.34 it floated unanchored
     // beside the lede. Keep it clear of the ~72px nav: the mark reaches ~49px above cy.
-    this.yTop = this.H * 0.1; this.yBot = this.H * 0.92; this.cy = this.H * 0.24;
+    // The coiled mark rests in the top-left corner, beside the nav bar rather than under it. The
+    // rail sits above the sticky header (z 30 vs 20) so the bar no longer covers it. It needs
+    // ~49px of headroom above cy for the eyes, so cy never goes below 56.
+    const hdr = document.querySelector("header");
+    const navH = (hdr && hdr.offsetHeight) || 72;
+    this.cy = Math.max(56, navH / 2 + 8);
+    this.yTop = Math.max(this.H * 0.1, this.cy + 40); this.yBot = this.H * 0.92;
   }
 
   scan() {
