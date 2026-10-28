@@ -1357,16 +1357,101 @@ const PAGES = [
   },
   {
     file: "Curiosities-Videogames.dc.html", section: "curiosities", parent: { label: "Curiosities", href: "Curiosities.dc.html" },
-    eyebrow: "Curiosities · Games", title: "Video games", lede: "Co-op, strategy, and whatever the group is playing.",
-    desc: "Video games. Co-op, strategy, and staying in touch with people across time zones.",
-    intro: "Mostly co-op and strategy, and mostly whatever the group has decided we are playing this month.",
-    body: ["Games have done something for me that is easy to undersell: when you leave a country, a shared server is often the last thing you still have in common with the people you left. Several friendships from Panama and Trinidad are still alive largely because of a standing lobby and a bad time-zone overlap."],
-    tbd: "The games you actually play, who you play them with, and anything you have built or modded. Send these and this page fills in.",
-    facts: [["Mostly", "Co-op · strategy"], ["Why it matters", "Friends across six countries"], ["Currently playing", TBD]],
+    eyebrow: "Curiosities · Games", title: "Video games", lede: "Yakuza, hack and slash, Dark Souls, and five platinum trophies.",
+    desc: "Video games. Five platinum trophies, a love of the Yakuza games, hack and slash, and Dark Souls.",
+    intro: "Yakuza, hack and slash, and Dark Souls, and otherwise whatever the group has decided we are playing this month.",
+    media: [
+      {
+        "title": "Five platinum trophies",
+        "body": [
+          "A platinum means every other trophy in the game is done. These are screenshots from my PlayStation trophy pages, and between them they cover 205 trophies."
+        ],
+        "points": [
+          [
+            "Dark Souls: Remastered",
+            "PS4. 41 of 41 trophies, platinum earned June 19, 2025."
+          ],
+          [
+            "Like a Dragon Gaiden: The Man Who Erased His Name",
+            "PS5. 62 of 62, platinum earned May 20, 2025."
+          ],
+          [
+            "Cuphead",
+            "PS4. 29 of 29, platinum earned May 20, 2025."
+          ],
+          [
+            "God of War Ragnarök",
+            "PS5 and PC. 36 of 36, platinum earned May 13, 2025."
+          ],
+          [
+            "God of War",
+            "PS4. 37 of 37, platinum earned February 19, 2023."
+          ]
+        ]
+      },
+      {
+        "title": "The trophy pages",
+        "slots": [
+          "plat-1",
+          "plat-2",
+          "plat-3",
+          "plat-4",
+          "plat-5"
+        ],
+        "gallery": true
+      },
+      {
+        "title": "What I keep coming back to",
+        "body": [
+          "Three things: the Yakuza and Like a Dragon games, hack and slash games, and the Dark Souls games."
+        ],
+        "points": [
+          [
+            "Yakuza",
+            "Long, character-driven stories I want to see through to the end, which is how Like a Dragon Gaiden ended at 62 of 62."
+          ],
+          [
+            "Hack and slash",
+            "God of War and its sequel, both finished to 100%."
+          ],
+          [
+            "Dark Souls",
+            "Remastered, completed to the last trophy. It teaches by letting you fail and try again."
+          ]
+        ]
+      },
+      {
+        "title": "What it says about me",
+        "body": [
+          "Finishing a game to its last trophy takes the same habits as the rest of this site: patience, repetition, and not stopping at good enough. It is the same attitude as a lift programme run for months, or a result checked until it holds."
+        ]
+      },
+      {
+        "title": "Why games matter",
+        "body": [
+          "When you leave a country, a shared server is often the last thing you still have in common with the people you left. Several friendships from Panama and Trinidad are still alive largely because of a standing lobby and a bad time-zone overlap."
+        ]
+      },
+      {
+        "title": "Screens",
+        "slots": [
+          "games-1",
+          "games-2",
+          "games-3"
+        ],
+        "gallery": true
+      }
+    ],
+    facts: [["Favourites", "Yakuza · hack and slash · Dark Souls"], ["Platinums", "5"], ["Trophies earned", "205 across the five"], ["Also", "Co-op · strategy"]],
     slots: [
       { key: "games-1", ratio: "4 / 3", label: "Dark Souls" },
       { key: "games-2", ratio: "3 / 4", label: "Dark Souls, with Solaire" },
-      { key: "games-3", ratio: "4 / 3", label: "The Wind Waker HD on the Wii U" }
+      { key: "games-3", ratio: "4 / 3", label: "The Wind Waker HD on the Wii U" },
+      { key: "plat-1", ratio: "1400 / 400", label: "Dark Souls: Remastered trophy page" },
+      { key: "plat-2", ratio: "1400 / 400", label: "Like a Dragon Gaiden trophy page" },
+      { key: "plat-3", ratio: "1400 / 402", label: "Cuphead trophy page" },
+      { key: "plat-4", ratio: "1400 / 396", label: "God of War Ragnarök trophy page" },
+      { key: "plat-5", ratio: "1400 / 399", label: "God of War trophy page" }
     ],
     next: { title: "Media", lede: "Photos and video from six countries.", href: "Media.dc.html", label: "See the media" }
   }
