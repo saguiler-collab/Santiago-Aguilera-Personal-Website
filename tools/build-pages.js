@@ -344,6 +344,7 @@ const PAGES = [
       { key: "perk-5", ratio: "4 / 3", label: "A birthday dinner in the dining hall" },
       { key: "perk-6", ratio: "3 / 4", label: "Meeting Alberto, the anatomy skeleton, in class" }
     ],
+    video: { src: "/assets/video/perk-suit.mp4", poster: "/assets/video/perk-suit.jpg", ratio: "9 / 16", width: 340, label: "In the Perkiomen blazer and tie" },
     next: { title: "Next: Exeter Summer", lede: "A summer of coursework away from home.", href: "Academics-ExeterSummer.dc.html", label: "Go to Exeter Summer" }
   },
   {
@@ -1015,7 +1016,15 @@ function renderPage(p) {
 </section>`
     : "";
 
-  const video = p.video
+  const video = p.video && p.video.src
+    ? `
+<section data-reveal="1" class="sa-gallery-wrap" style="padding-top:var(--sa-space-4)">
+  <figure class="sa-fig" style="max-width:${attr(p.video.width || 360)}px">
+    <video src="${attr(p.video.src)}" poster="${attr(p.video.poster)}" controls playsinline preload="metadata" style="display:block;width:100%;height:auto;aspect-ratio:${attr(p.video.ratio)};border-radius:var(--sa-radius-media,4px);background:#000"></video>
+    <figcaption style="display:block">${esc(p.video.label)}</figcaption>
+  </figure>
+</section>`
+    : p.video
     ? `
 <section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:var(--sa-space-8) clamp(24px,5vw,64px) var(--sa-space-16) clamp(24px,11vw,168px);box-sizing:border-box">
   <x-import component-from-global-scope="${NS}.MediaFrame" ratio="${attr(p.video.ratio)}" kind="video" placeholder="${attr(p.video.label)}" caption="${attr(p.video.label)}" hint-size="100%,240px"></x-import>
