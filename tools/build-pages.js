@@ -261,11 +261,11 @@ const PAGES = [
   },
   {
     file: "Place-UnitedStates.dc.html", section: "about", parent: { label: "About", href: "About.dc.html" },
-    eyebrow: "About · United States", title: "Houston, then Pennsburg", lede: "The country I was born in, and the one I came back to.",
+    eyebrow: "About · United States", title: "Houston, then Pennsburg", lede: "The return after fifteen years.",
     desc: "Born in Houston during Hurricane Ike; boarding at Perkiomen School in Pennsburg, Pennsylvania since 2025.",
     intro: "I was born in Houston, Texas, on September 13, 2008, in the middle of Hurricane Ike. Fifteen years and five countries later I returned to where I was born, to board at Perkiomen School in Pennsburg, Pennsylvania.",
-    body: ["The symbol on this site comes from that first fact: a spiral for the storm, two marks for the wind that has moved me ever since.", "Pennsburg is the first place I have lived without my family in the same building. Health science, HOSA, Model UN, the Perkiomenite, varsity swimming and the rock band all live here."],
-    facts: [["Born", "Houston, TX · Sept 13, 2008"], ["Returned", "August 2025"], ["School", "Perkiomen School"]],
+    body: ["Coming back after fifteen years meant arriving in my own birth country as a newcomer: Spanish was my first language, and the last time I lived in the United States I was two. The symbol on this site comes from that first fact: a spiral for the storm, two marks for the wind that has moved me ever since.", "Pennsburg is the first place I have lived without my family in the same building. Health science, HOSA, Model UN, the Perkiomenite, varsity swimming and the rock band all live here."],
+    facts: [["Born", "Houston, TX · Sept 13, 2008"], ["Away", "Fifteen years, five countries"], ["The return", "August 2025"], ["School", "Perkiomen School"]],
     slots: [
       { key: "us-1", ratio: "4 / 3", label: "Houston" },
       { key: "us-2", ratio: "4 / 3", label: "Perkiomen School campus" },
