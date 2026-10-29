@@ -75,7 +75,7 @@ const GROUPS = {
     { label: "Colombia", href: "Place-Colombia.dc.html" },
     { label: "Panama", href: "Place-Panama.dc.html" },
     { label: "Trinidad & Tobago", href: "Place-Trinidad.dc.html" },
-    { label: "Pennsburg", href: "Place-UnitedStates.dc.html" }
+    { label: "Pennsburg, Pennsylvania", href: "Place-UnitedStates.dc.html" }
   ]},
   academics: { title: "Academics", items: [
     { label: "International School of Port of Spain", href: "Academics-ISPS.dc.html" },
@@ -300,18 +300,18 @@ const PAGES = [
       { key: "tt-3", ratio: "4 / 3", label: "Stronger Together" },
       { key: "tt-4", ratio: "4 / 3", label: "On a bench by the water, with the dog" }
     ],
-    next: { title: "Next: Pennsburg", lede: "Boarding at Perkiomen.", href: "Place-UnitedStates.dc.html", label: "Go to the US" }
+    next: { title: "Next: Pennsburg, Pennsylvania", lede: "Boarding at Perkiomen.", href: "Place-UnitedStates.dc.html", label: "Go to the US" }
   },
   {
     file: "Place-UnitedStates.dc.html", section: "about", parent: { label: "About", href: "About.dc.html" },
-    eyebrow: "About · Pennsylvania", title: "Pennsburg", lede: "The return after fifteen years.",
+    eyebrow: "About · Pennsylvania", title: "Pennsburg, Pennsylvania", lede: "Boarding since August 2025. The return after fifteen years.",
     desc: "Boarding at Perkiomen School in Pennsburg, Pennsylvania since August 2025.",
     intro: "Pennsburg, Pennsylvania, is where I board at Perkiomen School. I came back to the United States in August 2025, fifteen years after leaving the country I was born in.",
     body: ["Coming back meant arriving in my own birth country as a newcomer: Spanish was my first language, and the last time I lived in the United States I was two.", "Pennsburg is the first place I have lived without my family in the same building. Health science, HOSA, Model UN, the Perkiomenite, varsity swimming and the rock band all live here. The Perkiomen page has the full picture."],
     facts: [["Arrived", "August 2025"], ["Away", "Fifteen years, five countries"], ["School", "Perkiomen School"], ["Born", "Houston, Texas, in 2008"]],
     slots: [
       { key: "us-2", ratio: "4 / 3", label: "Perkiomen School campus" },
-      { key: "us-3", ratio: "1 / 1", label: "Pennsburg" },
+      { key: "us-3", ratio: "1 / 1", label: "Pennsburg, Pennsylvania" },
       { key: "us-4", ratio: "3 / 4", label: "Under Cloud Gate, Chicago" }
     ],
     next: { title: "The academics", lede: "Two schools, and the work that came out of them.", href: "Academics.dc.html", label: "See the academics" }
