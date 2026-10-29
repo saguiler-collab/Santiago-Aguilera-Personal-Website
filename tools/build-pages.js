@@ -489,6 +489,8 @@ const PAGES = [
       {
         "title": "Around campus",
         "slots": [
+          "perk-13",
+          "perk-14",
           "perk-6",
           "perk-5",
           "perk-8",
@@ -515,6 +517,7 @@ const PAGES = [
       ]
     },
     slots: [
+      { key: "perk-12", ratio: "854 / 538", label: "With the Perkiomen Panther mascot" },
       { key: "perk-1", ratio: "4 / 3", label: "Perkiomen campus" },
       { key: "perk-2", ratio: "4 / 3", label: "Medical Spirit and Promise Award, Perkiomen School" },
       { key: "perk-4", ratio: "4 / 3", label: "Science and Math Award, Rochester Institute of Technology" },
@@ -525,6 +528,8 @@ const PAGES = [
       { key: "perk-8", ratio: "974 / 778", label: "Perkiomen School's post on earning the AP International Diploma" },
       { key: "perk-9", ratio: "2016 / 1512", label: "A winter sunset over campus" },
       { key: "perk-10", ratio: "2016 / 1512", label: "Dusk on the lawn" },
+      { key: "perk-13", ratio: "1125 / 1500", label: "With Senator Pennycuick" },
+      { key: "perk-14", ratio: "1125 / 1500", label: "Happy in the blazer and tie" },
       { key: "perk-11", ratio: "2016 / 1512", label: "A rainbow after the storm" }
     ],
     video: { src: "/assets/video/perk-suit.mp4", poster: "/assets/video/perk-suit.jpg", ratio: "9 / 16", width: 340, label: "In the Perkiomen blazer and tie" },
@@ -1225,6 +1230,17 @@ const PAGES = [
         ]
       },
       {
+        "title": "At the table",
+        "body": [
+          "HOSA's recruitment table in the dining hall: a posted sign, surgical tools in their sterile packs, and a model of the human torso to open up and explain. Teaching with a real model is the quickest way to get a student curious about medicine.",
+          "The volleyball tournament, with a basket of cancer-awareness bracelets by the court, was held in the gym a few weeks later."
+        ],
+        "slots": [
+          "hosa-6",
+          "hosa-7"
+        ]
+      },
+      {
         "title": "Around the chapter",
         "slots": [
           "hosa-1",
@@ -1239,6 +1255,8 @@ const PAGES = [
       { key: "hosa-1", ratio: "3 / 4", label: "Addressing the room at a school event" },
       { key: "hosa-2", ratio: "4 / 3", label: "With fellow students in the gym" },
       { key: "hosa-3", ratio: "4 / 3", label: "Between sessions at a HOSA conference" },
+{ key: "hosa-6", ratio: "1125 / 1500", label: "Holding an anatomy model at the HOSA table" },
+      { key: "hosa-7", ratio: "1125 / 1500", label: "The HOSA volleyball tournament, with the cancer-awareness bracelets" },
       { key: "hosa-5", ratio: "990 / 1320", label: "Poster for the HOSA and Community Service Club clothing and food drive" },
       { key: "hosa-4", ratio: "848 / 1090", label: "Poster for the Perk HOSA and La Casa Latina volleyball tournament for Childhood Cancer Awareness" }
     ],
@@ -1645,6 +1663,15 @@ const PAGES = [
         ]
       },
       {
+        "title": "Progress",
+        "body": [
+          "Three photos from different years: a hiking trail, a 15K in Trinidad, and a curl in the gym. The lifting is part of a longer pattern of training for things that take months."
+        ],
+        "slots": [
+          "lift-5"
+        ]
+      },
+      {
         "title": "In the gym",
         "slots": [
           "lift-2"
@@ -1654,6 +1681,7 @@ const PAGES = [
     ],
     facts: [["Discipline", "Olympic weightlifting"], ["Lifts", "Snatch · clean & jerk"], ["Training", "Year-round, since August 2024"], ["Bench press", "265 lb"], ["Squat", "335 lb"], ["Deadlift", "455 lb"], ["Liftoff ranking", "#186 global (Top 0.1%), Oct 28, 2026"]],
     slots: [
+{ key: "lift-5", ratio: "1300 / 1097", label: "Progress, from the hiking trail to the 15K to the gym" },
       { key: "lift-1", ratio: "3 / 4", label: "Back squats" },
       { key: "lift-2", ratio: "3 / 4", label: "Between sets in the gym" },
       { key: "lift-3", ratio: "1170 / 391", label: "Liftoff global leaderboards, screenshots taken October 28, 2026" },
@@ -2524,13 +2552,13 @@ function spiralSvg() {
     "Leadership-HOSA.dc.html": "hosa-conference", "Leadership-MUN.dc.html": "mun-eagle", "Leadership-Shadowing.dc.html": "hosp-or",
     "Leadership-Volunteering.dc.html": "vol-river", "Activities-Swimming.dc.html": "swim-blocks", "Activities-Weightlifting.dc.html": "lift-squat",
     "Activities-Music.dc.html": "music-drums", "Activities-Running.dc.html": "run-tired", "Academics-ISPS.dc.html": "isps-guayasamin",
-    "Academics-Perkiomen.dc.html": "perk-skeleton", "Academics-ExeterSummer.dc.html": "exeter-banner", "Academics-CompBio.dc.html": "cmu-friends",
+    "Academics-Perkiomen.dc.html": "perk-paws", "Academics-ExeterSummer.dc.html": "exeter-banner", "Academics-CompBio.dc.html": "cmu-friends",
     "Research-CellAtlas.dc.html": "gbm-3", "Research-MedicalApp.dc.html": "field-notes", "Research-CSRx.dc.html": "cert-csrx",
     "Research-Venezuela.dc.html": "vz-exhibit", "Curiosities-Videogames.dc.html": "games-artorias", "Curiosities-Music.dc.html": "music-band",
     "Curiosities-Literature.dc.html": "sea-look", "Place-Mexico.dc.html": "kid-pirate", "Place-Colombia.dc.html": "co-mammoth",
-    "Place-Panama.dc.html": "pa-ancon", "Place-Trinidad.dc.html": "trip-bench", "Place-UnitedStates.dc.html": "perk-sky1"
+    "Place-Panama.dc.html": "pa-ancon", "Place-Trinidad.dc.html": "trip-bench", "Place-UnitedStates.dc.html": "perk-paws"
   };
-  const CITY_IMG = { "Madrid": "trip-madrid", "Monterrey": "kid-pirate", "Bogotá": "co-mammoth", "Ciudad de Panamá": "pa-ancon", "Port of Spain": "trip-bench", "Pennsburg": "perk-sky1" };
+  const CITY_IMG = { "Madrid": "trip-madrid", "Monterrey": "kid-pirate", "Bogotá": "co-mammoth", "Ciudad de Panamá": "pa-ancon", "Port of Spain": "trip-bench", "Pennsburg": "perk-paws" };
   const PLACE_COLOR = { usa: "#3A7CA5", spain: "#D9A441", mexico: "#3F9A5A", colombia: "#E3B93C", panama: "#E0654A", trinidad: "#C2403A", pennsburg: "#7B5EA7" };
   const PAL = ["#E0654A", "#2F8F83", "#D9A441", "#7B5EA7", "#3A7CA5", "#C2527A", "#5E8C3A"];
   const A = (attrs, n) => { const m = attrs.match(new RegExp("(?:^|\\s)" + n + '="([^"]*)"')); return m ? m[1] : ""; };
