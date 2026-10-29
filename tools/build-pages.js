@@ -324,11 +324,25 @@ const PAGES = [
         ]
       },
       {
-      "title": "Guayasamín, recreated",
+      "title": "Guayasamín, reinterpreted",
       "body": [
-        "For Spanish class I recreated a painting by the Ecuadorian artist Oswaldo Guayasamín. I was pretty impressed with how accurate it ended up."
+        "For Spanish class I recreated \"Madre y Niño con Fondo Amarillo\" (1989) by the Ecuadorian painter Oswaldo Guayasamín, and I was pretty impressed with how accurate it ended up.",
+        "Copying it was a maths problem before it was an art problem. I had to work from a specific scaling of the original image to the board I painted on, then apply a scale factor to every proportion: the two heads, the angles of the noses and mouths, the blocks of yellow and black around them. Once the scale was fixed I could stop copying and start reinterpreting, choosing my own colours and texture inside his composition."
+      ],
+      "points": [
+        ["The original", "\"Madre y Niño con Fondo Amarillo\", Oswaldo Guayasamín, 1989."],
+        ["The method", "One scale factor from the original image to the board, applied everywhere, so the proportions hold."],
+        ["The reinterpretation", "His shapes and composition, in my own palette and surface."]
       ],
       "slots": ["isps-4", "isps-5"]
+    },
+    {
+      "title": "The artist and the presentation",
+      "body": [
+        "The same unit included a cultural presentation, in Spanish, for AP Spanish. Guayasamín was born in Quito on July 6, 1919 and died in Baltimore on March 10, 1999. His work draws on expressionism, cubism and social realism, and was inspired by Mexican muralism. He is of Quechua origin, entered the School of Fine Arts at 13, and showed in about 200 exhibitions in major museums.",
+        "The line I kept from the slide is his own: \"Mi pintura es para herir, para arañar y golpear en el corazón de la gente.\" My painting is meant to wound, to scratch and to strike the heart of the people."
+      ],
+      "slots": ["isps-7"]
     },
     {
         "title": "Where the Venezuela paper came from",
@@ -387,6 +401,7 @@ const PAGES = [
       { key: "isps-2", ratio: "4 / 3", label: "Student Council" },
       { key: "isps-3", ratio: "1 / 1", label: "Awards ceremony" },
       { key: "isps-6", ratio: "1092 / 1176", label: "The International School of Port of Spain 2026 fact sheet, from the U.S. Department of State Office of Overseas Schools" },
+      { key: "isps-7", ratio: "2200 / 1238", label: "My AP Spanish cultural presentation on Guayasamín" },
       { key: "isps-4", ratio: "1141 / 1145", label: "Oswaldo Guayasamín, the original" },
       { key: "isps-5", ratio: "1400 / 1238", label: "My recreation, for Spanish class" }
     ],
