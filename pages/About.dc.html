@@ -80,11 +80,13 @@ a{color:var(--sa-link)}a:hover{color:var(--sa-link-hover)}
     <div data-rail-target="1" style="margin-bottom:var(--sa-space-10)">
       <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.SectionHeading" eyebrow="The timeline" title="Where I have lived" hint-size="100%,110px"></x-import>
     </div>
-    <a class="sa-tl-link" data-country="usa" href="Place-UnitedStates.dc.html" aria-label="Houston, read the full page">
+    <div class="sa-tl-static" data-country="usa">
       <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.TimelineItem" year="2008" place="usa" title="Houston" where="Texas, United States" meta="{{ tagBorn }}" hint-size="100%,150px">Born September 13, 2008, in the middle of Hurricane Ike, which is where the spiral on this site started, in more ways than one.</x-import>
-    </a>
+      <img src="/assets/photos/houston-slide.jpg" alt="A toddler laughing at the bottom of a slide, with an older child behind" loading="lazy" decoding="async" style="display:block;margin:6px 0 4px 92px;width:min(100%,260px);height:auto;border-radius:var(--sa-radius-media,8px);box-shadow:0 6px 18px -10px rgba(0,0,0,.4)">
+    </div>
     <div class="sa-tl-static" data-country="spain">
       <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.TimelineItem" year="2010" place="spain" title="Madrid" where="Spain" hint-size="100%,150px">Age two. The first move, though I don't remember it. It's the one that started the pattern.</x-import>
+      <img src="/assets/photos/madrid-hat.jpg" alt="A small child in a knit winter hat and tan coat" loading="lazy" decoding="async" style="display:block;margin:6px 0 4px 92px;width:min(100%,260px);height:auto;border-radius:var(--sa-radius-media,8px);box-shadow:0 6px 18px -10px rgba(0,0,0,.4)">
     </div>
     <a class="sa-tl-link" data-country="mexico" href="Place-Mexico.dc.html" aria-label="Monterrey, read the full page">
       <x-import component-from-global-scope="SantiagoAguileraDesignSystem_983015.TimelineItem" year="2011" place="mexico" title="Monterrey" where="Nuevo León, Mexico" meta="{{ tagMty }}" hint-size="100%,150px">Age three. School started here, AIM then LICEO, and it's still the city I measure every other place against.</x-import>

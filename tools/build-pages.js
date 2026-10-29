@@ -75,7 +75,7 @@ const GROUPS = {
     { label: "Colombia", href: "Place-Colombia.dc.html" },
     { label: "Panama", href: "Place-Panama.dc.html" },
     { label: "Trinidad & Tobago", href: "Place-Trinidad.dc.html" },
-    { label: "United States", href: "Place-UnitedStates.dc.html" }
+    { label: "Pennsburg", href: "Place-UnitedStates.dc.html" }
   ]},
   academics: { title: "Academics", items: [
     { label: "International School of Port of Spain", href: "Academics-ISPS.dc.html" },
@@ -300,25 +300,22 @@ const PAGES = [
       { key: "tt-3", ratio: "4 / 3", label: "Stronger Together" },
       { key: "tt-4", ratio: "4 / 3", label: "On a bench by the water, with the dog" }
     ],
-    next: { title: "Next: the United States", lede: "Where it started, and where it is now.", href: "Place-UnitedStates.dc.html", label: "Go to the US" }
+    next: { title: "Next: Pennsburg", lede: "Boarding at Perkiomen.", href: "Place-UnitedStates.dc.html", label: "Go to the US" }
   },
   {
     file: "Place-UnitedStates.dc.html", section: "about", parent: { label: "About", href: "About.dc.html" },
-    eyebrow: "About · United States", title: "Houston, then Pennsburg", lede: "The return after fifteen years.",
-    desc: "Born in Houston during Hurricane Ike; boarding at Perkiomen School in Pennsburg, Pennsylvania since 2025.",
-    intro: "I was born in Houston, Texas, on September 13, 2008, in the middle of Hurricane Ike. Fifteen years and five countries later I returned to where I was born, to board at Perkiomen School in Pennsburg, Pennsylvania.",
-    body: ["Coming back after fifteen years meant arriving in my own birth country as a newcomer: Spanish was my first language, and the last time I lived in the United States I was two. The symbol on this site comes from that first fact: a spiral for the storm, two marks for the wind that has moved me ever since.", "Pennsburg is the first place I have lived without my family in the same building. Health science, HOSA, Model UN, the Perkiomenite, varsity swimming and the rock band all live here."],
-    facts: [["Born", "Houston, TX · Sept 13, 2008"], ["Away", "Fifteen years, five countries"], ["The return", "August 2025"], ["School", "Perkiomen School"]],
+    eyebrow: "About · Pennsylvania", title: "Pennsburg", lede: "The return after fifteen years.",
+    desc: "Boarding at Perkiomen School in Pennsburg, Pennsylvania since August 2025.",
+    intro: "Pennsburg, Pennsylvania, is where I board at Perkiomen School. I came back to the United States in August 2025, fifteen years after leaving the country I was born in.",
+    body: ["Coming back meant arriving in my own birth country as a newcomer: Spanish was my first language, and the last time I lived in the United States I was two.", "Pennsburg is the first place I have lived without my family in the same building. Health science, HOSA, Model UN, the Perkiomenite, varsity swimming and the rock band all live here. The Perkiomen page has the full picture."],
+    facts: [["Arrived", "August 2025"], ["Away", "Fifteen years, five countries"], ["School", "Perkiomen School"], ["Born", "Houston, Texas, in 2008"]],
     slots: [
-      { key: "us-1", ratio: "4 / 3", label: "Houston" },
       { key: "us-2", ratio: "4 / 3", label: "Perkiomen School campus" },
       { key: "us-3", ratio: "1 / 1", label: "Pennsburg" },
       { key: "us-4", ratio: "3 / 4", label: "Under Cloud Gate, Chicago" }
     ],
     next: { title: "The academics", lede: "Two schools, and the work that came out of them.", href: "Academics.dc.html", label: "See the academics" }
   },
-
-  /* --------------------------------------------------------- academics ---- */
   {
     file: "Academics-ISPS.dc.html", section: "academics", parent: { label: "Academics", href: "Academics.dc.html" },
     eyebrow: "Academics · Trinidad & Tobago", title: "International School of Port of Spain", lede: "2021–2025. Student Council, and Stronger Together.",
@@ -2599,7 +2596,7 @@ function spiralSvg() {
     "Curiosities-Literature.dc.html": "sea-look", "Place-Mexico.dc.html": "kid-pirate", "Place-Colombia.dc.html": "co-mammoth",
     "Place-Panama.dc.html": "pa-ancon", "Place-Trinidad.dc.html": "trip-bench", "Place-UnitedStates.dc.html": "perk-paws"
   };
-  const CITY_IMG = { "Madrid": "trip-madrid", "Monterrey": "kid-pirate", "Bogotá": "co-mammoth", "Ciudad de Panamá": "pa-ancon", "Port of Spain": "trip-bench", "Pennsburg": "perk-paws" };
+  const CITY_IMG = { "Madrid": "madrid-hat", "Houston": "houston-slide", "Monterrey": "kid-pirate", "Bogotá": "co-mammoth", "Ciudad de Panamá": "pa-ancon", "Port of Spain": "trip-bench", "Pennsburg": "perk-paws" };
   const PLACE_COLOR = { usa: "#3A7CA5", spain: "#D9A441", mexico: "#3F9A5A", colombia: "#E3B93C", panama: "#E0654A", trinidad: "#C2403A", pennsburg: "#7B5EA7" };
   const PAL = ["#E0654A", "#2F8F83", "#D9A441", "#7B5EA7", "#3A7CA5", "#C2527A", "#5E8C3A"];
   const A = (attrs, n) => { const m = attrs.match(new RegExp("(?:^|\\s)" + n + '="([^"]*)"')); return m ? m[1] : ""; };
