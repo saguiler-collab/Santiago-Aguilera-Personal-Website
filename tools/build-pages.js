@@ -351,24 +351,17 @@ const PAGES = [
         ]
       },
       {
-        "title": "Clubs and debate",
+        "title": "Clubs, sport and band",
         "points": [
-          [
-            "Debate Club",
-            "Secretary."
-          ],
-          [
-            "World News Journalism Club",
-            "Writing for it."
-          ],
-          [
-            "In-class debates",
-            "Doping in sport, zoos, phones at school. Arguing a position in front of people who disagree stopped feeling unusual well before Model UN did the same thing at Perkiomen."
-          ]
+          ["Peak Performers", "The running club."],
+          ["AP Vybz", "Vice-President and drummer in the school band."],
+          ["Debate Club and Journalism Club", "Arguing a position, and writing for the school."],
+          ["High school basketball", ""],
+          ["In-class debates", "Doping in sport, zoos, phones at school. Arguing a position in front of people who disagree stopped feeling unusual well before Model UN did the same thing at Perkiomen."]
         ]
       }
     ],
-    facts: [["Years", "2021 – 2025"], ["School", "PreK–12, 308 students"], ["Accreditation", "NEASC"], ["Roles", "Student Council · Stronger Together"], ["Programme", "IB Middle Years Programme"]],
+    facts: [["Years", "2021 – 2025"], ["GPA", "4.0 unweighted, 4.06 weighted"], ["School", "PreK–12, 308 students"], ["Accreditation", "NEASC"], ["Roles", "Student Council · Stronger Together"], ["Programme", "IB Middle Years Programme"]],
     awards: {
       title: "Four years of awards",
       lede: "Awarded across the IB Middle Years Programme, grades 7 through 10.",
@@ -413,6 +406,64 @@ const PAGES = [
     desc: "Perkiomen School. Health science track, HOSA, Model UN, journalism, swimming, and the rock band.",
     intro: "Perkiomen is where the separate threads finally started pointing the same direction. The health science track is the academic spine; almost everything else on this site either feeds it or balances it.",
     body: ["My first room was small, with a desk, a bed and a window, and it was the start of my own adventure. Boarding changed how I work. Nobody schedules your evening for you, which means the difference between a good week and a wasted one is entirely a decision you make on Sunday."],
+    media: [
+      {
+        "title": "What I do here",
+        "body": [
+          "Perkiomen is where I have said yes to the most. Alongside the health science track I run or take part in:"
+        ],
+        "points": [
+          [
+            "Class of '27 President",
+            "Student Senate."
+          ],
+          [
+            "Founder and President",
+            "Perkiomen's HOSA chapter."
+          ],
+          [
+            "Co-Editor in Chief and writer",
+            "The Perkiomenite, the school paper."
+          ],
+          [
+            "Dorm proctor",
+            ""
+          ],
+          [
+            "Secretary",
+            "Investment & Philanthropy Club."
+          ],
+          [
+            "Clubs",
+            "Science Fair and Research Club, Model UN, DECA, Latin American Club, and the Be a Friend Project."
+          ],
+          [
+            "Sport and music",
+            "Varsity swimming, Olympic lifting, and drums in the rock band."
+          ]
+        ]
+      },
+      {
+        "title": "Grades",
+        "body": [
+          "My GPA is 4.0 unweighted and 4.83 weighted."
+        ]
+      },
+      {
+        "title": "Around campus",
+        "slots": [
+          "perk-6",
+          "perk-5",
+          "perk-8",
+          "perk-9",
+          "perk-10",
+          "perk-11",
+          "perk-2",
+          "perk-4"
+        ],
+        "gallery": true
+      }
+    ],
     facts: [["Arrived", "August 2025"], ["Track", "Health science"], ["Status", "Boarding student"]],
     awards: {
       title: "Awards at Perkiomen",
@@ -506,14 +557,14 @@ const PAGES = [
     readers: [
       {
         "kicker": "The project",
-        "heading": "Seeing the numbers",
+        "heading": "Believe It or Not, from top to bottom",
         "intro": "The seminar's project asked us to make the impact of violence and lack of opportunity visible. These pages are part of that work. The figures are the ones printed on the designs.",
         "items": [
           {
             "kicker": "Awareness design",
-            "title": "Our awareness designs: one grain of rice, one story",
+            "title": "Believe It or Not: our awareness designs from the leadership seminar",
             "pages": 3,
-            "blurb": "Physical models from the leadership seminar that turn statistics about discrimination into something you can see. Each page pairs a symbol with the number it stands for.",
+            "blurb": "Pages from the Hamm '55 leadership seminar project. Each one pairs a symbol with the number it stands for, then says \"believe it or not\" and explains it. Scroll through all three.",
             "pdf": "/assets/docs/inequality-models.pdf",
             "dir": "/assets/docs/inequality-models"
           }
@@ -1302,17 +1353,45 @@ const PAGES = [
     eyebrow: "Leadership · Student government", title: "Student Council / Senate", lede: "Elected to represent classmates at ISPS, and at Perkiomen.",
     desc: "Student Council at the International School of Port of Spain, and student government at Perkiomen School.",
     intro: "Student government is the least glamorous kind of leadership and the one that taught me the most. Nobody is impressed by it, the wins are small and procedural, and the job is almost entirely listening to people complain and then working out which complaints are actually solvable.",
-    steps: [
-      ["ISPS", "Student Council, representing my class and running school-wide events."],
-      ["Perkiomen", TBD, true],
-      ["Impact", TBD, true]
-    ],
-    tbd: "Your Perkiomen Senate role and year, what you ran on, and anything the council actually changed. Send these and this page fills in.",
     media: [
       {
         "title": "At ISPS",
         "body": [
-          "I served on Student Council, representing my class and running school-wide events. By November of that first term the council was the room where it became obvious that people needed help coming back to in-person school, not just better assemblies. That is where Stronger Together came from."
+          "I was Middle School Student Council Secretary, and in tenth grade I was my homeroom's representative. The council was the room where it became obvious, by November of that first term back, that people needed help returning to in-person school, not just better assemblies. That is where Stronger Together came from."
+        ],
+        "points": [
+          [
+            "Middle School Student Council",
+            "Secretary."
+          ],
+          [
+            "Homeroom representative",
+            "Tenth grade."
+          ],
+          [
+            "Stronger Together",
+            "A student-led community service club that grew out of the council."
+          ]
+        ]
+      },
+      {
+        "title": "At Perkiomen",
+        "body": [
+          "At Perkiomen I am President of the Class of 2027 and sit on Student Senate, and I am a dorm proctor. Different school, same job: listen, then work out which problems are actually solvable."
+        ],
+        "points": [
+          [
+            "Class of '27 President",
+            "Student Senate."
+          ],
+          [
+            "Dorm proctor",
+            "Looking after the dorm."
+          ],
+          [
+            "Alongside it",
+            "HOSA, Model UN, the Perkiomenite and the Investment & Philanthropy Club, where I am secretary."
+          ]
         ]
       },
       {
@@ -1322,7 +1401,7 @@ const PAGES = [
         ]
       }
     ],
-    facts: [["Role", "Student Council · Senate"], ["Schools", "ISPS · Perkiomen"], ["Started", "2021"]],
+    facts: [["Roles", "ISPS Student Council Secretary · Class of '27 President"], ["Schools", "ISPS · Perkiomen"], ["Started", "2021"]],
     slots: [
       { key: "stuco-1", ratio: "4 / 3", label: "Student Council at ISPS" },
       { key: "stuco-2", ratio: "4 / 3", label: "Senate at Perkiomen" },
@@ -1419,8 +1498,33 @@ const PAGES = [
     eyebrow: "Leadership · Service", title: "Volunteering", lede: "Community work, in and out of school.",
     desc: "Volunteering and community service work.",
     intro: "The service work that sits outside any club structure. The hours that do not come with a title attached.",
-    tbd: "Which organisations, what you did, how often, and roughly how many hours. Send these and this page fills in.",
-    facts: [["Type", "Community service"], ["Where", TBD], ["Hours", TBD]],
+    media: [
+      {
+        "title": "Be a Friend Project",
+        "body": [
+          "Since September 2026 I have been an ambassador for the Be a Friend Project, engaging our school community to write kind, vibrant letters to people who are bullied."
+        ]
+      },
+      {
+        "title": "Giving back with HOSA",
+        "body": [
+          "Through HOSA and the Community Service Club I helped run a clothing and food drive, more than 1,000 points of donations for local nonprofits, and a volleyball tournament with a bracelet sale for cancer awareness. The details are on the HOSA page."
+        ]
+      },
+      {
+        "title": "Out in the community",
+        "body": [
+          "The rest is the work that does not come with a title: a river clean-up, a water station at a race, and bingo with residents at a care home."
+        ],
+        "slots": [
+          "vol-1",
+          "vol-2",
+          "vol-3"
+        ],
+        "gallery": true
+      }
+    ],
+    facts: [["Type", "Community service"], ["Ambassador", "Be a Friend Project, since September 2026"], ["Also", "HOSA food and clothing drive"]],
     slots: [
       { key: "vol-1", ratio: "1 / 1", label: "Pulling a tire out of the river on a clean-up day" },
       { key: "vol-2", ratio: "9 / 16", label: "Running a water station at a race" },
@@ -1932,7 +2036,7 @@ ${p.cards.map((c) => `    <x-import component-from-global-scope="${NS}.Card" int
   const pointsHtml = (row) => row.points && row.points.length ? `
     <ul class="sa-points">
 ${row.points.map((pt) => Array.isArray(pt)
-    ? `      <li><strong>${esc(pt[0])}</strong><span>${esc(pt[1])}</span></li>`
+    ? `      <li><strong>${esc(pt[0])}</strong>${pt[1] ? `<span>${esc(pt[1])}</span>` : ""}</li>`
     : `      <li><span>${esc(pt)}</span></li>`).join("\n")}
     </ul>` : "";
   const textHtml = (row) => `    <h3>${esc(row.title)}</h3>
