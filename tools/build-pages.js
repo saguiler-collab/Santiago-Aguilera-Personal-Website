@@ -1649,7 +1649,7 @@ const PAGES = [
     intro: "Every school I joined had a room with a kit in it. That is how I met people. I started on drums in Panama at eleven and kept going through three countries, and the circle widened: the glockenspiel, the piano, the Trinidadian steel pan and, at Perkiomen, my own voice with the rock band. Almost everything on these pages comes from the process journals I kept in music class at ISPS between Grade 8 and Grade 10.",
     cards: [
       { eyebrow: "Panama · Trinidad", title: "SonoArte", href: "Drums-SonoArte.dc.html", body: "Where it started, in pandemic Panama, and carried on online from Trinidad." },
-      { eyebrow: "Instruments", title: "Beyond the kit", href: "Drums-Instruments.dc.html", body: "Glockenspiel, piano, the Trinidadian steel pan, and voice." },
+      { eyebrow: "Instruments", title: "Beyond the kit", href: "Drums-Instruments.dc.html", body: "Glockenspiel, piano, the Trinidadian steel pan, the mixing desk, and voice." },
       { eyebrow: "ISPS", title: "AP Vybz", href: "Drums-APVybz.dc.html", body: "Vice-president and drummer of the school's music organization." },
       { eyebrow: "ISPS · Grades 8 to 10", title: "School Musicals", href: "Drums-Musicals.dc.html", body: "Beauty and the Beast, Legally Blonde and Mamma Mia!: three pits, three years." },
       { eyebrow: "Grade 10", title: "MYP e-Portfolio", href: "Drums-MYPPortfolio.dc.html", body: "An EDM genre study and “Take on Me” on drums, with both tasks to read in full." },
@@ -1659,7 +1659,7 @@ const PAGES = [
     stepsTitle: "Three grades, one trajectory",
     steps: [
       ["Grade 8 · Learning the kit properly", "My Instrument and Me: “Sunday Bloody Sunday” by U2, four and a half pages of sheet music, a retake on the summative and my first lessons in tuning an acoustic kit. Then Instrumental Communities: teaching two classmates the beat of “As It Was” and drumming in the Beauty and the Beast pit."],
-      ["Grade 9 · Beyond the kit", "Glockenspiel for the school song, drums on “Waka Waka” at International Day, my first time on a tenor steel pan for visitors from Alaska, and five drum pieces plus piano in Legally Blonde."],
+      ["Grade 9 · Beyond the kit", "Glockenspiel for the school song, drums on “Waka Waka” at International Day, a unit at the mixing desk, my first time on a tenor steel pan for visitors from Alaska, and five drum pieces plus piano in Legally Blonde."],
       ["Grade 10 · Under pressure", "The school song on piano, an 8 out of 8 on “Upside Down”, 29 out of 30 on the theory test, the “Take on Me” e-Portfolio pushed toward 186 BPM, and Mamma Mia!: eleven pieces prepared, two on stage."],
       ["Perkiomen · Now", "The rock band, on drums and now on vocals as well."]
     ],
@@ -1725,7 +1725,7 @@ const PAGES = [
       {
         "title": "Two kits",
         "body": [
-          "I own an electric kit at home, so volume has never been a problem there: I can turn it down and practise at any hour. The school's acoustic kit is a different instrument. In Grade 8 I had to learn to hit more softly so my classmates could hear their own parts, and to tune the drums with a key without breaking anything."
+          "I own an electric kit at home, so volume has never been a problem there: I can turn it down and practise at any hour. The school's acoustic kit is a different instrument. In Grade 8 I had to learn to hit more softly so my classmates could hear their own parts, and to tune the drums with a key without breaking anything. In a Grade 8 group evaluation I was marked down for playing too loud, which I put down to years on a kit with a volume knob."
         ]
       },
       {
@@ -1743,8 +1743,8 @@ const PAGES = [
   },
   {
     file: "Drums-Instruments.dc.html", section: "drums", parent: { label: "Music & Drums", href: "Drums.dc.html" },
-    eyebrow: "Music & Drums · Stage two", title: "Beyond the kit", lede: "Glockenspiel, piano, the steel pan, and now my voice.",
-    desc: "The other instruments I play besides drums: glockenspiel, piano, the Trinidadian steel pan and voice.",
+    eyebrow: "Music & Drums · Stage two", title: "Beyond the kit", lede: "Glockenspiel, piano, the steel pan, a mixing desk, and now my voice.",
+    desc: "The other instruments I play besides drums (glockenspiel, piano, the Trinidadian steel pan and voice), and the audio engineering unit that put me behind the mixing desk.",
     intro: "A drummer is a percussionist, and percussion has a lot of relatives. At ISPS my music teachers kept handing me an instrument I had never touched and asking what I would do with it. Each one changed how I play the kit.",
     media: [
       {
@@ -1755,7 +1755,7 @@ const PAGES = [
         "points": [
           [
             "The school song",
-            "Learned on glockenspiel, then played at International Day 2023 in the gym, glockenspiel at the front and the drums at the back."
+            "Learned on glockenspiel, then played at International Day 2023 in the gym with the 10th graders, glockenspiel at the front and the drums at the back."
           ],
           [
             "Legally Blonde",
@@ -1808,14 +1808,42 @@ const PAGES = [
         ]
       },
       {
+        "title": "Behind the mixing desk",
+        "body": [
+          "Not every music class was about playing. In Grade 9 the Sound Off! unit asked how communication can reach an audience in different ways, and the answer was audio engineering. For a few weeks the person next to the drum kit was the person at the board."
+        ],
+        "points": [
+          [
+            "The theory",
+            "Input, signal processing and output; the signal chain; dynamic, condenser and ribbon microphones; and the order you switch a mixing desk on and off."
+          ],
+          [
+            "The workshops",
+            "Four, swapping between playing in the band and engineering the school theatre's analog board. The first one was a mess: we never got a piece played."
+          ],
+          [
+            "The assessments",
+            "A written exam in December, then a group practical that I called the hardest summative of my music career at ISPS."
+          ],
+          [
+            "What I took from it",
+            "I had planned the whole practical in my head and told my group too late. Share the plan before the clock starts, and let people do their roles."
+          ],
+          [
+            "The field trip",
+            "Queen's Hall in Port of Spain, to see a fully digital sound setup next to our own."
+          ]
+        ]
+      },
+      {
         "title": "Voice",
         "body": [
-          "At Perkiomen I have also sung with the rock band, so the kit is no longer the only thing I do on stage. It is a different muscle. In Grade 9, while we prepared Legally Blonde, our class covered what vocalists need from a band: speak-singing, clear enunciation, steady intonation and listening to the players around them. For years I was the one keeping time for the singers."
+          "I never sang at ISPS. At Perkiomen I have sung with the rock band, so the kit is no longer the only thing I do on stage. It is a different muscle. In Grade 9, while we prepared Legally Blonde, our class covered what vocalists need from a band: speak-singing, clear enunciation, steady intonation and listening to the players around them. For years I was the one keeping time for the singers."
         ],
         "points": [
           [
             "Rock band",
-            "Drums, and vocals."
+            "Drums, and vocals. Singing began at Perkiomen."
           ],
           [
             "From Grade 9",
