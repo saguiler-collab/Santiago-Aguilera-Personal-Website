@@ -314,7 +314,40 @@ const PAGES = [
         "title": "Student Council and Stronger Together",
         "body": [
           "Student Council meant representing my class and running school-wide events. Stronger Together was a student-led initiative supporting classmates through the return to in-person school after remote learning.",
-          "The problem was not academic. A lot of people had quietly stopped knowing how to be around each other."
+          "The problem was not academic. A lot of people had quietly stopped knowing how to be around each other.",
+          "I was also my homeroom's representative, one of the white-shirted Student Council members in the photo."
+        ],
+        "slots": ["isps-8"]
+      },
+      {
+        "title": "AP Vybz, the music organization",
+        "body": [
+          "AP Vybz is ISPS's student music organization. It exists to give students, and staff, a chance to explore genres and instruments they are curious about, and to push members out of their comfort zone so they grow as people and as artists.",
+          "I was its vice-president and a drummer. When the previous president stepped down, a new executive team took over and the club changed direction. It leaned into performing, playing as an ensemble three times between January and April, at the school's Valentine's Day event and St. Patrick's Day event, and then the Talent Show. The plan was more performances, better quality, and auditions to bring in more talented and passionate musicians."
+        ],
+        "points": [
+          ["My role", "Vice-president and drummer."],
+          ["Performances", "Valentine's Day event, St. Patrick's Day event, and the Talent Show."],
+          ["What came next", "More shows, and auditions for the stage."]
+        ],
+        "slots": ["isps-9", "isps-10"]
+      },
+      {
+        "title": "Mayaro house",
+        "body": [
+          "ISPS students belong to houses, and I am a proud member of Mayaro. That is me on the rope in the tug of war."
+        ],
+        "slots": ["isps-11"]
+      },
+      {
+        "title": "Finishing the MYP",
+        "body": [
+          "I came out of the IB Middle Years Programme with the highest MYP score in my class, and a bilingual diploma on top of it, earned for completing the programme in two languages. The Personal Project, the Venezuelan migration paper, was the capstone."
+        ],
+        "points": [
+          ["Highest MYP score in my class", ""],
+          ["MYP Bilingual Diploma", "Completed in English and Spanish."],
+          ["Personal Project Award", "The self-directed project, carried end to end."]
         ]
       },
       {
@@ -351,17 +384,16 @@ const PAGES = [
         ]
       },
       {
-        "title": "Clubs, sport and band",
+        "title": "Clubs and sport",
         "points": [
           ["Peak Performers", "The running club."],
-          ["AP Vybz", "Vice-President and drummer in the school band."],
           ["Debate Club and Journalism Club", "Arguing a position, and writing for the school."],
           ["High school basketball", ""],
           ["In-class debates", "Doping in sport, zoos, phones at school. Arguing a position in front of people who disagree stopped feeling unusual well before Model UN did the same thing at Perkiomen."]
         ]
       }
     ],
-    facts: [["Years", "2021 – 2025"], ["GPA", "4.0 unweighted, 4.06 weighted"], ["School", "PreK–12, 308 students"], ["Accreditation", "NEASC"], ["Roles", "Student Council · Stronger Together"], ["Programme", "IB Middle Years Programme"]],
+    facts: [["Years", "2021 – 2025"], ["GPA", "4.0 unweighted, 4.06 weighted"], ["School", "PreK–12, 308 students"], ["Accreditation", "NEASC"], ["Roles", "Student Council · Stronger Together"], ["Programme", "IB Middle Years Programme"], ["Result", "Highest MYP score in my class · bilingual diploma"], ["House", "Mayaro"]],
     awards: {
       title: "Four years of awards",
       lede: "Awarded across the IB Middle Years Programme, grades 7 through 10.",
@@ -395,6 +427,11 @@ const PAGES = [
       { key: "isps-3", ratio: "1 / 1", label: "Awards ceremony" },
       { key: "isps-6", ratio: "1092 / 1176", label: "The International School of Port of Spain 2026 fact sheet, from the U.S. Department of State Office of Overseas Schools" },
       { key: "isps-7", ratio: "2200 / 1238", label: "My AP Spanish cultural presentation on Guayasamín" },
+      { key: "isps-8", ratio: "376 / 264", label: "Student Council at ISPS, in the white polos" },
+      { key: "isps-9", ratio: "382 / 270", label: "AP Vybz, the school music organization" },
+      { key: "isps-10", ratio: "772 / 447", label: "AP Vybz members performing and rehearsing" },
+      { key: "isps-11", ratio: "408 / 300", label: "Tug of war for Mayaro house" },
+      { key: "isps-12", ratio: "213 / 223", label: "Student portrait at ISPS" },
       { key: "isps-4", ratio: "1141 / 1145", label: "Oswaldo Guayasamín, the original" },
       { key: "isps-5", ratio: "1400 / 1238", label: "My recreation, for Spanish class" }
     ],
