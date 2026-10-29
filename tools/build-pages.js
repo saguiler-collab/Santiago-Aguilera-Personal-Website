@@ -169,7 +169,7 @@ const PAGES = [
     cards: [
       { eyebrow: "Founder & President", title: "HOSA", href: "Leadership-HOSA.dc.html", body: "Founded Perkiomen's chapter to create opportunities for students interested in healthcare." },
       { eyebrow: "Delegate", title: "Model UN", href: "Leadership-MUN.dc.html", body: "Representing Nigeria in SPECPOL at Princeton, and Eagle MUNC." },
-      { eyebrow: "Director of Journalism", title: "GVMUN", href: "Leadership-GVMUN.dc.html", body: "Running the press corps at the Global Virtual Model United Nations conference." },
+      { eyebrow: "Director of Journalism", title: "GVMUN", href: "Leadership-GVMUN.dc.html", body: "Six articles on world issues, published to the Global Virtual Model United Nations newsletter. Read them all." },
       { eyebrow: "Student government", title: "Student Council / Senate", href: "Leadership-StudentCouncil.dc.html", body: "Representing classmates at ISPS, and student government at Perkiomen." },
       { eyebrow: "Clinical", title: "Hospital Shadowing", href: "Leadership-Shadowing.dc.html", body: "Time on the floor, watching how care actually gets delivered." },
       { eyebrow: "Service", title: "Volunteering", href: "Leadership-Volunteering.dc.html", body: "Community work, in and out of school." },
@@ -909,6 +909,31 @@ const PAGES = [
         ]
       }
     ],
+    readers: [
+      {
+        "kicker": "Read it here",
+        "heading": "The paper and the report, top to bottom",
+        "intro": "Scroll through either document without leaving the page. The PDFs open in a new tab as well.",
+        "items": [
+          {
+            "kicker": "Published paper",
+            "title": "Venezuelan Immigration and Integration to Trinidad and Tobago in Recent Years",
+            "pages": 42,
+            "blurb": "The full 42-page paper as published on SSRN.",
+            "pdf": "/assets/docs/venezuela-paper.pdf",
+            "dir": "/assets/docs/venezuela-paper"
+          },
+          {
+            "kicker": "Final report",
+            "title": "MYP Personal Project Final Report",
+            "pages": 15,
+            "blurb": "The planning, the learning goal, the process and my reflection, written for the IB Middle Years Programme.",
+            "pdf": "/assets/docs/personal-project-report.pdf",
+            "dir": "/assets/docs/personal-project-report"
+          }
+        ]
+      }
+    ],
     facts: [["Type", "Publication"], ["Topic", "Venezuelan migration to Trinidad & Tobago"], ["Length", "42 pages · 62 sources"], ["Venue", "SSRN"], ["When", "November 2024 – May 2025"]],
     slots: [
       { key: "vz-1", ratio: "3 / 4", label: "The paper's title page, published on SSRN" },
@@ -923,7 +948,7 @@ const PAGES = [
     eyebrow: "Research · Epigenetics", title: "CSR-x", lede: "Polycyclic aromatic hydrocarbons, epigenetic aging, and lung cancer risk.",
     desc: "CSR-x, a selective remote research program on PAH exposure, epigenetic aging, and DNA methylation.",
     intro: "PAHs, polycyclic aromatic hydrocarbons, are wherever something has been burned: exhaust, cigarette smoke, charred food. CSR-x is where I spent five weeks asking what chronic exposure to them does at the level of the genome, not just the lungs.",
-    link: { href: "https://www.csr-x.org/", label: "About CSR-x" },
+    link: { href: "https://www.csr-x.org/", label: "See it on csr-x.org" },
     media: [
       {
         "title": "Five weeks, remote, student-led",
@@ -944,22 +969,46 @@ const PAGES = [
       {
         "title": "The question",
         "body": [
-          "How does chronic PAH exposure show up in epigenetic aging and DNA methylation, and how much of that risk becomes lung cancer?"
+          "PAHs, polycyclic aromatic hydrocarbons, are wherever something has been burned: exhaust, cigarette smoke, charred food. We asked how chronic exposure shows up in epigenetic aging and DNA methylation, and how much of that risk becomes lung cancer."
         ],
         "slots": [
           "csrx-3"
         ]
       },
       {
-        "title": "My part: the literature review",
+        "title": "The paper",
         "body": [
-          "I built a large table tracking 33 studies and did a close read of seven of them. The most interesting finding is that no single study has tested all three parts of the chain, exposure, aging and cancer risk, in the same group of people. Some groups have studied separate pieces without connecting them yet."
+          "Our group's work became a 23-page review paper, \"Evaluating the Association Between Polycyclic Aromatic Hydrocarbon Exposure, Epigenetic Age Acceleration, and Lung Cancer Risk\", with seven student authors from seven schools in the Biomedical Health Sciences 2 track. The screenshot is its page on csr-x.org."
+        ],
+        "slots": [
+          "csrx-4"
+        ],
+        "points": [
+          [
+            "The search",
+            "53 potentially relevant records from PubMed, Google Scholar and ScienceDirect."
+          ],
+          [
+            "The screen",
+            "33 studies met inclusion criteria after PRISMA screening."
+          ],
+          [
+            "The method",
+            "Each study was assessed by one of five reviewers and entered into a standardised evidence matrix."
+          ]
         ]
       },
       {
-        "title": "The same instinct",
+        "title": "What we found",
         "body": [
-          "It is the same instinct as SanaSanita and the Venezuela paper: a health outcome nobody disputes, traced back to a mechanism most people never see. Here it is a chemical mark on DNA that changes how a cell reads its own instructions."
+          "PAH exposure was consistently linked to altered DNA methylation, oxidative stress and higher lung cancer risk. The link to faster epigenetic aging was moderate to strong, particularly with second-generation clocks.",
+          "The most interesting result is a gap. No single study tested the whole chain, exposure to epigenetic aging to lung cancer, in one population. The paper argues for prospective cohorts that measure all three together."
+        ]
+      },
+      {
+        "title": "My part",
+        "body": [
+          "I built a large table tracking the studies and did a close read of seven of them. The same instinct runs through SanaSanita and the Venezuela paper: a health outcome nobody disputes, traced back to a mechanism most people never see."
         ]
       }
     ],
@@ -967,6 +1016,7 @@ const PAGES = [
     slots: [
       { key: "csrx-1", ratio: "16 / 9", label: "The research cohort, remote" },
       { key: "csrx-2", ratio: "4 / 3", label: "A figure from the analysis" },
+      { key: "csrx-4", ratio: "1133 / 724", label: "The paper on csr-x.org" },
       { key: "csrx-3", ratio: "7 / 5", label: "CSR-x 2026 Program, certificate of completion" }
     ],
     next: { title: "Leadership & service", lede: "The work that is not assigned.", href: "Leadership.dc.html", label: "See leadership" }
@@ -1019,16 +1069,115 @@ const PAGES = [
   },
   {
     file: "Leadership-GVMUN.dc.html", section: "leadership", parent: { label: "Leadership & service", href: "Leadership.dc.html" },
-    eyebrow: "Leadership · Director of Journalism", title: "GVMUN", lede: "Global Virtual Model United Nations.",
+    eyebrow: "Leadership · Director of Journalism", title: "GVMUN", lede: "Global Virtual Model United Nations. Six articles on world issues, published to its newsletter.",
     desc: "Director of Journalism at GVMUN, running the press corps for the conference.",
     intro: "Director of Journalism for the Global Virtual Model United Nations. Most delegates argue a country's position; the press corps has to describe every position fairly and fast enough to publish while the committee is still sitting.",
-    body: ["Model UN taught me to defend a case that is not my own. Running the newsroom taught me the harder version: describing every case in the room accurately, including the ones I disagreed with."],
-    steps: [
-      ["Role", "Director of Journalism, running the conference press corps."],
-      ["Term", "Six months, March through August 2026, as the conference's journalism intern."],
-      ["Impact", "Publishing while committees were still sitting built real proficiency in international relations and current events, on top of the writing itself."]
+    media: [
+      {
+        "title": "The newsroom",
+        "body": [
+          "Model UN taught me to defend a case that is not my own. Running the newsroom taught me the harder version: describing every case in the room accurately, including the ones I disagreed with.",
+          "From March to August 2026 I worked as GVMUN's journalism intern, which meant writing for deadlines, writing for readers who were not in the room, and keeping up with what was actually happening in the world."
+        ]
+      },
+      {
+        "title": "Published to the organization's newsletter",
+        "body": [
+          "Each article was published to the organization's newsletter. Each takes one live world issue, explains what is happening, who is affected and what could come next, and cites its sources at the end."
+        ],
+        "points": [
+          [
+            "Global health",
+            "AI in clinical trials, and who gets access to new medicines."
+          ],
+          [
+            "Climate",
+            "Record ocean heat and the Super El Niño, and Europe's wildfire summer."
+          ],
+          [
+            "Conflict",
+            "The humanitarian crisis across Iran, Lebanon and Gaza."
+          ],
+          [
+            "Economy",
+            "How an energy shock turns into inflation."
+          ],
+          [
+            "Diplomacy",
+            "A state visit and the tension behind it."
+          ]
+        ]
+      },
+      {
+        "title": "The one closest to my own work",
+        "body": [
+          "The article on AI-based clinical trials is the one I keep coming back to. It asks whether a faster, cheaper way to test drugs reaches the regions that need it most, or only the ones that already have the infrastructure. That is the same question behind SanaSanita and my time in a public hospital in Veracruz."
+        ]
+      },
+      {
+        "title": "What it gave me",
+        "body": [
+          "Publishing under a deadline taught me to write clearly and manage my time. Covering current events week after week gave me a far better grasp of international relations, and a habit I now use in research: say what the evidence supports, and no more."
+        ]
+      }
     ],
-    tbd: "Team size, what the press corps actually published, and the conference's scale. Send these and this page fills in the rest.",
+    readers: [
+      {
+        "kicker": "The articles",
+        "heading": "Read all six, top to bottom",
+        "intro": "Pick an article on the left and scroll. Each opens as the original pages, and you can open the PDF in a new tab.",
+        "items": [
+          {
+            "kicker": "Global health",
+            "title": "Advancements in AI-based clinical trial designs are unveiled at the 2026 Clinical Trial Accelerator Initiative to speed up drug delivery to resource-limited regions",
+            "pages": 4,
+            "blurb": "PAHO's AI-based Clinical Trial Accelerator, launched in April 2026. What AI could do for trial timelines and costs in lower-resource regions, and the governance and ethics worries that come with it.",
+            "pdf": "/assets/docs/ctai.pdf",
+            "dir": "/assets/docs/ctai"
+          },
+          {
+            "kicker": "Climate",
+            "title": "Record-breaking ocean temperatures are reported for June, highlighting the continuing effects of climate change and El Niño",
+            "pages": 5,
+            "blurb": "The 2026 \"Super El Niño\": how warm water off Peru changes weather worldwide, and why analysts warn of food-price shocks lasting into 2028.",
+            "pdf": "/assets/docs/el-nino.pdf",
+            "dir": "/assets/docs/el-nino"
+          },
+          {
+            "kicker": "Conflict and displacement",
+            "title": "Humanitarian crisis worsens across Iran, Lebanon, and Gaza as civilian casualties and displacement rise",
+            "pages": 8,
+            "blurb": "Millions displaced across the region, shelters overcrowded, and water and electricity running short, and what that means for the countries receiving refugees.",
+            "pdf": "/assets/docs/middle-east.pdf",
+            "dir": "/assets/docs/middle-east"
+          },
+          {
+            "kicker": "Economy",
+            "title": "Global inflation risks rise as sustained energy disruption feeds through to transportation and production costs",
+            "pages": 4,
+            "blurb": "How disruption around the Strait of Hormuz, which carries about a fifth of the world's oil, pushes up transport and production costs everywhere.",
+            "pdf": "/assets/docs/inflation.pdf",
+            "dir": "/assets/docs/inflation"
+          },
+          {
+            "kicker": "Diplomacy",
+            "title": "King Charles III begins a four-day state visit to the United States, meeting President Trump and addressing Congress amid renewed focus on UK–US relations",
+            "pages": 4,
+            "blurb": "The April 27 to 30, 2026 visit, the monarch's first in nearly two decades, during the 250th year of the United States, and the tensions behind the ceremony.",
+            "pdf": "/assets/docs/king-charles.pdf",
+            "dir": "/assets/docs/king-charles"
+          },
+          {
+            "kicker": "Climate and economy",
+            "title": "Europe faces another wave of extreme heat and wildfires as the European Union calls for greater investment in fire prevention, with the economic damage from this summer's fires already reaching billions of euros",
+            "pages": 5,
+            "blurb": "The 2026 summer fires across Spain, France, Greece, Belgium, Portugal, Croatia and Germany, and the EU's push for investment in prevention.",
+            "pdf": "/assets/docs/wildfires.pdf",
+            "dir": "/assets/docs/wildfires"
+          }
+        ]
+      }
+    ],
     facts: [["Role", "Director of Journalism"], ["Conference", "GVMUN"], ["Term", "March – August 2026"], ["Also", "Model UN delegate"]],
     slots: [
       { key: "gvmun-1", ratio: "4 / 3", label: "GVMUN committee room" },
@@ -1505,6 +1654,39 @@ ${steps.map(([k, v, pending]) => `      <x-import component-from-global-scope="$
 </section>`;
 }
 
+
+/* Scrollable document reader: a list of documents on the left, the selected one shown page by
+   page in a scroll frame on the right. Pure CSS (radio inputs), so no script is needed. */
+function renderReader(rd, pageKey) {
+  if (!rd || !rd.items || !rd.items.length) return "";
+  const id = (i) => `rd-${pageKey}-${i}`;
+  const css = rd.items.map((_, i) => `#${id(i)}:checked ~ .sa-reader-list label[for="${id(i)}"]{background:var(--sa-surface-card);box-shadow:inset 3px 0 0 var(--sa-text-accent);color:var(--sa-text-primary)}#${id(i)}:checked ~ .sa-reader-stage #${id(i)}-panel{display:block}`).join("");
+  const pages = (it) => Array.from({ length: it.pages }, (_, k) => {
+    const n = String(k + 1).padStart(it.pages >= 10 ? 2 : 1, "0");
+    return `<img src="${attr(it.dir)}/p-${n}.jpg" alt="${attr(it.title)}, page ${k + 1} of ${it.pages}" loading="lazy" decoding="async" width="850" height="1100">`;
+  }).join("");
+  return `
+<section data-reveal="1" class="sa-reader-wrap">
+  <div class="sa-gallery-head"><span class="sa-gallery-kicker">${esc(rd.kicker || "Read it here")}</span></div>
+  <h3 class="sa-reader-title">${esc(rd.heading)}</h3>
+  ${rd.intro ? `<p class="sa-reader-intro">${esc(rd.intro)}</p>` : ""}
+  <style>${css}</style>
+  <div class="sa-reader">
+${rd.items.map((it, i) => `    <input type="radio" name="rd-${pageKey}" id="${id(i)}" class="sa-reader-radio"${i === 0 ? " checked" : ""}>`).join("\n")}
+    <div class="sa-reader-list" role="list">
+${rd.items.map((it, i) => `      <label for="${id(i)}" role="listitem"><em>${esc(it.kicker || "")}</em><strong>${esc(it.title)}</strong><small>${it.pages} pages</small></label>`).join("\n")}
+    </div>
+    <div class="sa-reader-stage">
+${rd.items.map((it, i) => `      <div class="sa-reader-panel" id="${id(i)}-panel">
+        <div class="sa-reader-bar"><span>${esc(it.title)}</span><a href="${attr(it.pdf)}" target="_blank" rel="noopener">Open PDF</a></div>
+        ${it.blurb ? `<p class="sa-reader-blurb">${esc(it.blurb)}</p>` : ""}
+        <div class="sa-reader-scroll" tabindex="0" aria-label="${attr(it.title)}, scroll to read">${pages(it)}</div>
+      </div>`).join("\n")}
+    </div>
+  </div>
+</section>`;
+}
+
 function renderPage(p) {
   const group = GROUPS[p.section];
   const siblings = group ? group.items.filter((i) => i.href !== p.file) : [];
@@ -1707,7 +1889,8 @@ ${siblings.map((s) => `    <a href="${attr(s.href)}" style="display:inline-flex;
 
   /* Lay the figure groups into the gaps between content sections, spread from the
      first gap to the last so images punctuate the page rather than trailing it. */
-  const contentSections = [cards, awards, renderSteps(p.steps, p.stepsEyebrow, p.stepsTitle), quote, video]
+  const readerHtml = (p.readers || []).map((rd, ri) => renderReader(rd, p.file.replace(/\W+/g, "") + ri)).join("");
+  const contentSections = [readerHtml, cards, awards, renderSteps(p.steps, p.stepsEyebrow, p.stepsTitle), quote, video]
     .filter((x) => x && x.trim());
   /* Photo pages get one tidy gallery after the text instead of single figures scattered
      through the gaps, which left large empty stretches and a different size every time. */
