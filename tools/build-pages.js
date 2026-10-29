@@ -1667,15 +1667,57 @@ const PAGES = [
     desc: "Drumming across three countries. SonoArte Panamá, Mamma Mia! at ISPS, and the Perkiomen rock band.",
     intro: "I started at SonoArte at the International School of Panama, kept taking it online after the move to Trinidad, drummed through the Mamma Mia! unit that closed out Music II at ISPS, and now play in the Perkiomen rock band. Three very different rooms, one kit.",
     quote: { text: "Every school I joined had a room with a kit in it. That is how I met people.", by: "On the drum kit" },
-    body: ["That is not a small thing when you change countries every few years. Drumming is the reason arriving somewhere new has never meant arriving alone."],
+    media: [
+      {
+        "title": "Three rooms, one kit",
+        "body": [
+          "I started at SonoArte at the International School of Panama and kept taking it online after the move to Trinidad. At ISPS I drummed through the Mamma Mia! unit that closed out Music II, and played in the school band, AP Vybz, where I was vice-president. At Perkiomen I play in the rock band."
+        ],
+        "points": [
+          [
+            "SonoArte Panamá",
+            "Where it started, in person and then online."
+          ],
+          [
+            "ISPS",
+            "Mamma Mia! in Music II, and AP Vybz, the school band."
+          ],
+          [
+            "Perkiomen",
+            "The rock band."
+          ]
+        ],
+        "slots": [
+          "music-3"
+        ]
+      },
+      {
+        "title": "On the Perkiomen stage",
+        "body": [
+          "The rock band rehearses on the school's own stage, under the 1875 Perkiomen seal. Set-up, sound check, then the songs, over and over until they hold."
+        ],
+        "slots": [
+          "music-5"
+        ]
+      },
+      {
+        "title": "At the kit",
+        "slots": [
+          "music-1",
+          "music-4",
+          "music-2"
+        ],
+        "gallery": true
+      }
+    ],
     facts: [["Bands", "SonoArte · Mamma Mia! (ISPS) · Perkiomen rock band"], ["Countries", "Panama · Trinidad · United States"], ["SonoArte", "In person, then online"], ["Instrument", "Drum kit"]],
     slots: [
       { key: "music-1", ratio: "3 / 4", label: "Behind the kit with the Perkiomen rock band" },
       { key: "music-2", ratio: "4 / 3", label: "The band before the set" },
       { key: "music-3", ratio: "1 / 1", label: "SonoArte Panamá" },
+      { key: "music-5", ratio: "1400 / 933", label: "Rehearsal on the Perkiomen stage" },
       { key: "music-4", ratio: "3 / 4", label: "Practising on an electronic kit at home" }
     ],
-    video: { ratio: "16 / 9", label: "Rock band set" },
     next: { title: "Next: Running", lede: "The RBC Race for the Kids, three years running.", href: "Activities-Running.dc.html", label: "Go to running" }
   },
   {
@@ -1712,17 +1754,39 @@ const PAGES = [
         ]
       },
       {
+        "title": "Tracking it on Strava",
+        "body": [
+          "I log runs on Strava. Two of them show how the running has gone, one at each school."
+        ],
+        "points": [
+          [
+            "ISPS track, March 2025",
+            "A night run of 2.77 km at 4:31 per km in 12 minutes 34 seconds. My third fastest mile, with personal records on the ISPS track lap, clockwise and counter."
+          ],
+          [
+            "Perkiomen, East Greenville",
+            "5.17 km in 24 minutes 4 seconds, 4:39 per km. My second fastest 5K, 1 minute 8 seconds faster than the one before it."
+          ]
+        ],
+        "slots": [
+          "run-4",
+          "run-5"
+        ]
+      },
+      {
         "title": "Why I still run",
         "body": [
           "It is training, the plainest way there is to teach a body to keep going past where it wants to stop. And it is still the cheapest way to actually see a place, long after the people who flew in for a week have gone home."
         ]
       }
     ],
-    facts: [["Signature race", "RBC Race for the Kids, 15K, 3 years running"], ["Also", "G2G 5Ks · Scotiabank 5K"], ["Cause", "RBC Caribbean Children's Cancer Fund"], ["Club", "Peak Performers"]],
+    facts: [["Signature race", "RBC Race for the Kids, 15K, 3 years running"], ["Also", "G2G 5Ks · Scotiabank 5K"], ["Cause", "RBC Caribbean Children's Cancer Fund"], ["Club", "Peak Performers"], ["Strava", "5.17 km in 24:04 at Perkiomen"]],
     slots: [
       { key: "run-hero", ratio: "4 / 5", label: "Finishing a long one in Trinidad, worn out and happy" },
       { key: "run-1", ratio: "3 / 2", label: "RBC Race for the Kids, 15K bibs" },
       { key: "run-3", ratio: "3 / 4", label: "Mid-race, 15K, bib 437" },
+      { key: "run-4", ratio: "1000 / 1272", label: "Strava, a night run on the ISPS track" },
+      { key: "run-5", ratio: "1100 / 1180", label: "Strava, a 5K around East Greenville" },
       { key: "run-2", ratio: "4 / 3", label: "A 5K somewhere in Trinidad" }
     ],
     next: { title: "Curiosities", lede: "The things that are not on a form.", href: "Curiosities.dc.html", label: "See the curiosities" }
