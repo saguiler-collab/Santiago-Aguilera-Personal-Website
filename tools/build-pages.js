@@ -227,12 +227,9 @@ const PAGES = [
       {
         "title": "Colegio Tilatá",
         "body": [
-          "I went to Colegio Tilatá, in La Calera, just outside the city, in the grey uniform you can see in the photos."
+          "I went to Colegio Tilatá, in La Calera, just outside the city, in the grey uniform you can see here."
         ],
-        "slots": [
-          "co-9",
-          "co-11"
-        ]
+        "slots": ["co-9"]
       },
       {
         "title": "Learning that Spanish is not one language",
@@ -261,8 +258,8 @@ const PAGES = [
     ],
     facts: [["Arrived", "December 2016"], ["School", "Colegio Tilata, La Calera"], ["Altitude", "2,640 m"], ["Age", "Eight to ten"]],
     slots: [
-      { key: "co-9", ratio: "720 / 960", label: "Colegio Tilatá uniforms, ready for school" },
       { key: "co-11", ratio: "1200 / 1600", label: "On a balcony in the hills, in the Tilatá shirt" },
+      { key: "co-9", ratio: "720 / 960", label: "Colegio Tilatá uniforms, ready for school" },
       { key: "co-10", ratio: "1200 / 1600", label: "Lying on a bronze goat above a canyon" },
       { key: "co-4", ratio: "3 / 4", label: "Riding a mammoth at the dinosaur park" },
       { key: "co-5", ratio: "3 / 4", label: "Face to face with a T. rex, map guide in hand" },
