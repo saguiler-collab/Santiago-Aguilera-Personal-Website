@@ -217,9 +217,53 @@ const PAGES = [
     eyebrow: "About · Colombia", title: "Bogotá", lede: "Colombia. December 2016, age eight.",
     desc: "Bogotá, Colombia. Colegio Tilata in La Calera, altitude, and a second accent.",
     intro: "Colegio Tilata, in La Calera, just outside the city. Bogotá sits at 2,640 metres, and the first thing the altitude teaches you is that running is different here.",
-    body: ["This is where I learned that Spanish is not one language. The accent, the slang and the register all shifted, and I had to shift with them. That was the first time I remember consciously adapting to fit a room."],
-    facts: [["Arrived", "December 2016"], ["School", "Colegio Tilata, La Calera"], ["Altitude", "2,640 m"]],
+    media: [
+      {
+        "title": "Arriving at altitude",
+        "body": [
+          "Bogotá sits at 2,640 metres, and the first thing the altitude teaches you is that running is different here. We arrived in December 2016, when I was eight."
+        ]
+      },
+      {
+        "title": "Colegio Tilatá",
+        "body": [
+          "I went to Colegio Tilatá, in La Calera, just outside the city, in the grey uniform you can see in the photos."
+        ],
+        "slots": [
+          "co-9",
+          "co-11"
+        ]
+      },
+      {
+        "title": "Learning that Spanish is not one language",
+        "body": [
+          "The accent, the slang and the register all shifted, and I had to shift with them. That was the first time I remember consciously adapting to fit a room."
+        ]
+      },
+      {
+        "title": "Where the Venezuela question started",
+        "body": [
+          "Bogotá is also where I first saw Venezuelan migration up close. It was in the news, on the streets, and in my brother's classroom, where classmates were refugees. Years later, in Trinidad, it became my research paper."
+        ]
+      },
+      {
+        "title": "Out of the city",
+        "slots": [
+          "co-4",
+          "co-5",
+          "co-10",
+          "co-6",
+          "co-7",
+          "co-8"
+        ],
+        "gallery": true
+      }
+    ],
+    facts: [["Arrived", "December 2016"], ["School", "Colegio Tilata, La Calera"], ["Altitude", "2,640 m"], ["Age", "Eight to ten"]],
     slots: [
+      { key: "co-9", ratio: "720 / 960", label: "Colegio Tilatá uniforms, ready for school" },
+      { key: "co-11", ratio: "1200 / 1600", label: "On a balcony in the hills, in the Tilatá shirt" },
+      { key: "co-10", ratio: "1200 / 1600", label: "Lying on a bronze goat above a canyon" },
       { key: "co-4", ratio: "3 / 4", label: "Riding a mammoth at the dinosaur park" },
       { key: "co-5", ratio: "3 / 4", label: "Face to face with a T. rex, map guide in hand" },
       { key: "co-6", ratio: "8 / 7", label: "Life jacket on, ready for the canoe" },
