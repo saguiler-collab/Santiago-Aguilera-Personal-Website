@@ -63,6 +63,7 @@ const SECTION_LINKS = [
   { label: "Research & projects", href: "Research.dc.html" },
   { label: "Leadership & service", href: "Leadership.dc.html" },
   { label: "Activities", href: "Activities.dc.html" },
+  { label: "Drums", href: "Drums.dc.html" },
   { label: "Curiosities", href: "Curiosities.dc.html" },
   { label: "Media", href: "Media.dc.html" },
   { label: "Contact", href: "Contact.dc.html" }
@@ -101,8 +102,14 @@ const GROUPS = {
   activities: { title: "Activities", items: [
     { label: "Swimming", href: "Activities-Swimming.dc.html" },
     { label: "Weightlifting", href: "Activities-Weightlifting.dc.html" },
-    { label: "Drums & Music", href: "Activities-Music.dc.html" },
     { label: "Running", href: "Activities-Running.dc.html" }
+  ]},
+  drums: { title: "Drums", items: [
+    { label: "SonoArte", href: "Drums-SonoArte.dc.html" },
+    { label: "AP Vybz", href: "Drums-APVybz.dc.html" },
+    { label: "ISPS School Musicals", href: "Drums-Musicals.dc.html" },
+    { label: "MYP Arts Portfolio", href: "Drums-MYPPortfolio.dc.html" },
+    { label: "Rock band at Perkiomen", href: "Drums-Rockband.dc.html" }
   ]},
   curiosities: { title: "Curiosities", items: [
     { label: "Literature", href: "Curiosities-Literature.dc.html" },
@@ -117,7 +124,7 @@ const GROUPS = {
    "Atlas" for the computational work. A reader can override all of it from the nav. */
 const SECTION_PALETTE = {
   about: "sky", academics: "perkiomen", research: "atlas",
-  leadership: "isps", activities: "noir", curiosities: "gilt"
+  leadership: "isps", activities: "noir", drums: "ferrari", curiosities: "gilt"
 };
 const PAGE_PALETTE = {
   "Academics-ISPS.dc.html": "isps",
@@ -180,14 +187,13 @@ const PAGES = [
   },
   {
     file: "Activities.dc.html", section: "activities", kind: "landing",
-    eyebrow: "Activities", title: "Drums, water, weight, road",
-    lede: "Four commitments; three of them followed me across six countries, the newest started in Trinidad.",
-    desc: "Varsity swimming, Olympic weightlifting, three bands' worth of drumming, and road racing.",
-    intro: "None of these are electives I picked up at Perkiomen. Drums, water and weight moved with me across six countries and each one is the reason a new country stopped feeling new. Running started later, in Trinidad, and has not stopped since.",
+    eyebrow: "Activities", title: "Water, weight, road",
+    lede: "Three commitments. Drums are such a big part of the story that they have a section of their own.",
+    desc: "Varsity swimming, Olympic weightlifting, and road racing.",
+    intro: "None of these are electives I picked up at Perkiomen. Water and weight moved with me across six countries, and running started in Trinidad and has not stopped since. Drums, the fourth, have their own section.",
     cards: [
       { eyebrow: "Varsity", title: "Swimming", href: "Activities-Swimming.dc.html", body: "Morning sets, meets, and the part of the day that keeps the rest of it in order." },
       { eyebrow: "Olympic lifting", title: "Weightlifting", href: "Activities-Weightlifting.dc.html", body: "Snatch and clean & jerk, programmed year-round." },
-      { eyebrow: "Three bands", title: "Drums & Music", href: "Activities-Music.dc.html", body: "SonoArte Panamá, Mamma Mia! at ISPS, and the Perkiomen rock band." },
       { eyebrow: "Road racing", title: "Running", href: "Activities-Running.dc.html", body: "The RBC Race for the Kids 15K, three years running, and years of 5Ks across Trinidad." }
     ],
     slots: [{ key: "activities-hero", ratio: "16 / 9", label: "Activities" }],
@@ -360,15 +366,9 @@ const PAGES = [
       {
         "title": "AP Vybz, the music organization",
         "body": [
-          "AP Vybz is ISPS's student music organization. It exists to give students, and staff, a chance to explore genres and instruments they are curious about, and to push members out of their comfort zone so they grow as people and as artists.",
-          "I was its vice-president and a drummer. When the previous president stepped down, a new executive team took over and the club changed direction. It leaned into performing, playing as an ensemble three times between January and April, at the school's Valentine's Day event and St. Patrick's Day event, and then the Talent Show. The plan was more performances, better quality, and auditions to bring in more talented and passionate musicians."
+          "AP Vybz is ISPS's student music organization, and I was its vice-president and a drummer. When a new executive team took over, the club leaned into performing: three shows between January and April, at the Valentine's Day event, the St. Patrick's Day event and the Talent Show. The full story is in the Drums section."
         ],
-        "points": [
-          ["My role", "Vice-president and drummer."],
-          ["Performances", "Valentine's Day event, St. Patrick's Day event, and the Talent Show."],
-          ["What came next", "More shows, and auditions for the stage."]
-        ],
-        "slots": ["isps-9", "isps-10"]
+        "slots": ["isps-9"]
       },
       {
         "title": "Mayaro house",
@@ -1640,6 +1640,227 @@ const PAGES = [
     next: { title: "Activities", lede: "Drums, water, weight, road.", href: "Activities.dc.html", label: "See the activities" }
   },
 
+  /* ------------------------------------------------------------ drums ---- */
+  {
+    file: "Drums.dc.html", section: "drums", kind: "landing",
+    eyebrow: "Drums", title: "Five rooms, one kit",
+    lede: "From pandemic lessons in Panama to the Perkiomen rock band.",
+    desc: "Drumming from SonoArte in Panama and Trinidad to AP Vybz, the ISPS musicals, the MYP Arts Portfolio and the Perkiomen rock band.",
+    intro: "Every school I joined had a room with a kit in it. That is how I met people. Drumming is the reason arriving somewhere new has never meant arriving alone, and it is the thread I would follow if you asked me to tell my story through one thing. These are its five stages.",
+    cards: [
+      { eyebrow: "Panama · Trinidad", title: "SonoArte", href: "Drums-SonoArte.dc.html", body: "Where it started, in pandemic Panama, and kept going online from Trinidad." },
+      { eyebrow: "ISPS", title: "AP Vybz", href: "Drums-APVybz.dc.html", body: "Vice-president and drummer of the school's music organization." },
+      { eyebrow: "ISPS", title: "School Musicals", href: "Drums-Musicals.dc.html", body: "Mamma Mia!, and what a drummer does when the score is the boss." },
+      { eyebrow: "Grade 10", title: "MYP Arts Portfolio", href: "Drums-MYPPortfolio.dc.html", body: "The IB arts portfolio that closed out the Middle Years Programme." },
+      { eyebrow: "Perkiomen", title: "Rock band", href: "Drums-Rockband.dc.html", body: "The newest room." }
+    ],
+    facts: [["Instrument", "Drum kit"], ["Stages", "Five"], ["Countries", "Panama · Trinidad · United States"]],
+    slots: [{ key: "drums-hero", ratio: "16 / 9", label: "Behind the kit" }],
+    next: { title: "The rest of what I do", lede: "Water, weight and road.", href: "Activities.dc.html", label: "See the activities" }
+  },
+  {
+    file: "Drums-SonoArte.dc.html", section: "drums", parent: { label: "Drums", href: "Drums.dc.html" },
+    eyebrow: "Drums · Stage one", title: "SonoArte", lede: "Where it started, in pandemic Panama, and kept going from Trinidad.",
+    desc: "SonoArte, the music school in Panama where I started drumming, and the online lessons that carried on from Trinidad.",
+    intro: "SonoArte is a music school in Panama, and it is where I started playing drums. I began in Panama, in the middle of the pandemic, and when we moved to Trinidad in 2021 I kept taking lessons with SonoArte online.",
+    media: [
+      {
+        "title": "Starting in Panama",
+        "body": [
+          "I arrived in Panama in July 2019, at age ten. Drums began at SonoArte, and then the pandemic arrived and the world went online. Lessons did too."
+        ]
+      },
+      {
+        "title": "Then Trinidad",
+        "body": [
+          "When we moved to Port of Spain in August 2021 the lessons did not stop. I kept taking SonoArte online from Trinidad, which meant the kit stayed part of the week through a move that changed everything else about it."
+        ],
+        "points": [
+          [
+            "Panama",
+            "Where it started, in person and then online."
+          ],
+          [
+            "Trinidad",
+            "Lessons online, from a different country."
+          ]
+        ]
+      },
+      {
+        "title": "Why it stuck",
+        "body": [
+          "It became the thing I do to think. A new country takes a while to feel like yours, but a rhythm that you practised in the last one is still yours on the first day."
+        ]
+      }
+    ],
+    facts: [["School", "SonoArte, Panama"], ["Started", "Panama, during the pandemic"], ["Kept going", "Online from Trinidad"]],
+    slots: [
+
+    ],
+    next: {"title": "Next: AP Vybz", "lede": "The school band at ISPS.", "href": "Drums-APVybz.dc.html", "label": "Go to AP Vybz"}
+  },
+  {
+    file: "Drums-APVybz.dc.html", section: "drums", parent: { label: "Drums", href: "Drums.dc.html" },
+    eyebrow: "Drums · Stage two", title: "AP Vybz", lede: "The ISPS music organization, where I was vice-president and drummer.",
+    desc: "AP Vybz, the music organization at the International School of Port of Spain. Vice-president and drummer.",
+    intro: "AP Vybz is ISPS's student music organization. It exists to give students, and staff, a chance to explore genres and instruments they are curious about, and to push members out of their comfort zone so they grow as people and as artists.",
+    media: [
+      {
+        "title": "The club",
+        "body": [
+          "The idea is to try genres and instruments you would not otherwise touch, and to do it alongside other people."
+        ]
+      },
+      {
+        "title": "The year the club changed direction",
+        "body": [
+          "I was the vice-president and a drummer. When the previous president stepped down, a new executive team took over, and the club leaned heavily into performing. Between January and April we played as an ensemble three times, far more than in earlier years, when the band played only a few times a year."
+        ],
+        "points": [
+          [
+            "Valentine's Day event",
+            "The first of the year's performances."
+          ],
+          [
+            "St. Patrick's Day event",
+            "The second."
+          ],
+          [
+            "The Talent Show",
+            "The third."
+          ]
+        ]
+      },
+      {
+        "title": "What came next",
+        "body": [
+          "The plan was more performances, each with better quality, and auditions, so that the people on stage were talented and passionate about being there."
+        ],
+        "slots": [
+          "isps-10"
+        ]
+      }
+    ],
+    facts: [["Role", "Vice-president and drummer"], ["School", "ISPS"], ["Performances", "Three, January to April"]],
+    slots: [
+      { key: "isps-9", ratio: "382 / 270", label: "AP Vybz, the school music organization" },
+      { key: "isps-10", ratio: "772 / 447", label: "AP Vybz members performing and rehearsing" }
+    ],
+    next: {"title": "Next: ISPS School Musicals", "lede": "Mamma Mia!", "href": "Drums-Musicals.dc.html", "label": "Go to the musicals"}
+  },
+  {
+    file: "Drums-Musicals.dc.html", section: "drums", parent: { label: "Drums", href: "Drums.dc.html" },
+    eyebrow: "Drums · Stage three", title: "ISPS School Musicals", lede: "Mamma Mia!, and what a drummer does when the score is the boss.",
+    desc: "Drumming through the Mamma Mia! unit that closed Music II at the International School of Port of Spain.",
+    intro: "Music II at ISPS ended with a musical. Mine was Mamma Mia!, and I drummed through it.",
+    media: [
+      {
+        "title": "Mamma Mia!",
+        "body": [
+          "Music II is the grade 10 music course, and the unit that closed it out was Mamma Mia!. I played drums for it."
+        ]
+      },
+      {
+        "title": "A different job",
+        "body": [
+          "In a band the drummer sets the groove. In a musical the groove belongs to the score, the singers and the people on stage, and the drummer's job is to keep time for all of them. It is a quieter kind of leading, and a good one to learn."
+        ]
+      },
+      {
+        "title": "The result",
+        "body": [
+          "Music II is also where an Academic Excellence award came from, in grade 10 at ISPS."
+        ]
+      }
+    ],
+    facts: [["Course", "Music II, grade 10"], ["Production", "Mamma Mia!"], ["School", "ISPS"]],
+    slots: [
+
+    ],
+    next: {"title": "Next: MYP Arts Portfolio", "lede": "Grade 10.", "href": "Drums-MYPPortfolio.dc.html", "label": "Go to the portfolio"}
+  },
+  {
+    file: "Drums-MYPPortfolio.dc.html", section: "drums", parent: { label: "Drums", href: "Drums.dc.html" },
+    eyebrow: "Drums · Stage four", title: "MYP Arts Portfolio", lede: "Grade 10, and the portfolio that closed out the Middle Years Programme.",
+    desc: "The MYP Arts Portfolio, the grade 10 arts project that sits at the end of the IB Middle Years Programme.",
+    intro: "The MYP Arts Portfolio is the arts project in the last year of the IB Middle Years Programme. Mine is the grade 10 stage of my drumming.",
+    media: [
+      {
+        "title": "What the portfolio is",
+        "body": [
+          "In MYP Arts, students keep a portfolio of their creative work and how it developed. It is assessed on four criteria: knowing and understanding the art form, developing skills, thinking creatively, and responding to the work."
+        ]
+      },
+      {
+        "title": "Where it sits in the story",
+        "body": [
+          "Grade 10 is also the year of my Personal Project, my MYP Bilingual Diploma and Music II. The portfolio is where drumming became something I had to explain and defend, not only play."
+        ],
+        "points": [
+          [
+            "Year",
+            "Grade 10, ISPS"
+          ],
+          [
+            "Programme",
+            "IB Middle Years Programme"
+          ],
+          [
+            "Alongside",
+            "The Personal Project, and Music II"
+          ]
+        ]
+      }
+    ],
+    facts: [["Year", "Grade 10"], ["Programme", "IB MYP"], ["School", "ISPS"]],
+    slots: [
+
+    ],
+    next: {"title": "Next: Rock band at Perkiomen", "lede": "The newest room.", "href": "Drums-Rockband.dc.html", "label": "Go to the rock band"}
+  },
+  {
+    file: "Drums-Rockband.dc.html", section: "drums", parent: { label: "Drums", href: "Drums.dc.html" },
+    eyebrow: "Drums · Stage five", title: "Rock band at Perkiomen", lede: "The newest room.",
+    desc: "Drumming in the Perkiomen rock band, the most recent stage.",
+    intro: "At Perkiomen I play drums in the school rock band. It is the most recent of the five rooms.",
+    media: [
+      {
+        "title": "The band",
+        "body": [
+          "The band rehearses on the school's own stage, under the 1875 Perkiomen seal. Set-up, sound check, then the songs, over and over until they hold."
+        ],
+        "slots": [
+          "music-5",
+          "music-2"
+        ]
+      },
+      {
+        "title": "At the kit",
+        "body": [
+          "The kit is also where I think. I also practise on an electronic kit."
+        ],
+        "slots": [
+          "music-4",
+          "music-1"
+        ]
+      },
+      {
+        "title": "The thread",
+        "body": [
+          "From SonoArte to a rock band is five rooms in three countries. Every school I joined had a room with a kit in it, and the kit is how I met people."
+        ]
+      }
+    ],
+    facts: [["Band", "Perkiomen rock band"], ["Role", "Drummer"], ["School", "Perkiomen"]],
+    slots: [
+      { key: "music-1", ratio: "1170 / 1556", label: "Behind the kit with the Perkiomen rock band" },
+      { key: "music-2", ratio: "1600 / 1200", label: "The band before the set" },
+      { key: "music-4", ratio: "960 / 1280", label: "Practising on an electronic kit at home" },
+      { key: "music-5", ratio: "1400 / 933", label: "Rehearsal on the Perkiomen stage" }
+    ],
+    next: {"title": "The rest of what I do", "lede": "Water, weight and road.", "href": "Activities.dc.html", "label": "See the activities"}
+  },
+
   /* -------------------------------------------------------- activities ---- */
   {
     file: "Activities-Swimming.dc.html", section: "activities", parent: { label: "Activities", href: "Activities.dc.html" },
@@ -1724,65 +1945,6 @@ const PAGES = [
       { key: "lift-2", ratio: "3 / 4", label: "Between sets in the gym" },
       { key: "lift-3", ratio: "1170 / 391", label: "Liftoff global leaderboards, screenshots taken October 28, 2026" },
       { key: "lift-4", ratio: "1170 / 1516", label: "Liftoff memories, August 2024, the first month of training" }
-    ],
-    next: { title: "Next: Drums & Music", lede: "Three countries, three bands, one kit.", href: "Activities-Music.dc.html", label: "Go to music" }
-  },
-  {
-    file: "Activities-Music.dc.html", section: "activities", parent: { label: "Activities", href: "Activities.dc.html" },
-    eyebrow: "Activities · Three bands", title: "Drums & Music", lede: "SonoArte Panamá, in person and then online, Mamma Mia! at ISPS, and the Perkiomen rock band.",
-    desc: "Drumming across three countries. SonoArte Panamá, Mamma Mia! at ISPS, and the Perkiomen rock band.",
-    intro: "I started at SonoArte at the International School of Panama, kept taking it online after the move to Trinidad, drummed through the Mamma Mia! unit that closed out Music II at ISPS, and now play in the Perkiomen rock band. Three very different rooms, one kit.",
-    quote: { text: "Every school I joined had a room with a kit in it. That is how I met people.", by: "On the drum kit" },
-    media: [
-      {
-        "title": "Three rooms, one kit",
-        "body": [
-          "I started at SonoArte at the International School of Panama and kept taking it online after the move to Trinidad. At ISPS I drummed through the Mamma Mia! unit that closed out Music II, and played in the school band, AP Vybz, where I was vice-president. At Perkiomen I play in the rock band."
-        ],
-        "points": [
-          [
-            "SonoArte Panamá",
-            "Where it started, in person and then online."
-          ],
-          [
-            "ISPS",
-            "Mamma Mia! in Music II, and AP Vybz, the school band."
-          ],
-          [
-            "Perkiomen",
-            "The rock band."
-          ]
-        ],
-        "slots": [
-          "music-3"
-        ]
-      },
-      {
-        "title": "On the Perkiomen stage",
-        "body": [
-          "The rock band rehearses on the school's own stage, under the 1875 Perkiomen seal. Set-up, sound check, then the songs, over and over until they hold."
-        ],
-        "slots": [
-          "music-5"
-        ]
-      },
-      {
-        "title": "At the kit",
-        "slots": [
-          "music-1",
-          "music-4",
-          "music-2"
-        ],
-        "gallery": true
-      }
-    ],
-    facts: [["Bands", "SonoArte · Mamma Mia! (ISPS) · Perkiomen rock band"], ["Countries", "Panama · Trinidad · United States"], ["SonoArte", "In person, then online"], ["Instrument", "Drum kit"]],
-    slots: [
-      { key: "music-1", ratio: "3 / 4", label: "Behind the kit with the Perkiomen rock band" },
-      { key: "music-2", ratio: "4 / 3", label: "The band before the set" },
-      { key: "music-3", ratio: "1 / 1", label: "SonoArte Panamá" },
-      { key: "music-5", ratio: "1400 / 933", label: "Rehearsal on the Perkiomen stage" },
-      { key: "music-4", ratio: "3 / 4", label: "Practising on an electronic kit at home" }
     ],
     next: { title: "Next: Running", lede: "The RBC Race for the Kids, three years running.", href: "Activities-Running.dc.html", label: "Go to running" }
   },
@@ -2589,7 +2751,7 @@ function spiralSvg() {
     "Activities.dc.html": "lift-squat", "Curiosities.dc.html": "games-artorias", "Media.dc.html": "trip-versailles",
     "Leadership-HOSA.dc.html": "hosa-conference", "Leadership-MUN.dc.html": "mun-eagle", "Leadership-Shadowing.dc.html": "hosp-or",
     "Leadership-Volunteering.dc.html": "vol-river", "Activities-Swimming.dc.html": "swim-blocks", "Activities-Weightlifting.dc.html": "lift-squat",
-    "Activities-Music.dc.html": "music-drums", "Activities-Running.dc.html": "run-tired", "Academics-ISPS.dc.html": "isps-guayasamin",
+    "Drums.dc.html": "music-drums", "Drums-SonoArte.dc.html": "music-electric", "Drums-APVybz.dc.html": "isps-apvybz", "Drums-Rockband.dc.html": "music-stage", "Activities-Running.dc.html": "run-tired", "Academics-ISPS.dc.html": "isps-guayasamin",
     "Academics-Perkiomen.dc.html": "perk-paws", "Academics-ExeterSummer.dc.html": "exeter-banner", "Academics-CompBio.dc.html": "cmu-friends",
     "Research-CellAtlas.dc.html": "gbm-3", "Research-MedicalApp.dc.html": "field-notes", "Research-CSRx.dc.html": "cert-csrx",
     "Research-Venezuela.dc.html": "vz-exhibit", "Curiosities-Videogames.dc.html": "games-artorias", "Curiosities-Music.dc.html": "music-band",
