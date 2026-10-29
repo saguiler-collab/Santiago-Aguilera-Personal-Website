@@ -301,7 +301,7 @@ const PAGES = [
       {
         "title": "The system I studied in",
         "body": [
-          "ISPS is an assisted school of the U.S. State Department, and it offers the IB, AP and the American Diploma. My own years there were the IB Middle Years Programme, grades 6 to 10."
+          "ISPS is an assisted school of the U.S. State Department, and it offers the IB, AP and the American Diploma. My own years there were the IB Middle Years Programme, grades 7 to 10."
         ],
         "points": [
           ["IB, AP and the American Diploma", "All three are offered in high school."],
