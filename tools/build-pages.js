@@ -63,7 +63,7 @@ const SECTION_LINKS = [
   { label: "Research & projects", href: "Research.dc.html" },
   { label: "Leadership & service", href: "Leadership.dc.html" },
   { label: "Activities", href: "Activities.dc.html" },
-  { label: "Drums", href: "Drums.dc.html" },
+  { label: "Music & Drums", href: "Drums.dc.html" },
   { label: "Curiosities", href: "Curiosities.dc.html" },
   { label: "Media", href: "Media.dc.html" },
   { label: "Contact", href: "Contact.dc.html" }
@@ -104,11 +104,12 @@ const GROUPS = {
     { label: "Weightlifting", href: "Activities-Weightlifting.dc.html" },
     { label: "Running", href: "Activities-Running.dc.html" }
   ]},
-  drums: { title: "Drums", items: [
+  drums: { title: "Music & Drums", items: [
     { label: "SonoArte", href: "Drums-SonoArte.dc.html" },
+    { label: "Beyond the kit", href: "Drums-Instruments.dc.html" },
     { label: "AP Vybz", href: "Drums-APVybz.dc.html" },
     { label: "ISPS School Musicals", href: "Drums-Musicals.dc.html" },
-    { label: "MYP Arts Portfolio", href: "Drums-MYPPortfolio.dc.html" },
+    { label: "MYP e-Portfolio", href: "Drums-MYPPortfolio.dc.html" },
     { label: "Rock band at Perkiomen", href: "Drums-Rockband.dc.html" }
   ]},
   curiosities: { title: "Curiosities", items: [
@@ -188,9 +189,9 @@ const PAGES = [
   {
     file: "Activities.dc.html", section: "activities", kind: "landing",
     eyebrow: "Activities", title: "Water, weight, road",
-    lede: "Three commitments. Drums are such a big part of the story that they have a section of their own.",
+    lede: "Three commitments. Music is such a big part of the story that it has a section of its own.",
     desc: "Varsity swimming, Olympic weightlifting, and road racing.",
-    intro: "None of these are electives I picked up at Perkiomen. Water and weight moved with me across six countries, and running started in Trinidad and has not stopped since. Drums, the fourth, have their own section.",
+    intro: "None of these are electives I picked up at Perkiomen. Water and weight moved with me across six countries, and running started in Trinidad and has not stopped since. Music, the fourth, has its own section, Music & Drums.",
     cards: [
       { eyebrow: "Varsity", title: "Swimming", href: "Activities-Swimming.dc.html", body: "Morning sets, meets, and the part of the day that keeps the rest of it in order." },
       { eyebrow: "Olympic lifting", title: "Weightlifting", href: "Activities-Weightlifting.dc.html", body: "Snatch and clean & jerk, programmed year-round." },
@@ -366,7 +367,7 @@ const PAGES = [
       {
         "title": "AP Vybz, the music organization",
         "body": [
-          "AP Vybz is ISPS's student music organization, and I was its vice-president and a drummer. When a new executive team took over, the club leaned into performing: three shows between January and April, at the Valentine's Day event, the St. Patrick's Day event and the Talent Show. The full story is in the Drums section."
+          "AP Vybz is ISPS's student music organization, and I was its vice-president and a drummer. When a new executive team took over, the club leaned into performing: three shows between January and April, at the Valentine's Day event, the St. Patrick's Day event and the Talent Show. The full story is in the Music & Drums section."
         ],
         "slots": ["isps-9"]
       },
@@ -1126,7 +1127,7 @@ const PAGES = [
     facts: [["Type", "Publication"], ["Topic", "Venezuelan migration to Trinidad & Tobago"], ["Length", "42 pages · 62 sources"], ["Venue", "SSRN"], ["When", "November 2024 – May 2025"]],
     slots: [
       { key: "vz-1", ratio: "3 / 4", label: "The paper's title page, published on SSRN" },
-      { key: "vz-2", ratio: "4 / 3", label: "Presenting the work at the Personal Project Exhibition" },
+      { key: "vz-2", ratio: "2200 / 1841", label: "Presenting the work at the Personal Project Exhibition" },
       { key: "vz-3", ratio: "995 / 1202", label: "The first page of the final report, with the planning and the learning goal" },
       { key: "vz-4", ratio: "888 / 1600", label: "Explaining the project at the Personal Project Exhibition" }
     ],
@@ -1570,9 +1571,9 @@ const PAGES = [
       }
     ],
     slots: [
-      { key: "shadow-1", ratio: "4 / 3", label: "In the operating room at HAEV" },
-      { key: "sana-field-surgery", ratio: "3 / 2", label: "Laparoscopic view, mid-procedure" },
-      { key: "sana-field-rounds", ratio: "3 / 4", label: "Morning case presentation" },
+      { key: "shadow-1", ratio: "1796 / 2400", label: "In the operating room at HAEV" },
+      { key: "sana-field-surgery", ratio: "1798 / 2400", label: "Laparoscopic view, mid-procedure" },
+      { key: "sana-field-rounds", ratio: "2400 / 1790", label: "Morning case presentation" },
       { key: "sana-field-teaching", ratio: "3 / 4", label: "Reading an ultrasound with the team" },
       { key: "shadow-2", ratio: "3 / 4", label: "Between cases, summer 2026" },
       { key: "hosp-or", ratio: "3 / 4", label: "Watching a procedure from the operating table" },
@@ -1619,7 +1620,7 @@ const PAGES = [
     ],
     facts: [["Type", "Community service"], ["Ambassador", "Be a Friend Project, since September 2026"], ["Also", "HOSA food and clothing drive"]],
     slots: [
-      { key: "vol-1", ratio: "1 / 1", label: "Pulling a tire out of the river on a clean-up day" },
+      { key: "vol-1", ratio: "1464 / 1600", label: "Pulling a tire out of the river on a clean-up day" },
       { key: "vol-2", ratio: "9 / 16", label: "Running a water station at a race" },
       { key: "vol-3", ratio: "3 / 4", label: "Bingo with residents at a care home" }
     ],
@@ -1637,33 +1638,64 @@ const PAGES = [
       { key: "perkmt-1", ratio: "4 / 3", label: "The Perkiomenite" },
       { key: "perkmt-2", ratio: "4 / 3", label: "In the newsroom" }
     ],
-    next: { title: "Activities", lede: "Drums, water, weight, road.", href: "Activities.dc.html", label: "See the activities" }
+    next: { title: "Activities", lede: "Music, water, weight, road.", href: "Activities.dc.html", label: "See the activities" }
   },
 
   /* ------------------------------------------------------------ drums ---- */
   {
     file: "Drums.dc.html", section: "drums", kind: "landing",
-    eyebrow: "Drums", title: "Five rooms, one kit",
-    lede: "From pandemic lessons in Panama to the Perkiomen rock band.",
-    desc: "Drumming from SonoArte in Panama and Trinidad to AP Vybz, the ISPS musicals, the MYP Arts Portfolio and the Perkiomen rock band.",
-    intro: "Every school I joined had a room with a kit in it. That is how I met people. Drumming is the reason arriving somewhere new has never meant arriving alone, and it is the thread I would follow if you asked me to tell my story through one thing. These are its five stages.",
+    eyebrow: "Music & Drums", title: "A kit, a pan, a piano and a voice", lede: "Drums at the centre since I was eleven, and a growing circle of instruments around them.",
+    desc: "Music & Drums: drumming from SonoArte in Panama through the ISPS process journals, school musicals and the MYP e-Portfolio to the Perkiomen rock band, plus glockenspiel, piano, steel pan and voice.",
+    intro: "Every school I joined had a room with a kit in it. That is how I met people. I started on drums in Panama at eleven and kept going through three countries, and the circle widened: the glockenspiel, the piano, the Trinidadian steel pan and, at Perkiomen, my own voice with the rock band. Almost everything on these pages comes from the process journals I kept in music class at ISPS between Grade 8 and Grade 10.",
     cards: [
-      { eyebrow: "Panama · Trinidad", title: "SonoArte", href: "Drums-SonoArte.dc.html", body: "Where it started, in pandemic Panama, and kept going online from Trinidad." },
+      { eyebrow: "Panama · Trinidad", title: "SonoArte", href: "Drums-SonoArte.dc.html", body: "Where it started, in pandemic Panama, and carried on online from Trinidad." },
+      { eyebrow: "Instruments", title: "Beyond the kit", href: "Drums-Instruments.dc.html", body: "Glockenspiel, piano, the Trinidadian steel pan, and voice." },
       { eyebrow: "ISPS", title: "AP Vybz", href: "Drums-APVybz.dc.html", body: "Vice-president and drummer of the school's music organization." },
-      { eyebrow: "ISPS", title: "School Musicals", href: "Drums-Musicals.dc.html", body: "Mamma Mia!, and what a drummer does when the score is the boss." },
-      { eyebrow: "Grade 10", title: "MYP Arts Portfolio", href: "Drums-MYPPortfolio.dc.html", body: "The IB arts portfolio that closed out the Middle Years Programme." },
-      { eyebrow: "Perkiomen", title: "Rock band", href: "Drums-Rockband.dc.html", body: "The newest room." }
+      { eyebrow: "ISPS · Grades 8 to 10", title: "School Musicals", href: "Drums-Musicals.dc.html", body: "Beauty and the Beast, Legally Blonde and Mamma Mia!: three pits, three years." },
+      { eyebrow: "Grade 10", title: "MYP e-Portfolio", href: "Drums-MYPPortfolio.dc.html", body: "An EDM genre study and “Take on Me” on drums, with both tasks to read in full." },
+      { eyebrow: "Perkiomen", title: "Rock band", href: "Drums-Rockband.dc.html", body: "Drums and vocals in the newest room." }
     ],
-    facts: [["Instrument", "Drum kit"], ["Stages", "Five"], ["Countries", "Panama · Trinidad · United States"]],
-    slots: [{ key: "drums-hero", ratio: "16 / 9", label: "Behind the kit" }],
-    next: { title: "The rest of what I do", lede: "Water, weight and road.", href: "Activities.dc.html", label: "See the activities" }
+    stepsEyebrow: "Growth",
+    stepsTitle: "Three grades, one trajectory",
+    steps: [
+      ["Grade 8 · Learning the kit properly", "My Instrument and Me: “Sunday Bloody Sunday” by U2, four and a half pages of sheet music, a retake on the summative and my first lessons in tuning an acoustic kit. Then Instrumental Communities: teaching two classmates the beat of “As It Was” and drumming in the Beauty and the Beast pit."],
+      ["Grade 9 · Beyond the kit", "Glockenspiel for the school song, drums on “Waka Waka” at International Day, my first time on a tenor steel pan for visitors from Alaska, and five drum pieces plus piano in Legally Blonde."],
+      ["Grade 10 · Under pressure", "The school song on piano, an 8 out of 8 on “Upside Down”, 29 out of 30 on the theory test, the “Take on Me” e-Portfolio pushed toward 186 BPM, and Mamma Mia!: eleven pieces prepared, two on stage."],
+      ["Perkiomen · Now", "The rock band, on drums and now on vocals as well."]
+    ],
+    quote: { text: "I believe that this quarter is the start of my full dedication to drumming.", by: "Process journal, Grade 8" },
+    facts: [["Instruments", "Drums, glockenspiel, piano, steel pan, voice"], ["Stages", "Six, across three countries"], ["Music II class", "Two students, down from eighteen"]],
+    slots: [
+      { key: "drums-hero", ratio: "1170 / 1556", label: "Behind the kit" }
+    ],
+    next: {"title": "The rest of what I do", "lede": "Water, weight and road.", "href": "Activities.dc.html", "label": "See the activities"}
   },
   {
-    file: "Drums-SonoArte.dc.html", section: "drums", parent: { label: "Drums", href: "Drums.dc.html" },
-    eyebrow: "Drums · Stage one", title: "SonoArte", lede: "Where it started, in pandemic Panama, and kept going from Trinidad.",
-    desc: "SonoArte, the music school in Panama where I started drumming, and the online lessons that carried on from Trinidad.",
-    intro: "SonoArte is a music school in Panama, and it is where I started playing drums. I began in Panama, in the middle of the pandemic, and when we moved to Trinidad in 2021 I kept taking lessons with SonoArte online.",
+    file: "Drums-SonoArte.dc.html", section: "drums", parent: { label: "Music & Drums", href: "Drums.dc.html" },
+    eyebrow: "Music & Drums · Stage one", title: "SonoArte", lede: "Where it started, in pandemic Panama, and kept going from Trinidad.",
+    desc: "SonoArte, the music school in Panama where I started drumming at eleven, and the online lessons that carried on from Trinidad.",
+    intro: "SonoArte is a music school in Panama, and it is where I started playing drums. I began in the middle of the pandemic, and when we moved to Trinidad in 2021 I kept taking lessons with SonoArte online.",
     media: [
+      {
+        "title": "Before the kit",
+        "body": [
+          "I did not start with drums. I played the violin at four or five and the piano at six or seven, and stayed a beginner at both. When I stopped I did not expect to go back to music. Drums, at eleven, were the thing that stuck."
+        ],
+        "points": [
+          [
+            "Violin",
+            "Around age four or five."
+          ],
+          [
+            "Piano",
+            "Around age six or seven."
+          ],
+          [
+            "Drums",
+            "Back to music at eleven, and it stayed."
+          ]
+        ]
+      },
       {
         "title": "Starting in Panama",
         "body": [
@@ -1673,7 +1705,7 @@ const PAGES = [
       {
         "title": "Then Trinidad",
         "body": [
-          "When we moved to Port of Spain in August 2021 the lessons did not stop. I kept taking SonoArte online from Trinidad, which meant the kit stayed part of the week through a move that changed everything else about it."
+          "When we moved to Port of Spain in August 2021 the lessons did not stop. I kept taking SonoArte online from Trinidad, so the kit stayed part of the week through a move that changed everything else about it. By Grade 8 I was drumming about four hours a week, between class, an after-school lesson on Mondays and Thursdays, and practice at home."
         ],
         "points": [
           [
@@ -1683,7 +1715,17 @@ const PAGES = [
           [
             "Trinidad",
             "Lessons online, from a different country."
+          ],
+          [
+            "Grade 8",
+            "About four hours of drumming a week."
           ]
+        ]
+      },
+      {
+        "title": "Two kits",
+        "body": [
+          "I own an electric kit at home, so volume has never been a problem there: I can turn it down and practise at any hour. The school's acoustic kit is a different instrument. In Grade 8 I had to learn to hit more softly so my classmates could hear their own parts, and to tune the drums with a key without breaking anything."
         ]
       },
       {
@@ -1693,22 +1735,111 @@ const PAGES = [
         ]
       }
     ],
-    facts: [["School", "SonoArte, Panama"], ["Started", "Panama, during the pandemic"], ["Kept going", "Online from Trinidad"]],
+    facts: [["School", "SonoArte, Panama"], ["Started", "Panama, at eleven"], ["Kept going", "Online from Trinidad"]],
     slots: [
-
+      { key: "music-4", ratio: "960 / 1280", label: "On the electric kit at home, headphones on" }
     ],
-    next: {"title": "Next: AP Vybz", "lede": "The school band at ISPS.", "href": "Drums-APVybz.dc.html", "label": "Go to AP Vybz"}
+    next: {"title": "Next: Beyond the kit", "lede": "Glockenspiel, piano, steel pan and voice.", "href": "Drums-Instruments.dc.html", "label": "See the other instruments"}
   },
   {
-    file: "Drums-APVybz.dc.html", section: "drums", parent: { label: "Drums", href: "Drums.dc.html" },
-    eyebrow: "Drums · Stage two", title: "AP Vybz", lede: "The ISPS music organization, where I was vice-president and drummer.",
+    file: "Drums-Instruments.dc.html", section: "drums", parent: { label: "Music & Drums", href: "Drums.dc.html" },
+    eyebrow: "Music & Drums · Stage two", title: "Beyond the kit", lede: "Glockenspiel, piano, the steel pan, and now my voice.",
+    desc: "The other instruments I play besides drums: glockenspiel, piano, the Trinidadian steel pan and voice.",
+    intro: "A drummer is a percussionist, and percussion has a lot of relatives. At ISPS my music teachers kept handing me an instrument I had never touched and asking what I would do with it. Each one changed how I play the kit.",
+    media: [
+      {
+        "title": "Glockenspiel",
+        "body": [
+          "The glockenspiel is a percussion instrument that carries a melody, which my journal describes as “basically drums combined with piano”. In Grade 9 I chose it for the school song because nobody else in the class was playing it, and it let me keep a drummer's hands while I learned to carry a tune."
+        ],
+        "points": [
+          [
+            "The school song",
+            "Learned on glockenspiel, then played at International Day 2023 in the gym, glockenspiel at the front and the drums at the back."
+          ],
+          [
+            "Legally Blonde",
+            "First assigned the brass riffs of “Chip on My Shoulder” on it."
+          ]
+        ]
+      },
+      {
+        "title": "Piano",
+        "body": [
+          "In Music II I moved the same school song from the glockenspiel to the piano: two hands doing different jobs, keys that all look alike, and about two weeks to switch. I worked out how to play it without moving my hands, by fixing my fingers in set positions. The school-song summative came back an 8 out of 8."
+        ],
+        "points": [
+          [
+            "Before",
+            "Piano lessons at six or seven, at beginner level."
+          ],
+          [
+            "Grade 10",
+            "The school song, assessed first as a formative, then as the summative: an 8."
+          ],
+          [
+            "Legally Blonde",
+            "Piano with a backing track on “Chip on My Shoulder”."
+          ]
+        ]
+      },
+      {
+        "title": "Steel pan",
+        "body": [
+          "The steel pan is Trinidad's instrument, and the one I had never played. In January 2024 the school hosted visiting students from Alaska, and our class learned “Engine Room”, a Trinidad and Tobago piece, to play with them. I took the tenor pan, which carries the lead melody."
+        ],
+        "points": [
+          [
+            "The first class",
+            "I got past my first goal, the opening line of the sheet, in a single lesson."
+          ],
+          [
+            "The pressure",
+            "Several classmates left for a volleyball trip, which left me holding the lead melody on an instrument I had been playing for two weeks."
+          ],
+          [
+            "The visitors",
+            "They had no drummer, so I played drums on some of their songs, and we all played “Waka Waka” together."
+          ],
+          [
+            "The habit to unlearn",
+            "As a drummer I hit the pan too hard. Playing it taught me to play with less force."
+          ]
+        ]
+      },
+      {
+        "title": "Voice",
+        "body": [
+          "At Perkiomen I have also sung with the rock band, so the kit is no longer the only thing I do on stage. It is a different muscle. In Grade 9, while we prepared Legally Blonde, our class covered what vocalists need from a band: speak-singing, clear enunciation, steady intonation and listening to the players around them. For years I was the one keeping time for the singers."
+        ],
+        "points": [
+          [
+            "Rock band",
+            "Drums, and vocals."
+          ],
+          [
+            "From Grade 9",
+            "What a singer needs from the band, learned in the Legally Blonde unit."
+          ]
+        ]
+      }
+    ],
+    facts: [["Instruments", "Glockenspiel, piano, steel pan, voice"], ["Started on", "Drums, at eleven"], ["As a child", "Violin and piano"]],
+    slots: [
+      { key: "instruments-hero", ratio: "1280 / 800", label: "Glockenspiel, piano, steel pan and voice" }
+    ],
+    next: {"title": "Next: AP Vybz", "lede": "The school music organization at ISPS.", "href": "Drums-APVybz.dc.html", "label": "Go to AP Vybz"}
+  },
+  {
+    file: "Drums-APVybz.dc.html", section: "drums", parent: { label: "Music & Drums", href: "Drums.dc.html" },
+    eyebrow: "Music & Drums · Stage three", title: "AP Vybz", lede: "The ISPS music organization, where I was vice-president and drummer.",
     desc: "AP Vybz, the music organization at the International School of Port of Spain. Vice-president and drummer.",
     intro: "AP Vybz is ISPS's student music organization. It exists to give students, and staff, a chance to explore genres and instruments they are curious about, and to push members out of their comfort zone so they grow as people and as artists.",
     media: [
       {
         "title": "The club",
         "body": [
-          "The idea is to try genres and instruments you would not otherwise touch, and to do it alongside other people."
+          "The idea is to try genres and instruments you would not otherwise touch, and to do it alongside other people. I was going to the school's Monday lunchtime music club, MS Vibez, as early as Grade 8."
         ]
       },
       {
@@ -1732,6 +1863,22 @@ const PAGES = [
         ]
       },
       {
+        "title": "What I brought to it",
+        "body": [
+          "Music class had already given me practice at leading a group. In Grade 8 I spent two full classes teaching two classmates the beat of “As It Was”, and as the main percussionist I set the tempo for the whole group. In Grade 9 I slowed my own playing so the steel pan players could keep up on “Waka Waka”, and I split the Legally Blonde drum parts with my fellow drummer so we both got to play."
+        ],
+        "points": [
+          [
+            "Grade 8",
+            "Taught the beat of “As It Was” to two classmates."
+          ],
+          [
+            "Grade 9",
+            "Slowed down for the steel pan players, and shared the drum parts."
+          ]
+        ]
+      },
+      {
         "title": "What came next",
         "body": [
           "The plan was more performances, each with better quality, and auditions, so that the people on stage were talented and passionate about being there."
@@ -1746,83 +1893,212 @@ const PAGES = [
       { key: "isps-9", ratio: "382 / 270", label: "AP Vybz, the school music organization" },
       { key: "isps-10", ratio: "772 / 447", label: "AP Vybz members performing and rehearsing" }
     ],
-    next: {"title": "Next: ISPS School Musicals", "lede": "Mamma Mia!", "href": "Drums-Musicals.dc.html", "label": "Go to the musicals"}
+    next: {"title": "Next: ISPS School Musicals", "lede": "Three productions in three years.", "href": "Drums-Musicals.dc.html", "label": "Go to the musicals"}
   },
   {
-    file: "Drums-Musicals.dc.html", section: "drums", parent: { label: "Drums", href: "Drums.dc.html" },
-    eyebrow: "Drums · Stage three", title: "ISPS School Musicals", lede: "Mamma Mia!, and what a drummer does when the score is the boss.",
-    desc: "Drumming through the Mamma Mia! unit that closed Music II at the International School of Port of Spain.",
-    intro: "Music II at ISPS ended with a musical. Mine was Mamma Mia!, and I drummed through it.",
+    file: "Drums-Musicals.dc.html", section: "drums", parent: { label: "Music & Drums", href: "Drums.dc.html" },
+    eyebrow: "Music & Drums · Stage four", title: "ISPS School Musicals", lede: "Beauty and the Beast, Legally Blonde and Mamma Mia!: three pits, three years.",
+    desc: "Playing drums, piano and glockenspiel in the pit for three ISPS school musicals: Beauty and the Beast (2023), Legally Blonde (2024) and Mamma Mia! (2025).",
+    intro: "Every year the ISPS music class plays the pit for the school musical. I played in three of them, and each asked something different of a drummer. The journals I kept for each unit are where this page comes from.",
     media: [
       {
-        "title": "Mamma Mia!",
+        "title": "Beauty and the Beast · Grade 8 · May 2023",
         "body": [
-          "Music II is the grade 10 music course, and the unit that closed it out was Mamma Mia!. I played drums for it."
-        ]
-      },
-      {
-        "title": "A different job",
-        "body": [
-          "In a band the drummer sets the groove. In a musical the groove belongs to the score, the singers and the people on stage, and the drummer's job is to keep time for all of them. It is a quieter kind of leading, and a good one to learn."
-        ]
-      },
-      {
-        "title": "The result",
-        "body": [
-          "Music II is also where an Academic Excellence award came from, in grade 10 at ISPS."
-        ]
-      }
-    ],
-    facts: [["Course", "Music II, grade 10"], ["Production", "Mamma Mia!"], ["School", "ISPS"]],
-    slots: [
-
-    ],
-    next: {"title": "Next: MYP Arts Portfolio", "lede": "Grade 10.", "href": "Drums-MYPPortfolio.dc.html", "label": "Go to the portfolio"}
-  },
-  {
-    file: "Drums-MYPPortfolio.dc.html", section: "drums", parent: { label: "Drums", href: "Drums.dc.html" },
-    eyebrow: "Drums · Stage four", title: "MYP Arts Portfolio", lede: "Grade 10, and the portfolio that closed out the Middle Years Programme.",
-    desc: "The MYP Arts Portfolio, the grade 10 arts project that sits at the end of the IB Middle Years Programme.",
-    intro: "The MYP Arts Portfolio is the arts project in the last year of the IB Middle Years Programme. Mine is the grade 10 stage of my drumming.",
-    media: [
-      {
-        "title": "What the portfolio is",
-        "body": [
-          "In MYP Arts, students keep a portfolio of their creative work and how it developed. It is assessed on four criteria: knowing and understanding the art form, developing skills, thinking creatively, and responding to the work."
-        ]
-      },
-      {
-        "title": "Where it sits in the story",
-        "body": [
-          "Grade 10 is also the year of my Personal Project, my MYP Bilingual Diploma and Music II. The portfolio is where drumming became something I had to explain and defend, not only play."
+          "The earliest show in my journals. We had about a month to learn the drum parts, which I practised alongside the class song “As It Was”. It taught me to split my time between a group piece and a show with an audience."
         ],
         "points": [
           [
-            "Year",
-            "Grade 10, ISPS"
+            "The pieces",
+            "Drum parts including “Gaston” and “Maurice's Entrance”."
           ],
           [
-            "Programme",
-            "IB Middle Years Programme"
-          ],
-          [
-            "Alongside",
-            "The Personal Project, and Music II"
+            "The lesson",
+            "Two communities at once: the music class, and the production's music crew."
           ]
+        ]
+      },
+      {
+        "title": "Legally Blonde · Grade 9 · June 2024",
+        "body": [
+          "The official song list gave me five drum pieces and one piano part with a backing track. The 10th graders asked me to drum their number, “Whipped into Shape”, which I took as an honour. My fellow drummer and I split the other drum parts so we both got to play, and shared one kit through the rehearsals."
+        ],
+        "points": [
+          [
+            "Drums",
+            "“What You Want” (reggae), “Positive”, “Harvard Party Music”, “Whipped into Shape”, “Legally Blonde Remix”."
+          ],
+          [
+            "Piano with track",
+            "“Chip on My Shoulder”."
+          ],
+          [
+            "Shows",
+            "June 6 and 7, after weeks of rehearsals and a dress rehearsal the day before."
+          ],
+          [
+            "What held",
+            "Transitions between pieces got smoother from Thursday to Friday, and the pit ran without technical problems."
+          ],
+          [
+            "What did not",
+            "“What You Want” under pressure in the verses: I kept the beat but not every note."
+          ]
+        ]
+      },
+      {
+        "title": "Mamma Mia! · Grade 10 · June 2025",
+        "body": [
+          "This one was a different level. The score was played strictly from the sheet, with professional musicians in the band, so there was no room to invent my own versions of the songs as in earlier shows. I prepared eleven pieces over six weeks, and I was asked to play two of them on stage."
+        ],
+        "points": [
+          [
+            "Prepared",
+            "“Money, Money, Money” (learned in a single double period), “Dancing Queen”, “Waterloo”, “The Winner Takes It All”, “Thank You for the Music”, “Mamma Mia”, a scene change, and more. Eleven in all."
+          ],
+          [
+            "On stage",
+            "“Lay All Your Love on Me” and “Voulez-Vous”, June 11 and 12."
+          ],
+          [
+            "What I learned",
+            "That show-day pressure is its own skill. After the first night I wrote down exactly what slipped (tempo, balance, the rests) so I could correct it for the second."
+          ]
+        ]
+      },
+      {
+        "title": "What the three have in common",
+        "body": [
+          "In a band the drummer sets the groove. In a musical the groove belongs to the score, the singers and the people on stage, and the drummer's job is to keep time for all of them. Over three years that moved from playing by ear to playing from a sheet, from many parts to the two I could be trusted with, and from working alone to working with a pit."
         ]
       }
     ],
-    facts: [["Year", "Grade 10"], ["Programme", "IB MYP"], ["School", "ISPS"]],
+    facts: [["Shows", "Beauty and the Beast, Legally Blonde, Mamma Mia!"], ["Years", "2023, 2024, 2025"], ["Instruments", "Drums, piano"]],
     slots: [
-
+      { key: "musicals-hero", ratio: "1280 / 800", label: "Three school musicals: Beauty and the Beast, Legally Blonde, Mamma Mia!" }
+    ],
+    next: {"title": "Next: MYP e-Portfolio", "lede": "Grade 10.", "href": "Drums-MYPPortfolio.dc.html", "label": "Go to the e-Portfolio"}
+  },
+  {
+    file: "Drums-MYPPortfolio.dc.html", section: "drums", parent: { label: "Music & Drums", href: "Drums.dc.html" },
+    eyebrow: "Music & Drums · Stage five", title: "MYP e-Portfolio", lede: "Grade 10: an EDM genre study, and “Take on Me” on drums at 186 BPM.",
+    desc: "My Grade 10 Music II e-Portfolio for the IB Middle Years Programme: a Spanish-language study of EDM, and the preparation of A-ha's “Take on Me” on drums. Both tasks can be read in full here.",
+    intro: "The e-Portfolio is the music project that closes the IB Middle Years Programme, running from November 2024 to March 2025. Mine has two tasks, both written in Spanish: a study of electronic dance music, and the weeks I spent learning “Take on Me” on drums. Both are here to read, page by page.",
+    media: [
+      {
+        "title": "The brief",
+        "body": [
+          "The unit's statement of inquiry was “art imagines possible futures”. Task 1 chose a genre and two songs, and justified the one I would perform. Task 2 followed the weeks of preparing it. The portfolio is assessed on the four MYP arts criteria: knowing and understanding, developing skills, thinking creatively, and responding."
+        ]
+      },
+      {
+        "title": "Task 1 · The genre study",
+        "body": [
+          "I studied electronic dance music because it is where technology rewrote what music could be. I compared two songs from the 1980s that used new machines to imagine a future."
+        ],
+        "points": [
+          [
+            "“Your Love”, Frankie Knuckles",
+            "House, 4/4 at 118 BPM in E minor, built on the Roland TR-909 drum machine."
+          ],
+          [
+            "“Take on Me”, a-ha",
+            "Synth-pop at 169 BPM in G minor, built on the Juno-60, DX7 and Linn Drum."
+          ],
+          [
+            "How I compared them",
+            "Tempo, key, structure, texture, dynamics, the lyrics and the machines behind the sound, plus MIDI and where EDM went afterwards."
+          ],
+          [
+            "The verdict",
+            "“Take on Me”: more innovations, more impact, and a tempo that, as a drummer, opened my eyes."
+          ]
+        ]
+      },
+      {
+        "title": "Task 2 · Learning it",
+        "body": [
+          "My artistic intention was to play the piece in an agile, powerful way that gives the audience a rush toward the future. I split the learning into the beginning, the middle and the end, and wrote a strengths, weaknesses and next-steps entry for each."
+        ],
+        "points": [
+          [
+            "Week 1",
+            "Learned the opening by ear and used the Moeller technique on the hi-hat. Added an open hi-hat at the end of four bars so the intro would not sound flat."
+          ],
+          [
+            "Weeks 2 and 3",
+            "Found a drum-cover video at my level, played it at ×0.7 to ×0.8, then used a metronome to climb back to the original tempo. Added the fills, the tom and the ride."
+          ],
+          [
+            "Weeks 4 and 5",
+            "Raised the speed by 0.05 to 0.1 each lesson up to ×1.1, which is nearly 186 BPM. I practised on the school acoustic kit and an electric kit at home."
+          ],
+          [
+            "Week 6",
+            "A rehearsal performance in front of physics and drama students."
+          ]
+        ]
+      },
+      {
+        "title": "What went wrong, on the record",
+        "body": [
+          "The backing video failed at the start of the rehearsal performance, so I played the whole piece from memory. The ending was strong. The middle was not: my fills ran slow at 3:10, 3:20 and 3:30, and I had worn out before the bridge. I wrote all of that down, along with the plan: a clearer structure for where each fill goes, and an outfit chosen to say something about the future."
+        ],
+        "slots": [
+          "eport-perform"
+        ]
+      },
+      {
+        "title": "A class of two",
+        "body": [
+          "Between Music I in Grade 9 and Music II in Grade 10 the class went from eighteen people to two. The other was a good friend and a fellow drummer. We shared one kit, traded notes when one of us missed a lesson, and played the school song and the Trinidad and Tobago national anthem together."
+        ]
+      }
+    ],
+    readers: [
+      {
+        "kicker": "Read it here",
+        "heading": "The e-Portfolio, top to bottom",
+        "intro": "Both tasks and the bibliography exactly as I submitted them. Pick one and scroll. The PDFs open in a new tab as well.",
+        "items": [
+          {
+            "kicker": "Task 1",
+            "title": "El Futuro Imagina Artes Posibles: the genre study of EDM",
+            "pages": 7,
+            "blurb": "The EDM study in Spanish: origins in Jamaican dub and Chicago house, “Your Love” against “Take on Me”, the machines behind each, and the reasoning for the piece I chose to play.",
+            "pdf": "/assets/docs/eportfolio-task1.pdf",
+            "dir": "/assets/docs/eportfolio-task1"
+          },
+          {
+            "kicker": "Task 2",
+            "title": "Preparación para la actuación: preparing “Take on Me”",
+            "pages": 4,
+            "blurb": "The artistic intention and the six weeks of practice, with strengths, weaknesses and next steps for each stage.",
+            "pdf": "/assets/docs/eportfolio-task2.pdf",
+            "dir": "/assets/docs/eportfolio-task2"
+          },
+          {
+            "kicker": "Sources",
+            "title": "Bibliografía",
+            "pages": 1,
+            "blurb": "The sources behind both tasks.",
+            "pdf": "/assets/docs/eportfolio-bibliography.pdf",
+            "dir": "/assets/docs/eportfolio-bibliography"
+          }
+        ]
+      }
+    ],
+    facts: [["Course", "Music II, Grade 10"], ["Tasks", "A genre study and a performance process"], ["Language", "Spanish"]],
+    slots: [
+      { key: "eport-kits", ratio: "1200 / 744", label: "Two kits: the school's acoustic kit and the electric kit at home" },
+      { key: "eport-perform", ratio: "1018 / 984", label: "The rehearsal performance in week 6, a still from the e-Portfolio video" }
     ],
     next: {"title": "Next: Rock band at Perkiomen", "lede": "The newest room.", "href": "Drums-Rockband.dc.html", "label": "Go to the rock band"}
   },
   {
-    file: "Drums-Rockband.dc.html", section: "drums", parent: { label: "Drums", href: "Drums.dc.html" },
-    eyebrow: "Drums · Stage five", title: "Rock band at Perkiomen", lede: "The newest room.",
-    desc: "Drumming in the Perkiomen rock band, the most recent stage.",
-    intro: "At Perkiomen I play drums in the school rock band. It is the most recent of the five rooms.",
+    file: "Drums-Rockband.dc.html", section: "drums", parent: { label: "Music & Drums", href: "Drums.dc.html" },
+    eyebrow: "Music & Drums · Stage six", title: "Rock band at Perkiomen", lede: "The newest room: drums, and now vocals.",
+    desc: "Drumming and singing in the Perkiomen rock band, the most recent stage.",
+    intro: "At Perkiomen I play drums in the school rock band, and I have sung with it too. It is the most recent of the six rooms.",
     media: [
       {
         "title": "The band",
@@ -1830,37 +2106,35 @@ const PAGES = [
           "The band rehearses on the school's own stage, under the 1875 Perkiomen seal. Set-up, sound check, then the songs, over and over until they hold."
         ],
         "slots": [
-          "music-5",
-          "music-2"
+          "music-5"
         ]
       },
       {
         "title": "At the kit",
         "body": [
-          "The kit is also where I think. I also practise on an electronic kit."
-        ],
-        "slots": [
-          "music-4",
-          "music-1"
+          "The kit is also where I think. It is the same instrument I started on in Panama, and the same habits: learn it by ear, then clean it up from the sheet, then play it faster than feels sensible."
+        ]
+      },
+      {
+        "title": "And the mic",
+        "body": [
+          "Singing is new. It is a different muscle, but not a different job: be in time, be heard, and make the people around you sound better. Years of keeping time for singers taught me what they need from the band, and now I get to be the one who needs it."
         ]
       },
       {
         "title": "The thread",
         "body": [
-          "From SonoArte to a rock band is five rooms in three countries. Every school I joined had a room with a kit in it, and the kit is how I met people."
+          "From SonoArte to a rock band is six rooms in three countries. Every school I joined had a room with a kit in it, and the kit is how I met people."
         ]
       }
     ],
-    facts: [["Band", "Perkiomen rock band"], ["Role", "Drummer"], ["School", "Perkiomen"]],
+    facts: [["Band", "Perkiomen rock band"], ["Role", "Drums and vocals"], ["School", "Perkiomen"]],
     slots: [
-      { key: "music-1", ratio: "1170 / 1556", label: "Behind the kit with the Perkiomen rock band" },
       { key: "music-2", ratio: "1600 / 1200", label: "The band before the set" },
-      { key: "music-4", ratio: "960 / 1280", label: "Practising on an electronic kit at home" },
       { key: "music-5", ratio: "1400 / 933", label: "Rehearsal on the Perkiomen stage" }
     ],
     next: {"title": "The rest of what I do", "lede": "Water, weight and road.", "href": "Activities.dc.html", "label": "See the activities"}
   },
-
   /* -------------------------------------------------------- activities ---- */
   {
     file: "Activities-Swimming.dc.html", section: "activities", parent: { label: "Activities", href: "Activities.dc.html" },
@@ -2042,7 +2316,7 @@ const PAGES = [
     intro: "This is the listening half. The playing half lives under Activities: SonoArte, Mamma Mia! at ISPS, the Perkiomen rock band. This page is about what is actually in my ears the rest of the time.",
     body: ["Moving every few years does something specific to a music taste: you end up with a library that is a map. Reggaeton and banda from Monterrey, vallenato from Bogotá, soca and calypso from Port of Spain, and whatever the rock band was covering that term.", "It is the least deliberate thing on this site. Nothing here was chosen to be interesting. It is just what stuck from each place."],
     tbd: "Your current rotation, the artists that matter most, and a Spotify link if you want one embedded. Send these and this page gets a real shelf.",
-    facts: [["From", "Mexico · Colombia · Trinidad · US"], ["Also plays", "Drums, see Activities"], ["On repeat", TBD]],
+    facts: [["From", "Mexico · Colombia · Trinidad · US"], ["Also plays", "Drums and more, see Music & Drums"], ["On repeat", TBD]],
     slots: [
       { key: "music-listen-1", ratio: "4 / 3", label: "Listening" },
       { key: "music-listen-2", ratio: "1 / 1", label: "Records, headphones, a playlist" }
@@ -2219,7 +2493,7 @@ function renderReader(rd, pageKey) {
   <div class="sa-reader">
 ${rd.items.map((it, i) => `    <input type="radio" name="rd-${pageKey}" id="${id(i)}" class="sa-reader-radio"${i === 0 ? " checked" : ""}>`).join("\n")}
     <div class="sa-reader-list" role="list">
-${rd.items.map((it, i) => `      <label for="${id(i)}" role="listitem"><em>${esc(it.kicker || "")}</em><strong>${esc(it.title)}</strong><small>${it.pages} pages</small></label>`).join("\n")}
+${rd.items.map((it, i) => `      <label for="${id(i)}" role="listitem"><em>${esc(it.kicker || "")}</em><strong>${esc(it.title)}</strong><small>${it.pages} ${it.pages === 1 ? "page" : "pages"}</small></label>`).join("\n")}
     </div>
     <div class="sa-reader-stage">
 ${rd.items.map((it, i) => `      <div class="sa-reader-panel" id="${id(i)}-panel">
@@ -2545,7 +2819,7 @@ ${crumb}  <span class="sa-kicker" style="margin-top:var(--sa-space-4);font:var(-
   <p style="font:var(--sa-type-lede);font-size:var(--sa-text-lg);color:var(--sa-text-secondary);max-width:56ch;margin-top:var(--sa-space-6);text-wrap:pretty">${esc(p.lede)}</p>
 </section>
 
-<section data-reveal="1" style="width:100%;max-width:1440px;margin:0 auto;padding:0 clamp(24px,5vw,64px) var(--sa-space-16) clamp(24px,11vw,168px);box-sizing:border-box;display:grid;grid-template-columns:minmax(300px,1.05fr) minmax(260px,0.95fr);gap:clamp(32px,5vw,72px);align-items:start">
+<section data-reveal="1" class="sa-pagebody" style="width:100%;max-width:1440px;margin:0 auto;padding:0 clamp(24px,5vw,64px) var(--sa-space-16) clamp(24px,11vw,168px);box-sizing:border-box;display:grid;grid-template-columns:minmax(300px,1.05fr) minmax(260px,0.95fr);gap:clamp(32px,5vw,72px);align-items:start">
     <div>
       <p style="font:var(--sa-type-lede);color:var(--sa-text-primary);max-width:60ch;text-wrap:pretty">${esc(p.intro)}</p>
 ${bodyParas}
@@ -2751,7 +3025,7 @@ function spiralSvg() {
     "Activities.dc.html": "lift-squat", "Curiosities.dc.html": "games-artorias", "Media.dc.html": "trip-versailles",
     "Leadership-HOSA.dc.html": "hosa-conference", "Leadership-MUN.dc.html": "mun-eagle", "Leadership-Shadowing.dc.html": "hosp-or",
     "Leadership-Volunteering.dc.html": "vol-river", "Activities-Swimming.dc.html": "swim-blocks", "Activities-Weightlifting.dc.html": "lift-squat",
-    "Drums.dc.html": "music-drums", "Drums-SonoArte.dc.html": "music-electric", "Drums-APVybz.dc.html": "isps-apvybz", "Drums-Rockband.dc.html": "music-stage", "Activities-Running.dc.html": "run-tired", "Academics-ISPS.dc.html": "isps-guayasamin",
+    "Drums.dc.html": "music-drums", "Drums-SonoArte.dc.html": "music-electric", "Drums-Instruments.dc.html": "music-instruments", "Drums-APVybz.dc.html": "isps-apvybz", "Drums-Musicals.dc.html": "music-musicals", "Drums-MYPPortfolio.dc.html": "music-eportfolio", "Drums-Rockband.dc.html": "music-stage", "Activities-Running.dc.html": "run-tired", "Academics-ISPS.dc.html": "isps-guayasamin",
     "Academics-Perkiomen.dc.html": "perk-paws", "Academics-ExeterSummer.dc.html": "exeter-banner", "Academics-CompBio.dc.html": "cmu-friends",
     "Research-CellAtlas.dc.html": "gbm-3", "Research-MedicalApp.dc.html": "field-notes", "Research-CSRx.dc.html": "cert-csrx",
     "Research-Venezuela.dc.html": "vz-exhibit", "Curiosities-Videogames.dc.html": "games-artorias", "Curiosities-Music.dc.html": "music-band",

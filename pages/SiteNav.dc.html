@@ -13,7 +13,7 @@
 <x-dc>
 <helmet>
 <link rel="stylesheet" href="../_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/styles.css">
-<link rel="stylesheet" href="../assets/site.css?v=6fcecb45">
+<link rel="stylesheet" href="../assets/site.css?v=5e135843">
 <script src="../_ds/santiago-aguilera-design-system-9830153d-9277-4c73-8263-d161c385797f/_ds_bundle.js"></script>
 <style>
 .sa-nav-scroll{scrollbar-width:none}.sa-nav-scroll::-webkit-scrollbar{display:none}
@@ -37,7 +37,7 @@
 
     <div class="sa-nav-inline sa-nav-scroll" style="display:flex;align-items:center;gap:var(--sa-space-1);margin-left:auto;min-width:0;overflow-x:auto">
       <sc-for list="{{ links }}" as="l" hint-placeholder-count="7">
-        <a href="{{ l.href }}" style="padding:8px 12px;font:var(--sa-type-ui);text-decoration:none;color:inherit;opacity:{{ l.opacity }};border-radius:var(--sa-radius-pill);transition:var(--sa-transition-control);white-space:nowrap;flex:none" style-hover="opacity:1">
+        <a href="{{ l.href }}" style="padding:8px 8px;font:var(--sa-type-ui);text-decoration:none;color:inherit;opacity:{{ l.opacity }};border-radius:var(--sa-radius-pill);transition:var(--sa-transition-control);white-space:nowrap;flex:none" style-hover="opacity:1">
           {{ l.label }}
         </a>
       </sc-for>
@@ -122,11 +122,12 @@ const SECTIONS = [
     { label: "Weightlifting", href: "Activities-Weightlifting.dc.html" },
     { label: "Running", href: "Activities-Running.dc.html" }
   ]},
-  { id: "drums", label: "Drums", href: "Drums.dc.html", children: [
+  { id: "drums", label: "Music & Drums", href: "Drums.dc.html", children: [
     { label: "SonoArte", href: "Drums-SonoArte.dc.html" },
+    { label: "Beyond the kit", href: "Drums-Instruments.dc.html" },
     { label: "AP Vybz", href: "Drums-APVybz.dc.html" },
     { label: "ISPS School Musicals", href: "Drums-Musicals.dc.html" },
-    { label: "MYP Arts Portfolio", href: "Drums-MYPPortfolio.dc.html" },
+    { label: "MYP e-Portfolio", href: "Drums-MYPPortfolio.dc.html" },
     { label: "Rock band at Perkiomen", href: "Drums-Rockband.dc.html" }
   ]},
   { id: "curiosities", label: "Curiosities", href: "Curiosities.dc.html", children: [
