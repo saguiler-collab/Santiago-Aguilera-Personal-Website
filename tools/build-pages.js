@@ -286,6 +286,31 @@ const PAGES = [
     tbd: "What the Mr. Jefferies Memorial Award recognises. Its criteria are not published anywhere I could find, so rather than guess at what it honours, the entry below just states the fact of it. Send the description and it goes in.",
     media: [
       {
+        "title": "The school",
+        "body": [
+          "The International School of Port of Spain is a private, not-for-profit, coeducational day school offering Pre-Kindergarten through grade 12. It opened in September 1994, and it is an assisted school of the U.S. Department of State's Office of Overseas Schools.",
+          "The year runs on a northern-hemisphere calendar: two semesters, late August to mid-January and mid-January to late June, split into four grading periods."
+        ],
+        "points": [
+          ["Small", "308 students and 47 faculty in 2026, so a Student Council or a club is run by a handful of people who all know each other."],
+          ["Mixed", "56.2% of students come from the receiving state, Trinidad and Tobago, 18.2% are U.S. citizens and 25.6% are from third countries. Students represent Trinidad and Tobago, the USA, the UK, Canada and France."],
+          ["Divisions", "113 in elementary, 57 in middle school, 125 in high school and 13 in PreK."]
+        ],
+        "slots": ["isps-6"]
+      },
+      {
+        "title": "The system I studied in",
+        "body": [
+          "ISPS is an assisted school of the U.S. State Department, and it offers the IB, AP and the American Diploma. My own years there were the IB Middle Years Programme, grades 6 to 10."
+        ],
+        "points": [
+          ["IB, AP and the American Diploma", "All three are offered in high school."],
+          ["Standardised tests", "MAP and the SAT are offered. The ACT is not."],
+          ["Accreditation", "NEASC, with a U.S. Principal Officer's representative holding a voting seat on the school board."],
+          ["Language", "Spanish is the language offered, which suited a student whose first language it was."]
+        ]
+      },
+      {
         "title": "Student Council and Stronger Together",
         "body": [
           "Student Council meant representing my class and running school-wide events. Stronger Together was a student-led initiative supporting classmates through the return to in-person school after remote learning.",
@@ -329,7 +354,7 @@ const PAGES = [
         ]
       }
     ],
-    facts: [["Years", "2021 – 2025"], ["Roles", "Student Council · Stronger Together"], ["Programme", "IB Middle Years Programme"]],
+    facts: [["Years", "2021 – 2025"], ["School", "PreK–12, 308 students"], ["Accreditation", "NEASC"], ["Roles", "Student Council · Stronger Together"], ["Programme", "IB Middle Years Programme"]],
     awards: {
       title: "Four years of awards",
       lede: "Awarded across the IB Middle Years Programme, grades 7 through 10.",
@@ -361,6 +386,7 @@ const PAGES = [
       { key: "isps-1", ratio: "4 / 3", label: "ISPS campus" },
       { key: "isps-2", ratio: "4 / 3", label: "Student Council" },
       { key: "isps-3", ratio: "1 / 1", label: "Awards ceremony" },
+      { key: "isps-6", ratio: "1092 / 1176", label: "The International School of Port of Spain 2026 fact sheet, from the U.S. Department of State Office of Overseas Schools" },
       { key: "isps-4", ratio: "1141 / 1145", label: "Oswaldo Guayasamín, the original" },
       { key: "isps-5", ratio: "1400 / 1238", label: "My recreation, for Spanish class" }
     ],
@@ -1700,7 +1726,8 @@ function renderPage(p) {
      the slot appears. The lead photo is the first one that exists; a page with none keeps
      a single placeholder so it is clear where the first photo goes. */
   const filledSlots = slots.filter((sl) => PHOTO_MANIFEST[sl.key]);
-  const heroSlot = filledSlots[0];
+  const inRows = new Set((p.media || []).flatMap((r) => r.slots || []));
+  const heroSlot = filledSlots.find((sl) => !inRows.has(sl.key)) || (p.media ? undefined : filledSlots[0]);
   const restSlots = filledSlots.filter((sl) => sl !== heroSlot);
 
   const crumb = p.parent
