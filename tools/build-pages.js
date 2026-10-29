@@ -503,6 +503,23 @@ const PAGES = [
         "gallery": true
       }
     ],
+    readers: [
+      {
+        "kicker": "The project",
+        "heading": "Seeing the numbers",
+        "intro": "The seminar's project asked us to make the impact of violence and lack of opportunity visible. These pages are part of that work. The figures are the ones printed on the designs.",
+        "items": [
+          {
+            "kicker": "Awareness design",
+            "title": "Our awareness designs: one grain of rice, one story",
+            "pages": 3,
+            "blurb": "Physical models from the leadership seminar that turn statistics about discrimination into something you can see. Each page pairs a symbol with the number it stands for.",
+            "pdf": "/assets/docs/inequality-models.pdf",
+            "dir": "/assets/docs/inequality-models"
+          }
+        ]
+      }
+    ],
     facts: [["Program", "Hamm '55 Leadership Program"], ["Place", "Exeter, New Hampshire"], ["Focus", "Social justice · community engagement"], ["Also", "SAT prep · intro calculus"]],
     slots: [
       { key: "exeter-1", ratio: "4 / 3", label: "Along the river in Exeter" },
@@ -1069,18 +1086,72 @@ const PAGES = [
     eyebrow: "Leadership · Founder & President", title: "HOSA", lede: "Future Health Professionals. Perkiomen chapter.",
     desc: "Founded and leads Perkiomen's HOSA chapter, Future Health Professionals.",
     intro: "I founded Perkiomen's HOSA chapter because the school did not have one. HOSA, Future Health Professionals, is the national organisation for students heading into healthcare, and its absence meant anyone interested had nowhere to put that interest.",
-    body: ["Founding it meant the usual unglamorous work: a charter, an advisor, a room, and enough people in that room to make it real.", "One of the chapter's events was a volleyball tournament with La Casa Latina for Childhood Cancer Awareness Month, held on a Friday night at the Hollenbach Athletic Center and raising money for Alex's Lemonade Stand Foundation."],
-    steps: [
-      ["Founded", "Perkiomen's HOSA chapter, to create opportunities for students interested in healthcare."],
-      ["Built", TBD, true],
-      ["Impact", TBD, true]
+    media: [
+      {
+        "title": "Starting it",
+        "body": [
+          "Founding it meant the usual unglamorous work: a charter, an advisor, a room, and enough people in that room to make it real. The chapter has run unofficially since February 2026, and I have been its president since September 2026."
+        ]
+      },
+      {
+        "title": "The clothing and food drive",
+        "body": [
+          "From October 13 to 23, HOSA and the Community Service Club ran a clothing and food drive, collecting donations at tables in the dining hall and student center during lunch.",
+          "Donations were worth points: heavier items counted for more, and a raffle rewarded the students who gave. We raised over 1,000 points, the equivalent of more than 300 pieces of clothing and food for the community."
+        ],
+        "points": [
+          [
+            "1 point",
+            "Socks or canned food."
+          ],
+          [
+            "2 points",
+            "A shirt or top, shorts, or a family-size food item."
+          ],
+          [
+            "4 points",
+            "Pants, or a large multi-box of food."
+          ],
+          [
+            "5 to 7 points",
+            "Sweaters and hoodies, light jackets, and heavy winter jackets."
+          ]
+        ],
+        "slots": [
+          "hosa-5"
+        ]
+      },
+      {
+        "title": "Where it goes",
+        "body": [
+          "What we collected goes to nonprofits in Pennsylvania. We are collaborating with organisations such as Cutloose Cares to donate what the school raised, and with local stores that support our school."
+        ]
+      },
+      {
+        "title": "Volleyball and bracelets",
+        "body": [
+          "The chapter also ran a volleyball tournament with La Casa Latina for Childhood Cancer Awareness Month, on a Friday night at the Hollenbach Athletic Center, raising money for Alex's Lemonade Stand Foundation. We sold cancer bracelets as well, and more tournaments are planned, to give back to the people the money is for."
+        ],
+        "slots": [
+          "hosa-4"
+        ]
+      },
+      {
+        "title": "Around the chapter",
+        "slots": [
+          "hosa-1",
+          "hosa-2",
+          "hosa-3"
+        ],
+        "gallery": true
+      }
     ],
-    tbd: "The events run so far, participation numbers, competition results and anything raised. Send these and this page can show impact rather than a title.",
-    facts: [["Role", "Founder & President"], ["Organisation", "HOSA"], ["School", "Perkiomen"]],
+    facts: [["Role", "Founder & President"], ["Since", "February 2026 (president from September 2026)"], ["Drive", "1,000+ points, about 300+ items"], ["Organisation", "HOSA"], ["School", "Perkiomen"]],
     slots: [
       { key: "hosa-1", ratio: "3 / 4", label: "Addressing the room at a school event" },
       { key: "hosa-2", ratio: "4 / 3", label: "With fellow students in the gym" },
       { key: "hosa-3", ratio: "4 / 3", label: "Between sessions at a HOSA conference" },
+      { key: "hosa-5", ratio: "990 / 1320", label: "Poster for the HOSA and Community Service Club clothing and food drive" },
       { key: "hosa-4", ratio: "848 / 1090", label: "Poster for the Perk HOSA and La Casa Latina volleyball tournament for Childhood Cancer Awareness" }
     ],
     next: { title: "Next: Model UN", lede: "Delegate at Princeton and Eagle MUNC.", href: "Leadership-MUN.dc.html", label: "Go to Model UN" }
@@ -1118,7 +1189,7 @@ const PAGES = [
         "title": "The newsroom",
         "body": [
           "Model UN taught me to defend a case that is not my own. Running the newsroom taught me the harder version: describing every case in the room accurately, including the ones I disagreed with.",
-          "From March to August 2026 I worked as GVMUN's journalism intern, which meant writing for deadlines, writing for readers who were not in the room, and keeping up with what was actually happening in the world."
+          "From March to August 2026 I worked as GVMUN's journalism intern, which meant writing for deadlines, writing for readers who were not in the room, and keeping up with what was actually happening in the world. Since September 2026 I have been the Journalism Director, managing the newsroom's articles."
         ]
       },
       {
@@ -1219,7 +1290,7 @@ const PAGES = [
         ]
       }
     ],
-    facts: [["Role", "Director of Journalism"], ["Conference", "GVMUN"], ["Term", "March – August 2026"], ["Also", "Model UN delegate"]],
+    facts: [["Role", "Director of Journalism"], ["Conference", "GVMUN"], ["Term", "Intern March – August 2026, Director since September 2026"], ["Also", "Model UN delegate"]],
     slots: [
       { key: "gvmun-1", ratio: "4 / 3", label: "GVMUN committee room" },
       { key: "gvmun-2", ratio: "4 / 3", label: "The press corps" }
