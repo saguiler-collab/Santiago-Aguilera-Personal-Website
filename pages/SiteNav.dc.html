@@ -85,7 +85,7 @@
   </div>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;about&quot;,&quot;academics&quot;,&quot;research&quot;,&quot;activities&quot;,&quot;leadership&quot;,&quot;curiosities&quot;,&quot;media&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;overlay&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;about&quot;,&quot;academics&quot;,&quot;research&quot;,&quot;activities&quot;,&quot;drums&quot;,&quot;leadership&quot;,&quot;curiosities&quot;,&quot;media&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;overlay&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
 // Single source of truth for the site map. The top bar shows the section row,
 // the hamburger menu shows the whole tree.
 const SECTIONS = [
@@ -120,8 +120,14 @@ const SECTIONS = [
   { id: "activities", label: "Activities", href: "Activities.dc.html", children: [
     { label: "Swimming", href: "Activities-Swimming.dc.html" },
     { label: "Weightlifting", href: "Activities-Weightlifting.dc.html" },
-    { label: "Drums & Music", href: "Activities-Music.dc.html" },
     { label: "Running", href: "Activities-Running.dc.html" }
+  ]},
+  { id: "drums", label: "Drums", href: "Drums.dc.html", children: [
+    { label: "SonoArte", href: "Drums-SonoArte.dc.html" },
+    { label: "AP Vybz", href: "Drums-APVybz.dc.html" },
+    { label: "ISPS School Musicals", href: "Drums-Musicals.dc.html" },
+    { label: "MYP Arts Portfolio", href: "Drums-MYPPortfolio.dc.html" },
+    { label: "Rock band at Perkiomen", href: "Drums-Rockband.dc.html" }
   ]},
   { id: "curiosities", label: "Curiosities", href: "Curiosities.dc.html", children: [
     { label: "Literature", href: "Curiosities-Literature.dc.html" },

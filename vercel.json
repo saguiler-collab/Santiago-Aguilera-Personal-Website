@@ -5,6 +5,11 @@
       "source": "/:page([^/]+\\.dc\\.html)",
       "destination": "/pages/:page",
       "permanent": true
+    },
+    {
+      "source": "/pages/Activities-Music.dc.html",
+      "destination": "/pages/Drums.dc.html",
+      "permanent": true
     }
   ],
   "headers": [
