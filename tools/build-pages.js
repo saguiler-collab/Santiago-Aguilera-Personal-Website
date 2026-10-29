@@ -259,7 +259,7 @@ const PAGES = [
     facts: [["Arrived", "December 2016"], ["School", "Colegio Tilata, La Calera"], ["Altitude", "2,640 m"], ["Age", "Eight to ten"]],
     slots: [
       { key: "co-11", ratio: "1200 / 1600", label: "On a balcony in the hills, in the Tilatá shirt" },
-      { key: "co-9", ratio: "720 / 960", label: "Colegio Tilatá uniforms, ready for school" },
+      { key: "co-9", ratio: "720 / 960", label: "With my brother, ready for school in our Colegio Tilatá uniforms" },
       { key: "co-10", ratio: "1200 / 1600", label: "Lying on a bronze goat above a canyon" },
       { key: "co-4", ratio: "3 / 4", label: "Riding a mammoth at the dinosaur park" },
       { key: "co-5", ratio: "3 / 4", label: "Face to face with a T. rex, map guide in hand" },
