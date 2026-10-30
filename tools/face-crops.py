@@ -50,6 +50,7 @@ HERO = [
   ('me-exhibit','vz-exhibit',.80,.31,.55,(180,171)),
   ('me-ap','perk-ap',.465,.25,.30,(180,162)),
   ('me-tux','photo-tux',.625,.43,.24,(180,173)),
+  ('me-grass','tt-grass',.28,.57,.40,(180,160)),
 ]
 # cards are 640x400
 CARDS = [
