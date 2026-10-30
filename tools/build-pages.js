@@ -181,7 +181,7 @@ const PAGES = [
       { eyebrow: "Student government", title: "Student Council / Senate", href: "Leadership-StudentCouncil.dc.html", body: "Representing classmates at ISPS, and student government at Perkiomen." },
       { eyebrow: "Clinical", title: "Hospital Shadowing", href: "Leadership-Shadowing.dc.html", body: "Time on the floor, watching how care actually gets delivered." },
       { eyebrow: "Service", title: "Volunteering", href: "Leadership-Volunteering.dc.html", body: "Community work, in and out of school." },
-      { eyebrow: "Co-Editor", title: "The Perkiomenite", href: "Leadership-Perkiomenite.dc.html", body: "Writing and editing for the school paper." }
+      { eyebrow: "Co-Editor-in-Chief", title: "The Perkiomenite", href: "Leadership-Perkiomenite.dc.html", body: "Leading and writing for the school paper." }
     ],
     slots: [{ key: "leadership-hero", ratio: "16 / 9", label: "A leadership event" }],
     next: { title: "The work behind it", lede: "Research and projects, in detail.", href: "Research.dc.html", label: "See the research" }
@@ -498,7 +498,7 @@ const PAGES = [
             "Perkiomen's HOSA chapter."
           ],
           [
-            "Co-Editor in Chief and writer",
+            "Co-Editor-in-Chief and writer",
             "The Perkiomenite, the school paper."
           ],
           [
@@ -1628,9 +1628,9 @@ const PAGES = [
   },
   {
     file: "Leadership-Perkiomenite.dc.html", section: "leadership", parent: { label: "Leadership & service", href: "Leadership.dc.html" },
-    eyebrow: "Leadership · Co-Editor", title: "The Perkiomenite", lede: "Perkiomen's student newspaper, est. 1892.",
-    desc: "Co-Editor of The Perkiomenite, Perkiomen School's student newspaper, and the author of its guide to campus clubs.",
-    intro: "Co-Editor of The Perkiomenite. Editing is a different skill from writing: most of the job is asking someone else's draft what it is actually trying to say, and then helping it say that.",
+    eyebrow: "Leadership · Co-Editor-in-Chief", title: "The Perkiomenite", lede: "Perkiomen's student newspaper, est. 1892.",
+    desc: "Co-Editor-in-Chief of The Perkiomenite, Perkiomen School's student newspaper, and the author of its guide to campus clubs.",
+    intro: "Co-Editor-in-Chief of The Perkiomenite. The September 2026 issue, Vol. VII, No. 1, was the first of the year and the first one I led. Editing is a different skill from writing: most of the job is asking someone else's draft what it is actually trying to say, and then helping it say that.",
     body: ["It pairs with GVMUN more than it looks like it should. Both are about describing something accurately under a deadline, for readers who were not in the room."],
     media: [
       {
@@ -1645,14 +1645,14 @@ const PAGES = [
           ],
           [
             "This issue",
-            "Vol. VII, No. 1, September 2026."
+            "Vol. VII, No. 1, September 2026: the first of the year, and the first I led as co-editor-in-chief."
           ]
         ]
       },
       {
         "title": "My article: “A Brief Summary of Clubs on Campus”",
         "body": [
-          "I write for the paper as well as edit it. A couple of weeks after the Perkiomen Club Fair, I wrote the guide for anyone who missed it: what each club does and what it has actually done, so a new student can find somewhere to belong."
+          "I write for the paper as well as lead it. A couple of weeks after the Perkiomen Club Fair, I wrote the guide for anyone who missed it: what each club does and what it has actually done, so a new student can find somewhere to belong."
         ],
         "points": [
           [
@@ -1740,7 +1740,7 @@ const PAGES = [
       }
     ],
     tbd: "Other pieces you have written or edited, and the section you edit.",
-    facts: [["Role", "Co-Editor"], ["Paper", "The Perkiomenite, est. 1892"], ["Latest issue", "Vol. VII, No. 1, September 2026"]],
+    facts: [["Role", "Co-Editor-in-Chief"], ["Paper", "The Perkiomenite, est. 1892"], ["Latest issue", "Vol. VII, No. 1, September 2026"]],
     slots: [
       { key: "perkmt-masthead", ratio: "1445 / 406", label: "The Perkiomenite masthead, Vol. VII, No. 1, September 2026" },
       { key: "perkmt-clubs", ratio: "1434 / 965", label: "My article in The Perkiomenite" },
