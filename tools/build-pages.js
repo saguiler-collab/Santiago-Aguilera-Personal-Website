@@ -1628,19 +1628,126 @@ const PAGES = [
   },
   {
     file: "Leadership-Perkiomenite.dc.html", section: "leadership", parent: { label: "Leadership & service", href: "Leadership.dc.html" },
-    eyebrow: "Leadership · Co-Editor", title: "The Perkiomenite", lede: "Perkiomen's school paper.",
-    desc: "Co-Editor of the Perkiomenite, Perkiomen School's newspaper.",
-    intro: "Co-Editor of the Perkiomenite. Editing is a different skill from writing: most of the job is asking someone else's draft what it is actually trying to say, and then helping it say that.",
+    eyebrow: "Leadership · Co-Editor", title: "The Perkiomenite", lede: "Perkiomen's student newspaper, est. 1892.",
+    desc: "Co-Editor of The Perkiomenite, Perkiomen School's student newspaper, and the author of its guide to campus clubs.",
+    intro: "Co-Editor of The Perkiomenite. Editing is a different skill from writing: most of the job is asking someone else's draft what it is actually trying to say, and then helping it say that.",
     body: ["It pairs with GVMUN more than it looks like it should. Both are about describing something accurately under a deadline, for readers who were not in the room."],
-    tbd: "Pieces you have written, what you cover, and the section you edit. Send these and this page can link to the work itself.",
-    facts: [["Role", "Co-Editor"], ["Paper", "The Perkiomenite"], ["School", "Perkiomen"]],
+    media: [
+      {
+        "title": "The paper",
+        "body": [
+          "The Perkiomenite is Perkiomen School's student newspaper. It was founded in 1892, has been published for over 130 years, and is organized and run entirely by students: every piece is written, photographed and edited by student journalists."
+        ],
+        "points": [
+          [
+            "What it covers",
+            "Academic news, student activities, profiles of classmates and school events."
+          ],
+          [
+            "This issue",
+            "Vol. VII, No. 1, September 2026."
+          ]
+        ]
+      },
+      {
+        "title": "My article: “A Brief Summary of Clubs on Campus”",
+        "body": [
+          "I write for the paper as well as edit it. A couple of weeks after the Perkiomen Club Fair, I wrote the guide for anyone who missed it: what each club does and what it has actually done, so a new student can find somewhere to belong."
+        ],
+        "points": [
+          [
+            "By",
+            "Santiago Aguilera."
+          ],
+          [
+            "Prompt",
+            "The Club Fair at the student center."
+          ],
+          [
+            "Beside it",
+            "A photo of students presenting at a smartboard."
+          ]
+        ],
+        "slots": [
+          "perkmt-clubs"
+        ]
+      },
+      {
+        "title": "Twelve clubs, in short",
+        "body": [
+          "Three of the twelve are mine: HOSA, Model UN, and the Investment & Philanthropy Club, where I am secretary. The figures below are the ones printed in the article."
+        ],
+        "points": [
+          [
+            "Baking Club",
+            "Bake sales that raise money for causes and organizations."
+          ],
+          [
+            "Black Student Union",
+            "Black history, culture, identity and representation, with a space to learn, discuss and celebrate."
+          ],
+          [
+            "Community Service Club",
+            "Fundraisers, service projects and volunteering, from soda pop tabs for the Ronald McDonald House to pediatric cancer fundraising."
+          ],
+          [
+            "Investment & Philanthropy Club",
+            "Students manage more than $50,000 in investments: they research companies, pitch them and vote."
+          ],
+          [
+            "La Casa Latina",
+            "Latin American culture and community."
+          ],
+          [
+            "Model UN",
+            "Representing countries and debating global issues, building research, diplomacy and public speaking."
+          ],
+          [
+            "Morgan's Message",
+            "Mental health awareness and student-athlete well-being."
+          ],
+          [
+            "NAMI Club",
+            "A student-led mental health organization: awareness, less stigma, fundraising, art trips."
+          ],
+          [
+            "Paws for Panthers",
+            "Animal-shelter volunteering and drives. It raised $200 for a local shelter."
+          ],
+          [
+            "Perkiomen HOSA",
+            "Future health professionals. It raised $700 for the American Cancer Society."
+          ],
+          [
+            "Science Olympiad + Research",
+            "A STEM competition club that works in teams across three competitions."
+          ],
+          [
+            "STEM Club",
+            "Hands-on science and engineering, including RC submarines and drones."
+          ]
+        ]
+      },
+      {
+        "title": "From the issue",
+        "body": [
+          "The photo that ran with the paper's own “About The Perkiomenite” feature."
+        ],
+        "slots": [
+          "perkmt-staff"
+        ],
+        "gallery": true
+      }
+    ],
+    tbd: "Other pieces you have written or edited, and the section you edit.",
+    facts: [["Role", "Co-Editor"], ["Paper", "The Perkiomenite, est. 1892"], ["Latest issue", "Vol. VII, No. 1, September 2026"]],
     slots: [
-      { key: "perkmt-1", ratio: "4 / 3", label: "The Perkiomenite" },
-      { key: "perkmt-2", ratio: "4 / 3", label: "In the newsroom" }
+      { key: "perkmt-masthead", ratio: "1445 / 406", label: "The Perkiomenite masthead, Vol. VII, No. 1, September 2026" },
+      { key: "perkmt-clubs", ratio: "1434 / 965", label: "My article in The Perkiomenite" },
+      { key: "perkmt-staff", ratio: "1600 / 1344", label: "From the “About The Perkiomenite” feature, September 2026" }
     ],
     next: { title: "Activities", lede: "Music, water, weight, road.", href: "Activities.dc.html", label: "See the activities" }
   },
-
   /* ------------------------------------------------------------ drums ---- */
   {
     file: "Drums.dc.html", section: "drums", kind: "landing",
@@ -3052,7 +3159,7 @@ function spiralSvg() {
     "About.dc.html": "about-church", "Academics.dc.html": "exeter-banner", "Research.dc.html": "cmu-lab", "Leadership.dc.html": "hosa-mic",
     "Activities.dc.html": "lift-squat", "Curiosities.dc.html": "games-artorias", "Media.dc.html": "trip-versailles",
     "Leadership-HOSA.dc.html": "hosa-conference", "Leadership-MUN.dc.html": "mun-eagle", "Leadership-Shadowing.dc.html": "hosp-or",
-    "Leadership-Volunteering.dc.html": "vol-river", "Activities-Swimming.dc.html": "swim-blocks", "Activities-Weightlifting.dc.html": "lift-squat",
+    "Leadership-Volunteering.dc.html": "vol-river", "Leadership-Perkiomenite.dc.html": "perkmt", "Activities-Swimming.dc.html": "swim-blocks", "Activities-Weightlifting.dc.html": "lift-squat",
     "Drums.dc.html": "music-drums", "Drums-SonoArte.dc.html": "music-electric", "Drums-Instruments.dc.html": "music-instruments", "Drums-APVybz.dc.html": "isps-apvybz", "Drums-Musicals.dc.html": "music-musicals", "Drums-MYPPortfolio.dc.html": "music-eportfolio", "Drums-Rockband.dc.html": "music-stage", "Activities-Running.dc.html": "run-tired", "Academics-ISPS.dc.html": "isps-guayasamin",
     "Academics-Perkiomen.dc.html": "perk-paws", "Academics-ExeterSummer.dc.html": "exeter-banner", "Academics-CompBio.dc.html": "cmu-friends",
     "Research-CellAtlas.dc.html": "gbm-3", "Research-MedicalApp.dc.html": "field-notes", "Research-CSRx.dc.html": "cert-csrx",
