@@ -390,9 +390,16 @@ const PAGES = [
         ]
       },
       {
-        "title": "The same subjects, four years running",
+        "title": "The same subjects, year after year",
         "body": [
-          "English every single year, with Spanish, music and Individuals & Societies close behind. That is a more honest description of where my attention goes than anything I could claim about myself."
+          "English earned an award in every one of the four years. The others kept coming back, which is a more honest description of where my attention goes than anything I could claim about myself."
+        ],
+        "points": [
+          ["English", "Grades 7, 8, 9 and 10."],
+          ["Individuals & Societies", "Grades 7, 8 and 10."],
+          ["Music", "Grades 8, 9 and 10."],
+          ["Spanish", "Grades 7 and 8, then the MYP Bilingual Diploma."],
+          ["Design", "Grade 7, Grade 9, and a web design award in Grade 8."]
         ]
       },
       {
@@ -426,40 +433,104 @@ const PAGES = [
         "title": "Clubs and sport",
         "points": [
           ["Peak Performers", "The running club."],
+          ["Secondary Schools Games, 2025", "Took part, in running."],
           ["Debate Club and Journalism Club", "Arguing a position, and writing for the school."],
-          ["High school basketball", ""],
+          ["High school basketball", "The Caimans Champions Challenge 2025, U17 Boys."],
           ["In-class debates", "Doping in sport, zoos, phones at school. Arguing a position in front of people who disagree stopped feeling unusual well before Model UN did the same thing at Perkiomen."]
         ]
       }
     ],
-    facts: [["Years", "2021 – 2025"], ["GPA", "4.0 unweighted, 4.06 weighted"], ["School", "PreK–12, 308 students"], ["Accreditation", "NEASC"], ["Roles", "Student Council · Stronger Together"], ["Programme", "IB Middle Years Programme"], ["Result", "Highest MYP score in my class · bilingual diploma"], ["House", "Mayaro"]],
+    facts: [["Years", "2021 – 2025"], ["GPA", "4.0 unweighted, 4.06 weighted"], ["School", "PreK–12, 308 students"], ["Accreditation", "NEASC"], ["Roles", "Student Council · Stronger Together"], ["Programme", "IB Middle Years Programme"], ["Result", "Highest MYP score in my class · bilingual diploma"], ["House", "Mayaro"], ["Awards", "23 class certificates, grades 7 to 10"]],
     awards: {
       title: "Four years of awards",
-      lede: "Awarded across the IB Middle Years Programme, grades 7 through 10.",
+      lede: "Awarded across the IB Middle Years Programme, grades 7 through 10, some of them for the top result in the class. Scans of every certificate are below.",
       groups: [
-        { title: "Grade 7", items: [
-          { label: "Best Historian", detail: "Individuals & Societies" },
-          { label: "Academic Excellence", detail: "English · Spanish" },
+        { title: "Grade 7 · 2021–22", items: [
+          { label: "Historian Award", detail: "Individuals & Societies" },
+          { label: "Academic Excellence", detail: "Spanish" },
+          { label: "Most Persistent Learner", detail: "English Language & Literature" },
+          { label: "Most Dedicated Designer", detail: "Design" },
           { label: "Consistent Effort", detail: "Physical Education" }
         ]},
-        { title: "Grade 8", items: [
+        { title: "Grade 8 · 2022–23", items: [
           { label: "Mr. Jefferies Memorial Award", detail: "A named school award, presented at the end of Grade 8." },
-          { label: "Academic Excellence", detail: "English · Music · Spanish · Individuals & Societies · Drama" },
-          { label: "Most Improved", detail: "Visual Arts" },
-          { label: "Consistent Effort", detail: "Integrated Science" }
+          { label: "Academic Excellence", detail: "English · Music · Spanish Capable · Individuals & Societies · Drama" },
+          { label: "Most Improved", detail: "Art" },
+          { label: "Consistent Effort", detail: "Science" },
+          { label: "Certificate of Excellence", detail: "Outstanding web design, October 12, 2022." },
+          { label: "Certificate of Transition", detail: "Completing middle school, June 14, 2023." }
         ]},
-        { title: "Grade 9", items: [
-          { label: "Academic Excellence", detail: "English · Music I · Design I · Physical Health and Education" },
-          { label: "Consistent Effort", detail: "Integrated Math (10th grade)" }
+        { title: "Grade 9 · 2023–24", items: [
+          { label: "Overall Excellence", detail: "English 9 · Music I (MYP Year 4)" },
+          { label: "Academic Excellence", detail: "Design I · Physical Health & Education" },
+          { label: "Consistent Effort", detail: "Integrated Math II" }
         ]},
-        { title: "Grade 10", items: [
+        { title: "Grade 10 · 2024–25", items: [
           { label: "Personal Project Award", detail: "The MYP capstone. A self-directed project carried end to end." },
           { label: "MYP Bilingual Diploma", detail: "Awarded for completing the Middle Years Programme in two languages." },
-          { label: "Academic Excellence", detail: "English · Individuals & Societies · Pre-Calculus · Physics II · Music II" },
-          { label: "Consistent Effort", detail: "Chemistry" }
+          { label: "Academic Excellence", detail: "English 10 · Individuals & Societies · Pre-Calculus · Physics 2 · Music 2" },
+          { label: "Most Consistent Effort", detail: "Chemistry" }
+        ]},
+        { title: "Athletics · 2025", items: [
+          { label: "Secondary Schools Games", detail: "Certificate of participation, in running." },
+          { label: "Caimans Champions Challenge", detail: "Certificate of participation, U17 Boys Basketball." }
         ]}
       ]
     },
+    readers: [
+      {
+        "kicker": "The certificates",
+        "heading": "Every certificate, as scanned",
+        "intro": "The 27 certificates behind the list above, grade by grade. Pick a year and scroll. The PDFs open in a new tab as well.",
+        "items": [
+          {
+            "kicker": "Grade 10",
+            "title": "Grade 10 certificates, 2024–25",
+            "pages": 7,
+            "blurb": "The Personal Project Award, Academic Excellence in English, Individuals & Societies, Pre-Calculus, Physics and Music, and Most Consistent Effort in Chemistry.",
+            "pdf": "/assets/docs/isps-certs-grade10.pdf",
+            "dir": "/assets/docs/isps-certs-grade10",
+            "sizes": [[1500, 1110], [1500, 1143], [1500, 1123], [1500, 1123], [1500, 1108], [1500, 1081], [1500, 1111]]
+          },
+          {
+            "kicker": "Grade 9",
+            "title": "Grade 9 certificates, 2023–24",
+            "pages": 5,
+            "blurb": "Overall Excellence in English 9 and Music I, Academic Excellence in Design I and Physical Health & Education, and Consistent Effort in Integrated Math II.",
+            "pdf": "/assets/docs/isps-certs-grade9.pdf",
+            "dir": "/assets/docs/isps-certs-grade9",
+            "sizes": [[1500, 1100], [1500, 1106], [1500, 1089], [1500, 1100], [1500, 1126]]
+          },
+          {
+            "kicker": "Grade 8",
+            "title": "Grade 8 certificates, 2022–23",
+            "pages": 9,
+            "blurb": "A web design Certificate of Excellence from October 2022, seven class awards, and the Certificate of Transition that completed middle school in June 2023.",
+            "pdf": "/assets/docs/isps-certs-grade8.pdf",
+            "dir": "/assets/docs/isps-certs-grade8",
+            "sizes": [[1500, 1078], [1500, 1124], [1500, 1087], [1500, 1086], [1500, 1105], [1500, 1080], [1500, 1097], [1500, 1098], [1500, 1087]]
+          },
+          {
+            "kicker": "Grade 7",
+            "title": "Grade 7 certificates, 2021–22",
+            "pages": 4,
+            "blurb": "The Historian Award, Academic Excellence in Spanish, Most Persistent Learner in English, and Most Dedicated Designer in Design.",
+            "pdf": "/assets/docs/isps-certs-grade7.pdf",
+            "dir": "/assets/docs/isps-certs-grade7",
+            "sizes": [[1500, 1114], [1500, 1092], [1500, 1094], [1500, 1092]]
+          },
+          {
+            "kicker": "Athletics",
+            "title": "Athletics certificates, 2025",
+            "pages": 2,
+            "blurb": "Certificates of participation in the 2025 Secondary Schools Games and the Caimans Champions Challenge 2025, U17 Boys Basketball.",
+            "pdf": "/assets/docs/isps-certs-athletics.pdf",
+            "dir": "/assets/docs/isps-certs-athletics",
+            "sizes": [[1500, 1103], [1500, 1094]]
+          }
+        ]
+      }
+    ],
     slots: [
       { key: "isps-1", ratio: "4 / 3", label: "ISPS campus" },
       { key: "isps-2", ratio: "4 / 3", label: "Student Council" },
@@ -1469,6 +1540,19 @@ const PAGES = [
         ]
       },
       {
+        "title": "Chicago, January 2025",
+        "body": [
+          "Through ISPS's Student Council I went to the National Honor Society and National Student Council Conference in Chicago, run by the National Association of Secondary School Principals (NASSP). The theme was “Next Stop: Leadership”, and the certificate records 14 content hours from the conference schedule."
+        ],
+        "points": [
+          ["Event", "National Honor Society and National Student Council Conference."],
+          ["Dates", "January 31 to February 2, 2025."],
+          ["Content hours", "14."],
+          ["Role", "Student attendee."]
+        ],
+        "slots": ["stuco-nassp"]
+      },
+      {
         "title": "At Perkiomen",
         "body": [
           "At Perkiomen I am President of the Class of 2027 and sit on Student Senate, and I am a dorm proctor. Different school, same job: listen, then work out which problems are actually solvable."
@@ -1499,7 +1583,8 @@ const PAGES = [
     slots: [
       { key: "stuco-1", ratio: "4 / 3", label: "Student Council at ISPS" },
       { key: "stuco-2", ratio: "4 / 3", label: "Senate at Perkiomen" },
-      { key: "stuco-3", ratio: "1 / 1", label: "A council event" }
+      { key: "stuco-3", ratio: "1 / 1", label: "A council event" },
+      { key: "stuco-nassp", ratio: "1100 / 1524", label: "Certificate of participation, NHS and National Student Council Conference, Chicago, January 2025" }
     ],
     next: { title: "Next: Hospital Shadowing", lede: "Time on the floor.", href: "Leadership-Shadowing.dc.html", label: "Go to shadowing" }
   },
@@ -2617,7 +2702,8 @@ function renderReader(rd, pageKey) {
   const css = rd.items.map((_, i) => `#${id(i)}:checked ~ .sa-reader-list label[for="${id(i)}"]{background:var(--sa-surface-card);box-shadow:inset 3px 0 0 var(--sa-text-accent);color:var(--sa-text-primary)}#${id(i)}:checked ~ .sa-reader-stage #${id(i)}-panel{display:block}`).join("");
   const pages = (it) => Array.from({ length: it.pages }, (_, k) => {
     const n = String(k + 1).padStart(it.pages >= 10 ? 2 : 1, "0");
-    return `<img src="${attr(it.dir)}/p-${n}.jpg" alt="${attr(it.title)}, page ${k + 1} of ${it.pages}" loading="lazy" decoding="async" width="850" height="1100">`;
+    const [w, h] = (it.sizes && it.sizes[k]) || [850, 1100];
+    return `<img src="${attr(it.dir)}/p-${n}.jpg" alt="${attr(it.title)}, page ${k + 1} of ${it.pages}" loading="lazy" decoding="async" width="${w}" height="${h}">`;
   }).join("");
   return `
 <section data-reveal="1" class="sa-reader-wrap">
@@ -2845,7 +2931,8 @@ ${siblings.map((s) => `    <a href="${attr(s.href)}" style="display:inline-flex;
   /* Lay the figure groups into the gaps between content sections, spread from the
      first gap to the last so images punctuate the page rather than trailing it. */
   const readerHtml = (p.readers || []).map((rd, ri) => renderReader(rd, p.file.replace(/\W+/g, "") + ri)).join("");
-  const contentSections = [readerHtml, cards, awards, renderSteps(p.steps, p.stepsEyebrow, p.stepsTitle), quote, video]
+  /* A page that lists its awards shows the list first and the scans of them after it. */
+  const contentSections = (p.awards ? [cards, awards, readerHtml, renderSteps(p.steps, p.stepsEyebrow, p.stepsTitle), quote, video] : [readerHtml, cards, awards, renderSteps(p.steps, p.stepsEyebrow, p.stepsTitle), quote, video])
     .filter((x) => x && x.trim());
   /* Photo pages get one tidy gallery after the text instead of single figures scattered
      through the gaps, which left large empty stretches and a different size every time. */
