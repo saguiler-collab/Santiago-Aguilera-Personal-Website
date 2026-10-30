@@ -338,7 +338,7 @@ const PAGES = [
       { key: "tt-4", ratio: "4 / 3", label: "On a bench by the water, with the dog" },
       { key: "tt-6", ratio: "465 / 640", label: "A walk with the dog" },
       { key: "tt-5", ratio: "736 / 867", label: "Turning sixteen" },
-      { key: "tt-8", ratio: "3 / 4", label: "In the water with friends" }
+      { key: "tt-8", ratio: "3 / 4", label: "In the sea with friends, Trinidad" }
     ],
     next: { title: "Next: Pennsburg, Pennsylvania", lede: "Boarding at Perkiomen.", href: "Place-UnitedStates.dc.html", label: "Go to the US" }
   },
