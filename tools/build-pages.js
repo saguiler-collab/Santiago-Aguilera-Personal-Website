@@ -299,13 +299,46 @@ const PAGES = [
     eyebrow: "About · Trinidad & Tobago", title: "Port of Spain", lede: "Trinidad & Tobago. August 2021, age twelve.",
     desc: "Port of Spain. The International School of Port of Spain, Student Council, Stronger Together, and SonoArte online.",
     intro: "The International School of Port of Spain. I arrived as schools everywhere were working out how to come back from remote learning, which turned out to be the thing worth working on.",
-    body: ["I joined Student Council, and helped run Stronger Together, a student-led initiative supporting classmates through the return to in-person school. It was the first time I saw a student idea actually change how a school felt.", "The drums carried over. I kept taking SonoArte online from Panama, so the kit stayed part of the week through the move.", "By the time I left, the place had given me my Personal Project too: a paper on Venezuelan migration to Trinidad, the country I had just spent four years living in."],
+    media: [
+      {
+        "title": "Student Council and Stronger Together",
+        "body": [
+          "I joined Student Council, and helped run Stronger Together, a student-led initiative supporting classmates through the return to in-person school. It was the first time I saw a student idea actually change how a school felt."
+        ]
+      },
+      {
+        "title": "The drums carried over",
+        "body": [
+          "I kept taking SonoArte online from Panama, so the kit stayed part of the week through the move."
+        ]
+      },
+      {
+        "title": "What it left me",
+        "body": [
+          "By the time I left, the place had given me my Personal Project too: a paper on Venezuelan migration to Trinidad, the country I had just spent four years living in."
+        ]
+      },
+      {
+        "title": "Around Port of Spain",
+        "slots": [
+          "tt-4",
+          "tt-6",
+          "tt-5",
+          "tt-8"
+        ],
+        "gallery": true
+      }
+    ],
     facts: [["Arrived", "August 2021"], ["School", "International School of Port of Spain"], ["Led", "Student Council · Stronger Together"], ["Music", "SonoArte, online from Panama"], ["Capstone", "Venezuelan migration paper, 2025"]],
     slots: [
       { key: "tt-1", ratio: "4 / 3", label: "Port of Spain" },
       { key: "tt-2", ratio: "1 / 1", label: "ISPS" },
       { key: "tt-3", ratio: "4 / 3", label: "Stronger Together" },
-      { key: "tt-4", ratio: "4 / 3", label: "On a bench by the water, with the dog" }
+      { key: "tt-7", ratio: "4 / 3", label: "Out in the tall grass, Trinidad" },
+      { key: "tt-4", ratio: "4 / 3", label: "On a bench by the water, with the dog" },
+      { key: "tt-6", ratio: "465 / 640", label: "A walk with the dog" },
+      { key: "tt-5", ratio: "736 / 867", label: "Turning sixteen" },
+      { key: "tt-8", ratio: "3 / 4", label: "In the water with friends" }
     ],
     next: { title: "Next: Pennsburg, Pennsylvania", lede: "Boarding at Perkiomen.", href: "Place-UnitedStates.dc.html", label: "Go to the US" }
   },
@@ -314,11 +347,34 @@ const PAGES = [
     eyebrow: "About · Pennsylvania", title: "Pennsburg, Pennsylvania", lede: "Boarding since August 2025. The return after fifteen years.",
     desc: "Boarding at Perkiomen School in Pennsburg, Pennsylvania since August 2025.",
     intro: "Pennsburg, Pennsylvania, is where I board at Perkiomen School. I came back to the United States in August 2025, fifteen years after leaving the country I was born in.",
-    body: ["Coming back meant arriving in my own birth country as a newcomer: Spanish was my first language, and the last time I lived in the United States I was two.", "Pennsburg is the first place I have lived without my family in the same building. Health science, HOSA, Model UN, the Perkiomenite, varsity swimming and the rock band all live here. The Perkiomen page has the full picture."],
+    media: [
+      {
+        "title": "Coming back",
+        "body": [
+          "Coming back meant arriving in my own birth country as a newcomer: Spanish was my first language, and the last time I lived in the United States I was two."
+        ]
+      },
+      {
+        "title": "Pennsburg",
+        "body": [
+          "Pennsburg is the first place I have lived without my family in the same building. Health science, HOSA, Model UN, the Perkiomenite, varsity swimming and the rock band all live here. The Perkiomen page has the full picture."
+        ]
+      },
+      {
+        "title": "Along the way",
+        "slots": [
+          "us-5",
+          "us-4"
+        ],
+        "gallery": true
+      }
+    ],
     facts: [["Arrived", "August 2025"], ["Away", "Fifteen years, five countries"], ["School", "Perkiomen School"], ["Born", "Houston, Texas, in 2008"]],
     slots: [
+      { key: "us-6", ratio: "1280 / 834", label: "Fifteen years ago" },
       { key: "us-2", ratio: "4 / 3", label: "Perkiomen School campus" },
       { key: "us-3", ratio: "1 / 1", label: "Pennsburg, Pennsylvania" },
+      { key: "us-5", ratio: "1389 / 1500", label: "The Mexican and American flags, side by side" },
       { key: "us-4", ratio: "3 / 4", label: "Under Cloud Gate, Chicago" }
     ],
     next: { title: "The academics", lede: "Two schools, and the work that came out of them.", href: "Academics.dc.html", label: "See the academics" }
@@ -388,6 +444,23 @@ const PAGES = [
           ["MYP Bilingual Diploma", "Completed in English and Spanish."],
           ["Personal Project Award", "The self-directed project, carried end to end."]
         ]
+      },
+      {
+        "title": "The IB results",
+        "body": [
+          "The International Baccalaureate certificate for the May 2025 session, issued on August 21, 2025. Every service-as-action requirement was fully satisfied, and the Personal Project came back with a 7, the top mark."
+        ],
+        "points": [
+          ["Personal Project", "7"],
+          ["Spanish Language Acquisition (Proficient)", "6"],
+          ["Integrated Humanities", "6"],
+          ["English Language & Literature", "5"],
+          ["Interdisciplinary", "5"],
+          ["Physics", "5"],
+          ["Mathematics", "5"],
+          ["Music, assessed in Spanish", "5"]
+        ],
+        "slots": ["isps-myp"]
       },
       {
         "title": "The same subjects, year after year",
@@ -542,6 +615,7 @@ const PAGES = [
       { key: "isps-10", ratio: "772 / 447", label: "AP Vybz members performing and rehearsing" },
       { key: "isps-11", ratio: "408 / 300", label: "Tug of war for Mayaro house" },
       { key: "isps-12", ratio: "213 / 223", label: "Student portrait at ISPS" },
+      { key: "isps-myp", ratio: "1242 / 1500", label: "IB Middle Years Programme course results, May 2025 session" },
       { key: "isps-4", ratio: "1141 / 1145", label: "Oswaldo Guayasamín, the original" },
       { key: "isps-5", ratio: "1400 / 1238", label: "My recreation, for Spanish class" }
     ],
@@ -601,6 +675,7 @@ const PAGES = [
         "slots": [
           "perk-13",
           "perk-14",
+          "perk-15",
           "perk-6",
           "perk-5",
           "perk-8",
@@ -627,6 +702,7 @@ const PAGES = [
       ]
     },
     slots: [
+      { key: "perk-15", ratio: "4 / 3", label: "With friends on the lawn at Perkiomen" },
       { key: "perk-12", ratio: "854 / 538", label: "With the Perkiomen Panther mascot" },
       { key: "perk-1", ratio: "4 / 3", label: "Perkiomen campus" },
       { key: "perk-2", ratio: "4 / 3", label: "Medical Spirit and Promise Award, Perkiomen School" },
@@ -785,6 +861,7 @@ const PAGES = [
           "cmu-friends",
           "cmu-fireworks",
           "cmu-pole",
+          "cmu-night",
           "cmu-lobby"
         ],
         "gallery": true
@@ -804,6 +881,7 @@ const PAGES = [
       { key: "gbm-3", ratio: "3 / 2", label: "The full Carnegie Mellon cohort, summer 2026" },
       { key: "gbm-2", ratio: "4 / 3", label: "The team, mid-project" },
       { key: "cmu-lab", ratio: "4 / 3", label: "In the lab with teammates" },
+      { key: "cmu-night", ratio: "4 / 3", label: "Out on S. Craig Street, Pittsburgh, after a long day" },
       { key: "cmu-friends", ratio: "3 / 2", label: "With three friends from the program, a medal around one neck" },
       { key: "cmu-present", ratio: "3 / 4", label: "Presenting with the team" },
       { key: "cmu-lecture", ratio: "3 / 2", label: "Final project presentation in the lecture hall" },
@@ -2333,6 +2411,9 @@ const PAGES = [
         "title": "At the kit",
         "body": [
           "The kit is also where I think. It is the same instrument I started on in Panama, and the same habits: learn it by ear, then clean it up from the sheet, then play it faster than feels sensible."
+        ],
+        "slots": [
+          "music-6"
         ]
       },
       {
@@ -2351,6 +2432,7 @@ const PAGES = [
     facts: [["Band", "Perkiomen rock band"], ["Role", "Drums and vocals"], ["School", "Perkiomen"]],
     slots: [
       { key: "music-2", ratio: "1600 / 1200", label: "The band before the set" },
+      { key: "music-6", ratio: "1500 / 1335", label: "The view from the throne" },
       { key: "music-5", ratio: "1400 / 933", label: "Rehearsal on the Perkiomen stage" }
     ],
     next: {"title": "The rest of what I do", "lede": "Water, weight and road.", "href": "Activities.dc.html", "label": "See the activities"}
@@ -2359,14 +2441,39 @@ const PAGES = [
   {
     file: "Activities-Swimming.dc.html", section: "activities", parent: { label: "Activities", href: "Activities.dc.html" },
     eyebrow: "Activities · Varsity", title: "Swimming", lede: "Perkiomen School varsity, and a Most Improved award.",
-    desc: "Varsity swimming at Perkiomen School, including a Most Improved award.",
+    desc: "Varsity swimming at Perkiomen School, including the 2025–2026 Boys Swimming Team MIP award.",
     intro: "Varsity swimming at Perkiomen. Morning sets, meets, and the part of the day that keeps the rest of it in order.",
-    body: ["The award I am proudest of is Most Improved, Varsity Boys Swimming (2026), which is a strange thing to say out loud. It means I started behind. But it is the only award that measures the slope rather than the intercept, and the slope is the part I actually control."],
-    facts: [["Level", "Varsity"], ["School", "Perkiomen"], ["Award", "Most Improved, Varsity Boys (2026)"]],
+    media: [
+      {
+        "title": "Most Improved",
+        "body": [
+          "The award I am proudest of is Most Improved, Varsity Boys Swimming, which is a strange thing to say out loud. It means I started behind. But it is the only award that measures the slope rather than the intercept, and the slope is the part I actually control."
+        ],
+        "points": [
+          [
+            "Plaque",
+            "2025–2026 Boys Swimming Team MIP."
+          ],
+          [
+            "Level",
+            "Varsity, at Perkiomen."
+          ]
+        ]
+      },
+      {
+        "title": "At the blocks",
+        "slots": [
+          "swim-2"
+        ],
+        "gallery": true
+      }
+    ],
+    facts: [["Level", "Varsity"], ["School", "Perkiomen"], ["Award", "Boys Swimming Team MIP, 2025–2026"]],
     slots: [
       { key: "swim-1", ratio: "4 / 3", label: "Swim meet" },
       { key: "swim-2", ratio: "3 / 4", label: "On the starting block" },
-      { key: "swim-3", ratio: "1 / 1", label: "The team" }
+      { key: "swim-3", ratio: "1 / 1", label: "The team" },
+      { key: "swim-4", ratio: "847 / 1127", label: "The 2025–2026 Boys Swimming Team MIP plaque" }
     ],
     next: { title: "Next: Weightlifting", lede: "Snatch, clean & jerk, year-round.", href: "Activities-Weightlifting.dc.html", label: "Go to weightlifting" }
   },
@@ -2427,6 +2534,7 @@ const PAGES = [
       {
         "title": "In the gym",
         "slots": [
+          "lift-6",
           "lift-2"
         ],
         "gallery": true
@@ -2436,6 +2544,7 @@ const PAGES = [
     slots: [
 { key: "lift-5", ratio: "1300 / 1097", label: "Progress, from the hiking trail to the 15K to the gym" },
       { key: "lift-1", ratio: "3 / 4", label: "Back squats" },
+      { key: "lift-6", ratio: "1050 / 1400", label: "A pump in the school gym" },
       { key: "lift-2", ratio: "3 / 4", label: "Between sets in the gym" },
       { key: "lift-3", ratio: "1170 / 391", label: "Liftoff global leaderboards, screenshots taken October 28, 2026" },
       { key: "lift-4", ratio: "1170 / 1516", label: "Liftoff memories, August 2024, the first month of training" }
