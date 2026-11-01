@@ -167,7 +167,7 @@
   "hosa-4": "hosa-flyer.jpg",
   "mx-5": "mx-church.jpg",
   "mx-6": "mx-truck.jpg",
-  "perk-8": "perk-ap.jpg",
+  "perk-8": "perk-door.jpg",
   "perk-9": "perk-sky1.jpg",
   "perk-10": "perk-sky2.jpg",
   "perk-11": "perk-sky3.jpg",
@@ -232,5 +232,10 @@
   "games-rb-5": "games-rb5.jpg",
   "music-7": "music-prock.jpg",
   "music-8": "music-prock2.jpg",
-  "perk-16": "perk-blazer.jpg"
+  "perk-16": "perk-blazer.jpg",
+  "perk-17": "perk-awards.jpg",
+  "perk-19": "perk-podium.jpg",
+  "stuco-bell": "perk-bell.jpg",
+  "stuco-chalk": "perk-chalk.jpg",
+  "music-9": "music-purple.jpg"
 }
