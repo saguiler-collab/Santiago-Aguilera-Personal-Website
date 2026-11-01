@@ -1,0 +1,1331 @@
+{
+ "photos": [
+  {
+   "file": "about-church",
+   "caption": "Portrait",
+   "tag": "Me",
+   "cat": "Me",
+   "w": 440,
+   "h": 651,
+   "fw": 1082,
+   "fh": 1600
+  },
+  {
+   "file": "music-prock",
+   "caption": "Drumming under the tent in a PRock shirt",
+   "tag": "Music",
+   "cat": "Music",
+   "w": 560,
+   "h": 375,
+   "fw": 1800,
+   "fh": 1204
+  },
+  {
+   "file": "kid-pirate",
+   "caption": "Dressed up as a pirate",
+   "tag": "Mexico",
+   "cat": "Places",
+   "w": 440,
+   "h": 587,
+   "fw": 600,
+   "fh": 800
+  },
+  {
+   "file": "isps-stuco",
+   "caption": "Student Council at ISPS, in the white polos",
+   "tag": "ISPS",
+   "cat": "School",
+   "w": 560,
+   "h": 393,
+   "fw": 376,
+   "fh": 264
+  },
+  {
+   "file": "hosa-mic",
+   "caption": "Addressing the room at a school event",
+   "tag": "HOSA",
+   "cat": "Leadership",
+   "w": 440,
+   "h": 587,
+   "fw": 1200,
+   "fh": 1600
+  },
+  {
+   "file": "swim-blocks",
+   "caption": "On the starting block",
+   "tag": "Swimming",
+   "cat": "Sport",
+   "w": 440,
+   "h": 587,
+   "fw": 960,
+   "fh": 1280
+  },
+  {
+   "file": "sana-field-rounds",
+   "caption": "Morning case presentation",
+   "tag": "SanaSanita",
+   "cat": "Research",
+   "w": 560,
+   "h": 418,
+   "fw": 2400,
+   "fh": 1790
+  },
+  {
+   "file": "games-artorias",
+   "caption": "Dark Souls",
+   "tag": "Video games",
+   "cat": "Games",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
+  },
+  {
+   "file": "photo-tux",
+   "caption": "Dressed up on the lawn",
+   "tag": "Me",
+   "cat": "Me",
+   "w": 440,
+   "h": 587,
+   "fw": 1200,
+   "fh": 1600
+  },
+  {
+   "file": "music-stagefist",
+   "caption": "Fists up on stage, the lights behind",
+   "tag": "Music",
+   "cat": "Music",
+   "w": 440,
+   "h": 587,
+   "fw": 1050,
+   "fh": 1400
+  },
+  {
+   "file": "mx-halloween",
+   "caption": "Halloween in Monterrey, as a zombie",
+   "tag": "Mexico",
+   "cat": "Places",
+   "w": 440,
+   "h": 587,
+   "fw": 825,
+   "fh": 1100
+  },
+  {
+   "file": "isps-tug",
+   "caption": "Tug of war for Mayaro house",
+   "tag": "ISPS",
+   "cat": "School",
+   "w": 560,
+   "h": 412,
+   "fw": 408,
+   "fh": 300
+  },
+  {
+   "file": "hosa-conference",
+   "caption": "Between sessions at a HOSA conference",
+   "tag": "HOSA",
+   "cat": "Leadership",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
+  },
+  {
+   "file": "swim-mip",
+   "caption": "The 2025–2026 Boys Swimming Team MIP plaque",
+   "tag": "Swimming",
+   "cat": "Sport",
+   "w": 440,
+   "h": 585,
+   "fw": 847,
+   "fh": 1127
+  },
+  {
+   "file": "sana-field-surgery",
+   "caption": "Laparoscopic view, mid-procedure",
+   "tag": "SanaSanita",
+   "cat": "Research",
+   "w": 440,
+   "h": 587,
+   "fw": 1798,
+   "fh": 2400
+  },
+  {
+   "file": "games-solaire",
+   "caption": "Dark Souls, with Solaire",
+   "tag": "Video games",
+   "cat": "Games",
+   "w": 440,
+   "h": 587,
+   "fw": 1200,
+   "fh": 1600
+  },
+  {
+   "file": "tt-grass",
+   "caption": "Out in the tall grass, Trinidad",
+   "tag": "Me",
+   "cat": "Me",
+   "w": 560,
+   "h": 420,
+   "fw": 1800,
+   "fh": 1350
+  },
+  {
+   "file": "music-redkit",
+   "caption": "Selfie from behind the kit, the band in front",
+   "tag": "Music",
+   "cat": "Music",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
+  },
+  {
+   "file": "mx-church",
+   "caption": "Inside a church in Mexico",
+   "tag": "Mexico",
+   "cat": "Places",
+   "w": 440,
+   "h": 780,
+   "fw": 903,
+   "fh": 1600
+  },
+  {
+   "file": "isps-recreation",
+   "caption": "My recreation of Guayasamín, for Spanish class",
+   "tag": "ISPS",
+   "cat": "School",
+   "w": 560,
+   "h": 495,
+   "fw": 1400,
+   "fh": 1238
+  },
+  {
+   "file": "hosa-crowd",
+   "caption": "With fellow students in the gym",
+   "tag": "HOSA",
+   "cat": "Leadership",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
+  },
+  {
+   "file": "lift-squat",
+   "caption": "Back squats",
+   "tag": "Weightlifting",
+   "cat": "Sport",
+   "w": 440,
+   "h": 577,
+   "fw": 1170,
+   "fh": 1535
+  },
+  {
+   "file": "sana-field-teaching",
+   "caption": "Reading an ultrasound with the team",
+   "tag": "SanaSanita",
+   "cat": "Research",
+   "w": 440,
+   "h": 589,
+   "fw": 1793,
+   "fh": 2400
+  },
+  {
+   "file": "games-zelda",
+   "caption": "The Wind Waker HD on the Wii U",
+   "tag": "Video games",
+   "cat": "Games",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
+  },
+  {
+   "file": "me-dog",
+   "caption": "Carrying the dog",
+   "tag": "Me",
+   "cat": "Me",
+   "w": 440,
+   "h": 587,
+   "fw": 1200,
+   "fh": 1600
+  },
+  {
+   "file": "music-purple",
+   "caption": "Another night at the kit, under purple light",
+   "tag": "Music",
+   "cat": "Music",
+   "w": 440,
+   "h": 660,
+   "fw": 800,
+   "fh": 1200
+  },
+  {
+   "file": "co-mammoth",
+   "caption": "Riding a mammoth at the dinosaur park",
+   "tag": "Colombia",
+   "cat": "Places",
+   "w": 440,
+   "h": 587,
+   "fw": 1050,
+   "fh": 1400
+  },
+  {
+   "file": "perk-room",
+   "caption": "My first room at Perkiomen, the start of my own adventure",
+   "tag": "Perkiomen",
+   "cat": "School",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
+  },
+  {
+   "file": "hosa-anatomy",
+   "caption": "Holding an anatomy model at the HOSA table",
+   "tag": "HOSA",
+   "cat": "Leadership",
+   "w": 440,
+   "h": 587,
+   "fw": 1125,
+   "fh": 1500
+  },
+  {
+   "file": "lift-mirror",
+   "caption": "Between sets in the gym",
+   "tag": "Weightlifting",
+   "cat": "Sport",
+   "w": 440,
+   "h": 587,
+   "fw": 1200,
+   "fh": 1600
+  },
+  {
+   "file": "vz-2",
+   "caption": "Presenting the work at the Personal Project Exhibition",
+   "tag": "Venezuela paper",
+   "cat": "Research",
+   "w": 560,
+   "h": 469,
+   "fw": 2200,
+   "fh": 1841
+  },
+  {
+   "file": "games-rb1",
+   "caption": "Sunset over the hills, in-game",
+   "tag": "Video games",
+   "cat": "Games",
+   "w": 560,
+   "h": 357,
+   "fw": 1600,
+   "fh": 1021
+  },
+  {
+   "file": "us-fifteen",
+   "caption": "Fifteen years ago",
+   "tag": "Me",
+   "cat": "Me",
+   "w": 560,
+   "h": 365,
+   "fw": 1280,
+   "fh": 834
+  },
+  {
+   "file": "music-prock2",
+   "caption": "Locked in on the hi-hat",
+   "tag": "Music",
+   "cat": "Music",
+   "w": 440,
+   "h": 660,
+   "fw": 800,
+   "fh": 1200
+  },
+  {
+   "file": "co-dino",
+   "caption": "Face to face with a T. rex, map guide in hand",
+   "tag": "Colombia",
+   "cat": "Places",
+   "w": 440,
+   "h": 587,
+   "fw": 1050,
+   "fh": 1400
+  },
+  {
+   "file": "perk-paws",
+   "caption": "With the Perkiomen Panther mascot",
+   "tag": "Perkiomen",
+   "cat": "School",
+   "w": 560,
+   "h": 353,
+   "fw": 854,
+   "fh": 538
+  },
+  {
+   "file": "hosa-volleyball",
+   "caption": "The HOSA volleyball tournament, with the cancer-awareness bracelets",
+   "tag": "HOSA",
+   "cat": "Leadership",
+   "w": 440,
+   "h": 587,
+   "fw": 1125,
+   "fh": 1500
+  },
+  {
+   "file": "lift-tank",
+   "caption": "A pump in the school gym",
+   "tag": "Weightlifting",
+   "cat": "Sport",
+   "w": 440,
+   "h": 587,
+   "fw": 1050,
+   "fh": 1400
+  },
+  {
+   "file": "vz-exhibit",
+   "caption": "Explaining the project at the Personal Project Exhibition",
+   "tag": "Venezuela paper",
+   "cat": "Research",
+   "w": 440,
+   "h": 793,
+   "fw": 888,
+   "fh": 1600
+  },
+  {
+   "file": "games-rb2",
+   "caption": "A full moon through the grass, in-game",
+   "tag": "Video games",
+   "cat": "Games",
+   "w": 560,
+   "h": 364,
+   "fw": 1600,
+   "fh": 1039
+  },
+  {
+   "file": "perk-smile",
+   "caption": "Happy in the blazer and tie",
+   "tag": "Me",
+   "cat": "Me",
+   "w": 440,
+   "h": 587,
+   "fw": 1125,
+   "fh": 1500
+  },
+  {
+   "file": "music-pov",
+   "caption": "The view from the throne",
+   "tag": "Music",
+   "cat": "Music",
+   "w": 560,
+   "h": 498,
+   "fw": 1500,
+   "fh": 1335
+  },
+  {
+   "file": "co-goat",
+   "caption": "Lying on a bronze goat above a canyon",
+   "tag": "Colombia",
+   "cat": "Places",
+   "w": 440,
+   "h": 587,
+   "fw": 1200,
+   "fh": 1600
+  },
+  {
+   "file": "perk-blazer",
+   "caption": "At the microphone in a Perkiomen tie",
+   "tag": "Perkiomen",
+   "cat": "School",
+   "w": 440,
+   "h": 600,
+   "fw": 733,
+   "fh": 1000
+  },
+  {
+   "file": "mun-eagle",
+   "caption": "At Eagle MUNC",
+   "tag": "Model UN",
+   "cat": "Leadership",
+   "w": 440,
+   "h": 532,
+   "fw": 988,
+   "fh": 1194
+  },
+  {
+   "file": "lift-blue",
+   "caption": "In the Perkiomen weight room, paw print on the wall",
+   "tag": "Weightlifting",
+   "cat": "Sport",
+   "w": 440,
+   "h": 587,
+   "fw": 1050,
+   "fh": 1400
+  },
+  {
+   "file": "vz-board",
+   "caption": "The Personal Project display board",
+   "tag": "Venezuela paper",
+   "cat": "Research",
+   "w": 560,
+   "h": 469,
+   "fw": 1600,
+   "fh": 1339
+  },
+  {
+   "file": "games-rb3",
+   "caption": "Facing the sun, in-game",
+   "tag": "Video games",
+   "cat": "Games",
+   "w": 560,
+   "h": 383,
+   "fw": 1600,
+   "fh": 1093
+  },
+  {
+   "file": "music-drums",
+   "caption": "Behind the kit",
+   "tag": "Music",
+   "cat": "Music",
+   "w": 440,
+   "h": 585,
+   "fw": 1170,
+   "fh": 1556
+  },
+  {
+   "file": "co-camp",
+   "caption": "Outside the shelter we built",
+   "tag": "Colombia",
+   "cat": "Places",
+   "w": 560,
+   "h": 374,
+   "fw": 1090,
+   "fh": 727
+  },
+  {
+   "file": "perk-awards",
+   "caption": "Receiving the folder at Perkiomen's awards ceremony",
+   "tag": "Perkiomen",
+   "cat": "School",
+   "w": 560,
+   "h": 373,
+   "fw": 1600,
+   "fh": 1067
+  },
+  {
+   "file": "vol-river",
+   "caption": "Pulling a tire out of the river on a clean-up day",
+   "tag": "Volunteering",
+   "cat": "Leadership",
+   "w": 440,
+   "h": 481,
+   "fw": 1464,
+   "fh": 1600
+  },
+  {
+   "file": "run-bibs",
+   "caption": "RBC Race for the Kids, 15K bibs",
+   "tag": "Running",
+   "cat": "Sport",
+   "w": 560,
+   "h": 378,
+   "fw": 1600,
+   "fh": 1080
+  },
+  {
+   "file": "games-rb4",
+   "caption": "Golden hour over the grass, in-game",
+   "tag": "Video games",
+   "cat": "Games",
+   "w": 560,
+   "h": 359,
+   "fw": 1600,
+   "fh": 1026
+  },
+  {
+   "file": "music-electric",
+   "caption": "On the electric kit at home, headphones on",
+   "tag": "Music",
+   "cat": "Music",
+   "w": 440,
+   "h": 587,
+   "fw": 960,
+   "fh": 1280
+  },
+  {
+   "file": "co-vest",
+   "caption": "Life jacket on, ready for the canoe",
+   "tag": "Colombia",
+   "cat": "Places",
+   "w": 560,
+   "h": 487,
+   "fw": 1400,
+   "fh": 1217
+  },
+  {
+   "file": "perk-bell",
+   "caption": "Ringing the bell as a procession climbs the steps, 2027 chalked underfoot",
+   "tag": "Perkiomen",
+   "cat": "School",
+   "w": 560,
+   "h": 373,
+   "fw": 1600,
+   "fh": 1067
+  },
+  {
+   "file": "vol-bingo",
+   "caption": "Bingo with residents at a care home",
+   "tag": "Volunteering",
+   "cat": "Leadership",
+   "w": 440,
+   "h": 587,
+   "fw": 1200,
+   "fh": 1600
+  },
+  {
+   "file": "run-thumbs",
+   "caption": "Mid-race, 15K, bib 437",
+   "tag": "Running",
+   "cat": "Sport",
+   "w": 440,
+   "h": 585,
+   "fw": 543,
+   "fh": 722
+  },
+  {
+   "file": "games-rb5",
+   "caption": "Watching the sun go down, in-game",
+   "tag": "Video games",
+   "cat": "Games",
+   "w": 560,
+   "h": 357,
+   "fw": 1600,
+   "fh": 1021
+  },
+  {
+   "file": "music-band",
+   "caption": "The band before the set",
+   "tag": "Music",
+   "cat": "Music",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
+  },
+  {
+   "file": "co-tilata-balcony",
+   "caption": "On a balcony in the hills, in the Tilatá shirt",
+   "tag": "Colombia",
+   "cat": "Places",
+   "w": 440,
+   "h": 587,
+   "fw": 1200,
+   "fh": 1600
+  },
+  {
+   "file": "perk-chalk",
+   "caption": "Chalking the steps with two classmates",
+   "tag": "Perkiomen",
+   "cat": "School",
+   "w": 560,
+   "h": 373,
+   "fw": 1600,
+   "fh": 1067
+  },
+  {
+   "file": "vol-water",
+   "caption": "Running a water station at a race",
+   "tag": "Volunteering",
+   "cat": "Leadership",
+   "w": 440,
+   "h": 781,
+   "fw": 901,
+   "fh": 1600
+  },
+  {
+   "file": "music-stage",
+   "caption": "Rehearsal on the Perkiomen stage",
+   "tag": "Music",
+   "cat": "Music",
+   "w": 560,
+   "h": 373,
+   "fw": 1400,
+   "fh": 933
+  },
+  {
+   "file": "co-tilata-pair",
+   "caption": "With my brother, ready for school in our Colegio Tilatá uniforms",
+   "tag": "Colombia",
+   "cat": "Places",
+   "w": 440,
+   "h": 587,
+   "fw": 720,
+   "fh": 960
+  },
+  {
+   "file": "perk-podium",
+   "caption": "Stepping away from the podium at an outdoor ceremony",
+   "tag": "Perkiomen",
+   "cat": "School",
+   "w": 440,
+   "h": 612,
+   "fw": 719,
+   "fh": 1000
+  },
+  {
+   "file": "hosp-or",
+   "caption": "Watching a procedure from the operating table",
+   "tag": "Hospital",
+   "cat": "Leadership",
+   "w": 440,
+   "h": 587,
+   "fw": 1200,
+   "fh": 1600
+  },
+  {
+   "file": "music-flyer",
+   "caption": "The Perk Rock Band Concert poster, Friday October 30",
+   "tag": "Music",
+   "cat": "Music",
+   "w": 440,
+   "h": 569,
+   "fw": 1082,
+   "fh": 1400
+  },
+  {
+   "file": "trip-peru",
+   "caption": "With an alpaca and its keeper in the Andes",
+   "tag": "Peru",
+   "cat": "Places",
+   "w": 440,
+   "h": 685,
+   "fw": 720,
+   "fh": 1121
+  },
+  {
+   "file": "perk-door",
+   "caption": "Perkiomen School's post on earning the AP International Diploma",
+   "tag": "Perkiomen",
+   "cat": "School",
+   "w": 560,
+   "h": 373,
+   "fw": 1600,
+   "fh": 1067
+  },
+  {
+   "file": "hosp-mirror",
+   "caption": "Between cases, scrubs and mask",
+   "tag": "Hospital",
+   "cat": "Leadership",
+   "w": 440,
+   "h": 587,
+   "fw": 1200,
+   "fh": 1600
+  },
+  {
+   "file": "eport-kits",
+   "caption": "Two kits: the school's acoustic kit and the electric kit at home",
+   "tag": "Music",
+   "cat": "Music",
+   "w": 560,
+   "h": 347,
+   "fw": 1200,
+   "fh": 744
+  },
+  {
+   "file": "pa-ancon",
+   "caption": "At the Cerro Ancón nature reserve",
+   "tag": "Panama",
+   "cat": "Places",
+   "w": 440,
+   "h": 587,
+   "fw": 1050,
+   "fh": 1400
+  },
+  {
+   "file": "perk-senator",
+   "caption": "With Senator Pennycuick",
+   "tag": "Perkiomen",
+   "cat": "School",
+   "w": 440,
+   "h": 587,
+   "fw": 1125,
+   "fh": 1500
+  },
+  {
+   "file": "hosp-facade",
+   "caption": "The hospital facade",
+   "tag": "Hospital",
+   "cat": "Leadership",
+   "w": 440,
+   "h": 587,
+   "fw": 1200,
+   "fh": 1600
+  },
+  {
+   "file": "eport-perform",
+   "caption": "The e-Portfolio rehearsal performance",
+   "tag": "Music",
+   "cat": "Music",
+   "w": 560,
+   "h": 541,
+   "fw": 1018,
+   "fh": 984
+  },
+  {
+   "file": "trip-bench",
+   "caption": "On a bench by the water, with the dog",
+   "tag": "Trinidad",
+   "cat": "Places",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
+  },
+  {
+   "file": "perk-group",
+   "caption": "With friends on the lawn at Perkiomen",
+   "tag": "Perkiomen",
+   "cat": "School",
+   "w": 560,
+   "h": 420,
+   "fw": 1560,
+   "fh": 1170
+  },
+  {
+   "file": "hosp-mural",
+   "caption": "The Hospital Regional de Veracruz mural",
+   "tag": "Hospital",
+   "cat": "Leadership",
+   "w": 440,
+   "h": 587,
+   "fw": 1200,
+   "fh": 1600
+  },
+  {
+   "file": "isps-apvybz2",
+   "caption": "AP Vybz members performing and rehearsing",
+   "tag": "Music",
+   "cat": "Music",
+   "w": 560,
+   "h": 324,
+   "fw": 772,
+   "fh": 447
+  },
+  {
+   "file": "tt-beach",
+   "caption": "In the sea with friends, Trinidad",
+   "tag": "Trinidad",
+   "cat": "Places",
+   "w": 440,
+   "h": 587,
+   "fw": 720,
+   "fh": 960
+  },
+  {
+   "file": "perk-skeleton",
+   "caption": "Meeting Alberto, the anatomy skeleton, in class",
+   "tag": "Perkiomen",
+   "cat": "School",
+   "w": 440,
+   "h": 587,
+   "fw": 1200,
+   "fh": 1600
+  },
+  {
+   "file": "hosp-patient",
+   "caption": "A young patient and her surgeon",
+   "tag": "Hospital",
+   "cat": "Leadership",
+   "w": 440,
+   "h": 587,
+   "fw": 960,
+   "fh": 1280
+  },
+  {
+   "file": "isps-apvybz",
+   "caption": "AP Vybz, the school music organization",
+   "tag": "Music",
+   "cat": "Music",
+   "w": 560,
+   "h": 396,
+   "fw": 382,
+   "fh": 270
+  },
+  {
+   "file": "tt-birthday",
+   "caption": "Turning sixteen",
+   "tag": "Trinidad",
+   "cat": "Places",
+   "w": 440,
+   "h": 518,
+   "fw": 736,
+   "fh": 867
+  },
+  {
+   "file": "cake-birthday",
+   "caption": "A birthday dinner in the dining hall",
+   "tag": "Perkiomen",
+   "cat": "School",
+   "w": 560,
+   "h": 420,
+   "fw": 1560,
+   "fh": 1170
+  },
+  {
+   "file": "hosp-talk",
+   "caption": "A teaching session on appendicitis presentation",
+   "tag": "Hospital",
+   "cat": "Leadership",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
+  },
+  {
+   "file": "tt-dog",
+   "caption": "A walk with the dog",
+   "tag": "Trinidad",
+   "cat": "Places",
+   "w": 440,
+   "h": 606,
+   "fw": 465,
+   "fh": 640
+  },
+  {
+   "file": "perk-sky1",
+   "caption": "A winter sunset over campus",
+   "tag": "Perkiomen",
+   "cat": "School",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
+  },
+  {
+   "file": "hosp-ultrasound",
+   "caption": "Walking through an ultrasound with the residents",
+   "tag": "Hospital",
+   "cat": "Leadership",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
+  },
+  {
+   "file": "run-tired",
+   "caption": "Finishing a long one in Trinidad, worn out and happy",
+   "tag": "Trinidad",
+   "cat": "Places",
+   "w": 440,
+   "h": 550,
+   "fw": 957,
+   "fh": 1196
+  },
+  {
+   "file": "perk-sky2",
+   "caption": "Dusk on the lawn",
+   "tag": "Perkiomen",
+   "cat": "School",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
+  },
+  {
+   "file": "hosp-mri",
+   "caption": "MRI cholangiogram on the radiology workstation",
+   "tag": "Hospital",
+   "cat": "Leadership",
+   "w": 560,
+   "h": 384,
+   "fw": 700,
+   "fh": 480
+  },
+  {
+   "file": "us-bean",
+   "caption": "Under Cloud Gate, Chicago",
+   "tag": "United States",
+   "cat": "Places",
+   "w": 440,
+   "h": 587,
+   "fw": 1200,
+   "fh": 1600
+  },
+  {
+   "file": "perk-sky3",
+   "caption": "A rainbow after the storm",
+   "tag": "Perkiomen",
+   "cat": "School",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
+  },
+  {
+   "file": "shadow-1",
+   "caption": "In the operating room at HAEV",
+   "tag": "Hospital",
+   "cat": "Leadership",
+   "w": 440,
+   "h": 588,
+   "fw": 1796,
+   "fh": 2400
+  },
+  {
+   "file": "us-flags",
+   "caption": "The Mexican and American flags, side by side",
+   "tag": "United States",
+   "cat": "Places",
+   "w": 440,
+   "h": 475,
+   "fw": 1389,
+   "fh": 1500
+  },
+  {
+   "file": "exeter-banner",
+   "caption": "Under the Exeter banner",
+   "tag": "Exeter",
+   "cat": "School",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
+  },
+  {
+   "file": "shadow-2",
+   "caption": "Between cases, summer 2026",
+   "tag": "Hospital",
+   "cat": "Leadership",
+   "w": 440,
+   "h": 593,
+   "fw": 1782,
+   "fh": 2400
+  },
+  {
+   "file": "madrid-hat",
+   "caption": "Madrid, in a bobble hat",
+   "tag": "Europe",
+   "cat": "Places",
+   "w": 560,
+   "h": 560,
+   "fw": 736,
+   "fh": 736
+  },
+  {
+   "file": "exeter-shoulders",
+   "caption": "Celebrating under the Exeter banner",
+   "tag": "Exeter",
+   "cat": "School",
+   "w": 560,
+   "h": 475,
+   "fw": 1013,
+   "fh": 860
+  },
+  {
+   "file": "trip-madrid",
+   "caption": "Back at La Escuelita, Madrid",
+   "tag": "Europe",
+   "cat": "Places",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
+  },
+  {
+   "file": "exeter-blazer",
+   "caption": "Blazer on, sunset over the river",
+   "tag": "Exeter",
+   "cat": "School",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
+  },
+  {
+   "file": "trip-versailles",
+   "caption": "The gates of Versailles",
+   "tag": "Europe",
+   "cat": "Places",
+   "w": 560,
+   "h": 353,
+   "fw": 1600,
+   "fh": 1008
+  },
+  {
+   "file": "exeter-dock",
+   "caption": "Arms out on the dock",
+   "tag": "Exeter",
+   "cat": "School",
+   "w": 440,
+   "h": 587,
+   "fw": 1200,
+   "fh": 1600
+  },
+  {
+   "file": "sea-arms",
+   "caption": "Arms wide at dusk",
+   "tag": "Travel",
+   "cat": "Places",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
+  },
+  {
+   "file": "exeter-river",
+   "caption": "Along the river in Exeter",
+   "tag": "Exeter",
+   "cat": "School",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
+  },
+  {
+   "file": "sea-look",
+   "caption": "Watching the waves come in",
+   "tag": "Travel",
+   "cat": "Places",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
+  },
+  {
+   "file": "exeter-quad",
+   "caption": "The quad on a bright summer day",
+   "tag": "Exeter",
+   "cat": "School",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
+  },
+  {
+   "file": "trip-beach",
+   "caption": "Sunset at the water's edge",
+   "tag": "Travel",
+   "cat": "Places",
+   "w": 440,
+   "h": 587,
+   "fw": 1200,
+   "fh": 1600
+  },
+  {
+   "file": "exeter-hall",
+   "caption": "The Academy building at dusk",
+   "tag": "Exeter",
+   "cat": "School",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
+  },
+  {
+   "file": "media-balloons",
+   "caption": "Inside a room of mirrored balloons",
+   "tag": "Travel",
+   "cat": "Places",
+   "w": 440,
+   "h": 587,
+   "fw": 960,
+   "fh": 1280
+  },
+  {
+   "file": "exeter-library",
+   "caption": "Inside the Phillips Exeter Academy library",
+   "tag": "Exeter",
+   "cat": "School",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
+  },
+  {
+   "file": "media-retro",
+   "caption": "A walk through a 1970s living room exhibit",
+   "tag": "Travel",
+   "cat": "Places",
+   "w": 560,
+   "h": 420,
+   "fw": 1280,
+   "fh": 960
+  },
+  {
+   "file": "exeter-pingpong",
+   "caption": "Hanging out in the dorm common room",
+   "tag": "Exeter",
+   "cat": "School",
+   "w": 440,
+   "h": 636,
+   "fw": 1073,
+   "fh": 1550
+  },
+  {
+   "file": "exeter-football",
+   "caption": "Evening football on the lawn with friends from the program",
+   "tag": "Exeter",
+   "cat": "School",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
+  },
+  {
+   "file": "exeter-coaster",
+   "caption": "Canobie Lake Park, summer 2025",
+   "tag": "Exeter",
+   "cat": "School",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
+  },
+  {
+   "file": "exeter-shirt",
+   "caption": "Friends and instructors signing shirts on the last day",
+   "tag": "Exeter",
+   "cat": "School",
+   "w": 560,
+   "h": 417,
+   "fw": 1170,
+   "fh": 871
+  },
+  {
+   "file": "exeter-hands",
+   "caption": "A team huddle in class",
+   "tag": "Exeter",
+   "cat": "School",
+   "w": 560,
+   "h": 419,
+   "fw": 660,
+   "fh": 494
+  },
+  {
+   "file": "exeter-reading",
+   "caption": "Leadership readings, highlighted and annotated",
+   "tag": "Exeter",
+   "cat": "School",
+   "w": 440,
+   "h": 587,
+   "fw": 1200,
+   "fh": 1600
+  },
+  {
+   "file": "cmu-hearts",
+   "caption": "The full Carnegie Mellon cohort, summer 2026",
+   "tag": "Carnegie Mellon",
+   "cat": "School",
+   "w": 560,
+   "h": 373,
+   "fw": 1600,
+   "fh": 1066
+  },
+  {
+   "file": "cmu-friends",
+   "caption": "With three friends from the program, a medal around one neck",
+   "tag": "Carnegie Mellon",
+   "cat": "School",
+   "w": 560,
+   "h": 366,
+   "fw": 1170,
+   "fh": 765
+  },
+  {
+   "file": "cmu-lab",
+   "caption": "In the lab with teammates",
+   "tag": "Carnegie Mellon",
+   "cat": "School",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
+  },
+  {
+   "file": "gbm-2",
+   "caption": "The team, mid-project",
+   "tag": "Carnegie Mellon",
+   "cat": "School",
+   "w": 560,
+   "h": 420,
+   "fw": 2200,
+   "fh": 1650
+  },
+  {
+   "file": "cmu-present",
+   "caption": "Presenting with the team",
+   "tag": "Carnegie Mellon",
+   "cat": "School",
+   "w": 440,
+   "h": 570,
+   "fw": 583,
+   "fh": 755
+  },
+  {
+   "file": "cmu-lecture",
+   "caption": "Final project presentation in the lecture hall",
+   "tag": "Carnegie Mellon",
+   "cat": "School",
+   "w": 560,
+   "h": 365,
+   "fw": 1170,
+   "fh": 762
+  },
+  {
+   "file": "cmu-lobby",
+   "caption": "With a teammate and two of the instructors",
+   "tag": "Carnegie Mellon",
+   "cat": "School",
+   "w": 560,
+   "h": 363,
+   "fw": 1170,
+   "fh": 759
+  },
+  {
+   "file": "cmu-fireworks",
+   "caption": "Fireworks over campus with friends from the program",
+   "tag": "Carnegie Mellon",
+   "cat": "School",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
+  },
+  {
+   "file": "cmu-pole",
+   "caption": "Looking up at the Walking to the Sky sculpture",
+   "tag": "Carnegie Mellon",
+   "cat": "School",
+   "w": 440,
+   "h": 587,
+   "fw": 1200,
+   "fh": 1600
+  },
+  {
+   "file": "cmu-night",
+   "caption": "Out on S. Craig Street, Pittsburgh, after a long day",
+   "tag": "Carnegie Mellon",
+   "cat": "School",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
+  }
+ ],
+ "video": {
+  "src": "/assets/video/perk-suit.mp4",
+  "poster": "/assets/video/perk-suit.jpg",
+  "caption": "In the Perkiomen blazer and tie",
+  "tag": "Perkiomen",
+  "cat": "Video"
+ },
+ "cats": [
+  "Me",
+  "Music",
+  "Places",
+  "School",
+  "Leadership",
+  "Sport",
+  "Research",
+  "Games"
+ ]
+}
