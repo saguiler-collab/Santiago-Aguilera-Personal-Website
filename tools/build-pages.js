@@ -2660,14 +2660,25 @@ const PAGES = [
   },
   {
     file: "Curiosities-Videogames.dc.html", section: "curiosities", parent: { label: "Curiosities", href: "Curiosities.dc.html" },
-    eyebrow: "Curiosities · Games", title: "Video games", lede: "Yakuza, hack and slash, Dark Souls, and three platinum trophies.",
-    desc: "Video games. Three platinum trophies, a love of the Yakuza games, hack and slash, and Dark Souls.",
-    intro: "Yakuza, hack and slash, and Dark Souls, and otherwise whatever the group has decided we are playing this month.",
+    eyebrow: "Curiosities · Games", title: "Video games", lede: "I do not just play a game. I finish it: every trophy, to the last one.",
+    desc: "Video games, played to completion: three platinum trophies, and a love of the Yakuza games, hack and slash, and Dark Souls.",
+    intro: "I am a collector, not a tourist. Most people play a game, reach the credits and walk away. I want everything in it: every trophy, the whole list ticked. Yakuza, hack and slash and Dark Souls are where that shows.",
     media: [
+      {
+        "title": "A collector, not a tourist",
+        "body": [
+          "The credits are not the end of a game for me. The part I love is going back for everything that is left, until the list is done. Playing a game and going away leaves most of it unseen, and I would rather see all of it."
+        ],
+        "points": [
+          ["Finish, then keep going", "The ending is where the collecting starts."],
+          ["Every trophy", "A platinum means the whole list is done, with nothing skipped."],
+          ["Why it suits me", "It rewards patience, repetition and not stopping at good enough."]
+        ]
+      },
       {
         "title": "Three platinum trophies",
         "body": [
-          "A platinum means every other trophy in the game is done. These are screenshots from my PlayStation trophy pages, and between them they cover 140 trophies."
+          "A platinum is the proof: every other trophy in the game is done. These are screenshots from my PlayStation trophy pages, and between them they cover 140 trophies."
         ],
         "points": [
           [
@@ -2701,7 +2712,7 @@ const PAGES = [
         "points": [
           [
             "Yakuza",
-            "Long, character-driven stories I want to see through to the end, which is how Like a Dragon Gaiden ended at 62 of 62."
+            "Long, character-driven stories I want to see through to the end, and then past it: Like a Dragon Gaiden ended at 62 of 62."
           ],
           [
             "Hack and slash",
@@ -2716,7 +2727,7 @@ const PAGES = [
       {
         "title": "What it says about me",
         "body": [
-          "Finishing a game to its last trophy takes the same habits as the rest of this site: patience, repetition, and not stopping at good enough. It is the same attitude as a lift programme run for months, or a result checked until it holds."
+          "Wanting the whole list is the same instinct as the rest of this site: patience, repetition, and not stopping at good enough. It is the attitude behind a lift programme run for months, a result checked until it holds, or a streak kept for a year. I would rather own a game completely than visit it."
         ]
       },
       {
@@ -2736,14 +2747,13 @@ const PAGES = [
       {
         "title": "Screens",
         "slots": [
-          "games-1",
           "games-2",
           "games-3"
         ],
         "gallery": true
       }
     ],
-    facts: [["Favourites", "Yakuza · hack and slash · Dark Souls"], ["Platinums", "3"], ["Trophies earned", "140 across the three"], ["Also", "Co-op · strategy"]],
+    facts: [["Style", "Collector, not just a player"], ["Favourites", "Yakuza · hack and slash · Dark Souls"], ["Platinums", "3"], ["Trophies earned", "140 across the three"], ["Also", "Co-op · strategy"]],
     slots: [
       { key: "games-1", ratio: "4 / 3", label: "Dark Souls" },
       { key: "games-2", ratio: "3 / 4", label: "Dark Souls, with Solaire" },
