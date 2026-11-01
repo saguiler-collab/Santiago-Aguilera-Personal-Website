@@ -219,7 +219,6 @@
   "tt-7": "tt-grass.jpg",
   "tt-8": "tt-beach.jpg",
   "us-5": "us-flags.jpg",
-  "us-6": "us-fifteen.jpg",
   "cmu-night": "cmu-night.jpg",
   "perk-15": "perk-group.jpg",
   "swim-4": "swim-mip.jpg",
@@ -268,5 +267,6 @@
   "games-4": "games-totk.jpg",
   "music-15": "music-ekit.jpg",
   "music-16": "music-pit1.jpg",
-  "music-17": "music-pit2.jpg"
+  "music-17": "music-pit2.jpg",
+  "us-7": "perk-paws.jpg"
 }

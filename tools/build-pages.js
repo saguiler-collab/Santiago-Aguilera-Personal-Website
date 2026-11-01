@@ -391,7 +391,7 @@ const PAGES = [
     ],
     facts: [["Arrived", "August 2025"], ["Away", "Fifteen years, five countries"], ["School", "Perkiomen School"], ["Born", "Houston, Texas, in 2008"]],
     slots: [
-      { key: "us-6", ratio: "1280 / 834", label: "Fifteen years ago" },
+      { key: "us-7", ratio: "854 / 538", label: "With the Perkiomen Panther mascot" },
       { key: "us-2", ratio: "4 / 3", label: "Perkiomen School campus" },
       { key: "us-3", ratio: "1 / 1", label: "Pennsburg, Pennsylvania" },
       { key: "us-5", ratio: "1389 / 1500", label: "The Mexican and American flags, side by side" },
