@@ -11,14 +11,14 @@
    "fh": 1600
   },
   {
-   "file": "music-prock",
-   "caption": "Drumming under the tent in a PRock shirt",
+   "file": "music-sing1",
+   "caption": "Singing “De música ligera” by Soda Stereo",
    "tag": "Music",
    "cat": "Music",
    "w": 560,
-   "h": 375,
-   "fw": 1800,
-   "fh": 1204
+   "h": 315,
+   "fw": 960,
+   "fh": 540
   },
   {
    "file": "kid-pirate",
@@ -91,14 +91,14 @@
    "fh": 1600
   },
   {
-   "file": "music-stagefist",
-   "caption": "Fists up on stage, the lights behind",
+   "file": "music-sing2",
+   "caption": "Mid-jump, the band behind me",
    "tag": "Music",
    "cat": "Music",
-   "w": 440,
-   "h": 587,
-   "fw": 1050,
-   "fh": 1400
+   "w": 560,
+   "h": 315,
+   "fw": 960,
+   "fh": 540
   },
   {
    "file": "mx-halloween",
@@ -171,14 +171,14 @@
    "fh": 1350
   },
   {
-   "file": "music-redkit",
-   "caption": "Selfie from behind the kit, the band in front",
+   "file": "music-prock",
+   "caption": "Drumming under the tent in a PRock shirt",
    "tag": "Music",
    "cat": "Music",
    "w": 560,
-   "h": 420,
-   "fw": 1600,
-   "fh": 1200
+   "h": 375,
+   "fw": 1800,
+   "fh": 1204
   },
   {
    "file": "mx-church",
@@ -251,14 +251,14 @@
    "fh": 1600
   },
   {
-   "file": "music-purple",
-   "caption": "Another night at the kit, under purple light",
+   "file": "music-stagefist",
+   "caption": "Fists up on stage, the lights behind",
    "tag": "Music",
    "cat": "Music",
    "w": 440,
-   "h": 660,
-   "fw": 800,
-   "fh": 1200
+   "h": 587,
+   "fw": 1050,
+   "fh": 1400
   },
   {
    "file": "co-mammoth",
@@ -331,13 +331,13 @@
    "fh": 834
   },
   {
-   "file": "music-prock2",
-   "caption": "Locked in on the hi-hat",
+   "file": "music-redkit",
+   "caption": "Selfie from behind the kit, the band in front",
    "tag": "Music",
    "cat": "Music",
-   "w": 440,
-   "h": 660,
-   "fw": 800,
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
    "fh": 1200
   },
   {
@@ -411,14 +411,14 @@
    "fh": 1500
   },
   {
-   "file": "music-pov",
-   "caption": "The view from the throne",
+   "file": "music-purple",
+   "caption": "Another night at the kit, under purple light",
    "tag": "Music",
    "cat": "Music",
-   "w": 560,
-   "h": 498,
-   "fw": 1500,
-   "fh": 1335
+   "w": 440,
+   "h": 660,
+   "fw": 800,
+   "fh": 1200
   },
   {
    "file": "co-goat",
@@ -481,14 +481,14 @@
    "fh": 1093
   },
   {
-   "file": "music-drums",
-   "caption": "Behind the kit",
+   "file": "music-prock2",
+   "caption": "Locked in on the hi-hat",
    "tag": "Music",
    "cat": "Music",
    "w": 440,
-   "h": 585,
-   "fw": 1170,
-   "fh": 1556
+   "h": 660,
+   "fw": 800,
+   "fh": 1200
   },
   {
    "file": "co-camp",
@@ -541,14 +541,14 @@
    "fh": 1026
   },
   {
-   "file": "music-electric",
-   "caption": "On the electric kit at home, headphones on",
+   "file": "music-pov",
+   "caption": "The view from the throne",
    "tag": "Music",
    "cat": "Music",
-   "w": 440,
-   "h": 587,
-   "fw": 960,
-   "fh": 1280
+   "w": 560,
+   "h": 498,
+   "fw": 1500,
+   "fh": 1335
   },
   {
    "file": "co-vest",
@@ -601,14 +601,14 @@
    "fh": 1021
   },
   {
-   "file": "music-band",
-   "caption": "The band before the set",
+   "file": "music-drums",
+   "caption": "Behind the kit",
    "tag": "Music",
    "cat": "Music",
-   "w": 560,
-   "h": 420,
-   "fw": 1600,
-   "fh": 1200
+   "w": 440,
+   "h": 585,
+   "fw": 1170,
+   "fh": 1556
   },
   {
    "file": "co-tilata-balcony",
@@ -641,14 +641,14 @@
    "fh": 1600
   },
   {
-   "file": "music-stage",
-   "caption": "Rehearsal on the Perkiomen stage",
+   "file": "music-electric",
+   "caption": "On the electric kit at home, headphones on",
    "tag": "Music",
    "cat": "Music",
-   "w": 560,
-   "h": 373,
-   "fw": 1400,
-   "fh": 933
+   "w": 440,
+   "h": 587,
+   "fw": 960,
+   "fh": 1280
   },
   {
    "file": "co-tilata-pair",
@@ -681,14 +681,14 @@
    "fh": 1600
   },
   {
-   "file": "music-flyer",
-   "caption": "The Perk Rock Band Concert poster, Friday October 30",
+   "file": "music-band",
+   "caption": "The band before the set",
    "tag": "Music",
    "cat": "Music",
-   "w": 440,
-   "h": 569,
-   "fw": 1082,
-   "fh": 1400
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
   },
   {
    "file": "trip-peru",
@@ -721,14 +721,14 @@
    "fh": 1600
   },
   {
-   "file": "eport-kits",
-   "caption": "Two kits: the school's acoustic kit and the electric kit at home",
+   "file": "music-stage",
+   "caption": "Rehearsal on the Perkiomen stage",
    "tag": "Music",
    "cat": "Music",
    "w": 560,
-   "h": 347,
-   "fw": 1200,
-   "fh": 744
+   "h": 373,
+   "fw": 1400,
+   "fh": 933
   },
   {
    "file": "pa-ancon",
@@ -761,14 +761,14 @@
    "fh": 1600
   },
   {
-   "file": "eport-perform",
-   "caption": "The e-Portfolio rehearsal performance",
+   "file": "music-flyer",
+   "caption": "The Perk Rock Band Concert poster, Friday October 30",
    "tag": "Music",
    "cat": "Music",
-   "w": 560,
-   "h": 541,
-   "fw": 1018,
-   "fh": 984
+   "w": 440,
+   "h": 569,
+   "fw": 1082,
+   "fh": 1400
   },
   {
    "file": "trip-bench",
@@ -801,14 +801,14 @@
    "fh": 1600
   },
   {
-   "file": "isps-apvybz2",
-   "caption": "AP Vybz members performing and rehearsing",
+   "file": "eport-kits",
+   "caption": "Two kits: the school's acoustic kit and the electric kit at home",
    "tag": "Music",
    "cat": "Music",
    "w": 560,
-   "h": 324,
-   "fw": 772,
-   "fh": 447
+   "h": 347,
+   "fw": 1200,
+   "fh": 744
   },
   {
    "file": "tt-beach",
@@ -841,14 +841,14 @@
    "fh": 1280
   },
   {
-   "file": "isps-apvybz",
-   "caption": "AP Vybz, the school music organization",
+   "file": "eport-perform",
+   "caption": "The e-Portfolio rehearsal performance",
    "tag": "Music",
    "cat": "Music",
    "w": 560,
-   "h": 396,
-   "fw": 382,
-   "fh": 270
+   "h": 541,
+   "fw": 1018,
+   "fh": 984
   },
   {
    "file": "tt-birthday",
@@ -881,6 +881,16 @@
    "fh": 1200
   },
   {
+   "file": "isps-apvybz2",
+   "caption": "AP Vybz members performing and rehearsing",
+   "tag": "Music",
+   "cat": "Music",
+   "w": 560,
+   "h": 324,
+   "fw": 772,
+   "fh": 447
+  },
+  {
    "file": "tt-dog",
    "caption": "A walk with the dog",
    "tag": "Trinidad",
@@ -909,6 +919,16 @@
    "h": 420,
    "fw": 1600,
    "fh": 1200
+  },
+  {
+   "file": "isps-apvybz",
+   "caption": "AP Vybz, the school music organization",
+   "tag": "Music",
+   "cat": "Music",
+   "w": 560,
+   "h": 396,
+   "fw": 382,
+   "fh": 270
   },
   {
    "file": "run-tired",

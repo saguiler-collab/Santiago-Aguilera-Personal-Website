@@ -21,6 +21,7 @@ add('Me', 'Me', [
  ('about-church', 'Portrait'), ('photo-tux', 'Dressed up on the lawn'), ('tt-grass', 'Out in the tall grass, Trinidad'),
  ('me-dog', 'Carrying the dog'), ('us-fifteen', 'Fifteen years ago'), ('perk-smile', 'Happy in the blazer and tie')])
 add('Music', 'Music', [
+ ('music-sing1', 'Singing “De música ligera” by Soda Stereo'), ('music-sing2', 'Mid-jump, the band behind me'),
  ('music-prock', 'Drumming under the tent in a PRock shirt'), ('music-stagefist', 'Fists up on stage, the lights behind'),
  ('music-redkit', 'Selfie from behind the kit, the band in front'), ('music-purple', 'Another night at the kit, under purple light'),
  ('music-prock2', 'Locked in on the hi-hat'), ('music-pov', 'The view from the throne'), ('music-drums', 'Behind the kit'),
