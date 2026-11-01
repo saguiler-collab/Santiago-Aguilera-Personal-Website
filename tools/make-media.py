@@ -36,8 +36,9 @@ add('Places', 'Colombia', [('co-mammoth', 'Riding a mammoth at the dinosaur park
  ('co-tilata-balcony', 'On a balcony in the hills, in the Tilatá shirt'), ('co-tilata-pair', 'With my brother, ready for school in our Colegio Tilatá uniforms')])
 add('Places', 'Peru', [('trip-peru', 'With an alpaca and its keeper in the Andes')])
 add('Places', 'Panama', [('pa-ancon', 'At the Cerro Ancón nature reserve')])
-add('Places', 'Trinidad', [('trip-bench', 'On a bench by the water, with the dog'), ('tt-beach', 'In the sea with friends, Trinidad'),
+add('Places', 'Trinidad', [('trip-bench', 'On a bench by the water, with the dog'), 
  ('tt-birthday', 'Turning sixteen'), ('tt-dog', 'A walk with the dog'), ('run-tired', 'Finishing a long one in Trinidad, worn out and happy')])
+add('Places', 'Tobago', [('tt-beach', 'In the sea with friends, Tobago')])
 add('Places', 'United States', [('us-bean', 'Under Cloud Gate, Chicago'), ('us-flags', 'The Mexican and American flags, side by side')])
 add('Places', 'Europe', [('madrid-hat', 'Madrid, in a bobble hat'), ('trip-madrid', 'Back at La Escuelita, Madrid'), ('trip-versailles', 'The gates of Versailles')])
 add('Places', 'Travel', [('sea-arms', 'Arms wide at dusk'), ('sea-look', 'Watching the waves come in'), ('trip-beach', "Sunset at the water's edge"),
