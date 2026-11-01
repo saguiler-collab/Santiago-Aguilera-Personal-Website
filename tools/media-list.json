@@ -811,14 +811,14 @@
    "fh": 744
   },
   {
-   "file": "tt-beach",
-   "caption": "In the sea with friends, Trinidad",
+   "file": "tt-birthday",
+   "caption": "Turning sixteen",
    "tag": "Trinidad",
    "cat": "Places",
    "w": 440,
-   "h": 587,
-   "fw": 720,
-   "fh": 960
+   "h": 518,
+   "fw": 736,
+   "fh": 867
   },
   {
    "file": "perk-skeleton",
@@ -851,14 +851,14 @@
    "fh": 984
   },
   {
-   "file": "tt-birthday",
-   "caption": "Turning sixteen",
+   "file": "tt-dog",
+   "caption": "A walk with the dog",
    "tag": "Trinidad",
    "cat": "Places",
    "w": 440,
-   "h": 518,
-   "fw": 736,
-   "fh": 867
+   "h": 606,
+   "fw": 465,
+   "fh": 640
   },
   {
    "file": "cake-birthday",
@@ -891,14 +891,14 @@
    "fh": 447
   },
   {
-   "file": "tt-dog",
-   "caption": "A walk with the dog",
+   "file": "run-tired",
+   "caption": "Finishing a long one in Trinidad, worn out and happy",
    "tag": "Trinidad",
    "cat": "Places",
    "w": 440,
-   "h": 606,
-   "fw": 465,
-   "fh": 640
+   "h": 550,
+   "fw": 957,
+   "fh": 1196
   },
   {
    "file": "perk-sky1",
@@ -931,14 +931,14 @@
    "fh": 270
   },
   {
-   "file": "run-tired",
-   "caption": "Finishing a long one in Trinidad, worn out and happy",
-   "tag": "Trinidad",
+   "file": "tt-beach",
+   "caption": "In the sea with friends, Tobago",
+   "tag": "Tobago",
    "cat": "Places",
    "w": 440,
-   "h": 550,
-   "fw": 957,
-   "fh": 1196
+   "h": 587,
+   "fw": 720,
+   "fh": 960
   },
   {
    "file": "perk-sky2",
