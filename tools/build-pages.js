@@ -183,7 +183,7 @@ const PAGES = [
       { eyebrow: "Service", title: "Volunteering", href: "Leadership-Volunteering.dc.html", body: "Community work, in and out of school." },
       { eyebrow: "Co-Editor-in-Chief", title: "The Perkiomenite", href: "Leadership-Perkiomenite.dc.html", body: "Leading and writing for the school paper." }
     ],
-    slots: [{ key: "leadership-hero", ratio: "16 / 9", label: "A leadership event" }],
+    slots: [{ key: "leadership-hero", ratio: "1600 / 1200", label: "With fellow students in the gym" }],
     next: { title: "The work behind it", lede: "Research and projects, in detail.", href: "Research.dc.html", label: "See the research" }
   },
   {
@@ -197,7 +197,7 @@ const PAGES = [
       { eyebrow: "Olympic lifting", title: "Weightlifting", href: "Activities-Weightlifting.dc.html", body: "Snatch and clean & jerk, programmed year-round." },
       { eyebrow: "Road racing", title: "Running", href: "Activities-Running.dc.html", body: "The RBC Race for the Kids 15K, three years running, and years of 5Ks across Trinidad." }
     ],
-    slots: [{ key: "activities-hero", ratio: "16 / 9", label: "Activities" }],
+    slots: [{ key: "activities-hero", ratio: "1050 / 1400", label: "In the Perkiomen weight room" }],
     next: { title: "What I do with the rest of it", lede: "Languages, manga, and whatever the group is playing.", href: "Curiosities.dc.html", label: "See the curiosities" }
   },
 
@@ -842,6 +842,7 @@ const PAGES = [
       }
     ],
     facts: [["Program", "Hamm '55 Leadership Program"], ["Place", "Exeter, New Hampshire"], ["Focus", "Social justice · community engagement"], ["Also", "SAT prep · intro calculus"]],
+    hero: "exeter-3",
     slots: [
       { key: "exeter-1", ratio: "4 / 3", label: "Along the river in Exeter" },
       { key: "exeter-2", ratio: "4 / 3", label: "A team huddle in class" },
@@ -919,6 +920,7 @@ const PAGES = [
         ]}
       ]
     },
+    hero: "cmu-lab",
     slots: [
       { key: "gbm-3", ratio: "3 / 2", label: "The full Carnegie Mellon cohort, summer 2026" },
       { key: "gbm-2", ratio: "4 / 3", label: "The team, mid-project" },
@@ -1031,6 +1033,7 @@ const PAGES = [
       }
     ],
     facts: [["Team", "Five people, Carnegie Mellon, summer 2026"], ["My role", "Validation, benchmarking, quality control"], ["Cohort", "153 TCGA-GBM tumours"], ["Validation", "ρ = 0.76 vs. an independent, DNA-based measurement"], ["Prognosis", "ΔC-index = +0.001, a reported null result"]],
+    hero: "gbm-2",
     slots: [
       { key: "gbm-1", ratio: "3 / 4", label: "Presenting the null result to the cohort" },
       { key: "gbm-2", ratio: "4 / 3", label: "The team, mid-project" },
@@ -1316,6 +1319,7 @@ const PAGES = [
       }
     ],
     facts: [["Type", "Publication"], ["Topic", "Venezuelan migration to Trinidad & Tobago"], ["Length", "42 pages · 62 sources"], ["Venue", "SSRN"], ["When", "November 2024 – May 2025"]],
+    hero: "vz-2",
     slots: [
       { key: "vz-1", ratio: "3 / 4", label: "The paper's title page, published on SSRN" },
       { key: "vz-2", ratio: "2200 / 1841", label: "Presenting the work at the Personal Project Exhibition" },
@@ -1394,6 +1398,7 @@ const PAGES = [
       }
     ],
     facts: [["Type", "Research program"], ["Program", "CSR-x, Collaborative Summer Research eXperience"], ["Focus", "PAH exposure · epigenetic aging · DNA methylation"], ["When", "Summer 2026"]],
+    hero: "csrx-4",
     slots: [
       { key: "csrx-1", ratio: "16 / 9", label: "The research cohort, remote" },
       { key: "csrx-2", ratio: "4 / 3", label: "A figure from the analysis" },
@@ -1413,7 +1418,7 @@ const PAGES = [
       {
         "title": "Starting it",
         "body": [
-          "Founding it meant the usual unglamorous work: a charter, an advisor, a room, and enough people in that room to make it real. The chapter has run unofficially since February 2026, and I have been its president since September 2026."
+          "Founding it meant the usual unglamorous work: a charter, an advisor, a room, and enough people in that room to make it real. I founded the chapter in February 2026 and have been its president ever since."
         ]
       },
       {
@@ -1479,7 +1484,8 @@ const PAGES = [
         "gallery": true
       }
     ],
-    facts: [["Role", "Founder & President"], ["Since", "February 2026 (president from September 2026)"], ["Drive", "1,000+ points, about 300+ items"], ["Organisation", "HOSA"], ["School", "Perkiomen"]],
+    facts: [["Role", "Founder & President"], ["Since", "February 2026, as founder and president"], ["Drive", "1,000+ points, about 300+ items"], ["Organisation", "HOSA"], ["School", "Perkiomen"]],
+    hero: "hosa-1",
     slots: [
       { key: "hosa-1", ratio: "3 / 4", label: "Addressing the room at a school event" },
       { key: "hosa-2", ratio: "4 / 3", label: "With fellow students in the gym" },
@@ -1625,8 +1631,9 @@ const PAGES = [
       }
     ],
     facts: [["Role", "Director of Journalism"], ["Conference", "GVMUN"], ["Term", "Intern March – August 2026, Director since September 2026"], ["Also", "Model UN delegate"]],
+    hero: "gvmun-1",
     slots: [
-      { key: "gvmun-1", ratio: "4 / 3", label: "GVMUN committee room" },
+      { key: "gvmun-1", ratio: "1173 / 470", label: "The top of one of my articles in GVMUN's newsletter" },
       { key: "gvmun-2", ratio: "4 / 3", label: "The press corps" }
     ],
     next: { title: "Next: Student Council / Senate", lede: "Representing the room you are sitting in.", href: "Leadership-StudentCouncil.dc.html", label: "Go to student government" }
@@ -1700,6 +1707,7 @@ const PAGES = [
       }
     ],
     facts: [["Roles", "ISPS Student Council Secretary · Class of '27 President"], ["Schools", "ISPS · Perkiomen"], ["Started", "2021"]],
+    hero: "stuco-chalk",
     slots: [
       { key: "stuco-1", ratio: "4 / 3", label: "Student Council at ISPS" },
       { key: "stuco-2", ratio: "4 / 3", label: "Senate at Perkiomen" },
@@ -1827,6 +1835,7 @@ const PAGES = [
       }
     ],
     facts: [["Type", "Community service"], ["Ambassador", "Be a Friend Project, since September 2026"], ["Also", "HOSA food and clothing drive"]],
+    hero: "vol-1",
     slots: [
       { key: "vol-1", ratio: "1464 / 1600", label: "Pulling a tire out of the river on a clean-up day" },
       { key: "vol-2", ratio: "9 / 16", label: "Running a water station at a race" },
@@ -2633,6 +2642,7 @@ const PAGES = [
       }
     ],
     facts: [["Discipline", "Olympic weightlifting"], ["Lifts", "Snatch · clean & jerk"], ["Training", "Year-round, since August 2024"], ["Bench press", "265 lb"], ["Squat", "335 lb"], ["Deadlift", "455 lb"], ["Liftoff ranking", "#186 global (Top 0.1%), Oct 28, 2026"]],
+    hero: "lift-1",
     slots: [
 { key: "lift-5", ratio: "1300 / 1097", label: "Progress, from the hiking trail to the 15K to the gym" },
       { key: "lift-1", ratio: "3 / 4", label: "Back squats" },
@@ -2726,7 +2736,7 @@ const PAGES = [
     tbd: "What you are reading right now, and the series that mattered most. Send these and this page gets a proper shelf.",
     facts: [["Mostly", "Manga · long series"], ["Languages", "Spanish · English · French"], ["Currently reading", TBD]],
     slots: [
-      { key: "lit-1", ratio: "4 / 3", label: "The shelf" },
+      { key: "lit-1", ratio: "1600 / 1200", label: "Inside the Phillips Exeter Academy library" },
       { key: "lit-2", ratio: "1 / 1", label: "Currently reading" }
     ],
     next: { title: "Next: Music", lede: "What I listen to, as opposed to what I play.", href: "Curiosities-Music.dc.html", label: "Go to music" }
@@ -2740,7 +2750,7 @@ const PAGES = [
     tbd: "Your current rotation, the artists that matter most, and a Spotify link if you want one embedded. Send these and this page gets a real shelf.",
     facts: [["From", "Mexico · Colombia · Trinidad · US"], ["Also plays", "Drums and more, see Music & Drums"], ["On repeat", TBD]],
     slots: [
-      { key: "music-listen-1", ratio: "4 / 3", label: "Listening" },
+      { key: "music-listen-1", ratio: "960 / 1280", label: "On the electric kit at home, headphones on" },
       { key: "music-listen-2", ratio: "1 / 1", label: "Records, headphones, a playlist" }
     ],
     next: { title: "Next: Video games", lede: "Co-op, strategy, and whatever the group is playing.", href: "Curiosities-Videogames.dc.html", label: "Go to video games" }
@@ -2966,7 +2976,8 @@ function renderPage(p) {
      a single placeholder so it is clear where the first photo goes. */
   const filledSlots = slots.filter((sl) => PHOTO_MANIFEST[sl.key]);
   const inRows = new Set((p.media || []).flatMap((r) => r.slots || []));
-  const heroSlot = filledSlots.find((sl) => !inRows.has(sl.key)) || (p.media ? undefined : filledSlots[0]);
+  /* p.hero names the lead photo. It is lifted out of any row that also uses it. */
+  const heroSlot = (p.hero && filledSlots.find((sl) => sl.key === p.hero)) || filledSlots.find((sl) => !inRows.has(sl.key)) || (p.media ? undefined : filledSlots[0]);
   const restSlots = filledSlots.filter((sl) => sl !== heroSlot);
 
   const crumb = p.parent
@@ -3510,7 +3521,7 @@ function spiralSvg() {
   const CARD_IMG = {
     "About.dc.html": "about-church", "Academics.dc.html": "exeter-banner", "Research.dc.html": "cmu-lab", "Leadership.dc.html": "hosa-mic",
     "Activities.dc.html": "lift-squat", "Curiosities.dc.html": "games-artorias", "Media.dc.html": "trip-versailles",
-    "Leadership-HOSA.dc.html": "hosa-anatomy", "Leadership-StudentCouncil.dc.html": "stuco-room", "Leadership-MUN.dc.html": "mun-eagle", "Leadership-Shadowing.dc.html": "hosp-or",
+    "Leadership-HOSA.dc.html": "hosa-anatomy", "Leadership-GVMUN.dc.html": "gvmun-article", "Leadership-StudentCouncil.dc.html": "stuco-room", "Leadership-MUN.dc.html": "mun-eagle", "Leadership-Shadowing.dc.html": "hosp-or",
     "Leadership-Volunteering.dc.html": "vol-river", "Leadership-Perkiomenite.dc.html": "perkmt", "Activities-Swimming.dc.html": "swim-blocks", "Activities-Weightlifting.dc.html": "lift-squat",
     "Drums.dc.html": "music-drums", "Drums-SonoArte.dc.html": "music-electric", "Drums-Instruments.dc.html": "music-instruments", "Drums-APVybz.dc.html": "isps-apvybz", "Drums-Musicals.dc.html": "music-musicals", "Drums-MYPPortfolio.dc.html": "music-eportfolio", "Drums-Rockband.dc.html": "music-stage", "Activities-Running.dc.html": "run-tired", "Academics-ISPS.dc.html": "isps-guayasamin",
     "Academics-Perkiomen.dc.html": "perk-paws", "Academics-ExeterSummer.dc.html": "exeter-banner", "Academics-CompBio.dc.html": "cmu-friends",

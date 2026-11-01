@@ -1089,3 +1089,7 @@ a.sa-send { display: inline-flex; align-items: center; text-decoration: none; }
 .sa-lb-prev { left: 12px; top: 50%; transform: translateY(-50%); }
 .sa-lb-next { right: 12px; top: 50%; transform: translateY(-50%); }
 @media (max-width: 640px) { .sa-lb { padding: 64px 12px 24px; } .sa-lb-prev, .sa-lb-next { top: auto; bottom: 14px; transform: none; } .sa-lb-prev { left: 24px; } .sa-lb-next { right: 24px; } .sa-mgrid { column-width: 150px; column-gap: 10px; } .sa-mtile { margin-bottom: 10px; } }
+
+/* A hand-written page head with a lead photo beside the title. Stacks on narrow screens. */
+.sa-headfig { margin: 0; width: 100%; justify-self: end; }
+@media (max-width: 860px) { .sa-pagehead-split { grid-template-columns: minmax(0, 1fr) !important; } .sa-headfig { justify-self: start; max-width: min(100%, 360px) !important; } }
