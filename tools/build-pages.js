@@ -461,7 +461,7 @@ const PAGES = [
         ],
         "points": [
           ["Highest MYP score in my class", ""],
-          ["MYP Bilingual Diploma", "Completed in English and Spanish."],
+          ["MYP Bilingual Diploma", "Completed in English and Spanish, confirmed by the IB Bilingual Certificate."],
           ["Personal Project Award", "The self-directed project, carried end to end."]
         ]
       },
@@ -481,6 +481,18 @@ const PAGES = [
           ["Music, assessed in Spanish", "5"]
         ],
         "slots": ["isps-myp"]
+      },
+      {
+        "title": "The bilingual certificate",
+        "body": [
+          "Alongside the results, the IB issued the Bilingual Certificate of the International Baccalaureate, dated the same day, which confirms the MYP Bilingual Diploma: the Middle Years Programme completed in two languages."
+        ],
+        "points": [
+          ["Awarded by", "The International Baccalaureate, Geneva."],
+          ["Dated", "August 21, 2025."],
+          ["Languages", "English and Spanish."]
+        ],
+        "slots": ["isps-bil"]
       },
       {
         "title": "The same subjects, year after year",
@@ -636,6 +648,7 @@ const PAGES = [
       { key: "isps-11", ratio: "408 / 300", label: "Tug of war for Mayaro house" },
       { key: "isps-12", ratio: "213 / 223", label: "Student portrait at ISPS" },
       { key: "isps-myp", ratio: "1242 / 1500", label: "IB Middle Years Programme course results, May 2025 session" },
+      { key: "isps-bil", ratio: "1147 / 1311", label: "The IB Bilingual Certificate of the Middle Years Programme, August 21, 2025" },
       { key: "isps-4", ratio: "1141 / 1145", label: "Oswaldo Guayasamín, the original" },
       { key: "isps-5", ratio: "1400 / 1238", label: "My recreation, for Spanish class" }
     ],
