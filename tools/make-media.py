@@ -60,9 +60,10 @@ add('School', 'Carnegie Mellon', [('cmu-hearts', 'The full Carnegie Mellon cohor
  ('cmu-lab', 'In the lab with teammates'), ('gbm-2', 'The team, mid-project'), ('cmu-present', 'Presenting with the team'), ('cmu-lecture', 'Final project presentation in the lecture hall'),
  ('cmu-lobby', 'With a teammate and two of the instructors'), ('cmu-fireworks', 'Fireworks over campus with friends from the program'),
  ('cmu-pole', 'Looking up at the Walking to the Sky sculpture'), ('cmu-night', 'Out on S. Craig Street, Pittsburgh, after a long day')])
-add('Leadership', 'HOSA', [('hosa-mic', 'Addressing the room at a school event'), ('hosa-conference', 'Between sessions at a HOSA conference'),
+add('Leadership', 'HOSA', [('hosa-mic', 'Addressing the room at a school event'), 
  ('hosa-crowd', 'With fellow students in the gym'), ('hosa-anatomy', 'Holding an anatomy model at the HOSA table'),
  ('hosa-volleyball', 'The HOSA volleyball tournament, with the cancer-awareness bracelets')])
+add('Leadership', 'Student Council', [('stuco-room', 'Between sessions at the NASSP conference in Chicago, January 2025')])
 add('Leadership', 'Model UN', [('mun-eagle', 'At Eagle MUNC')])
 add('Leadership', 'Volunteering', [('vol-river', 'Pulling a tire out of the river on a clean-up day'), ('vol-bingo', 'Bingo with residents at a care home'),
  ('vol-water', 'Running a water station at a race')])

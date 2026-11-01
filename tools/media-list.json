@@ -121,8 +121,8 @@
    "fh": 300
   },
   {
-   "file": "hosa-conference",
-   "caption": "Between sessions at a HOSA conference",
+   "file": "hosa-crowd",
+   "caption": "With fellow students in the gym",
    "tag": "HOSA",
    "cat": "Leadership",
    "w": 560,
@@ -201,14 +201,14 @@
    "fh": 1238
   },
   {
-   "file": "hosa-crowd",
-   "caption": "With fellow students in the gym",
+   "file": "hosa-anatomy",
+   "caption": "Holding an anatomy model at the HOSA table",
    "tag": "HOSA",
    "cat": "Leadership",
-   "w": 560,
-   "h": 420,
-   "fw": 1600,
-   "fh": 1200
+   "w": 440,
+   "h": 587,
+   "fw": 1125,
+   "fh": 1500
   },
   {
    "file": "lift-squat",
@@ -281,8 +281,8 @@
    "fh": 1200
   },
   {
-   "file": "hosa-anatomy",
-   "caption": "Holding an anatomy model at the HOSA table",
+   "file": "hosa-volleyball",
+   "caption": "The HOSA volleyball tournament, with the cancer-awareness bracelets",
    "tag": "HOSA",
    "cat": "Leadership",
    "w": 440,
@@ -361,14 +361,14 @@
    "fh": 538
   },
   {
-   "file": "hosa-volleyball",
-   "caption": "The HOSA volleyball tournament, with the cancer-awareness bracelets",
-   "tag": "HOSA",
+   "file": "stuco-room",
+   "caption": "Between sessions at the NASSP conference in Chicago, January 2025",
+   "tag": "Student Council",
    "cat": "Leadership",
-   "w": 440,
-   "h": 587,
-   "fw": 1125,
-   "fh": 1500
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
   },
   {
    "file": "lift-tank",
