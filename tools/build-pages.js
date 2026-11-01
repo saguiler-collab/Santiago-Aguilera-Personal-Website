@@ -404,7 +404,6 @@ const PAGES = [
     eyebrow: "Academics · Trinidad & Tobago", title: "International School of Port of Spain", lede: "2021–2025. Student Council, and Stronger Together.",
     desc: "ISPS. Student Council and the Stronger Together initiative.",
     intro: "ISPS is where I first took on something school-wide rather than something assigned. Student Council meant representing my class and actually running events; Stronger Together meant building the support I wished had existed.",
-    tbd: "What the Mr. Jefferies Memorial Award recognises. Its criteria are not published anywhere I could find, so rather than guess at what it honours, the entry below just states the fact of it. Send the description and it goes in.",
     media: [
       {
         "title": "The school",
@@ -495,6 +494,39 @@ const PAGES = [
         "slots": ["isps-bil"]
       },
       {
+        "title": "The Mr. Jeffries Memorial Award",
+        "body": [
+          "The Mr. Jeffries Memorial Award honours students who show loyalty and dedication to the ISPS community. It remembers G. Jeffrey Sieunath (1938–2005), who provided 11 years of transportation services to the school, and the plaque in the school lists one winner a year in each of its three divisions. My name is on it for 2023, in the Middle School column, and I was given a plaque of my own for the 2022–2023 academic year."
+        ],
+        "points": [
+          [
+            "Awarded for",
+            "Loyalty and dedication to the ISPS community."
+          ],
+          [
+            "Division and year",
+            "Middle School, 2023."
+          ],
+          [
+            "Named for",
+            "G. Jeffrey Sieunath, who gave the school 11 years of transportation services."
+          ]
+        ],
+        "slots": [
+          "isps-13",
+          "isps-14"
+        ]
+      },
+      {
+        "title": "Collecting awards",
+        "body": [
+          "Most of the certificates on this page were handed over on a stage. This is one of those ceremonies, with the school's flags behind us."
+        ],
+        "slots": [
+          "isps-15"
+        ]
+      },
+      {
         "title": "The same subjects, year after year",
         "body": [
           "English earned an award in every one of the four years. The others kept coming back, which is a more honest description of where my attention goes than anything I could claim about myself."
@@ -505,6 +537,16 @@ const PAGES = [
           ["Music", "Grades 8, 9 and 10."],
           ["Spanish", "Grades 7 and 8, then the MYP Bilingual Diploma."],
           ["Design", "Grade 7, Grade 9, and a web design award in Grade 8."]
+        ]
+      },
+      {
+        "title": "In the design workshop",
+        "body": [
+          "Design was one of the classes I kept coming back to, with a Most Dedicated Designer award in Grade 7, a web design Certificate of Excellence in Grade 8 and Academic Excellence in Design I in Grade 9. It was also the one where the work was physical: measuring plywood, marking cuts and running a circular saw, with goggles on."
+        ],
+        "slots": [
+          "isps-16",
+          "isps-17"
         ]
       },
       {
@@ -536,6 +578,7 @@ const PAGES = [
       },
       {
         "title": "Clubs and sport",
+        "slots": ["isps-18"],
         "points": [
           ["Peak Performers", "The running club."],
           ["Secondary Schools Games, 2025", "Took part, in running."],
@@ -558,7 +601,7 @@ const PAGES = [
           { label: "Consistent Effort", detail: "Physical Education" }
         ]},
         { title: "Grade 8 · 2022–23", items: [
-          { label: "Mr. Jefferies Memorial Award", detail: "A named school award, presented at the end of Grade 8." },
+          { label: "Mr. Jeffries Memorial Award", detail: "Middle School winner for 2022–23, for loyalty and dedication to the ISPS community. Named for G. Jeffrey Sieunath, who provided 11 years of transportation services to the school." },
           { label: "Academic Excellence", detail: "English · Music · Spanish Capable · Individuals & Societies · Drama" },
           { label: "Most Improved", detail: "Art" },
           { label: "Consistent Effort", detail: "Science" },
@@ -647,6 +690,12 @@ const PAGES = [
       { key: "isps-10", ratio: "772 / 447", label: "AP Vybz members performing and rehearsing" },
       { key: "isps-11", ratio: "408 / 300", label: "Tug of war for Mayaro house" },
       { key: "isps-12", ratio: "213 / 223", label: "Student portrait at ISPS" },
+      { key: "isps-13", ratio: "576 / 800", label: "The Mr. Jeffries Memorial Award plaque: for loyalty and dedication to the ISPS community, 2022–2023" },
+      { key: "isps-14", ratio: "900 / 1200", label: "The Mr. Jeffries Memorial Award board at ISPS, with my 2023 entry (other winners' names blurred)" },
+      { key: "isps-15", ratio: "848 / 480", label: "Shaking hands on stage at an ISPS awards ceremony" },
+      { key: "isps-16", ratio: "975 / 1300", label: "Measuring plywood in the design workshop" },
+      { key: "isps-17", ratio: "975 / 1300", label: "Cutting with a circular saw in the design workshop" },
+      { key: "isps-18", ratio: "848 / 480", label: "Out in front on a group run in Port of Spain" },
       { key: "isps-myp", ratio: "1242 / 1500", label: "IB Middle Years Programme course results, May 2025 session" },
       { key: "isps-bil", ratio: "1147 / 1311", label: "The IB Bilingual Certificate of the Middle Years Programme, August 21, 2025" },
       { key: "isps-4", ratio: "1141 / 1145", label: "Oswaldo Guayasamín, the original" },
@@ -2063,7 +2112,8 @@ const PAGES = [
         "title": "Two kits",
         "body": [
           "I own an electric kit at home, so volume has never been a problem there: I can turn it down and practise at any hour. The school's acoustic kit is a different instrument. In Grade 8 I had to learn to hit more softly so my classmates could hear their own parts, and to tune the drums with a key without breaking anything. In a Grade 8 group evaluation I was marked down for playing too loud, which I put down to years on a kit with a volume knob."
-        ]
+        ],
+        "slots": ["music-15"]
       },
       {
         "title": "Why it stuck",
@@ -2074,6 +2124,7 @@ const PAGES = [
     ],
     facts: [["School", "SonoArte, Panama"], ["Started", "Panama, at eleven"], ["Kept going", "Online from Trinidad"]],
     slots: [
+      { key: "music-15", ratio: "1500 / 1396", label: "The electric kit at home" },
       { key: "music-4", ratio: "960 / 1280", label: "On the electric kit at home, headphones on" }
     ],
     next: {"title": "Next: Beyond the kit", "lede": "Glockenspiel, piano, steel pan and voice.", "href": "Drums-Instruments.dc.html", "label": "See the other instruments"}
@@ -2338,6 +2389,16 @@ const PAGES = [
         ]
       },
       {
+        "title": "From the pit",
+        "body": [
+          "A drummer's-eye view: the kit, the sheet music on the stand and the rest of the pit around me, under purple light."
+        ],
+        "slots": [
+          "music-16",
+          "music-17"
+        ]
+      },
+      {
         "title": "What the three have in common",
         "body": [
           "In a band the drummer sets the groove. In a musical the groove belongs to the score, the singers and the people on stage, and the drummer's job is to keep time for all of them. Over three years that moved from playing by ear to playing from a sheet, from many parts to the two I could be trusted with, and from working alone to working with a pit."
@@ -2346,6 +2407,8 @@ const PAGES = [
     ],
     facts: [["Shows", "Beauty and the Beast, Legally Blonde, Mamma Mia!"], ["Years", "2023, 2024, 2025"], ["Instruments", "Drums, piano"]],
     slots: [
+      { key: "music-16", ratio: "848 / 478", label: "In the pit, seen from above" },
+      { key: "music-17", ratio: "848 / 478", label: "Mid-fill, the sheet music beside me" },
       { key: "musicals-hero", ratio: "1280 / 800", label: "Three school musicals: Beauty and the Beast, Legally Blonde, Mamma Mia!" }
     ],
     next: {"title": "Next: MYP e-Portfolio", "lede": "Grade 10.", "href": "Drums-MYPPortfolio.dc.html", "label": "Go to the e-Portfolio"}
@@ -2648,7 +2711,9 @@ const PAGES = [
         "title": "In the gym",
         "slots": [
           "lift-7",
+          "lift-8",
           "lift-6",
+          "lift-9",
           "lift-2"
         ],
         "gallery": true
@@ -2659,6 +2724,8 @@ const PAGES = [
     slots: [
 { key: "lift-5", ratio: "1300 / 1097", label: "Progress, from the hiking trail to the 15K to the gym" },
       { key: "lift-1", ratio: "3 / 4", label: "Back squats" },
+      { key: "lift-8", ratio: "1050 / 1400", label: "Belt and wrist straps on in the Perkiomen weight room" },
+      { key: "lift-9", ratio: "844 / 1500", label: "Grinding out a rep on the shoulder press" },
       { key: "lift-7", ratio: "1050 / 1400", label: "In the Perkiomen weight room, paw print on the wall" },
       { key: "lift-6", ratio: "1050 / 1400", label: "A pump in the school gym" },
       { key: "lift-2", ratio: "3 / 4", label: "Between sets in the gym" },
@@ -2721,6 +2788,14 @@ const PAGES = [
         ]
       },
       {
+        "title": "On the road",
+        "slots": [
+          "run-6",
+          "run-7"
+        ],
+        "gallery": true
+      },
+      {
         "title": "Why I still run",
         "body": [
           "It is training, the plainest way there is to teach a body to keep going past where it wants to stop. And it is still the cheapest way to actually see a place, long after the people who flew in for a week have gone home."
@@ -2734,7 +2809,9 @@ const PAGES = [
       { key: "run-3", ratio: "3 / 4", label: "Mid-race, 15K, bib 437" },
       { key: "run-4", ratio: "1000 / 1272", label: "Strava, a night run on the ISPS track" },
       { key: "run-5", ratio: "1100 / 1180", label: "Strava, a 5K around East Greenville" },
-      { key: "run-2", ratio: "4 / 3", label: "A 5K somewhere in Trinidad" }
+      { key: "run-2", ratio: "4 / 3", label: "A 5K somewhere in Trinidad" },
+      { key: "run-6", ratio: "848 / 480", label: "Out in front on a group run in Port of Spain" },
+      { key: "run-7", ratio: "1125 / 1500", label: "Sweat, sky and earbuds, after a run" }
     ],
     next: { title: "Curiosities", lede: "The things that are not on a form.", href: "Curiosities.dc.html", label: "See the curiosities" }
   },
@@ -2857,6 +2934,7 @@ const PAGES = [
       {
         "title": "Screens",
         "slots": [
+          "games-4",
           "games-2",
           "games-3"
         ],
@@ -2873,6 +2951,7 @@ const PAGES = [
       { key: "games-rb-3", ratio: "1600 / 1093", label: "Facing the sun, in-game" },
       { key: "games-rb-4", ratio: "1600 / 1026", label: "Golden hour over the grass, in-game" },
       { key: "games-rb-5", ratio: "1600 / 1021", label: "Watching the sun go down, in-game" },
+      { key: "games-4", ratio: "1400 / 787", label: "The Demon Dragon, the final boss of Zelda: Tears of the Kingdom" },
       { key: "plat-1", ratio: "1400 / 400", label: "Dark Souls: Remastered trophy page" },
       { key: "plat-2", ratio: "1400 / 400", label: "Like a Dragon Gaiden trophy page" },
       { key: "plat-5", ratio: "1400 / 399", label: "God of War trophy page" }

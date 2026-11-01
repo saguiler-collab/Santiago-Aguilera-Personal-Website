@@ -19,8 +19,9 @@ def add(cat, tag, items):
 
 add('Me', 'Me', [
  ('about-church', 'Portrait'), ('photo-tux', 'Dressed up on the lawn'), ('tt-grass', 'Out in the tall grass, Trinidad'),
- ('me-dog', 'Carrying the dog'), ('us-fifteen', 'Fifteen years ago'), ('perk-smile', 'Happy in the blazer and tie')])
+ ('me-dog', 'Carrying the dog'), ('us-fifteen', 'Fifteen years ago'), ('perk-smile', 'Happy in the blazer and tie'), ('me-sky', 'Sweat, sky and earbuds, after a run')])
 add('Music', 'Music', [
+ ('music-pit1', 'In the pit, seen from above'), ('music-pit2', 'Mid-fill, the sheet music beside me'), ('music-ekit', 'The electric kit at home'),
  ('music-sing1', 'Singing “De música ligera” by Soda Stereo'), ('music-sing2', 'Mid-jump, the band behind me'),
  ('music-prock', 'Drumming under the tent in a PRock shirt'), ('music-stagefist', 'Fists up on stage, the lights behind'),
  ('music-redkit', 'Selfie from behind the kit, the band in front'), ('music-purple', 'Another night at the kit, under purple light'),
@@ -38,12 +39,15 @@ add('Places', 'Peru', [('trip-peru', 'With an alpaca and its keeper in the Andes
 add('Places', 'Panama', [('pa-ancon', 'At the Cerro Ancón nature reserve')])
 add('Places', 'Trinidad', [('trip-bench', 'On a bench by the water, with the dog'), 
  ('tt-birthday', 'Turning sixteen'), ('tt-dog', 'A walk with the dog'), ('run-tired', 'Finishing a long one in Trinidad, worn out and happy')])
+add('Places', 'Travel', [('night-umbrella', 'A rainy night under a teal umbrella')])
 add('Places', 'Tobago', [('tt-beach', 'In the sea with friends, Tobago')])
 add('Places', 'United States', [('us-bean', 'Under Cloud Gate, Chicago'), ('us-flags', 'The Mexican and American flags, side by side')])
 add('Places', 'Europe', [('madrid-hat', 'Madrid, in a bobble hat'), ('trip-madrid', 'Back at La Escuelita, Madrid'), ('trip-versailles', 'The gates of Versailles')])
 add('Places', 'Travel', [('sea-arms', 'Arms wide at dusk'), ('sea-look', 'Watching the waves come in'), ('trip-beach', "Sunset at the water's edge"),
  ('media-balloons', 'Inside a room of mirrored balloons'), ('media-retro', 'A walk through a 1970s living room exhibit')])
-add('School', 'ISPS', [('isps-stuco', 'Student Council at ISPS, in the white polos'), ('isps-tug', 'Tug of war for Mayaro house'),
+add('School', 'ISPS', [('isps-ceremony', 'Shaking hands on stage at an ISPS awards ceremony'), ('isps-jeffries', 'The Mr. Jeffries Memorial Award plaque, 2022–2023'),
+ ('isps-design-measure', 'Measuring plywood in the design workshop'), ('isps-design-saw', 'Cutting with a circular saw in the design workshop'),
+ ('isps-stuco', 'Student Council at ISPS, in the white polos'), ('isps-tug', 'Tug of war for Mayaro house'),
  ('isps-recreation', 'My recreation of Guayasamín, for Spanish class')])
 add('School', 'Perkiomen', [('perk-room', 'My first room at Perkiomen, the start of my own adventure'), ('perk-paws', 'With the Perkiomen Panther mascot'),
  ('perk-blazer', 'At the microphone in a Perkiomen tie'), ('perk-awards', "Receiving the folder at Perkiomen's awards ceremony"),
@@ -77,11 +81,12 @@ add('Research', 'Venezuela paper', [('vz-2', 'Presenting the work at the Persona
  ('vz-board', 'The Personal Project display board')])
 add('Sport', 'Swimming', [('swim-blocks', 'On the starting block'), ('swim-mip', 'The 2025–2026 Boys Swimming Team MIP plaque')])
 add('Sport', 'Weightlifting', [('lift-squat', 'Back squats'), ('lift-mirror', 'Between sets in the gym'), ('lift-tank', 'A pump in the school gym'),
- ('lift-blue', 'In the Perkiomen weight room, paw print on the wall')])
-add('Sport', 'Running', [('run-bibs', 'RBC Race for the Kids, 15K bibs'), ('run-thumbs', 'Mid-race, 15K, bib 437')])
+ ('lift-blue', 'In the Perkiomen weight room, paw print on the wall'),
+ ('lift-compression', 'Belt and wrist straps on in the Perkiomen weight room'), ('lift-press', 'Grinding out a rep on the shoulder press')])
+add('Sport', 'Running', [('run-bibs', 'RBC Race for the Kids, 15K bibs'), ('run-thumbs', 'Mid-race, 15K, bib 437'), ('run-yellow', 'Out in front on a group run in Port of Spain')])
 add('Games', 'Video games', [('games-artorias', 'Dark Souls'), ('games-solaire', 'Dark Souls, with Solaire'), ('games-zelda', 'The Wind Waker HD on the Wii U'),
  ('games-rb1', 'Sunset over the hills, in-game'), ('games-rb2', 'A full moon through the grass, in-game'), ('games-rb3', 'Facing the sun, in-game'),
- ('games-rb4', 'Golden hour over the grass, in-game'), ('games-rb5', 'Watching the sun go down, in-game')])
+ ('games-totk', 'The Demon Dragon, the final boss of Zelda: Tears of the Kingdom'), ('games-rb4', 'Golden hour over the grass, in-game'), ('games-rb5', 'Watching the sun go down, in-game')])
 
 # round-robin across categories so the grid is not 14 Exeter photos in a row
 order = ['Me', 'Music', 'Places', 'School', 'Leadership', 'Sport', 'Research', 'Games']

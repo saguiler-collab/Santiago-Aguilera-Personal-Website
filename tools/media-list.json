@@ -11,14 +11,14 @@
    "fh": 1600
   },
   {
-   "file": "music-sing1",
-   "caption": "Singing “De música ligera” by Soda Stereo",
+   "file": "music-pit1",
+   "caption": "In the pit, seen from above",
    "tag": "Music",
    "cat": "Music",
    "w": 560,
-   "h": 315,
-   "fw": 960,
-   "fh": 540
+   "h": 316,
+   "fw": 848,
+   "fh": 478
   },
   {
    "file": "kid-pirate",
@@ -31,14 +31,14 @@
    "fh": 800
   },
   {
-   "file": "isps-stuco",
-   "caption": "Student Council at ISPS, in the white polos",
+   "file": "isps-ceremony",
+   "caption": "Shaking hands on stage at an ISPS awards ceremony",
    "tag": "ISPS",
    "cat": "School",
    "w": 560,
-   "h": 393,
-   "fw": 376,
-   "fh": 264
+   "h": 317,
+   "fw": 848,
+   "fh": 480
   },
   {
    "file": "hosa-mic",
@@ -91,14 +91,14 @@
    "fh": 1600
   },
   {
-   "file": "music-sing2",
-   "caption": "Mid-jump, the band behind me",
+   "file": "music-pit2",
+   "caption": "Mid-fill, the sheet music beside me",
    "tag": "Music",
    "cat": "Music",
    "w": 560,
-   "h": 315,
-   "fw": 960,
-   "fh": 540
+   "h": 316,
+   "fw": 848,
+   "fh": 478
   },
   {
    "file": "mx-halloween",
@@ -111,14 +111,14 @@
    "fh": 1100
   },
   {
-   "file": "isps-tug",
-   "caption": "Tug of war for Mayaro house",
+   "file": "isps-jeffries",
+   "caption": "The Mr. Jeffries Memorial Award plaque, 2022–2023",
    "tag": "ISPS",
    "cat": "School",
-   "w": 560,
-   "h": 412,
-   "fw": 408,
-   "fh": 300
+   "w": 440,
+   "h": 611,
+   "fw": 576,
+   "fh": 800
   },
   {
    "file": "hosa-crowd",
@@ -171,14 +171,14 @@
    "fh": 1350
   },
   {
-   "file": "music-prock",
-   "caption": "Drumming under the tent in a PRock shirt",
+   "file": "music-ekit",
+   "caption": "The electric kit at home",
    "tag": "Music",
    "cat": "Music",
    "w": 560,
-   "h": 375,
-   "fw": 1800,
-   "fh": 1204
+   "h": 521,
+   "fw": 1500,
+   "fh": 1396
   },
   {
    "file": "mx-church",
@@ -191,14 +191,14 @@
    "fh": 1600
   },
   {
-   "file": "isps-recreation",
-   "caption": "My recreation of Guayasamín, for Spanish class",
+   "file": "isps-design-measure",
+   "caption": "Measuring plywood in the design workshop",
    "tag": "ISPS",
    "cat": "School",
-   "w": 560,
-   "h": 495,
-   "fw": 1400,
-   "fh": 1238
+   "w": 440,
+   "h": 587,
+   "fw": 975,
+   "fh": 1300
   },
   {
    "file": "hosa-anatomy",
@@ -251,14 +251,14 @@
    "fh": 1600
   },
   {
-   "file": "music-stagefist",
-   "caption": "Fists up on stage, the lights behind",
+   "file": "music-sing1",
+   "caption": "Singing “De música ligera” by Soda Stereo",
    "tag": "Music",
    "cat": "Music",
-   "w": 440,
-   "h": 587,
-   "fw": 1050,
-   "fh": 1400
+   "w": 560,
+   "h": 315,
+   "fw": 960,
+   "fh": 540
   },
   {
    "file": "co-mammoth",
@@ -271,14 +271,14 @@
    "fh": 1400
   },
   {
-   "file": "perk-room",
-   "caption": "My first room at Perkiomen, the start of my own adventure",
-   "tag": "Perkiomen",
+   "file": "isps-design-saw",
+   "caption": "Cutting with a circular saw in the design workshop",
+   "tag": "ISPS",
    "cat": "School",
-   "w": 560,
-   "h": 420,
-   "fw": 1600,
-   "fh": 1200
+   "w": 440,
+   "h": 587,
+   "fw": 975,
+   "fh": 1300
   },
   {
    "file": "hosa-volleyball",
@@ -331,14 +331,14 @@
    "fh": 834
   },
   {
-   "file": "music-redkit",
-   "caption": "Selfie from behind the kit, the band in front",
+   "file": "music-sing2",
+   "caption": "Mid-jump, the band behind me",
    "tag": "Music",
    "cat": "Music",
    "w": 560,
-   "h": 420,
-   "fw": 1600,
-   "fh": 1200
+   "h": 315,
+   "fw": 960,
+   "fh": 540
   },
   {
    "file": "co-dino",
@@ -351,14 +351,14 @@
    "fh": 1400
   },
   {
-   "file": "perk-paws",
-   "caption": "With the Perkiomen Panther mascot",
-   "tag": "Perkiomen",
+   "file": "isps-stuco",
+   "caption": "Student Council at ISPS, in the white polos",
+   "tag": "ISPS",
    "cat": "School",
    "w": 560,
-   "h": 353,
-   "fw": 854,
-   "fh": 538
+   "h": 393,
+   "fw": 376,
+   "fh": 264
   },
   {
    "file": "stuco-room",
@@ -411,14 +411,14 @@
    "fh": 1500
   },
   {
-   "file": "music-purple",
-   "caption": "Another night at the kit, under purple light",
+   "file": "music-prock",
+   "caption": "Drumming under the tent in a PRock shirt",
    "tag": "Music",
    "cat": "Music",
-   "w": 440,
-   "h": 660,
-   "fw": 800,
-   "fh": 1200
+   "w": 560,
+   "h": 375,
+   "fw": 1800,
+   "fh": 1204
   },
   {
    "file": "co-goat",
@@ -431,14 +431,14 @@
    "fh": 1600
   },
   {
-   "file": "perk-blazer",
-   "caption": "At the microphone in a Perkiomen tie",
-   "tag": "Perkiomen",
+   "file": "isps-tug",
+   "caption": "Tug of war for Mayaro house",
+   "tag": "ISPS",
    "cat": "School",
-   "w": 440,
-   "h": 600,
-   "fw": 733,
-   "fh": 1000
+   "w": 560,
+   "h": 412,
+   "fw": 408,
+   "fh": 300
   },
   {
    "file": "mun-eagle",
@@ -481,14 +481,24 @@
    "fh": 1093
   },
   {
-   "file": "music-prock2",
-   "caption": "Locked in on the hi-hat",
+   "file": "me-sky",
+   "caption": "Sweat, sky and earbuds, after a run",
+   "tag": "Me",
+   "cat": "Me",
+   "w": 440,
+   "h": 587,
+   "fw": 1125,
+   "fh": 1500
+  },
+  {
+   "file": "music-stagefist",
+   "caption": "Fists up on stage, the lights behind",
    "tag": "Music",
    "cat": "Music",
    "w": 440,
-   "h": 660,
-   "fw": 800,
-   "fh": 1200
+   "h": 587,
+   "fw": 1050,
+   "fh": 1400
   },
   {
    "file": "co-camp",
@@ -501,14 +511,14 @@
    "fh": 727
   },
   {
-   "file": "perk-awards",
-   "caption": "Receiving the folder at Perkiomen's awards ceremony",
-   "tag": "Perkiomen",
+   "file": "isps-recreation",
+   "caption": "My recreation of Guayasamín, for Spanish class",
+   "tag": "ISPS",
    "cat": "School",
    "w": 560,
-   "h": 373,
-   "fw": 1600,
-   "fh": 1067
+   "h": 495,
+   "fw": 1400,
+   "fh": 1238
   },
   {
    "file": "vol-river",
@@ -518,6 +528,126 @@
    "w": 440,
    "h": 481,
    "fw": 1464,
+   "fh": 1600
+  },
+  {
+   "file": "lift-compression",
+   "caption": "Belt and wrist straps on in the Perkiomen weight room",
+   "tag": "Weightlifting",
+   "cat": "Sport",
+   "w": 440,
+   "h": 587,
+   "fw": 1050,
+   "fh": 1400
+  },
+  {
+   "file": "games-totk",
+   "caption": "The Demon Dragon, the final boss of Zelda: Tears of the Kingdom",
+   "tag": "Video games",
+   "cat": "Games",
+   "w": 560,
+   "h": 315,
+   "fw": 1400,
+   "fh": 787
+  },
+  {
+   "file": "music-redkit",
+   "caption": "Selfie from behind the kit, the band in front",
+   "tag": "Music",
+   "cat": "Music",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
+  },
+  {
+   "file": "co-vest",
+   "caption": "Life jacket on, ready for the canoe",
+   "tag": "Colombia",
+   "cat": "Places",
+   "w": 560,
+   "h": 487,
+   "fw": 1400,
+   "fh": 1217
+  },
+  {
+   "file": "perk-room",
+   "caption": "My first room at Perkiomen, the start of my own adventure",
+   "tag": "Perkiomen",
+   "cat": "School",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
+  },
+  {
+   "file": "vol-bingo",
+   "caption": "Bingo with residents at a care home",
+   "tag": "Volunteering",
+   "cat": "Leadership",
+   "w": 440,
+   "h": 587,
+   "fw": 1200,
+   "fh": 1600
+  },
+  {
+   "file": "lift-press",
+   "caption": "Grinding out a rep on the shoulder press",
+   "tag": "Weightlifting",
+   "cat": "Sport",
+   "w": 440,
+   "h": 782,
+   "fw": 844,
+   "fh": 1500
+  },
+  {
+   "file": "games-rb4",
+   "caption": "Golden hour over the grass, in-game",
+   "tag": "Video games",
+   "cat": "Games",
+   "w": 560,
+   "h": 359,
+   "fw": 1600,
+   "fh": 1026
+  },
+  {
+   "file": "music-purple",
+   "caption": "Another night at the kit, under purple light",
+   "tag": "Music",
+   "cat": "Music",
+   "w": 440,
+   "h": 660,
+   "fw": 800,
+   "fh": 1200
+  },
+  {
+   "file": "co-tilata-balcony",
+   "caption": "On a balcony in the hills, in the Tilatá shirt",
+   "tag": "Colombia",
+   "cat": "Places",
+   "w": 440,
+   "h": 587,
+   "fw": 1200,
+   "fh": 1600
+  },
+  {
+   "file": "perk-paws",
+   "caption": "With the Perkiomen Panther mascot",
+   "tag": "Perkiomen",
+   "cat": "School",
+   "w": 560,
+   "h": 353,
+   "fw": 854,
+   "fh": 538
+  },
+  {
+   "file": "vol-water",
+   "caption": "Running a water station at a race",
+   "tag": "Volunteering",
+   "cat": "Leadership",
+   "w": 440,
+   "h": 781,
+   "fw": 901,
    "fh": 1600
   },
   {
@@ -531,49 +661,49 @@
    "fh": 1080
   },
   {
-   "file": "games-rb4",
-   "caption": "Golden hour over the grass, in-game",
+   "file": "games-rb5",
+   "caption": "Watching the sun go down, in-game",
    "tag": "Video games",
    "cat": "Games",
    "w": 560,
-   "h": 359,
+   "h": 357,
    "fw": 1600,
-   "fh": 1026
+   "fh": 1021
   },
   {
-   "file": "music-pov",
-   "caption": "The view from the throne",
+   "file": "music-prock2",
+   "caption": "Locked in on the hi-hat",
    "tag": "Music",
    "cat": "Music",
-   "w": 560,
-   "h": 498,
-   "fw": 1500,
-   "fh": 1335
+   "w": 440,
+   "h": 660,
+   "fw": 800,
+   "fh": 1200
   },
   {
-   "file": "co-vest",
-   "caption": "Life jacket on, ready for the canoe",
+   "file": "co-tilata-pair",
+   "caption": "With my brother, ready for school in our Colegio Tilatá uniforms",
    "tag": "Colombia",
    "cat": "Places",
-   "w": 560,
-   "h": 487,
-   "fw": 1400,
-   "fh": 1217
+   "w": 440,
+   "h": 587,
+   "fw": 720,
+   "fh": 960
   },
   {
-   "file": "perk-bell",
-   "caption": "Ringing the bell as a procession climbs the steps, 2027 chalked underfoot",
+   "file": "perk-blazer",
+   "caption": "At the microphone in a Perkiomen tie",
    "tag": "Perkiomen",
    "cat": "School",
-   "w": 560,
-   "h": 373,
-   "fw": 1600,
-   "fh": 1067
+   "w": 440,
+   "h": 600,
+   "fw": 733,
+   "fh": 1000
   },
   {
-   "file": "vol-bingo",
-   "caption": "Bingo with residents at a care home",
-   "tag": "Volunteering",
+   "file": "hosp-or",
+   "caption": "Watching a procedure from the operating table",
+   "tag": "Hospital",
    "cat": "Leadership",
    "w": 440,
    "h": 587,
@@ -591,104 +721,14 @@
    "fh": 722
   },
   {
-   "file": "games-rb5",
-   "caption": "Watching the sun go down, in-game",
-   "tag": "Video games",
-   "cat": "Games",
-   "w": 560,
-   "h": 357,
-   "fw": 1600,
-   "fh": 1021
-  },
-  {
-   "file": "music-drums",
-   "caption": "Behind the kit",
-   "tag": "Music",
-   "cat": "Music",
-   "w": 440,
-   "h": 585,
-   "fw": 1170,
-   "fh": 1556
-  },
-  {
-   "file": "co-tilata-balcony",
-   "caption": "On a balcony in the hills, in the Tilatá shirt",
-   "tag": "Colombia",
-   "cat": "Places",
-   "w": 440,
-   "h": 587,
-   "fw": 1200,
-   "fh": 1600
-  },
-  {
-   "file": "perk-chalk",
-   "caption": "Chalking the steps with two classmates",
-   "tag": "Perkiomen",
-   "cat": "School",
-   "w": 560,
-   "h": 373,
-   "fw": 1600,
-   "fh": 1067
-  },
-  {
-   "file": "vol-water",
-   "caption": "Running a water station at a race",
-   "tag": "Volunteering",
-   "cat": "Leadership",
-   "w": 440,
-   "h": 781,
-   "fw": 901,
-   "fh": 1600
-  },
-  {
-   "file": "music-electric",
-   "caption": "On the electric kit at home, headphones on",
-   "tag": "Music",
-   "cat": "Music",
-   "w": 440,
-   "h": 587,
-   "fw": 960,
-   "fh": 1280
-  },
-  {
-   "file": "co-tilata-pair",
-   "caption": "With my brother, ready for school in our Colegio Tilatá uniforms",
-   "tag": "Colombia",
-   "cat": "Places",
-   "w": 440,
-   "h": 587,
-   "fw": 720,
-   "fh": 960
-  },
-  {
-   "file": "perk-podium",
-   "caption": "Stepping away from the podium at an outdoor ceremony",
-   "tag": "Perkiomen",
-   "cat": "School",
-   "w": 440,
-   "h": 612,
-   "fw": 719,
-   "fh": 1000
-  },
-  {
-   "file": "hosp-or",
-   "caption": "Watching a procedure from the operating table",
-   "tag": "Hospital",
-   "cat": "Leadership",
-   "w": 440,
-   "h": 587,
-   "fw": 1200,
-   "fh": 1600
-  },
-  {
-   "file": "music-band",
-   "caption": "The band before the set",
+   "file": "music-pov",
+   "caption": "The view from the throne",
    "tag": "Music",
    "cat": "Music",
    "w": 560,
-   "h": 420,
-   "fw": 1600,
-   "fh": 1200
+   "h": 498,
+   "fw": 1500,
+   "fh": 1335
   },
   {
    "file": "trip-peru",
@@ -701,8 +741,8 @@
    "fh": 1121
   },
   {
-   "file": "perk-door",
-   "caption": "Perkiomen School's post on earning the AP International Diploma",
+   "file": "perk-awards",
+   "caption": "Receiving the folder at Perkiomen's awards ceremony",
    "tag": "Perkiomen",
    "cat": "School",
    "w": 560,
@@ -721,14 +761,24 @@
    "fh": 1600
   },
   {
-   "file": "music-stage",
-   "caption": "Rehearsal on the Perkiomen stage",
+   "file": "run-yellow",
+   "caption": "Out in front on a group run in Port of Spain",
+   "tag": "Running",
+   "cat": "Sport",
+   "w": 560,
+   "h": 317,
+   "fw": 848,
+   "fh": 480
+  },
+  {
+   "file": "music-drums",
+   "caption": "Behind the kit",
    "tag": "Music",
    "cat": "Music",
-   "w": 560,
-   "h": 373,
-   "fw": 1400,
-   "fh": 933
+   "w": 440,
+   "h": 585,
+   "fw": 1170,
+   "fh": 1556
   },
   {
    "file": "pa-ancon",
@@ -741,14 +791,14 @@
    "fh": 1400
   },
   {
-   "file": "perk-senator",
-   "caption": "With Senator Pennycuick",
+   "file": "perk-bell",
+   "caption": "Ringing the bell as a procession climbs the steps, 2027 chalked underfoot",
    "tag": "Perkiomen",
    "cat": "School",
-   "w": 440,
-   "h": 587,
-   "fw": 1125,
-   "fh": 1500
+   "w": 560,
+   "h": 373,
+   "fw": 1600,
+   "fh": 1067
   },
   {
    "file": "hosp-facade",
@@ -761,14 +811,14 @@
    "fh": 1600
   },
   {
-   "file": "music-flyer",
-   "caption": "The Perk Rock Band Concert poster, Friday October 30",
+   "file": "music-electric",
+   "caption": "On the electric kit at home, headphones on",
    "tag": "Music",
    "cat": "Music",
    "w": 440,
-   "h": 569,
-   "fw": 1082,
-   "fh": 1400
+   "h": 587,
+   "fw": 960,
+   "fh": 1280
   },
   {
    "file": "trip-bench",
@@ -781,14 +831,14 @@
    "fh": 1200
   },
   {
-   "file": "perk-group",
-   "caption": "With friends on the lawn at Perkiomen",
+   "file": "perk-chalk",
+   "caption": "Chalking the steps with two classmates",
    "tag": "Perkiomen",
    "cat": "School",
    "w": 560,
-   "h": 420,
-   "fw": 1560,
-   "fh": 1170
+   "h": 373,
+   "fw": 1600,
+   "fh": 1067
   },
   {
    "file": "hosp-mural",
@@ -801,14 +851,14 @@
    "fh": 1600
   },
   {
-   "file": "eport-kits",
-   "caption": "Two kits: the school's acoustic kit and the electric kit at home",
+   "file": "music-band",
+   "caption": "The band before the set",
    "tag": "Music",
    "cat": "Music",
    "w": 560,
-   "h": 347,
-   "fw": 1200,
-   "fh": 744
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
   },
   {
    "file": "tt-birthday",
@@ -821,14 +871,14 @@
    "fh": 867
   },
   {
-   "file": "perk-skeleton",
-   "caption": "Meeting Alberto, the anatomy skeleton, in class",
+   "file": "perk-podium",
+   "caption": "Stepping away from the podium at an outdoor ceremony",
    "tag": "Perkiomen",
    "cat": "School",
    "w": 440,
-   "h": 587,
-   "fw": 1200,
-   "fh": 1600
+   "h": 612,
+   "fw": 719,
+   "fh": 1000
   },
   {
    "file": "hosp-patient",
@@ -841,14 +891,14 @@
    "fh": 1280
   },
   {
-   "file": "eport-perform",
-   "caption": "The e-Portfolio rehearsal performance",
+   "file": "music-stage",
+   "caption": "Rehearsal on the Perkiomen stage",
    "tag": "Music",
    "cat": "Music",
    "w": 560,
-   "h": 541,
-   "fw": 1018,
-   "fh": 984
+   "h": 373,
+   "fw": 1400,
+   "fh": 933
   },
   {
    "file": "tt-dog",
@@ -861,14 +911,14 @@
    "fh": 640
   },
   {
-   "file": "cake-birthday",
-   "caption": "A birthday dinner in the dining hall",
+   "file": "perk-door",
+   "caption": "Perkiomen School's post on earning the AP International Diploma",
    "tag": "Perkiomen",
    "cat": "School",
    "w": 560,
-   "h": 420,
-   "fw": 1560,
-   "fh": 1170
+   "h": 373,
+   "fw": 1600,
+   "fh": 1067
   },
   {
    "file": "hosp-talk",
@@ -881,14 +931,14 @@
    "fh": 1200
   },
   {
-   "file": "isps-apvybz2",
-   "caption": "AP Vybz members performing and rehearsing",
+   "file": "music-flyer",
+   "caption": "The Perk Rock Band Concert poster, Friday October 30",
    "tag": "Music",
    "cat": "Music",
-   "w": 560,
-   "h": 324,
-   "fw": 772,
-   "fh": 447
+   "w": 440,
+   "h": 569,
+   "fw": 1082,
+   "fh": 1400
   },
   {
    "file": "run-tired",
@@ -901,14 +951,14 @@
    "fh": 1196
   },
   {
-   "file": "perk-sky1",
-   "caption": "A winter sunset over campus",
+   "file": "perk-senator",
+   "caption": "With Senator Pennycuick",
    "tag": "Perkiomen",
    "cat": "School",
-   "w": 560,
-   "h": 420,
-   "fw": 1600,
-   "fh": 1200
+   "w": 440,
+   "h": 587,
+   "fw": 1125,
+   "fh": 1500
   },
   {
    "file": "hosp-ultrasound",
@@ -921,34 +971,34 @@
    "fh": 1200
   },
   {
-   "file": "isps-apvybz",
-   "caption": "AP Vybz, the school music organization",
+   "file": "eport-kits",
+   "caption": "Two kits: the school's acoustic kit and the electric kit at home",
    "tag": "Music",
    "cat": "Music",
    "w": 560,
-   "h": 396,
-   "fw": 382,
-   "fh": 270
+   "h": 347,
+   "fw": 1200,
+   "fh": 744
   },
   {
-   "file": "tt-beach",
-   "caption": "In the sea with friends, Tobago",
-   "tag": "Tobago",
+   "file": "night-umbrella",
+   "caption": "A rainy night under a teal umbrella",
+   "tag": "Travel",
    "cat": "Places",
-   "w": 440,
-   "h": 587,
-   "fw": 720,
-   "fh": 960
+   "w": 560,
+   "h": 538,
+   "fw": 1400,
+   "fh": 1344
   },
   {
-   "file": "perk-sky2",
-   "caption": "Dusk on the lawn",
+   "file": "perk-group",
+   "caption": "With friends on the lawn at Perkiomen",
    "tag": "Perkiomen",
    "cat": "School",
    "w": 560,
    "h": 420,
-   "fw": 1600,
-   "fh": 1200
+   "fw": 1560,
+   "fh": 1170
   },
   {
    "file": "hosp-mri",
@@ -961,24 +1011,34 @@
    "fh": 480
   },
   {
-   "file": "us-bean",
-   "caption": "Under Cloud Gate, Chicago",
-   "tag": "United States",
+   "file": "eport-perform",
+   "caption": "The e-Portfolio rehearsal performance",
+   "tag": "Music",
+   "cat": "Music",
+   "w": 560,
+   "h": 541,
+   "fw": 1018,
+   "fh": 984
+  },
+  {
+   "file": "tt-beach",
+   "caption": "In the sea with friends, Tobago",
+   "tag": "Tobago",
    "cat": "Places",
+   "w": 440,
+   "h": 587,
+   "fw": 720,
+   "fh": 960
+  },
+  {
+   "file": "perk-skeleton",
+   "caption": "Meeting Alberto, the anatomy skeleton, in class",
+   "tag": "Perkiomen",
+   "cat": "School",
    "w": 440,
    "h": 587,
    "fw": 1200,
    "fh": 1600
-  },
-  {
-   "file": "perk-sky3",
-   "caption": "A rainbow after the storm",
-   "tag": "Perkiomen",
-   "cat": "School",
-   "w": 560,
-   "h": 420,
-   "fw": 1600,
-   "fh": 1200
   },
   {
    "file": "shadow-1",
@@ -991,24 +1051,34 @@
    "fh": 2400
   },
   {
-   "file": "us-flags",
-   "caption": "The Mexican and American flags, side by side",
+   "file": "isps-apvybz2",
+   "caption": "AP Vybz members performing and rehearsing",
+   "tag": "Music",
+   "cat": "Music",
+   "w": 560,
+   "h": 324,
+   "fw": 772,
+   "fh": 447
+  },
+  {
+   "file": "us-bean",
+   "caption": "Under Cloud Gate, Chicago",
    "tag": "United States",
    "cat": "Places",
    "w": 440,
-   "h": 475,
-   "fw": 1389,
-   "fh": 1500
+   "h": 587,
+   "fw": 1200,
+   "fh": 1600
   },
   {
-   "file": "exeter-banner",
-   "caption": "Under the Exeter banner",
-   "tag": "Exeter",
+   "file": "cake-birthday",
+   "caption": "A birthday dinner in the dining hall",
+   "tag": "Perkiomen",
    "cat": "School",
    "w": 560,
    "h": 420,
-   "fw": 1600,
-   "fh": 1200
+   "fw": 1560,
+   "fh": 1170
   },
   {
    "file": "shadow-2",
@@ -1021,6 +1091,36 @@
    "fh": 2400
   },
   {
+   "file": "isps-apvybz",
+   "caption": "AP Vybz, the school music organization",
+   "tag": "Music",
+   "cat": "Music",
+   "w": 560,
+   "h": 396,
+   "fw": 382,
+   "fh": 270
+  },
+  {
+   "file": "us-flags",
+   "caption": "The Mexican and American flags, side by side",
+   "tag": "United States",
+   "cat": "Places",
+   "w": 440,
+   "h": 475,
+   "fw": 1389,
+   "fh": 1500
+  },
+  {
+   "file": "perk-sky1",
+   "caption": "A winter sunset over campus",
+   "tag": "Perkiomen",
+   "cat": "School",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
+  },
+  {
    "file": "madrid-hat",
    "caption": "Madrid, in a bobble hat",
    "tag": "Europe",
@@ -1031,14 +1131,14 @@
    "fh": 736
   },
   {
-   "file": "exeter-shoulders",
-   "caption": "Celebrating under the Exeter banner",
-   "tag": "Exeter",
+   "file": "perk-sky2",
+   "caption": "Dusk on the lawn",
+   "tag": "Perkiomen",
    "cat": "School",
    "w": 560,
-   "h": 475,
-   "fw": 1013,
-   "fh": 860
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
   },
   {
    "file": "trip-madrid",
@@ -1051,9 +1151,9 @@
    "fh": 1200
   },
   {
-   "file": "exeter-blazer",
-   "caption": "Blazer on, sunset over the river",
-   "tag": "Exeter",
+   "file": "perk-sky3",
+   "caption": "A rainbow after the storm",
+   "tag": "Perkiomen",
    "cat": "School",
    "w": 560,
    "h": 420,
@@ -1071,14 +1171,14 @@
    "fh": 1008
   },
   {
-   "file": "exeter-dock",
-   "caption": "Arms out on the dock",
+   "file": "exeter-banner",
+   "caption": "Under the Exeter banner",
    "tag": "Exeter",
    "cat": "School",
-   "w": 440,
-   "h": 587,
-   "fw": 1200,
-   "fh": 1600
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
   },
   {
    "file": "sea-arms",
@@ -1091,14 +1191,14 @@
    "fh": 1200
   },
   {
-   "file": "exeter-river",
-   "caption": "Along the river in Exeter",
+   "file": "exeter-shoulders",
+   "caption": "Celebrating under the Exeter banner",
    "tag": "Exeter",
    "cat": "School",
    "w": 560,
-   "h": 420,
-   "fw": 1600,
-   "fh": 1200
+   "h": 475,
+   "fw": 1013,
+   "fh": 860
   },
   {
    "file": "sea-look",
@@ -1111,8 +1211,8 @@
    "fh": 1200
   },
   {
-   "file": "exeter-quad",
-   "caption": "The quad on a bright summer day",
+   "file": "exeter-blazer",
+   "caption": "Blazer on, sunset over the river",
    "tag": "Exeter",
    "cat": "School",
    "w": 560,
@@ -1131,14 +1231,14 @@
    "fh": 1600
   },
   {
-   "file": "exeter-hall",
-   "caption": "The Academy building at dusk",
+   "file": "exeter-dock",
+   "caption": "Arms out on the dock",
    "tag": "Exeter",
    "cat": "School",
-   "w": 560,
-   "h": 420,
-   "fw": 1600,
-   "fh": 1200
+   "w": 440,
+   "h": 587,
+   "fw": 1200,
+   "fh": 1600
   },
   {
    "file": "media-balloons",
@@ -1151,8 +1251,8 @@
    "fh": 1280
   },
   {
-   "file": "exeter-library",
-   "caption": "Inside the Phillips Exeter Academy library",
+   "file": "exeter-river",
+   "caption": "Along the river in Exeter",
    "tag": "Exeter",
    "cat": "School",
    "w": 560,
@@ -1169,6 +1269,36 @@
    "h": 420,
    "fw": 1280,
    "fh": 960
+  },
+  {
+   "file": "exeter-quad",
+   "caption": "The quad on a bright summer day",
+   "tag": "Exeter",
+   "cat": "School",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
+  },
+  {
+   "file": "exeter-hall",
+   "caption": "The Academy building at dusk",
+   "tag": "Exeter",
+   "cat": "School",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
+  },
+  {
+   "file": "exeter-library",
+   "caption": "Inside the Phillips Exeter Academy library",
+   "tag": "Exeter",
+   "cat": "School",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
   },
   {
    "file": "exeter-pingpong",
