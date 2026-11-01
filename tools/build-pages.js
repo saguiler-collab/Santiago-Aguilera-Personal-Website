@@ -1474,8 +1474,7 @@ const PAGES = [
         "title": "Around the chapter",
         "slots": [
           "hosa-1",
-          "hosa-2",
-          "hosa-3"
+          "hosa-2"
         ],
         "gallery": true
       }
@@ -1484,7 +1483,6 @@ const PAGES = [
     slots: [
       { key: "hosa-1", ratio: "3 / 4", label: "Addressing the room at a school event" },
       { key: "hosa-2", ratio: "4 / 3", label: "With fellow students in the gym" },
-      { key: "hosa-3", ratio: "4 / 3", label: "Between sessions at a HOSA conference" },
 { key: "hosa-6", ratio: "1125 / 1500", label: "Holding an anatomy model at the HOSA table" },
       { key: "hosa-7", ratio: "1125 / 1500", label: "The HOSA volleyball tournament, with the cancer-awareness bracelets" },
       { key: "hosa-5", ratio: "990 / 1320", label: "Poster for the HOSA and Community Service Club clothing and food drive" },
@@ -1662,15 +1660,16 @@ const PAGES = [
       {
         "title": "Chicago, January 2025",
         "body": [
-          "Through ISPS's Student Council I went to the National Honor Society and National Student Council Conference in Chicago, run by the National Association of Secondary School Principals (NASSP). The theme was “Next Stop: Leadership”, and the certificate records 14 content hours from the conference schedule."
+          "Through ISPS's Student Council I went to the National Honor Society and National Student Council Conference in Chicago, run by the National Association of Secondary School Principals (NASSP). The theme was “Next Stop: Leadership”, and the certificate records 14 content hours from the conference schedule. I also got to meet a student council from Honduras, which was the part I remember best."
         ],
         "points": [
           ["Event", "National Honor Society and National Student Council Conference."],
           ["Dates", "January 31 to February 2, 2025."],
           ["Content hours", "14."],
-          ["Role", "Student attendee."]
+          ["Role", "Student attendee."],
+          ["Who I met", "A student council from Honduras."]
         ],
-        "slots": ["stuco-nassp"]
+        "slots": ["stuco-room", "stuco-nassp"]
       },
       {
         "title": "At Perkiomen",
@@ -1707,6 +1706,7 @@ const PAGES = [
       { key: "stuco-3", ratio: "1 / 1", label: "A council event" },
       { key: "stuco-bell", ratio: "1600 / 1067", label: "Ringing the bell as a procession climbs the steps, 2027 chalked underfoot" },
       { key: "stuco-chalk", ratio: "1600 / 1067", label: "Chalking the steps with two classmates" },
+      { key: "stuco-room", ratio: "1600 / 1200", label: "Between sessions at the NASSP conference in Chicago, January 2025" },
       { key: "stuco-nassp", ratio: "1100 / 1524", label: "Certificate of participation, NHS and National Student Council Conference, Chicago, January 2025" }
     ],
     next: { title: "Next: Hospital Shadowing", lede: "Time on the floor.", href: "Leadership-Shadowing.dc.html", label: "Go to shadowing" }
@@ -3510,7 +3510,7 @@ function spiralSvg() {
   const CARD_IMG = {
     "About.dc.html": "about-church", "Academics.dc.html": "exeter-banner", "Research.dc.html": "cmu-lab", "Leadership.dc.html": "hosa-mic",
     "Activities.dc.html": "lift-squat", "Curiosities.dc.html": "games-artorias", "Media.dc.html": "trip-versailles",
-    "Leadership-HOSA.dc.html": "hosa-conference", "Leadership-MUN.dc.html": "mun-eagle", "Leadership-Shadowing.dc.html": "hosp-or",
+    "Leadership-HOSA.dc.html": "hosa-anatomy", "Leadership-StudentCouncil.dc.html": "stuco-room", "Leadership-MUN.dc.html": "mun-eagle", "Leadership-Shadowing.dc.html": "hosp-or",
     "Leadership-Volunteering.dc.html": "vol-river", "Leadership-Perkiomenite.dc.html": "perkmt", "Activities-Swimming.dc.html": "swim-blocks", "Activities-Weightlifting.dc.html": "lift-squat",
     "Drums.dc.html": "music-drums", "Drums-SonoArte.dc.html": "music-electric", "Drums-Instruments.dc.html": "music-instruments", "Drums-APVybz.dc.html": "isps-apvybz", "Drums-Musicals.dc.html": "music-musicals", "Drums-MYPPortfolio.dc.html": "music-eportfolio", "Drums-Rockband.dc.html": "music-stage", "Activities-Running.dc.html": "run-tired", "Academics-ISPS.dc.html": "isps-guayasamin",
     "Academics-Perkiomen.dc.html": "perk-paws", "Academics-ExeterSummer.dc.html": "exeter-banner", "Academics-CompBio.dc.html": "cmu-friends",

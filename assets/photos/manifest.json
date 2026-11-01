@@ -46,7 +46,6 @@
   "home-me-presenting": "cmu-present.jpg",
   "home-me-pole": "cmu-pole.jpg",
   "home-me-mic": "hosa-mic.jpg",
-  "hosa-conference": "hosa-conference.jpg",
   "run-bibs": "run-bibs.jpg",
   "trip-beach": "trip-beach.jpg",
   "me-dog": "me-dog.jpg",
@@ -72,7 +71,6 @@
   "exeter-2": "exeter-hands.jpg",
   "exeter-3": "exeter-banner.jpg",
   "exeter-4": "exeter-coaster.jpg",
-  "hosa-3": "hosa-conference.jpg",
   "home-me-dog": "me-dog.jpg",
   "run-tired": "run-tired.jpg",
   "run-thumbs": "run-thumbs.jpg",
@@ -243,9 +241,10 @@
   "music-10": "music-flyer.jpg",
   "music-11": "music-stagefist.jpg",
   "music-12": "music-redkit.jpg",
-  "academics-hosa-mun": "hosa-conference.jpg",
   "curiosities-games": "games-artorias.jpg",
   "research-lab": "cmu-lab.jpg",
   "music-13": "music-sing1.jpg",
-  "music-14": "music-sing2.jpg"
+  "music-14": "music-sing2.jpg",
+  "stuco-room": "stuco-room.jpg",
+  "academics-hosa-mun": "hosa-crowd.jpg"
 }
