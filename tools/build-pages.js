@@ -671,9 +671,27 @@ const PAGES = [
         ]
       },
       {
+        "title": "Awards night",
+        "body": [
+          "At Perkiomen's awards ceremony I was called up for two awards: the Medical Spirit and Promise Award, presented through Perkiomen's medical institute, and a Science and Math Award from the Rochester Institute of Technology that comes with a scholarship."
+        ],
+        "points": [
+          [
+            "Medical Spirit and Promise Award",
+            "From the Perkiomen faculty, for the health science track and the work around it."
+          ],
+          [
+            "RIT Science and Math Award",
+            "Includes a scholarship of $29,000 a year, renewable and worth up to $116,000, if I am admitted to an RIT BS/BFA program and enroll in fall 2027."
+          ]
+        ],
+        "slots": ["perk-17"]
+      },
+      {
         "title": "Around campus",
         "slots": [
           "perk-16",
+          "perk-19",
           "perk-13",
           "perk-14",
           "perk-15",
@@ -695,8 +713,8 @@ const PAGES = [
       lede: "Junior year. One for the medical track, one for maths and science, one from the pool.",
       groups: [
         { title: "Grade 11", items: [
-          { label: "Medical Spirit & Promise Award", detail: "For the health science track and the work around it." },
-          { label: "Rochester Institute of Technology Math & Science Award", detail: "2026. Awarded to a junior through RIT's recognition programme." },
+          { label: "Medical Spirit & Promise Award", detail: "Presented through Perkiomen's medical institute, for the health science track and the work around it." },
+          { label: "RIT Science & Math Award and scholarship", detail: "2026. Rochester Institute of Technology: $29,000 a year, renewable, up to $116,000, if admitted to an RIT BS/BFA program and enrolling in fall 2027." },
           { label: "Most Improved, Varsity Boys Swimming", detail: "2026. See the swimming page." },
           { label: "AP International Diploma", detail: "Featured by Perkiomen School for earning it." }
         ]}
@@ -710,10 +728,12 @@ const PAGES = [
       { key: "perk-2", ratio: "4 / 3", label: "Medical Spirit and Promise Award, Perkiomen School" },
       { key: "perk-4", ratio: "4 / 3", label: "Science and Math Award, Rochester Institute of Technology" },
       { key: "perk-3", ratio: "1 / 1", label: "Awards night" },
+      { key: "perk-17", ratio: "1600 / 1067", label: "Receiving the folder at Perkiomen's awards ceremony" },
+      { key: "perk-19", ratio: "719 / 1000", label: "Stepping away from the podium at an outdoor ceremony" },
       { key: "perk-5", ratio: "4 / 3", label: "A birthday dinner in the dining hall" },
       { key: "perk-6", ratio: "3 / 4", label: "Meeting Alberto, the anatomy skeleton, in class" },
       { key: "perk-7", ratio: "4 / 3", label: "My first room at Perkiomen, the start of my own adventure" },
-      { key: "perk-8", ratio: "974 / 778", label: "Perkiomen School's post on earning the AP International Diploma" },
+      { key: "perk-8", ratio: "1600 / 1067", label: "Perkiomen School's post on earning the AP International Diploma" },
       { key: "perk-9", ratio: "2016 / 1512", label: "A winter sunset over campus" },
       { key: "perk-10", ratio: "2016 / 1512", label: "Dusk on the lawn" },
       { key: "perk-13", ratio: "1125 / 1500", label: "With Senator Pennycuick" },
@@ -1650,7 +1670,8 @@ const PAGES = [
             "Alongside it",
             "HOSA, Model UN, the Perkiomenite and the Investment & Philanthropy Club, where I am secretary."
           ]
-        ]
+        ],
+        "slots": ["stuco-bell", "stuco-chalk"]
       },
       {
         "title": "The throughline",
@@ -1664,6 +1685,8 @@ const PAGES = [
       { key: "stuco-1", ratio: "4 / 3", label: "Student Council at ISPS" },
       { key: "stuco-2", ratio: "4 / 3", label: "Senate at Perkiomen" },
       { key: "stuco-3", ratio: "1 / 1", label: "A council event" },
+      { key: "stuco-bell", ratio: "1600 / 1067", label: "Ringing the bell as a procession climbs the steps, 2027 chalked underfoot" },
+      { key: "stuco-chalk", ratio: "1600 / 1067", label: "Chalking the steps with two classmates" },
       { key: "stuco-nassp", ratio: "1100 / 1524", label: "Certificate of participation, NHS and National Student Council Conference, Chicago, January 2025" }
     ],
     next: { title: "Next: Hospital Shadowing", lede: "Time on the floor.", href: "Leadership-Shadowing.dc.html", label: "Go to shadowing" }
@@ -2421,6 +2444,13 @@ const PAGES = [
         ]
       },
       {
+        "title": "Under the lights",
+        "body": [
+          "The same habits on a different kit: a white shirt, orange drums and a wash of purple light."
+        ],
+        "slots": ["music-9"]
+      },
+      {
         "title": "And the mic",
         "body": [
           "Singing is new. It is a different muscle, but not a different job: be in time, be heard, and make the people around you sound better. Years of keeping time for singers taught me what they need from the band, and now I get to be the one who needs it."
@@ -2436,7 +2466,8 @@ const PAGES = [
     facts: [["Band", "Perkiomen rock band"], ["Role", "Drums and vocals"], ["School", "Perkiomen"]],
     slots: [
       { key: "music-7", ratio: "1800 / 1204", label: "Drumming under the tent in a PRock shirt" },
-      { key: "music-8", ratio: "735 / 1000", label: "Locked in on the hi-hat" },
+      { key: "music-8", ratio: "800 / 1200", label: "Locked in on the hi-hat" },
+      { key: "music-9", ratio: "800 / 1200", label: "Another night at the kit, under purple light" },
       { key: "music-2", ratio: "1600 / 1200", label: "The band before the set" },
       { key: "music-6", ratio: "1500 / 1335", label: "The view from the throne" },
       { key: "music-5", ratio: "1400 / 933", label: "Rehearsal on the Perkiomen stage" }
