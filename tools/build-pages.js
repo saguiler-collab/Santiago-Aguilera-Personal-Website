@@ -208,8 +208,28 @@ const PAGES = [
     desc: "Monterrey, Nuevo León. AIM and LICEO, and the city I measure every other place against.",
     intro: "The third country but the first one I actually remember. School started here: AIM first, then LICEO. Spanish stopped being the language my parents spoke and became the language I thought in.",
     body: ["It is still the place I compare everything to. When I describe a city as hot, or loud, or close, Monterrey is the baseline I am measuring against."],
+    media: [
+      {
+        "title": "Dressing up",
+        "body": [
+          "Two costumes from Monterrey: a pirate, and the Halloween zombie at the top of this page."
+        ],
+        "slots": [
+          "mx-4"
+        ]
+      },
+      {
+        "title": "Back in Mexico",
+        "slots": [
+          "mx-5",
+          "mx-6"
+        ],
+        "gallery": true
+      }
+    ],
     facts: [["Years", "2011 onward"], ["Schools", "AIM, then LICEO"], ["Language", "Spanish"]],
     slots: [
+      { key: "mx-7", ratio: "825 / 1100", label: "Halloween in Monterrey, as a zombie" },
       { key: "mx-1", ratio: "4 / 3", label: "Monterrey" },
       { key: "mx-2", ratio: "1 / 1", label: "AIM or LICEO" },
       { key: "mx-3", ratio: "4 / 3", label: "Family in Monterrey" },
@@ -2451,6 +2471,23 @@ const PAGES = [
         "slots": ["music-9"]
       },
       {
+        "title": "The Halloween concert",
+        "body": [
+          "The Perk Rock Band Concert was a Halloween show: Friday, October 30, at KEHS Hall. Doors opened at 7:30 pm and Thriller began at 8, with, in the poster's words, performance, snacks and rock."
+        ],
+        "points": [
+          ["When", "Friday, October 30."],
+          ["Where", "KEHS Hall, Perkiomen."],
+          ["Doors", "7:30 pm. Thriller begins at 8."]
+        ],
+        "slots": ["music-10"]
+      },
+      {
+        "title": "On the stage",
+        "slots": ["music-11", "music-12"],
+        "gallery": true
+      },
+      {
         "title": "And the mic",
         "body": [
           "Singing is new. It is a different muscle, but not a different job: be in time, be heard, and make the people around you sound better. Years of keeping time for singers taught me what they need from the band, and now I get to be the one who needs it."
@@ -2466,6 +2503,9 @@ const PAGES = [
     facts: [["Band", "Perkiomen rock band"], ["Role", "Drums and vocals"], ["School", "Perkiomen"]],
     slots: [
       { key: "music-7", ratio: "1800 / 1204", label: "Drumming under the tent in a PRock shirt" },
+      { key: "music-10", ratio: "1082 / 1400", label: "The Perk Rock Band Concert poster: Friday, October 30, at KEHS Hall" },
+      { key: "music-11", ratio: "1050 / 1400", label: "Fists up on stage, the lights behind" },
+      { key: "music-12", ratio: "1600 / 1200", label: "Selfie from behind the kit, the band in front" },
       { key: "music-8", ratio: "800 / 1200", label: "Locked in on the hi-hat" },
       { key: "music-9", ratio: "800 / 1200", label: "Another night at the kit, under purple light" },
       { key: "music-2", ratio: "1600 / 1200", label: "The band before the set" },
@@ -2571,6 +2611,7 @@ const PAGES = [
       {
         "title": "In the gym",
         "slots": [
+          "lift-7",
           "lift-6",
           "lift-2"
         ],
@@ -2581,6 +2622,7 @@ const PAGES = [
     slots: [
 { key: "lift-5", ratio: "1300 / 1097", label: "Progress, from the hiking trail to the 15K to the gym" },
       { key: "lift-1", ratio: "3 / 4", label: "Back squats" },
+      { key: "lift-7", ratio: "1050 / 1400", label: "In the Perkiomen weight room, paw print on the wall" },
       { key: "lift-6", ratio: "1050 / 1400", label: "A pump in the school gym" },
       { key: "lift-2", ratio: "3 / 4", label: "Between sets in the gym" },
       { key: "lift-3", ratio: "1170 / 391", label: "Liftoff global leaderboards, screenshots taken October 28, 2026" },
@@ -3401,6 +3443,46 @@ if (!SITE_ORIGIN) {
   }
 }
 
+
+/* The Media page: every photograph on the site. The list is curated in tools/make-media.py,
+   which also cuts the thumbnails; this writes it into Media.dc.html between the markers.
+   Idempotent. */
+{
+  const mp = path.join(PAGES_DIR, "Media.dc.html");
+  const lp = path.join(__dirname, "media-list.json");
+  if (fs.existsSync(mp) && fs.existsSync(lp)) {
+    const L = JSON.parse(fs.readFileSync(lp, "utf8"));
+    const counts = {};
+    L.photos.forEach((p) => { counts[p.cat] = (counts[p.cat] || 0) + 1; });
+    const chip = (key, label, n) => `    <button type="button" class="sa-filter-btn" data-filter-btn="${key}" aria-pressed="false">${label} <span>${n}</span></button>`;
+    const tile = (p, i) => `    <figure class="sa-mtile" data-media-tile data-cat="${attr(p.cat)}" data-full="/assets/photos/${attr(p.file)}.jpg" data-label="${attr(p.caption)}" data-tag="${attr(p.tag)}" tabindex="0" role="button" aria-label="${attr(p.caption)}">
+      <img src="/assets/photos/thumb/${attr(p.file)}.jpg" width="${p.w}" height="${p.h}" alt="${attr(p.caption)}"${i < 8 ? "" : ' loading="lazy"'} decoding="async">
+      <figcaption><span>${esc(p.caption)}</span><em>${esc(p.tag)}</em></figcaption>
+    </figure>`;
+    const v = L.video;
+    const vtile = `    <figure class="sa-mtile sa-mtile-video" data-media-tile data-cat="Video" data-full="${attr(v.poster)}" data-video="${attr(v.src)}" data-label="${attr(v.caption)}" data-tag="${attr(v.tag)}" tabindex="0" role="button" aria-label="Play video: ${attr(v.caption)}">
+      <img src="${attr(v.poster)}" width="540" height="960" alt="${attr(v.caption)}" loading="lazy" decoding="async">
+      <span class="sa-mtile-play" aria-hidden="true">&#9654;</span>
+      <figcaption><span>${esc(v.caption)}</span><em>Video</em></figcaption>
+    </figure>`;
+    const html = `<!--media:start-->
+<section data-reveal="1" class="sa-mwrap">
+  <div class="sa-mfilters" role="group" aria-label="Filter the gallery">
+${chip("all", "Everything", L.photos.length + 1)}
+${L.cats.map((c) => chip(c, c, counts[c])).join("\n")}
+${chip("Video", "Video", 1)}
+  </div>
+  <div class="sa-mgrid">
+${vtile}
+${L.photos.map(tile).join("\n")}
+  </div>
+</section>
+<!--media:end-->`;
+    const cur = fs.readFileSync(mp, "utf8");
+    const next = cur.replace(/<!--media:start-->[\s\S]*?<!--media:end-->/, () => html);
+    if (next !== cur) fs.writeFileSync(mp, next, "utf8");
+  }
+}
 
 /* Photo cards. The section landings, and the homepage's "ways in" and places grids, use the
    design system's plain text cards. Every interactive card is turned into a photo card with a
