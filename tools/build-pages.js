@@ -1976,7 +1976,7 @@ const PAGES = [
       ["Grade 8 · Learning the kit properly", "My Instrument and Me: “Sunday Bloody Sunday” by U2, four and a half pages of sheet music, a retake on the summative and my first lessons in tuning an acoustic kit. Then Instrumental Communities: teaching two classmates the beat of “As It Was” and drumming in the Beauty and the Beast pit."],
       ["Grade 9 · Beyond the kit", "Glockenspiel for the school song, drums on “Waka Waka” at International Day, a unit at the mixing desk, my first time on a tenor steel pan for visitors from Alaska, and five drum pieces plus piano in Legally Blonde."],
       ["Grade 10 · Under pressure", "The school song on piano, an 8 out of 8 on “Upside Down”, 29 out of 30 on the theory test, the “Take on Me” e-Portfolio pushed toward 186 BPM, and Mamma Mia!: eleven pieces prepared, two on stage."],
-      ["Perkiomen · Now", "The rock band, on drums and now on vocals as well."]
+      ["Perkiomen · Now", "The rock band, on drums and now on vocals too: “De música ligera” by Soda Stereo."]
     ],
     quote: { text: "I believe that this quarter is the start of my full dedication to drumming.", by: "Process journal, Grade 8" },
     facts: [["Instruments", "Drums, glockenspiel, piano, steel pan, voice"], ["Stages", "Six, across three countries"], ["Music II class", "Two students, down from eighteen"]],
@@ -2153,7 +2153,7 @@ const PAGES = [
       {
         "title": "Voice",
         "body": [
-          "I never sang at ISPS. At Perkiomen I have sung with the rock band, so the kit is no longer the only thing I do on stage. It is a different muscle. In Grade 9, while we prepared Legally Blonde, our class covered what vocalists need from a band: speak-singing, clear enunciation, steady intonation and listening to the players around them. For years I was the one keeping time for the singers."
+          "I never sang at ISPS. At Perkiomen I have sung with the rock band: “De música ligera” by Soda Stereo, in Spanish. The kit is no longer the only thing I do on stage, and it is a different muscle. In Grade 9, while we prepared Legally Blonde, our class covered what vocalists need from a band: speak-singing, clear enunciation, steady intonation and listening to the players around them. For years I was the one keeping time for the singers."
         ],
         "points": [
           [
@@ -2161,14 +2161,21 @@ const PAGES = [
             "Drums, and vocals. Singing began at Perkiomen."
           ],
           [
+            "The song",
+            "“De música ligera” by Soda Stereo, sung in Spanish."
+          ],
+          [
             "From Grade 9",
             "What a singer needs from the band, learned in the Legally Blonde unit."
           ]
-        ]
+        ],
+        "slots": ["music-13", "music-14"]
       }
     ],
     facts: [["Instruments", "Glockenspiel, piano, steel pan, voice"], ["Started on", "Drums, at eleven"], ["As a child", "Violin and piano"]],
     slots: [
+      { key: "music-13", ratio: "960 / 540", label: "Singing “De música ligera” by Soda Stereo at Perkiomen" },
+      { key: "music-14", ratio: "960 / 540", label: "Mid-jump, the band behind me" },
       { key: "instruments-hero", ratio: "1280 / 800", label: "Glockenspiel, piano, steel pan and voice" }
     ],
     next: {"title": "Next: AP Vybz", "lede": "The school music organization at ISPS.", "href": "Drums-APVybz.dc.html", "label": "Go to AP Vybz"}
@@ -2490,8 +2497,13 @@ const PAGES = [
       {
         "title": "And the mic",
         "body": [
-          "Singing is new. It is a different muscle, but not a different job: be in time, be heard, and make the people around you sound better. Years of keeping time for singers taught me what they need from the band, and now I get to be the one who needs it."
-        ]
+          "Singing is new. At a Perkiomen show I came out from behind the kit and sang “De música ligera” by Soda Stereo, in Spanish, my first language. It is a different muscle, but not a different job: be in time, be heard, and make the people around you sound better. Years of keeping time for singers taught me what they need from the band, and now I get to be the one who needs it."
+        ],
+        "points": [
+          ["The song", "“De música ligera”, Soda Stereo."],
+          ["The language", "Spanish."]
+        ],
+        "slots": ["music-13", "music-14"]
       },
       {
         "title": "The thread",
@@ -2506,6 +2518,8 @@ const PAGES = [
       { key: "music-10", ratio: "1082 / 1400", label: "The Perk Rock Band Concert poster: Friday, October 30, at KEHS Hall" },
       { key: "music-11", ratio: "1050 / 1400", label: "Fists up on stage, the lights behind" },
       { key: "music-12", ratio: "1600 / 1200", label: "Selfie from behind the kit, the band in front" },
+      { key: "music-13", ratio: "960 / 540", label: "Singing “De música ligera” by Soda Stereo, the band behind me" },
+      { key: "music-14", ratio: "960 / 540", label: "Mid-jump, the band behind me" },
       { key: "music-8", ratio: "800 / 1200", label: "Locked in on the hi-hat" },
       { key: "music-9", ratio: "800 / 1200", label: "Another night at the kit, under purple light" },
       { key: "music-2", ratio: "1600 / 1200", label: "The band before the set" },
