@@ -673,6 +673,7 @@ const PAGES = [
       {
         "title": "Around campus",
         "slots": [
+          "perk-16",
           "perk-13",
           "perk-14",
           "perk-15",
@@ -702,6 +703,7 @@ const PAGES = [
       ]
     },
     slots: [
+      { key: "perk-16", ratio: "733 / 1000", label: "At the microphone in a Perkiomen tie" },
       { key: "perk-15", ratio: "4 / 3", label: "With friends on the lawn at Perkiomen" },
       { key: "perk-12", ratio: "854 / 538", label: "With the Perkiomen Panther mascot" },
       { key: "perk-1", ratio: "4 / 3", label: "Perkiomen campus" },
@@ -2404,7 +2406,8 @@ const PAGES = [
           "The band rehearses on the school's own stage, under the 1875 Perkiomen seal. Set-up, sound check, then the songs, over and over until they hold."
         ],
         "slots": [
-          "music-5"
+          "music-5",
+          "music-2"
         ]
       },
       {
@@ -2413,6 +2416,7 @@ const PAGES = [
           "The kit is also where I think. It is the same instrument I started on in Panama, and the same habits: learn it by ear, then clean it up from the sheet, then play it faster than feels sensible."
         ],
         "slots": [
+          "music-8",
           "music-6"
         ]
       },
@@ -2431,6 +2435,8 @@ const PAGES = [
     ],
     facts: [["Band", "Perkiomen rock band"], ["Role", "Drums and vocals"], ["School", "Perkiomen"]],
     slots: [
+      { key: "music-7", ratio: "1800 / 1204", label: "Drumming under the tent in a PRock shirt" },
+      { key: "music-8", ratio: "735 / 1000", label: "Locked in on the hi-hat" },
       { key: "music-2", ratio: "1600 / 1200", label: "The band before the set" },
       { key: "music-6", ratio: "1500 / 1335", label: "The view from the throne" },
       { key: "music-5", ratio: "1400 / 933", label: "Rehearsal on the Perkiomen stage" }
@@ -2714,6 +2720,14 @@ const PAGES = [
         ]
       },
       {
+        "title": "The light in the grass",
+        "body": [
+          "Not every screenshot I keep is about a trophy. Some are just the light: a low sun over a field of tall grass, a full moon behind clouds, a straw-hat avatar standing in the middle of it. Games are the only place I have ever taken a photograph of a sunset from below the grass."
+        ],
+        "slots": ["games-rb-1", "games-rb-2", "games-rb-3", "games-rb-4", "games-rb-5"],
+        "gallery": true
+      },
+      {
         "title": "Why games matter",
         "body": [
           "When you leave a country, a shared server is often the last thing you still have in common with the people you left. Several friendships from Panama and Trinidad are still alive largely because of a standing lobby and a bad time-zone overlap."
@@ -2734,6 +2748,11 @@ const PAGES = [
       { key: "games-1", ratio: "4 / 3", label: "Dark Souls" },
       { key: "games-2", ratio: "3 / 4", label: "Dark Souls, with Solaire" },
       { key: "games-3", ratio: "4 / 3", label: "The Wind Waker HD on the Wii U" },
+      { key: "games-rb-1", ratio: "1600 / 1021", label: "Sunset over the hills, in-game" },
+      { key: "games-rb-2", ratio: "1600 / 1039", label: "A full moon through the grass, in-game" },
+      { key: "games-rb-3", ratio: "1600 / 1093", label: "Facing the sun, in-game" },
+      { key: "games-rb-4", ratio: "1600 / 1026", label: "Golden hour over the grass, in-game" },
+      { key: "games-rb-5", ratio: "1600 / 1021", label: "Watching the sun go down, in-game" },
       { key: "plat-1", ratio: "1400 / 400", label: "Dark Souls: Remastered trophy page" },
       { key: "plat-2", ratio: "1400 / 400", label: "Like a Dragon Gaiden trophy page" },
       { key: "plat-5", ratio: "1400 / 399", label: "God of War trophy page" }

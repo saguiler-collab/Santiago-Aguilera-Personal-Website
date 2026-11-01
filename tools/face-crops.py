@@ -51,6 +51,9 @@ HERO = [
   ('me-ap','perk-ap',.465,.25,.30,(180,162)),
   ('me-tux','photo-tux',.625,.43,.24,(180,173)),
   ('me-grass','tt-grass',.28,.57,.40,(180,160)),
+  ('me-prock','music-prock',.70,.24,.45,(180,153)),
+  ('me-blazer','perk-blazer',.57,.31,.62,(170,180)),
+  ('me-prock2','music-prock2',.535,.37,.60,(180,160)),
 ]
 # cards are 640x400
 CARDS = [
@@ -59,6 +62,7 @@ CARDS = [
   ('perk-skeleton','perk-skeleton',.675,.47,1.0),
   ('run-tired','run-tired',.36,.47,.70),
   ('hosp-or','hosp-or',.26,.36,1.0),
+  ('music-drums','music-prock',.70,.24,.75),
   ('vz-exhibit','vz-exhibit',.80,.31,1.0),
   ('cmu-lab','cmu-lab',.55,.30,1.0),
 ]
