@@ -3952,7 +3952,7 @@ function spiralSvg() {
     "Curiosities-Literature.dc.html": "sea-look", "Place-Mexico.dc.html": "kid-pirate", "Place-Colombia.dc.html": "co-mammoth",
     "Place-Panama.dc.html": "pa-ancon", "Place-Trinidad.dc.html": "trip-bench", "Place-UnitedStates.dc.html": "perk-paws"
   };
-  const CITY_IMG = { "Madrid": "madrid-hat", "Houston": "houston-slide", "Monterrey": "kid-pirate", "Bogotá": "co-mammoth", "Ciudad de Panamá": "pa-ancon", "Port of Spain": "trip-bench", "Pennsburg": "perk-paws" };
+  const CITY_IMG = { "Madrid": "madrid-hat", "Houston": "houston-slide", "Monterrey": "kid-pirate", "Bogotá": "co-mammoth", "Ciudad de Panamá": "pa-ancon", "Port of Spain": "trip-bench", "Pennsburg": "perk-group" };
   const PLACE_COLOR = { usa: "#3A7CA5", spain: "#D9A441", mexico: "#3F9A5A", colombia: "#E3B93C", panama: "#E0654A", trinidad: "#C2403A", pennsburg: "#7B5EA7" };
   const PAL = ["#E0654A", "#2F8F83", "#D9A441", "#7B5EA7", "#3A7CA5", "#C2527A", "#5E8C3A"];
   const A = (attrs, n) => { const m = attrs.match(new RegExp("(?:^|\\s)" + n + '="([^"]*)"')); return m ? m[1] : ""; };
