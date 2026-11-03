@@ -926,6 +926,7 @@ a.sa-send { display: inline-flex; align-items: center; text-decoration: none; }
 .sa-gallery { column-gap: clamp(14px, 1.8vw, 24px); column-count: 3; }
 .sa-gallery.n1 { column-count: 1; max-width: 560px; }
 .sa-gallery.n2 { column-count: 2; max-width: 900px; }
+.sa-gallery.n1.wide { max-width: min(1100px, 100%); }
 .sa-gallery .sa-fig { break-inside: avoid; margin: 0 0 clamp(14px, 1.8vw, 24px); }
 @media (max-width: 980px) { .sa-gallery { column-count: 2; } .sa-gallery.n1 { column-count: 1; } }
 @media (max-width: 560px) { .sa-gallery, .sa-gallery.n2 { column-count: 1; } }
@@ -1093,3 +1094,8 @@ a.sa-send { display: inline-flex; align-items: center; text-decoration: none; }
 /* A hand-written page head with a lead photo beside the title. Stacks on narrow screens. */
 .sa-headfig { margin: 0; width: 100%; justify-self: end; }
 @media (max-width: 860px) { .sa-pagehead-split { grid-template-columns: minmax(0, 1fr) !important; } .sa-headfig { justify-self: start; max-width: min(100%, 360px) !important; } }
+
+/* A row can carry buttons under its text (e.g. open the PDF). */
+.sa-rowlinks { display: flex; flex-wrap: wrap; gap: 10px; margin-top: var(--sa-space-4); }
+.sa-rowlink { display: inline-flex; align-items: center; height: 40px; padding: 0 18px; border-radius: 999px; border: 1px solid var(--sa-border-default); text-decoration: none; font: var(--sa-type-ui); font-size: var(--sa-text-sm); color: var(--sa-text-primary); transition: var(--sa-transition-control); }
+.sa-rowlink:hover { background: var(--sa-surface-sunken); }

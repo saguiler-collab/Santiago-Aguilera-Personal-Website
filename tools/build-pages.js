@@ -1392,15 +1392,15 @@ const PAGES = [
   },
   {
     file: "Research-CSRx.dc.html", section: "research", parent: { label: "Research & projects", href: "Research.dc.html" },
-    eyebrow: "Research · Epigenetics", title: "CSR-x", lede: "Polycyclic aromatic hydrocarbons, epigenetic aging, and lung cancer risk.",
-    desc: "CSR-x, a selective remote research program on PAH exposure, epigenetic aging, and DNA methylation.",
-    intro: "PAHs, polycyclic aromatic hydrocarbons, are wherever something has been burned: exhaust, cigarette smoke, charred food. CSR-x is where I spent five weeks asking what chronic exposure to them does at the level of the genome, not just the lungs.",
+    eyebrow: "Research · Epigenetics", title: "CSR-x", lede: "A systematic review of 33 studies on PAH exposure, epigenetic aging and lung cancer risk.",
+    desc: "CSR-x, a selective remote research program. Our systematic review of 33 studies on polycyclic aromatic hydrocarbon exposure, epigenetic age acceleration and lung cancer risk, with the full paper and poster.",
+    intro: "PAHs, polycyclic aromatic hydrocarbons, are wherever something has been burned: exhaust, cigarette smoke, charred food. At CSR-x, with a small remote cohort, I spent five weeks reviewing the evidence on what chronic exposure to them does at the level of the genome, not just the lungs, and we wrote it up as a paper and a poster.",
     link: { href: "https://www.csr-x.org/", label: "See it on csr-x.org" },
     media: [
       {
         "title": "Five weeks, remote, student-led",
         "body": [
-          "CSR-x, the Collaborative Summer Research eXperience, is selective and remote, with no professor running the room: a small cohort of students building the research together."
+          "CSR-x, the Collaborative Summer Research eXperience, is a selective remote program with no professor running the room. I was in the Biomedical and Health Sciences track, Cohort #2: five mentees and two mentors building one piece of research together."
         ],
         "points": [
           [
@@ -1409,14 +1409,25 @@ const PAGES = [
           ],
           [
             "When",
-            "July to August 2026."
+            "July to August 2026. The last database searches were run between July 28 and August 3."
           ]
         ]
       },
       {
         "title": "The question",
         "body": [
-          "PAHs, polycyclic aromatic hydrocarbons, are wherever something has been burned: exhaust, cigarette smoke, charred food. We asked how chronic exposure shows up in epigenetic aging and DNA methylation, and how much of that risk becomes lung cancer."
+          "PAHs, polycyclic aromatic hydrocarbons, are organic compounds made of two or more fused aromatic rings, formed when organic material burns incompletely. People meet them at work in coke-oven work, coal mining and chimney sweeping, at home through smoky coal, and every day through vehicle emissions, tobacco smoke and charred meat.",
+          "Our research question: how is PAH exposure associated with epigenetic age acceleration and lung cancer risk?"
+        ],
+        "points": [
+          [
+            "Epigenetic age",
+            "An estimate of biological aging from DNA methylation patterns, compared with how old someone actually is."
+          ],
+          [
+            "The gap",
+            "Few studies had looked at the full pathway from exposure to epigenetic aging to lung cancer, and none had measured all of it in one population."
+          ]
         ],
         "slots": [
           "csrx-3"
@@ -1425,51 +1436,368 @@ const PAGES = [
       {
         "title": "The paper",
         "body": [
-          "Our group's work became a 23-page review paper, \"Evaluating the Association Between Polycyclic Aromatic Hydrocarbon Exposure, Epigenetic Age Acceleration, and Lung Cancer Risk\", with seven student authors from seven schools in the Biomedical Health Sciences 2 track. The screenshot is its page on csr-x.org."
-        ],
-        "slots": [
-          "csrx-4"
+          "Our work became a 23-page systematic review, “Evaluating the Association Between Polycyclic Aromatic Hydrocarbon Exposure, Epigenetic Age Acceleration, and Lung Cancer Risk”, with seven authors from seven institutions. The screenshot is its page on csr-x.org, and the whole paper can be read at the bottom of this page."
         ],
         "points": [
           [
-            "The search",
-            "53 potentially relevant records from PubMed, Google Scholar and ScienceDirect."
+            "Type",
+            "A systematic review and evidence map."
           ],
           [
-            "The screen",
-            "33 studies met inclusion criteria after PRISMA screening."
+            "Cohort",
+            "CSR-x Biomedical and Health Sciences Cohort #2."
           ],
           [
-            "The method",
-            "Each study was assessed by one of five reviewers and entered into a standardised evidence matrix."
+            "Authors",
+            "Seven: two mentors and five mentees."
+          ]
+        ],
+        "links": [
+          {
+            "href": "/assets/docs/csrx-paper.pdf",
+            "label": "Open the paper (PDF)"
+          }
+        ]
+      },
+      {
+        "title": "The team",
+        "body": [
+          "The five mentees were the reviewers. The two mentors checked every record in the screening tracker and confirmed each final decision to include or exclude a study."
+        ],
+        "points": [
+          [
+            "Mentors",
+            "Sahil Gogna (Santa Teresa High School) and Vivian Monteiro (Awty International School)."
+          ],
+          [
+            "Mentees",
+            "Santiago Aguilera (Perkiomen School), Noemí Alvarado (ITMO University), Emily Koyfman (Clear Creek High School), Gurkriti Kochhar (Adlai E. Stevenson High School) and Snigdha Malhotra (Eagan High School)."
           ]
         ]
       },
       {
-        "title": "What we found",
+        "title": "How the review was done",
         "body": [
-          "PAH exposure was consistently linked to altered DNA methylation, oxidative stress and higher lung cancer risk. The link to faster epigenetic aging was moderate to strong, particularly with second-generation clocks.",
-          "The most interesting result is a gap. No single study tested the whole chain, exposure to epigenetic aging to lung cancer, in one population. The paper argues for prospective cohorts that measure all three together."
+          "The review follows the PRISMA 2020 guidelines for systematic reviews, from a record-level screening tracker through to an evidence matrix, an evidence map and a heterogeneity analysis."
+        ],
+        "points": [
+          [
+            "Search",
+            "PubMed, ScienceDirect and Google Scholar, with 22 search terms combined with AND and OR, including “PAH exposure”, “DNA methylation”, “epigenetic age acceleration” and “benzo[a]pyrene”."
+          ],
+          [
+            "Screen",
+            "One of five reviewers screened each record: duplicates, title and abstract, full text, then an evidence pathway and an evidence category (primary, mechanistic or background)."
+          ],
+          [
+            "Extract",
+            "Each included study went into a standardised evidence matrix: design, population, sample size, exposure biomarker, methylation method, epigenetic clock, effect estimate, confidence interval, confounders, strengths and limitations."
+          ],
+          [
+            "Synthesise",
+            "Five evidence pathways, each rated strong, moderate, limited, inconsistent, mechanistically plausible or not adequately studied, followed by an analysis of heterogeneity."
+          ]
+        ],
+        "slots": [
+          "csrx-prisma"
+        ]
+      },
+      {
+        "title": "From 53 records to 33 studies",
+        "body": [
+          "The PRISMA flow chart in the paper tracks every record."
+        ],
+        "points": [
+          [
+            "Identified",
+            "53 records: PubMed 16, Google Scholar 29, ScienceDirect 8."
+          ],
+          [
+            "Screened",
+            "3 duplicates removed, leaving 50; 9 excluded."
+          ],
+          [
+            "Retrieved",
+            "41 sought, 6 not retrieved, 35 assessed for eligibility."
+          ],
+          [
+            "Included",
+            "2 excluded (one did not meet the inclusion criteria, one had an ineligible design), leaving 33 studies."
+          ]
+        ]
+      },
+      {
+        "title": "The 33 studies",
+        "body": [
+          "The evidence base is varied, which is both its strength and the reason the studies are hard to compare."
+        ],
+        "points": [
+          [
+            "Human or mechanistic",
+            "Nearly 73% of the studies were in humans; the rest were cell and animal studies of mechanism."
+          ],
+          [
+            "Designs",
+            "Cross-sectional 14, case-control 8, longitudinal 2, plus repeated-measures, in vitro and Mendelian randomization designs."
+          ],
+          [
+            "Where",
+            "14 of the 33 studies were done in China, and occupational cohorts were overrepresented overall."
+          ],
+          [
+            "Samples",
+            "Urine for internal PAH exposure, blood for DNA methylation, and buccal and lung cells."
+          ],
+          [
+            "Clocks",
+            "First-generation (Horvath, Hannum, Zhang) and second-generation (PhenoAge, GrimAge)."
+          ]
+        ]
+      },
+      {
+        "title": "What we found: exposure and DNA methylation",
+        "body": [
+          "PAH exposure was consistently associated with altered nuclear and mitochondrial DNA methylation, most often as reduced methylation. The same loci kept appearing: AHRR, F2RL3, ACBD6, CYP1A1, GSTP1 and GSTM1 in the nucleus, and MT-ATP6 and MT-ATP8 in the mitochondria.",
+          "Smoking complicates it: tobacco smoke is a major source of PAHs and also changes methylation at AHRR and F2RL3 on its own."
+        ]
+      },
+      {
+        "title": "What we found: exposure and epigenetic aging",
+        "body": [
+          "The link to faster epigenetic aging was moderate to strong, and clearest with second-generation clocks such as GrimAge and PhenoAge."
+        ],
+        "points": [
+          [
+            "Coke-oven workers",
+            "In Poland, 40.8% of exposed workers had a DNA methylation age above their real age, against 15.6% of controls (p = 0.007)."
+          ],
+          [
+            "Household coal",
+            "In never-smoking women in Xuanwei, China, each standard-deviation rise in household PAH exposure went with 0.77 more years of GrimAge acceleration (95% CI 0.36 to 1.19)."
+          ],
+          [
+            "Timing matters",
+            "In young children, current exposure went with older epigenetic age, while prenatal estimates pointed the other way but were not significant."
+          ],
+          [
+            "The clock matters",
+            "In 73 healthy adults, only PhenoAge acceleration was significantly linked to the chemical mixture."
+          ]
+        ]
+      },
+      {
+        "title": "What we found: epigenetic aging and lung cancer",
+        "body": [
+          "Faster epigenetic aging predicted later lung cancer in observational studies, but a Mendelian randomization study did not support a causal effect."
+        ],
+        "points": [
+          [
+            "Never-smokers",
+            "Each extra year of GrimAge acceleration went with 19% higher odds of lung cancer (95% CI 1.06 to 1.34), in 80 cases and 83 controls in Shanghai."
+          ],
+          [
+            "Over 17 years",
+            "146 incident lung cancers, with a dose-response across PhenoAge, GrimAge and a mortality risk score."
+          ],
+          [
+            "The caution",
+            "Epigenetic aging looks like a marker of risk, not a proven cause."
+          ]
+        ]
+      },
+      {
+        "title": "What we found: exposure and lung cancer",
+        "body": [
+          "This was the best-supported link in the whole pathway."
+        ],
+        "points": [
+          [
+            "Occupational",
+            "The pooled SYNERGY study: 16,901 cases and 20,965 controls across 14 case-control studies in Europe and Canada. Cumulative benzo[a]pyrene exposure was linked to lung cancer after adjusting for smoking, with odds ratios of 1.11 in men and 1.21 in women."
+          ],
+          [
+            "Household",
+            "In 1,015 never-smoking women in Xuanwei and Fuyuan, each standard-deviation rise in a cluster of 25 PAHs went with an odds ratio of 2.21."
+          ],
+          [
+            "Internal dose",
+            "Each standard-deviation rise in blood BPDE-albumin adducts, a marker of activated benzo[a]pyrene, went with an odds ratio of 1.46 (p = 0.005)."
+          ],
+          [
+            "Methylation",
+            "Five CpG sites statistically accounted for about 58% of the link between benzo[a]pyrene and lung cancer, which fits a methylation pathway but is not proof of one."
+          ]
+        ]
+      },
+      {
+        "title": "What we found: the mechanism",
+        "body": [
+          "The mechanistic studies fit together: the body turns benzo[a]pyrene into a reactive metabolite, BPDE, which can bind DNA and trigger oxidative stress and DNA damage."
+        ],
+        "points": [
+          [
+            "Oxidative stress",
+            "A 50% rise in urinary 1-hydroxypyrene went with an 11 to 13% rise in oxidative stress biomarkers."
+          ],
+          [
+            "DNA damage",
+            "Firefighters exposed to wildfire smoke showed 22% more DNA damage on a comet assay, although smoke is a mixture."
+          ],
+          [
+            "In cells",
+            "Human lung cells exposed to benzo[a]pyrene formed DNA adducts and micronuclei, and their cell cycle was disrupted."
+          ]
+        ]
+      },
+      {
+        "title": "How certain is it?",
+        "body": [
+          "Certainty decreases as the pathway goes downstream. The whole pathway is biologically plausible but still inferred, because no study measured every step in one group of people."
+        ],
+        "points": [
+          [
+            "Strong",
+            "PAH exposure and lung cancer, in occupational, household and internal-dose studies."
+          ],
+          [
+            "Highly supportive, but varied",
+            "PAH exposure with DNA methylation and with epigenetic age acceleration."
+          ],
+          [
+            "Least established",
+            "Epigenetic aging as the thing that actually carries PAH exposure to lung cancer."
+          ]
+        ]
+      },
+      {
+        "title": "The limits, and what comes next",
+        "body": [
+          "The paper is explicit about what it cannot say."
+        ],
+        "points": [
+          [
+            "Designs",
+            "Most studies were cross-sectional or case-control, so they cannot show cause and effect over time."
+          ],
+          [
+            "Exposure",
+            "Many relied on urinary metabolites, which reflect recent exposure, not the chronic exposure that lung cancer takes years to follow."
+          ],
+          [
+            "Mixtures",
+            "PAHs came mixed with tobacco smoke, coal dust and particulates, so single compounds were hard to isolate."
+          ],
+          [
+            "Generalizability",
+            "Occupational cohorts and studies from China were overrepresented, and blood stood in for lung tissue."
+          ],
+          [
+            "Next",
+            "A prospective cohort that measures exposure, several epigenetic clocks and lung cancer outcomes in the same people, with repeated exposure measures, paired blood and lung samples and more varied populations."
+          ]
         ]
       },
       {
         "title": "My part",
         "body": [
-          "I built a large table tracking the studies and did a close read of seven of them. The same instinct runs through SanaSanita and the Venezuela paper: a health outcome nobody disputes, traced back to a mechanism most people never see."
+          "I was one of the five reviewers. Reviewers screened records against the inclusion criteria, put studies into the shared evidence matrix, and each wrote up one of the five evidence pathways. For my part I built a large table tracking the studies and did a close read of seven of them.",
+          "The same instinct runs through SanaSanita and the Venezuela paper: a health outcome nobody disputes, traced back to a mechanism most people never see."
+        ]
+      },
+      {
+        "title": "The poster",
+        "body": [
+          "We also presented the review as a 36 by 42 inch poster, “A Systematic Review and Evidence Map”, built around three diagrams of how PAH exposure connects to epigenetic change and lung cancer. Each is explained below."
+        ],
+        "points": [
+          [
+            "Format",
+            "Background, research question, methods, results, discussion, limitations and conclusion, with three evidence maps."
+          ]
+        ],
+        "slots": [
+          "csrx-poster"
+        ],
+        "links": [
+          {
+            "href": "/assets/docs/csrx-poster.pdf",
+            "label": "Open the poster (PDF)"
+          }
+        ]
+      },
+      {
+        "title": "Evidence map 1: exposure, methylation and the lung",
+        "body": [
+          "Where PAHs come from, how the body activates them, and the nuclear and mitochondrial methylation changes that follow. Each 1-SD increase in plasma BPDE-albumin adducts was associated with greater lung cancer odds (OR = 1.46; p = 0.005)."
+        ]
+      },
+      {
+        "title": "Evidence map 1",
+        "slots": [
+          "csrx-fig1"
+        ],
+        "gallery": true,
+        "wide": true
+      },
+      {
+        "title": "Evidence map 2: epigenetic aging and lung cancer risk",
+        "body": [
+          "From exposure to epigenetic age acceleration, and on to lung cancer. Among never-smokers there were 19% higher odds of future lung cancer for each additional year of GrimAge acceleration. A “causal uncertainty panel” shows why that is only an association: Mendelian randomization found little evidence that genetically predicted epigenetic age acceleration directly causes lung cancer."
+        ]
+      },
+      {
+        "title": "Evidence map 2",
+        "slots": [
+          "csrx-fig2"
+        ],
+        "gallery": true,
+        "wide": true
+      },
+      {
+        "title": "Evidence map 3: oxidative stress, DNA damage and carcinogenesis",
+        "body": [
+          "The mechanisms inside lung cells, and the human evidence on the right. The SYNERGY analysis of 16,901 cases linked occupational PAH exposure to lung cancer, and never-smoking women exposed to smoky-coal combustion also showed elevated risk. The poster's own caution: biomarker evidence is indirect, not equivalent to diagnosed cancer."
+        ]
+      },
+      {
+        "title": "Evidence map 3",
+        "slots": [
+          "csrx-fig3"
+        ],
+        "gallery": true,
+        "wide": true
+      }
+    ],
+    readers: [
+      {
+        "kicker": "Read it here",
+        "heading": "The paper, top to bottom",
+        "intro": "The full review, page by page. Scroll through it without leaving the page; the PDF opens in a new tab as well.",
+        "items": [
+          {
+            "kicker": "Review paper",
+            "title": "Evaluating the Association Between Polycyclic Aromatic Hydrocarbon Exposure, Epigenetic Age Acceleration, and Lung Cancer Risk",
+            "pages": 23,
+            "blurb": "The full 23-page systematic review: abstract, introduction, methods, five results sections, discussion, research gaps, future directions and conclusion, with references.",
+            "pdf": "/assets/docs/csrx-paper.pdf",
+            "dir": "/assets/docs/csrx-paper"
+          }
         ]
       }
     ],
-    facts: [["Type", "Research program"], ["Program", "CSR-x, Collaborative Summer Research eXperience"], ["Focus", "PAH exposure · epigenetic aging · DNA methylation"], ["When", "Summer 2026"]],
+    facts: [["Type", "Systematic review and evidence map"], ["Program", "CSR-x, Collaborative Summer Research eXperience"], ["Cohort", "Biomedical and Health Sciences Cohort #2"], ["Focus", "PAH exposure · epigenetic aging · lung cancer"], ["Evidence", "53 records screened, 33 studies included"], ["Team", "5 mentees and 2 mentors, 7 institutions"], ["When", "July to August 2026"]],
     hero: "csrx-4",
     slots: [
-      { key: "csrx-1", ratio: "16 / 9", label: "The research cohort, remote" },
-      { key: "csrx-2", ratio: "4 / 3", label: "A figure from the analysis" },
       { key: "csrx-4", ratio: "1133 / 724", label: "The paper on csr-x.org" },
-      { key: "csrx-3", ratio: "7 / 5", label: "CSR-x 2026 Program, certificate of completion" }
+      { key: "csrx-3", ratio: "7 / 5", label: "CSR-x 2026 Program, certificate of completion" },
+      { key: "csrx-prisma", ratio: "704 / 752", label: "The PRISMA flow chart from the paper: 53 records screened down to 33 studies" },
+      { key: "csrx-poster", ratio: "2000 / 2333", label: "Our 36 by 42 inch poster, “A Systematic Review and Evidence Map”" },
+      { key: "csrx-fig1", ratio: "1474 / 746", label: "Evidence map 1: PAH exposure, DNA-methylation alterations and lung-related outcomes" },
+      { key: "csrx-fig2", ratio: "1474 / 772", label: "Evidence map 2: PAH exposure, epigenetic age acceleration and lung cancer risk" },
+      { key: "csrx-fig3", ratio: "1474 / 726", label: "Evidence map 3: PAH exposure, oxidative stress, DNA damage and carcinogenic processes" }
     ],
     next: { title: "Leadership & service", lede: "The work that is not assigned.", href: "Leadership.dc.html", label: "See leadership" }
   },
-
   /* -------------------------------------------------------- leadership ---- */
   {
     file: "Leadership-HOSA.dc.html", section: "leadership", parent: { label: "Leadership & service", href: "Leadership.dc.html" },
@@ -3191,8 +3519,10 @@ ${row.points.map((pt) => Array.isArray(pt)
     ? `      <li><strong>${esc(pt[0])}</strong>${pt[1] ? `<span>${esc(pt[1])}</span>` : ""}</li>`
     : `      <li><span>${esc(pt)}</span></li>`).join("\n")}
     </ul>` : "";
+  const linksHtml = (row) => row.links && row.links.length ? `
+    <p class="sa-rowlinks">${row.links.map((l) => `<a class="sa-rowlink" href="${attr(l.href)}" target="_blank" rel="noopener">${esc(l.label)}</a>`).join("")}</p>` : "";
   const textHtml = (row) => `    <h3>${esc(row.title)}</h3>
-${(row.body || []).map((t) => `    <p>${esc(t)}</p>`).join("\n")}${pointsHtml(row)}`;
+${(row.body || []).map((t) => `    <p>${esc(t)}</p>`).join("\n")}${pointsHtml(row)}${linksHtml(row)}`;
   const mediaRow = (row, idx) => {
     const sl = (row.slots || []).map((k) => slots.find((x) => x.key === k)).filter((x) => x && PHOTO_MANIFEST[x.key] && x !== heroSlot);
     if (row.gallery) {
@@ -3200,7 +3530,7 @@ ${(row.body || []).map((t) => `    <p>${esc(t)}</p>`).join("\n")}${pointsHtml(ro
       return `
 <section data-reveal="1" class="sa-gallery-wrap" style="padding-top:var(--sa-space-8);padding-bottom:var(--sa-space-8)">
   <div class="sa-gallery-head"><span class="sa-gallery-kicker">${esc(row.title)}</span></div>
-  <div class="sa-gallery n${Math.min(sl.length, 3)}">
+  <div class="sa-gallery n${Math.min(sl.length, 3)}${row.wide ? " wide" : ""}">
 ${sl.map((x) => figure(x)).join("\n")}
   </div>
 </section>`;
