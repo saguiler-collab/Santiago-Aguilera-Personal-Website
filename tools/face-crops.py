@@ -74,6 +74,7 @@ CARDS = [
   ('games-totk','games-totk',.5,.5,.92),
   ('music-redkit','music-redkit',.40,.72,.62),
   ('us-bean','us-bean',.50,.56,.80),
+  ('isps-me','isps-me',.45,.28,1.0),
   ('perk-chalk','perk-chalk',.60,.40,1.0),
   ('perk-group','perk-group',.52,.44,1.0),
   ('vz-exhibit','vz-exhibit',.80,.31,1.0),
