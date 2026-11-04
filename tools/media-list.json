@@ -11,14 +11,14 @@
    "fh": 1600
   },
   {
-   "file": "music-staffband",
-   "caption": "On the drums with the ISPS Staff Band, “School’s Out”, June 2025",
+   "file": "music-tent3",
+   "caption": "On the drums, concentrating, under a tent on the ISPS lawn",
    "tag": "Music",
    "cat": "Music",
    "w": 560,
-   "h": 518,
-   "fw": 1600,
-   "fh": 1481
+   "h": 559,
+   "fw": 1500,
+   "fh": 1498
   },
   {
    "file": "kid-pirate",
@@ -91,14 +91,14 @@
    "fh": 1600
   },
   {
-   "file": "music-staffband2",
-   "caption": "Looking across the stage mid-song, ISPS end-of-year assembly",
+   "file": "music-tent1",
+   "caption": "The kit under the tent, seen from the stage",
    "tag": "Music",
    "cat": "Music",
-   "w": 560,
-   "h": 526,
-   "fw": 1500,
-   "fh": 1409
+   "w": 440,
+   "h": 604,
+   "fw": 510,
+   "fh": 700
   },
   {
    "file": "mx-halloween",
@@ -171,14 +171,14 @@
    "fh": 1350
   },
   {
-   "file": "music-pit1",
-   "caption": "In the pit, seen from above",
+   "file": "music-tent2",
+   "caption": "From behind the kit, mid-song",
    "tag": "Music",
    "cat": "Music",
-   "w": 560,
-   "h": 316,
-   "fw": 848,
-   "fh": 478
+   "w": 440,
+   "h": 526,
+   "fw": 418,
+   "fh": 500
   },
   {
    "file": "mx-church",
@@ -251,14 +251,14 @@
    "fh": 1600
   },
   {
-   "file": "music-pit2",
-   "caption": "Mid-fill, the sheet music beside me",
+   "file": "music-staffband",
+   "caption": "On the drums with the ISPS Staff Band, “School’s Out”, June 2025",
    "tag": "Music",
    "cat": "Music",
    "w": 560,
-   "h": 316,
-   "fw": 848,
-   "fh": 478
+   "h": 518,
+   "fw": 1600,
+   "fh": 1481
   },
   {
    "file": "co-mammoth",
@@ -331,14 +331,14 @@
    "fh": 834
   },
   {
-   "file": "music-ekit",
-   "caption": "The electric kit at home",
+   "file": "music-staffband2",
+   "caption": "Looking across the stage mid-song, ISPS end-of-year assembly",
    "tag": "Music",
    "cat": "Music",
    "w": 560,
-   "h": 521,
+   "h": 526,
    "fw": 1500,
-   "fh": 1396
+   "fh": 1409
   },
   {
    "file": "co-dino",
@@ -351,14 +351,14 @@
    "fh": 1400
   },
   {
-   "file": "isps-stuco",
-   "caption": "Student Council at ISPS, in the white polos",
+   "file": "isps-shellshock",
+   "caption": "Shell Shock, our World War I class project: a trench diorama",
    "tag": "ISPS",
    "cat": "School",
-   "w": 560,
-   "h": 393,
-   "fw": 376,
-   "fh": 264
+   "w": 440,
+   "h": 458,
+   "fw": 1602,
+   "fh": 1666
   },
   {
    "file": "stuco-room",
@@ -411,14 +411,14 @@
    "fh": 1500
   },
   {
-   "file": "music-sing1",
-   "caption": "Singing “De música ligera” by Soda Stereo",
+   "file": "music-pit1",
+   "caption": "In the pit, seen from above",
    "tag": "Music",
    "cat": "Music",
    "w": 560,
-   "h": 315,
-   "fw": 960,
-   "fh": 540
+   "h": 316,
+   "fw": 848,
+   "fh": 478
   },
   {
    "file": "co-goat",
@@ -431,14 +431,14 @@
    "fh": 1600
   },
   {
-   "file": "isps-tug",
-   "caption": "Tug of war for Mayaro house",
+   "file": "isps-stuco",
+   "caption": "Student Council at ISPS, in the white polos",
    "tag": "ISPS",
    "cat": "School",
    "w": 560,
-   "h": 412,
-   "fw": 408,
-   "fh": 300
+   "h": 393,
+   "fw": 376,
+   "fh": 264
   },
   {
    "file": "mun-eagle",
@@ -491,14 +491,14 @@
    "fh": 1500
   },
   {
-   "file": "music-sing2",
-   "caption": "Mid-jump, the band behind me",
+   "file": "music-pit2",
+   "caption": "Mid-fill, the sheet music beside me",
    "tag": "Music",
    "cat": "Music",
    "w": 560,
-   "h": 315,
-   "fw": 960,
-   "fh": 540
+   "h": 316,
+   "fw": 848,
+   "fh": 478
   },
   {
    "file": "co-camp",
@@ -511,14 +511,14 @@
    "fh": 727
   },
   {
-   "file": "isps-recreation",
-   "caption": "My recreation of Guayasamín, for Spanish class",
+   "file": "isps-tug",
+   "caption": "Tug of war for Mayaro house",
    "tag": "ISPS",
    "cat": "School",
    "w": 560,
-   "h": 495,
-   "fw": 1400,
-   "fh": 1238
+   "h": 412,
+   "fw": 408,
+   "fh": 300
   },
   {
    "file": "vol-river",
@@ -551,14 +551,14 @@
    "fh": 787
   },
   {
-   "file": "music-prock",
-   "caption": "Drumming under the tent in a PRock shirt",
+   "file": "music-ekit",
+   "caption": "The electric kit at home",
    "tag": "Music",
    "cat": "Music",
    "w": 560,
-   "h": 375,
-   "fw": 1800,
-   "fh": 1204
+   "h": 521,
+   "fw": 1500,
+   "fh": 1396
   },
   {
    "file": "co-vest",
@@ -571,14 +571,14 @@
    "fh": 1217
   },
   {
-   "file": "perk-room",
-   "caption": "My first room at Perkiomen, the start of my own adventure",
-   "tag": "Perkiomen",
+   "file": "isps-recreation",
+   "caption": "My recreation of Guayasamín, for Spanish class",
+   "tag": "ISPS",
    "cat": "School",
    "w": 560,
-   "h": 420,
-   "fw": 1600,
-   "fh": 1200
+   "h": 495,
+   "fw": 1400,
+   "fh": 1238
   },
   {
    "file": "vol-bingo",
@@ -611,14 +611,14 @@
    "fh": 1026
   },
   {
-   "file": "music-stagefist",
-   "caption": "Fists up on stage, the lights behind",
+   "file": "music-sing1",
+   "caption": "Singing “De música ligera” by Soda Stereo",
    "tag": "Music",
    "cat": "Music",
-   "w": 440,
-   "h": 587,
-   "fw": 1050,
-   "fh": 1400
+   "w": 560,
+   "h": 315,
+   "fw": 960,
+   "fh": 540
   },
   {
    "file": "co-tilata-balcony",
@@ -631,14 +631,14 @@
    "fh": 1600
   },
   {
-   "file": "perk-paws",
-   "caption": "With the Perkiomen Panther mascot",
+   "file": "perk-room",
+   "caption": "My first room at Perkiomen, the start of my own adventure",
    "tag": "Perkiomen",
    "cat": "School",
    "w": 560,
-   "h": 353,
-   "fw": 854,
-   "fh": 538
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
   },
   {
    "file": "vol-water",
@@ -671,14 +671,14 @@
    "fh": 1021
   },
   {
-   "file": "music-redkit",
-   "caption": "Selfie from behind the kit, the band in front",
+   "file": "music-sing2",
+   "caption": "Mid-jump, the band behind me",
    "tag": "Music",
    "cat": "Music",
    "w": 560,
-   "h": 420,
-   "fw": 1600,
-   "fh": 1200
+   "h": 315,
+   "fw": 960,
+   "fh": 540
   },
   {
    "file": "co-tilata-pair",
@@ -691,14 +691,14 @@
    "fh": 960
   },
   {
-   "file": "perk-blazer",
-   "caption": "At the microphone in a Perkiomen tie",
+   "file": "perk-paws",
+   "caption": "With the Perkiomen Panther mascot",
    "tag": "Perkiomen",
    "cat": "School",
-   "w": 440,
-   "h": 600,
-   "fw": 733,
-   "fh": 1000
+   "w": 560,
+   "h": 353,
+   "fw": 854,
+   "fh": 538
   },
   {
    "file": "hosp-or",
@@ -721,14 +721,14 @@
    "fh": 722
   },
   {
-   "file": "music-purple",
-   "caption": "Another night at the kit, under purple light",
+   "file": "music-prock",
+   "caption": "Drumming under the tent in a PRock shirt",
    "tag": "Music",
    "cat": "Music",
-   "w": 440,
-   "h": 660,
-   "fw": 800,
-   "fh": 1200
+   "w": 560,
+   "h": 375,
+   "fw": 1800,
+   "fh": 1204
   },
   {
    "file": "trip-peru",
@@ -741,14 +741,14 @@
    "fh": 1121
   },
   {
-   "file": "perk-awards",
-   "caption": "Receiving the folder at Perkiomen's awards ceremony",
+   "file": "perk-blazer",
+   "caption": "At the microphone in a Perkiomen tie",
    "tag": "Perkiomen",
    "cat": "School",
-   "w": 560,
-   "h": 373,
-   "fw": 1600,
-   "fh": 1067
+   "w": 440,
+   "h": 600,
+   "fw": 733,
+   "fh": 1000
   },
   {
    "file": "hosp-mirror",
@@ -771,14 +771,14 @@
    "fh": 480
   },
   {
-   "file": "music-prock2",
-   "caption": "Locked in on the hi-hat",
+   "file": "music-stagefist",
+   "caption": "Fists up on stage, the lights behind",
    "tag": "Music",
    "cat": "Music",
    "w": 440,
-   "h": 660,
-   "fw": 800,
-   "fh": 1200
+   "h": 587,
+   "fw": 1050,
+   "fh": 1400
   },
   {
    "file": "pa-ancon",
@@ -791,8 +791,8 @@
    "fh": 1400
   },
   {
-   "file": "perk-bell",
-   "caption": "Ringing the bell as a procession climbs the steps, 2027 chalked underfoot",
+   "file": "perk-awards",
+   "caption": "Receiving the folder at Perkiomen's awards ceremony",
    "tag": "Perkiomen",
    "cat": "School",
    "w": 560,
@@ -811,14 +811,14 @@
    "fh": 1600
   },
   {
-   "file": "music-pov",
-   "caption": "The view from the throne",
+   "file": "music-redkit",
+   "caption": "Selfie from behind the kit, the band in front",
    "tag": "Music",
    "cat": "Music",
    "w": 560,
-   "h": 498,
-   "fw": 1500,
-   "fh": 1335
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
   },
   {
    "file": "trip-bench",
@@ -831,8 +831,8 @@
    "fh": 1200
   },
   {
-   "file": "perk-chalk",
-   "caption": "Chalking the steps with two classmates",
+   "file": "perk-bell",
+   "caption": "Ringing the bell as a procession climbs the steps, 2027 chalked underfoot",
    "tag": "Perkiomen",
    "cat": "School",
    "w": 560,
@@ -851,14 +851,14 @@
    "fh": 1600
   },
   {
-   "file": "music-drums",
-   "caption": "Behind the kit",
+   "file": "music-purple",
+   "caption": "Another night at the kit, under purple light",
    "tag": "Music",
    "cat": "Music",
    "w": 440,
-   "h": 585,
-   "fw": 1170,
-   "fh": 1556
+   "h": 660,
+   "fw": 800,
+   "fh": 1200
   },
   {
    "file": "tt-birthday",
@@ -871,14 +871,14 @@
    "fh": 867
   },
   {
-   "file": "perk-podium",
-   "caption": "Stepping away from the podium at an outdoor ceremony",
+   "file": "perk-chalk",
+   "caption": "Chalking the steps with two classmates",
    "tag": "Perkiomen",
    "cat": "School",
-   "w": 440,
-   "h": 612,
-   "fw": 719,
-   "fh": 1000
+   "w": 560,
+   "h": 373,
+   "fw": 1600,
+   "fh": 1067
   },
   {
    "file": "hosp-patient",
@@ -891,14 +891,14 @@
    "fh": 1280
   },
   {
-   "file": "music-electric",
-   "caption": "On the electric kit at home, headphones on",
+   "file": "music-prock2",
+   "caption": "Locked in on the hi-hat",
    "tag": "Music",
    "cat": "Music",
    "w": 440,
-   "h": 587,
-   "fw": 960,
-   "fh": 1280
+   "h": 660,
+   "fw": 800,
+   "fh": 1200
   },
   {
    "file": "tt-dog",
@@ -911,14 +911,14 @@
    "fh": 640
   },
   {
-   "file": "perk-door",
-   "caption": "Perkiomen School's post on earning the AP International Diploma",
+   "file": "perk-podium",
+   "caption": "Stepping away from the podium at an outdoor ceremony",
    "tag": "Perkiomen",
    "cat": "School",
-   "w": 560,
-   "h": 373,
-   "fw": 1600,
-   "fh": 1067
+   "w": 440,
+   "h": 612,
+   "fw": 719,
+   "fh": 1000
   },
   {
    "file": "hosp-talk",
@@ -931,14 +931,14 @@
    "fh": 1200
   },
   {
-   "file": "music-band",
-   "caption": "The band before the set",
+   "file": "music-pov",
+   "caption": "The view from the throne",
    "tag": "Music",
    "cat": "Music",
    "w": 560,
-   "h": 420,
-   "fw": 1600,
-   "fh": 1200
+   "h": 498,
+   "fw": 1500,
+   "fh": 1335
   },
   {
    "file": "run-tired",
@@ -951,14 +951,14 @@
    "fh": 1196
   },
   {
-   "file": "perk-senator",
-   "caption": "With Senator Pennycuick",
+   "file": "perk-door",
+   "caption": "Perkiomen School's post on earning the AP International Diploma",
    "tag": "Perkiomen",
    "cat": "School",
-   "w": 440,
-   "h": 587,
-   "fw": 1125,
-   "fh": 1500
+   "w": 560,
+   "h": 373,
+   "fw": 1600,
+   "fh": 1067
   },
   {
    "file": "hosp-ultrasound",
@@ -971,14 +971,14 @@
    "fh": 1200
   },
   {
-   "file": "music-stage",
-   "caption": "Rehearsal on the Perkiomen stage",
+   "file": "music-drums",
+   "caption": "Behind the kit",
    "tag": "Music",
    "cat": "Music",
-   "w": 560,
-   "h": 373,
-   "fw": 1400,
-   "fh": 933
+   "w": 440,
+   "h": 585,
+   "fw": 1170,
+   "fh": 1556
   },
   {
    "file": "night-umbrella",
@@ -991,14 +991,14 @@
    "fh": 1344
   },
   {
-   "file": "perk-group",
-   "caption": "With friends on the lawn at Perkiomen",
+   "file": "perk-senator",
+   "caption": "With Senator Pennycuick",
    "tag": "Perkiomen",
    "cat": "School",
-   "w": 560,
-   "h": 420,
-   "fw": 1560,
-   "fh": 1170
+   "w": 440,
+   "h": 587,
+   "fw": 1125,
+   "fh": 1500
   },
   {
    "file": "hosp-mri",
@@ -1011,14 +1011,14 @@
    "fh": 480
   },
   {
-   "file": "music-flyer",
-   "caption": "The Perk Rock Band Concert poster, Friday October 30",
+   "file": "music-electric",
+   "caption": "On the electric kit at home, headphones on",
    "tag": "Music",
    "cat": "Music",
    "w": 440,
-   "h": 569,
-   "fw": 1082,
-   "fh": 1400
+   "h": 587,
+   "fw": 960,
+   "fh": 1280
   },
   {
    "file": "tt-beach",
@@ -1031,14 +1031,14 @@
    "fh": 960
   },
   {
-   "file": "perk-skeleton",
-   "caption": "Meeting Alberto, the anatomy skeleton, in class",
+   "file": "perk-group",
+   "caption": "With friends on the lawn at Perkiomen",
    "tag": "Perkiomen",
    "cat": "School",
-   "w": 440,
-   "h": 587,
-   "fw": 1200,
-   "fh": 1600
+   "w": 560,
+   "h": 420,
+   "fw": 1560,
+   "fh": 1170
   },
   {
    "file": "shadow-1",
@@ -1051,14 +1051,14 @@
    "fh": 2400
   },
   {
-   "file": "eport-kits",
-   "caption": "Two kits: the school's acoustic kit and the electric kit at home",
+   "file": "music-band",
+   "caption": "The band before the set",
    "tag": "Music",
    "cat": "Music",
    "w": 560,
-   "h": 347,
-   "fw": 1200,
-   "fh": 744
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
   },
   {
    "file": "us-bean",
@@ -1071,14 +1071,14 @@
    "fh": 1600
   },
   {
-   "file": "cake-birthday",
-   "caption": "A birthday dinner in the dining hall",
+   "file": "perk-skeleton",
+   "caption": "Meeting Alberto, the anatomy skeleton, in class",
    "tag": "Perkiomen",
    "cat": "School",
-   "w": 560,
-   "h": 420,
-   "fw": 1560,
-   "fh": 1170
+   "w": 440,
+   "h": 587,
+   "fw": 1200,
+   "fh": 1600
   },
   {
    "file": "shadow-2",
@@ -1091,14 +1091,14 @@
    "fh": 2400
   },
   {
-   "file": "eport-perform",
-   "caption": "The e-Portfolio rehearsal performance",
+   "file": "music-stage",
+   "caption": "Rehearsal on the Perkiomen stage",
    "tag": "Music",
    "cat": "Music",
    "w": 560,
-   "h": 541,
-   "fw": 1018,
-   "fh": 984
+   "h": 373,
+   "fw": 1400,
+   "fh": 933
   },
   {
    "file": "us-flags",
@@ -1111,8 +1111,98 @@
    "fh": 1500
   },
   {
+   "file": "cake-birthday",
+   "caption": "A birthday dinner in the dining hall",
+   "tag": "Perkiomen",
+   "cat": "School",
+   "w": 560,
+   "h": 420,
+   "fw": 1560,
+   "fh": 1170
+  },
+  {
+   "file": "music-flyer",
+   "caption": "The Perk Rock Band Concert poster, Friday October 30",
+   "tag": "Music",
+   "cat": "Music",
+   "w": 440,
+   "h": 569,
+   "fw": 1082,
+   "fh": 1400
+  },
+  {
+   "file": "madrid-hat",
+   "caption": "Madrid, in a bobble hat",
+   "tag": "Europe",
+   "cat": "Places",
+   "w": 560,
+   "h": 560,
+   "fw": 736,
+   "fh": 736
+  },
+  {
    "file": "perk-sky1",
    "caption": "A winter sunset over campus",
+   "tag": "Perkiomen",
+   "cat": "School",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
+  },
+  {
+   "file": "eport-kits",
+   "caption": "Two kits: the school's acoustic kit and the electric kit at home",
+   "tag": "Music",
+   "cat": "Music",
+   "w": 560,
+   "h": 347,
+   "fw": 1200,
+   "fh": 744
+  },
+  {
+   "file": "trip-madrid",
+   "caption": "Back at La Escuelita, Madrid",
+   "tag": "Europe",
+   "cat": "Places",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
+  },
+  {
+   "file": "perk-sky2",
+   "caption": "Dusk on the lawn",
+   "tag": "Perkiomen",
+   "cat": "School",
+   "w": 560,
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
+  },
+  {
+   "file": "eport-perform",
+   "caption": "The e-Portfolio rehearsal performance",
+   "tag": "Music",
+   "cat": "Music",
+   "w": 560,
+   "h": 541,
+   "fw": 1018,
+   "fh": 984
+  },
+  {
+   "file": "trip-versailles",
+   "caption": "The gates of Versailles",
+   "tag": "Europe",
+   "cat": "Places",
+   "w": 560,
+   "h": 353,
+   "fw": 1600,
+   "fh": 1008
+  },
+  {
+   "file": "perk-sky3",
+   "caption": "A rainbow after the storm",
    "tag": "Perkiomen",
    "cat": "School",
    "w": 560,
@@ -1131,19 +1221,19 @@
    "fh": 447
   },
   {
-   "file": "madrid-hat",
-   "caption": "Madrid, in a bobble hat",
-   "tag": "Europe",
+   "file": "sea-arms",
+   "caption": "Arms wide at dusk",
+   "tag": "Travel",
    "cat": "Places",
    "w": 560,
-   "h": 560,
-   "fw": 736,
-   "fh": 736
+   "h": 420,
+   "fw": 1600,
+   "fh": 1200
   },
   {
-   "file": "perk-sky2",
-   "caption": "Dusk on the lawn",
-   "tag": "Perkiomen",
+   "file": "exeter-banner",
+   "caption": "Under the Exeter banner",
+   "tag": "Exeter",
    "cat": "School",
    "w": 560,
    "h": 420,
@@ -1161,48 +1251,8 @@
    "fh": 270
   },
   {
-   "file": "trip-madrid",
-   "caption": "Back at La Escuelita, Madrid",
-   "tag": "Europe",
-   "cat": "Places",
-   "w": 560,
-   "h": 420,
-   "fw": 1600,
-   "fh": 1200
-  },
-  {
-   "file": "perk-sky3",
-   "caption": "A rainbow after the storm",
-   "tag": "Perkiomen",
-   "cat": "School",
-   "w": 560,
-   "h": 420,
-   "fw": 1600,
-   "fh": 1200
-  },
-  {
-   "file": "trip-versailles",
-   "caption": "The gates of Versailles",
-   "tag": "Europe",
-   "cat": "Places",
-   "w": 560,
-   "h": 353,
-   "fw": 1600,
-   "fh": 1008
-  },
-  {
-   "file": "exeter-banner",
-   "caption": "Under the Exeter banner",
-   "tag": "Exeter",
-   "cat": "School",
-   "w": 560,
-   "h": 420,
-   "fw": 1600,
-   "fh": 1200
-  },
-  {
-   "file": "sea-arms",
-   "caption": "Arms wide at dusk",
+   "file": "sea-look",
+   "caption": "Watching the waves come in",
    "tag": "Travel",
    "cat": "Places",
    "w": 560,
@@ -1221,14 +1271,14 @@
    "fh": 860
   },
   {
-   "file": "sea-look",
-   "caption": "Watching the waves come in",
+   "file": "trip-beach",
+   "caption": "Sunset at the water's edge",
    "tag": "Travel",
    "cat": "Places",
-   "w": 560,
-   "h": 420,
-   "fw": 1600,
-   "fh": 1200
+   "w": 440,
+   "h": 587,
+   "fw": 1200,
+   "fh": 1600
   },
   {
    "file": "exeter-blazer",
@@ -1241,14 +1291,14 @@
    "fh": 1200
   },
   {
-   "file": "trip-beach",
-   "caption": "Sunset at the water's edge",
+   "file": "media-balloons",
+   "caption": "Inside a room of mirrored balloons",
    "tag": "Travel",
    "cat": "Places",
    "w": 440,
    "h": 587,
-   "fw": 1200,
-   "fh": 1600
+   "fw": 960,
+   "fh": 1280
   },
   {
    "file": "exeter-dock",
@@ -1261,14 +1311,14 @@
    "fh": 1600
   },
   {
-   "file": "media-balloons",
-   "caption": "Inside a room of mirrored balloons",
+   "file": "media-retro",
+   "caption": "A walk through a 1970s living room exhibit",
    "tag": "Travel",
    "cat": "Places",
-   "w": 440,
-   "h": 587,
-   "fw": 960,
-   "fh": 1280
+   "w": 560,
+   "h": 420,
+   "fw": 1280,
+   "fh": 960
   },
   {
    "file": "exeter-river",
@@ -1279,16 +1329,6 @@
    "h": 420,
    "fw": 1600,
    "fh": 1200
-  },
-  {
-   "file": "media-retro",
-   "caption": "A walk through a 1970s living room exhibit",
-   "tag": "Travel",
-   "cat": "Places",
-   "w": 560,
-   "h": 420,
-   "fw": 1280,
-   "fh": 960
   },
   {
    "file": "exeter-quad",
