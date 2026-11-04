@@ -504,6 +504,10 @@ const PAGES = [
             "Loyalty and dedication to the ISPS community."
           ],
           [
+            "In the school's words",
+            "ISPS says the award honours those who embody a single, powerful word: “Exemplary”. It captures the traits the school values: dedication, integrity, optimism, curiosity, care and global-mindedness."
+          ],
+          [
             "Division and year",
             "Middle School, 2023."
           ],
