@@ -550,26 +550,12 @@ const PAGES = [
         ]
       },
       {
-      "title": "Guayasamín, reinterpreted",
-      "body": [
-        "For Spanish class I recreated \"Madre y Niño con Fondo Amarillo\" (1989) by the Ecuadorian painter Oswaldo Guayasamín, and I was pretty impressed with how accurate it ended up.",
-        "Copying it was a maths problem before it was an art problem. I had to work from a specific scaling of the original image to the board I painted on, then apply a scale factor to every proportion: the two heads, the angles of the noses and mouths, the blocks of yellow and black around them. Once the scale was fixed I could stop copying and start reinterpreting, choosing my own colours and texture inside his composition."
-      ],
-      "points": [
-        ["The original", "\"Madre y Niño con Fondo Amarillo\", Oswaldo Guayasamín, 1989."],
-        ["The method", "One scale factor from the original image to the board, applied everywhere, so the proportions hold."],
-        ["The reinterpretation", "His shapes and composition, in my own palette and surface."]
-      ],
-      "slots": ["isps-4", "isps-5"]
-    },
-    {
-      "title": "The artist and the presentation",
-      "body": [
-        "The same unit included a cultural presentation, in Spanish, for AP Spanish. Guayasamín was born in Quito on July 6, 1919 and died in Baltimore on March 10, 1999. His work draws on expressionism, cubism and social realism, and was inspired by Mexican muralism. He is of Quechua origin, entered the School of Fine Arts at 13, and showed in about 200 exhibitions in major museums.",
-        "The line I kept from the slide is his own: \"Mi pintura es para herir, para arañar y golpear en el corazón de la gente.\" My painting is meant to wound, to scratch and to strike the heart of the people."
-      ],
-      "slots": ["isps-7"]
-    },
+        "title": "A side project: Guayasamín",
+        "body": [
+          "For Spanish class I recreated “Madre y Niño con Fondo Amarillo” by the Ecuadorian painter Oswaldo Guayasamín, scaling the original to my board with one scale factor so the proportions held, then repainting it in my own palette. I also gave a cultural presentation on him, in Spanish."
+        ],
+        "slots": ["isps-5"]
+      },
     {
         "title": "Where the Venezuela paper came from",
         "body": [
@@ -679,12 +665,12 @@ const PAGES = [
         ]
       }
     ],
+    hero: "isps-19",
     slots: [
       { key: "isps-1", ratio: "4 / 3", label: "ISPS campus" },
       { key: "isps-2", ratio: "4 / 3", label: "Student Council" },
       { key: "isps-3", ratio: "1 / 1", label: "Awards ceremony" },
       { key: "isps-6", ratio: "1092 / 1176", label: "The International School of Port of Spain 2026 fact sheet, from the U.S. Department of State Office of Overseas Schools" },
-      { key: "isps-7", ratio: "2200 / 1238", label: "My AP Spanish cultural presentation on Guayasamín" },
       { key: "isps-8", ratio: "376 / 264", label: "Student Council at ISPS, in the white polos" },
       { key: "isps-9", ratio: "382 / 270", label: "AP Vybz, the school music organization" },
       { key: "isps-10", ratio: "772 / 447", label: "AP Vybz members performing and rehearsing" },
@@ -696,9 +682,9 @@ const PAGES = [
       { key: "isps-16", ratio: "975 / 1300", label: "Measuring plywood in the design workshop" },
       { key: "isps-17", ratio: "975 / 1300", label: "Cutting with a circular saw in the design workshop" },
       { key: "isps-18", ratio: "848 / 480", label: "Out in front on a group run in Port of Spain" },
+      { key: "isps-19", ratio: "704 / 1089", label: "In the ISPS polo, in the design workshop" },
       { key: "isps-myp", ratio: "1242 / 1500", label: "IB Middle Years Programme course results, May 2025 session" },
       { key: "isps-bil", ratio: "1147 / 1311", label: "The IB Bilingual Certificate of the Middle Years Programme, August 21, 2025" },
-      { key: "isps-4", ratio: "1141 / 1145", label: "Oswaldo Guayasamín, the original" },
       { key: "isps-5", ratio: "1400 / 1238", label: "My recreation, for Spanish class" }
     ],
     next: { title: "Next: Perkiomen", lede: "The health science track, and boarding.", href: "Academics-Perkiomen.dc.html", label: "Go to Perkiomen" }
@@ -3945,7 +3931,7 @@ function spiralSvg() {
     "Activities.dc.html": "lift-squat", "Curiosities.dc.html": "games-artorias", "Media.dc.html": "trip-versailles",
     "Leadership-HOSA.dc.html": "hosa-anatomy", "Leadership-GVMUN.dc.html": "gvmun-article", "Leadership-StudentCouncil.dc.html": "stuco-room", "Leadership-MUN.dc.html": "mun-eagle", "Leadership-Shadowing.dc.html": "hosp-or",
     "Leadership-Volunteering.dc.html": "vol-river", "Leadership-Perkiomenite.dc.html": "perkmt", "Activities-Swimming.dc.html": "swim-blocks", "Activities-Weightlifting.dc.html": "lift-squat",
-    "Drums.dc.html": "music-drums", "Drums-SonoArte.dc.html": "music-electric", "Drums-Instruments.dc.html": "music-instruments", "Drums-APVybz.dc.html": "isps-apvybz", "Drums-Musicals.dc.html": "music-musicals", "Drums-MYPPortfolio.dc.html": "music-eportfolio", "Drums-Rockband.dc.html": "music-stage", "Activities-Running.dc.html": "run-tired", "Academics-ISPS.dc.html": "isps-guayasamin",
+    "Drums.dc.html": "music-drums", "Drums-SonoArte.dc.html": "music-electric", "Drums-Instruments.dc.html": "music-instruments", "Drums-APVybz.dc.html": "isps-apvybz", "Drums-Musicals.dc.html": "music-musicals", "Drums-MYPPortfolio.dc.html": "music-eportfolio", "Drums-Rockband.dc.html": "music-stage", "Activities-Running.dc.html": "run-tired", "Academics-ISPS.dc.html": "isps-me",
     "Academics-Perkiomen.dc.html": "perk-paws", "Academics-ExeterSummer.dc.html": "exeter-banner", "Academics-CompBio.dc.html": "cmu-friends",
     "Research-CellAtlas.dc.html": "gbm-3", "Research-MedicalApp.dc.html": "field-notes", "Research-CSRx.dc.html": "cert-csrx",
     "Research-Venezuela.dc.html": "vz-exhibit", "Curiosities-Videogames.dc.html": "games-artorias", "Curiosities-Music.dc.html": "music-band",
