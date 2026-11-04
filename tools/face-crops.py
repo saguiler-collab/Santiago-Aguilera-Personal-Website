@@ -55,6 +55,7 @@ HERO = [
   ('me-blazer','perk-blazer',.57,.31,.62,(170,180)),
   ('me-prock2','music-prock2',.535,.37,.60,(180,160)),
   ('me-sing','music-sing1',.30,.31,.22,(180,160)),
+  ('me-staffband','music-staffband2',.50,.22,.50,(180,160)),
   ('me-sky','me-sky',.63,.64,.55,(170,180)),
   ('me-awards','perk-awards',.44,.25,.30,(180,160)),
   ('me-purple','music-purple',.577,.29,.55,(170,180)),

@@ -2360,7 +2360,7 @@ const PAGES = [
     steps: [
       ["Grade 8 · Learning the kit properly", "My Instrument and Me: “Sunday Bloody Sunday” by U2, four and a half pages of sheet music, a retake on the summative and my first lessons in tuning an acoustic kit. Then Instrumental Communities: teaching two classmates the beat of “As It Was” and drumming in the Beauty and the Beast pit."],
       ["Grade 9 · Beyond the kit", "Glockenspiel for the school song, drums on “Waka Waka” at International Day, a unit at the mixing desk, my first time on a tenor steel pan for visitors from Alaska, and five drum pieces plus piano in Legally Blonde."],
-      ["Grade 10 · Under pressure", "The school song on piano, an 8 out of 8 on “Upside Down”, 29 out of 30 on the theory test, the “Take on Me” e-Portfolio pushed toward 186 BPM, and Mamma Mia!: eleven pieces prepared, two on stage."],
+      ["Grade 10 · Under pressure", "The school song on piano, an 8 out of 8 on “Upside Down”, 29 out of 30 on the theory test, the “Take on Me” e-Portfolio pushed toward 186 BPM, and Mamma Mia!: eleven pieces prepared, two on stage. Then the ISPS Staff Band, playing “School’s Out” to close the year."],
       ["Perkiomen · Now", "The rock band, on drums and now on vocals too: “De música ligera” by Soda Stereo."]
     ],
     quote: { text: "I believe that this quarter is the start of my full dedication to drumming.", by: "Process journal, Grade 8" },
@@ -2623,12 +2623,26 @@ const PAGES = [
         "slots": [
           "isps-10"
         ]
+      },
+      {
+        "title": "“School’s Out” with the ISPS Staff Band",
+        "body": [
+          "The year ended on a stage too. At the All-School End-of-Year Assembly on June 27, 2025, the ISPS Staff Band, which the school's own post describes as “featuring Grade 10 student Santiago”, rocked everyone into the summer break with a crowd-favourite: Alice Cooper's “School's Out”. I was on the drums, in a school polo covered in handwritten last-day messages, and the song closed the 2024–2025 school year."
+        ],
+        "points": [
+          ["The band", "The ISPS Staff Band, featuring me on drums."],
+          ["The song", "“School's Out”, Alice Cooper."],
+          ["The day", "The All-School End-of-Year Assembly, June 27, 2025."]
+        ],
+        "slots": ["isps-20", "isps-21"]
       }
     ],
-    facts: [["Role", "Vice-president and drummer"], ["School", "ISPS"], ["Performances", "Three, January to April"]],
+    facts: [["Role", "Vice-president and drummer"], ["School", "ISPS"], ["Performances", "Three, January to April, plus the end-of-year assembly"]],
     slots: [
       { key: "isps-9", ratio: "382 / 270", label: "AP Vybz, the school music organization" },
-      { key: "isps-10", ratio: "772 / 447", label: "AP Vybz members performing and rehearsing" }
+      { key: "isps-10", ratio: "772 / 447", label: "AP Vybz members performing and rehearsing" },
+      { key: "isps-20", ratio: "1600 / 1481", label: "On the drums with the ISPS Staff Band at the end-of-year assembly, June 2025" },
+      { key: "isps-21", ratio: "1500 / 1409", label: "Looking across the stage mid-song" }
     ],
     next: {"title": "Next: ISPS School Musicals", "lede": "Three productions in three years.", "href": "Drums-Musicals.dc.html", "label": "Go to the musicals"}
   },

@@ -21,6 +21,7 @@ add('Me', 'Me', [
  ('about-church', 'Portrait'), ('photo-tux', 'Dressed up on the lawn'), ('tt-grass', 'Out in the tall grass, Trinidad'),
  ('me-dog', 'Carrying the dog'), ('us-fifteen', 'Fifteen years ago'), ('perk-smile', 'Happy in the blazer and tie'), ('me-sky', 'Sweat, sky and earbuds, after a run')])
 add('Music', 'Music', [
+ ('music-staffband', 'On the drums with the ISPS Staff Band, “School’s Out”, June 2025'), ('music-staffband2', 'Looking across the stage mid-song, ISPS end-of-year assembly'),
  ('music-pit1', 'In the pit, seen from above'), ('music-pit2', 'Mid-fill, the sheet music beside me'), ('music-ekit', 'The electric kit at home'),
  ('music-sing1', 'Singing “De música ligera” by Soda Stereo'), ('music-sing2', 'Mid-jump, the band behind me'),
  ('music-prock', 'Drumming under the tent in a PRock shirt'), ('music-stagefist', 'Fists up on stage, the lights behind'),
