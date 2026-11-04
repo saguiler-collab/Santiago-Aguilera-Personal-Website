@@ -554,11 +554,15 @@ const PAGES = [
         ]
       },
       {
-        "title": "A side project: Guayasamín",
+        "title": "Side projects",
         "body": [
-          "For Spanish class I recreated “Madre y Niño con Fondo Amarillo” by the Ecuadorian painter Oswaldo Guayasamín, scaling the original to my board with one scale factor so the proportions held, then repainting it in my own palette. I also gave a cultural presentation on him, in Spanish."
+          "A few small projects sat alongside the main coursework, some of them built with classmates."
         ],
-        "slots": ["isps-5"]
+        "points": [
+          ["Shell Shock", "A World War I project we built together in class: a model trench in a black cardboard box, with barbed wire, soil, a wooden figure clutching its head and cut-out posters about shell shock."],
+          ["Guayasamín", "For Spanish class I recreated “Madre y Niño con Fondo Amarillo” by Oswaldo Guayasamín, scaling the original to my board with one scale factor and repainting it in my own palette. I also gave a short cultural presentation on him."]
+        ],
+        "slots": ["isps-22", "isps-5"]
       },
     {
         "title": "Where the Venezuela paper came from",
@@ -686,6 +690,7 @@ const PAGES = [
       { key: "isps-16", ratio: "975 / 1300", label: "Measuring plywood in the design workshop" },
       { key: "isps-17", ratio: "975 / 1300", label: "Cutting with a circular saw in the design workshop" },
       { key: "isps-18", ratio: "848 / 480", label: "Out in front on a group run in Port of Spain" },
+      { key: "isps-22", ratio: "1602 / 1666", label: "Shell Shock, our World War I class project: a trench diorama" },
       { key: "isps-19", ratio: "704 / 1089", label: "In the ISPS polo, in the design workshop" },
       { key: "isps-myp", ratio: "1242 / 1500", label: "IB Middle Years Programme course results, May 2025 session" },
       { key: "isps-bil", ratio: "1147 / 1311", label: "The IB Bilingual Certificate of the Middle Years Programme, August 21, 2025" },
@@ -2629,6 +2634,13 @@ const PAGES = [
         ]
       },
       {
+        "title": "Under the tent",
+        "body": [
+          "A set outdoors on the ISPS lawn, with the kit set up under a tent and the singers out front."
+        ],
+        "slots": ["isps-23", "isps-24"]
+      },
+      {
         "title": "“School’s Out” with the ISPS Staff Band",
         "body": [
           "The year ended on a stage too. At the All-School End-of-Year Assembly on June 27, 2025, the ISPS Staff Band, which the school's own post describes as “featuring Grade 10 student Santiago”, rocked everyone into the summer break with a crowd-favourite: Alice Cooper's “School's Out”. I was on the drums, in a school polo covered in handwritten last-day messages, and the song closed the 2024–2025 school year."
@@ -2645,6 +2657,9 @@ const PAGES = [
     slots: [
       { key: "isps-9", ratio: "382 / 270", label: "AP Vybz, the school music organization" },
       { key: "isps-10", ratio: "772 / 447", label: "AP Vybz members performing and rehearsing" },
+      { key: "isps-23", ratio: "1500 / 1498", label: "On the drums, concentrating, at a set under a tent on the ISPS lawn" },
+      { key: "isps-24", ratio: "510 / 700", label: "The kit under the tent, seen from the stage" },
+      { key: "isps-25", ratio: "418 / 500", label: "From behind the kit, mid-song" },
       { key: "isps-20", ratio: "1600 / 1481", label: "On the drums with the ISPS Staff Band at the end-of-year assembly, June 2025" },
       { key: "isps-21", ratio: "1500 / 1409", label: "Looking across the stage mid-song" }
     ],

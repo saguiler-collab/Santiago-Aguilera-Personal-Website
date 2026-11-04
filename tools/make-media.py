@@ -21,6 +21,7 @@ add('Me', 'Me', [
  ('about-church', 'Portrait'), ('photo-tux', 'Dressed up on the lawn'), ('tt-grass', 'Out in the tall grass, Trinidad'),
  ('me-dog', 'Carrying the dog'), ('us-fifteen', 'Fifteen years ago'), ('perk-smile', 'Happy in the blazer and tie'), ('me-sky', 'Sweat, sky and earbuds, after a run')])
 add('Music', 'Music', [
+ ('music-tent3', 'On the drums, concentrating, under a tent on the ISPS lawn'), ('music-tent1', 'The kit under the tent, seen from the stage'), ('music-tent2', 'From behind the kit, mid-song'),
  ('music-staffband', 'On the drums with the ISPS Staff Band, “School’s Out”, June 2025'), ('music-staffband2', 'Looking across the stage mid-song, ISPS end-of-year assembly'),
  ('music-pit1', 'In the pit, seen from above'), ('music-pit2', 'Mid-fill, the sheet music beside me'), ('music-ekit', 'The electric kit at home'),
  ('music-sing1', 'Singing “De música ligera” by Soda Stereo'), ('music-sing2', 'Mid-jump, the band behind me'),
@@ -48,6 +49,7 @@ add('Places', 'Travel', [('sea-arms', 'Arms wide at dusk'), ('sea-look', 'Watchi
  ('media-balloons', 'Inside a room of mirrored balloons'), ('media-retro', 'A walk through a 1970s living room exhibit')])
 add('School', 'ISPS', [('isps-ceremony', 'Shaking hands on stage at an ISPS awards ceremony'), ('isps-jeffries', 'The Mr. Jeffries Memorial Award plaque, 2022–2023'),
  ('isps-design-measure', 'Measuring plywood in the design workshop'), ('isps-design-saw', 'Cutting with a circular saw in the design workshop'),
+ ('isps-shellshock', 'Shell Shock, our World War I class project: a trench diorama'),
  ('isps-stuco', 'Student Council at ISPS, in the white polos'), ('isps-tug', 'Tug of war for Mayaro house'),
  ('isps-recreation', 'My recreation of Guayasamín, for Spanish class')])
 add('School', 'Perkiomen', [('perk-room', 'My first room at Perkiomen, the start of my own adventure'), ('perk-paws', 'With the Perkiomen Panther mascot'),
